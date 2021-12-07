@@ -1,0 +1,3 @@
+#define VIDEO_LIBRARY                             1
+#define CLIP_FORMAT_GIF87A                        2
+#define CLIP_FORMAT_GIF89A                        3

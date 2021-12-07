@@ -1,0 +1,1 @@
+You must build the projects PolymorphicDll1 and PolymorphicDll2 before this project.

@@ -1,0 +1,11 @@
+#define R_SPDIA_TEXT_RELEASE                      0x5e2ce003
+#define R_SPDIA_TEXT_REPLACE                      0x5e2ce004
+#define R_SPDIA_TEXT_KEY_ASSIGNED                 0x5e2ce005
+#define R_QTN_SPDIA_GRID_VOICE_MAIL               0x5e2ce006
+#define R_SPDIA_SELECT_DIALOG                     0x5e2ce007
+#define R_DLGAPP_INBOX_MSGS                       0x5e2ce008
+#define R_SPDIA_SOFTKEYS_ASSIGN_BACK              0x5e2ce009
+#define R_SPDIA_GRID_DIALOG                       0x5e2ce00a
+#define R_SPDIA_QUERY_REPLACE                     0x5e2ce00b
+#define R_SPDIA_QUERY_ASSIGN                      0x5e2ce00c
+#define R_SPDIA_QUERY_RELEASE                     0x5e2ce00d

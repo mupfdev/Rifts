@@ -1,0 +1,14 @@
+// LAFPUBLC.HRH
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __LAFPUBLC_HRH__
+#define __LAFPUBLC_HRH__
+
+enum TLafReferenceButtonGroupControls
+	{
+	ELafBgCba=100
+	};
+
+#endif

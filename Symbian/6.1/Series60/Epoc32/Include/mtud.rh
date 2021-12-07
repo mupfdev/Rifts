@@ -1,0 +1,22 @@
+// MTUD.RH
+//
+// Copyright (C) Symbian Ltd 1998
+//
+
+#include <MTUD.hRH>
+
+STRUCT MTUD_FUNCTION
+	{
+	LTEXT functiontext="";// Cannot be longer that 40 characters
+	LONG  command=0;
+	LONG  key;
+	BYTE  keymodifiers=EMtudCtrl;
+	LONG  flags=0;
+	BYTE  type=0;
+	}
+
+STRUCT MTUD_FUNCTION_ARRAY
+    {
+    STRUCT functions[];
+    }
+

@@ -1,0 +1,8 @@
+#define R_CONFIRMATION_DIALOG                     0xd34d003
+#define R_SENDDTMF_DIALOG                         0xd34d004
+#define R_QTN_WML_WTAI_CALL_NO                    0xd34d005
+#define R_TEXT_CALL_NOT_ALLOWED                   0xd34d006
+#define R_QTN_WML_WTAI_SEND_DTMF                  0xd34d007
+#define R_QTN_DTMF_SENDING_WAIT_NOTE              0xd34d008
+#define R_QTN_OPTIONS_CONTACTS_NEW                0xd34d009
+#define R_QTN_OPTIONS_CONTACTS_UPDATE             0xd34d00a

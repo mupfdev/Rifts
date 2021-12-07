@@ -1,0 +1,1037 @@
+/*
+* ============================================================================
+*  Name     : AknExSettingList.rss
+*  Part of  : AknExSettingList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+//  RESOURCE IDENTIFIER
+NAME EXPG
+
+//  INCLUDES
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.hrh>
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <avkon.loc>
+#include "aknexsettinglist.hrh"
+#include "aknexsettinglist.loc"
+
+//  CONSTANTS
+// for Text Setting Page
+#define TEXT_SETTING_PAGE_NUMBER 1
+#define TEXT_SETTING_PAGE_WIDTH 9
+#define TEXT_SETTING_PAGE_LINES 5
+#define TEXT_SETTING_PAGE_MAXLENGTH10 10
+#define TEXT_SETTING_PAGE_MAXLENGTH20 20
+#define TEXT_SETTING_PAGE_MAXLENGTH30 30
+
+// for Slider Setting Page
+#define SLIDER_SETTING_PAGE_NUMBER 1
+#define SLIDER_SETTING_PAGE_MINVALUE 0
+#define SLIDER_SETTING_PAGE_MAXVALUE 100
+#define SLIDER_SETTING_PAGE_STEP 1
+
+// for Volume Setting Page
+#define VOLUME_SETTING_PAGE_NUMBER 1
+#define VOLUME_SETTING_PAGE_VALUE 8
+
+// for Time Setting Page
+#define TIME_SETTING_PAGE_NUMBER 1
+#define TIME_EDITOR_MIN_SECOND 0
+#define TIME_EDITOR_MIN_MINUTE 0
+#define TIME_EDITOR_MIN_HOUR 0
+#define TIME_EDITOR_MAX_SECOND 59
+#define TIME_EDITOR_MAX_MINUTE 59
+#define TIME_EDITOR_MAX_HOUR 23
+
+// for Duration Setting Page
+#define DURATION_SETTING_PAGE_NUMBER 1
+#define DURATION_EDITOR_MIN_SECOND 0
+#define DURATION_EDITOR_MAX_SECOND 3000
+
+// for Alpha Password Setting Page
+#define ALPHA_PASSWORD_SETTING_PAGE_NUMBER 1
+#define ALPHA_PASSWORD_LENGTH_OF_STRING 8
+
+// for Numeric Password Setting Page
+#define NUMERIC_PASSWORD_SETTING_PAGE_NUMBER 2
+#define NUMERIC_PASSWORD_OL09_SETTING_PAGE_NUMBER 1
+#define NUMERIC_PASSWORD_LENGTH_OF_STRING 8
+
+// for IP Editor Setting Page
+#define IP_EDITOR_MIN_FIELD_VALUE 20
+#define IP_EDITOR_MAX_FIELD_VALUE 200
+
+//  MACROS
+
+//  RESOURCE DEFINITIONS
+//-----------------------------------------------------------------------------
+//
+//    RSS_SIGNATURE
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    TBUF16
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF16
+    {
+    buf = "AknExSettingList";
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    EIK_APP_INFO
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_aknexsettinglist_menubar;
+    //cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    cba = r_aknexsettinglist_cba_options_next;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_menubar
+//    MenuBar
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexsettinglist_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexsettinglist_menu;
+            txt = qtn_aknexsettinglist_menubar;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_menu
+//    Menu pane
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexsettinglist_menu
+    {
+    items =
+        {
+        MENU_ITEM // Menu "SettingList"
+            {
+            command = EAknExSettingListCmdSettingList;
+            cascade = r_aknexsettinglist_settinglist_cascade;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexsettinglist_menu_setlist;
+            },
+        MENU_ITEM // Menu "Exit"
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexsettinglist_menu_exit;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_settinglist_cascade
+//    Sub menu-pane of "SettingList" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexsettinglist_settinglist_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline01;
+            txt = qtn_aknexsettinglist_outline01;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline02;
+            txt = qtn_aknexsettinglist_outline02;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline03;
+            txt = qtn_aknexsettinglist_outline03;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline04;
+            txt = qtn_aknexsettinglist_outline04;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline05;
+            txt = qtn_aknexsettinglist_outline05;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline06;
+            txt = qtn_aknexsettinglist_outline06;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline07;
+            txt = qtn_aknexsettinglist_outline07;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline08;
+            txt = qtn_aknexsettinglist_outline08;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline09;
+            txt = qtn_aknexsettinglist_outline09;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSettingListCmdOutline10;
+            txt = qtn_aknexsettinglist_outline10;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_text_status_pane_title??
+//    Text which is used on status pane.
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title01
+    {
+    buf = qtn_aknexsettinglist_outline01;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title02
+    {
+    buf = qtn_aknexsettinglist_outline02;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title03
+    {
+    buf = qtn_aknexsettinglist_outline03;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title04
+    {
+    buf = qtn_aknexsettinglist_outline04;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title05
+    {
+    buf = qtn_aknexsettinglist_outline05;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title06
+    {
+    buf = qtn_aknexsettinglist_outline06;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title07
+    {
+    buf = qtn_aknexsettinglist_outline07;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title08
+    {
+    buf = qtn_aknexsettinglist_outline08;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title09
+    {
+    buf = qtn_aknexsettinglist_outline09;
+    }
+
+RESOURCE TBUF256 r_aknexsettinglist_text_status_pane_title10
+    {
+    buf = qtn_aknexsettinglist_outline10;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_text_label_title
+//    Text which is used by label.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_text_label_title
+    {
+    buf = qtn_aknexsettinglist_label_title;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_text_a
+//    For Setting Text.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_setting_text_a
+    {
+    buf = qtn_aknexsettinglist_title_a;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_text_b
+//    For Setting Text.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_setting_text_b
+    {
+    buf = qtn_aknexsettinglist_title_b;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_text_c
+//    For Setting Text.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_setting_text_c
+    {
+    buf = qtn_aknexsettinglist_title_c;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_text_initial
+//    For Text Setting Page.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_text_initial
+    {
+    buf = qtn_aknexsettinglist_text_initial;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_time_initial
+//    For Time Setting Page.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_time_initial
+    {
+    buf = qtn_aknexsettinglist_time_initial;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_alpha_initial
+//    For Alpha Password Setting Page.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_alpha_initial
+    {
+    buf = qtn_aknexsettinglist_alpha_initial;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_numeric_initial
+//    For Numeric Password Setting Page.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_numeric_initial
+    {
+    buf = qtn_aknexsettinglist_numeric_init;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_message_format_integer
+//    For message.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_message_format_integer
+    {
+    buf = qtn_message_format_integer;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_message_text_resource
+//    For message.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexsettinglist_message_text_resource
+    {
+    buf = qtn_message_text_resource;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_text_setting_page
+//    For Outline04
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_text_setting_page
+    {
+    number = TEXT_SETTING_PAGE_NUMBER;
+    label = qtn_aknexsettinglist_text_title;
+    type = EEikCtEdwin;
+    editor_resource_id = r_aknexsettinglist_edwin;
+    }
+
+RESOURCE EDWIN r_aknexsettinglist_edwin
+    {
+    width = TEXT_SETTING_PAGE_WIDTH;
+    lines = TEXT_SETTING_PAGE_LINES;
+    maxlength = TEXT_SETTING_PAGE_MAXLENGTH20;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_slider_setting_page
+//    For outline05
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_slider_setting_page
+    {
+    number = SLIDER_SETTING_PAGE_NUMBER;
+    label = qtn_aknexsettinglist_slider_title;
+    type = EAknCtSlider;
+    editor_resource_id = r_aknexsettinglist_slider;
+    }
+
+RESOURCE SLIDER r_aknexsettinglist_slider
+    {
+    layout = EAknSettingsItemSliderLayout;
+    minvalue = SLIDER_SETTING_PAGE_MINVALUE;
+    maxvalue = SLIDER_SETTING_PAGE_MAXVALUE;
+    step = SLIDER_SETTING_PAGE_STEP;
+    valuetype = EAknSliderValuePercentage;
+    minlabel = qtn_slider_minlabel;
+    maxlabel = qtn_slider_maxlabel;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_volume_setting_page
+//    For outline06
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_volume_setting_page
+    {
+    number = VOLUME_SETTING_PAGE_NUMBER;
+    label = qtn_aknexsettinglist_volume_title;
+    type = EAknCtVolumeControl;
+    editor_resource_id = r_aknexsettinglist_volume;
+    }
+
+RESOURCE VOLUME r_aknexsettinglist_volume
+    {
+    flags = ESettingsVolumeControl;
+    value = VOLUME_SETTING_PAGE_VALUE;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_popup_setting_page_new_entry
+//    For outline%TODO%
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE POPUP_SETTING_LIST r_aknexsettinglist_popup_setting_list_new_entry
+    {
+    flags = EAknPopupSettingListFlagAllowsUserDefinedEntry;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_time_setting_page
+//    For outline07.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_time_setting_page
+    {
+    number = TIME_SETTING_PAGE_NUMBER;
+    label = qtn_aknexsettinglist_time_title;
+    type = EEikCtTimeEditor;
+    editor_resource_id = r_aknexsettinglist_time_editor;
+    }
+
+RESOURCE TIME_EDITOR r_aknexsettinglist_time_editor
+    {
+    minTime = TIME
+        {
+        second = TIME_EDITOR_MIN_SECOND;
+        minute = TIME_EDITOR_MIN_MINUTE;
+        hour = TIME_EDITOR_MIN_HOUR;
+        };
+    maxTime = TIME
+        {
+        second = TIME_EDITOR_MAX_SECOND;
+        minute = TIME_EDITOR_MAX_MINUTE;
+        hour = TIME_EDITOR_MAX_HOUR;
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_alpha_password_setting_page
+//    For outline08.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_alpha_password_setting_page
+    {
+    number = ALPHA_PASSWORD_SETTING_PAGE_NUMBER;
+    label = qtn_aknexsettinglist_alpha_title;
+    type = EEikCtSecretEd;
+    editor_resource_id = r_aknexsettinglist_alpha_password;
+    }
+
+RESOURCE SECRETED r_aknexsettinglist_alpha_password
+    {
+    num_letters = ALPHA_PASSWORD_LENGTH_OF_STRING;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_ol09_numeric_password_setting_page
+//    For outline09.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_ol09_numeric_password_setting_page
+    {
+    number = NUMERIC_PASSWORD_OL09_SETTING_PAGE_NUMBER;
+    label = qtn_aknexsettinglist_numeric_title;
+    type = EAknCtNumericSecretEditor;
+    editor_resource_id = r_aknexsettinglist_numeric_password;
+    }
+
+RESOURCE NUMSECRETED r_aknexsettinglist_numeric_password
+    {
+    num_code_chars = NUMERIC_PASSWORD_LENGTH_OF_STRING;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_ip_editor
+//    For outline10.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE IP_FIELD_EDITOR r_aknexsettinglist_ip_editor
+    {
+    min_field_values = IP_FIELD
+        { 
+        first_field = IP_EDITOR_MIN_FIELD_VALUE;
+        second_field = IP_EDITOR_MIN_FIELD_VALUE;
+        third_field = IP_EDITOR_MIN_FIELD_VALUE;
+        fourth_field = IP_EDITOR_MIN_FIELD_VALUE;
+        };
+    max_field_values = IP_FIELD
+        {
+        first_field = IP_EDITOR_MAX_FIELD_VALUE;
+        second_field = IP_EDITOR_MAX_FIELD_VALUE;
+        third_field = IP_EDITOR_MAX_FIELD_VALUE;
+        fourth_field = IP_EDITOR_MAX_FIELD_VALUE;
+        };
+    flags = 0;
+    }
+
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_ip_address_setting_page
+    {   
+    label= qtn_aknexsettinglist_ip_editor_title;
+    type = EAknCtIpFieldEditor;
+    editor_resource_id = r_aknexsettinglist_ip_editor;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_list_item_array
+//    For Popup Setting Page.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexsettinglist_list_item_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list0;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list1;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list2;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list3;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list4;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list5;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list6;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list7;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list8;
+            },
+        LBUF
+            {
+            txt = qtn_aknexsettinglist_item_list9;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_text
+//    ListBox( Setting style )
+//    For Outline01.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_text
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline01;
+    initial_number = 1;
+    items =     
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingText;
+            setting_page_resource = r_aknexsettinglist_text_setting_page;
+            name = qtn_aknexsettinglist_text_title;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_slider
+//    ListBox( Setting style )
+//    For Outline02.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_slider
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline02;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingSlider;
+            setting_page_resource = r_aknexsettinglist_slider_setting_page;
+            name = qtn_aknexsettinglist_slider_title;
+            }
+        };
+    }
+
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_volume
+//    ListBox( Setting style )
+//    For Outline03
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_volume
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline03;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingVolume;
+            setting_page_resource = r_aknexsettinglist_volume_setting_page;
+            name = qtn_aknexsettinglist_volume_title;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_enumtext_setting_page
+//    Setting page
+//    For Outline04.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_enumtext_setting_page
+    {   
+    number= 1;
+    label= qtn_aknexsettinglist_enumtext_title;
+    type = EAknCtPopupSettingList;
+    editor_resource_id = r_aknexsettinglist_popup_setting_list_new_entry;
+    }
+
+RESOURCE AVKON_POPUP_SETTING_TEXTS r_aknexsettinglist_popup_setting_list
+    {
+    setting_texts_resource = r_aknexsettinglist_page_list;
+    popped_up_texts_resource = r_aknexsettinglist_list_item_array;
+    }
+
+RESOURCE ARRAY r_aknexsettinglist_page_list
+    {
+    items =
+        {
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 0;
+            text = qtn_aknexsettinglist_item_list0;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 1;
+            text = qtn_aknexsettinglist_item_list1;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 2;
+            text = qtn_aknexsettinglist_item_list2;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 3;
+            text = qtn_aknexsettinglist_item_list3;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 4;
+            text = qtn_aknexsettinglist_item_list4;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 5;
+            text = qtn_aknexsettinglist_item_list5;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 6;
+            text = qtn_aknexsettinglist_item_list6;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 7;
+            text = qtn_aknexsettinglist_item_list7;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 8;
+            text = qtn_aknexsettinglist_item_list8;
+            },
+        AVKON_ENUMERATED_TEXT
+            {
+            value = 9;
+            text = qtn_aknexsettinglist_item_list9;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_enumtext
+//    ListBox( Setting style )
+//    For Outline04.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_enumtext
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline04;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingEnumText;
+            setting_page_resource = r_aknexsettinglist_enumtext_setting_page;
+            associated_resource = r_aknexsettinglist_popup_setting_list;
+            name = qtn_aknexsettinglist_enumtext_title;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_date
+//    ListBox( Setting style )
+//    For Outline05.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_date
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline05;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingDate;
+            setting_page_resource = r_aknexsettinglist_date_setting_page;
+            name = qtn_aknexsettinglist_date_title;
+            }
+        };
+    }
+
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_date_setting_page
+    {
+    label= qtn_aknexsettinglist_date_title;
+    type = EEikCtDateEditor;
+    editor_resource_id = r_aknexsettinglist_date;
+    }
+
+RESOURCE DATE_EDITOR r_aknexsettinglist_date
+    {
+    minDate= DATE {year=1980;};
+    maxDate= DATE {year=2060;};
+    flags=0;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_time
+//    ListBox( Setting style )
+//    For Outline06.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_time
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline06;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingTime;
+            setting_page_resource = r_aknexsettinglist_time_setting_page;
+            name = qtn_aknexsettinglist_time_title;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_binary
+//    ListBox( Setting style )
+//    For Outline07.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_binary
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline07;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingBinary;
+            setting_page_resource = r_aknexsettinglist_binary_setting_page;
+            associated_resource = r_aknexsettinglist_popup_setting_binary_texts;
+            name = qtn_aknexsettinglist_binary_title;
+            }
+        };
+    }
+
+RESOURCE AVKON_POPUP_SETTING_TEXTS r_aknexsettinglist_popup_setting_binary_texts
+    {
+    flags = 0; // Possible EINVERTORDER;
+    setting_texts_resource = r_aknexsettinglist_on_off_texts;
+    popped_up_texts_resource = r_aknexsettinglist_popped_up_on_off_texts;
+    }
+
+RESOURCE ARRAY r_aknexsettinglist_on_off_texts
+    {
+    items =
+        {
+        AVKON_ENUMERATED_TEXT { value=1; text = "On"; },
+        AVKON_ENUMERATED_TEXT { value=0; text = "Off"; }
+        };
+    }
+
+RESOURCE ARRAY r_aknexsettinglist_popped_up_on_off_texts
+    {
+    items =
+        {
+        LBUF { txt = "Enabled"; },
+        LBUF { txt = "Disabled"; }
+        };
+    }
+
+RESOURCE AVKON_SETTING_PAGE r_aknexsettinglist_binary_setting_page
+    {   
+    number= 0;
+    label= qtn_aknexsettinglist_binary_title;
+    type = EAknCtPopupSettingList;
+    //editor_resource_id = r_setting_app_on_off_popup_setting_list;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_pw
+//    ListBox( Setting style )
+//    For Outline08.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_pw
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline08;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingPassAlph;
+            setting_page_resource = r_aknexsettinglist_alpha_password_setting_page;
+            name = qtn_aknexsettinglist_alpha_title;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_pin
+//    ListBox( Setting style )
+//    For Outline09.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_pin
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline09;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingPassNumber;
+            setting_page_resource = r_aknexsettinglist_ol09_numeric_password_setting_page; 
+            // r_aknexsettinglist_numeric_password_setting_page;
+            name = qtn_aknexsettinglist_numeric_title;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_setting_list_setting_ip
+//    ListBox( Setting style )
+//    For Outline10.
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE AVKON_SETTING_ITEM_LIST r_aknexsettinglist_setting_list_setting_ip
+    {
+    flags= EAknSettingItemNumberedStyle;
+    title = qtn_aknexsettinglist_outline10;
+    initial_number = 1;
+    items =
+        {
+        AVKON_SETTING_ITEM
+            {
+            identifier = EAknExSettingIpAddress;
+            setting_page_resource = r_aknexsettinglist_ip_address_setting_page;
+            name = qtn_aknexsettinglist_ip_editor_title;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//    r_aknexsettinglistitemdata_mypassword
+//    resource for password editor
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexsettinglistitemdata_mypassword
+    {
+    buf = qtn_aknexsettinglistitemdata_mypassword;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexsettinglist_cba_options_next
+//    ?description
+//
+// ----------------------------------------------------------------------------
+//
+
+RESOURCE CBA r_aknexsettinglist_cba_options_next
+    {
+    buttons =
+        {
+        CBA_BUTTON 
+            {
+            id=EAknSoftkeyOptions; 
+            txt = text_softkey_option;
+            },
+        AVKON_CBA_BUTTON
+            {
+            id = EAknExSetListCbaCmdNext;
+            txt = qtn_aknexsettinglist_cba_next;
+            }
+        };
+    }
+// End of File

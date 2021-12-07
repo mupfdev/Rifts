@@ -1,0 +1,38 @@
+// LOGWRAP.HRH
+//
+// Copyright (c) 1999 Symbian Ltd.  All rights reserved.
+//
+
+#if !defined(__LOGWRAP_HRH__)
+#define __LOGWRAP_HRH__
+
+// Event Uid's
+#define KLogCallEventType 0x1000550D
+#define KLogDataEventType 0x10005566
+#define KLogFaxEventType 0x10005567
+#define KLogShortMessageEventType 0x10005568
+#define KLogMailEventType 0x10005569
+#define KLogTaskSchedulerEventType  0x1000585E
+#define KLogPacketDataEventType  0x10008F8E
+
+// Recent lists (Make consecutive)
+#define KLogRecentIncomingCalls 1
+#define KLogRecentOutgoingCalls 2
+#define KLogRecentMissedCalls 3
+
+// Filter fields
+#define ELogFirstFilterField 0x1
+#define ELogContactField 0x1
+#define ELogDirectionField 0x2
+#define ELogDurationTypeField 0x4
+#define ELogEventTypeField 0x8
+#define ELogNumberField 0x10
+#define ELogRemotePartyField 0x20
+#define ELogStatusField 0x40
+#define ELogFlagsField 0x80
+#define ELogSubjectField 0x100
+#define ELogLinkField 0x200
+#define ELogDataField 0x400
+#define ELogLastFilterField 0x80
+
+#endif

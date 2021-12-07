@@ -1,0 +1,12 @@
+#define R_FAXS_PAGE                               1
+#define R_FAXS_PAGES                              2
+#define R_FAXS_INCOMPLETE_PAGE                    3
+#define R_FAXS_INCOMPLETE_PAGES                   4
+#define R_FAXS_UNKNOWN                            5
+#define R_FAXS_OOM_LINE_1                         6
+#define R_FAXS_OOM_LINE_2                         7
+#define R_FAXS_OOM_BUTTON_1                       8
+#define R_FAXS_OOM_BUTTON_2                       9
+#define R_FAXS_HEADER_LINE                        10
+#define R_FAXS_HEADER_LINE_FONT                   11
+#define R_FAXS_ERROR_ACTIONS                      12

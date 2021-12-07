@@ -1,0 +1,3 @@
+#define R_BT_TO_FROM_IN_INBOX                     0x2e88a003
+#define R_IR_TO_FROM_IN_INBOX                     0x2e88a004
+#define R_IR_NAME_FOR_INVALID_FILE                0x2e88a005

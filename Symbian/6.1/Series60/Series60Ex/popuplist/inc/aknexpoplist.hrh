@@ -1,0 +1,106 @@
+/*
+* ============================================================================
+*  Name     : AknExPopList resource header file
+*  Part of  : AknExPopList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXPOPLIST_HRH
+#define AKNEXPOPLIST_HRH
+
+// Menu commands.
+enum TAknExPopListMenuCommands
+    {
+    // common
+    EAknExPopListCmdAuto = 1,
+
+    // for view1 menu.
+    EAknExPopListCmdView1Menu1,
+    EAknExPopListCmdView1Menu2,
+    EAknExPopListCmdView1Menu3,
+    EAknExPopListCmdView1Menu4,
+    EAknExPopListCmdView1Menu5,
+    EAknExPopListCmdView1Menu6,
+    EAknExPopListCmdView1Menu7,
+    EAknExPopListCmdView1Menu8,
+    EAknExPopListCmdView1Menu9,
+    EAknExPopListCmdView1Menu10,
+
+    // for view2 menu.
+    EAknExPopListCmdView2Menu1,
+    EAknExPopListCmdView2Menu2,
+    EAknExPopListCmdView2Menu3,
+    EAknExPopListCmdView2Menu4,
+    EAknExPopListCmdView2Menu5,
+    EAknExPopListCmdView2Menu6,
+    EAknExPopListCmdView2Menu7,
+    EAknExPopListCmdView2Menu8,
+    EAknExPopListCmdView2Menu9,
+    EAknExPopListCmdView2Menu10,
+    EAknExPopListCmdView2Menu11,
+    EAknExPopListCmdView2Menu12,
+    EAknExPopListCmdView2Menu13,
+    EAknExPopListCmdView2Menu14,
+    EAknExPopListCmdView2Menu15,
+    EAknExPopListCmdView2Menu16,
+    EAknExPopListCmdView2Menu17,
+
+    // for other views.
+    EAknExPopListCmdView3Menu,
+    EAknExPopListCmdView4Menu,
+    EAknExPopListCmdView5Menu,
+    EAknExPopListCmdView6Menu,
+    EAknExPopListCmdView7Menu,
+    EAknExPopListCmdView8Menu,
+    EAknExPopListCmdView9Menu,
+    EAknExPopListCmdView10Menu,
+    EAknExPopListCmdView11Menu,
+
+    // for Cascade menu
+    EAknExPopListCmdCascade1,
+    EAknExPopListCmdCascade2,
+    EAknExPopListCmdCascade3,
+    EAknExPopListCmdCascade4,
+    EAknExPopListCmdCascade5,
+    EAknExPopListCmdCascade6,
+    EAknExPopListCmdCascade7,
+    EAknExPopListCmdCascade8,
+    EAknExPopListCmdCascade9,
+    EAknExPopListCmdCascade10,
+    EAknExPopListCmdCascade11,
+    EAknExPopListCmdCascade12,
+    EAknExPopListCmdCascade13,
+    EAknExPopListCmdCascade14,
+    EAknExPopListCmdCascade15,
+    EAknExPopListCmdCascade16,
+    EAknExPopListCmdCascade17,
+
+    EAknExPopListSelectMessageNote
+
+    };
+
+// Tab ID.
+enum TAknExPopListTabViewId
+    {
+    EAknExPopListView1Tab= 1,
+    EAknExPopListView2Tab,
+    EAknExPopListView3Tab,
+    EAknExPopListView4Tab,
+    EAknExPopListView5Tab,
+    EAknExPopListView6Tab,
+    EAknExPopListView7Tab,
+    EAknExPopListView8Tab,
+    EAknExPopListView9Tab,
+    EAknExPopListView10Tab,
+    EAknExPopListView11Tab
+    };
+
+enum TAKnTaPopListSoftkeyCommand
+    {
+    EAKnTaPopListSoftkeyNext=100
+    };
+
+#endif      //  AKNEXPOPLIST_HRH
+
+// End of File

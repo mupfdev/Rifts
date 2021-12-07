@@ -1,0 +1,70 @@
+/*
+* ============================================================================
+*  Name     : PbkIconId.hrh
+*  Part of  : PbkEng.dll
+*
+*  Description:
+*    Phonebook icon names.
+*  Version:
+*
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+* ============================================================================
+*/
+
+#ifndef PbkIconId_HRH
+#define PbkIconId_HRH
+
+// CONSTANTS
+
+/**
+ * Phonebook Icon Id.
+ */
+enum TPbkIconId
+    {
+    EPbkNullIconId = -1,
+    EPbkqgn_indi_marked_add = 1,
+    EPbkqgn_prop_checkbox_off,
+    EPbkqgn_prop_checkbox_on,
+    EPbkqgn_prop_nrtyp_phone,
+    EPbkqgn_prop_nrtyp_home,
+    EPbkqgn_prop_nrtyp_work,
+    EPbkqgn_prop_nrtyp_mobile,
+    EPbkqgn_prop_nrtyp_fax,
+    EPbkqgn_prop_nrtyp_pager,
+    EPbkqgn_prop_nrtyp_email,
+    EPbkqgn_prop_nrtyp_address,
+    EPbkqgn_prop_nrtyp_url,
+    EPbkqgn_prop_nrtyp_comp_address,
+    EPbkqgn_prop_nrtyp_date,
+    EPbkqgn_prop_nrtyp_note,
+    EPbkqgn_prop_nrtyp_tone,
+    EPbkqgn_prop_pb_all_tab2,       // deprecated
+    EPbkqgn_prop_group_tab2,        // deprecated
+    EPbkqgn_prop_group_open_tab1,
+    EPbkqgn_prop_pb_contacts_tab3,  // deprecated
+    EPbkqgn_prop_pb_personal_tab3,  // deprecated
+    EPbkqgn_prop_pb_photo_tab3,     // deprecated
+    EPbkqgn_prop_group_small,
+    EPbkqgn_graf_pb_status_backg,
+    EPbkqgn_graf_phob_pcard_backg,  // deprecated
+    EPbkqgn_graf_note_start,        // deprecated
+    EPbkqgn_note_error,             // deprecated
+    EPbkqgn_prop_nrtyp_empty,
+    EPbkqgn_menu_phob_cxt,          // deprecated
+    EPbkqgn_indi_voice_add,
+    EPbkqgn_indi_qdial_add,
+	EPbkqgn_prop_nrtyp_wvid
+    };
+
+
+#endif
+
+// End of File

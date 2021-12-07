@@ -1,0 +1,16 @@
+; AknExPopList.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExPopList"},(0x10005C2C),1,04,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExPopList.app"-"!:\system\apps\AknExPopList\AknExPopList.app"
+"..\..\..\epoc32\release\thumb\urel\AknExPopList.rsc"-"!:\system\apps\AknExPopList\AknExPopList.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExPopList.aif"-"!:\system\apps\AknExPopList\AknExPopList.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExPopList.mbm"-"!:\system\apps\AknExPopList\AknExPopList.mbm"
+"..\..\..\epoc32\release\thumb\urel\AknExPopList_caption.rsc"-"!:\system\apps\AknExPopList\AknExPopList_caption.rsc"

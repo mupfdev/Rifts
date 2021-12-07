@@ -1,0 +1,18 @@
+// Basics.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET        ClipboardBasics.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        Basics.cpp
+
+USERINCLUDE   .
+USERINCLUDE   ..\..\Commonframework
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib efsrv.lib  bafl.lib estor.lib

@@ -1,0 +1,60 @@
+/*
+* ============================================================================
+*  Name     : AknExPbar.mmp
+*  Part of  : AknExPbar
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET     AknExPbar.app
+TARGETTYPE                  app
+UID        0x100039CE 0x10005C2E
+TARGETPATH \system\apps\AknExPbar
+
+SOURCEPATH ..\src
+
+SOURCE  AknExPbarApp.cpp 
+SOURCE  AknExPbarAppUi.cpp
+SOURCE  AknExPbarDocument.cpp
+SOURCE  AknExPbarContainer.cpp
+SOURCE  AknExPbarTimer.cpp
+SOURCE  AknExPbarView.cpp
+
+RESOURCE ..\group\AknExPbar.rss
+RESOURCE ..\group\AknExPbar_caption.rss
+LANG     SC
+
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY    EUSER.LIB   /*BAFL.LIB*/
+LIBRARY    WS32.LIB    CONE.LIB
+LIBRARY    EIKCORE.LIB EIKCTL.LIB
+LIBRARY    AVKON.LIB   APPARC.LIB
+LIBRARY    eikcoctl.lib
+
+START WINS      
+// ?wins_specific_information
+END
+
+START MARM
+// ?marm_specific_information
+END
+
+// Other possible keywords:
+/* 
+START BITMAP ?target
+TARGETPATH   ?emulated_path_on_target_machine
+HEADER
+SOURCEPATH   ?source_path
+SOURCE       ?color_depth ?source_bitmap_list
+END
+*/
+// DEFFILE ?filename
+// AIF ?filename
+AIF AknExPbar.aif ..\aif AknExPbaraif.rss \
+    c12 AknExPbarIcon.bmp AknExPbarIconMask.bmp AknExPbarSmallIcon.bmp AknExPbarSmallIconMask.bmp
+
+// End of File

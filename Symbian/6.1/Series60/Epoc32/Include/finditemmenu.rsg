@@ -1,0 +1,5 @@
+#define R_FINDITEMMENU_MENU_ITEM                  0x1e857002
+#define R_FINDITEMMENU_PHONE_ITEM                 0x1e857003
+#define R_FINDITEMMENU_URL_ITEM                   0x1e857004
+#define R_FINDITEMMENU_MAIL_ITEM                  0x1e857005
+#define R_FINDITEMMENU_MENU                       0x1e857006

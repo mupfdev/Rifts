@@ -1,0 +1,16 @@
+#define R_EIK_BAFL_ERROR_OFFSET                   0xf3b045
+#define R_EIK_CONE_ERROR_OFFSET                   0xf3b054
+#define R_EIK_KEYPRESS_LABELS                     0xf3b063
+#define R_EIK_TBUF_ERROR_WHILE_REDRAWING          0xf3b064
+#define R_EIK_TBUF_NUDGE_CHARS                    0xf3b065
+#define R_EIK_TBUF_CONFIRM_ALL_LOST               0xf3b066
+#define R_EIK_TBUF_Y_DISCARDS                     0xf3b067
+#define R_EIK_TBUF_NOT_AVAILABLE                  0xf3b068
+#define R_EIK_TBUF_DISK_NOT_PRESENT               0xf3b069
+#define R_EIK_TBUF_CANNOT_BE_READ                 0xf3b06a
+#define R_EIK_TBUF_NO_FOLDERNAME_SPECIFIED        0xf3b06b
+#define R_EIK_TBUF_INVALID_FOLDER_NAME            0xf3b06c
+#define R_EIK_TBUF_FOLDERNAME_TOO_LONG            0xf3b06d
+#define R_EIK_TBUF_NUM                            0xf3b06e
+#define R_EIK_ARRAY_FILE_SORT_TABLE               0xf3b06f
+#define R_EIK_TBUF_NOT_ENOUGH_MEMORY              0xf3b070

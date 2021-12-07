@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : AknExForm_caption.rss
+*  Part of  : AknExForm
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include "AknExForm.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = qtn_apps_tafm_list;
+    shortcaption = qtn_apps_tafm_grid;
+    }
+
+// End of File

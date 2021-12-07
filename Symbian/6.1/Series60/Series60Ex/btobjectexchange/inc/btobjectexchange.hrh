@@ -1,0 +1,18 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __BTOBJECTEXCHANGE_HRH__
+#define __BTOBJECTEXCHANGE_HRH__
+
+/** BTObjectExchange enumerate command codes */
+enum TBTObjectExchangeIds
+    {
+    EBTObjectExchangeStartServer = 1,  // start value must not be 0
+    EBTObjectExchangeStopServer,
+    EBTObjectExchangeConnect,
+    EBTObjectExchangeSendMessage,
+    EBTObjectExchangeDisconnect,
+    EBTObjectExchangeClearList
+    };
+
+
+#endif // __BTOBJECTEXCHANGE_HRH__

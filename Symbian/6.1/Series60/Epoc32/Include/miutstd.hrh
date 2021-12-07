@@ -1,0 +1,14 @@
+//	MIUTSTD.HRH
+//
+// Copyright (c) 1998 Symbian Ltd.  All rights reserved.
+//
+
+#if !defined(__MIUTSTD_HRH__)
+#define __MIUTSTD_HRH__
+
+//Email-specific TMsvEntry type associated with an entry which contains a CRichText store
+#define KUidMsvEmailTextEntryValue		0x100038F1
+#define KUidMsvEmailHtmlEntryValue		0x100057C0 // 268457920
+#define KUidMsvEmailExternalBodyEntryValue	0x100057C1 // 268457921
+
+#endif

@@ -1,0 +1,17 @@
+#define R_MENUFRM_HOTKEYS                         0x3f753004
+#define R_MENUFRM_MENU                            0x3f753005
+#define R_SYSTEM_MENU                             0x3f753006
+#define R_FUNCTION_MENU                           0x3f753007
+#define R_SETTINGS_MENU                           0x3f753008
+#define R_CLIENT_MTM_MENU                         0x3f753009
+#define R_SERVER_MTM_MENU                         0x3f75300a
+#define R_LOG_MENU                                0x3f75300b
+#define R_CONNECTION_MENU                         0x3f75300c
+#define R_SELECTION_LIST_CBA                      0x3f75300d
+#define R_TDLG_CBA_VIEW1                          0x3f75300e
+#define R_TEST_EDIT_DIALOG                        0x3f75300f
+#define R_DEFAULT_SERVICE_DIALOG                  0x3f753010
+#define R_SET_DEFAULT_SERVICE_DIALOG              0x3f753011
+#define R_LIST_MESSAGES_DIALOG                    0x3f753012
+#define R_LIST_FILES_DIALOG                       0x3f753013
+#define R_DIALOG_SERVICE_SETTINGS                 0x3f753014

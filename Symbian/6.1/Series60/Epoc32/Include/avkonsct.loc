@@ -1,0 +1,152 @@
+/*
+ * ============================================================================
+ *  Name     : avkon.loc
+ *  Part of  : AVKON
+ *  Description:
+ *     This is a localisation file for AVKON special character tables
+ *     A .loc file is the one and only place where the logical strings
+ *     to be localised are defined. 
+ * >>>
+ * The text between >>> and <<< is just to document the syntax and
+ * you can remove it if you like.
+ *
+ * Syntax of a logical name entry in this file is the following:
+ *
+ * // d:context description (line 1)
+ * // d:context description (line N)
+ * // l:P_No
+ * //
+ * #define qtn_?feature/?module_name_?freetext "?text"
+ * #define text_?feature/?module_name_?freetext "?text"
+ *
+ *   where
+ *         "qtn_" or "text_" starts a logical name, which does not
+ *          not contain dots.
+ *         "d:" starts description line(s), which
+ *              clarify entry's context with information like:
+ *              1. Is a word a verb in imperative or is it a noun ?
+ *                   - what does text "Set" mean ?
+ *              2. What will replace %U (unicode text parameter) or
+ *                 %N (number parameter) included in texts ?
+ *                   - is it phone number or email address ?
+ *         "l:" starts a layout information (one line).
+ *              "P" and "No" are symbols in LAF's information table
+ *                 - "P" is parent pane or current pane
+ *                 - "No" is reference number in table
+ *  <<<
+ *  -------------------------------------------------------------------
+ *  Version  :
+ *   
+*  Copyright © 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+ * ============================================================================
+ */
+
+
+// LOCALISATION STRINGS
+
+
+// Special character table
+
+//d: Special character table character set. Maximum 255 characters.
+//d: Lower case characters.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_special_characters_lower ".,'?!\"-()"<0x0040>"/:_;+&%*=<>"<0x00A3><0x20AC>"$"<0x00A5><0x00A4>"[]{}\\~^"<0x00A1><0x00BF><0x00A7>"#|"<0x0020><0x2029>
+
+//d: Special character table character set. Maximum 255 characters.
+//d: Upper case characters.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_special_characters_upper ".,'?!\"-()"<0x0040>"/:_;+&%*=<>"<0x00A3><0x20AC>"$"<0x00A5><0x00A4>"[]{}\\~^"<0x00A1><0x00BF><0x00A7>"#|"<0x0020><0x2029>
+
+//d: Special character table character set to url address editor.
+//d: Maximum 255 characters. Lower case characters.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_url_special_characters_lower "/.:"<0x0040>",'?!\"-()_;+&%*=<>"<0x00A3><0x20AC>"$"<0x00A5><0x00A4>"[]{}\\~^"<0x00A1><0x00BF><0x00A7>"#|"<0x2029>
+
+//d: Special character table character set to url address editor.
+//d: Maximum 255 characters. Upper case characters.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_url_special_characters_upper "/.:"<0x0040>",'?!\"-()_;+&%*=<>"<0x00A3><0x20AC>"$"<0x00A5><0x00A4>"[]{}\\~^"<0x00A1><0x00BF><0x00A7>"#|"<0x2029>
+
+//d: Special character table character set to email address editor.
+//d: Maximum 255 characters. Lower case characters.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_email_speci_chars_lower ".@;?'-_&/~*+="
+
+//d: Special character table character set to email address editor.
+//d: Maximum 255 characters. Upper case characters.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_email_speci_chars_upper ".@;?'-_&/~*+="
+
+//d: Special character table character set to currency name editor in logs.
+//d: Maximum 255 characters. Lower case characters.
+//d: Must contain ONLY characters that fit in 7-bit ascii!
+//d: ie. ascii code is 0x00...0x7f.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_currency_name_speci_chars_lower ".,'?!\"-()"<0x0040>"/:_;+&%*=<>$[]{}\\~^#|"<0x0020><0x2029>
+
+//d: Special character table character set to currency name editor in logs.
+//d: Maximum 255 characters. Upper case characters.
+//d: Must contain ONLY characters that fit in 7-bit ascii!
+//d: ie. ascii code is 0x00...0x7f.
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//l:(none)
+//
+#define qtn_sct_currency_name_speci_chars_upper ".,'?!\"-()"<0x0040>"/:_;+&%*=<>$[]{}\\~^#|"<0x0020><0x2029>
+
+
+
+//d: Special character table character set for APAC build.
+//d: Special characters for pinyin, zhuyin and stroke input methods.
+//d: Maximum 255 characters. 
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//d: Only Chinese.
+//l:(none)
+//
+#define text_chi_input_star_key <0x0020><0x2029>
+
+//d: Special character table character set for APAC build.
+//d: Special characters for latin input methods.
+//d: Maximum 255 characters. 
+//d: Unicode format: <0x0041><0x0042><0x0043> etc.
+//d: <0x2029> = line feed. <0x0020> = space
+//d: Only Chinese.
+//l:(none)
+//
+#define text_chi_input_star_key2 <0x0020><0x2029>
+
+
+// End of File
+
+
+

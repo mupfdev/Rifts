@@ -1,0 +1,62 @@
+// ReadArray.rss
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+#include "ReadArray.rh"
+	
+RESOURCE DATA first
+	{
+	wrd=0;
+	flags=EFlagItem1+EFlagItem2;
+	lng=2; 
+	txt="This is TEXT type (NULL terminated)";
+	ltxt="This is LTEXT type (leading byte count)";
+	byt=255;
+	dbl=99.9;
+	}
+
+RESOURCE DATAARRAY second
+	{
+	dataments=
+		{
+		DATA
+			{
+			//  wrd and dbl allowed to default
+			flags=EFlagItem1;
+			lng=654;
+			txt="First element";
+			ltxt="This text has a leading byte count";
+			byt=-1;
+			},
+		DATA
+			{
+			wrd=999;
+			flags=EFlagItem1+EFlagItem2;
+			lng=3;
+			txt="Second element";
+			ltxt="Extremely large text indeed abcd efghijklm";
+			byt=255;
+			dbl=1.0;
+			},
+		DATA
+			{
+			wrd=0;
+			flags=EFlagItem16;
+			lng=-1;
+			txt="Third element";
+			ltxt="";
+			byt=127;
+			dbl=12.34;
+		        },
+		DATA
+			{
+			wrd=-1;
+			flags=EFlagItem1+EFlagItem8+EFlagItem16;
+			lng=2147483647;
+			txt="Fourth element";
+			ltxt="{[@@@@@@@@@@@@@@]}";
+			byt=128;
+			dbl=-3400;
+  		        }
+		};
+	}

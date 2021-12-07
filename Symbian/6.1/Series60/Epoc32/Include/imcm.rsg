@@ -1,0 +1,15 @@
+#define FORWARD_FORMATTING_STRING                 1
+#define REPLY_FORMATTING_STRING                   2
+#define RECEIPT_FORMATTING_STRING                 3
+#define EMAIL_ADDRESS_FORMATTING_STRING           4
+#define FORWARD_BODY_HEADER                       5
+#define REPLY_BODY_HEADER                         6
+#define BODY_HEADER                               7
+#define REMOVED_ATTACHMENT_TAG                    8
+#define RETAINED_ATTACHMENT_TAG                   9
+#define DEFAULT_ATTACHMENT_NAME                   10
+#define PRODUCT_NAME                              11
+#define TIMEOUT_DIALOG_TITLE                      12
+#define TIMEOUT_DIALOG_TEXT                       13
+#define DEFAULT_VCARD_NAME                        14
+#define DEFAULT_SYSTEM_CHARSET                    15

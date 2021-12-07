@@ -1,0 +1,46 @@
+/*
+* ============================================================================
+*  Name     : AknExPbar.hrh resource header file
+*  Part of  : AknExPbar
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXPBAR_HRH
+#define AKNEXPBAR_HRH
+
+//  CONSTANTS  
+#define KNumberOfBars 4
+
+//  Enumeration
+enum TProgMenuCommand   // Command List in Options pane
+    {
+    EProgCmdStepBackwards = 1, // Step Back
+    EProgCmdReset,              // Reset
+    EProgCmdChangeSetFinalValue1,
+    EProgCmdChangeSetFinalValue2,
+    EProgCmdChangeShowInfo1,
+    EProgCmdChangeShowInfo2,
+    EProgCmdChangeShowInfo3,
+    EProgCmdChangeShowInfo4
+    };
+
+enum TAknExPbarTabViewId
+    {
+    EAknExpbarView1Tab = 1
+    };
+
+enum TAknExPbarPbarNo
+    {
+    EAknExpBarBar1=0,
+    EAknExpBarBar2,
+    EAknExpBarBar3,
+    EAknExpBarBar4
+    };
+
+enum TProgSoftkeyCommand
+    {
+    EProgSoftkeyNext=100
+    };
+
+#endif      //  AKNEXPBAR_HRH

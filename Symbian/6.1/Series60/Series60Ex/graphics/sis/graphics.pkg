@@ -1,0 +1,16 @@
+; Graphics.pkg
+;
+
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"Graphics"},(0x10005B81),1,0,0
+
+;Supports Series 60 v 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+;
+"..\..\..\epoc32\release\thumb\urel\Graphics.APP"-"C:\system\apps\Graphics\Graphics.app"
+"..\..\..\epoc32\release\thumb\urel\Graphics.rsc"-"C:\system\apps\Graphics\Graphics.rsc"
+"..\..\..\epoc32\release\thumb\urel\images.mbm"-"C:\system\apps\Graphics\images.mbm"

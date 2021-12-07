@@ -1,0 +1,15 @@
+; AknExEditor.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExEditor"},(0x10005C34),1,04,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExEditor.app"-"!:\system\apps\AknExEditor\AknExEditor.app"
+"..\..\..\epoc32\release\thumb\urel\AknExEditor.rsc"-"!:\system\apps\AknExEditor\AknExEditor.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExEditor.aif"-"!:\system\apps\AknExEditor\AknExEditor.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExEditor_caption.rsc"-"!:\system\apps\AknExEditor\AknExEditor_caption.rsc"

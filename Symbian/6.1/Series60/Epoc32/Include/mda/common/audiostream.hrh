@@ -1,0 +1,17 @@
+// AudioStream.hrh
+//
+// Copyright (c) 2001 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __AUDIOSTREAM_HRH__
+#define __AUDIOSTREAM_HRH__
+
+//*******************************************************************
+//* INCLUDE FILES:
+//*******************************************************************
+
+#define KUidMdaAudioOutputStreamDeviceDefine	268457516
+#define KUidMdaAudioStreamLibraryDefine			268457519
+
+
+#endif

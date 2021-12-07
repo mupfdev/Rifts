@@ -1,0 +1,27 @@
+/*
+* ============================================================================
+*  Name     : AknExGridAif.rss
+*  Part of  : AknExGrid
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include <aiftool.rh>
+
+RESOURCE AIF_DATA
+    {
+    app_uid=0x10005C32;
+    caption_list=
+        {
+        CAPTION
+            {
+            code = ELangEnglish;
+            caption = "AKNEXGRID";
+            }
+        };
+    num_icons=2;
+    embeddability=KAppNotEmbeddable;
+    newfile=KAppDoesNotSupportNewFile;
+    }
+
+// End of File

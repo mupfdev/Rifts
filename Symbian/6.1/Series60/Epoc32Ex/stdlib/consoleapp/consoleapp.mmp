@@ -1,0 +1,13 @@
+// ConsoleApp.MMP
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+TARGET		ConsoleApp.exe
+TARGETTYPE	exe 
+UID             0
+SOURCEPATH	.
+SOURCE		units.c getopt.c
+SYSTEMINCLUDE	\epoc32\include \epoc32\include\libc
+LIBRARY		estlib.lib euser.lib
+STATICLIBRARY	ecrt0.lib

@@ -1,0 +1,12 @@
+// TSY.RH
+//
+// Copyright (c) 1998 Symbian Ltd.  All rights reserved.
+//
+
+
+STRUCT TSY_INFORMATION
+	{
+	BYTE flags=0;	
+	LTEXT humanreadablename;
+	}
+

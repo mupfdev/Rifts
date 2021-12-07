@@ -1,0 +1,1657 @@
+/*
+* ============================================================================
+*  Name     : AknExGrid.rss
+*  Part of  : AknExGrid
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    EXGR
+
+//  INCLUDES
+#include <eikon.rh>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <avkon.rsg>
+#include <eikon.rsg>
+#include <aknexgrid.mbg>
+
+#include "aknexgrid.hrh"
+#include "aknexgrid.loc"
+
+//  CONSTANTS  
+
+
+//  MACROS  
+
+
+//  RESOURCE DEFINITIONS 
+
+RESOURCE RSS_SIGNATURE
+    { 
+    }
+
+RESOURCE TBUF 
+    {
+    buf = r_aknexgrid_test_for_aknexgrid; 
+    }
+
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = r_aknexgrid_status_pane;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_hotkeys
+//    Hotkeys
+//
+//----------------------------------------------------
+//
+RESOURCE HOTKEYS r_aknexgrid_hotkeys
+    {
+    control=
+        {
+        HOTKEY 
+            { 
+            command = EAknCmdExit;
+            key = 'e';
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_view_main
+//    Main View
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexgrid_view_main
+    {
+    hotkeys = r_aknexgrid_hotkeys;
+    menubar = r_aknexgrid_menubar_main;  
+    cba = r_aknexgrid_softkeys_options_next;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menubar_main
+//    Menu bar for Main View
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexgrid_menubar_main
+    {
+    titles=
+        {
+        MENU_TITLE 
+            { 
+            menu_pane = r_aknexgrid_menupane_main; 
+            txt = qtn_aknexgrid_menupane_main; 
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_main
+//    Menu pane for Main View
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_main
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdSelection; 
+            txt = qtn_aknexgrid_menuitem_main_title1; 
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdMenu;
+            txt = qtn_aknexgrid_menuitem_main_title8; 
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdMarkableSelection;
+            flags = EEikMenuItemSeparatorAfter; 
+            txt = qtn_aknexgrid_menuitem_main_title9; 
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdGMSGrid;
+            flags = EEikMenuItemSeparatorAfter; 
+            txt = qtn_aknexgrid_menuitem_main_title10;
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknCmdExit; 
+            txt = qtn_aknexgrid_exit; 
+            }
+        };
+    }
+
+// CBA resource ONLY if there is special need in application
+// usually common spesification (== AVKON) defines these for you!
+//----------------------------------------------------
+//   
+//    r_tdlg_cba_view1
+//    CBA definition for View1
+//
+//----------------------------------------------------
+//
+/*
+RESOURCE CBA r_tdlg_cba_view1
+    {
+    buttons = 
+        {
+        CBA_BUTTON 
+            {
+            id = EAknExGridMainOk; 
+            txt = qtn_aknexgrid_main_ok;
+            },
+        CBA_BUTTON 
+            {
+            id = EAknExGridMainCancel; 
+            txt = qtn_aknexgrid_main_cancel;
+            }
+        };
+    }
+*/
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_status_pane
+//    Status pane definition
+//
+//----------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_aknexgrid_status_pane
+    {
+    panes=
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidNavi;
+            type = EAknCtNaviPane;
+            resource = r_aknexgrid_navi_decorator;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_navi_decorator
+//    Status pane definition of details
+//
+//----------------------------------------------------
+//
+RESOURCE NAVI_DECORATOR r_aknexgrid_navi_decorator
+    {
+    type = ENaviDecoratorControlTabGroup;
+    control = TAB_GROUP
+        {
+        tab_width = EAknTabWidthWithTwoLongTabs;  // two tabs
+        active = 0;
+        tabs = 
+            {
+            TAB
+                {
+                id = EAknExGridViewTab; // from application hrh
+                txt = qtn_aknexnotif_view_main_tab;
+                },
+            TAB
+                {
+                id = EAknExGridViewSelectionTab;
+                txt = qtn_aknexnotif_view_selection_tab;
+                },
+            TAB
+                {
+                id = EAknExGridViewMenuTab;
+                txt = qtn_aknexnotif_view_menu_tab;
+                },
+            TAB
+                {
+                id = EAknExGridViewMarkableSelectionTab;
+                txt = qtn_aknexnotif_view_markable_selection_tab;
+                },
+            TAB
+                {
+                id = EAknExGridViewGMSTab;
+                txt = qtn_aknexnotif_view_gms_tab;
+                }
+            };
+        };
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_view_selection
+//    Selection View definition for total
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexgrid_view_selection
+    {
+    hotkeys = r_aknexgrid_hotkeys;
+    menubar = r_aknexgrid_menubar_selection;  
+    cba = r_aknexgrid_softkeys_options_next;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menubar_selection
+//    Menu bar for Selection View 
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexgrid_menubar_selection
+    {
+    titles=
+        {
+        MENU_TITLE 
+            { 
+            menu_pane = r_aknexgrid_menupane_selection; 
+            txt = qtn_aknexgrid_menupane_selection; 
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_selection
+//    Menu pain for Selection View
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_selection
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            txt = qtn_aknexgrid_menuitem_selection_title1;
+            cascade = r_aknexgrid_menupane_adddata;
+            },
+        MENU_ITEM 
+            { 
+            txt = qtn_aknexgrid_menuitem_selection_title2; 
+            cascade = r_aknexgrid_menupane_removedata;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExGridCmdFillingOrder;
+            txt = qtn_aknexgrid_menuitem_selection_title3; 
+            },
+        MENU_ITEM 
+            { 
+            txt = qtn_aknexgrid_menuitem_selection_title4; 
+            cascade = r_aknexgrid_menupane_loopingvert;
+            },
+        MENU_ITEM 
+            { 
+            txt = qtn_aknexgrid_menuitem_selection_title5; 
+            cascade = r_aknexgrid_menupane_loopinghoriz;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExGridCmdChangeSize;
+            txt = qtn_aknexgrid_menuitem_selection_title6; 
+            },
+        MENU_ITEM 
+            { 
+            flags = EEikMenuItemSeparatorAfter; 
+            txt = qtn_aknexgrid_menuitem_selection_title7; 
+            cascade = r_aknexgrid_menupane_contain;
+            },
+
+        // For markable-grid. To use following 3 menues,
+        // Use SetItemDimmed() in DynInitMenuPaneL()
+        MENU_ITEM 
+            { 
+            flags = EEikMenuItemDimmed;
+            command = EAknExGridCmdSelectAll;
+            txt = qtn_aknexgrid_menuitem_selectall;
+            },
+        MENU_ITEM 
+            { 
+            flags = EEikMenuItemDimmed;
+            command = EAknExGridCmdDeselectAll;
+            txt = qtn_aknexgrid_menuitem_deselectall;
+            },
+        MENU_ITEM 
+            { 
+            flags = EEikMenuItemSeparatorAfter | EEikMenuItemDimmed;
+            command = EAknExGridCmdToggle;
+            txt = qtn_aknexgrid_menuitem_toggleall;
+            },
+
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAbout;
+            flags = EEikMenuItemSeparatorAfter; 
+            txt = qtn_aknexgrid_about; 
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdClose; 
+            txt = qtn_aknexgrid_close; 
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_adddata
+//    addData form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_adddata
+    {
+    items=
+        {
+//        MENU_ITEM 
+//            {
+//            txt = qtn_aknexgrid_menuitem_title11;
+//            cascade = r_aknexgrid_menupane_adddata_insert;
+//            },
+//        MENU_ITEM 
+//            {
+//            txt = qtn_aknexgrid_menuitem_title12;
+//            cascade = r_aknexgrid_menupane_adddata_to_the_last;
+//            }
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddOneItemInsert;
+            txt = qtn_aknexgrid_menuitem_title11;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddFiveItemsInsert;
+            txt = qtn_aknexgrid_menuitem_title12;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddOneItemToTheLast;
+            txt = qtn_aknexgrid_menuitem_title13;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddFiveItemsToTheLast;
+            txt = qtn_aknexgrid_menuitem_title14;
+            }
+        };
+    }
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_adddata_insert
+//    Insert data form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_adddata_insert
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddOneItemInsert;
+            txt = qtn_aknexgrid_menuitem_title111;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddFiveItemsInsert;
+            txt = qtn_aknexgrid_menuitem_title112;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_adddata_to_the_last
+//    addData form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_adddata_to_the_last
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddOneItemToTheLast;
+            txt = qtn_aknexgrid_menuitem_title121;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAddFiveItemsToTheLast;
+            txt = qtn_aknexgrid_menuitem_title122;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_removedata
+//   removeData form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_removedata
+    {
+    items=
+        {
+//        MENU_ITEM 
+//            { 
+//            txt = qtn_aknexgrid_menuitem_title21;
+//            cascade = r_aknexgrid_menupane_removedata_from_current;
+//            },
+//        MENU_ITEM 
+//            {
+//            txt = qtn_aknexgrid_menuitem_title22;
+//            cascade = r_aknexgrid_menupane_removedata_from_last;
+//            },
+//        MENU_ITEM 
+//            { 
+//            command = EAknExGridCmdRemoveAllItems;
+//            txt = qtn_aknexgrid_menuitem_title23;
+//            }
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveOneItemFromCurrent;
+            txt = qtn_aknexgrid_menuitem_title21;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveFiveItemsFromCurrent;
+            txt = qtn_aknexgrid_menuitem_title22;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveOneItemFromLast;
+            txt = qtn_aknexgrid_menuitem_title23;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveFiveItemsFromLast;
+            txt = qtn_aknexgrid_menuitem_title24;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveAllItems;
+            txt = qtn_aknexgrid_menuitem_title25;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_removedata_from_current
+//   removeData form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_removedata_from_current
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveOneItemFromCurrent;
+            txt = qtn_aknexgrid_menuitem_title211;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveFiveItemsFromCurrent;
+            txt = qtn_aknexgrid_menuitem_title212;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_removedata_from_last
+//   removeData form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_removedata_from_last
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveOneItemFromLast;
+            txt = qtn_aknexgrid_menuitem_title221;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdRemoveFiveItemsFromLast;
+            txt = qtn_aknexgrid_menuitem_title222;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_loopingvert
+//    loopingvert form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_loopingvert
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingVertFollowLoop;
+            txt = qtn_aknexgrid_menuitem_selection_title41;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingVertFollowStop;
+            txt = qtn_aknexgrid_menuitem_selection_title42;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingVertFollowGrid;
+            txt = qtn_aknexgrid_menuitem_selection_title43;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingVertStopEnd;
+            txt = qtn_aknexgrid_menuitem_selection_title44;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_loopinghoriz
+//    loopinghoriz form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_loopinghoriz
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingHorizFollowLoop;
+            txt = qtn_aknexgrid_menuitem_selection_title51;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingHorizFollowStop;
+            txt = qtn_aknexgrid_menuitem_selection_title52;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingHorizFollowGrid;
+            txt = qtn_aknexgrid_menuitem_selection_title53;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdLoopingHorizStopEnd;
+            txt = qtn_aknexgrid_menuitem_selection_title54;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupane_contain
+//    contain form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupane_contain
+    {
+    items=
+        {
+//        MENU_ITEM
+//            { 
+//            command = EAknExGridCmdContainNothing;
+//            txt = qtn_aknexgrid_menuitem_selection_title71;
+//            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdContaionText;
+            txt = qtn_aknexgrid_menuitem_selection_title72;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdContainGraphic;
+            txt = qtn_aknexgrid_menuitem_selection_title73;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdContainBoth;
+            txt = qtn_aknexgrid_menuitem_selection_title74;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_view_application
+//    Application View definition for total
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexgrid_view_application
+    {
+    hotkeys = r_aknexgrid_hotkeys;
+    menubar = r_aknexgrid_menubar_application;  
+    cba = r_aknexgrid_softkeys_options_next;
+    }
+    
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menubar_application
+//    Menu bar for Application View
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexgrid_menubar_application
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexgrid_menupain_application;
+            txt = qtn_aknexgrid_menupain_application;
+            }
+        };
+    }
+    
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupain_application
+//    Menu pain for Application View 
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupain_application
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            txt = qtn_aknexgrid_menuitem_application_title1;
+            cascade = r_aknexgrid_menupane_adddata;
+            },
+        MENU_ITEM
+            {
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexgrid_menuitem_application_title2;
+            cascade = r_aknexgrid_menupane_removedata;
+            },
+        MENU_ITEM
+            {
+            command = EAknExGridCmdAbout;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexgrid_about;
+            },
+        MENU_ITEM
+            {
+            command = EAknExGridCmdClose;
+            txt = qtn_aknexgrid_close;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_view_menu
+//    Menu Grid View definition for total
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexgrid_view_menu
+    {
+    hotkeys = r_aknexgrid_hotkeys;
+    menubar = r_aknexgrid_menubar_menu;  
+    cba = r_aknexgrid_softkeys_options_next;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menubar_menu
+//    Menu bar for Menu Grid View 
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexgrid_menubar_menu
+    {
+    titles=
+        {
+        MENU_TITLE 
+            { 
+            menu_pane = r_aknexgrid_menupain_menu; 
+            txt = qtn_aknexgrid_menupain_menu; 
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupain_menu
+//    Menu pain for Menu Grid View
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupain_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdShowMenu;
+            txt = qtn_aknexgrid_menuitem_menu_title1;
+            flags = EEikMenuItemSeparatorAfter; 
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdNumOfItems;
+            txt = qtn_aknexgrid_menuitem_menu_title2; 
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdChangeSize;
+            txt = qtn_aknexgrid_menuitem_selection_title6; 
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdFillingOrder;
+            txt = qtn_aknexgrid_menuitem_selection_title3; 
+            },                    
+        MENU_ITEM 
+            { 
+            txt = qtn_aknexgrid_menuitem_selection_title4; 
+            cascade = r_aknexgrid_menupane_loopingvert;
+            },                    
+        MENU_ITEM 
+            { 
+            txt = qtn_aknexgrid_menuitem_selection_title5; 
+            cascade = r_aknexgrid_menupane_loopinghoriz;
+            flags = EEikMenuItemSeparatorAfter; 
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdAbout;
+            flags = EEikMenuItemSeparatorAfter; 
+            txt = qtn_aknexgrid_about; 
+            },                    
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdClose; 
+            txt = qtn_aknexgrid_close; 
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_view_gms
+//    GMS Grid View definition for total
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexgrid_view_gms
+    {
+    hotkeys = r_aknexgrid_hotkeys;
+    menubar = r_aknexgrid_menubar_gms;  
+    cba = R_AVKON_SOFTKEYS_SELECTION_LIST;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menubar_gms
+//    Menu bar for GMS Grid View 
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexgrid_menubar_gms
+    {
+    titles=
+        {
+        MENU_TITLE 
+            { 
+            menu_pane = r_aknexgrid_menupain_gms; 
+            txt = qtn_aknexgrid_menupain_gms; 
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_menupain_gms
+//    Menu pain for GMS Grid View
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexgrid_menupain_gms
+    {
+    items=
+        {
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdShowPopupGMS;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexgrid_menuitem_gms_title1;
+            },
+        MENU_ITEM 
+            { 
+            command = EAknExGridCmdClose; 
+            txt = qtn_aknexgrid_close; 
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_label_view_as_main
+//    ViewAsApplication Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_label_view_as_main
+    {
+    buf = qtn_aknexgrid_label_view_as_main;
+    }
+    
+//----------------------------------------------------
+//   
+//    r_aknexgrid_todolabel_view_as_main
+//    ViewAsApplication Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_todolabel_view_as_main
+    {
+    buf = qtn_aknexgrid_todolabel_view_as_main;
+    }
+       
+//----------------------------------------------------
+//   
+//    r_aknexgrid_label_view_as_application
+//    ViewAsApplication Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_label_view_as_application
+    {
+    buf = qtn_aknexgrid_label_view_as_application;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_todolabel_view_as_application
+//    ViewAsApplication Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_todolabel_view_as_application
+    {
+    buf = qtn_aknexgrid_todolabel_view_as_application;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_label_view_as_selection
+//    ViewAsSelection Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexgrid_label_view_as_selection
+    {
+    buf = qtn_aknexgrid_label_view_as_selection;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_dolabel_view_as_selection
+//    ViewAsSelection Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexgrid_dolabel_view_as_selection
+    {
+    buf = qtn_aknexgrid_dolabel_view_as_selection;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_label_view_as_menu
+//    ViewAsSelection Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexgrid_label_view_as_menu
+    {
+    buf = qtn_aknexgrid_label_view_as_menu;
+    }
+
+//----------------------------------------------------
+//   
+//    qtn_aknexgrid_label_view_as_menu
+//    ViewAsSelection Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexgrid_dolabel_view_as_menu
+    {
+    buf = qtn_aknexgrid_dolabel_view_as_menu;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_formatstring_selectionitem
+//    formatted string for selection item
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_formatstring_selectionitem
+    {
+    buf = qtn_aknexgrid_formatstring_selectionitem;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_formatstring_markableitem
+//    formatted string for selection item
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_formatstring_markableitem
+    {
+    buf = qtn_aknexgrid_formatstring_markableitem;
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_formatstring_currentindex
+//    formatted string to show current index
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_formatstring_currentindex
+    {
+    buf = qtn_aknexgrid_formatstring_currentindex;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_about_selection
+//    string to show about selection grid
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_about_selection
+    {
+    buf = qtn_aknexgrid_text_about_selection;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_about_application
+//    string to show about application grid
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_about_application
+    {
+    buf = qtn_aknexgrid_text_about_application;
+    }
+    
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_about_menu
+//    string to show about menu grid
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_about_menu
+    {
+    buf = qtn_aknexgrid_text_about_menu;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_about_markable
+//    string to show about markable grid
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_about_markable
+    {
+    buf = qtn_aknexgrid_text_about_markable;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_empty_selection_grid
+//    string to show when the grid is empty
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_empty_selection_grid
+    {
+    buf = qtn_aknexgrid_text_empty_selection_grid;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_empty_selection_grid
+//    string to show when the grid is empty
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_no_item
+    {
+    buf = qtn_aknexgrid_text_no_item;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_menugrid_title
+//    popuplist title
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_menugrid_title
+    {
+    buf = qtn_aknexgrid_text_menugrid_title;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_formatstring_gmsgrid
+//    formatted string for gms grid
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_formatstring_gmsgrid
+    {
+    buf = qtn_aknexgrid_formatstring_gmsgrid;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_popupgms_title
+//    popuplist title
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_popupgms_title
+    {
+    buf = qtn_aknexgrid_text_popupgms_title;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_popupgms_cancel
+//    popuplist cancel message
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_popupgms_cancel
+    {
+    buf = qtn_aknexgrid_text_popupgms_cancel;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_path_aknexgrid_mbm
+//    path to mbm file
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexgrid_path_aknexgrid_mbm
+    {
+    buf = qtn_aknexgrid_path_aknexgrid_mbm;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_path_aknexgrid_mbm_z_drive
+//    path to mbm file
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexgrid_path_aknexgrid_mbm_z_drive
+    {
+    buf = qtn_aknexgrid_path_aknexgrid_mbm_z_drive;
+    }
+
+//----------------------------------------------------
+//   
+//    r_grid_resource_app
+//    Markable Grid
+//
+//----------------------------------------------------
+//
+RESOURCE GRID r_grid_resource_app
+    {
+    flags = EAknListBoxSelectionListWithShortcuts;
+    array_id = r_tgrd_app; 
+    flags = EAknListBoxMarkableGridWithShortcuts;
+    emptytext = qtn_aknexgrid_text_empty_application_grid;
+    }
+
+//----------------------------------------------------
+//
+//    r_tgrd_app
+//    Array for Markable Grid
+//
+//----------------------------------------------------
+//
+RESOURCE ARRAY r_tgrd_app
+    {
+    items =
+        {
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array1; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array2; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array3; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array4; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array5; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array6; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array7; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array8; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array9; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array10; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array11; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array12; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array13; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array14; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array15; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array16; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array17; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array18; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array19; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array20; },
+        LBUF { txt = qtn_aknexgrid_text_application_grid_array21; }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_aknexgrid_dialog_fillingorder
+//    Filling order dialog text
+//
+//----------------------------------------------------
+// 
+//RESOURCE DIALOG r_aknexgrid_dialog_fillingorder
+//    {
+//    title = qtn_aknexgrid_title_dialog_fillingorder;
+//    buttons = R_EIK_BUTTONS_CANCEL_OK;  
+//    flags = EEikDialogFlagWait;         
+//
+//    items =
+//        {
+//        DLG_LINE
+//            {
+//            type = EEikCtLabel;
+//            id = EAknExGridDialogFillingOrderLabel1;
+//            control = LABEL
+//                {
+//                };
+//            },
+//        DLG_LINE
+//            {
+//            type = EEikCtLabel;
+//            id = EAknExGridDialogFillingOrderLabel2;
+//            control = LABEL
+//                {
+//                horiz_align = EEikLabelAlignHLeft;
+//                txt = qtn_aknexgrid_text_dialog_fillingorder1;
+//                };
+//            },
+//        DLG_LINE
+//            {
+//            type = EEikCtNumberEditor;       //EAknCtIntegerEdwin
+//            prompt = qtn_aknexgrid_text_dialog_fill_vert_horiz;
+//            id = EAknExGridDialogFillingOrderPrimaryOrientation;
+//            control = NUMBER_EDITOR    //AVKON_INTEGER_EDWIN    //NUMBER_EDITOR
+//                {
+//                min = EAknExGridDialogFillingOrderVert;
+//                max = EAknExGridDialogFillingOrderHoriz;
+//                };
+//            },
+//        DLG_LINE
+//            {
+//            type = EEikCtLabel;
+//            id = EAknExGridDialogFillingOrderLabel3;
+//            control = LABEL
+//                {
+//                horiz_align = EEikLabelAlignHLeft;
+//                txt = qtn_aknexgrid_text_dialog_fillingorder2;
+//                };
+//            },
+//        DLG_LINE
+//            {
+//            type = EEikCtNumberEditor;
+//            prompt = qtn_aknexgrid_text_dialog_fill_bottom_top;
+//            id = EAknExGridDialogFillingOrderVerticalDirection;
+//            control = NUMBER_EDITOR    //AVKON_INTEGER_EDWIN    //NUMBER_EDITOR
+//                {
+//                min = EAknExGridDialogFillingOrderToBottom;
+//                max = EAknExGridDialogFillingOrderToTop;
+//                };
+//            },
+//        DLG_LINE
+//            {
+//            type = EEikCtLabel;
+//            id = EAknExGridDialogFillingOrderLabel4;
+//            control = LABEL
+//                {
+//                horiz_align = EEikLabelAlignHLeft;
+//                txt = qtn_aknexgrid_text_dialog_fillingorder3;
+//                };
+//            },
+//        DLG_LINE
+//            {
+//            type = EEikCtNumberEditor;
+//            prompt = qtn_aknexgrid_text_dialog_fill_right_left;
+//            id = EAknExGridDialogFillingOrderHorizontalDirection;
+//            control = NUMBER_EDITOR    //AVKON_INTEGER_EDWIN    //NUMBER_EDITOR
+//                {
+//                min = EAknExGridDialogFillingOrderToRight;
+//                max = EAknExGridDialogFillingOrderToLeft;
+//                };
+//            }
+//        };
+//     }
+
+//----------------------------------------------------
+//
+//    r_aknexgrid_dialog_change_size
+//    Change Size Dialog text
+//
+//----------------------------------------------------
+//
+
+
+
+RESOURCE DIALOG r_aknexgrid_dialog_change_size
+    {
+    flags=EGeneralQueryFlags;
+    buttons=R_AVKON_SOFTKEYS_OK_CANCEL;
+    items=
+        {
+        DLG_LINE
+            {
+            type=EAknCtMultilineQuery;
+            id=EMultilineFirstLine;
+            control = AVKON_DATA_QUERY
+                { 
+                    layout = EMultiDataFirstNumEd;
+                    label = qtn_aknexgrid_title_dialog_change_size_columns;             
+                    control = AVKON_INTEGER_EDWIN
+                        { 
+                        min=qtn_aknexgrid_grid_min_width;
+                        max=qtn_aknexgrid_grid_max_width;
+                        };
+                };
+            },
+        DLG_LINE
+            {
+            type=EAknCtMultilineQuery;
+            id=EMultilineSecondLine;
+            control= AVKON_DATA_QUERY 
+                { 
+                    layout = EMultiDataSecondNumEd;
+                    label = qtn_aknexgrid_title_dialog_change_size_rows;
+                    control=AVKON_INTEGER_EDWIN
+                        { 
+                        min=qtn_aknexgrid_grid_min_hight;
+                        max=qtn_aknexgrid_grid_max_hight;
+                        };
+                };
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexgrid_text_act_one_item
+//    string to show current index when there is no marked item.
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexgrid_text_act_one_item
+    {
+    buf = qtn_aknexgrid_text_act_one_item;
+    }
+
+//----------------------------------------------------
+//
+//    r_softkeys_read_cancel
+//    CBA definition for notification.
+//
+//----------------------------------------------------
+RESOURCE CBA r_softkeys_read_exit
+    {
+    buttons =
+        {
+        CBA_BUTTON
+            {
+            id = ESoftKeyRead;
+            txt = qtn_aknexgrid_softkey_read;
+            },
+        CBA_BUTTON
+            {
+            id = ESoftKeyExit;
+            txt = qtn_aknexgrid_softkey_exit;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_aknexgrid_text_notification
+//    Dialog definition for Soft notifications (Ungrouped Text)
+//
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_aknexgrid_text_notification
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagNoTitleBar
+          | EEikDialogFlagCbaButtons;
+
+    buttons = r_softkeys_read_exit;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNotifTextNotification;
+            control = AVKON_NOTE 
+                { 
+                layout = ETextualNotificationLayout;
+                plural_label = qtn_aknexgrid_dynamic_message;
+                };
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_aknexgrid_dialog_numberofitems
+//   
+//
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_aknexgrid_dialog_numberofitems
+    {
+    title = qtn_aknexgrid_title_dialog_numberofitems;
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control= AVKON_DATA_QUERY
+                {
+                layout = ENumberLayout;
+                label = qtn_aknexgrid_title_dialog_numberofitems;
+                control = AVKON_INTEGER_EDWIN
+                    {
+                    min = qtn_aknexgrid_grid_min_item_number;
+                    max = qtn_aknexgrid_grid_max_item_number;
+                    };
+                };
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_popfield_two_VertHoriztext_array
+//   
+//
+//----------------------------------------------------
+//
+RESOURCE ARRAY r_popfield_two_VertHoriztext_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexgrid_filling_order_vert; 
+            },
+        LBUF
+            {
+            txt = qtn_aknexgrid_filling_order_horiz; 
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_popfield_two_BotToptext_array
+//   
+//
+//----------------------------------------------------
+//
+RESOURCE ARRAY r_popfield_two_BotToptext_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexgrid_filling_order_bottom; 
+            },
+        LBUF
+            {
+            txt = qtn_aknexgrid_filling_order_top; 
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_popfield_two_RightLefttext_array
+//   
+//
+//----------------------------------------------------
+//
+RESOURCE ARRAY r_popfield_two_RightLefttext_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexgrid_filling_order_right; 
+            },
+        LBUF
+            {
+            txt = qtn_aknexgrid_filling_order_left; 
+            }
+        };
+    }
+
+
+#define AKNEXPOPFIELD_TEXT_WIDTH          8
+
+//----------------------------------------------------
+//
+//    r_popfield_three_text_field_dialog
+//   
+//
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_popfield_three_text_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagCbaButtons | 
+            EEikDialogFlagNoBorder | EEikDialogFlagWait;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    form = r_popfield_three_text_field_form;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_popfield_three_text_field_form
+//   
+//
+//----------------------------------------------------
+//
+RESOURCE FORM r_popfield_three_text_field_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupFieldText;
+           prompt = qtn_aknexgrid_filling_order_primary;
+           id = EAknExGridDialogFillingOrderPrimaryOrientation;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD_TEXT
+                {
+                popupfield = POPUP_FIELD
+                    {
+                    width = AKNEXPOPFIELD_TEXT_WIDTH;
+                    };
+                textarray = r_popfield_two_VertHoriztext_array;
+                };
+           tooltip = qtn_aknexgrid_filling_order_popfield;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupFieldText;
+           prompt = qtn_aknexgrid_filling_order_vert_direction;
+           id = EAknExGridDialogFillingOrderVerticalDirection;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD_TEXT
+                {
+                popupfield = POPUP_FIELD
+                    {
+                    width = AKNEXPOPFIELD_TEXT_WIDTH;
+                    };
+                textarray = r_popfield_two_BotToptext_array;
+                };
+           tooltip = qtn_aknexgrid_filling_order_popfield;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupFieldText;
+           prompt = qtn_aknexgrid_filling_order_horiz_direction;
+           id = EAknExGridDialogFillingOrderHorizontalDirection;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD_TEXT
+                {
+                popupfield = POPUP_FIELD
+                    {
+                    width = AKNEXPOPFIELD_TEXT_WIDTH;
+                    };
+                textarray = r_popfield_two_RightLefttext_array;
+                };
+           tooltip = qtn_aknexgrid_filling_order_popfield;
+           }
+        };
+    }
+
+RESOURCE CBA r_aknexgrid_softkeys_options_next
+    {
+    buttons =
+        {
+        CBA_BUTTON {id=EAknSoftkeyOptions; txt = qtn_aknexgrid_softkey_option;},
+        CBA_BUTTON {id=ESGridSoftKeyNext; txt = qtn_aknexgrid_softkey_next; }
+        };
+    }
+
+RESOURCE ARRAY r_aknexgrid_title_selection
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexgrid_title_selection01; },
+        LBUF { txt = qtn_aknexgrid_title_selection02; },
+        LBUF { txt = qtn_aknexgrid_title_selection03; },
+        LBUF { txt = qtn_aknexgrid_title_selection04; },
+        LBUF { txt = qtn_aknexgrid_title_selection05; },
+        LBUF { txt = qtn_aknexgrid_title_selection06; },
+        LBUF { txt = qtn_aknexgrid_title_selection07; },
+        LBUF { txt = qtn_aknexgrid_title_selection08; },
+        LBUF { txt = qtn_aknexgrid_title_selection09; },
+        LBUF { txt = qtn_aknexgrid_title_selection10; },
+        LBUF { txt = qtn_aknexgrid_title_selection11; },
+        LBUF { txt = qtn_aknexgrid_title_selection12; },
+        LBUF { txt = qtn_aknexgrid_title_selection13; },
+        LBUF { txt = qtn_aknexgrid_title_selection14; },
+        LBUF { txt = qtn_aknexgrid_title_selection15; },
+        LBUF { txt = qtn_aknexgrid_title_selection16; },
+        LBUF { txt = qtn_aknexgrid_title_selection17; },
+        LBUF { txt = qtn_aknexgrid_title_selection18; }
+        };
+    }
+
+RESOURCE ARRAY r_aknexgrid_title_apprication
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexgrid_title_apprication01; },
+        LBUF { txt = qtn_aknexgrid_title_apprication02; },
+        LBUF { txt = qtn_aknexgrid_title_apprication03; },
+        LBUF { txt = qtn_aknexgrid_title_apprication04; },
+        LBUF { txt = qtn_aknexgrid_title_apprication05; },
+        LBUF { txt = qtn_aknexgrid_title_apprication06; },
+        LBUF { txt = qtn_aknexgrid_title_apprication07; }
+        };
+    }
+
+RESOURCE ARRAY r_aknexgrid_title_menu
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexgrid_title_menu01; },
+        LBUF { txt = qtn_aknexgrid_title_menu02; },
+        LBUF { txt = qtn_aknexgrid_title_menu03; },
+        LBUF { txt = qtn_aknexgrid_title_menu04; },
+        LBUF { txt = qtn_aknexgrid_title_menu05; },
+        LBUF { txt = qtn_aknexgrid_title_menu06; },
+        LBUF { txt = qtn_aknexgrid_title_menu07; },
+        LBUF { txt = qtn_aknexgrid_title_menu08; },
+        LBUF { txt = qtn_aknexgrid_title_menu09; },
+        LBUF { txt = qtn_aknexgrid_title_menu10; },
+        LBUF { txt = qtn_aknexgrid_title_menu11; },
+        LBUF { txt = qtn_aknexgrid_title_menu12; },
+        LBUF { txt = qtn_aknexgrid_title_menu13; }
+        };
+    }
+
+RESOURCE ARRAY r_aknexgrid_title_gms
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexgrid_title_gms01; },
+        LBUF { txt = qtn_aknexgrid_title_gms02; }
+        };
+    }
+
+RESOURCE ARRAY r_aknexgrid_title_markable
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexgrid_title_mark01; }
+        };
+    }
+
+// End of File

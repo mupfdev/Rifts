@@ -1,0 +1,209 @@
+/*
+* ============================================================================
+*  Name     : AknExScroller.loc
+*  Part of  : AknExScroller
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+// Caption
+#define qtn_apps_tasl_list          "AKNEXSCROLLER"
+#define qtn_apps_tasl_grid          "AKNEXSCROLLER"
+
+
+// LOCALISATION STRINGS
+
+// Menu Pane (But this is dummy text)
+#define qtn_aknexscroller_menu_pane "Pane"
+
+
+// Tab text
+#define qtn_aknexscroller_view1_tab "View1"
+#define qtn_aknexscroller_view2_tab "View2"
+#define qtn_aknexscroller_view3_tab "View3"
+#define qtn_aknexscroller_view4_tab "View4"
+
+
+// Text in menu pane
+#define qtn_aknexscroller_menu_pane_cascade "Cascaded List"
+#define qtn_aknexscroller_menu_pane_view1_00 "Exit 00"
+#define qtn_aknexscroller_menu_pane_view1_01 "Exit 01"
+#define qtn_aknexscroller_menu_pane_view1_02 "Exit 02"
+#define qtn_aknexscroller_menu_pane_view1_03 "Exit 03"
+#define qtn_aknexscroller_menu_pane_view1_04 "Exit 04"
+#define qtn_aknexscroller_menu_pane_view1_05 "Exit 05"
+#define qtn_aknexscroller_menu_pane_view1_06 "Exit 06"
+#define qtn_aknexscroller_menu_pane_view1_07 "Exit 07"
+#define qtn_aknexscroller_menu_pane_view1_08 "Exit 08"
+#define qtn_aknexscroller_menu_pane_view1_09 "Exit 09"
+#define qtn_aknexscroller_menu_pane_view1_10 "Exit 10"
+#define qtn_aknexscroller_menu_pane_view1_11 "Exit 11"
+#define qtn_aknexscroller_menu_pane_view1_12 "Exit 12"
+#define qtn_aknexscroller_menu_pane_view1_13 "Exit 13"
+#define qtn_aknexscroller_menu_pane_view1_14 "Exit 14"
+#define qtn_aknexscroller_menu_pane_view1_15 "Extra Exit"
+
+#define qtn_aknexscroller_menu_pane_view1_000 "Exit 000"
+#define qtn_aknexscroller_menu_pane_view1_001 "Exit 001"
+#define qtn_aknexscroller_menu_pane_view1_002 "Exit 002"
+#define qtn_aknexscroller_menu_pane_view1_003 "Exit 003"
+#define qtn_aknexscroller_menu_pane_view1_004 "Exit 004"
+#define qtn_aknexscroller_menu_pane_view1_005 "Exit 005"
+#define qtn_aknexscroller_menu_pane_view1_006 "Exit 006"
+#define qtn_aknexscroller_menu_pane_view1_007 "Exit 007"
+#define qtn_aknexscroller_menu_pane_view1_008 "Exit 008"
+#define qtn_aknexscroller_menu_pane_view1_009 "Exit 009"
+#define qtn_aknexscroller_menu_pane_view1_010 "Exit 010"
+#define qtn_aknexscroller_menu_pane_view1_011 "Exit 011"
+#define qtn_aknexscroller_menu_pane_view1_012 "Exit 012"
+#define qtn_aknexscroller_menu_pane_view1_013 "Exit 013"
+#define qtn_aknexscroller_menu_pane_view1_014 "Exit 014"
+
+#define qtn_aknexscroller_menu_pane_view1_0000 "Exit 0000"
+#define qtn_aknexscroller_menu_pane_view1_0001 "Exit 0001"
+#define qtn_aknexscroller_menu_pane_view1_0002 "Exit 0002"
+#define qtn_aknexscroller_menu_pane_view1_0003 "Exit 0003"
+#define qtn_aknexscroller_menu_pane_view1_0004 "Exit 0004"
+#define qtn_aknexscroller_menu_pane_view1_0005 "Exit 0005"
+#define qtn_aknexscroller_menu_pane_view1_0006 "Exit 0006"
+#define qtn_aknexscroller_menu_pane_view1_0007 "Exit 0007"
+#define qtn_aknexscroller_menu_pane_view1_0008 "Exit 0008"
+#define qtn_aknexscroller_menu_pane_view1_0009 "Exit 0009"
+#define qtn_aknexscroller_menu_pane_view1_0010 "Exit 0010"
+#define qtn_aknexscroller_menu_pane_view1_0011 "Exit 0011"
+#define qtn_aknexscroller_menu_pane_view1_0012 "Exit 0012"
+#define qtn_aknexscroller_menu_pane_view1_0013 "Exit 0013"
+#define qtn_aknexscroller_menu_pane_view1_0014 "Exit 0014"
+
+#define qtn_aknexscroller_menu_pane_view1_00000 "Exit 00000"
+#define qtn_aknexscroller_menu_pane_view1_00001 "Exit 00001"
+#define qtn_aknexscroller_menu_pane_view1_00002 "Exit 00002"
+#define qtn_aknexscroller_menu_pane_view1_00003 "Exit 00003"
+#define qtn_aknexscroller_menu_pane_view1_00004 "Exit 00004"
+#define qtn_aknexscroller_menu_pane_view1_00005 "Exit 00005"
+#define qtn_aknexscroller_menu_pane_view1_00006 "Exit 00006"
+#define qtn_aknexscroller_menu_pane_view1_00007 "Exit 00007"
+#define qtn_aknexscroller_menu_pane_view1_00008 "Exit 00008"
+#define qtn_aknexscroller_menu_pane_view1_00009 "Exit 00009"
+#define qtn_aknexscroller_menu_pane_view1_00010 "Exit 00010"
+#define qtn_aknexscroller_menu_pane_view1_00011 "Exit 00011"
+#define qtn_aknexscroller_menu_pane_view1_00012 "Exit 00012"
+#define qtn_aknexscroller_menu_pane_view1_00013 "Exit 00013"
+#define qtn_aknexscroller_menu_pane_view1_00014 "Exit 00014"
+#define qtn_aknexscroller_menu_pane_view1_00015 "Exit 00015"
+#define qtn_aknexscroller_menu_pane_view1_00016 "Exit 00016"
+
+#define qtn_aknexscroller_menu_pane_view3_0 "Form"
+#define qtn_aknexscroller_menu_pane_view3_1 "Exit"
+
+
+// CBA command text
+#define qtn_aknexscroller_cba_add "Add"
+#define qtn_aknexscroller_cba_del "Del"
+
+
+// View1 Label text
+#define qtn_aknexscroller_label_view1   "In View 1"
+#define qtn_aknexscroller_dolabel_view1 "Pop up list\nClick Options!"
+
+
+// View2 Label text
+
+
+// View3 Label text
+#define qtn_aknexscroller_label_view3   "In View 3"
+#define qtn_aknexscroller_dolabel_view3 "Form\nClick Options!"
+
+
+// Item text in list box
+#define qtn_aknexscroller_item_list_box  " \tItem No. %d\t"
+
+
+// Form's element's prompt text
+#define qtn_aknexscroller_form_0  "Cap. 1"
+#define qtn_aknexscroller_form_1  "Integer"
+#define qtn_aknexscroller_form_2  "Text"
+#define qtn_aknexscroller_form_3  "Pane"
+#define qtn_aknexscroller_form_4  "Window"
+#define qtn_aknexscroller_form_5  "Editing"
+#define qtn_aknexscroller_form_6  "Cap. 2"
+#define qtn_aknexscroller_form_7  "Cap. 3"
+#define qtn_aknexscroller_form_8  "Cap. 4"
+#define qtn_aknexscroller_form_9  "Cap. 5"
+#define qtn_aknexscroller_form_10  "Cap. 6"
+#define qtn_aknexscroller_form_11  "Cap. 7"
+#define qtn_aknexscroller_form_12  "Cap. 8"
+#define qtn_aknexscroller_form_13  "Cap. 9"
+#define qtn_aknexscroller_form_14  "Cap. 10"
+#define qtn_aknexscroller_form_15  "Cap. 11"
+#define qtn_aknexscroller_form_16  "Cap. 12"
+
+#define qtn_aknexscroller_form_tooltip_text   "Enter Text"
+#define qtn_aknexscroller_form_tooltip_number "Enter Number"
+
+// View1 Label text
+#define qtn_aknexscroller_label_view4   "In View 4"
+#define qtn_aknexscroller_dolabel_view4 "Editor with Scroller"
+// View4 menu
+#define qtn_aknexscroller_menu_pane_view4_exit "Exit"
+
+#define qnn_aknexscroller_view4_edwin_lines       3
+#define qnn_aknexscroller_view4_edwin_maxlength   200
+
+#define qtn_aknexscroller_cba_options "Options"
+#define qtn_aknexscroller_cba_next "Next"
+
+#define qtn_aknexscroller_menu_pane_view2_0 "Add"
+#define qtn_aknexscroller_menu_pane_view2_1 "Delete"
+#define qtn_aknexscroller_menu_pane_view2_2 "Exit"
+
+#define qtn_aknexscroller_view4_item00 "Cursor Position 0"
+#define qtn_aknexscroller_view4_item01 "Cursor Position 10"
+#define qtn_aknexscroller_view4_item02 "Cursor Position 20"
+#define qtn_aknexscroller_view4_item03 "Cursor Position 30"
+#define qtn_aknexscroller_view4_item04 "Cursor Position 40"
+#define qtn_aknexscroller_view4_item05 "Cursor Position 50"
+#define qtn_aknexscroller_view4_item06 "Cursor Position 60"
+#define qtn_aknexscroller_view4_item07 "Cursor Position 70"
+#define qtn_aknexscroller_view4_item08 "Cursor Position 80"
+#define qtn_aknexscroller_view4_item09 "Cursor Position 90"
+#define qtn_aknexscroller_view4_item10 "Cursor Position 100"
+#define qtn_aknexscroller_view4_item11 "Cursor Position 110"
+#define qtn_aknexscroller_view4_item12 "Cursor Position 120"
+#define qtn_aknexscroller_view4_item13 "Cursor Position 130"
+#define qtn_aknexscroller_view4_item14 "Cursor Position 140"
+#define qtn_aknexscroller_view4_item15 "Cursor Position 150"
+#define qtn_aknexscroller_view4_item16 "Cursor Position 160"
+#define qtn_aknexscroller_view4_item17 "Cursor Position 170"
+#define qtn_aknexscroller_view4_item18 "Cursor Position 180"
+#define qtn_aknexscroller_view4_item19 "Cursor Position 190"
+#define qtn_aknexscroller_view4_item20 "Cursor Position 200"
+#define qtn_aknexscroller_view4_item21 "Visibility On 1"
+#define qtn_aknexscroller_view4_item22 "Visibility On 2"
+#define qtn_aknexscroller_view4_item23 "Visibility Auto 1"
+#define qtn_aknexscroller_view4_item24 "Visibility Auto 2"
+#define qtn_aknexscroller_view4_item25 "ScrollBarExists 1"
+#define qtn_aknexscroller_view4_item26 "ScrollBarExists 2"
+#define qtn_aknexscroller_view4_item27 "Operator Test"
+#define qtn_aknexscroller_view4_item28 "ScrollbarUseful1"
+#define qtn_aknexscroller_view4_item29 "ScrollbarUseful2"
+#define qtn_aknexscroller_view4_item30 "MaxThumbPos"
+#define qtn_aknexscroller_view4_item31 "CheckBounds"
+#define qtn_aknexscroller_view4_item32 "ThumbPosition"
+#define qtn_aknexscroller_view4_item33 "IncreaseNudgeButton"
+#define qtn_aknexscroller_view4_item34 "DecreaseNudgeButton"
+#define qtn_aknexscroller_view4_item35 "Visibility Off 1"
+#define qtn_aknexscroller_view4_item36 "Visibility Off 2"
+
+#define qtn_aknexscroller_formatstring_operatortest "%d %d %d %d"
+#define qtn_aknexscroller_formatstring_scrollbaruseful "%d %d"
+#define qtn_aknexscroller_formatstring_maxthumbpos "%d %d"
+#define qtn_aknexscroller_formatstring_checkbounds "%d %d %d"
+#define qtn_aknexscroller_formatstring_thumbposition "%d"
+#define qtn_aknexscroller_formatstring_increasenudgebutton "%d %d"
+#define qtn_aknexscroller_formatstring_decreasenudgebutton "%d %d"
+
+#define qtn_aknexscroller_view4_string "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"
+
+#define qtn_aknexscroller_not_enough_string "Not enough string"
+// End of File

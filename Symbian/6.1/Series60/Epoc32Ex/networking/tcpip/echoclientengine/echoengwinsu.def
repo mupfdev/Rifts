@@ -1,0 +1,13 @@
+EXPORTS
+; NEW:
+	??0CEchoEngine@@QAE@XZ @ 1 NONAME ; public: __thiscall CEchoEngine::CEchoEngine(void)
+	?ConnectL@CEchoEngine@@QAEXABVTDesC16@@@Z @ 2 NONAME ; public: void __thiscall CEchoEngine::ConnectL(class TDesC16 const &)
+	?ConnectL@CEchoEngine@@QAEXK@Z @ 3 NONAME ; public: void __thiscall CEchoEngine::ConnectL(unsigned long)
+	?ConstructL@CEchoEngine@@QAEXPAVMUINotify@@@Z @ 4 NONAME ; public: void __thiscall CEchoEngine::ConstructL(class MUINotify *)
+	?NewL@CEchoEngine@@SAPAV1@PAVMUINotify@@@Z @ 5 NONAME ; public: static class CEchoEngine * __cdecl CEchoEngine::NewL(class MUINotify *)
+	?NewLC@CEchoEngine@@SAPAV1@PAVMUINotify@@@Z @ 6 NONAME ; public: static class CEchoEngine * __cdecl CEchoEngine::NewLC(class MUINotify *)
+	?Read@CEchoEngine@@QAEXXZ @ 7 NONAME ; public: void __thiscall CEchoEngine::Read(void)
+	?Stop@CEchoEngine@@QAEXXZ @ 8 NONAME ; public: void __thiscall CEchoEngine::Stop(void)
+	?TestGetByAddr@CEchoEngine@@QAEXK@Z @ 9 NONAME ; public: void __thiscall CEchoEngine::TestGetByAddr(unsigned long)
+	?Write@CEchoEngine@@QAEXVTChar@@@Z @ 10 NONAME ; public: void __thiscall CEchoEngine::Write(class TChar)
+

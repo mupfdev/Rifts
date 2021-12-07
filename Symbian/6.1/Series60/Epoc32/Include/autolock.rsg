@@ -1,0 +1,5 @@
+#define R_AUTOLOCK_STATUS_PANE                    0x6f6b004
+#define R_LOCKED_VIEW                             0x6f6b005
+#define R_AUTOLOCK_SOFTKEYS_UNLOCK_EMPTY          0x6f6b006
+#define R_TITLE_PANE_LOCKED                       0x6f6b007
+#define R_EMERGENCY                               0x6f6b008

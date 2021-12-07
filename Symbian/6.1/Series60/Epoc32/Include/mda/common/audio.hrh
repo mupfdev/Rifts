@@ -1,0 +1,76 @@
+// Mda\Common\Audio.hrh
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __MDA_COMMON_AUDIO_HRH__
+#define __MDA_COMMON_AUDIO_HRH__
+
+#define KUidMdaMediaTypeAudioDefine				268450136
+#define KUidMdaPrioritySettingsDefine			268457514
+
+#define KUidMdaLocalSoundDeviceDefine			268450137
+
+#define KUidMdaClipFormatWavDefine				268450138
+#define KUidMdaClipFormatEpocWveDefine			268450139
+#define KUidMdaClipFormatSiboWveDefine			268450140
+#define KUidMdaClipFormatAuDefine				268450141
+#define KUidMdaClipFormatRawAudioDefine			268450142
+
+#define KUidMdaEpocWveCodecDefine				268450143
+#define KUidMdaEpocWveAlawCodecDefine			268450144
+#define KUidMdaEpocWveAdpcmCodecDefine			268450145
+
+#define KUidMdaWveAlawCodecIdDefine				{0,0,0,0}
+#define KUidMdaWveAdpcmCodecIdDefine			{0xA1,1,0,0x10}
+
+#define KUidMdaWavCodecDefine					268450146
+#define KUidMdaWavPcmCodecDefine				268450147
+#define KUidMdaWavAlawCodecDefine				268450148
+#define KUidMdaWavMulawCodecDefine				268450149
+#define KUidMdaWavImaAdpcmCodecDefine			268450150
+
+#define KMdaWavFormatTypePcmData				{1,0} // Little endian
+#define KMdaWavFormatTypeAlawData				{6,0} // "
+#define KMdaWavFormatTypeMulawData				{7,0} // "
+#define KMdaWavFormatTypeImaAdpcmData			{17,0}// "
+#define KMdaWavFormatTypePcm					1
+#define KMdaWavFormatTypeAlaw					6
+#define KMdaWavFormatTypeMulaw					7
+#define KMdaWavFormatTypeImaAdpcm				17
+
+#define KUidMdaAuCodecDefine					268450151
+#define KUidMdaAuMulawCodecDefine				268450152
+#define KUidMdaAu8PcmCodecDefine				268450153
+#define KUidMdaAu16PcmCodecDefine				268450154
+#define KUidMdaAuAlawCodecDefine				268450155
+
+#define KMdaAuFormatTypeMulawData				{0,0,0,1} // Big endian
+#define KMdaAuFormatType8PcmData				{0,0,0,2} // "
+#define KMdaAuFormatType16PcmData				{0,0,0,3} // "
+#define KMdaAuFormatTypeAlawData				{0,0,0,27}// "
+#define KMdaAuFormatTypeMulaw					1 
+#define KMdaAuFormatType8Pcm					2
+#define KMdaAuFormatType16Pcm					3
+#define KMdaAuFormatTypeAlaw					27
+
+#define KUidMdaRawAudioCodecDefine				268450156
+#define KUidMdaRawAudioMulawCodecDefine			268450157
+#define KUidMdaRawAudioAlawCodecDefine			268450158
+#define KUidMdaRawAudioS8PcmCodecDefine			268450159
+#define KUidMdaRawAudioU8PcmCodecDefine			268450160
+#define KUidMdaRawAudioSL16PcmCodecDefine		268450161
+#define KUidMdaRawAudioSB16PcmCodecDefine		268450162
+#define KUidMdaRawAudioUL16PcmCodecDefine		268450163
+#define KUidMdaRawAudioUB16PcmCodecDefine		268450164
+
+#define KUidMdaTelephonySoundDeviceDefine		268450187
+#define KUidMdaClientPCMSoundDeviceDefine		268450188
+
+#define KUidMdaTelephonyStateQueryDefine		268450205
+
+#define KUidMdaToneGeneratorDeviceDefine		268457494
+
+#define KUidMdaAudioStreamVolumeRampDefine		268457498
+
+#endif

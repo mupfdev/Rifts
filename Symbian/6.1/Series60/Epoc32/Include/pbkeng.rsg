@@ -1,0 +1,4 @@
+#define R_PHONEBOOK_FIELD_PROPERTIES              2
+#define R_PBK_FIELD_GROUPS                        3
+#define R_QTN_PHOB_ENTRY_NAME                     4
+#define R_QTN_PHOB_UNNAMED                        5

@@ -1,0 +1,8 @@
+#define R_EIKSRV_OOM_EVENT_TOP                    0x1b886002
+#define R_EIKSRV_OOM_EVENT_BOT                    0x1b886003
+#define R_EIKSERV_NOTIFIER_DIALOG                 0x1b886004
+#define R_EIKSRV_WSERV_LOGGING_ERROR              0x1b886005
+#define R_EIKSRV_HELP_DATABASE_PATH               0x1b886006
+#define R_CONFIRM_CLOSE_APP_MESSAGE               0x1b886007
+#define R_CONFIRM_CLOSE_APP_QUERY                 0x1b886008
+#define R_PROGRAM_CLOSED                          0x1b886009

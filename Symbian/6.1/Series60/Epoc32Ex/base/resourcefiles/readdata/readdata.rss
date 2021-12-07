@@ -1,0 +1,19 @@
+// ReadData.rss
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+// changes made - Moved TEXT and LTEXT to position before byte and double
+
+#include "ReadData.rh"
+	
+RESOURCE DATA first
+	{
+	wrd=0;
+	flags=EFlagItem1+EFlagItem2;
+	lng=2; 
+	txt="This is LTEXT type (max length set)";
+	ltxt="This is LTEXT type (leading byte count)";
+	byt=255;
+	dbl=99.9;
+	}
+

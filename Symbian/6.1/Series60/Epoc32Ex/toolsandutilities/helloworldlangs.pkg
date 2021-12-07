@@ -1,0 +1,28 @@
+;
+; Install file for minimal application
+; supporting three language variants
+;
+
+; Languages - 
+&EN,FR,IT
+
+; Installation header
+; Three component names as we support English, French and Italian
+; UID is the app's UID - see HelloWorld.mmp
+#{"Minimal application", "Application minimale", "Applicazione minima"},(0x10004299),1,1,0,TYPE=SISAPP
+
+; Files to be installed
+"HelloWorld.app"-"!:\system\apps\HelloWorld\HelloWorld.app"
+
+; List of files of which only one will be installed - 
+{
+"HelloWorld.ruk"
+"HelloWorld.rfr"
+"HelloWorld.rit"
+}-"!:\system\apps\HelloWorld\HelloWorld.rsc"
+
+; Required files
+; None
+
+; Component .sis files
+; None

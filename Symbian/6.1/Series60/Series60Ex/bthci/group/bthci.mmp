@@ -1,0 +1,30 @@
+TARGET            bthci.app
+TARGETTYPE        app
+UID               0x100039ce 0x10005B97
+TARGETPATH        \system\apps\bthci
+
+SOURCEPATH        ..\src
+SOURCE            bthci.cpp
+SOURCE            bthciapplication.cpp 
+SOURCE            bthciappView.cpp
+SOURCE            bthciappUi.cpp
+SOURCE            bthcidocument.cpp 
+SOURCE            bthciutility.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          bthci.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib 
+LIBRARY           bluetooth.lib 
+LIBRARY           bafl.lib 
+LIBRARY	          eikcoctl.lib 
+LIBRARY	          eikctl.lib 
+LIBRARY	          esock.lib 

@@ -1,0 +1,69 @@
+/*
+* ============================================================================
+*  Name     : AknExPopList.mmp
+*  Part of  : AknExPopList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET  AknExPopList.app
+TARGETTYPE  app
+UID  0x100039CE 0x10005C2C 
+TARGETPATH \system\apps\AknExPopList
+
+SOURCEPATH ..\src\
+
+SOURCE  AknExPopListApp.cpp 
+SOURCE  AknExPopListAppUi.cpp
+SOURCE  AknExPopListDocument.cpp
+SOURCE  AknExPopListContainer.cpp
+SOURCE  AknExPopListView.cpp
+SOURCE  AknExPopListView2.cpp
+/*
+*/
+RESOURCE ..\group\AknExPopList.rss
+RESOURCE ..\group\AknExPopList_caption.rss
+LANG     SC
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY euser.lib
+LIBRARY apparc.lib
+LIBRARY cone.lib
+LIBRARY eikcore.lib
+LIBRARY eikcoctl.lib
+LIBRARY avkon.lib
+// LIBRARY bafl.lib
+
+START WINS      
+// ?wins_specific_information
+END
+
+START MARM
+// ?marm_specific_information
+END
+
+START BITMAP AknExPopList.mbm
+HEADER
+TARGETPATH  \system\apps\AknExPopList
+SOURCEPATH  ..\datasrc
+SOURCE      c8 Card.bmp
+SOURCE      c8 CardM.bmp
+SOURCE      c8 Tel.bmp
+SOURCE      c8 TelM.bmp
+SOURCE      c8 Mail.bmp
+SOURCE      c8 MailM.bmp
+SOURCE      c8 FinFlag.bmp
+SOURCE      c8 FinFlagM.bmp
+SOURCE      c8 JpnFlag.bmp
+SOURCE      c8 JpnFlagM.bmp
+END
+
+// DEFFILE ?filename
+// AIF ?filename
+AIF AknExPopList.aif ..\Aif AknExPopListAif.rss \
+    c12 icon44.bmp icon44m.bmp s_icon.bmp s_iconm.bmp
+
+// End of File

@@ -1,0 +1,4 @@
+#define R_PALB_LOCALIZED_DIRECTORIES              0x4d252002
+#define R_PALB_FILTERED_IMAGETYPES                0x4d252003
+#define R_QTN_FLDR_NAME_DEFAULT                   0x4d252004
+#define R_QTN_FLDR_ROOT_LEVEL                     0x4d252005

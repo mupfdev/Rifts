@@ -1,0 +1,33 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+TARGET            FocusEvent.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B6E
+TARGETPATH        \system\apps\FocusEvent
+
+SOURCEPATH        ..\src
+SOURCE            FocusEvent.cpp
+SOURCE            FocusEventApplication.cpp 
+SOURCE            FocusEventAppView.cpp
+SOURCE            FocusEventAppUi.cpp
+SOURCE            FocusEventDocument.cpp 
+
+SOURCEPATH        ..\..\helperfunctions
+SOURCE			  Logfile.cpp
+SOURCE            eikonenvironment.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          FocusEvent.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY          euser.lib
+LIBRARY          apparc.lib
+LIBRARY          cone.lib 
+LIBRARY          eikcore.lib  
+LIBRARY          avkon.lib
+LIBRARY          efsrv.lib
+LIBRARY          ws32.lib
+LIBRARY          hal.lib
+LIBRARY          charconv.lib

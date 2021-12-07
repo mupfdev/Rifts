@@ -1,0 +1,31 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+//	SCHSEND.RH
+//	Copyright © Symbian Limited 1999
+//
+/////////////////////////////////////////////////////////////////////////////
+
+#include "schsend.hrh"
+
+#if !defined(__SCHSEND_RH__)
+#define __SCHSEND_RH__
+
+STRUCT SEND_ERROR
+	{
+	LONG error;
+	}
+
+STRUCT SEND_ERROR_ACTION
+	{
+	BYTE flags;
+	WORD max_retries = 0;
+	STRUCT errors[];
+	}
+
+STRUCT SEND_ERROR_ACTIONS
+	{
+	STRUCT default;
+	STRUCT actions[];
+	}
+
+#endif

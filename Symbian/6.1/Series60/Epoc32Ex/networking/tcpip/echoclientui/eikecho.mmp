@@ -1,0 +1,22 @@
+// Eikecho.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+
+TARGET    	Eikecho.app
+TARGETTYPE	app
+UID             0x100039CE 0x10004851
+TARGETPATH      \system\apps\EchoClientUI
+
+SOURCEPATH	.
+
+SOURCE		Eikecho.cpp
+RESOURCE 	Eikecho.rss
+
+USERINCLUDE 	.
+USERINCLUDE 	..\EchoClientEngine
+SYSTEMINCLUDE	\Epoc32\include
+
+LIBRARY	euser.lib apparc.lib cone.lib WS32.lib echoeng.lib bafl.lib
+LIBRARY eikcore.lib  eikcoctl.lib 

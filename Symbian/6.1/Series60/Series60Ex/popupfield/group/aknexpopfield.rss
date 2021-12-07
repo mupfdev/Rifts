@@ -1,0 +1,2921 @@
+/*
+* =============================================================================
+*  Name     : AknExPopField.rss
+*  Part of  : AknExPopField
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+
+// RESOURCE IDENTIFIER
+NAME EXPP
+
+// INCLUDES
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rsg>
+#include <avkon.hrh>
+#include <avkon.rh>
+#include <aknexpopfield.mbg>
+#include <avkon.loc>
+#include "AknExPopField.loc"
+#include "AknExPopField.hrh"
+
+//  CONSTANTS
+#define AKNEXPOPFIELD_TEXT_WIDTH          8
+#define AKNEXPOPFIELD_MBM_FILENAME "\\system\\apps\\aknexpopfield\\aknexpopfield.mbm"
+
+//  MACROS
+
+//  RESOURCE DEFINITIONS
+//-----------------------------------------------------------------------------
+//
+//    RSS_SIGNATURE
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    TBUF16
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF16
+    {
+    buf = "AknExPopField";
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    EIK_APP_INFO
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_aknexpopfield_menubar;
+    // cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+	cba = r_aknexpopfield_cba_options_next;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_view
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexpopfield_view
+    {
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menubar
+//    MenuBar
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexpopfield_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexpopfield_menu;
+            txt = qtn_aknexpopfield_menubar;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu
+//    Menu pane
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldState;
+            cascade = r_aknexpopfield_menu_state_cascade;
+            txt = qtn_aknexpopfield_menu_state;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldPopList;
+            cascade = r_aknexpopfield_menu_pop_list_cascade;
+            txt = qtn_aknexpopfield_menu_pop_list;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldSelect;
+            cascade = r_aknexpopfield_menu_select_cascade;
+            txt = qtn_aknexpopfield_menu_select;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldSoftkey;
+            cascade = r_aknexpopfield_menu_softkey_cascade;
+            txt = qtn_aknexpopfield_menu_softkey;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopfieldMoving;
+            cascade = r_aknexpopfield_menu_moving_cascade;
+            txt = qtn_aknexpopfield_menu_moving;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldItem;
+            cascade = r_aknexpopfield_menu_item_cascade;
+            txt = qtn_aknexpopfield_menu_item;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopfieldOwnValue;
+            cascade = r_aknexpopfield_menu_own_val_cascade;
+            txt = qtn_aknexpopfield_menu_own_val;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldData;
+            cascade = r_aknexpopfield_menu_data_cascade;
+            txt = qtn_aknexpopfield_menu_data;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldGraphic;
+            cascade = r_aknexpopfield_menu_graphic_cascade;
+            txt = qtn_aknexpopfield_menu_graphic;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldFocusColor;
+            cascade = r_aknexpopfield_menu_focus_color_cascade;
+            txt = qtn_aknexpopfield_menu_focus;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldFocusInPages;
+            cascade = r_aknexpopfield_menu_focus_pages_cascade;
+            txt = qtn_aknexpopfield_menu_page;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldText;
+            cascade = r_aknexpopfield_menu_field_text_cascade;
+            txt = qtn_aknexpopfield_menu_fldtext;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdPopFieldAttribSet;
+            cascade = r_aknexpopfield_menu_attrib_set_cascade;
+            txt = qtn_aknexpopfield_menu_attribset;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexpopfield_menu_exit;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_aknexpopfield_extra_menu
+    {
+    items = 
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdEditEntry; 
+            txt = qtn_aknexpopfield_menu_edit_entry;
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_state_cascade
+//    Sub menu-pane of "Popup field state" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_state_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline01;
+            txt = qtn_aknexpopfield_menu_out01;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline02;
+            txt = qtn_aknexpopfield_menu_out02;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline03;
+            txt = qtn_aknexpopfield_menu_out03;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_pop_list_cascade
+//    Sub menu-pane of "Popup selection list" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_pop_list_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline04;
+            txt = qtn_aknexpopfield_menu_out04;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline05;
+            txt = qtn_aknexpopfield_menu_out05;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline06;
+            txt = qtn_aknexpopfield_menu_out06;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline07;
+            txt = qtn_aknexpopfield_menu_out07;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline08;
+            txt = qtn_aknexpopfield_menu_out08;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_select_cascade
+//    Sub menu-pane of "Select item" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_select_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline09;
+            txt = qtn_aknexpopfield_menu_out09;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline10;
+            txt = qtn_aknexpopfield_menu_out10;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline11;
+            txt = qtn_aknexpopfield_menu_out11;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline12;
+            txt = qtn_aknexpopfield_menu_out12;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_softkey_cascade
+//    Sub menu-pane of "Softkey" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_softkey_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline13;
+            txt = qtn_aknexpopfield_menu_out13;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_moving_cascade
+//    Sub menu-pane of "Moving" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_moving_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline14;
+            txt = qtn_aknexpopfield_menu_out14;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline15;
+            txt = qtn_aknexpopfield_menu_out15;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline16;
+            txt = qtn_aknexpopfield_menu_out16;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline17;
+            txt = qtn_aknexpopfield_menu_out17;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline18;
+            txt = qtn_aknexpopfield_menu_out18;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_item_cascade
+//    Sub menu-pane of "Item of selection list" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_item_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline19;
+            txt = qtn_aknexpopfield_menu_out19;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline20;
+            txt = qtn_aknexpopfield_menu_out20;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_own_val_cascade
+//    Sub menu-pane of "Enter own value" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_own_val_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline21;
+            txt = qtn_aknexpopfield_menu_out21;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline22;
+            txt = qtn_aknexpopfield_menu_out22;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline23;
+            txt = qtn_aknexpopfield_menu_out23;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline24;
+            txt = qtn_aknexpopfield_menu_out24;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_data_cascade
+//    Sub menu-pane of "Data type" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_data_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline25;
+            txt = qtn_aknexpopfield_menu_out25;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline26;
+            txt = qtn_aknexpopfield_menu_out26;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline27;
+            txt = qtn_aknexpopfield_menu_out27;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_graphic_cascade
+//    Sub menu-pane of "With graphic" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_graphic_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline28;
+            txt = qtn_aknexpopfield_menu_out28;
+            }
+            /*,
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline29;
+            txt = qtn_aknexpopfield_menu_out29;
+            }*/
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_focus_color_cascade
+//    Sub menu-pane of "Focus color" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_focus_color_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline30;
+            txt = qtn_aknexpopfield_menu_out30;
+            },
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline31;
+            txt = qtn_aknexpopfield_menu_out31;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_focus_pages_cascade
+//    Sub menu-pane of "Focus in pages" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_focus_pages_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline32;
+            txt = qtn_aknexpopfield_menu_out32;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_field_text_cascade
+//    Sub menu-pane of "Feild Text" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_field_text_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline33;
+            txt = qtn_aknexpopfield_menu_out33;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_menu_attrib_set_cascade
+//    Sub menu-pane of "Attrib Set" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpopfield_menu_attrib_set_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExPopFieldCmdOutline34;
+            txt = qtn_aknexpopfield_menu_out34;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_text_label_title
+//    Text which is used by label
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_text_label_title
+    {
+    buf = qtn_aknexpopfield_label_title;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_text_label_operation
+//    Text which is used by label
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_text_label_operation
+    {
+    buf = qtn_aknexpopfield_operation;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_text_status_pane_title??
+//    Text which is used on status pane
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title01
+    {
+    buf = qtn_aknexpopfield_menu_out01;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title02
+    {
+    buf = qtn_aknexpopfield_menu_out02;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title03
+    {
+    buf = qtn_aknexpopfield_menu_out03;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title04
+    {
+    buf = qtn_aknexpopfield_menu_out04;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title05
+    {
+    buf = qtn_aknexpopfield_menu_out05;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title06
+    {
+    buf = qtn_aknexpopfield_menu_out06;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title07
+    {
+    buf = qtn_aknexpopfield_menu_out07;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title08
+    {
+    buf = qtn_aknexpopfield_menu_out08;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title09
+    {
+    buf = qtn_aknexpopfield_menu_out09;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title10
+    {
+    buf = qtn_aknexpopfield_menu_out10;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title11
+    {
+    buf = qtn_aknexpopfield_menu_out11;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title12
+    {
+    buf = qtn_aknexpopfield_menu_out12;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title13
+    {
+    buf = qtn_aknexpopfield_menu_out13;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title14
+    {
+    buf = qtn_aknexpopfield_menu_out14;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title15
+    {
+    buf = qtn_aknexpopfield_menu_out15;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title16
+    {
+    buf = qtn_aknexpopfield_menu_out16;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title17
+    {
+    buf = qtn_aknexpopfield_menu_out17;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title18
+    {
+    buf = qtn_aknexpopfield_menu_out18;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title19
+    {
+    buf = qtn_aknexpopfield_menu_out19;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title20
+    {
+    buf = qtn_aknexpopfield_menu_out20;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title21
+    {
+    buf = qtn_aknexpopfield_menu_out21;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title22
+    {
+    buf = qtn_aknexpopfield_menu_out22;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title23
+    {
+    buf = qtn_aknexpopfield_menu_out23;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title24
+    {
+    buf = qtn_aknexpopfield_menu_out24;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title25
+    {
+    buf = qtn_aknexpopfield_menu_out25;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title26
+    {
+    buf = qtn_aknexpopfield_menu_out26;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title27
+    {
+    buf = qtn_aknexpopfield_menu_out27;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title28
+    {
+    buf = qtn_aknexpopfield_menu_out28;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title29
+    {
+    buf = qtn_aknexpopfield_menu_out29;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title30
+    {
+    buf = qtn_aknexpopfield_menu_out30;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title31
+    {
+    buf = qtn_aknexpopfield_menu_out31;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title32
+    {
+    buf = qtn_aknexpopfield_menu_out32;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title33
+    {
+    buf = qtn_aknexpopfield_menu_out33;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_text_status_pane_title34
+    {
+    buf = qtn_aknexpopfield_menu_out34;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_query_prompt
+//    For pop-up field selection list item : editing query caption text
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_query_prompt
+    {
+    buf = qtn_aknexpopfield_query_prompt;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_time_initial_text
+//    Time array text which is used on selection list
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_time_initial_text
+    {
+    buf = qtn_aknexpopfield_time_text;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_date_initial_text
+//    Date array text which is used on selection list
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_date_initial_text
+    {
+    buf = qtn_aknexpopfield_date_text;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_???_format_string_text
+//    Each format which is used on selection list
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_num_format_string_text
+    {
+    buf = qtn_aknexpopfield_num_format;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_phon_format_string_text
+    {
+    buf = qtn_aknexpopfield_phon_format;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_time_format_string_text
+    {
+    buf = qtn_aknexpopfield_time_format;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_date_format_string_text
+    {
+    buf = qtn_aknexpopfield_date_format;
+    }
+
+RESOURCE TBUF256 r_aknexpopfield_dura_format_string_text
+    {
+    buf = qtn_aknexpopfield_dura_format;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_empty_list_note
+//    Used in AttribSetDialog
+//
+// ----------------------------------------------------------------------------
+//
+
+//RESOURCE TBUF256 r_aknexpopfield_empty_list_note
+//    {
+//    buf = qtn_aknexpopfield_empty_list_note;
+//    }
+
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_empty_text_raplacement
+//    Used in AttribSetDialog
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_empty_text_raplacement
+	{
+	buf = qtn_aknexpopfield_empty_text_replacement;
+	}
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_other_text_raplacement
+//    Used in AttribSetDialog
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexpopfield_other_text_raplacement
+	{
+	buf = qtn_aknexpopfield_other_text_replacement;
+	}
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_two_text_field_dialog
+//    Standard for Popfield. there are two text fields.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_two_text_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_two_text_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_two_text_field_form
+//    Standard for PopField. there are two text fields.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_two_text_field_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop01;
+           id = EAknExPopFieldDlgCtrlIdPop01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop02;
+           id = EAknExPopFieldDlgCtrlIdPop02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_five_text_field_dialog
+//    for Outline16,17
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_five_text_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_five_text_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_five_text_field_form
+//    for Outline16,17
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_five_text_field_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop01;
+           id = EAknExPopFieldDlgCtrlIdPop01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop02;
+           id = EAknExPopFieldDlgCtrlIdPop02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop03;
+           id = EAknExPopFieldDlgCtrlIdPop03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop04;
+           id = EAknExPopFieldDlgCtrlIdPop04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop05;
+           id = EAknExPopFieldDlgCtrlIdPop05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_thirteen_text_field_dialog
+//    for Outline9
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_thirteen_text_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_thirteen_text_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_thirteen_text_field_form
+//    for Outline9
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_thirteen_text_field_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop00;
+           id = EAknExPopFieldDlgCtrlIdPop00;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop01;
+           id = EAknExPopFieldDlgCtrlIdPop01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop02;
+           id = EAknExPopFieldDlgCtrlIdPop02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop03;
+           id = EAknExPopFieldDlgCtrlIdPop03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop04;
+           id = EAknExPopFieldDlgCtrlIdPop04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop05;
+           id = EAknExPopFieldDlgCtrlIdPop05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop06;
+           id = EAknExPopFieldDlgCtrlIdPop06;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop07;
+           id = EAknExPopFieldDlgCtrlIdPop07;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop08;
+           id = EAknExPopFieldDlgCtrlIdPop08;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop09;
+           id = EAknExPopFieldDlgCtrlIdPop09;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop10;
+           id = EAknExPopFieldDlgCtrlIdPop10;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop11;
+           id = EAknExPopFieldDlgCtrlIdPop11;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop12;
+           id = EAknExPopFieldDlgCtrlIdPop12;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_allows_user_defined_entry_dialog
+//    for Outline20,21,22,23,24
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_allows_user_defined_entry_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_allows_user_defined_entry_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_allows_user_defined_entry_form
+//    for Outline20,21,22,23,24
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_allows_user_defined_entry_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop01;
+           id = EAknExPopFieldDlgCtrlIdPop01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop02;
+           id = EAknExPopFieldDlgCtrlIdPop02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages_dialog
+//    for Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_navigate_six_pages_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    pages = r_aknexpopfield_navigate_six_pages;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages
+//    For Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_navigate_six_pages
+    {
+    items =
+        {
+        PAGE
+            {
+            id = EAknExPopFieldPageCtrlIdPage01;
+            text = qtn_aknexpopfield_label_page1;
+            form = r_aknexpopfield_navigate_six_pages_text_form;
+            },
+        PAGE
+            {
+            id = EAknExPopFieldPageCtrlIdPage02;
+            text = qtn_aknexpopfield_label_page2;
+            form = r_aknexpopfield_navigate_six_pages_num_form;
+            },
+        PAGE
+            {
+            id = EAknExPopFieldPageCtrlIdPage03;
+            text = qtn_aknexpopfield_label_page3;
+            form = r_aknexpopfield_navigate_six_pages_phon_form;
+            },
+        PAGE
+            {
+            id = EAknExPopFieldPageCtrlIdPage04;
+            text = qtn_aknexpopfield_label_page4;
+            form = r_aknexpopfield_navigate_six_pages_time_form;
+            },
+        PAGE
+            {
+            id = EAknExPopFieldPageCtrlIdPage05;
+            text = qtn_aknexpopfield_label_page5;
+            form = r_aknexpopfield_navigate_six_pages_date_form;
+            },
+        PAGE
+            {
+            id = EAknExPopFieldPageCtrlIdPage06;
+            text = qtn_aknexpopfield_label_page6;
+            form = r_aknexpopfield_navigate_six_pages_dura_form;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages_text_form
+//    for Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_navigate_six_pages_text_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt01;
+           id = EAknExPopFieldDlgCtrlIdText01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt02;
+           id = EAknExPopFieldDlgCtrlIdText02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt03;
+           id = EAknExPopFieldDlgCtrlIdText03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt04;
+           id = EAknExPopFieldDlgCtrlIdText04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt05;
+           id = EAknExPopFieldDlgCtrlIdText05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt06;
+           id = EAknExPopFieldDlgCtrlIdText06;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages_num_form
+//    for Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_navigate_six_pages_num_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num01;
+           id = EAknExPopFieldDlgCtrlIdNum01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num02;
+           id = EAknExPopFieldDlgCtrlIdNum02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num03;
+           id = EAknExPopFieldDlgCtrlIdNum03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num04;
+           id = EAknExPopFieldDlgCtrlIdNum04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num05;
+           id = EAknExPopFieldDlgCtrlIdNum05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num06;
+           id = EAknExPopFieldDlgCtrlIdNum06;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages_phon_form
+//    for Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_navigate_six_pages_phon_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon01;
+           id = EAknExPopFieldDlgCtrlIdPhon01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon02;
+           id = EAknExPopFieldDlgCtrlIdPhon02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon03;
+           id = EAknExPopFieldDlgCtrlIdPhon03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon04;
+           id = EAknExPopFieldDlgCtrlIdPhon04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon05;
+           id = EAknExPopFieldDlgCtrlIdPhon05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon06;
+           id = EAknExPopFieldDlgCtrlIdPhon06;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages_time_form
+//    for Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_navigate_six_pages_time_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time01;
+           id = EAknExPopFieldDlgCtrlIdTime01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time02;
+           id = EAknExPopFieldDlgCtrlIdTime02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time03;
+           id = EAknExPopFieldDlgCtrlIdTime03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time04;
+           id = EAknExPopFieldDlgCtrlIdTime04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time05;
+           id = EAknExPopFieldDlgCtrlIdTime05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time06;
+           id = EAknExPopFieldDlgCtrlIdTime06;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages_date_form
+//    for Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_navigate_six_pages_date_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date01;
+           id = EAknExPopFieldDlgCtrlIdDate01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date02;
+           id = EAknExPopFieldDlgCtrlIdDate02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date03;
+           id = EAknExPopFieldDlgCtrlIdDate03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date04;
+           id = EAknExPopFieldDlgCtrlIdDate04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date05;
+           id = EAknExPopFieldDlgCtrlIdDate05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date06;
+           id = EAknExPopFieldDlgCtrlIdDate06;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_navigate_six_pages_dura_form
+//    for Outline32
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_navigate_six_pages_dura_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura01;
+           id = EAknExPopFieldDlgCtrlIdDura01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura02;
+           id = EAknExPopFieldDlgCtrlIdDura02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura03;
+           id = EAknExPopFieldDlgCtrlIdDura03;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura04;
+           id = EAknExPopFieldDlgCtrlIdDura04;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura05;
+           id = EAknExPopFieldDlgCtrlIdDura05;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura06;
+           id = EAknExPopFieldDlgCtrlIdDura06;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_different_data_type_dialog
+//    for Outline25
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_different_data_type_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_different_data_type_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_different_data_type_form
+//    for Outline25
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_different_data_type_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt;
+           id = EAknExPopFieldDlgCtrlIdText01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num;
+           id = EAknExPopFieldDlgCtrlIdNum01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon;
+           id = EAknExPopFieldDlgCtrlIdPhon01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time;
+           id = EAknExPopFieldDlgCtrlIdTime01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date;
+           id = EAknExPopFieldDlgCtrlIdDate01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura;
+           id = EAknExPopFieldDlgCtrlIdDura01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+       };
+   }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_different_data_type_enter_dialog
+//    for Outline26,27
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_different_data_type_enter_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_different_data_type_enter_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_different_data_type_enter_form
+//    for Outline26,27
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_different_data_type_enter_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_txt;
+           id = EAknExPopFieldDlgCtrlIdText01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_num;
+           id = EAknExPopFieldDlgCtrlIdNum01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_phon;
+           id = EAknExPopFieldDlgCtrlIdPhon01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_time;
+           id = EAknExPopFieldDlgCtrlIdTime01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_date;
+           id = EAknExPopFieldDlgCtrlIdDate01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_dura;
+           id = EAknExPopFieldDlgCtrlIdDura01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldFlagAllowsUserDefinedEntry;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+       };
+   }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_list_with_radio_button_dialog
+//    for Outline28
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_list_with_radio_button_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_list_with_radio_button_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_list_with_radio_button_form
+//    for Outline28
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_list_with_radio_button_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop01;
+           id = EAknExPopFieldDlgCtrlIdPop01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_pop02;
+           id = EAknExPopFieldDlgCtrlIdPop02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldNoGraphic;
+                width = AKNEXPOPFIELD_TEXT_WIDTH;
+                other = qtn_aknexpopfield_list_other;
+                };
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_field_text_dialog
+//    for Outline33
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_field_text_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_field_text_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_field_text_form
+//    for Outline33
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_field_text_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupFieldText;
+           prompt = qtn_aknexpopfield_label_fldtext01;
+           id = EAknExPopFieldDlgCtrlIdFldText01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD_TEXT
+                {
+				popupfield = POPUP_FIELD
+					{
+					width = AKNEXPOPFIELD_TEXT_WIDTH;
+					other = qtn_aknexpopfield_list_other;
+					};
+				textarray = r_aknexpopfield_field_text_array;
+				active = 0;
+                };
+           tooltip = qtn_aknexpopfield_hint_text2;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupFieldText;
+           prompt = qtn_aknexpopfield_label_fldtext02;
+           id = EAknExPopFieldDlgCtrlIdFldText02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD_TEXT
+                {
+				popupfield = POPUP_FIELD
+					{
+					width = AKNEXPOPFIELD_TEXT_WIDTH;
+					other = qtn_aknexpopfield_list_other;
+					};
+				textarray = r_aknexpopfield_field_text_array;
+				active = 1;
+                };
+           tooltip = qtn_aknexpopfield_hint_text2;
+           }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_attrib_set_dialog
+//    for Outline34
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_attrib_set_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagButtonsRight |
+            EEikDialogFlagCbaButtons | ///EEikDialogFlagModeless |
+            EEikDialogFlagNoBorder;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexpopfield_attrib_set_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_attrib_set_form
+//    for Outline34
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexpopfield_attrib_set_form
+    {
+    items =
+        {
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_attribset01;
+           id = EAknExPopFieldDlgCtrlIdAttribSet01;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+				width = AKNEXPOPFIELD_TEXT_WIDTH;
+				other = qtn_aknexpopfield_list_other;
+				};
+		   tooltip = qtn_aknexpopfield_hint_text;
+           },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = qtn_aknexpopfield_label_attribset02;
+           id = EAknExPopFieldDlgCtrlIdAttribSet02;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+			    width = AKNEXPOPFIELD_TEXT_WIDTH;
+				other = qtn_aknexpopfield_list_other;
+				};
+           tooltip = qtn_aknexpopfield_hint_text;
+           }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_one_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_one_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_two_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_two_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_three_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_three_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_four_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_four_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_five_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_five_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_six_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_six_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text06;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_seven_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_seven_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text06;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text07;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_eight_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_eight_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text06;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text07;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text08;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_nine_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_nine_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text06;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text07;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text08;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text09;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_ten_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_ten_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text06;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text07;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text08;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text09;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text10;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_eleven_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_eleven_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text06;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text07;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text08;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text09;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text10;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text11;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_twelve_text_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_twelve_text_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text06;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text07;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text08;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text09;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text10;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text11;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_text12;
+            }
+        };
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_six_phone_array
+//    For pop-up field selection list item
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_six_phone_array
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_phone01;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_phone02;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_phone03;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_phone04;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_phone05;
+            },
+        LBUF
+            {
+            txt = qtn_aknexpopfield_list_phone06;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_field_text_array
+//    For pop-up field selection list item
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexpopfield_field_text_array
+	{
+	items =
+		{
+		LBUF 
+			{ 
+			txt = qtn_aknexpopfield_list_text01; 
+			},
+		LBUF 
+			{ 
+			txt = qtn_aknexpopfield_list_text02; 
+			},
+		LBUF 
+			{ 
+			txt = qtn_aknexpopfield_list_text03; 
+			},
+		LBUF 
+			{ 
+			txt = qtn_aknexpopfield_list_text04; 
+			},
+		LBUF 
+			{ 
+			txt = qtn_aknexpopfield_list_text05; 
+			},
+		LBUF 
+			{ 
+			txt = qtn_aknexpopfield_list_text06; 
+			},
+		LBUF 
+			{
+			txt = qtn_aknexpopfield_list_text07; 
+			}
+		};
+	}
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_cba_options_next
+//    ?description
+//
+// ----------------------------------------------------------------------------
+//
+
+RESOURCE CBA r_aknexpopfield_cba_options_next
+	{
+	buttons =
+		{
+		CBA_BUTTON 
+			{
+			id=EAknSoftkeyOptions; 
+			txt = text_softkey_option;
+			},
+        AVKON_CBA_BUTTON
+            {
+            id = EAknExPopFieldCbaCmdNext;
+            txt = qtn_aknexpopfield_cba_next;
+            }
+		};
+	}
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexpopfield_empty_list_note
+//    Note for empty list.
+//
+// ----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexpopfield_empty_list_note
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagNoTitleBar |
+          EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OK_EMPTY;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExPopFieldEmptyListNoteId;
+            control= AVKON_NOTE
+                { 
+                layout = ENotificationWithGraphicsLayout;
+                singular_label = qtn_aknexpopfield_empty_list_note;
+                // plural_label = 
+                imagefile = AKNEXPOPFIELD_MBM_FILENAME;
+                imageid = EMbmAknexpopfield30x40;
+                // imagemask = 0xffff;
+                };
+            }
+        };
+    }
+
+
+// End of File

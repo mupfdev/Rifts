@@ -1,0 +1,29 @@
+// TXTSHELL.MMP
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+
+TARGET        txtshell.app
+TARGETTYPE    app
+UID           0x100039ce 0x01000e00
+TARGETPATH    \system\apps\txtshell
+
+SOURCEPATH	.
+
+SOURCE        txtglob.cpp   txtrich.cpp  txtshell.cpp txtstyl.cpp
+SOURCE        txtexamp.cpp  txtview.cpp
+RESOURCE      txtshell.rss
+
+USERINCLUDE   .
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib efsrv.lib estor.lib
+LIBRARY       gdi.lib   ws32.lib  fbscli.lib field.lib
+LIBRARY       etext.lib form.lib  cone.lib  eikcore.lib  eikcoctl.lib  apparc.lib
+
+
+START BITMAP cursors.mbm
+	HEADER
+	SOURCE 2 cursor.bmp
+END 

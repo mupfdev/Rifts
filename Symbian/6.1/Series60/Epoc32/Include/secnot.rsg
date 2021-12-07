@@ -1,0 +1,5 @@
+#define R_ALERT_PROMPT                            0x5c36b003
+#define R_CERTIFICATE_PROMPT                      0x5c36b004
+#define R_NO_TRUST_QUERY                          0x5c36b005
+#define R_NO_TRUST_QUERY_SOFTKEYS                 0x5c36b006
+#define R_CERTIFICATE_QUERY                       0x5c36b007

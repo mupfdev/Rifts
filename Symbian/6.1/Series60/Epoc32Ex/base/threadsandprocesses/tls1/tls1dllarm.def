@@ -1,0 +1,8 @@
+EXPORTS
+; NEW:
+	SetStaticTextL__7CSetterRC7TDesC16 @ 1 NONAME ; CSetter::SetStaticTextL(TDesC16 const &)
+	ShowStaticText__C7CSetter @ 2 NONAME ; CSetter::ShowStaticText(void) const
+	ShowStaticText__C8CGeneral @ 3 NONAME ; CGeneral::ShowStaticText(void) const
+	__7CSetterR12CConsoleBase @ 4 NONAME ; CSetter::CSetter(CConsoleBase &)
+	__8CGeneralR12CConsoleBase @ 5 NONAME ; CGeneral::CGeneral(CConsoleBase &)
+

@@ -1,0 +1,16 @@
+// SigCheck.rh
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// for defining text resources
+STRUCT STRING
+	{
+	LTEXT text;
+	}
+
+// for first resource in file, for ConfirmSignature()
+STRUCT SIGNATURE
+	{
+	LONG version;
+	SRLINK self;
+	}

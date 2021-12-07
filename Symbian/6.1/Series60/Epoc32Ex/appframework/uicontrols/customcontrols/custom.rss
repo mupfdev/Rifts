@@ -1,0 +1,120 @@
+// COSMILEY.RSS
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+
+NAME COSM
+		// Include definitions of resource STRUCTS used by this
+		// resource script 
+#include <eikon.rh>
+
+		// Include the standard resource ids 
+#include <eikon.rsg>
+
+		// Include the symbol definitions used by C++ code and
+		// this resource script.
+#include <eikon.hrh>
+
+#include "custom.hrh"
+#include "custom.rh"
+
+RESOURCE RSS_SIGNATURE
+	{
+	}
+	
+RESOURCE TBUF { buf=""; } // default document name
+
+
+RESOURCE EIK_APP_INFO
+	{	
+	hotkeys=r_example_hotkeys; 
+	menubar=r_example_main_menubar; 
+	}
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog containing smileys
+//
+//////////////////////////////////////////////////////////////////////////////
+
+
+RESOURCE DIALOG r_smiley_dialog
+	{
+	title="Smileys";
+	buttons=R_EIK_BUTTONS_CANCEL_OK;
+	items=
+		{
+		DLG_LINE
+			{
+			type=ESmileyControl;
+			id=ESmileyControlIdData;
+			control=SMILEYCONTROL
+				{
+				mood=EHappy;
+				width=200;
+				};
+			}
+		};
+	}
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Short cut keys
+//
+//////////////////////////////////////////////////////////////////////////////
+RESOURCE HOTKEYS r_example_hotkeys
+  {
+	control=
+			{
+			HOTKEY {command=EEikCmdExit;                 key='e';},
+			HOTKEY {command=ECreateSmileyDialog;		 key='d';}
+			};
+  }
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// The menu bar
+//
+//////////////////////////////////////////////////////////////////////////////
+RESOURCE MENU_BAR r_example_main_menubar
+    {
+    titles=
+        {
+		MENU_TITLE { menu_pane=r_example_file_menu;   txt="File"; }
+		};
+    }
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// The "file" menu pane hung directly from the menu bar
+//
+//////////////////////////////////////////////////////////////////////////////
+RESOURCE MENU_PANE r_example_file_menu
+    {
+    items=
+		{
+		MENU_ITEM
+			{
+			command=ECreateSmileyDialog;
+			txt="Create Smiley Dialog";
+			},
+		MENU_ITEM 
+			{ 
+			command=EEikCmdExit; 
+			txt="Exit";
+			}
+		};
+    }
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Text resources for info messages
+//
+//////////////////////////////////////////////////////////////////////////////
+
+RESOURCE TBUF r_example_text_validate             { buf="They can't both be miserable!";}
+

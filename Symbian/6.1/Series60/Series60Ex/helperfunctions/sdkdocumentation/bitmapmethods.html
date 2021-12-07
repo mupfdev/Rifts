@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+		<title>NBitMapMethods</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script language="JavaScript" type="text/javascript">
+<!--
+function codewindow(theURL)
+  { win = window.open(theURL, 'codewindow', 'scrollbars,resizable,width=750,height=500')
+    win.focus() }
+// -->
+</script>
+		<style type="text/css" media="screen"><!--
+.ButtonBox { background-image: url(../../../_stock/gradient.jpg); }
+--></style>
+	</head>
+
+<body><a name="_top"></a><a name="2"></a>
+
+<hr noshade size="1">
+
+<hr noshade size="1">
+<div class="AuthoredContent">
+
+<p>Location: 
+<code><a href="javascript:void(0)" onclick="codewindow('bitmapmethods.h.htm')" title="bitmapmethods.h">bitmapmethods.h</a></code>
+</br>Link against: 
+<code>bitgdi.lib</code>
+</p>
+</div>
+
+<div class="Head1">
+<a name="%3a%3aNBitmapMethods"></a>
+
+<h1>Namespace <code>NBitmapMethods</code></h1>
+</div><div class="Bodytext"><p class="Prototype"><code>NNBitmapMethods</code></p><h4 class="subheading">Support</h4>
+<p>Supported from 5.0
+</p><h4 class="subheading">Description</h4>
+<p>A set of functions to make bitmap manipulation easier.
+</p>
+
+<p>Defined in <code>NBitmapMethods</code>:
+<br>
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aCreateGraphicsContextLC%28%29"
+title="Create a graphics context and leave it on the cleanup stack">CreateGraphicsContextLC()</a></code>,
+
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aCreateGraphicsContextL%28%29"
+title="Create a graphics context">CreateGraphicsContextL()</a></code>,
+
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aCreateBitmapDeviceLC%28%29"
+title="Create a bitmap device and leave it on the cleanup stack">CreateBitmapDeviceLC()</a></code>,
+
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aCreateBitmapDeviceL%28%29"
+title="Create a bitmap device.">CreateBitmapDeviceL()</a></code>,
+
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aCreateBitmapLC%28%29"
+title="Create a bitmap and leave it on the cleanup stack.">CreateBitmapLC()</a></code>,
+
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aCreateBitmapL%28%29"
+title="Create a bitmap.">CreateBitmapL()</a></code>,
+
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aBitBltMaskedEntireBitmap%28%29"
+title="Blit the entire of a bitmap with a mask onto a gc.">BitBltMaskedEntireBitmap()</a></code>,
+
+<code class="ApiItem"><a href="#%3a%3aNNBitmapMethods%3a%3aPartialReset%28%29"
+title="Reset a gc so that it is in a sensible state.">PartialReset()</a></code>
+
+
+</p>
+<a name="2.5"></a>
+</div>
+
+<div class="Head2">
+<hr size="2" noshade>
+<h2>Bitmap methods</h2>
+</div>
+
+<div class="Bodytext"><a name="2.5.2"></a> </div>
+
+<div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aCreateGraphicsContextLC%28%29"></a>
+<hr size="1" noshade>
+<h3><code>CreateGraphicsContextLC()</code></h3>
+</div>
+
+<div class="Bodytext"><p class="Prototype"><code>CFbsBitGc* CreateGraphicsContextLC(CFbsBitmapDevice& aBitmapDevice);</code>
+</p>
+
+<h4 class="subheading">Description</h4>
+<p>Create a graphics context and leave it on the cleanup stack.</p>
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CFbsBitmapDevice&amp; aBitmapDevice</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to a bitmap device.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+
+
+<a name="2.6.2"></a>
+
+</div><div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aCreateGraphicsContextL%28%29"></a>
+<hr size="1" noshade>
+<h3><code>CreateGraphicsContextL()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>CFbsBitGc* CreateGraphicsContextL(CFbsBitmapDevice&amp; aBitmapDevice);</code></p>
+<h4 class="subheading">Description</h4>
+<p>Create a graphics context.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CFbsBitmapDevice&amp; aBitmapDevice</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to a bitmap device.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+<a name="2.6.3"></a></div><div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aCreateBitmapDeviceLC%28%29"></a>
+<hr size="1" noshade>
+<h3><code>CreateBitmapDeviceLC()</code></h3>
+</div>
+
+<div class="Bodytext"><p class="Prototype"><code>CFbsBitmapDevice* CreateBitmapDeviceLC(CFbsBitmap& aBitmap);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Create a bitmap device and leave it on the cleanup stack.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CFbsBitmapDevice&amp; aBitmap</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to a bitmap device.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+<a name="2.6.5"></a></div><div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aCreateBitmapDeviceL%28%29"></a>
+
+<hr size="1" noshade>
+<h3><code>CreateBitmapDeviceL()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>CFbsBitmapDevice* CreateBitmapDeviceL(CFbsBitmap& aBitmap);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Create a bitmap device.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CFbsBitmap&amp; aBitmap</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to a bitmap.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+<a name="2.6.5"></a></div><div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aCreateBitmapLC%28%29"></a>
+
+<hr size="1" noshade>
+<h3><code>CreateBitmapLC</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>CFbsBitmap* CreateBitmapLC(TSize aSizeInPixels,TDisplayMode aDispMode);<br>
+CFbsBitmap* CreateBitmapLC(const TDesC&amp; aFileName,TInt aId);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Create a bitmap and leave it on the cleanup stack. Create a bitmap from an mbm file and leave it on the cleanup stack.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">TSize aSizeInPixels</code></td>
+<td class="Cell"><p class="ValueDesc">The size of the bitmap to be created.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">TDisplayMode aDispMode</code></td>
+<td class="Cell"><p class="ValueDesc">The display mode of the bitmap.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">const TDesC&amp; aFileName</code></td>
+<td class="Cell"><p class="ValueDesc">The name of an mbm file.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">TInt aId</code></td>
+<td class="Cell"><p class="ValueDesc">The position of the bitmap in the mbm file.</p></td>
+</tr>
+</table></td></tr></table>
+
+<a name="2.6.5"></a></div><div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aCreateBitmapL%28%29"></a>
+
+<hr size="1" noshade>
+<h3><code>CreateBitmapL</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>CFbsBitmap* CreateBitmapL(TSize aSizeInPixels,TDisplayMode aDispMode);<br>
+CFbsBitmap* CreateBitmapLC(const TDesC&amp; aFileName,TInt aId);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Create a bitmap. Create a bitmap from an mbm file.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">TSize aSizeInPixels</code></td>
+<td class="Cell"><p class="ValueDesc">The size of the bitmap to be created.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">TDisplayMode aDispMode</code></td>
+<td class="Cell"><p class="ValueDesc">The display mode of the bitmap.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">const TDesC&amp; aFileName</code></td>
+<td class="Cell"><p class="ValueDesc">The name of an mbm file.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">TInt aId</code></td>
+<td class="Cell"><p class="ValueDesc">The position of the bitmap in the mbm file.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+<div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aBitBltMaskedEntireBitmap%28%29"></a>
+<hr size="1" noshade>
+<h3><code>BitBltMaskedEntireBitmap()</code></h3>
+</div>
+<div class="Bodytext"><p class="Prototype"><code>void BitBltMaskedEntireBitmap(CFbsBitGc&amp; aTargetGc,TPoint aTopLeft,const CFbsBitmap&amp; aBitmap, const CFbsBitmap&amp; aBitMask);
+</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Blit the entire of a bitmap with a mask onto a gc.</p>
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0"
+cellspacing="0"><tr><td class="ValueTableWrap"><table border="0"
+cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CFbsBitGc&amp; aTargetGc</code></td>
+<td class="Cell"><p class="ValueDesc">Gc to blit onto.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">TPoint aTopLeft</code></td>
+<td class="Cell"><p class="ValueDesc">The position at which the top left of the bitmap will be placed on the gc.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">const CFbsBitmap&amp; aBitmap</code></td>
+<td class="Cell"><p class="ValueDesc">The bitmap to blit.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">const CFbsBitmap&amp; aBitMask</code></td>
+<td class="Cell"><p class="ValueDesc">The mask.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+<a name="2.6.5"></a></div><div class="Head3">
+<a name="%3a%3aNNBitmapMethods%3a%3aPartialReset%28%29"></a>
+
+<hr size="1" noshade>
+<h3><code>PartialReset()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>void PartialReset(CFbsBitGc&amp; aGc);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Reset a gc so that it is in a sensible state. Not all settings are reset, just some of the more useful ones.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CFbsBitGc&amp; aGc</code></td>
+<td class="Cell"><p class="ValueDesc">The gc to reset.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+</div><div class="Footer">
+<hr noshade size="1">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="bottom">
+<td><p class="copyrightStatement"></p></td>
+<td align="right"><p></p></td>
+</table>
+</div>
+</body>
+</html>

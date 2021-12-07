@@ -1,0 +1,132 @@
+/*
+* ==============================================================================
+*  Name     : CAknExNote resource header file
+*  Part of  : AknExNote
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ==============================================================================
+*/
+
+#ifndef AKNEXNOTE_HRH
+#define AKNEXNOTE_HRH
+
+enum TAknExNoteMenuCommands
+    {
+    EAknExNoteCmdEmptyOutline = 0x6000,
+
+    EAknExNoteCmdNotestype,
+    EAknExNoteCmdOutline01,
+    EAknExNoteCmdOutline02,
+    EAknExNoteCmdOutline03,
+    EAknExNoteCmdOutline04,
+    EAknExNoteCmdOutline05,
+
+    EAknExNoteCmdText,
+    EAknExNoteCmdOutline07,
+    EAknExNoteCmdOutline08,
+
+    EAknExNoteCmdNoteWrappers,
+    EAknExNoteCmdOutline31,
+    EAknExNoteCmdOutline32,
+    EAknExNoteCmdOutline33,
+    EAknExNoteCmdOutline34,
+
+    EAknExNoteCmdProgressNote,
+    EAknExNoteCmdOutline35,
+
+    EAknExNoteCmdGlobalNoteShowNote,
+    EAknExNoteCmdOutline51,
+    EAknExNoteCmdOutline52,
+    EAknExNoteCmdOutline53,
+    EAknExNoteCmdOutline54,
+    EAknExNoteCmdOutline55,
+    EAknExNoteCmdOutline56,
+    EAknExNoteCmdOutline57,
+    EAknExNoteCmdOutline58,
+    EAknExNoteCmdOutline59,
+    EAknExNoteCmdOutline60,
+    EAknExNoteCmdOutline61
+
+    };
+
+enum TAknExNoteNoteControlIds
+    {
+    EAknExNoteCtrlIdErrorNote = 0x100,
+    EAknExNoteCtrlIdWarningNote,
+    EAknExNoteCtrlIdInformationNote,
+    EAknExNoteCtrlIdConfirmationNote,
+    EAknExNoteCtrlIdProgressNote,
+    EAknExNoteCtrlIdWaitNote,
+    EAknExNoteCtrlIdPermanentNote,
+    EAknExNoteCtrlIdDynamicText,
+    EAknExNoteCtrlIdNoImageNote,
+    EAknExNoteCtrlIdImageNote,
+    EAknExNoteCtrlIdLayoutCase1,
+    EAknExNoteCtrlIdLayoutCase2,
+    EAknExNoteCtrlIdLayoutCase3,
+    EAknExNoteCtrlIdPriorityLocalError,
+    EAknExNoteCtrlIdPriorityLocalWarning
+    };
+
+enum TAknExNoteToneListBoxCommands
+    {
+    EAknExNoteListBoxCmdErrorTone,
+    EAknExNoteListBoxCmdWarningTone,
+    EAknExNoteListBoxCmdConfirmationTone
+    };
+
+enum TAknExNoteGeneralListBoxCommands
+    {
+    EAknExNoteListBoxCmdErrorNote,
+    EAknExNoteListBoxCmdWarningNote,
+    EAknExNoteListBoxCmdInformationNote,
+    EAknExNoteListBoxCmdConfirmationNote
+    };
+
+enum TAknExNoteAnimationListBoxCommands
+    {
+    EAknExNoteListBoxCmdWaitNote,
+    EAknExNoteListBoxCmdProgressNote
+    };
+
+enum TAknExNoteOwnLayoutListBoxCommands
+    {
+    EAknExNoteListBoxCmdOwnLayoutCase1,
+    EAknExNoteListBoxCmdOwnLayoutCase2,
+    EAknExNoteListBoxCmdOwnLayoutCase3
+    };
+
+enum TAknExNoteTwoLabelsListBoxCommands
+    {
+    EAknExNoteListBoxCmdSingularLabel,
+    EAknExNoteListBoxCmdPluralLabel
+    };
+
+enum TAknExNoteGlobalNoteListBoxCommands
+    {
+    EAknExNoteListBoxCmdGlobalGeneralNote,
+    EAknExNoteListBoxCmdGlobalWarningNote,
+    EAknExNoteListBoxCmdGlobalConfirmationNote,
+    EAknExNoteListBoxCmdGlobalErrorNote,
+    EAknExNoteListBoxCmdGlobalChargingNote,
+    EAknExNoteListBoxCmdGlobalNotChargingNote,
+    EAknExNoteListBoxCmdGlobalBatteryFullNote,
+    EAknExNoteListBoxCmdGlobalBatteryLowNote,
+    EAknExNoteListBoxCmdGlobalRechargeBatteryNote
+    };
+
+enum TAknExNotePriorityNoteListBoxCommands
+    {
+    EAknExNoteListBoxCmdPriorityLocalLocal,
+    EAknExNoteListBoxCmdPriorityGlobalGlobal,
+    EAknExNoteListBoxCmdPriorityLocalGlobal,
+    EAknExNoteListBoxCmdPriorityGlobalLocal
+    };
+
+enum TAknExNoteCba
+	{
+	EAknExNoteCbaCmdNext = 0x6300
+	};
+
+#endif
+
+// End of file

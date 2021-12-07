@@ -1,0 +1,20 @@
+// MultiRead2.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET         MultiRead2.exe
+TARGETTYPE     exe
+UID            0
+
+SOURCEPATH    .
+SOURCE         MultiRead2.cpp
+SYSTEMRESOURCE MultiRead2.rss
+
+USERINCLUDE    ..\MultiRead1
+USERINCLUDE    .
+USERINCLUDE    ..\..\CommonFramework
+SYSTEMINCLUDE  \Epoc32\include
+
+LIBRARY        euser.lib efsrv.lib  bafl.lib

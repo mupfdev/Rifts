@@ -1,0 +1,25 @@
+/*
+* =============================================================================
+*  Name     : BLD.INF
+*  Part of  : AknExNote
+*  Copyright (c) 2003 Nokia.
+* =============================================================================
+*/
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+///PRJ_EXPORTS
+// Specify the source file followed by its destination here
+// copy will be used to copy the source file to its destination
+// If there's no destination then the source file will be copied
+// to the same name in \epoc32\include
+///\AknSample\AknExNote\rom\AknExNote.iby \epoc32\rom\include\AknExNote.iby
+
+PRJ_MMPFILES
+// Creates AknEx.mbm and AknEx.mbg into target build.
+//makefile \aknsample\DataSrc\Aknex.mk
+
+AknExNote.mmp
+
+// End of File

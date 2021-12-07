@@ -1,0 +1,24 @@
+// Echoeng.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+// Exports are unfrozen
+
+TARGET		echoeng.dll
+TARGETTYPE	dll
+UID             0x1000008d 0x10004853
+
+SOURCEPATH	.
+SOURCE	        echoeng.cpp
+
+USERINCLUDE     .
+SYSTEMINCLUDE	\Epoc32\include
+
+LIBRARY	euser.lib insock.lib esock.lib
+
+#if defined(WINS)
+    deffile .\echoengWINS.def
+#else if defined(ARM)
+    deffile .\echoengARM.def
+#endif

@@ -1,0 +1,515 @@
+/*
+* ============================================================================
+*  Name     : AknLayoutAnims.ra
+*  Version:
+*
+*  Copyright © 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+* ============================================================================
+*/
+
+
+
+
+//
+//
+// 
+// The Rules of this file:
+// 1) specified SECTION/ANIM DATA names, 
+//      signal_in_pane => r_akn_signal_in_pane
+// 2) every animation will need to use context where it can happen.
+//    CAknLayoutAnim will check the contexts.
+// 3) The order of tables from List of animation specification determines in which order
+//    resource files are in this file!! 
+//
+
+//  RESOURCE DEFINITIONS 
+// ---------------------------------------------------------
+
+#define M_ANIM_BLIT_PART_NEXT_VIEW(cmd) \
+     ANIM_BLIT_PART_NEXT_VIEW { cmd }
+
+#define M_ANIM_BLIT_PART_PREVIOUS_VIEW(cmd) \
+     ANIM_BLIT_PART_PREVIOUS_VIEW { cmd }
+
+#define M_ANIM_BLIT_PART_PREVIOUS_VIEW(cmd) \
+     ANIM_BLIT_PART_PREVIOUS_VIEW { cmd }
+
+
+#define M_ANIM_SLIDE_PART_NEXT_VIEW(cmd) \
+     ANIM_SLIDE_PART_NEXT_VIEW { cmd }
+
+//--- NOT IMPLEMENTED IN ANIMATION ROUTINES
+#define M_ANIM_SLIDE_PART_PREVIOUS_VIEW(cmd) \
+     ANIM_SLIDE_PART_NEXT_VIEW { type=EAnimBlitSlideNewViewClearBehind; cmd }
+
+
+#define M_ANIM_WAIT_UNTIL_COMPLETE() \
+     ANIM_SET_COLOR{red=0;green=0;blue=0; } }; }, \
+     ANIM_STEP { draw_steps = { ANIM_WAIT_UNTIL_COMPLETE{} }; }, \
+     ANIM_STEP { draw_steps = { ANIM_SET_COLOR{red=0; green=0; blue=0;}
+
+#define M_ANIM_SET_COLOR(cmd) \
+     ANIM_SET_COLOR {cmd}
+
+#define M_ANIM_DRAW_LINE(m_1, m_steps, m_2,m_3,m_4,m_5, m_from_x, m_from_y, m_to_x, m_to_y) \
+		ANIM_DRAW_LINE {steps = m_steps; fromX=m_from_x; fromY = m_from_y; toX = m_to_x; toY=m_to_y;}
+
+
+
+#define M_ANIM_START \
+	steps = { ANIM_STEP { draw_steps = {
+
+#define M_ANIM_MIDDLE \
+     ANIM_SET_COLOR{red=0;green=0;blue=0; } }; },\
+     ANIM_STEP { draw_steps = { ANIM_SET_COLOR{red=0; green=0; blue=0;}
+
+
+#define M_ANIM_WAIT(cmd) \
+     ANIM_SET_COLOR{red=0;green=0;blue=0; } }; },\
+     ANIM_STEP { draw_steps = { ANIM_WAIT { cmd } }; },\
+     ANIM_STEP { draw_steps = { ANIM_SET_COLOR{red=0; green=0; blue=0;}
+
+#define M_ANIM_END \
+	}; } };
+
+#define _ (1)
+
+RESOURCE ANIM_SECTION r_akn_signal_in_vertical
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW( type=EAnimRevealPartNewViewFromTop; steps=3; srcX=0; srcY=0; width=12; height=29; destX=0; destY=0; ),
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_BLIT_PART_NEXT_VIEW( srcX=0; srcY=29; width=12; height=15; )
+	M_ANIM_END
+    }
+
+
+RESOURCE ANIM_SECTION r_akn_signal_in_horizontal
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW( srcX=0; srcY=29; width = 12; height = 15; ), // antenna sign
+	M_ANIM_BLIT_PART_NEXT_VIEW( type=EAnimRevealPartNewViewFromLeft; steps = 3; srcX=0; srcY=0; width=12; height=29; destX=0; destY=0; ) // signal bars
+	M_ANIM_END
+    }
+
+
+RESOURCE ANIM_SECTION r_akn_signal_out_vertical
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW( type=EAnimRevealPartNewViewFromTop; steps = 3; srcX=0; srcY=0; width=12; height=29; destX=0; destY=0; ),
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_BLIT_PART_NEXT_VIEW( srcX=0; srcY=29; width=12; height=15; ) 
+	M_ANIM_END
+    }
+
+
+RESOURCE ANIM_SECTION r_akn_signal_out_horizontal
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=29; width=12; height=15; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( type=EAnimRevealPartNewViewFromRight; steps=3; srcX=0; srcY=0; width=12; height=29; destX=0; destY=0; )
+	M_ANIM_END
+    }
+
+// BATTERY PANE SECTIONS
+
+RESOURCE ANIM_SECTION r_akn_battery_in_vertical
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( type=EAnimRevealPartNewViewFromTop; steps = 3; srcX=164; srcY=0; width=12; height=29; destX=164; destY=0; ),
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=164; srcY=29; width=12; height=15; )
+	
+	M_ANIM_END
+    }
+
+
+RESOURCE ANIM_SECTION r_akn_battery_in_horizontal
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=164; srcY=29; width=12; height=15; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( type=EAnimRevealPartNewViewFromRight; steps=3; srcX=164; srcY=0; width=12; height=29; destX=164; destY=0; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_battery_out_vertical
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( type=EAnimRevealPartNewViewFromTop; steps=3; srcX=164; srcY=0; width=12; height=29; destX=0; destY=0; ), // battery bars
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=164; srcY=29; width=12; height=15; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_battery_out_horizontal
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=164; srcY=29; width=12; height=15; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( type=EAnimRevealPartNewViewFromLeft; steps =3; srcX=164; srcY=0; width=12; height=29; destX=164; destY=0; )
+	M_ANIM_END
+    }
+
+// CONTEXT PANE SECTIONS
+
+RESOURCE ANIM_SECTION r_akn_context_in_zap
+    {
+	M_ANIM_START
+
+	M_ANIM_BLIT_PART_NEXT_VIEW(srcX=12;srcY=0; width=44;height=44;)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_context_out_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=12; srcY=0; width=44; height=44; )
+	M_ANIM_END
+    }
+
+// TITLE PANE SECTIONS
+
+RESOURCE ANIM_SECTION r_akn_title_in_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW(srcX=56;srcY=0; width=108;height=28;)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_title_in_fade
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW(type=EAnimRevealPartNewViewFromLeft; steps=10; srcX=56; srcY=0; width=108; height=28; destX=56;destY=0;)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_title_out_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=56; srcY=0; width=108; height=28; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_title_out_fade
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( type=EAnimRevealPartNewViewFromLeft; steps=10; srcX=56; srcY=0; width=108; height=28; destX=56; destY=0; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_uni_in_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=164; srcY=0; width=12; height=28; )
+	M_ANIM_END
+    }
+
+// NAVI PANE SECTIONS 
+
+// Navi pane Background appearing (fade)
+RESOURCE ANIM_SECTION r_akn_navi_in_back_fade
+    {
+	M_ANIM_START
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_navi_in_arrows_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=5; srcX=55;srcY=28; width=6;height=16; slideFromX=108;slideFromY=28; slideToX=55;slideToY=28;), // left arrow
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=5; srcX=165;srcY=28; width=6;height=16; slideFromX=108;slideFromY=28;slideToX=165;slideToY=28;), // right arrow
+	M_ANIM_WAIT_UNTIL_COMPLETE()
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_navi_in_contents_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW(srcX=60;srcY=28; width=107;height=16;)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_navi_out_contents_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW( srcX=55; srcY=28; width=121; height=16; slideFromX=55; slideFromY=28; slideToX=176; slideToY=28; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_control_in_texts_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_NEXT_VIEW(type = EAnimRevealPartNewViewFromLeft; 
+				    steps = 5;
+				     srcX=0; 
+				     srcY=188; 
+				     width=83; 
+				     height=20; 
+				     slideToX=0; 
+				     slideToY=188; ),
+	M_ANIM_MIDDLE,
+	M_ANIM_SLIDE_PART_NEXT_VIEW( type = EAnimRevealPartNewViewFromRight; 
+				     steps=5;
+				     srcX=94;
+				     srcY=188;
+				     width=83;
+				     height=20;
+				     slideToX=94;
+				     slideToY=188; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_control_in_texts_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=188; width=83; height=20; destX=0; destY=188; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=94; srcY=188; width=83; height=20; destX=94; destY=188; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_control_out_texts_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_NEXT_VIEW ( type = EAnimRevealPartNewViewFromRight; srcX=0; srcY=188; width=83; height=20; slideToX=0; slideToY=188; ),
+	M_ANIM_SLIDE_PART_NEXT_VIEW ( type = EAnimRevealPartNewViewFromLeft; srcX=94; srcY=188; width=83; height=20; slideToX=94; slideToY=188; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_control_out_texts_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=188; width=83; height=20; destX=0; destY=188; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=94; srcY=188; width=83; height=20; destX=94; destY=188; )
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_control_in_arrows_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=83; srcY=188; width=11; height=20; )
+	M_ANIM_END
+    }
+
+// MAIN PANE SECTIONS
+RESOURCE ANIM_SECTION r_akn_main_in_zap
+    {
+	M_ANIM_START
+	M_ANIM_BLIT_PART_NEXT_VIEW(srcX=0;srcY=44;width=176;height=144;)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_main_in_fade
+    {
+	M_ANIM_START
+	M_ANIM_END
+    }
+
+// LIST PANE SECTIONS
+RESOURCE ANIM_SECTION r_akn_line_in_A
+    {
+	M_ANIM_START
+	M_ANIM_SET_COLOR(red=0; green=0; blue=0;),
+	M_ANIM_DRAW_LINE(_, 20, _,_,_,_, 6,44, 6, 183), // vertical line
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_DRAW_LINE(_, 24, _,_,_,_, 7, 183, 174, 183) // horizontal line	
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_line_out_A
+    {
+	M_ANIM_START
+	M_ANIM_SET_COLOR(red=255; green=255; blue=255;),
+	M_ANIM_DRAW_LINE(_, 20, _,_,_,_, 6,44,7,183), // vertical line
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_DRAW_LINE(_, 24, _,_,_,_, 7,183,174,183)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_line_in_AB
+    {
+	M_ANIM_START
+	M_ANIM_SET_COLOR( red=0; green=0; blue=0; ),
+	M_ANIM_DRAW_LINE(_,20, _,_,_,_, 19,44,19,183 ),
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_DRAW_LINE(_,24, _,_,_,_, 20,183,174,183)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_line_out_AB
+    {
+	M_ANIM_START
+	M_ANIM_SET_COLOR( red=255; green=255; blue=255; ),
+	M_ANIM_DRAW_LINE ( _, 20, _,_,_,_, 19, 44, 19, 183 ),
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_DRAW_LINE ( _, 24, _,_,_,_, 20, 183, 174, 183)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_line_in_ABC
+    {
+	M_ANIM_START
+	M_ANIM_SET_COLOR ( red=0; green=0; blue = 0; ),
+	M_ANIM_DRAW_LINE ( _, 20, _,_,_,_, 19,44,19,183), 
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_DRAW_LINE ( _, 24, _,_,_,_, 20, 183,174,183)
+	M_ANIM_END
+    }
+
+RESOURCE ANIM_SECTION r_akn_line_out_AB_1
+    {
+	M_ANIM_START
+	M_ANIM_SET_COLOR ( red=255; green=255; blue=255; ),
+	M_ANIM_DRAW_LINE( _, 20, _,_,_,_, 19,44,19,183 ),
+	M_ANIM_WAIT_UNTIL_COMPLETE(),
+	M_ANIM_DRAW_LINE( _, 24, _,_,_,_, 20, 183,174,183)
+	M_ANIM_END
+    }
+
+
+
+RESOURCE ANIM_SECTION r_akn_list_in_single_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=16; srcX=13;srcY=52; width=163;height=21; slideFromX=176;slideFromY=52; slideToX=13;slideToY=52;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=16; srcX=13;srcY=73; width=163;height=21; slideFromX=176;slideFromY=73; slideToX=13;slideToY=73;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=16; srcX=13;srcY=94; width=163;height=21; slideFromX=176;slideFromY=94; slideToX=13;slideToY=94;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=16; srcX=13;srcY=115; width=163;height=21; slideFromX=176;slideFromY=115; slideToX=13;slideToY=115;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=16; srcX=13;srcY=136; width=163;height=21; slideFromX=176;slideFromY=136; slideToX=13;slideToY=136;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=16; srcX=13;srcY=157; width=163;height=21; slideFromX=176;slideFromY=157; slideToX=13;slideToY=157;)
+	
+	M_ANIM_END
+    }
+
+
+RESOURCE ANIM_SECTION r_akn_list_out_single_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=16; srcX=13;srcY=52; width=163;height=21; slideFromX=13;slideFromY=52; slideToX=176;slideToY=52;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=16; srcX=13;srcY=73; width=163;height=21; slideFromX=13;slideFromY=73; slideToX=176;slideToY=73;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=16; srcX=13;srcY=94; width=163;height=21; slideFromX=13;slideFromY=94; slideToX=176;slideToY=94;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=16; srcX=13;srcY=115; width=163;height=21; slideFromX=13;slideFromY=115; slideToX=176;slideToY=115;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=16; srcX=13;srcY=136; width=163;height=21; slideFromX=13;slideFromY=136; slideToX=176;slideToY=136;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=16; srcX=13;srcY=157; width=163;height=21; slideFromX=13;slideFromY=157; slideToX=176;slideToY=157;)
+	M_ANIM_END
+    }
+
+
+
+RESOURCE ANIM_SECTION r_akn_list_in_single_graphic_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=15; srcX=26;srcY=52; width=150;height=21; slideFromX=176;slideFromY=52; slideToX=26;slideToY=52;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=15; srcX=26;srcY=73; width=150;height=21; slideFromX=176;slideFromY=73; slideToX=26;slideToY=73;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=15; srcX=26;srcY=94; width=150;height=21; slideFromX=176;slideFromY=94; slideToX=26;slideToY=94;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=15; srcX=26;srcY=115; width=150;height=21; slideFromX=176;slideFromY=115; slideToX=26;slideToY=115;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=15; srcX=26;srcY=136; width=150;height=21; slideFromX=176;slideFromY=136; slideToX=26;slideToY=136;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_NEXT_VIEW(steps=15; srcX=26;srcY=157; width=150;height=21; slideFromX=176;slideFromY=157; slideToX=26;slideToY=157;),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=52; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=73; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=94; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=115; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=136; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3; ),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=157; width=19; height=21; )	
+	M_ANIM_END
+    }
+
+
+RESOURCE ANIM_SECTION r_akn_list_out_single_graphic_slide
+    {
+	M_ANIM_START
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=15; srcX=26;srcY=52; width=150;height=21; slideFromX=26;slideFromY=52; slideToX=176;slideToY=52;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=15; srcX=26;srcY=73; width=150;height=21; slideFromX=26;slideFromY=73; slideToX=176;slideToY=73;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=15; srcX=26;srcY=94; width=150;height=21; slideFromX=26;slideFromY=94; slideToX=176;slideToY=94;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=15; srcX=26;srcY=115; width=150;height=21; slideFromX=26;slideFromY=115; slideToX=176;slideToY=115;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=15; srcX=26;srcY=136; width=150;height=21; slideFromX=26;slideFromY=136; slideToX=176;slideToY=136;),
+	M_ANIM_WAIT(steps=3;),
+	M_ANIM_SLIDE_PART_PREVIOUS_VIEW(steps=15; srcX=26;srcY=157; width=150;height=21; slideFromX=26;slideFromY=157; slideToX=176;slideToY=157;),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=52; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3;),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=73; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3;),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=94; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3;),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=115; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3;),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=136; width=19; height=21; ),
+	M_ANIM_WAIT( steps=3;),
+	M_ANIM_BLIT_PART_NEXT_VIEW ( srcX=0; srcY=157; width=19; height=21; )
+	M_ANIM_END
+    }
+
+
+#define INTERVAL 200
+RESOURCE ANIM_DATA r_akn_status_in_slide
+    {
+    interval = INTERVAL;
+    flags = EAnimClearScreen | EAnimWaitBetweenSections | EAnimWaitForeverAtEnd;
+    sections =
+	{
+	r_akn_line_in_A,
+	r_akn_list_in_single_slide,
+	r_akn_control_in_texts_slide,
+	r_akn_navi_in_arrows_slide,
+	r_akn_context_in_zap,
+	r_akn_title_in_zap,
+	r_akn_context_in_zap,
+	r_akn_navi_in_contents_zap,
+	r_akn_main_in_zap,
+	r_akn_line_out_A,
+	r_akn_list_out_single_slide
+	};
+    }
+
+
+
+RESOURCE ANIM_DATA r_akn_list_single_in_slide
+    {
+    interval = INTERVAL;
+    flags = EAnimClearScreen | EAnimWaitBetweenSections | EAnimWaitForeverAtEnd;
+    sections =
+	{
+	r_akn_navi_in_back_fade,
+	r_akn_context_in_zap,
+	r_akn_title_in_zap,
+	r_akn_navi_in_arrows_slide,
+	r_akn_navi_in_contents_zap
+	};
+    }
+
+// End of File
+
+
+
+
+

@@ -1,0 +1,6 @@
+#define R_ALERT_SOFTKEYS_STOP_SNOOZE              0x7109002
+#define R_EIKALARM_CLOCK_ALARM_TYPE               0x7109003
+#define R_EIKALARM_OTHER_ALARM_TYPE               0x7109004
+#define R_EIKALARM_CONFIRMATION                   0x7109005
+#define R_EIKALARM_SNOOZEMSG                      0x7109006
+#define R_EIKALARM_NOTE                           0x7109007

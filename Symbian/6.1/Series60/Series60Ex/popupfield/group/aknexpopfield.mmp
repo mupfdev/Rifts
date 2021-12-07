@@ -1,0 +1,57 @@
+/*
+* =============================================================================
+*  Name     : AknExPopField.mmp
+*  Part of  : AknExPopField
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+TARGET          AknExPopField.app
+TARGETTYPE      app
+UID             0x100039CE 0x10005C2D
+TARGETPATH      \System\Apps\AknExPopField
+
+RESOURCE        AknExPopField.rss
+RESOURCE        AknExPopField_caption.rss
+LANG            SC
+
+SOURCEPATH      ..\Src
+SOURCE          AknExPopFieldApp.cpp 
+SOURCE          AknExPopFieldAppUi.cpp
+SOURCE          AknExPopFieldDocument.cpp
+SOURCE          AknExPopFieldView.cpp
+SOURCE          AknExPopFieldContainer.cpp
+SOURCE          AknExPopFieldBaseDialog.cpp
+SOURCE          AknExPopFieldTextValueDialog.cpp
+SOURCE          AknExPopFieldOptionalListDialog.cpp
+SOURCE          AknExPopFieldManyLineDialog.cpp
+SOURCE          AknExPopFieldMultiPageDialog.cpp
+SOURCE	        AknExPopFieldAttribSetDialog.cpp
+
+USERINCLUDE     . ..\Inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+// Creates Mbm file.
+START BITMAP    AknExPopField.mbm
+HEADER
+TARGETPATH      \system\apps\AknExPopField
+SOURCEPATH      ..\DataSrc
+SOURCE          C12 30x40.bmp
+END
+
+
+LIBRARY         euser.lib
+LIBRARY         apparc.lib
+LIBRARY         cone.lib
+LIBRARY         eikcore.lib
+LIBRARY         eikcoctl.lib
+LIBRARY         avkon.lib
+LIBRARY         eikdlg.lib // for deriving form
+LIBRARY         bafl.lib // for descriptor array
+
+// DEFFILE ?filename
+AIF AknExPopField.aif ..\aif AknExPopFieldaif.rss c12 \
+    AknExPopField_Icon.bmp AknExPopField_Icon_mask.bmp aknexpopfield_lst.bmp aknexpopfield_lst_mask.bmp
+
+// End of File

@@ -1,0 +1,6 @@
+#define R_APP_OOM_THRESHOLDS                      1
+#define R_APP_OOD_THRESHOLDS                      2
+#define R_APP_OOM_EXIT_CANDIDATES                 3
+#define R_APP_OOM_EXIT_NEVER                      4
+#define R_QTN_MEMLO_MEMORY_FULL                   5
+#define R_QTN_MEMLO_MEMORY_RUNNING_OUT            6

@@ -1,0 +1,162 @@
+<!-- The CS-Help compiler xml DTD for CsHlp files
+Version 002
+Date 18-01-01
+Copyright 2001 Symbian Ltd.
+-->
+
+<!-- Parameter elements -->
+<!-- charater formatting -->
+<!ENTITY % charformat 'cs|b|i|sup|sub'>
+
+<!-- The cshlp document -->
+<!ELEMENT cshlp
+((uid|topic)+,(context|index|indexlink)*,customization?,mbmlist?)>
+<!ATTLIST cshlp helpfileUID CDATA #REQUIRED>
+
+<!-- the uid of the category -->
+<!ELEMENT uid EMPTY>
+<!ATTLIST uid value CDATA #REQUIRED>
+
+<!-- topics -->
+<!ELEMENT topic (category,topictitle,synonyms?,(p|list|deflist)*)>
+<!ATTLIST topic topicID CDATA #REQUIRED>
+<!ATTLIST topic categoryUID CDATA #REQUIRED>
+
+<!-- category -->
+<!ELEMENT category (#PCDATA)>
+
+<!-- topic title -->
+<!ELEMENT topictitle (#PCDATA|%charformat;)*>
+
+<!-- synonyms -->
+<!ELEMENT synonyms (#PCDATA)>
+
+<!-- plain text paragraphs -->
+<!ELEMENT p (leading,(PCDATA|%charformat;|graphiclink)*)>
+<!ATTLIST p font CDATA #REQUIRED>
+<!ATTLIST p size CDATA #REQUIRED>
+<!ATTLIST p style (normal|bold|italic|bolditalic) #REQUIRED> 
+<!ATTLIST p color (foreground|background|CDATA) #REQUIRED>
+<!ATTLIST p justify (left|right|center|full) #REQUIRED>
+<!ATTLIST p spacing CDATA #REQUIRED>
+<!ATTLIST p before CDATA #REQUIRED>
+<!ATTLIST p after CDATA #REQUIRED>
+<!ATTLIST p left CDATA #REQUIRED>
+<!ATTLIST p right CDATA #REQUIRED> 
+<!ATTLIST p mbmid CDATA #REQUIRED> 
+<!ELEMENT leading (#PCDATA|%charformat;)*>
+
+<!-- lists -->
+<!ELEMENT list (list|listitem|p)+>
+<!ATTLIST list style CDATA #REQUIRED>
+
+<!-- listitem -->
+<!ELEMENT listitem (#PCDATA|%charformat;|graphiclink)*>
+<!ATTLIST listitem value CDATA #IMPLIED>
+
+<!-- definition list -->
+<!ELEMENT deflist (term,definition)+>
+
+<!-- definition term -->
+<!ELEMENT term (#PCDATA|%charformat;|graphiclink)*>
+
+<!-- definition -->
+<!ELEMENT definition (#PCDATA|%charformat;|graphiclink)*>
+
+<!-- graphic -->
+<!ELEMENT graphiclink EMPTY>
+<!ATTLIST graphiclink mbmID CDATA #REQUIRED>
+
+<!-- character style -->
+<!ELEMENT cs (#PCDATA)>
+<!ATTLIST cs font CDATA #IMPLIED>
+<!ATTLIST cs style (normal|roman|bold|italic|bolditalic) #IMPLIED>
+<!ATTLIST cs size CDATA #IMPLIED>
+<!ATTLIST cs color (foreground|background|CDATA) #IMPLIED>
+
+<!-- Bold text formatting -->
+<!ELEMENT b (#PCDATA|i|sup|sub)*>
+
+<!-- italic text formatting -->
+<!ELEMENT i (#PCDATA|sup|sub)*>
+
+<!-- supscript text formatting -->
+<!ELEMENT sup (#PCDATA|sub)*>
+
+<!-- subscript text formatting -->
+<!ELEMENT sub (#PCDATA)>
+
+<!-- context -->
+<!ELEMENT context EMPTY>
+<!ATTLIST context topicID CDATA #REQUIRED>
+<!ATTLIST context contextUID CDATA #REQUIRED>
+<!ATTLIST context comment CDATA #IMPLIED>
+
+<!-- index -->
+<!ELEMENT index (#PCDATA|%charformat;)*>
+<!ATTLIST index indexID CDATA #REQUIRED>
+
+<!-- indexlink -->
+<!ELEMENT indexlink (#PCDATA|%charformat;)*>
+<!ATTLIST indexlink topicID CDATA #REQUIRED>
+<!ATTLIST indexlink indexID CDATA #REQUIRED>
+<!ATTLIST indexlink categoryUID CDATA #REQUIRED>
+
+<!-- customization -->
+<!ELEMENT customization
+(titlestyle|lists|listbullet1style|listbullet2style|body)*>
+
+<!ELEMENT body (leading)>
+<!ATTLIST body font CDATA #REQUIRED>
+<!ATTLIST body size CDATA #REQUIRED>
+<!ATTLIST body style (normal|bold|italic|bolditalic) #REQUIRED> 
+<!ATTLIST body color (foreground|background|CDATA) #REQUIRED>
+<!ATTLIST body justify (left|right|center|full) #REQUIRED>
+<!ATTLIST body spacing CDATA #REQUIRED>
+<!ATTLIST body before CDATA #REQUIRED>
+<!ATTLIST body after CDATA #REQUIRED>
+<!ATTLIST body left CDATA #REQUIRED>
+<!ATTLIST body right CDATA #REQUIRED> 
+<!ATTLIST body mbmid CDATA #REQUIRED> 
+
+<!-- lists -->
+<!ELEMENT lists EMPTY>
+<!ATTLIST lists leftindent CDATA #REQUIRED>
+
+<!-- titlestyle -->
+<!ELEMENT titlestyle EMPTY>
+<!ATTLIST titlestyle fontstyle CDATA #IMPLIED>
+<!ATTLIST titlestyle size CDATA #IMPLIED>
+
+<!-- listbullet1style -->
+<!ELEMENT listbullet1style EMPTY>
+<!ATTLIST listbullet1style bulletchar CDATA #REQUIRED>
+
+<!-- listbullet2style -->
+<!ELEMENT listbullet2style EMPTY>
+<!ATTLIST listbullet2style bulletchar CDATA #REQUIRED>
+
+<!-- mbmlist -->
+<!ELEMENT mbmlist (graphic)*>
+
+<!-- graphic -->
+<!ELEMENT graphic EMPTY>
+<!ATTLIST graphic mbmID CDATA #REQUIRED> 
+<!ATTLIST graphic epocfilename CDATA #REQUIRED>
+<!ATTLIST graphic htmlfilename CDATA #REQUIRED> 
+
+<!-- document entities -->
+<!ENTITY ldquote "&#8220;">
+<!ENTITY rdquote "&#8221;">
+<!ENTITY lquote "&#8216;">
+<!ENTITY rquote "&#8217;">
+<!ENTITY mdash "&#8212;">
+<!ENTITY ndash "&#8211;">
+<!ENTITY break "&#8232;">
+<!ENTITY nbhyphen "&#8208;">
+<!ENTITY nbspace "&#160;">
+<!ENTITY tab '&#160;&#160;&#160;'>
+
+<!-- any other special-purpose declarations or
+re-definitions go in here -->
+

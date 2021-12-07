@@ -1,0 +1,82 @@
+/*
+* ============================================================================
+*  Name     : CAknExGrid.mmp
+*  Part of  : AknExGrid
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET  AknExGrid.app
+TARGETTYPE  app
+UID  0x100039CE 0x10005C32
+TARGETPATH \system\apps\AknExGrid
+
+SOURCEPATH  ..\SRC
+SOURCE      AknExGridApp.cpp 
+SOURCE      AknExGridAppUi.cpp
+SOURCE      AknExGridDocument.cpp
+SOURCE      AknExGridContainer.cpp
+SOURCE      AknExGridContainerAsSelection.cpp
+SOURCE      AknExGridView.cpp
+SOURCE      AknExGridViewAsSelection.cpp
+SOURCE      AknExGridContainerAsMenu.cpp
+SOURCE      AknExGridViewAsMarkableSelection.cpp
+SOURCE      AknExGridViewAsMenu.cpp
+SOURCE      AknExGridDialogFillingOrder.cpp
+SOURCE      AknExGridDialogChangeSize.cpp
+SOURCE      AknExGridDialogNumberOfItems.cpp
+SOURCE      AknExGridViewAsGMS.cpp
+SOURCE      AknExGridContainerAsGMS.cpp
+
+SOURCEPATH  ..\group
+RESOURCE    AknExGrid.rss
+RESOURCE    AknExGrid_caption.rss
+LANG        SC
+
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY euser.lib   
+LIBRARY eikcoctl.lib  
+LIBRARY egul.lib    // for CGulIcon
+LIBRARY apparc.lib
+LIBRARY cone.lib
+LIBRARY eikcore.lib
+LIBRARY avkon.lib
+LIBRARY bafl.lib
+LIBRARY eikdlg.lib
+
+START WINS      
+// ?wins_specific_information
+END
+
+START MARM
+// ?marm_specific_information
+END
+
+// Other possible keywords:
+
+START BITMAP AknExGrid.mbm
+HEADER
+TARGETPATH   \system\apps\AknExGrid
+SOURCEPATH   ..\datasrc
+SOURCE       c12 MarkOn.bmp
+SOURCE       c12 MarkOff.bmp
+SOURCE       c12 MarkM.bmp
+SOURCE       c12 MarkedItem.bmp
+SOURCE       c12 MarkedItemM.bmp
+SOURCE       c12 GridItem.bmp
+SOURCE       c12 GridItemM.bmp
+SOURCE       c12 blacktextonwhite_wbmp.bmp
+SOURCE       c12 whitetextonblack_wbmp.bmp
+SOURCE       c12 blacktextonwhite_ota.bmp
+SOURCE       c12 whitetextonblack_ota.bmp
+END
+
+
+// DEFFILE ?filename
+// AIF ?filename
+AIF AknExGrid.aif ..\Aif AknExGridAif.rss \
+    c12 AknExGridIcon.bmp AknExGridIcon_mask.bmp AknExGridIcon_42x29.bmp AknExGridIcon_42x29_mask.bmp

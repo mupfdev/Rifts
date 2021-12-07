@@ -1,0 +1,70 @@
+/*
+* ============================================================================
+*  Name     : AknExScroller.mmp
+*  Part of  : AknExScroller
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+
+TARGET  AknExScroller.app
+TARGETTYPE  app
+UID  0x100039CE 0x10005C2A 
+TARGETPATH \system\apps\AknExScroller
+
+SOURCEPATH ..\src
+SOURCE  AknExScrollerApp.cpp 
+SOURCE  AknExScrollerAppUi.cpp
+SOURCE  AknExScrollerDocument.cpp
+SOURCE  AknExScrollerContainer.cpp
+SOURCE  AknExScrollerView.cpp
+SOURCE  AknExScrollerView2.cpp
+SOURCE  AknExScrollerContainer2.cpp
+SOURCE  AknExScrollerView3.cpp
+SOURCE  AknExScrollerContainer3.cpp
+SOURCE  AknExScrollerCbaHandler.cpp
+SOURCE  AknExScrollerView4.cpp
+SOURCE  AknExScrollerContainer4.cpp
+
+RESOURCE ..\group\AknExScroller.rss
+RESOURCE ..\group\AknExScroller_caption.rss
+LANG     SC
+
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY euser.lib
+LIBRARY apparc.lib
+LIBRARY cone.lib
+LIBRARY eikcore.lib 
+LIBRARY eikcoctl.lib
+LIBRARY avkon.lib
+LIBRARY bafl.lib
+LIBRARY eikdlg.lib
+
+
+START WINS      
+// ?wins_specific_information
+END
+
+START MARM
+// ?marm_specific_information
+END
+
+// Other possible keywords:
+/* 
+START BITMAP ?target
+TARGETPATH   ?emulated_path_on_target_machine
+HEADER
+SOURCEPATH   ?source_path
+SOURCE       ?color_depth ?source_bitmap_list
+END
+*/
+// DEFFILE ?filename
+// AIF ?filename
+AIF AknExScroller.aif ..\aif AknExScrollerAif.rss \
+                c12 icon44.bmp icon44m.bmp s_icon.bmp s_iconm.bmp
+
+// End of File

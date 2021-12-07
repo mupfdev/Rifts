@@ -1,0 +1,37 @@
+// BADEF.RH
+//
+// Copyright (c) 1997-2000 Symbian Ltd.  All rights reserved.
+//
+
+#if !defined(__BADEF_RH__)
+#define __BADEF_RH__
+
+STRUCT BA_RSS_SIGNATURE
+    {
+    LONG signature=0; // this value must be changed if the resource file is loaded by an environment
+    SRLINK self;
+    }
+
+STRUCT TBUF
+    {
+    BUF buf; // non-zero terminated text string
+    }
+
+STRUCT LBUF
+    {
+    LTEXT txt; // leading-byte counted text string
+    }
+
+STRUCT ARRAY
+    {
+    STRUCT items[];
+    }
+
+STRUCT UID_NAME_PAIR
+	{
+	LONG uid;
+	STRUCT name; // an LBUF
+	}
+
+#endif
+

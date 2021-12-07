@@ -1,0 +1,15 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __CIPHER_HRH__
+#define __CIPHER_HRH__
+
+/** Cipher enumerate command codes */
+enum TCipherIds
+    {
+    ECipherEncrypt = 1,  // start value must not be 0
+	ECipherDecrypt = 2
+    // add further enumerations here
+    };
+
+
+#endif // __CIPHER_HRH__

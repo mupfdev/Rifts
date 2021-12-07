@@ -1,0 +1,1132 @@
+/*
+* ============================================================================
+*  Name     : Avkon.hrh
+*  Part of  : Avkon
+*
+*  Description:
+*     Constants for Avkon that may need to be used in resource files
+*  Copyright (c) 2002 Nokia. All rights reserved.
+* ============================================================================
+*/
+#ifndef __AVKON_HRH__
+#define __AVKON_HRH__
+
+#if !defined(__UIKON_HRH__)
+#include <uikon.hrh>
+#endif
+//
+// This file is very important for applications!
+//
+// Here we have many names you can find from Series 60 specifications
+// This file provides access for applications to the following services:
+//   * Selection Service
+//   * Find
+//
+
+// internal, do not use (maybe you might need to use LoopScrolling though, but use it with some other flags...)
+#define EAknListBoxMultipleSelection EEikListBoxMultipleSelection
+#define EAknListBoxIncrementalMatching EEikListBoxIncrementalMatching
+#define EAknListBoxScrollBarSizeExcluded 0x0080
+#define EAknListBoxLoopScrolling 0x1000
+#define EAknListBoxEnterMarks 0x2000
+#define EAknListBoxShiftEnterMarks 0x4000
+// Note there's also EAknListBoxViewerFlags, which is better for apps.
+#define EAknListBoxViewerFlag 0x8000
+
+// These are combined to the viewerflag to make it fit to WORD in resources.
+#define EAknListBoxPageAtOnceScrolling EAknListBoxViewerFlag
+#define EAknListBoxDisableHighlight EAknListBoxViewerFlag
+
+// The next ones are used internally by SingleGraphicStyle and DoubleGraphicStyle
+#define EAknListBoxFlagsMarkableCheck (EAknListBoxShiftEnterMarks)
+#define EAknListBoxFlagsMultiselectionCheck (EAknListBoxEnterMarks)
+
+#define EAknGenericListBoxFlags (EAknListBoxScrollBarSizeExcluded)
+
+// Implementation detail, do not use - for dialog flags
+#define EAknDialogGenericFullScreen (EEikDialogFlagNoDrag | EEikDialogFlagNoTitleBar | EEikDialogFlagFillAppClientRect | EEikDialogFlagCbaButtons | EEikDialogFlagWait)
+
+//
+//
+//  SELECTION SERVICE IMPLEMENTATION STARTS HERE (Use these in applications!)
+//
+// LISTBOX FLAGS (use these in applications)
+//
+#define EAknListBoxSelectionList              (EAknGenericListBoxFlags)
+#define EAknListBoxSelectionListWithShortcuts (EAknListBoxSelectionList | EAknListBoxIncrementalMatching)
+#define EAknListBoxMenuList                   (EAknGenericListBoxFlags)
+#define EAknListBoxMarkableList               (EAknGenericListBoxFlags | EAknListBoxMultipleSelection | EAknListBoxShiftEnterMarks)
+#define EAknListBoxMarkableListWithShortcuts  (EAknListBoxMarkableList | EAknListBoxIncrementalMatching)
+#define EAknListBoxMultiselectionList         (EAknGenericListBoxFlags | EAknListBoxMultipleSelection | EAknListBoxEnterMarks)
+#define EAknListBoxMultiselectionListWithShortcuts (EAknListBoxMultiselectionList | EAknListBoxIncrementalMatching)
+
+#define EAknListBoxSelectionGrid	      (EAknListBoxSelectionList)
+#define EAknListBoxSelectionGridWithShortcuts (EAknListBoxSelectionList | EAknListBoxIncrementalMatching)
+#define EAknListBoxMarkableGrid		      (EAknListBoxMarkableList)
+#define EAknListBoxMarkableGridWithShortcuts (EAknListBoxMarkableList | EAknListBoxIncrementalMatching)
+
+#define EAknListBoxMenuGrid                   (EAknListBoxMenuList)
+
+//
+// Viewers (see Selection service)
+// 
+#define EAknListBoxViewerFlags (EAknListBoxPageAtOnceScrolling | EAknListBoxDisableHighlight)
+
+//
+// DIALOG FLAGS (applications should use these!)
+//
+#define EAknDialogSelectionList (EAknDialogGenericFullScreen)
+#define EAknDialogMenuList (EAknDialogGenericFullScreen)
+#define EAknDialogMarkableList (EAknDialogGenericFullScreen | EEikDialogFlagDontEatUpDownEvents)
+#define EAknDialogMultiselectionList (EAknDialogGenericFullScreen)
+
+#define EAknDialogGenericNoteFlags (EEikDialogFlagNoDrag |EEikDialogFlagNoTitleBar | EEikDialogFlagCbaButtons )
+#define EAknDialogGenericQueryFlags (EEikDialogFlagWait|EEikDialogFlagNoDrag | EEikDialogFlagNoTitleBar | EEikDialogFlagCbaButtons)
+
+// Flags for note dialogs:
+#define EAknErrorNoteFlags (EAknDialogGenericNoteFlags)
+#define EAknWarningNoteFlags (EAknDialogGenericNoteFlags)
+#define EAknInformationNoteFlags (EAknDialogGenericNoteFlags)
+#define EAknConfirmationNoteFlags (EAknDialogGenericNoteFlags)
+#define EAknProgressNoteFlags (EAknDialogGenericNoteFlags | EEikDialogFlagNotifyEsc)
+#define EAknWaitNoteFlags (EAknProgressNoteFlags)
+#define EAknPermanentNoteFlags (EAknDialogGenericNoteFlags | EEikDialogFlagModeless)
+#define EAknSoftNotificationNoteFlags (EAknDialogGenericNoteFlags)
+
+// Flags for query dialogs:
+#define EGeneralQueryFlags (EAknDialogGenericQueryFlags)
+#define EAknGeneralQueryFlags (EAknDialogGenericQueryFlags)
+
+
+
+//
+// CBA LABELS (applications should use these)
+//
+#define R_AVKON_SOFTKEYS_SELECTION_LIST        R_AVKON_SOFTKEYS_OPTIONS_BACK
+#define R_AVKON_SOFTKEYS_MENU_LIST             R_AVKON_SOFTKEYS_OK_CANCEL
+#define R_AVKON_SOFTKEYS_SETTING_LIST          R_AVKON_SOFTKEYS_OPTIONS_CANCEL
+#define R_AVKON_SOFTKEYS_TEXT_SETTING_ITEM     R_AVKON_SOFTKEYS_OK_BACK
+#define R_AVKON_SOFTKEYS_POPUP_SETTING_ITEM    R_AVKON_SOFTKEYS_MENU_LIST
+#define R_AVKON_SOFTKEYS_SLIDER_SETTING_ITEM   R_AVKON_SOFTKEYS_OPTIONS_BACK
+#define R_AVKON_SOFTKEYS_MULTISELECTION_LIST   R_AVKON_SOFTKEYS_OK_CANCEL
+#define R_AVKON_SOFTKEYS_MARKABLE_LIST         R_AVKON_SOFTKEYS_SELECTION_LIST
+
+
+//
+// Menu panes (context specific menu panes)
+//
+#define R_AVKON_MENUPANE_SELECTION_LIST  R_AVKON_MENUPANE_EMPTY
+#define R_AVKON_MENUPANE_SETTING_LIST R_AVKON_MENUPANE_EMPTY
+#define R_AVKON_MENUPANE_MARKABLE_LIST   R_AVKON_MENUPANE_MARKABLE_LIST_EDIT_LIST_IMPLEMENTATION
+#define R_AVKON_MENUPANE_MULTISELECTION_LIST R_AVKON_MENUPANE_EMPTY
+
+
+//
+// There are also ready-made HandleCommandL() implementations for selection service in aknutils.h
+//  
+// AknSelectionService::HandleSelectionListProcessCommandL(aCommand, iListBox);
+// AknSelectionService::HandleMultiSelectionListProcessCommandL(aCommand, iListBox);
+// AknSelectionService::HandleMarkableSelectionListProcessCommandL(aCommand, iListBox);
+//
+
+//
+// Application icon dimensions (for proper layout in Application Shell and Fast Application Swap)
+//
+
+enum
+    {
+	EAknApplicationIconWidth = 42,
+	EAknApplicationIconHeight = 29
+    };
+
+//
+//
+//  SELECTION SERVICE IMPLEMENTATION ENDS HERE
+//
+//
+
+
+//
+// FIND IMPLEMENTATION STARTS HERE, use AknFind with these.
+//
+
+// Options menu. Use these instead of R_AVKON_MENUPANE_[SELECTION|MARKABLE]_LIST when find popup window is needed
+#define R_AVKON_MENUPANE_SELECTION_LIST_WITH_FIND_POPUP R_AVKON_MENUPANE_FIND_POPUP_IMPLEMENTATION
+#define R_AVKON_MENUPANE_MARKABLE_LIST_WITH_FIND_POPUP R_AVKON_MENUPANE_FIND_POPUP_IMPLEMENTATION_MARKABLE
+
+#define EAknFindBoxEditorFlags (CEikEdwin::ENoLineOrParaBreaks)
+
+//
+// FIND IMPLEMENTATION ENDS HERE
+//
+
+
+
+
+// for ProcessCommandL()
+enum 
+	{
+	EAknDummyForProcessCommands=4000,
+	EAknMarkAll, // selection service impl
+	EAknUnmarkAll, // selection service impl
+	EAknCmdHelp,
+	EAknCmdAddToPinboard,
+	EAknCmdFindPopupActivated,
+	EAknCmdEditModeT9,
+	EAknCmdEditModeMultitap,
+	EAknCmdEditModeNumber,
+	EAknCmdEditInsertNumber,
+	EAknCmdEditInsertSymbol,
+	EAknCmdInputLanguage,
+	EAknCmdPredictiveTextCascade,
+	EAknCmdT9PredictiveMatches,
+	EAknCmdT9PredictiveInsertWord,
+	EAknCmdT9PredictiveEditWord,
+	EAknCmdT9PredictiveT9Off,
+	EAknCmdMultitapPredictiveT9On,
+	EAknCmdExit,
+	EAknCmdEditTextMenu,
+	EAknCmdEditListMenu, // selection service impl
+	EAknCmdMark, // selection service impl
+	EAknCmdUnmark, // selection service impl
+	EAknCmdOpen,    // selection service impl
+
+	// command ids for APAC build 
+	EChinFepCmdInstructions,
+	EChinFepCmdModePinyin,
+	EChinFepCmdModeZhuyin,
+	EChinFepCmdModeStroke,
+	EChinFepCmdModeLatinUpper,
+	EChinFepCmdModeLatinLower,
+	EChinFepCmdModeNumber,
+	EChinFepCmdModeZhuyinFind,
+	EChinFepCmdModeStrokeFind
+};
+
+/**
+* Note that although these are the command ids resulting from the CBA key press, codes returned from 
+* CAknDialog::ExecuteLD are mapped in the routine CEikDialog::MappedCommandId.  This routine should be consulted 
+* before knowing what the dialog will return.
+*/
+enum		// CBA constants
+	{
+	EAknSoftkeyOk = EEikBidOk,
+	EAknSoftkeyCancel = EEikBidCancel,
+   	EAknSoftkeySelect = EEikBidSelect,
+	EAknSoftkeyOptions= 3000,
+	EAknSoftkeyBack,
+	EAknSoftkeyMark,
+	EAknSoftkeyUnmark,
+	EAknSoftkeyInsert,
+	EAknSoftkeyYes,
+	EAknSoftkeyNo,
+	EAknSoftkeyDone,
+	EAknSoftkeyClose,
+	EAknSoftkeyExit,
+	EAknSoftkeyClear,
+	EAknSoftkeyUnlock,
+	EAknSoftkeySave,
+	EAknSoftkeyShow,
+	EAknSoftkeyListen,
+	EAknSoftkeyRead,
+	EAknSoftkeySearch,
+	EAknSoftkeyEmpty,
+	EAknSoftkeyLock,
+    EAknSoftkeyCall,
+    EAknSoftkeyAgain,
+    EAknSoftkeyQuit,
+    EAknSoftkeyDetails
+	};
+
+enum	{
+	EAknSoftkeyDummyUsedWithShortcuts = 3200
+	};
+
+enum
+	{
+	EAknCBAFlagRespondWhenInvisible	= 0x02   // softkeys still respond to key events even when control is invisible
+	};
+
+
+// Predefined softkey ranges for supporting limited automatic control of such things as
+// return from dialog-like contexts.
+// All dialog-like contexts should  return 0 for values in the first range.
+// CEikDialog does not use the other implied ranges at all.  
+// Other contexts may use the "accept" range for internal behaviour
+
+#define EAknSoftkeyLowestUserRejectId	0x1000
+#define EAknSoftkeyLowestUserAcceptId	0x1100
+#define EAknSoftkeyLowestUserNeutralId	0x1200
+
+
+// Define a Cba version number of differentiate from GT CBA
+// Current GT version is 0, but it's worth avoiding 1,2 etc in
+// case of future incompatibilities.
+#define KAknCbaVersion 10
+
+//
+//
+// Avkon control id's start from 5700
+// Phonebook control id's start from 6000
+
+//
+// Avkon Control Type codes
+//
+#define KAknCtFirstControlId	5699
+#define KAknCtLastControlId		0x2000
+
+enum
+	{
+	EAknCtTest = KAknCtFirstControlId,
+	EAknControlIdBase = 5700,
+
+    EAknCtFormattedListBox, // generic formatted listbox
+
+    // "General list pane descendants"
+    EAknCtSingleListBox,
+    EAknCtSingleNumberListBox,
+    EAknCtSingleHeadingListBox,
+    EAknCtSingleGraphicListBox,
+    EAknCtSingleGraphicHeadingListBox,
+    EAknCtSingleNumberHeadingListBox,
+    EAknCtSingleLargeListBox,
+    EAknCtDoubleListBox,
+    EAknCtDoubleNumberListBox,   // this is also big number implementation
+    EAknCtDoubleTimeListBox,
+    EAknCtDoubleLargeListBox,  // this is also big large graphic implementation
+    EAknCtDoubleGraphicListBox,
+    EAknCtSettingListBox,     // this is also big setting pane implementation
+    EAknCtSettingNumberListBox,  // this is also big setting number pane implementation
+
+    // "Pop up window list pane descendants"
+    EAknCtSinglePopupMenuListBox,
+    EAknCtSingleGraphicPopupMenuListBox,
+    EAknCtSingleGraphicHeadingPopupMenuListBox,
+    EAknCtMenuDoublePopupMenuListBox,
+    EAknCtSinglePopupSubmenuListBox,
+    EAknCtDoubleLargeGraphicPopupMenuListBox,
+    EAknCtSingleHeadingPopupMenuListBox,
+
+    // "List pane elements and descendants(settings, edited)"
+    EAknSetListBox,
+
+    // "List pane elements (form, popup)"
+    EAknFormGraphicListBox,
+
+// These are listboxes too.
+    EAknCtAppGrid,
+    EAknCtPinbGrid,      // This is provided as example only.
+    EAknCtQdialGrid,     // this is provided as example only.
+    EAknCtCaleMonthGrid, // this is provided as example only.
+
+
+    EAknCtTitlePane,
+    EAknCtContextPane,
+    EAknCtNaviPane,
+    EAknCtSignalPane,
+    EAknCtBatteryPane,
+	EAknCtIndicatorPane,
+    EAknCtIdleContextPane,
+//
+//  For AVKON notes and queries:
+//
+    EAknCtNote,
+    EAknCtQuery,
+	EAknCtMultilineQuery,
+//
+// For AVKON popup field:
+//
+	EAknCtPopupField,
+	EAknCtPopupFieldText,
+// For AVKON Form
+	EAknCtFormLabelEditor,
+
+// For LAF reader
+	EAknCtLAF,
+	EAknCtPopupHeadingPane,
+	EAknCtSearchField,
+
+//  For Setting Page 
+	EAknCtSettingPage,
+
+// For AknVolumeControl and AknSlider
+	EAknCtVolumeControl,
+	EAknCtSlider,
+	EAknCtListQueryControl,
+   	EAknCtSpecialCharacterMap,
+
+// For AknPhoneNumberEditor
+	EAknPhoneNumberEditor,
+
+// Numeric secret editor
+	EAknCtNumericSecretEditor,
+
+// Popup Setting List Page
+	EAknCtPopupSettingList,
+// Message query
+    EAknCtMessageQuery,
+
+// Specialized numeric edwins
+	EAknCtIntegerEdwin,
+	EAknCtFloatingPointEdwin,
+	EAknCtSelectionListFixedFind,
+	EAknCtSelectionListPopupFind,
+	EAknCtEmptyList,
+// This is the marker for the last AVKON control id: It does not construct a control
+	EAknCtLastControlId = KAknCtLastControlId 
+
+//  Control ids beyond (or including) this value will be dealt with as custom controls. 
+ 
+//	However, to assist collaboration between applications, the following Series 60 -specific 
+//	application- related ranges are documented here: 
+//
+//  Phonebook- related control ids = 0x2800 - 0x2C00
+//
+//  Applications which do not have to correlate with any other DLLs or apps, should use the 
+//	range 0x2001 - 0x2800
+//
+    };
+
+// Navi decorator control types
+enum
+    {
+    ENaviDecoratorControlNone,
+    ENaviDecoratorControlTabGroup,
+    ENaviDecoratorLabel,
+    ENaviDecoratorImage,
+    ENaviDecoratorToolTip // Hint text
+    };
+
+// Navigation pane tab width specifiers
+
+
+enum
+	{
+	EAknTabWidthWithTwoTabs = 36,
+	EAknTabWidthWithTwoLongTabs = 74,
+	EAknTabWidthWithThreeTabs = 22,
+	EAknTabWidthWithThreeLongTabs = 67,
+	EAknTabWidthWithFourTabs = 18,
+	EAknTabWidthWithOneTab = 107
+	};
+
+// Note dialog constants 
+enum 
+    {
+    EGeneralLayout = 1,
+    EConfirmationLayout,
+    EProgressLayout,
+    ENoteWithImageLayout,
+    ETextualNotificationLayout,
+    ENotificationWithGraphicsLayout,
+	EAknNoteControlAnimationCreationFailed,
+	EWaitLayout
+    };
+
+enum 
+    {
+	EAknInvalidBorderCount = 1,
+	EAknInvalidDimensionArrayOutOfBounds,
+	EAknNoNoteControlDimensionDefined,
+	EAknNoteControlNullArgumentUsed
+    };
+
+enum EAknNoteItemType {
+	EAknNoteNoType = 1,
+    EAknNoteBitmap,
+    EAknNoteNumberTypeIndication,
+    EAknNoteProgressBar,
+    EAknNoteLabel,
+    EAknNoteAnimation
+};
+
+enum TNoteCtrlIds
+	{
+	EGeneralNote = 1
+	};
+
+
+//Note control flags
+#define EAknNoteNoTextWrapping 0x01
+
+
+// Query dialog constants
+
+// These are query types, and each type must be mapped
+// to a layout (e.g. code layout or data layout)
+// If you add or change a type here you need to update
+// KQueryTypeToLayout in aknquerycontrol.cpp otherwise
+// query control will crash with EAknPanicNotSupported
+// because the layout is not known
+enum 
+    {
+    EDataLayout=1,
+    EConfirmationQueryLayout,
+    ECodeLayout,
+    ETimeLayout,
+    EDateLayout,
+    EListLayout,
+    EMultiListLayout,
+	EMultiLineDataLayout,
+	EDurationLayout,
+	ETextSoftNotification,
+	ENumberLayout,
+	EPinLayout,
+	EPhoneLayout,
+    EMessageQueryLayout,
+    EStaticSizeDataLayout,
+    EFloatingPointLayout
+    };
+
+enum
+	{
+	ETextEditor=1,
+	ESecretEditor,
+	ETimeEditor,
+	EDateEditor,
+	ENumberEditor,
+	EDurationEditor
+	};
+
+enum EAknMultilineDataLayout
+{
+	EMultiDataFirstEdwin = 1,
+	EMultiDataSecondEdwin,
+	EMultiDataFirstSecEd,
+	EMultiDataSecondSecEd,
+	EMultiDataFirstTimeEd,
+	EMultiDataSecondTimeEd,
+	EMultiDataFirstDateEd,
+	EMultiDataSecondDateEd,
+	EMultiDataFirstDurEd,
+	EMultiDataSecondDurEd,
+	EMultiDataFirstPhoneEd,
+	EMultiDataSecondPhoneEd,
+	EMultiDataFirstNumEd,
+	EMultiDataSecondNumEd,
+	EMultiDataFirstPinEd,
+	EMultiDataSecondPinEd
+	};
+
+enum TQueryCtrlIds
+	{
+	EGeneralQuery = 0x500,
+	EMultilineFirstLine,
+	EMultilineSecondLine
+	};
+
+enum TListQueryCtrlIds
+	{
+	EListQueryMainInboxList = 1,
+	EListQueryMainDraftList,
+	EListQueryMainOutboxList,
+	EListQueryAppViewLabel,
+	EListQueryMsgEditField,
+	EListQueryHeading,
+	EListQueryControl
+	};
+   
+enum TSelectionListCtrlIds
+    {
+    ESelectionListControl = 1,
+    EFindControl,
+    EAknEmptyListControl
+    
+    };
+   
+
+// layout commands (for lists currently)
+enum
+	{
+	ELayoutNoCmd =1,
+	ELayoutOptional, // optional items
+	ELayoutRightSeparator, // adds separator
+	ELayoutTransparentCell,  // transparent cell for formattedlistbox only
+	ELayoutItemMark,         // sets column/subcell to handle item mark in multiselection lists
+
+	ELayoutNotFilled,
+	ELayoutNotAlwaysDrawn
+	};
+
+enum {
+	ELayoutAlignNone,
+	ELayoutAlignCenter,
+	ELayoutAlignLeft,
+	ELayoutAlignRight
+     };
+
+// Editor alignment
+enum 
+	{
+	EAknEditorAlignNone,
+	EAknEditorAlignCenter,
+	EAknEditorAlignLeft,
+	EAknEditorAlignRight
+     };
+
+// Editor character case
+enum 
+	{
+ 	EAknEditorCharactersUpperCase = EAknEditorUpperCase,
+	EAknEditorCharactersLowerCase = EAknEditorLowerCase,
+	EAknEditorCharactersTextCase = EAknEditorTextCase
+	};
+
+enum {
+	EFontNone = 0,
+	ELatinPlain12,
+	ELatinBold12,
+	ELatinBold13,
+	ELatinBold17,
+	ELatinBold19,
+	ENumberPlain5,
+	EClockBold30,
+	ELatinClock14,
+	EFontCustom,
+	EPlain12,
+	EPlain16, 
+	EApacPlain12 = EPlain12,
+	EApacPlain16 = EPlain16,
+	EBold18,
+	EBold24
+	};
+
+#define ELayoutEmpty (-16380)
+
+// For layout resource of findbox
+enum
+{
+	EAknLayoutFindPaneIconId = 1,
+	EAknLayoutFindPaneEditorId,
+	EAknLayoutMainPaneListGenPane,
+	EAknLayoutMainPaneListGenPaneWithFindBox,
+	EAknLayoutMainPaneFindPane,
+
+	EAknListSinglePane,
+	EAknListSingleNumberPane,
+	EAknListSingleHeadingPane,
+	EAknListSingleGraphicPane,
+	EAknListSingleGraphicHeadingPane,
+	EAknListSingleNumberHeadingPane,
+	EAknListSingleLargeGraphicPane,
+	EAknListDoubleNumberPane,
+	EAknListDoubleTimePane,
+	EAknListDoubleLargeGraphicPane,
+	EAknListDoubleGraphicPane,
+	EAknListSettingNumberPane,
+
+
+	EAknLayoutFindPaneVShadow,
+	EAknLayoutFindPaneHShadow,
+	EAknLayoutFindPaneOutlineRect,
+
+
+	EAknLayoutEmptyList1stLine,
+	EAknLayoutEmptyList2ndLine
+
+};
+
+
+// Status pane pane Uids
+
+#define EEikStatusPaneUidSignal 0x100059B9
+#define EEikStatusPaneUidBattery 0x100059BA
+#define EEikStatusPaneUidContext 0x100059BB
+#define EEikStatusPaneUidTitle 0x100059BC
+#define EEikStatusPaneUidNavi 0x100059BD
+#define EEikStatusPaneUidIndic 0x100059BE
+#define EEikStatusPaneUidMessage 0x100059BF
+#define EEikStatusPaneUidClock 0x100059C0
+
+// POPUP_FIELD flags
+#define EAknPopupFieldFlagAllowsUserDefinedEntry  0x01
+#define	EAknPopupFieldFlagInitialised 	0x02
+#define	EAknPopupFieldFlagButton 	0x04
+#define	EAknPopupFieldNoGraphic		0x08
+
+enum
+	{
+	EAknDialogQueryValueTextEditor1 = 1,
+	EAknDialogQueryValueNumberEditor1,
+	EAknDialogQueryValuePhoneEditor1,
+	EAknDialogQueryValueTimeEditor1,
+	EAknDialogQueryValueDateEditor1,
+	EAknDialogQueryValueDurationEditor1,
+	EAknFormQueryControl,
+	EAknPopupFieldEmptyListNote
+	};
+
+// POPUP_SETTING_LIST flags
+enum
+	{
+	EAknPopupSettingListFlagAllowsUserDefinedEntry = 0x001,
+	EAknPopupSettingListFlagInitialised = 0x002
+	};
+
+// FORM default menu constants
+enum
+	{
+	EAknFormCmdEdit = 950,
+	EAknFormCmdAdd,
+	EAknFormCmdSave,
+	EAknFormCmdLabel,
+	EAknFormCmdDelete,
+	EAknFormMaxDefault
+	};
+
+// Slider layouts
+enum
+	{
+	EAknFormSliderLayout1 =1,
+	EAknFormSliderLayout2,
+	EAknFormSliderLayout3,
+	EAknSettingsItemSliderLayout, 
+	EAknSettingsItemSliderLayoutWithGraphics
+	};
+
+// Slider value types
+enum
+	{
+	EAknSliderValueNone,
+	EAknSliderValueBareFigure,
+	EAknSliderValuePercentage,
+	EAknSliderValueFraction,
+	EAknSliderValueDecimal
+	};
+
+// Volume layouts
+enum
+	{
+	ESettingsVolumeControl,
+	ENaviPaneVolumeControl
+	};
+
+// Small indicator pane indicators & navi pane editor indicators
+enum
+	{
+	// Status pane's indicator pane's indicators.
+	EAknIndicatorIrActive,
+	EAknIndicatorEnvelope,
+    EAknIndicatorEmailMessage,
+    EAknIndicatorDataMessage,
+    EAknIndicatorFaxMessage,
+    EAknIndicatorOtherMessage,
+    EAknIndicatorSecuredConnection,
+	EAknIndicatorVoiceMailWaiting,
+	EAknIndicatorVoiceMailWaitingOnLine1,
+	EAknIndicatorVoiceMailWaitingOnLine2,  
+	EAknIndicatorVoiceMailWaitingOnBothLines,  
+	EAknIndicatorHomeZone,
+	EAknIndicatorBluetooth,
+	EAknIndicatorBluetoothModuleOn,
+	EAknIndicatorOutbox,
+	EAknIndicatorKeyguard,
+	EAknIndicatorAllCallsForwarded,
+	EAknIndicatorCallsForwardedOnLine1,
+	EAknIndicatorCallsForwardedOnLine2, 
+	EAknIndicatorCallsForwardedOnBothLines,
+	EAknIndicatorCallsForwardedToVoiceMailbox,
+	EAknIndicatorSelectedLine,
+	EAknIndicatorAlarmClock,     
+    EAknIndicatorHeadset,
+    EAknIndicatorLoopset,
+    EAknIndicatorIHFActive,
+    EAknIndicatorInstantMessage,
+    EAknIndicatorTTY,
+
+	// Navi pane editor indicators
+	EAknNaviPaneEditorIndicatorT9 = 100,
+	EAknNaviPaneEditorIndicatorUpperCase,
+	EAknNaviPaneEditorIndicatorLowerCase,
+	EAknNaviPaneEditorIndicatorTextCase,
+	EAknNaviPaneEditorIndicatorNumberCase,
+	EAknNaviPaneEditorIndicatorQuery,
+
+    // APAC
+	EAknNaviPaneEditorIndicatorPinyin = 150,
+    EAknNaviPaneEditorIndicatorZhuyin,
+	EAknNaviPaneEditorIndicatorStroke, // Stroke editor indicator for simplified Chinese.
+
+	EAknNaviPaneEditorIndicatorZhuyinFind,
+	EAknNaviPaneEditorIndicatorStrokeFind,
+
+        EAknNaviPaneEditorIndicatorStrokeTrad,  // Stroke editor indicator for traditional Chinese.
+
+	// Application indicators to editor indicator pane
+    EAknNaviPaneEditorIndicatorAudioAttached = 200,
+    EAknNaviPaneEditorIndicatorImageAttached,
+    EAknNaviPaneEditorIndicatorObjects,
+    EAknNaviPaneEditorIndicatorAttachment,
+	EAknNaviPaneEditorIndicatorMessageLength,
+	EAknNaviPaneEditorIndicatorMessageInfo
+	};
+
+
+enum  // Indicator states
+	{
+	EAknIndicatorStateOff,
+	EAknIndicatorStateOn,
+	EAknIndicatorStateAnimate
+	};
+
+enum // GPRS indicator states
+    {
+    EAknSignalGprsIndicatorOff = 0,
+    EAknSignalGprsIndicatorAvailable,  // Same as EAknSignalGprsIndicatorOff
+    EAknSignalGprsIndicatorAttached,
+    EAknSignalGprsIndicatorEstablishingContext,
+    EAknSignalGprsIndicatorContext,
+    EAknSignalGprsIndicatorSuspended
+    };
+
+// Grid layout flags
+#define EAknGridHorizontalOrientation 0x01
+#define EAknGridVerticalOrientation   0x02
+#define EAknGridRightToLeft 0x04
+#define EAknGridLeftToRight 0x08
+#define EAknGridBottomToTop 0x10
+#define EAknGridTopToBottom 0x20
+
+#define EAknGridFollowsItemsAndStops 0x00
+#define	EAknGridFollowsItemsAndLoops 0x01
+#define	EAknGridFollowsGrid			 0x02
+#define	EAknGridStops				 0x04
+#define EAknGridIncrementLineAndStops 0x08
+#define EAknGridIncrementLineAndLoops 0x10
+
+// Bitmap Animation flags
+#define EAknBitmapAnimationPlayModePlay		0x00
+#define EAknBitmapAnimationPlayModeCycle	0x01
+#define EAknBitmapAnimationPlayModeBounce	0x02
+
+
+// Defining colors in resource file (this is for defining your own color schemes, do not use in applications!) (num is the number from LAF specification!) This is used in eikcolor.ra to setup color lists.
+#define AVKON_COLOR(num,r,g,b) CTRL_COLOR { logical_color=(num); color= COLOR { red=(r); green=(g); blue = (b); }; }
+	
+
+// This is used in eikcolor.ra
+#define AVKON_RGB(num,r,g,b) COLOR { red=(r); green=(g); blue=(b); }
+
+
+//
+// defines for different listbox layouts
+// gfx = index to the image in icon array in A column
+// heading = heading text in B column
+// text = main text for C column
+// optgfx1 = index to optional image in D column
+// optgfx2 = index to 2nd optional image in D column
+//
+// Example:  LB_SINGLE_GRAPHIC_HEADING(1, qgn_icon_1, qtn_text_1)
+
+#define LB_SINGLE(text) 				text
+#define LB_SINGLE_NUMBER(num,text) 			#num ## "\t" ## text
+#define LB_SINGLE_HEADING(heading, text) 		heading ## "\t" ## text
+#define LB_SINGLE_GRAPHIC(gfx, text) 			#gfx ## text
+#define LB_SINGLE_GRAPHIC_HEADING(gfx, heading, text) 	#gfx ## "\t" ## heading ## "\t" ## text
+
+// SCT enumerations
+enum  // ids in SCT_CHAR_SET resource.
+    {
+	EAknSCTLowerCase,
+	EAknSCTUpperCase,
+	EAknSCTNumeric,
+	EAknSCTChiChineseInputModes = EAknSCTUpperCase,
+	EAknSCTChiLatinInputModes = EAknSCTLowerCase
+	};
+
+// For Setting Page resource so that no number is displayed
+#define EAknSettingPageNoOrdinalDisplayed	(-16380)
+
+// Flag for Setting Item resource
+#define EAknSettingItemNumberedStyle		(0x0001)
+#define EAknSettingItemIncludeHiddenInOrdinal	(0x0002)
+
+
+enum TSCTQueryCtrlIds
+    {
+    EAknSCTQueryHeadingId = 1,
+    EAknSCTQueryContentId
+    };
+
+// Enemerations for Avkon KeySounds
+
+enum TAvkonSKeyRepeatType
+	{
+	ESKeyTypeShort,
+	ESKeyTypeLong,
+	ESKeyTypeRepeat
+	};
+
+// These SID numbers should specify all AVKON defined SID's
+// The first item starts from 1000 so there are no clashes 
+// with application defined SID's (which should start at 0)
+enum TAvkonSystemSID
+	{
+	EAvkonSIDNoSound = 1000,
+	EAvkonSIDDefaultSound = 1001,
+	EAvkonSIDStandardKeyClick = 1002,
+	EAvkonSIDConfirmationTone = 1003,
+	EAvkonSIDInformationTone = 1003,	
+	EAvkonSIDWarningTone = 1004,
+	EAvkonSIDErrorTone = 1005,
+	EAvkonSIDVolumeMaxTone = 1006,
+	EAvkonSIDVolumeMinTone = 1007,
+	EAvkonSIDReadialCompleteTone = 1008,
+	EAvkonSIDBatteryLowTone = 1009,	
+	EAvkonSIDChargingBatteryTone  = 1010,
+	EAvkonSIDConnectionStartTone  = 1011,
+	EAvkonSIDConnectionStopTone  = 1012,
+	EAvkonSIDOperationReadyTone  = 1013,
+	EAvkonSIDNameDiallerStartTone  = 1014,
+	EAvkonSIDNameDiallerErrorTone  = 1015,
+	EAvkonSIDNameDiallerAbortTone  = 1016,
+	EAvkonSIDPowerOffTone  = 1017,
+	EAvkonSIDPowerOnTone  = 1018,
+	EAvkonSIDRechargeBatteryTone = 1019,
+	EAvkonSIDVoiceRecordingTone  = 1020,
+	EAvkonSIDVoiceRecordingStartTone  = 1021,
+	EAvkonSIDVoiceRecordingStopTone  = 1022,
+	EAvkonSIDWrongCharger  = 1023,
+	EAvkonSIDNetBusy = 1024,				
+	EAvkonSIDNetCallWaiting = 1025,		
+	EAvkonSIDNetReorder = 1026,	
+	EAvkonSIDNetCongestion = 1027,		
+	EAvkonSIDNetSpecialInformation = 1028,	
+	EAvkonSIDNetRadioNotAvailable = 1029,
+	EAvkonSIDIHFActive = 1030,
+	EAvkonSIDRadioPathAcknowledge = 1031,
+	EAvkonSIDDial = 1032,
+	EAvkonSIDRingGoing = 1033
+	};
+
+// These are used as priority values for Media Server
+enum TAvkonSoundsPriority
+	{
+	EAvkonKeyClickPriority = 45, // contains DTMF and camera
+	EAvkonPoweringTonesPriority = 50,
+	EAvkonLowLevelNotesPriority = 55,
+	EAvkonConfirmationNotePriority = 55,
+	EAvkonVolumeSettingTonesPriority = 60,
+	EAvkonConnectionTonesPriority = 65,
+	EAvkonHighLevelNotesPriority = 70,
+	EAvkonErrorNotePriority = 70,
+	EAvkonWarningNotePriority = 70,
+	EAvkonVoiceDiallingTonesPriority = 73,
+	EAvkonNetworkingTonesPriority = 75,
+	EAvkonRecordingTonesPriority = 80,
+	EAvkonChargingTonesPriority = 85,
+	EAvkonNewMessageTonesPriority = 90,
+	EAvkonAlarmTonesPriority = 95,	
+	EAvkonRingingTonesPriority = 100
+	};
+
+// These are used as priority preference values for Media Server
+enum TAvkonSoundsPreference
+	{
+	EAknAudioPrefIncomingCall		=0x01340001,
+	EAknAudioPrefIncomingCallLine2	=0x01330001,
+	EAknAudioPrefIncomingDataCall		=0x01320001,
+	EAknAudioPrefAutoRedialCompleted	=0x01310001,
+
+	EAknAudioPrefAlarmClock			=0x01220001,
+	EAknAudioPrefCalendarAlarm		=0x01210001,
+
+// Message Preferences				
+	EAknAudioPrefNewSMS			=0x01120001,
+	EAknAudioPrefNewSpecialMessage	=0x01110001,
+
+// Battery preferences				
+	EAknAudioPrefBatteryLow			=0x01030001,
+	EAknAudioPrefRechargeBattery		=0x01020001,
+	EAknAudioPrefWrongCharger		=0x01010001,
+
+// Recording Tone preferences				
+	EAknAudioPrefVoiceRecStart		=0x00930001,
+	EAknAudioPrefVoiceRecRecording	=0x00920001,
+	EAknAudioPrefVoiceRecStop		=0x00910001,
+
+// Network preferences
+	EAknAudioPrefRadioPathAck		=0x00890001,
+	EAknAudioPrefDial				=0x00880001,
+	EAknAudioPrefRingGoing			=0x00870001,					
+	EAknAudioPrefBusy				=0x00860001,
+	EAknAudioPrefCallWaiting		=0x00850001,
+	EAknAudioPrefReorder			=0x00840001,
+	EAknAudioPrefCongestion			=0x00830001,
+	EAknAudioPrefSpecialInformation	=0x00820001,
+	EAknAudioPrefRadioNotAvailable	=0x00810001,
+
+// High level preferences				
+	EAknAudioPrefError		=0x00720001,
+	EAknAudioPrefWarning		=0x00710001,
+
+// Voice Dialling preferences			
+	EAknAudioPrefVoiceStarting	=0x00630001,
+	EAknAudioPrefVoiceError		=0x00620001,
+	EAknAudioPrefVoiceAbort		=0x00610001,
+
+// Connection preferences			
+	EAknAudioPrefConnectionStart	=0x00530001,
+	EAknAudioPrefConnectionStop	=0x00520001,
+	EAknAudioPrefOperationReady	=0x00510001,
+
+// Volume / IHF	preferences	/Previews
+	EAknAudioPrefFilePreview	=0x00440001,
+	EAknAudioPrefAudioVolumeMin	=0x00430001,
+	EAknAudioPrefAudioVolumeMax	=0x00420001,
+	EAknAudioPrefIHFActive		=0x00410001,
+
+// Low Level preferences				
+	EAknAudioPrefCharging		=0x00330001,
+	EAknAudioPrefConfirmation	=0x00320001,
+	EAknAudioPrefDefaultTone	=0x00310001,
+
+// Phone power preferences				
+	EAknAudioPrefPowerOn		=0x00220001,
+	EAknAudioPrefPowerOff		=0x00210001,
+
+// Key press / camera click preferences				
+	EAknAudioPrefKeyPressNonDTMF	=0x00140001,
+	EAknAudioPrefKeyDownDTMF	=0x00130001,
+	EAknAudioPrefKeyUpDTMF		=0x00120001,
+	EAknAudioPrefCamera		=0x00110001,
+
+// Record and VoCos Preferences
+	EAknAudioPrefVoiceRec		=0x00060001,
+	EAknAudioPrefComposer		=0x00050001,
+	EAknAudioPrefRingFilePreview	=0x00040001,
+	EAknAudioPrefVocosPlayback	=0x00030001,
+	EAknAudioPrefVocosTrain		=0x00020001,
+	EAknAudioPrefVocosRecog		=0x00010001,
+	
+	EAvkonKeyClickPreference = 0x00140001,
+	EAvkonConfirmationNotePreference = 0x00320001,
+	EAvkonErrorNotePreference = 0x00720001,
+	EAvkonWarningNotePreference = 0x00710001
+	};
+
+// Constants for integer editor widths; may be required in resource
+#define EAknMaxIntegerDigits	12
+
+enum TMessageQueryCtrlIds
+    {
+    EAknMessageQueryHeaderId = 1,
+    EAknMessageQueryContentId
+    };
+
+// CAknIncallBubble flags
+    /**
+    *   Bit             Explanation
+    *   0 and 1         Call state
+    *   2               No Ciphering
+    *   3               Is muted               
+    *   4               Is Visible
+    *   5               Is a Fax       
+    *   6               Is a Data call  
+    *   7               Is a Hscsd data call  
+    *   8               Line 2 indication
+    */
+enum TAvkonIncallStatusBubbleFlags 
+    {
+    EAknStatusBubbleAlerting     = 0x00, //  One of
+    EAknStatusBubbleActive       = 0x01, //  these
+    EAknStatusBubbleOnHold       = 0x02, //  to set 
+    EAknStatusBubbleDisconnected = 0x03, //  the call state	
+    EAknStatusBubbleNoCiphering  = 0x04,		
+    EAknStatusBubbleMuted        = 0x08,
+    EAknStatusBubbleVisible      = 0x10,
+    EAknStatusBubbleFax      = 0x20,
+    EAknStatusBubbleData      = 0x40,
+    EAknStatusBubbleDataHscsd      = 0x80,
+    EAknStatusBubbleLine2      = 0x100
+    };
+
+
+/**
+ * Timeouts for note dialog wrappers
+ * These should be kept same as CAknNoteDialog::TTimeout.
+ */
+enum TAknNoteDialogTimeout
+    {
+    EAknNoteDialogUndefinedTimeout = 0,
+    EAknNoteDialogShortTimeout = 1500000,
+    EAknNoteDialogLongTimeout = 3000000,
+    
+    // Change these if Notes UI spec changes:
+    EAknConfirmationNoteTimeout = EAknNoteDialogShortTimeout,
+    EAknInformationNoteTimeout = EAknNoteDialogLongTimeout,
+    EAknErrorNoteTimeout = EAknNoteDialogLongTimeout,
+    EAknWarningNoteTimeout = EAknNoteDialogLongTimeout
+    };
+
+/**
+ * Tones for note dialog wrappers
+ * These should be kept same as CAknNoteDialog::TTone.
+ */
+enum TAknNoteDialogTone 
+    {
+    EAknNoteDialogNoTone = 0,
+    EAknNoteDialogConfirmationTone = EAvkonSIDConfirmationTone,
+    EAknNoteDialogWarningTone = EAvkonSIDWarningTone,
+    EAknNoteDialogErrorTone  = EAvkonSIDErrorTone
+    };
+
+
+enum TAknSelectionListDialogFlags
+    {
+    EAknFlagFind = 0x0001
+    };
+
+enum TAknIconArrayType
+    {
+    EAknIconArrayNone,
+    EAknIconArraySimple,
+    EAknIconArrayComplex
+    };
+// the next 2 enums are to distinguish at runtime whether you are in ELAF or APAC,
+// and if in APAC, what variant you are in
+enum EVariantFlag
+   {
+   EEuropeanVariant=0,
+   EApacVariant
+   };
+
+
+//
+// This can be extended for additional subvariants.  Routine in AknUtils should be updated
+// to return the correct sub-variant.
+//
+//
+enum ESubVariantFlag
+   {
+   ENoSubVariant = 0,
+   EPrcSubVariant,
+   EHongKongSubVariant,
+   ETaiwanSubVariant
+   };
+
+
+// This is the max length of the screensaver text 
+#define KScreensaverTextMaxLength 15
+
+// These flags are to be used in conjunction with CAknForm
+#define KSingleLineHorizontalScrollingEditorFlags EEikEdwinAlternativeWrapping | EEikEdwinNoWrap
+#define KMultiLineExpandingEditorFlags EEikEdwinNoHorizScrolling | EEikEdwinResizable
+
+// 
+// Deprecated
+#define AVERELL_NOTE					AVKON_NOTE
+#define AVERELL_CONFIRMATION_QUERY		AVKON_CONFIRMATION_QUERY
+#define AVERELL_DATA_QUERY				AVKON_DATA_QUERY
+
+
+
+enum TAknKeyBlockMode
+	{
+	EDefaultBlockMode=0,
+	ENoKeyBlock
+	};
+
+#endif
+
+

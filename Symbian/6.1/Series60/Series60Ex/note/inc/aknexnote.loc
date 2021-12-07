@@ -1,0 +1,218 @@
+/*
+* ==============================================================================
+*  Name     : CAknExNote localise file
+*  Part of  : AknExNote
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ==============================================================================
+*/
+
+#include <bldvariant.hrh>
+
+//  LOCALISATION STRINGS
+
+// Caption
+#define qtn_apps_tant_list               "AKNEXNOTE"
+#define qtn_apps_tant_grid               "AKNEXNOTE"
+
+// MenuBar
+#define qtn_aknexnote_menubar            "Option"
+#define qtn_aknexnote_menu_notestype     "Note type"
+#define qtn_aknexnote_menu_text          "Text"
+#define qtn_aknexnote_menu_notewrappers  "Note wrappers" 
+#define qtn_aknexnote_menu_progressnote  "Progress Note" 
+#define qtn_aknexnote_menu_gnote_snote   "Global note"
+#define qtn_aknexnote_menu_exit          "Exit"
+
+// Sub menubar of "Notes type" menu
+#define qtn_aknexnote_menu_outline01     "Error note"
+#define qtn_aknexnote_menu_outline02     "Warning note"
+#define qtn_aknexnote_menu_outline03     "Information note"
+#define qtn_aknexnote_menu_outline04     "Confirmation note"
+#define qtn_aknexnote_menu_outline05     "Wait note"
+
+// Sub menubar of "Text" menu
+#define qtn_aknexnote_menu_outline07     "Static text"
+#define qtn_aknexnote_menu_outline08     "Dynamic text"
+
+// Sub menubar of "Note wrappers" menu
+#define qtn_aknexnote_menu_outline31     "wrap Confirmation note"
+#define qtn_aknexnote_menu_outline32     "wrap Information note"
+#define qtn_aknexnote_menu_outline33     "wrap Warning note"
+#define qtn_aknexnote_menu_outline34     "wrap Error note"
+
+// Sub menubar of "Progress Note" menu
+#define qtn_aknexnote_menu_outline35     "Progress note"
+
+// Sub menubar of "Global note" menu
+#define qtn_aknexnote_menu_outline51     "Global Information note"
+#define qtn_aknexnote_menu_outline52     "Global Warning note"
+#define qtn_aknexnote_menu_outline53     "Global Confirmation note"
+#define qtn_aknexnote_menu_outline54     "Global Error note"
+#define qtn_aknexnote_menu_outline55     "Global Charging note"
+#define qtn_aknexnote_menu_outline56     "Global Wait note"
+#define qtn_aknexnote_menu_outline57     "Global Permanent note"
+#define qtn_aknexnote_menu_outline58     "Global NotCharging note"
+#define qtn_aknexnote_menu_outline59     "Global BatteryFull note"
+#define qtn_aknexnote_menu_outline60     "Global BatteryLow note"
+#define qtn_aknexnote_menu_outline61     "Global RechargeBattery note"
+
+// Messages
+#define qtn_aknexnote_label_title        "AknExNotes\nSample Application"
+#define qtn_aknexnote_label_operation    "Press right softkey to\ndisplay next sample"
+
+// Error Note Lavel
+#define qtn_aknexnote_error_singular     "Too long !"
+#define qtn_aknexnote_error_plural       "Not found !"
+
+// Warning Note Lavel
+#define qtn_aknexnote_warning_singular   "Battery low !"
+#define qtn_aknexnote_warning_plural     "Memory low !"
+
+// Information Note Lavel
+#define qtn_aknexnote_inf_singular       "Received\nmessage !"
+#define qtn_aknexnote_inf_plural         "Received\nsome messages !"
+
+// Confirmation Note Lavel
+#define qtn_aknexnote_cnf_singular       "Done !"
+#define qtn_aknexnote_cnf_plural         "Success !"
+
+// Progress Note Label
+#define qtn_aknexnote_progress_singular   "Loading\nPlease wait..."
+#define qtn_aknexnote_progress_plural     "Loading\nPlease wait..."
+
+// Permanent Note Label
+#define qtn_aknexnote_perm_label          "Discharging\nbattery !"
+
+// Dynamic Text Label
+#define qtn_aknexnote_dym_text_singular   "Received\n%d message !"
+#define qtn_aknexnote_dym_text_plural     "Received\n%d messages !"
+
+// Image Note Label
+#define qtn_aknexnote_image_singular      "Received\nmessages !\n1234567890"
+#define qtn_aknexnote_image_plural        "Sent\nmessages !\n1234567890"
+
+// Own Layout Note Label
+#define qtn_aknexnote_layout_singular     "Number\ntoo long!\nPlease input again"
+#define qtn_aknexnote_layout_plural       "Number\ntoo long!\nPlease input again"
+
+// Wait Note Label
+#define qtn_aknexnote_wait_singular       "As you may already\nnotice, this note truly\nKICKS BUTTy!!"
+#define qtn_aknexnote_wait_plural         "All the y %d notes\nkicky butt!\nYuyu!"
+#define qtn_aknexnote_wait_prompt         "Connecting, please wait."
+
+// Global note text
+#define qtn_aknexnote_global_gen_text     "General note"
+#define qtn_aknexnote_global_war_text     "Warning note"
+#define qtn_aknexnote_global_con_text     "Confirmation\nnote"
+#define qtn_aknexnote_global_err_text     "Error note"
+
+// Note label for priority test
+#define qtn_aknexnote_prty_loc_err_text   "Local\nerror note"
+#define qtn_aknexnote_prty_loc_war_text   "Local\nwarning note"
+#define qtn_aknexnote_prty_gbl_err_text   "Global\nerror note"
+#define qtn_aknexnote_prty_gbl_war_text   "Global\nwarning note"
+
+// Tone list item label
+#define qtn_aknexnote_error_tone          "Error tone"
+#define qtn_aknexnote_warning_tone        "Warning tone"
+#define qtn_aknexnote_confirmation_tone   "Confirmation tone"
+
+// General list item label
+#define qtn_aknexnote_error_note          "Error note"
+#define qtn_aknexnote_warning_note        "Warning note"
+#define qtn_aknexnote_information_note    "Information note"
+#define qtn_aknexnote_confirmation_note   "Confirmation note"
+
+// Animation list item label
+#define qtn_aknexnote_wait_note           "Wait note"
+#define qtn_aknexnote_progress_note       "Progress note"
+
+// OwnLayout list item label
+#define qtn_aknexnote_ownlayout_case1     "Case1"
+#define qtn_aknexnote_ownlayout_case2     "Case2"
+#define qtn_aknexnote_ownlayout_case3     "Case3"
+
+// TwoLabel list item label
+#define qtn_aknexnote_singular_label      "Singular label"
+#define qtn_aknexnote_plural_label        "Plural label"
+
+// Global note list item label
+#define qtn_aknexnote_global_general     "General note"
+#define qtn_aknexnote_global_warning     "Warning note"
+#define qtn_aknexnote_global_confirmat   "Confirmation note"
+#define qtn_aknexnote_global_error       "Error note"
+#define qtn_aknexnote_global_charging    "Charging note"
+#define qtn_aknexnote_global_not_charg   "Not charging note"
+#define qtn_aknexnote_global_btry_full   "Battery full note"
+#define qtn_aknexnote_global_btry_low    "Battery low note"
+#define qtn_aknexnote_global_recha_btry  "Recharging note"
+
+// Priority note list item label
+#define qtn_aknexnote_local_local         "Local  -> Local"
+#define qtn_aknexnote_global_global       "Global -> Global"
+#define qtn_aknexnote_local_global        "Local  -> Global"
+#define qtn_aknexnote_global_local        "Global -> Local"
+
+// Softkey text
+#define qtn_aknexnote_softkey_empty       ""
+#define qtn_aknexnote_softkey_cancel      "Cancel"
+
+// Application name
+#define qtn_aknexnote_other_app_name     "AknExSoftkey"
+
+
+// wrapper note text
+#define qtn_aknexnote_confirmationnote_text "Confirmation Note"
+#define qtn_aknexnote_warningnote_text		"Warning Note"
+#define qtn_aknexnote_errornote_text		"Error Note"
+#define qtn_aknexnote_informationnote_text		"Information Note"
+
+
+#define qtn_aknexnote_setpriority_label  "SetPriority"
+#define qtn_aknexnote_setsoftkey_label   "SetSoftKey"
+#define qtn_aknexnote_setgraphic_label   "SetGraphic"
+#define qtn_aknexnote_setanimation_label "SetAnimation"
+
+#define qtn_aknexnote_progresssetcurrentlabell_label "Loading \nPlease wait..."
+
+#define qtn_aknexnote_cancelnotel_text "CancelNoteL"
+#define qtn_aknexnote_text_current_label "Current Label"
+#ifdef __AVKON_APAC__
+#define qtn_aknexnote_text_current_label_deffrent <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#else
+#define qtn_aknexnote_text_current_label_deffrent "012345678901234567890123456789012345678901234567890123456789012345678901234567890" //"012345678901234567890123456789012345678901234567890"
+#endif
+
+#define qtn_aknexnote_shownotel_globalinformationnote_text "ShowNoteL\nEAknGlobalInformationNote"
+#define qtn_aknexnote_shownotel_globalwarningnote_text "ShowNoteL\nEAknGlobalWarningNote"
+#define qtn_aknexnote_shownotel_globalconfirmationnote_text "ShowNoteL\nEAknGlobalConfirmationNote"
+#define qtn_aknexnote_shownotel_globalerrornote_text "ShowNoteL\nEAknGlobalErrorNote"
+#define qtn_aknexnote_shownotel_globalchargingnote_text "ShowNoteL\nEAknGlobalChargingNote"
+#define qtn_aknexnote_shownotel_globalwaitnote_text "ShowNoteL\nEAknGlobalWaitNote"
+#define qtn_aknexnote_shownotel_globalpermanentnote_text "ShowNoteL\nEAknGlobalPermanentNote"
+#define qtn_aknexnote_shownotel_globalnotchargingnote_text "ShowNoteL\nEAknGlobalNotChargingNote"
+#define qtn_aknexnote_shownotel_globalbatteryfullnote_text "ShowNoteL\nEAknGlobalBatteryFullNote"
+#define qtn_aknexnote_shownotel_globalbatterylownote_text "ShowNoteL\nEAknGlobalBatteryLowNote"
+#define qtn_aknexnote_shownotel_globalrechargebatterynote_text "ShowNoteL\nEAknGlobalRechargeBatteryNote"
+#define qtn_aknexnote_shownotel_globalswitchingoffnote_text "ShowNoteL\nEAknGlobalSwitchingOffNote"
+#define qtn_aknexnote_shownotel_cancelglobalnote_text "ShowNoteL\nEAknCancelGlobalNote"
+#define qtn_aknexnote_shownotel_empty_text ""
+#ifdef __AVKON_APAC__
+#define qtn_aknexnote_shownotel_5line_text <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#define qtn_aknexnote_shownotel_5line_over_text <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#else
+#define qtn_aknexnote_shownotel_5line_text "0123456789012345678901234567890123456789012345678901234567890"
+#define qtn_aknexnote_shownotel_5line_over_text "012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+#endif
+#define qtn_aknexnote_text_current_empty_label ""
+#ifdef __AVKON_APAC__
+#define qtn_aknexnote_text_current_5line_label <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#define qtn_aknexnote_text_current_5line_over_label <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#else
+#define qtn_aknexnote_text_current_5line_label "0123456789012345678901234567890123456789012345678901234567890"
+#define qtn_aknexnote_text_current_5line_over_label "012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+#endif
+#define qtn_aknexnote_text_for_aknwaitdialog "Test for CAknWaitDialog"
+
+#define qtn_aknexnote_cba_next "Next"
+// End of file

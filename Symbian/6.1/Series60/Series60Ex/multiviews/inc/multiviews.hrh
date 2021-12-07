@@ -1,0 +1,20 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __MULTIVIEWS_HRH__
+#define __MULTIVIEWS_HRH__
+
+/** MultiViews enumerate command codes */
+enum TMultiViewsCommandIds
+    {
+    EMultiViewsSwitchToView1 = 1,  // start value must not be 0
+    EMultiViewsSwitchToView2,
+	EMultiViewsCommand1
+    };
+
+// MultiViews application view ids.
+enum TMultiViewsViewNumber
+	{
+	EMultiViewsView1Id = 1,
+	EMultiViewsView2Id
+	};
+#endif // __MULTIVIEWS_HRH__

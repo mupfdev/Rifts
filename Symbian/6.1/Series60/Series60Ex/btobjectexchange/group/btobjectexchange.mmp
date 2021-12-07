@@ -1,0 +1,41 @@
+TARGET            BTObjectExchange.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005b8e
+TARGETPATH        \system\apps\btobjectexchange
+
+SOURCEPATH        ..\src
+SOURCE            BTObjectExchange.cpp
+SOURCE            BTObjectExchangeApplication.cpp 
+SOURCE            BTObjectExchangeAppView.cpp
+SOURCE            BTObjectExchangeAppUi.cpp
+SOURCE            BTObjectExchangeDocument.cpp 
+SOURCE            BTServiceSearcher.cpp
+SOURCE            BTServiceAdvertiser.cpp
+SOURCE            ObjectExchangeClient.cpp
+SOURCE            ObjectExchangeServer.cpp
+SOURCE            ObjectExchangeServiceSearcher.cpp
+SOURCE            ObjectExchangeServiceAdvertiser.cpp
+SOURCE            SdpAttributeParser.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          BTObjectExchange.rss
+RESOURCE          BTObjectExchange_caption.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           eikcoctl.lib
+LIBRARY           avkon.lib  
+LIBRARY           bafl.lib
+LIBRARY           irobex.lib
+LIBRARY           esock.lib
+LIBRARY           bluetooth.lib
+LIBRARY           btextnotifiers.lib
+LIBRARY           btmanclient.LIB
+LIBRARY           sdpagent.LIB
+LIBRARY           sdpdatabase.LIB

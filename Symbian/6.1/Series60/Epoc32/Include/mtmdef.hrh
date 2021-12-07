@@ -1,0 +1,36 @@
+// MTMDEF.HRH
+//
+// Copyright (c) 1998 Symbian Ltd.  All rights reserved.
+//
+
+#if !defined(__MTMDEF_HRH__)
+#define __MTMDEF_HRH__
+
+
+// body types
+#define KMtm7BitBody 	0x01	
+#define KMtm8BitBody 	0x02
+#define KMtm16BitBody 	0x04
+#define KMtmBinaryBody 	0x08
+
+// capabilities 
+#define KUidMtmQueryMaxBodySizeValue		268440435 // response expected
+#define KUidMtmQueryMaxTotalMsgSizeValue	268440436 // response expected
+#define KUidMtmQuerySupportedBodyValue		268440437 // response expected
+#define KUidMtmQuerySupportAttachmentsValue	268440438
+#define KUidMtmQueryOffLineAllowedValue		268440439
+#define KUidMtmQueryCanSendMsgValue			268440440
+#define KUidMtmQueryCanReceiveMsgValue		268440441
+
+// reserved uids 268441131 - 268441150 for capabilities
+#define KUidMtmQuerySupportSubjectValue					268441131 
+#define KUidMtmQueryMaxRecipientCountValue				268441132 // response (-1 if infinite)
+#define KUidMtmQuerySendAsRequiresRenderedImageValue	268441133 // response (ETrue or EFalse)
+#define KUidMtmQuerySendAsRenderingUidValue				268441134 // response (printer Uid)
+#define KUidMtmQuerySupportsFolderValue					268441135 
+#define KUidMtmQuerySupportsBioMsgValue					268441136 
+#define KUidMtmQuerySupportsSchedulingValue				268441137
+
+#define KUidMsvMtmQueryEditorUidValue	268441153 // response TUid of the editor application
+
+#endif

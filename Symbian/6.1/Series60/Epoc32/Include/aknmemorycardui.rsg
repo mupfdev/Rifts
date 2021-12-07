@@ -1,0 +1,3 @@
+#define R_QTN_MEM_CARD_UNLOCK_PROMPT              0x3f252003
+#define R_QTN_MEM_CARD_UNLOCK_ERROR               0x3f252004
+#define R_MMC_PASSWORD_QUERY                      0x3f252005

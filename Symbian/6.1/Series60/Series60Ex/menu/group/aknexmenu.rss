@@ -1,0 +1,880 @@
+/*
+* ============================================================================
+*  Name     : AknExMenu.rss
+*  Part of  : AknExMenu
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    EXMN
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include <eikon.rsg>
+//#include <eikon.mbg>
+#include <avkon.loc>
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+
+#include "AknExMenu.hrh"
+#include "AknExMenu.loc"
+
+//  RESOURCE DEFINITIONS 
+
+RESOURCE RSS_SIGNATURE { }
+
+
+RESOURCE TBUF32 { buf=qtn_aknexmenu_title; }
+
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = r_aknexmenu_status_pane;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_status_pane
+//    status_pane_app_model
+//
+//----------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_aknexmenu_status_pane
+    {
+    panes =
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidNavi;
+            type = EAknCtNaviPane;
+            resource = r_aknexmenu_navi_decorator;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_navi_decorator
+//    navi_decorator
+//
+//----------------------------------------------------
+//
+RESOURCE NAVI_DECORATOR r_aknexmenu_navi_decorator
+    {
+    type = ENaviDecoratorControlTabGroup;
+    control = TAB_GROUP
+        {
+        tab_width = EAknTabWidthWithTwoLongTabs;
+        active =0;
+        tabs = 
+            {
+            TAB
+                {
+                id = EAknExMenuNoSubTab;
+                txt = qtn_aknexmenu_no_sub_tab;
+                },
+            TAB
+                {
+                id = EAknExMenuSubTab;
+                txt = qtn_aknexmenu_sub_tab;
+                },
+            TAB
+                {
+                id = EAknExMenuOkTab;
+                txt = qtn_aknexmenu_ok_tab;
+                }
+            };
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_hotkeys
+//    Hotkeys
+//
+//----------------------------------------------------
+//
+RESOURCE HOTKEYS r_aknexmenu_hotkeys
+    {
+    control=
+        {
+        HOTKEY { command = EAknCmdExit; key='e'; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_menu
+//    No_sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexmenu_no_sub_menu
+    {
+    hotkeys = r_aknexmenu_hotkeys;
+    menubar =r_aknexmenu_menubar_no_sub_menu;  
+    cba = R_AVKON_SOFTKEYS_SELECTION_LIST;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_menubar_no_sub_menu
+//    Menubar for no_sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexmenu_menubar_no_sub_menu
+    {
+    titles=
+        {
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_system;
+            menu_pane = r_aknexmenu_no_sub_system_menu;
+            },
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_app;
+            menu_pane = r_aknexmenu_no_sub_app_menu;
+            },
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_state;
+            menu_pane = r_aknexmenu_no_sub_state_menu;
+            },
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_context;
+            menu_pane = r_aknexmenu_no_sub_context_menu;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_system_menu
+//    MenuPane for no_sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_no_sub_system_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexmenu_menu_exit;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_app_menu
+//    MenuPane for no_sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_no_sub_app_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExMenuAppCmd1;
+            txt = qtn_aknexmenu_menu_app_cmd1;
+            //extratxt = ;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuAppCmd2;
+            txt = qtn_aknexmenu_menu_app_cmd2;
+            flags = EEikMenuItemSeparatorAfter;
+            //extratxt = ;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_state_menu
+//    MenuPane for no_sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_no_sub_state_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuStateCmd1;
+            txt = qtn_aknexmenu_menu_state_cmd1;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuStateCmd2;
+            txt = qtn_aknexmenu_menu_state_cmd2;
+            flags = EEikMenuItemSeparatorAfter;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_context_menu
+//    MenuPane for no_sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_no_sub_context_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCtxCmd1;
+            txt = qtn_aknexmenu_menu_ctx_cmd1;
+            //extratxt = "Dim AppCmd.";
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCtxCmd2;
+            txt = qtn_aknexmenu_menu_ctx_cmd2;
+            flags = EEikMenuItemSeparatorAfter;
+            //extratxt = "Delete StateCmd.";
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCtxCmd3;
+            txt = qtn_aknexmenu_menu_ctx_cmd3;
+            flags = EEikMenuItemSeparatorAfter;
+            //extratxt = "Show StateCmd.";
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_menu
+//    Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexmenu_sub_menu
+    {
+    hotkeys = r_aknexmenu_hotkeys;
+    menubar =r_aknexmenu_menubar_sub_menu;  
+    cba = R_AVKON_SOFTKEYS_SELECTION_LIST;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_menubar_sub_menu
+//    Menubar for sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexmenu_menubar_sub_menu
+    {
+    titles=
+        {
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_system;
+            menu_pane = r_aknexmenu_sub_system_menu;
+            },
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_app;
+            menu_pane = r_aknexmenu_sub_app_menu;
+            },
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_state;
+            menu_pane = r_aknexmenu_sub_state_menu;
+            },
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_context;
+            menu_pane = r_aknexmenu_sub_context_menu;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_test_sub_level5
+//    MenuPane for Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_test_sub_level5
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubLevel5;
+            txt = qtn_aknexmenu_menu_sub_level5;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_test_sub_level4
+//    MenuPane for Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_test_sub_level4
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubLevel4;
+            txt = qtn_aknexmenu_menu_sub_level4;
+            cascade = r_aknexmenu_test_sub_level5;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_test_sub_level3
+//    MenuPane for Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_test_sub_level3
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubLevel3;
+            txt = qtn_aknexmenu_menu_sub_level3;
+            cascade = r_aknexmenu_test_sub_level4;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_aknexmenu_system_options
+	{
+	items =
+		{
+		MENU_ITEM { command=EEikCmdEditCut; txt=text_pup_option_cut; },
+		MENU_ITEM { command=EEikCmdEditCopy; txt=text_pup_option_copy; },
+		MENU_ITEM { command=EEikCmdEditPaste; txt=text_pup_option_paste; },
+		MENU_ITEM { command=EEikCmdEditUndo; txt=text_pup_option_undo; },
+		MENU_ITEM { command=EAknCmdAddToPinboard; txt=qtn_options_add_to_pinboard; },
+		MENU_ITEM { command=EAknCmdHelp; txt=qtn_clipb_litxt_help; }
+		};
+	}
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_system_menu
+//    MenuPane for Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_sub_system_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuSystemOptions;
+            txt = qtn_aknexmenu_menu_sys_option;
+            cascade = r_aknexmenu_system_options;
+            },
+        MENU_ITEM 
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexmenu_menu_exit;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_app_menu
+//    MenuPane for Sub_menu view (submenu entry)
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_sub_app_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuSubAppCmd1;
+            txt = qtn_aknexmenu_sub_menu_app_cmd1;
+            cascade = r_aknexmenu_test_sub_menu1;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuSubAppCmd2;
+            txt = qtn_aknexmenu_sub_menu_app_cmd2;
+            cascade = r_aknexmenu_test_sub_menu2;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuSubAppCmdLongName;
+            txt = qtn_aknexmenu_sub_menu_cmd_longname;
+            cascade = r_aknexmenu_test_sub_menu_longname;
+            flags = EEikMenuItemSeparatorAfter;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_state_menu
+//    MenuPane for Sub_menu view  //(SubStateCmdn)
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_sub_state_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuSubStateCmd1;
+            txt = qtn_aknexmenu_sub_menu_state_cmd1;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuSubStateCmd2;
+            txt = qtn_aknexmenu_sub_menu_state_cmd2;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_context_menu
+//    MenuPane for Sub_menu view   (SubCtxCmdn)
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_sub_context_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuSubCtxCmd1;
+            txt = qtn_aknexmenu_sub_menu_ctx_cmd1;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuSubCtxCmd2;
+            txt = qtn_aknexmenu_sub_menu_ctx_cmd2;
+            flags = EEikMenuItemSeparatorAfter;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_test_sub_menu1
+//    MenuPane for Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_test_sub_menu1
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub1;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubMoreItems;
+            txt = qtn_aknexmenu_menu_sub2;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubLessItems;
+            txt = qtn_aknexmenu_menu_sub3;
+            },
+//        MENU_ITEM 
+//            {
+//            command = EAknExMenuCmdSub1;
+//            txt = qtn_aknexmenu_menu_sub4;
+//            cascade = r_aknexmenu_test_sub_level3;
+//            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub5;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub6;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub7;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub8;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub9;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub10;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub1;
+            txt = qtn_aknexmenu_menu_sub11;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_test_sub_menu2
+//    MenuPane for Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_test_sub_menu2
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSub2;
+            txt = qtn_aknexmenu_menu_sub10;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_up_text
+//    Text on No_sub_menu view (Upper)
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_no_sub_up_text
+    {
+    buf = qtn_aknexmenu_no_sub_up_text;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_low_text
+//    Text on No_sub_menu view (Lower)
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_no_sub_low_text
+    {
+    buf = qtn_aknexmenu_no_sub_low_text;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_no_sub_title
+//    Title of No_sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_no_sub_title
+    {
+    buf = qtn_aknexmenu_no_sub_title;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_up_text
+//    Text on Sub_menu view (Upper)
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_sub_up_text
+    {
+    buf = qtn_aknexmenu_sub_up_text;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_low_text
+//    Text on Sub_menu view (Lower)
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_sub_low_text
+    {
+    buf = qtn_aknexmenu_sub_low_text;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_sub_title
+//    Title of Sub_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_sub_title
+    {
+    buf = qtn_aknexmenu_sub_title;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_text_view
+//    Text view
+//
+//----------------------------------------------------
+//
+RESOURCE EDWIN r_aknexmenu_text_view
+    {
+    flags = EEikEdwinDisplayOnly;
+    width = 15;
+    lines = 4;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_message_format
+//    string to show a message inform an item selection
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexmenu_message_format
+    {
+    buf = qtn_aknexmenu_message_format;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_new_item
+//    string used by new menu item
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF40 r_aknexmenu_new_item
+    {
+    buf = qtn_aknexmenu_menu_sub_new;
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_menu
+//    ok_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexmenu_ok_menu
+    {
+    hotkeys = r_aknexmenu_hotkeys;
+    menubar = r_aknexmenu_menubar_ok_menu;  
+    cba = R_AVKON_SOFTKEYS_SELECTION_LIST;
+    }
+//----------------------------------------------------
+//   
+//    r_aknexmenu_menubar_ok_menu
+//    ok_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexmenu_menubar_ok_menu
+    {
+    titles=
+        {
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_menu_system;
+            menu_pane = r_aknexmenu_ok_system_menu;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_system_menu
+//    MenuPane for ok_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_ok_system_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexmenu_menu_exit;
+            }
+        };
+    }
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_title
+//    Title of ok_menu view
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_ok_title
+    {
+    buf = qtn_aknexmenu_ok_title;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_up_text
+//    Text on ok_menu view (Upper)
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_ok_up_text
+    {
+    buf = qtn_aknexmenu_ok_up_text;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_low_text
+//    Text on ok_menu view (Lower)
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_ok_low_text
+    {
+    buf = qtn_aknexmenu_ok_low_text;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_editable_view
+//    Text view (editable)
+//
+//----------------------------------------------------
+//
+RESOURCE EDWIN r_aknexmenu_editable_view
+    {
+    flags = EAknEditorFlagDefault;
+    width = 15;
+    lines = 4;
+    }
+
+
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_menubar_ok_test
+//    MenuBar for ok-menu
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexmenu_menubar_ok_test
+    {
+    titles=
+        {
+        MENU_TITLE 
+            {
+            txt = qtn_aknexmenu_ok_title;
+            menu_pane = r_aknexmenu_ok_test_menu;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_test_menu
+//    MenuPane for ok-menu
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexmenu_ok_test_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdOkMenuItem1;
+            txt = qtn_aknexmenu_ok_menu_item1;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdOkMenuItem2;
+            txt = qtn_aknexmenu_ok_menu_item2;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_menu_item1
+//    Text for confirmation message.
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_ok_menu_item1
+    {
+    buf = qtn_aknexmenu_ok_menu_item1;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexmenu_ok_menu_item2
+//    Text for confirmation message.
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF64 r_aknexmenu_ok_menu_item2
+    {
+    buf = qtn_aknexmenu_ok_menu_item2;
+    }
+
+RESOURCE MENU_PANE r_aknexmenu_test_sub_menu_longname
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubLongName1;
+            txt = qtn_aknexmenu_menu_sub_longname1;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubLongName2;
+            txt = qtn_aknexmenu_menu_sub_longname2;
+            },
+        MENU_ITEM 
+            {
+            command = EAknExMenuCmdSubLongName3;
+            txt = qtn_aknexmenu_menu_sub_longname3;
+            }
+        };
+    }
+
+// End of File

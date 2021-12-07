@@ -1,0 +1,10 @@
+;Language - standard language definitions
+&EN
+
+; standard SIs file header
+#{"BTPointToPoint"},(0x10005b8b),1,0,0
+
+
+"..\..\..\epoc32\release\thumb\urel\BTPointToPoint.app"-"!:\system\apps\BTPointToPoint\BTPointToPoint.app"
+"..\..\..\epoc32\release\thumb\urel\BTPointToPoint.rsc"-"!:\system\apps\BTPointToPoint\BTPointToPoint.rsc"
+"..\..\..\epoc32\release\thumb\urel\BTPointToPoint_caption.rsc"-"!:\system\apps\BTPointToPoint\BTPointToPoint_caption.rsc"

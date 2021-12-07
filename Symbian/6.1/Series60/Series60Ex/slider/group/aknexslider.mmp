@@ -1,0 +1,41 @@
+/*
+* ============================================================================
+*  Name     : AknExSlider.mmp
+*  Part of  : AknExSlider
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET          AknExSlider.app
+TARGETTYPE      app
+TARGETPATH      \System\Apps\AknExSlider
+UID             0x100039CE 0x10005C28
+
+RESOURCE        AknExSlider.rss
+RESOURCE        AknExSlider_caption.rss
+LANG            SC
+
+SOURCEPATH      ..\Src
+SOURCE          AknExSliderApp.cpp 
+SOURCE          AknExSliderAppUi.cpp
+SOURCE          AknExSliderDocument.cpp
+SOURCE          AknExSliderView.cpp
+SOURCE          AknExSliderContainer.cpp
+SOURCE          AknExSliderSaveForm.cpp
+
+USERINCLUDE     . ..\Inc
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY         euser.lib
+LIBRARY         apparc.lib
+LIBRARY         cone.lib
+LIBRARY         eikcore.lib
+LIBRARY         eikcoctl.lib
+LIBRARY         avkon.lib
+LIBRARY         eikdlg.lib
+
+// DEFFILE ?filename
+AIF AknExSlider.aif ..\aif AknExSlideraif.rss c12 \
+    AknExSlider_Icon.bmp AknExSlider_Icon_mask.bmp aknexslider_lst.bmp aknexslider_lst_mask.bmp
+
+// End of File

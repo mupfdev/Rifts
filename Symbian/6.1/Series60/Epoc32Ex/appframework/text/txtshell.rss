@@ -1,0 +1,48 @@
+// TXTSHELL.RSS
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+NAME FMSH
+
+#include <eikon.rh>
+#include "txtshell.hrh"
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf=""; }
+
+RESOURCE EIK_APP_INFO
+	{
+	menubar=r_fmsh_menubar;
+	hotkeys=r_fmsh_hotkeys;
+	}
+
+
+RESOURCE HOTKEYS r_fmsh_hotkeys
+    {
+    control=
+        {
+        HOTKEY { command=EEikCmdExit; key='e'; }
+        };
+    }
+
+RESOURCE MENU_BAR r_fmsh_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_fmsh_file_menu; txt="File"; }
+		};
+    }
+
+RESOURCE MENU_PANE r_fmsh_file_menu
+	{
+	items=
+		{
+		MENU_ITEM { command=EExampleShellSelectGlobal; txt="Global"; },
+		MENU_ITEM { command=EExampleShellSelectRich; txt="Rich"; },
+		MENU_ITEM { command=EExampleShellSelectStyled; txt="Styled"; },
+		MENU_ITEM { command=EExampleShellSelectView; txt="View"; },
+		MENU_ITEM { command=EEikCmdExit; txt="Exit"; }
+        };
+    }
+

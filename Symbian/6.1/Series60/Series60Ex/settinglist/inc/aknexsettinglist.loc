@@ -1,0 +1,126 @@
+/*
+* ============================================================================
+*  Name     : AknExSettingList.loc
+*  Part of  : AknExSettingList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+// LOCALISATION STRINGS
+
+// Caption
+#define qtn_apps_tasp_list				"AKNEXSETTINGLIST"
+#define qtn_apps_tasp_grid				"AKNEXSETTINGLIST"
+
+// MenuBar
+#define qtn_aknexsettinglist_menubar        "Option"
+#define qtn_aknexsettinglist_menu_setlist   "SettingList"
+#define qtn_aknexsettinglist_menu_exit      "Exit"
+
+// Sub menubar of "SettingList"
+#define qtn_aknexsettinglist_outline01      "value text in value field"
+#define qtn_aknexsettinglist_outline02      "slider in value field"
+#define qtn_aknexsettinglist_outline03      "Volume in value field"
+#define qtn_aknexsettinglist_outline04      "Enum Text in value field"
+#define qtn_aknexsettinglist_outline05      "date editor in value field"
+#define qtn_aknexsettinglist_outline06      "time editor in value field"
+#define qtn_aknexsettinglist_outline07      "binary editor in value field"
+#define qtn_aknexsettinglist_outline08      "alpha password in value field"
+#define qtn_aknexsettinglist_outline09      "numeric password in value field"
+#define qtn_aknexsettinglist_outline10      "ip address in value field"
+
+// Label text
+#define qtn_aknexsettinglist_label_title    "AknExSettingList\nSample Application"
+
+// Item of Setting List
+#define qtn_aknexsettinglist_item_text      "1\tText editor\t\t"
+#define qtn_aknexsettinglist_item_popup     "1\tPop-up\t\t"
+#define qtn_aknexsettinglist_item_multi     "1\tMultiselection\t\t"
+#define qtn_aknexsettinglist_item_slider    "1\tSlider\t\t"
+#define qtn_aknexsettinglist_item_volume    "1\tVolume\t\t"
+#define qtn_aknexsettinglist_item_text2     "2\tText editor\t\t"
+#define qtn_aknexsettinglist_item_text3     "3\tText editor\t\t"
+#define qtn_aknexsettinglist_item_text_a    "1\taaaaaaaa\t\t"
+#define qtn_aknexsettinglist_item_text_b    "2\tbbbbbbbb\t\t"
+#define qtn_aknexsettinglist_item_text_c    "3\tcccccccc\t\t"
+#define qtn_aknexsettinglist_resource_10    "1\tResource(10)\t\t"
+#define qtn_aknexsettinglist_resource_30    "2\tResource(30)\t\t"
+#define qtn_aknexsettinglist_source_10      "3\tSource(10)\t\t"
+#define qtn_aknexsettinglist_source_30      "4\tSource(30)\t\t"
+#define qtn_aknexsettinglist_item_time      "1\tTime editor\t\t"
+#define qtn_aknexsettinglist_item_duration  "1\tDuration editor\t\t"
+#define qtn_aknexsettinglist_item_alpha     "1\tAlpha password\t\t"
+#define qtn_aknexsettinglist_item_numeric   "2\tNumeric password\t\t"
+#define qtn_aknexsettinglist_item_number_setting "1\tNumber editor\t\t"
+
+// Item of Setting List for layout change
+#define qtn_aknexsettinglist_item_2items    "1\tPop-up(2items)\t\t"
+#define qtn_aknexsettinglist_item_3items    "2\tPop-up(3items)\t\t"
+#define qtn_aknexsettinglist_item_4items    "3\tPop-up(4items)\t\t"
+#define qtn_aknexsettinglist_item_5items    "4\tPop-up(5items)\t\t"
+#define qtn_aknexsettinglist_item_6items    "5\tPop-up(6items)\t\t"
+#define qtn_aknexsettinglist_item_7items    "6\tPop-up(7items)\t\t"
+
+// Setting Page title
+#define qtn_aknexsettinglist_text_title     "Text editor"
+#define qtn_aknexsettinglist_popup_title    "Pop-up"
+#define qtn_aknexsettinglist_multi_title    "Multiselection"
+#define qtn_aknexsettinglist_slider_title   "Slider"
+#define qtn_aknexsettinglist_volume_title   "Volume"
+#define qtn_aknexsettinglist_title_a        "aaaaaaaa"
+#define qtn_aknexsettinglist_title_b        "bbbbbbbb"
+#define qtn_aknexsettinglist_title_c        "cccccccc"
+#define qtn_aknexsettinglist_time_title     "Time editor"
+#define qtn_aknexsettinglist_duration_title "Duration editor"
+#define qtn_aknexsettinglist_alpha_title    "Alpha password"
+#define qtn_aknexsettinglist_numeric_title  "Numeric password"
+#define qtn_aknexsettinglist_enumtext_title	"Enum text"
+#define qtn_aknexsettinglist_date_title     "Date editor"
+#define qtn_aknexsettinglist_binary_title   "Binary editor"
+#define qtn_aknexsettinglist_text_number_editor "Number editor"
+#define qtn_aknexsettinglist_ip_editor_title "Enter IP Address"
+
+// Text Setting Page
+#define qtn_aknexsettinglist_text_initial   "abcdefghij"
+
+// Time Setting Page
+#define qtn_aknexsettinglist_time_initial   "105000."
+
+// Alpha Password Setting Page
+#define qtn_aknexsettinglist_alpha_initial  "aabbccdd"
+
+// Numeric Password Setting Page
+#define qtn_aknexsettinglist_numeric_init   "00112233"
+
+// List style Setting Page
+#define qtn_aknexsettinglist_item_list0     "aaaaaa"
+#define qtn_aknexsettinglist_item_list1     "bbbbbb"
+#define qtn_aknexsettinglist_item_list2     "cccccc"
+#define qtn_aknexsettinglist_item_list3     "dddddd"
+#define qtn_aknexsettinglist_item_list4     "eeeeee"
+#define qtn_aknexsettinglist_item_list5     "ffffff"
+#define qtn_aknexsettinglist_item_list6     "gggggg"
+#define qtn_aknexsettinglist_item_list7     "hhhhhh"
+#define qtn_aknexsettinglist_item_list8     "iiiiii"
+#define qtn_aknexsettinglist_item_list9     "jjjjjj"
+
+// Slider Setting Page
+#define qtn_slider_minlabel             "darker"
+#define qtn_slider_maxlabel             "lighter"
+
+// Softkey text
+#define qtn_softkey_text_select         "Select"
+#define qtn_softkey_text_back           "Back"
+
+// Message format
+#define qtn_message_format_integer      " %d"
+
+// Message text
+#define qtn_message_text_resource       "String defined in resource."
+
+//Password text
+#define qtn_aknexsettinglistitemdata_mypassword "My password"
+
+// For Cba
+#define qtn_aknexsettinglist_cba_next       "Next"
+
+// End of File

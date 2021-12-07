@@ -1,0 +1,26 @@
+// TLS1DLL.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+// exports are unfrozen
+	      
+TARGET        TLS1dll.dll
+TARGETTYPE    dll
+UID           0x1000008d 0x1000425b
+
+SOURCEPATH    .
+SOURCE        TLS1dll.cpp
+
+USERINCLUDE   .
+SYSTEMINCLUDE \Epoc32\include
+LIBRARY       euser.lib
+
+
+#if defined(WINS)
+    deffile .\TLS1dllWINS.def
+#else if defined(ARM)
+    deffile .\TLS1dllARM.def
+#endif
+nostrictdef

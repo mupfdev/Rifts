@@ -1,0 +1,72 @@
+/*
+* ============================================================================
+*  Name     : MultiFolderFileListModel.rh
+*  Part of  : File List
+*
+*  Description:
+*     This file contains declarations for resources of File List.
+*     The file can be included only in resource file.
+*     
+*  Version:
+*
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+*
+* ============================================================================
+*/
+
+#include <FileListModel.hrh>
+
+//  STRUCTURE DEFINITIONS
+
+// ---------------------------------------------------------
+//    FILELISTMODEL
+// ---------------------------------------------------------
+//
+
+/* Here is an example of the usage:
+
+RESOURCE FILELISTMODEL r_test_filelist_model
+{
+sorting_criteria = EAlphaAscending;
+directories =
+    {
+        LBUF { txt = "c:\\nokia\\sounds\\simple\\"; }
+    };
+wildcards =
+    {
+        LBUF { txt = "*.wav"; },
+        LBUF { txt = "*.mid"; }
+    };
+max_file_size = KFLDNoSizeFiltering;
+}
+
+*/
+
+STRUCT FILELISTMODEL
+    {
+
+    WORD sorting_criteria = EAlphaAscending;
+
+    // LTEXT array of directories to show in model
+    STRUCT directories[];
+
+    // LTEXT array of wildcards to use in filtering
+    STRUCT wildcards[];
+
+    // LTEXT array of MIME types to use in filtering
+    // Note! If you define any MIME types, wildcards are ignored in filtering.
+    STRUCT mimetypes[];
+
+    // maximum file size in bytes
+    LONG max_file_size = KFLDNoSizeFiltering;
+    }
+
+// End of File

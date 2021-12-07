@@ -1,0 +1,23 @@
+/*
+* ============================================================================
+*  Name     : Bld.inf
+*  Part of  : AknExPbar
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+
+PRJ_PLATFORMS
+WINS
+Thumb
+ARMI
+
+PRJ_EXPORTS
+//\AknSample\AknExPbar\rom\AknExPbar.iby \epoc32\rom\include\AknExPbar.iby
+
+PRJ_MMPFILES
+AknExPbar.mmp
+
+PRJ_TESTMMPFILES
+
+// End of file.

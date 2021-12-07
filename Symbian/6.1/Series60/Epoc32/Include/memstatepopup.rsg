@@ -1,0 +1,3 @@
+#define R_MEMSTATE_WAIT_NOTE                      0x41fce002
+#define R_UNIT_FORMATTER                          0x41fce003
+#define R_ARRAY_UNITS                             0x41fce004

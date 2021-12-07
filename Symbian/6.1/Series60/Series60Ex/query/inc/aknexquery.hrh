@@ -1,0 +1,177 @@
+/*
+* =============================================================================
+*  Name     : AknExQuery resource header file
+*  Part of  : AknExQuery
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+#ifndef AKNEXQUERY_HRH
+#define AKNEXQUERY_HRH
+
+enum TAknExQueryMenuCommands
+    {
+    EAknExQueryNoOutline = 0x600,
+
+    // Data Query
+    EAknExQueryOutline1,
+    EAknExQueryOutline2,
+    EAknExQueryOutline3,
+    EAknExQueryOutline4,
+    EAknExQueryOutline5,
+    EAknExQueryOutline7,
+    EAknExQueryOutline8,
+    EAknExQueryOutline9,
+    EAknExQueryOutline71,
+    EAknExQueryOutline72,
+    EAknExQueryOutline73,
+    EAknExQueryOutline74,
+    EAknExQueryOutline78,
+    EAknExQueryOutline80,
+    EAknExQueryOutline81,
+    EAknExQueryOutline85,
+	EAknExQueryOutline103,
+	EAknExQueryOutline113,
+
+
+    // Confirmation Query
+    EAknExQueryOutline10,
+    EAknExQueryOutline11,
+    EAknExQueryOutline12,
+    EAknExQueryOutline13,
+    EAknExQueryOutline15,
+    EAknExQueryOutline16,
+    EAknExQueryOutline69,
+    EAknExQueryOutline70,
+
+    // List Query
+    EAknExQueryOutline17,
+    EAknExQueryOutline18,
+    EAknExQueryOutline20,
+    EAknExQueryOutline63,
+    EAknExQueryOutline77,
+    EAknExQueryOutline90,
+    EAknExQueryOutline91,
+    EAknExQueryOutline92,
+    EAknExQueryOutline93,
+
+    // Multi Selection Query
+    EAknExQueryOutline21,
+    EAknExQueryOutline22,
+    EAknExQueryOutline23,
+    EAknExQueryOutline54,
+    EAknExQueryOutline75,
+    EAknExQueryOutline76,
+    EAknExQueryOutline86,
+    EAknExQueryOutline89,
+
+    // Layout
+    EAknExQueryOutline25,
+    EAknExQueryOutline26,
+    EAknExQueryOutline27,
+    EAknExQueryOutline28,
+    EAknExQueryOutline29,
+    EAknExQueryOutline30,
+    EAknExQueryOutline32,
+    EAknExQueryOutline33,
+    EAknExQueryOutline35,
+    EAknExQueryOutline38,
+    EAknExQueryOutline108,
+
+    // Use of Roller
+    EAknExQueryOutline34,
+
+    // Multiline Data Query
+    EAknExQueryOutline39,
+    EAknExQueryOutline40,
+    EAknExQueryOutline41,
+    EAknExQueryOutline42,
+    EAknExQueryOutline43,
+    EAknExQueryOutline44,
+    EAknExQueryOutline104,
+
+    // Data query
+    EAknExQueryOutline46,
+
+    // List query
+    EAknExQueryOutline48,
+    EAknExQueryOutline50,
+    EAknExQueryOutline51,
+    EAknExQueryOutline52,
+
+    // Phonenumber and pin query
+    EAknExQueryOutline59,
+    EAknExQueryOutline60,
+
+    // Global List Query.
+    EAknExQueryOutline61,
+    EAknExQueryOutline87,
+    EAknExQueryOutline88,
+
+    // Query with Heading
+    EAknExQueryOutline62,
+    EAknExQueryOutline79,
+    EAknExQueryOutline82,
+    EAknExQueryOutline83,
+    EAknExQueryOutline84,
+
+
+    //Message Query
+    EAknExQueryOutline64,
+    EAknExQueryOutline65,
+
+    // Prompt Line
+   EAknExQueryOutline66,
+   EAknExQueryOutline67,
+   EAknExQueryOutline68,
+
+
+    //FromControlByLayoutOrNull
+    EAknExQueryOutline94,
+    EAknExQueryOutline95,
+    EAknExQueryOutline96,
+    EAknExQueryOutline97,
+    EAknExQueryOutline98,
+    EAknExQueryOutline99,
+    EAknExQueryOutline100,
+    EAknExQueryOutline101,
+    EAknExQueryOutline102,
+
+    // Image & Anim
+    EAknExQueryOutline105,
+    EAknExQueryOutline106,
+    EAknExQueryOutline107,
+
+
+	//
+	EAknExQueryOutline109,
+	EAknExQueryOutline110,
+	EAknExQueryOutline111,
+    EAknExQueryOutline112
+    };
+
+enum TAknExQueryListBoxCommands
+    {
+    // ListBox item commands
+    EAknExQueryListBoxCmdData1,
+    EAknExQueryListBoxCmdData2,
+    EAknExQueryListBoxCmdData3,
+    EAknExQueryListBoxCmdData4,
+    EAknExQueryListBoxCmdData5,
+    EAknExQueryListBoxCmdData6
+    };
+
+enum TAknExQueryNumberQueryWithHeading
+    {
+    EAknExQueryNumQueryHeadMin = 0,
+    EAknExQueryNumQueryHeadMax = 9999
+    };
+
+enum TAknExQueryCba
+	{
+	EAknExQueryCbaCmdNext = 0x6300
+	};
+
+#endif
+
+// End of File

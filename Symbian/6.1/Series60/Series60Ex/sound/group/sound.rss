@@ -1,0 +1,108 @@
+// Copyright (c) 2001, Nokia. All rights reserved.
+
+NAME SND
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "Sound.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar=r_sound_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_sound_menubar
+//   Menubar for Sound example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_sound_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane = r_sound_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_sound_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_sound_menu
+    {
+    items=
+        {
+        MENU_ITEM { command = ESoundCmdPlay; txt = "Play"; },
+        MENU_ITEM { command = ESoundCmdRecord; txt = "Record"; },
+        MENU_ITEM { flags = EEikMenuItemSeparatorAfter; command = ESoundCmdStop; txt = "Stop"; },
+        MENU_ITEM { command = ESoundCmdChange; cascade = r_sound_utility_menu; txt = "Change utility";} ,
+        MENU_ITEM { command = EAknSoftkeyExit; txt = "Exit"; }
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_sound_utility_menu
+//   Small cascaded menu to chose sound player type
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_sound_utility_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = ESoundCmdTone;
+            txt = "Tone utility";
+            },
+        MENU_ITEM
+            {
+            command = ESoundCmdPlayer;
+            txt = "Player utility";
+            },
+        MENU_ITEM
+            {
+            command = EESoundCmdRecorder;
+            txt = "Recorder utility";
+            }
+        };
+    }

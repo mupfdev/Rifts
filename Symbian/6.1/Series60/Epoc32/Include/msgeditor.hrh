@@ -1,0 +1,150 @@
+/*
+* ============================================================================
+*  Name     : MsgEditor.hrh
+*  Part of  : MsgEditor
+*  Origin   :
+*  Created  : Mon Mar 27 11:42:21 2000 by jarilaak
+*  Description:
+*
+*  Version  :
+*   %version: 16 %
+*   %date_modified: Fri Sep 06 14:28:42 2002 %
+*   %derived_by: jarilaak %
+*
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related
+*  computer programs, is protected by copyright controlled by
+*  Nokia Corporation. All rights are reserved. Copying,
+*  including reproducing, storing,  adapting or translating, any
+*  or all of this material requires the prior written consent of
+*  Nokia Corporation. This material also contains confidential
+*  information which may not be disclosed to others without the
+*  prior written consent of Nokia Corporation.
+*
+* ============================================================================
+*/
+
+#ifndef INC_MSGEDITOR_HRH
+#define INC_MSGEDITOR_HRH
+
+enum TMsgFormComponent
+{
+    EMsgHeader = 0,
+    EMsgBody
+};
+
+enum TMsgControlType
+{
+    EMsgExpandableControl = 1,
+    EMsgAddressControl,
+    EMsgBodyControl,
+    EMsgImageControl,
+    EMsgFirstFreeCustomControlType
+};
+
+enum TMsgControlId
+{
+    EMsgComponentIdNull = 0,
+    EMsgComponentIdTo = 1,
+    EMsgComponentIdFrom,
+    EMsgComponentIdCc,
+    EMsgComponentIdBcc,
+    EMsgComponentIdSubject,
+    EMsgComponentIdBody,
+    EMsgComponentIdDateTime,
+    EMsgComponentIdFirstFreeEditorSpecificId
+};
+
+enum TMsgFocusDirection
+{
+    EMsgFocusUp = -1,
+    EMsgFocusDown = 1
+};
+
+enum TMsgControlIndex
+{
+    EMsgAppendControl = -1,
+    EMsgFirstControl = 0
+};
+
+enum TMsgClipboardFunc
+{
+    EMsgNoClipboard = 0,
+    EMsgCopy,
+    EMsgCut,
+    EMsgPaste,
+    EMsgPasteSpecial
+};
+
+enum TMsgEditFunc
+{
+    EMsgUndo = 0,
+    EMsgSelectAll
+};
+
+enum TMsgCursorLocation
+{
+    EMsgTop = 0,
+    EMsgBottom
+};
+
+enum TMsgStateFlags
+{
+    EMsgStateNormal                            = 0x0000,
+    EMsgStateInitializing                      = 0x0001,
+    EMsgStateInitialized                       = 0x0002,
+    EMsgStateRefreshing                        = 0x0004,
+    EMsgEnsureCorrectFormPositionRequestIssued = 0x0008
+};
+
+enum TMsgControlModeFlags
+{
+    EMsgControlModeNone                = 0x000000,
+    EMsgControlModeReadOnly            = 0x000001,    // Indicates read only state
+    EMsgControlModePlainTextMode       = 0x000002,    // Indicates plain text mode
+    EMsgControlModeSizeFixedToOneLine  = 0x000004,    // Forces control to one line heigh
+    EMsgControlModeUseSystemFont       = 0x000008,    // Forces control to use system font
+    EMsgControlModeSizeChanging        = 0x000010,    // Indicates control's size change
+    EMsgControlModeBodyMaxHeight       = 0x000020,    // Forces body control to max height
+    EMsgControlModeModified            = 0x000040,    // Indicates if control has been modified
+    EMsgControlModeInitialized         = 0x000080,    // Indicates if control has been initialized
+    EMsgControlModeShiftPressed        = 0x000100,    // Indicated if shift key is pressed
+    EMsgControlModeFirstReservedFlag   = 0x001000,    // Reserved for standard controls
+    EMsgControlModeFirstFreeFlag       = 0x100000
+};
+
+enum TMsgViewEvent
+{
+    EMsgViewEventPrepareFocusTransitionUp,
+    EMsgViewEventPrepareFocusTransitionDown,
+    EMsgViewEventPrepareForViewing,
+    EMsgViewEventPrepareForZooming,
+    EMsgViewEventFormHeightChanged,
+    EMsgViewEventFormScrolled,
+    EMsgViewEventSetCursorFirstPos,
+    EMsgViewEventSetCursorLastPos
+};
+
+enum TMsgIndicatorFlags
+{
+    // TODO: check avkon.hrh if they add more indicators there.
+    EMsgIndicatorT9              = 0x0001,
+    EMsgIndicatorUpperCase       = 0x0002,
+    EMsgIndicatorLowerCase       = 0x0004,
+    EMsgIndicatorTextCase        = 0x0008,
+    EMsgIndicatorNumberCase      = 0x0010,
+    EMsgIndicatorQuery           = 0x0020,
+    EMsgIndicatorPinyin          = 0x0040,
+    EMsgIndicatorZhuyin          = 0x0080,
+    EMsgIndicatorStroke          = 0x0100,
+    EMsgIndicatorAudioAttached   = 0x0200,
+    EMsgIndicatorImageAttached   = 0x0400,
+    EMsgIndicatorObjects         = 0x0800,
+    EMsgIndicatorAttachment      = 0x1000,
+    EMsgIndicatorMessageLength   = 0x2000
+};
+
+
+#endif
+
+// End of File

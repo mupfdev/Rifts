@@ -1,0 +1,19 @@
+// Copyright (c) 2001, Nokia. All rights reserved.
+
+#ifndef __SOUND_HRH__
+#define __SOUND_HRH__
+
+
+/** Sound enumerate command codes */
+enum TSoundCommands
+    {
+    ESoundCmdPlay=100,
+    ESoundCmdRecord,
+    ESoundCmdStop,
+    ESoundCmdChange,
+    ESoundCmdTone,
+    ESoundCmdPlayer,
+    EESoundCmdRecorder
+    };
+
+#endif

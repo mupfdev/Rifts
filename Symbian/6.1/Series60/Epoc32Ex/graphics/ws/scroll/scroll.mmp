@@ -1,0 +1,18 @@
+// Scroll.mmp
+//
+
+TARGET			Scroll.app
+TARGETTYPE		app
+TARGETPATH      	\system\apps\Scroll
+UID			0x100039ce 0x100098e6
+SOURCEPATH		.
+SOURCE			AppHolder.cpp Base.cpp Scroll.cpp
+RESOURCE		Scroll.rss
+USERINCLUDE		.
+SYSTEMINCLUDE		\epoc32\include
+LIBRARY			euser.lib
+LIBRARY			apparc.lib
+LIBRARY			cone.lib
+LIBRARY			eikcore.lib 
+LIBRARY			ws32.lib    
+LIBRARY			gdi.lib    

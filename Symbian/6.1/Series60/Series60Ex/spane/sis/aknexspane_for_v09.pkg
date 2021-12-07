@@ -1,0 +1,16 @@
+; AknExSpane.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExSpane"},(0x10005C27),1,04,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExSpane.app"-"!:\system\apps\AknExSpane\AknExSpane.app"
+"..\..\..\epoc32\release\thumb\urel\AknExSpane.rsc"-"!:\system\apps\AknExSpane\AknExSpane.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExSpane.aif"-"!:\system\apps\AknExSpane\AknExSpane.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExSpane.mbm"-"!:\system\apps\AknExSpane\AknExSpane.mbm"
+"..\..\..\epoc32\release\thumb\urel\AknExSpane_caption.rsc"-"!:\system\apps\AknExSpane\AknExSpane_caption.rsc"

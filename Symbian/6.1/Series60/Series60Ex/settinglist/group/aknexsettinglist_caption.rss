@@ -1,0 +1,17 @@
+/*
+* ============================================================================
+*  Name     : AknExSettingList_captions.rss
+*  Part of  : AknExSettingList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+#include "AknExSettingList.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = qtn_apps_tasp_list;
+    shortcaption = qtn_apps_tasp_grid;
+    }
+
+// End of File

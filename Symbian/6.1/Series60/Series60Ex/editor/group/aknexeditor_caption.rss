@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : AknExEditor_caption.rss
+*  Part of  : AknExEditor
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include "AknExEditor.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = qtn_apps_taed_list;
+    shortcaption = qtn_apps_taed_grid;
+    }
+
+// End of File

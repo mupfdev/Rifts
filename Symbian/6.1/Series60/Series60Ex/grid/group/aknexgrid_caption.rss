@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : AknExGrid_caption.rss
+*  Part of  : AknExGrid
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include "AknExGrid.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = qtn_apps_tagr_list;
+    shortcaption = qtn_apps_tagr_grid;
+    }
+
+// End of File

@@ -1,0 +1,233 @@
+// AIFTOOL.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+
+//
+// contains definitions for the resource files that are input to AIF files
+
+
+// constants for capability.hidden
+#define KAppNotHidden	0
+#define KAppIsHidden	1
+
+// constants for capability.newfile
+#define KAppDoesNotSupportNewFile	0
+#define KAppSupportsNewFile			1
+
+// constants for capability.embeddability
+#define KAppNotEmbeddable	0
+#define KAppEmbeddable		1
+#define KAppEmbeddableOnly	2
+
+// constants for capability.launch
+#define KAppLaunchInForeground	0
+#define KAppLaunchInBackground	1
+
+// application group name
+#define KAppMaxGroupName 16
+
+
+///////////////////////////
+// HEADER INFO
+///////////////////////////
+
+STRUCT AIF_DATA
+	{
+	LONG app_uid;
+	//
+	WORD num_icons=0; // each icon should be a bitmap/mask pair
+	//
+	LEN WORD STRUCT caption_list[]; // CAPTION
+	//
+	BYTE hidden=KAppNotHidden;
+	BYTE embeddability=KAppNotEmbeddable;
+	BYTE newfile=KAppDoesNotSupportNewFile;
+	BYTE launch=KAppLaunchInForeground;
+	LTEXT groupName(KAppMaxGroupName)="";
+	//
+	LEN WORD STRUCT datatype_list[]; // DATATYPE
+	//
+	LEN WORD STRUCT view_list[]; // VIEW_DATA
+	//
+	LEN WORD STRUCT file_ownership_list[]; // FILE_OWNERSHIP_INFO
+	}
+
+
+///////////////////////////
+// CAPTIONS
+///////////////////////////
+
+#define KMaxCaption 256
+
+enum 
+	{
+	ELangTest,					// 00
+	ELangEnglish,				// 01
+	ELangFrench,				// 02
+	ELangGerman,				// 03
+	ELangSpanish,				// 04
+	ELangItalian,				// 05
+	ELangSwedish,				// 06
+	ELangDanish,				// 07
+	ELangNorwegian,				// 08
+	ELangFinnish,				// 09
+	ELangAmerican,				// 10
+	ELangSwissFrench,			// 11
+	ELangSwissGerman,			// 12
+	ELangPortuguese,			// 13
+	ELangTurkish,				// 14
+	ELangIcelandic,				// 15
+	ELangRussian,				// 16
+	ELangHungarian,				// 17
+	ELangDutch,					// 18
+	ELangBelgianFlemish,		// 19
+	ELangAustralian,			// 20
+	ELangBelgianFrench,			// 21
+	ELangAustrian,				// 22
+	ELangNewZealand,			// 23
+	ELangInternationalFrench,	// 24
+	ELangCzech,					// 25
+	ELangSlovak,				// 26
+	ELangPolish,				// 27
+	ELangSlovenian,				// 28
+	ELangTaiwanChinese,			// 29
+	ELangHongKongChinese,		// 30
+	ELangPrcChinese,			// 31
+	ELangJapanese,				// 32
+	ELangThai,					// 33
+	ELangAfrikaans,				// 34
+	ELangAlbanian,				// 35
+	ELangAmharic,				// 36
+	ELangArabic,				// 37
+	ELangArmenian,				// 38
+	ELangAzerbaijani,			// 39
+	ELangBelarussian,			// 40
+	ELangBengali,				// 41
+	ELangBulgarian,				// 42
+	ELangBurmese,				// 43
+	ELangCatalan,				// 44
+	ELangCroatian,				// 45
+	ELangCanadianEnglish,		// 46
+	ELangInternationalEnglish,	// 47
+	ELangSouthAfricanEnglish,	// 48
+	ELangEstonian,				// 49
+	ELangFarsi,					// 50
+	ELangCanadianFrench,		// 51
+	ELangScotsGaelic,			// 52
+	ELangGeorgian,				// 53
+	ELangGreek,					// 54
+	ELangCyprusGreek,			// 55
+	ELangGujarati,				// 56
+	ELangHebrew,				// 57
+	ELangHindi,					// 58
+	ELangIndonesian,			// 59
+	ELangIrish,					// 60
+	ELangSwissItalian,			// 61
+	ELangKannada,				// 62
+	ELangKazakh,				// 63
+	ELangKhmer,					// 64
+	ELangKorean,				// 65
+	ELangLao,					// 66
+	ELangLatvian,				// 67
+	ELangLithuanian,			// 68
+	ELangMacedonian,			// 69
+	ELangMalay,					// 70
+	ELangMalayalam,				// 71
+	ELangMarathi,				// 72
+	ELangMoldavian,				// 73
+	ELangMongolian,				// 74
+	ELangNorwegianNynorsk,		// 75
+	ELangBrazilianPortuguese,	// 76
+	ELangPunjabi,				// 77
+	ELangRomanian,				// 78
+	ELangSerbian,				// 79
+	ELangSinhalese,				// 80
+	ELangSomali,				// 81
+	ELangInternationalSpanish,	// 82
+	ELangLatinAmericanSpanish,	// 83
+	ELangSwahili,				// 84
+	ELangFinlandSwedish,		// 85
+	ELangTajik,					// 86
+	ELangTamil,					// 87
+	ELangTelugu,				// 88
+	ELangTibetan,				// 89
+	ELangTigrinya,				// 90
+	ELangCyprusTurkish,			// 91
+	ELangTurkmen,				// 92
+	ELangUkrainian,				// 93
+	ELangUrdu,					// 94
+	ELangUzbek,					// 95
+	ELangVietnamese,			// 96
+	ELangWelsh,					// 97
+	ELangZulu,					// 98
+	ELangOther					// 99
+	};
+
+
+STRUCT CAPTION
+	{
+	BYTE code;
+	LTEXT caption(KMaxCaption);
+	}
+
+///////////////////////////
+// DATATYPE
+///////////////////////////
+
+#define KMaxDataTypeLength 256
+
+enum
+	{
+	EDataTypePriorityHigh=10000,
+	EDataTypePriorityNormal=0,
+	EDataTypePriorityLow=-10000,
+	EDataTypePriorityLastResort=KMinTInt16
+	};
+
+STRUCT DATATYPE
+	{
+	WORD priority;
+	LTEXT8 type(KMaxDataTypeLength);
+	}
+
+///////////////////////////
+// VIEW_DATA
+///////////////////////////
+
+STRUCT VIEW_DATA
+	{
+	LONG view_uid;
+	//
+	LONG screen_mode=0;
+	//
+	WORD num_icons=0; // each icon should be a bitmap/mask pair
+	//
+	LEN WORD STRUCT caption_list[]; // CAPTION
+	}
+
+///////////////////////////
+// FILE_OWNERSHIP_INFO
+///////////////////////////
+
+#define KMaxFileNameLength 256
+
+STRUCT FILE_OWNERSHIP_INFO
+	{
+	LTEXT file_name(KMaxFileNameLength);
+	}
+
+///////////////////////////
+// MEMORY
+///////////////////////////
+
+// not yet implemented
+
+STRUCT MEMORY
+	{
+	LONG minheap;
+	LONG maxheap;
+	LONG stack;
+	}
+

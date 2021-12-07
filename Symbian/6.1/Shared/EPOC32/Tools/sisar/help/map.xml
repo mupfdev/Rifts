@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map PUBLIC 
+"-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN" 
+"http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+
+  <mapID target="root" url="Common/ToolsAndUtilities/SisarGuide/index.html" />
+
+  <mapID target="SisarIntro.toc" url="Common/ToolsAndUtilities/SisarGuide/SisarIntro/index.html" />
+  <mapID target="SisarIntro.launch" url="Common/ToolsAndUtilities/SisarGuide/SisarIntro/HowToLaunch.guide.html" />
+  <mapID target="SisarIntro.ui-overview" url="Common/ToolsAndUtilities/SisarGuide/SisarIntro/OverviewSisarUI.html" />
+  <mapID target="SisarIntro.about" url="Common/ToolsAndUtilities/SisarGuide/SisarIntro/SisarIntro.guide.html" />
+  <mapID target="SisarIntro.menusummary" url="Common/ToolsAndUtilities/SisarGuide/SisarIntro/SisarTheMenuBar.html " />
+
+  <mapID target="Sisar.toc" url="Common/ToolsAndUtilities/SisarGuide/Sisar/index.html" />
+  <mapID target="Sisar.HowTo.CapabilitiesTab" url="Common/ToolsAndUtilities/SisarGuide/Sisar/CapabilitiesTab.html" />
+  <mapID target="Sisar.HowTo.ConfigurationTab" url="Common/ToolsAndUtilities/SisarGuide/Sisar/ConfigurationTab.html" />
+  <mapID target="Sisar.HowTo.EntriesTab" url="Common/ToolsAndUtilities/SisarGuide/Sisar/EntriesTab.html" />
+  <mapID target="Sisar.HowTo.HeaderTab" url="Common/ToolsAndUtilities/SisarGuide/Sisar/HeaderTab.html" />
+  <mapID target="Sisar.HowTo.loadandsave" url="Common/ToolsAndUtilities/SisarGuide/Sisar/HowToLoadAndSaveProjects.html" />
+  <mapID target="Sisar.HowTo.NameTab" url="Common/ToolsAndUtilities/SisarGuide/Sisar/NameTab.html" />
+  <mapID target="Sisar.HowTo.RequisitesTab" url="Common/ToolsAndUtilities/SisarGuide/Sisar/RequisitesTab.html" />
+  <mapID target="Sisar.HowTo.LoadExistingFiles" url="Common/ToolsAndUtilities/SisarGuide/Sisar/SisarFiles.html" />
+
+</map>

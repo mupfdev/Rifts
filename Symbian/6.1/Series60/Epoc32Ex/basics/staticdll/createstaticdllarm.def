@@ -1,0 +1,5 @@
+EXPORTS
+; NEW:
+	NewLC__10CMessengerR12CConsoleBaseRC7TDesC16 @ 1 NONAME ; CMessenger::NewLC(CConsoleBase &, TDesC16 const &)
+	ShowMessage__10CMessenger @ 2 NONAME ; CMessenger::ShowMessage(void)
+

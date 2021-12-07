@@ -1,0 +1,2 @@
+#define VIDEO_LIBRARY                             1
+#define CLIP_FORMAT_DRM_GIF                       2

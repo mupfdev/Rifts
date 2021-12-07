@@ -1,0 +1,13 @@
+EXPORTS
+; NEW:
+	__11CEchoEngine @ 1 NONAME ; CEchoEngine::CEchoEngine(void)
+	ConnectL__11CEchoEngineUl @ 2 NONAME ; CEchoEngine::ConnectL(unsigned long)
+	ConstructL__11CEchoEngineP9MUINotify @ 3 NONAME ; CEchoEngine::ConstructL(MUINotify *)
+	NewLC__11CEchoEngineP9MUINotify @ 4 NONAME ; CEchoEngine::NewLC(MUINotify *)
+	NewL__11CEchoEngineP9MUINotify @ 5 NONAME ; CEchoEngine::NewL(MUINotify *)
+	Read__11CEchoEngine @ 6 NONAME ; CEchoEngine::Read(void)
+	Stop__11CEchoEngine @ 7 NONAME ; CEchoEngine::Stop(void)
+	TestGetByAddr__11CEchoEngineUl @ 8 NONAME ; CEchoEngine::TestGetByAddr(unsigned long)
+	Write__11CEchoEngineG5TChar @ 9 NONAME ; CEchoEngine::Write(TChar)
+	ConnectL__11CEchoEngineRC7TDesC16 @ 10 NONAME ; CEchoEngine::ConnectL(TDesC16 const &)
+

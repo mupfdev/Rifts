@@ -1,0 +1,4 @@
+EXPORTS
+; NEW:
+	?NewMessenger@@YAPAVCMessenger@@XZ @ 1 NONAME ; class CMessenger * __cdecl NewMessenger(void)
+

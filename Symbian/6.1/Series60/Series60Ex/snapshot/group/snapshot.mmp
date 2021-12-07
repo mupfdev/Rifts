@@ -1,0 +1,35 @@
+TARGET            SnapShot.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B89
+TARGETPATH        \system\apps\SnapShot
+
+SOURCEPATH        ..\src
+SOURCE            SnapShot.cpp
+SOURCE            SnapShotApplication.cpp 
+SOURCE            SnapShotAppView.cpp
+SOURCE            SnapShotAppUi.cpp
+SOURCE            SnapShotDocument.cpp 
+SOURCE			  CameraManager.cpp
+
+SOURCEPATH        ..\..\helperfunctions
+SOURCE            EikonEnvironment.cpp
+
+
+SOURCEPATH        ..\group
+RESOURCE          SnapShot.rss
+
+USERINCLUDE       ..\inc 
+USERINCLUDE       ..\..\helperfunctions
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           eikcoctl.lib
+LIBRARY           avkon.lib  
+LIBRARY           fbscli.lib 
+LIBRARY			  CameraServer.lib
+LIBRARY           ws32.lib
+LIBRARY           efsrv.lib

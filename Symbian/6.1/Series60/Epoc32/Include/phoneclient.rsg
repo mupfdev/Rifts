@@ -1,0 +1,11 @@
+#define R_SOFTKEY_QUIT                            0x4e555003
+#define R_REQUESTING_NOTE                         0x4e555004
+#define R_PHCLT_REQUESTING_WAIT_NOTE              0x4e555005
+#define R_TEXT_UNCONFIRMED                        0x4e555006
+#define R_TEXT_NOT_DONE                           0x4e555007
+#define R_TEXT_NOT_ALLOWED                        0x4e555008
+#define R_TEXT_RESULT_UNKNOWN                     0x4e555009
+#define R_TEXT_DONE                               0x4e55500a
+#define R_TEXT_NO_SERVICE                         0x4e55500b
+#define R_PHCLT_SOFTKEYS_EMPTY                    0x4e55500c
+#define R_PHCLT_BLANK_DLG                         0x4e55500d

@@ -1,0 +1,41 @@
+//	MSVSTD.HRH
+//
+// Copyright (c) 1998 Symbian Ltd.  All rights reserved.
+//
+
+#if !defined(__MSVSTD_HRH__)
+#define __MSVSTD_HRH__
+
+// predefined entry ids (can go upto 0x100000)
+#define KMsvNullIndexEntryIdValue			0
+#define KMsvTempIndexEntryIdValue			1
+#define KMsvRootIndexEntryIdValue			0x1000
+#define KMsvLocalServiceIndexEntryIdValue	0x1001
+#define KMsvGlobalInBoxIndexEntryIdValue	0x1002
+#define KMsvGlobalOutBoxIndexEntryIdValue	0x1003
+#define KMsvDraftEntryIdValue				0x1004
+#define KMsvSentEntryIdValue				0x1005
+#define KMsvDeletedEntryFolderEntryIdValue	0x1006
+#define KMsvUnkownServiceIndexEntryIdValue	0x1007
+// Entry type values
+#define KUidMsvRootEntryValue				0x10000F67
+#define KUidMsvServiceEntryValue			0x10000F68
+#define KUidMsvFolderEntryValue				0x10000F69
+#define KUidMsvMessageEntryValue			0x10000F6A
+#define KUidMsvAttachmentEntryValue			0x10000F6B
+
+// local service mtm
+#define KUidMsvLocalServiceMtmValue			0x10000F71
+#define KUidMsvServerMtmValue				0x1000589A
+
+// function ids
+#define KMtmFirstFreeMtmFunctionId 			0x100000 // MTM can use any value above this
+#define KMtmFirstFreeInternalFunctionId		0x10000  // INTERNAL to message server
+
+// Mtm component Uid's
+#define KUidMtmServerComponentVal	0x10003C5E
+#define KUidMtmClientComponentVal	0x10003C5F
+#define KUidMtmUiComponentVal		0x10003C60
+#define KUidMtmUiDataComponentVal	0x10003C61
+
+#endif

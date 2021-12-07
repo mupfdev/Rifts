@@ -1,0 +1,20 @@
+// TLS2EXE.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET        TLS2exe.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        TLS2exe.cpp
+
+USERINCLUDE   .
+USERINCLUDE   ..\..\CommonFramework
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib  TLS2dll.lib
+
+

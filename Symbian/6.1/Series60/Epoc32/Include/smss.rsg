@@ -1,0 +1,15 @@
+#define R_ADDRESSEE_TELEPHONE_OPEN                1
+#define R_ADDRESSEE_TELEPHONE_CLOSE               2
+#define R_SENDER_NAME_FORMAT                      3
+#define R_TYPE_STATUS_REPORT                      4
+#define R_MESSAGE_INDICATION_VOICEMAIL_ONE        5
+#define R_MESSAGE_INDICATION_VOICEMAIL_MANY       6
+#define R_MESSAGE_INDICATION_EMAIL_ONE            7
+#define R_MESSAGE_INDICATION_EMAIL_MANY           8
+#define R_MESSAGE_INDICATION_FAX_ONE              9
+#define R_MESSAGE_INDICATION_FAX_MANY             10
+#define R_MESSAGE_INDICATION_OTHER_ONE            11
+#define R_MESSAGE_INDICATION_OTHER_MANY           12
+#define ERROR_ACTIONS                             13
+#define R_LOWLIMIT_DISKSPACE_HOLDER               14
+#define R_HIGHLIMIT_DISKSPACE_HOLDER              15

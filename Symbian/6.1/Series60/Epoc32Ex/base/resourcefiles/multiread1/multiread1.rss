@@ -1,0 +1,18 @@
+// MultiRead1.rss
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+NAME BASE
+
+#include "MultiRead.rh" // include for common structures
+
+// signature, for ConfirmSignature()
+
+RESOURCE SIGNATURE { version=023; }
+
+// define resources
+
+RESOURCE STRING r_base_hello
+	{
+	text="Ahlan Wa Sahlan!";
+	}

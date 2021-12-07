@@ -1,0 +1,16 @@
+#define R_SMSV_OPTIONSMENUBAR                     0x5dbf5004
+#define R_SMSV_OPTIONSMENUPANE                    0x5dbf5005
+#define R_SMSV_CONTEXTMENUBAR                     0x5dbf5006
+#define R_SMSV_CONTEXTMENUPANE                    0x5dbf5007
+#define R_SMSV_FROM                               0x5dbf5008
+#define R_SMSV_TO                                 0x5dbf5009
+#define R_SMSV_REPLYPATH                          0x5dbf500a
+#define R_DELETEMSGCONF_QUERY                     0x5dbf500b
+#define R_SMSV_SOFTKEYS_SAVE_DELETE               0x5dbf500c
+#define R_QTN_MCE_MOVE_MOVE_TO                    0x5dbf500d
+#define R_QTN_QUERY_COMMON_CONF_DELETE_ME         0x5dbf500e
+#define R_QTN_MCE_CONF_MESSAGE_SAVED              0x5dbf500f
+#define R_QTN_SM_TITLE_PICTURE_MESSAGE            0x5dbf5010
+#define R_QTN_SM_PICTURE_NAME                     0x5dbf5011
+#define R_QTN_TITLE_SMS                           0x5dbf5012
+#define R_QTN_SMS_HEADING_REPLY_PATH              0x5dbf5013

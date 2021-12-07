@@ -1,0 +1,7 @@
+// TSY.HRH
+//
+// Copyright (c) 1998 Symbian Ltd.  All rights reserved.
+//
+
+
+#define ETsyFlagHardModemSettingsHardCoded	0x0001

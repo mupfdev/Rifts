@@ -1,0 +1,24 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+#ifndef __SOCKETS_HRH__
+#define __SOCKETS_HRH__
+
+enum
+    {
+    KMaxServerNameLength = 50
+    };
+
+
+/** Sockets enumerate command codes */
+enum TSocketsIds
+    {
+    ESocketsCmdConnect = 100,
+    ESocketsCmdDisconnect,
+    ESocketsCmdClear,
+
+    ESocketsServerNameEdwin,
+    ESocketsPortNumberEdwin
+    };
+
+
+#endif // __SOCKETS_HRH__

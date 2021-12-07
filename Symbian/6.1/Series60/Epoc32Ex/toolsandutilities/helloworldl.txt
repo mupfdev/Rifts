@@ -1,0 +1,5 @@
+This is where users might possibly insert "license text"! 
+
+The use of the argument TA in the .pkg file means that if No is pressed, 
+then the installation will abort. Without TA, the Yes/No option is replaced
+by a single option - "Continue".

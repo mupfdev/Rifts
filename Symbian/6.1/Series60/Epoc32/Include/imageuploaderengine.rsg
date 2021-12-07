@@ -1,0 +1,6 @@
+#define R_SERVER_RESPONSE_FILE_NAME               0x2f111002
+#define R_KEYWORDS_FILE_NAME                      0x2f111003
+#define R_TEMPLATES_FILE_NAME                     0x2f111004
+#define R_SERVER_RESPONSE_FILE_NAME_C             0x2f111005
+#define R_KEYWORDS_FILE_NAME_C                    0x2f111006
+#define R_TEMPLATES_FILE_NAME_C                   0x2f111007

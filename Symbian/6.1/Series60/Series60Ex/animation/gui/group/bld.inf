@@ -1,0 +1,7 @@
+/* Copyright (c) 2000, Nokia. All rights reserved */
+PRJ_MMPFILES
+
+..\..\server\group\animation_server.mmp
+..\..\client\group\animation_client.mmp
+animation.mmp
+

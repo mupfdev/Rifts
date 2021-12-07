@@ -1,0 +1,16 @@
+; Animation.pkg
+;
+
+;Language - standard language definitions
+&EN
+
+; SIS file header
+#{"animation"},(0x10005B88),1,0,0
+
+;Supports Series 60 v 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+"..\..\..\epoc32\release\thumb\urel\animation.APP"-"C:\system\apps\animation\animation.app"
+"..\..\..\epoc32\release\thumb\urel\animation.rsc"-"C:\system\apps\animation\animation.rsc"
+"..\..\..\epoc32\release\thumb\urel\animation_client.dll"-"C:\system\apps\animation\animation_client.dll"
+"..\..\..\epoc32\release\thumb\urel\animation_server.dll"-"C:\system\apps\animation\animation_server.dll"

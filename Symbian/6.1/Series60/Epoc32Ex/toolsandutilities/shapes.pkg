@@ -1,0 +1,21 @@
+;
+; Basic install file for minimal application
+;
+
+; Languages
+; none -  English only by default
+
+; Installation header
+; Only one component name as we only support English
+; UID is the app's UID - see HelloWorld.mmp
+
+#{"Minimal application"},(0x01123456),1,0,0
+; Only two files to install for the minimal application
+"Shapes.app"-"!:\system\apps\Shapes\Shapes.app"
+"Shapes.rsc"-"!:\system\apps\Shapes\Shapes.rsc"
+
+; Required files
+; None
+
+; Component .sis files
+; None

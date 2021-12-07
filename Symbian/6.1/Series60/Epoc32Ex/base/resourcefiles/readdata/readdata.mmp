@@ -1,0 +1,20 @@
+// ReadData.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET         ReadData.exe
+TARGETTYPE     exe
+UID            0
+
+SOURCEPATH    .
+SOURCE         ReadData.cpp
+SYSTEMRESOURCE ReadData.rss
+
+USERINCLUDE    ..
+USERINCLUDE    .
+USERINCLUDE    ..\..\CommonFramework
+SYSTEMINCLUDE  \Epoc32\include
+
+LIBRARY        euser.lib efsrv.lib  bafl.lib

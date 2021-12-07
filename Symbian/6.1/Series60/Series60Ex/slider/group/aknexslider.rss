@@ -1,0 +1,1025 @@
+/*
+* ============================================================================
+*  Name     : AknExSlider.rss
+*  Part of  : AknExSlider
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    EXSL
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+#include <avkon.loc>
+#include "aknexslider.hrh"
+#include "aknexslider.loc"
+
+
+//  CONSTANTS
+#define AKNEXSLIDER_HOTKEY_KEY_EXIT 'e'
+#define AKNEXSLIDER_MINIMUM_VALUE 0
+#define AKNEXSLIDER_MAXIMUM_VALUE 100
+#define AKNEXSLIDER_MINIMUM_VALUE2 100
+#define AKNEXSLIDER_MAXIMUM_VALUE2 200
+#define AKNEXSLIDER_MINIMUM_VALUE3 0
+#define AKNEXSLIDER_MAXIMUM_VALUE3 200
+#define AKNEXSLIDER_STEP_SIZE 2
+#define AKNEXSLIDER_DECIMALSLIDER_DECIMALPLACES 1
+
+
+//  MACROS
+
+
+//  RESOURCE DEFINITIONS
+
+//----------------------------------------------------------------------------
+//
+//    RSS_SIGNATURE
+//
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+//----------------------------------------------------------------------------
+//
+//    TBUF16
+//
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF16
+    {
+    buf = "AknExSlider";
+    }
+
+//----------------------------------------------------------------------------
+//
+//    EIK_APP_INFO
+//
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar =r_aknexslider_menubar;
+    cba = r_aknexslider_cba_options_next;
+    hotkeys = r_aknexslider_hotkeys;
+    status_pane = R_AVKON_STATUS_PANE_LAYOUT_USUAL;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_hotkeys
+//    Hotkey
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE HOTKEYS r_aknexslider_hotkeys
+    {
+    control =
+        {
+        HOTKEY
+            {
+            command = EAknCmdExit;
+            key = AKNEXSLIDER_HOTKEY_KEY_EXIT;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_menubar
+//    MenuBar
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexslider_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexslider_menu;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_menu
+//    Menu pane
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexslider_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdLayout;
+            cascade = r_aknexslider_option_layout;
+            txt = qtn_aknexslider_menu_layout;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdViewMode;
+            txt = qtn_aknexslider_menu_viewmode;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdForm;
+            txt = qtn_aknexslider_menu_form;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdReturn;
+            txt = qtn_aknexslider_menu_return;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdSetting;
+            cascade = r_aknexslider_option_setting;
+            txt = qtn_aknexslider_menu_setting;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdValueChanged;
+            txt = qtn_aknexslider_menu_valuechanged;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdValueType;
+            cascade = r_aknexslider_option_valuetype;
+            txt = qtn_aknexslider_menu_valuetype;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdValueText;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexslider_menu_valuetext;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexslider_menu_exit;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_option_layout
+//    Layout's cascade menu pane
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexslider_option_layout
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdLayout1;
+            txt = qtn_aknexslider_sub_layout1;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdLayout2;
+            txt = qtn_aknexslider_sub_layout2;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdLayout3;
+            txt = qtn_aknexslider_sub_layout3;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_option_keyevent
+//    Keyevent's cascade menu pane
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexslider_option_keyevent
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdKeyEvent1;
+            txt = qtn_aknexslider_sub_keyevent1;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdKeyEvent2;
+            txt = qtn_aknexslider_sub_keyevent2;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdKeyEvent3;
+            txt = qtn_aknexslider_sub_keyevent3;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_option_setting
+//    Setting's cascade menu pane
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexslider_option_setting
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdSetMinimum;
+            txt = qtn_aknexslider_sub_minimum;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdSetMaximum;
+            txt = qtn_aknexslider_sub_maximum;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdSetRange;
+            txt = qtn_aknexslider_sub_range;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdSetValue;
+            txt = qtn_aknexslider_sub_value;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdSetStep;
+            txt = qtn_aknexslider_sub_step;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_option_valutype
+//    Value type's cascade menu pane
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexslider_option_valuetype
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdTypeNotShown;
+            txt = qtn_aknexslider_sub_notshown;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdTypeBare;
+            txt = qtn_aknexslider_sub_bare;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdTypePercent;
+            txt = qtn_aknexslider_sub_percent;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdTypeFraction;
+            txt = qtn_aknexslider_sub_fraction;
+            },
+        MENU_ITEM
+            {
+            command = EAknExSliderCmdTypeDecimal;
+            txt = qtn_aknexslider_sub_decimal;
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout1
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout1
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE;
+    step = AKNEXSLIDER_STEP_SIZE;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout2
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout2
+    {
+    layout = EAknFormSliderLayout2;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE;
+    step = AKNEXSLIDER_STEP_SIZE;
+    minlabel = qtn_aknexslider_label_dark;
+    maxlabel = qtn_aknexslider_label_bright;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout3
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout3
+    {
+    layout = EAknFormSliderLayout3;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE;
+    step = AKNEXSLIDER_STEP_SIZE;
+    minlabel = qtn_aknexslider_label_min1;
+    maxlabel = qtn_aknexslider_label_max1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout5
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout5
+    {
+    layout = EAknFormSliderLayout2;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE;
+    step = AKNEXSLIDER_STEP_SIZE;
+    minlabel = qtn_aknexslider_label_min1;
+    maxlabel = qtn_aknexslider_label_max1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_value_notshown
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_value_notshown
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE2;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE2;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueNone;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_value_bare
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_value_bare
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE2;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE2;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueBareFigure;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_value_percent
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_value_percent
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE2;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE2;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValuePercentage;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_value_fraction
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_value_fraction
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE2;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE2;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueFraction;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_value_decimal
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_value_decimal
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE2;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE2;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueDecimal;
+    decimalplaces = AKNEXSLIDER_DECIMALSLIDER_DECIMALPLACES;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layou_text_value_notshown
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_text_value_notshown
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE3;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE3;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueNone;
+    valuelabel = qtn_aknexslider_valuelabel_test1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_text_value_bare
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_text_value_bare
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE3;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE3;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueBareFigure;
+    valuelabel = qtn_aknexslider_valuelabel_test1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_text_value_percent
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_text_value_percent
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE3;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE3;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValuePercentage;
+    valuelabel = qtn_aknexslider_valuelabel_test1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_text_value_fraction
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_text_value_fraction
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE3;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE3;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueFraction;
+    valuelabel = qtn_aknexslider_valuelabel_test1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_layout_text_value_decimal
+//    Slider structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE SLIDER r_aknexslider_slider_layout_text_value_decimal
+    {
+    layout = EAknFormSliderLayout1;
+    minvalue = AKNEXSLIDER_MINIMUM_VALUE3;
+    maxvalue = AKNEXSLIDER_MAXIMUM_VALUE3;
+    step = AKNEXSLIDER_STEP_SIZE;
+    valuetype = EAknSliderValueDecimal;
+    decimalplaces = AKNEXSLIDER_DECIMALSLIDER_DECIMALPLACES;
+    valuelabel = qtn_aknexslider_valuelabel_test1;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_form_dialog
+//    Dialog structure
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexslider_slider_form_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagButtonsRight | EEikDialogFlagNoTitleBar |
+            EEikDialogFlagCbaButtons;
+    buttons =  R_AVKON_SOFTKEYS_OPTIONS_BACK ;
+    form = r_aknexslider_slider_form;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_slider_form
+//    Form structure
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexslider_slider_form
+    {
+    items =
+        { 
+        DLG_LINE
+            {
+            type=EAknCtSlider;
+            prompt = qtn_aknexslider_header_value1;
+            id = EAknExSliderDlgId ;
+            control = SLIDER
+                {
+                layout = EAknFormSliderLayout1;
+                minvalue = AKNEXSLIDER_MINIMUM_VALUE;
+                maxvalue = AKNEXSLIDER_MAXIMUM_VALUE;
+                step = AKNEXSLIDER_STEP_SIZE;
+                };
+            }
+        };
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_app_title
+//    Text which is used on start screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_app_title
+    {
+    buf = qtn_aknexslider_app_title;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_layout1
+//    Text which is used on Layout1 screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_layout1
+    {
+    buf = qtn_aknexslider_info_layout1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_layout2
+//    Text which is used on Layout2 screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_layout2
+    {
+    buf = qtn_aknexslider_info_layout2;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_layout3
+//    Text which is used on Layout3 screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_layout3
+    {
+    buf = qtn_aknexslider_info_layout3;
+    }
+
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_viewmode
+//    Text which is used on View mode screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_viewmode
+    {
+    buf = qtn_aknexslider_info_viewmode;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_keyevent1
+//    Text which is used on Key event1 screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_keyevent1
+    {
+    buf = qtn_aknexslider_info_keyevent1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_keyevent2
+//    Text which is used on Key event2 screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_keyevent2
+    {
+    buf = qtn_aknexslider_info_keyevent2;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_keyevent3
+//    Text which is used on Key event3 screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_keyevent3
+    {
+    buf = qtn_aknexslider_info_keyevent3;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_form
+//    Text which is used on From screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_form
+    {
+    buf = qtn_aknexslider_info_form;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_return
+//    Text which is used on Return value screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_return
+    {
+    buf = qtn_aknexslider_info_return;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_header
+//    Text which is used on Header screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_header
+    {
+    buf = qtn_aknexslider_info_header;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_minimum
+//    Text which is used on Minimum screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_minimum
+    {
+    buf = qtn_aknexslider_info_minimum;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_maximum
+//    Text which is used on Maximum screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_maximum
+    {
+    buf = qtn_aknexslider_info_maximum;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_range
+//    Text which is used on Range screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_range
+    {
+    buf = qtn_aknexslider_info_range;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_value
+//    Text which is used on Current value screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_value
+    {
+    buf = qtn_aknexslider_info_value;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_step
+//    Text which is used on Step size screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_step
+    {
+    buf = qtn_aknexslider_info_step;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuechanged
+//    Text which is used on Value changed screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuechanged
+    {
+    buf = qtn_aknexslider_info_valuechanged;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuetype
+//    Text which is used on Value type screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuetype
+    {
+    buf = qtn_aknexslider_info_valuetype;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuetype_decimal
+//    Text which is used on Value type / decimal screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuetype_decimal
+    {
+    buf = qtn_aknexslider_info_valuetype_decimal;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuetext_notshown
+//    Text which is used on Value text(valuev is not shown)screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuetext_notshown
+    {
+    buf = qtn_aknexslider_info_not_shown;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuetext_bare
+//    Text which is used on Value text(value type is bare figure)screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuetext_bare
+    {
+    buf = qtn_aknexslider_info_bare;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuetext_percent
+//    Text which is used on Value text(value type is percentage)screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuetext_percent
+    {
+    buf = qtn_aknexslider_info_percent;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuetext_fraction
+//    Text which is used on Value text(value type is fraction)screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuetext_fraction
+    {
+    buf = qtn_aknexslider_info_fraction;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_valuetext_decimal
+//    Text which is used on Value text(value type is decimal)screen
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_valuetext_decimal
+    {
+    buf = qtn_aknexslider_info_decimal;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_info_operation
+//    Text which is used for switch to next outline
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_info_operation
+    {
+    buf = qtn_aknexslider_info_operation;
+    }
+
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_min1
+//    Text which is used for Minimam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_min1
+    {
+    buf = qtn_aknexslider_label_min1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_min2
+//    Text which is used for Minimam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_min2
+    {
+    buf = qtn_aknexslider_label_min2;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_max1
+//    Text which is used for Maximam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_max1
+    {
+    buf = qtn_aknexslider_label_max1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_max2
+//    Text which is used for Maximam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_max2
+    {
+    buf = qtn_aknexslider_label_max2;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_low1
+//    Text which is used for Minimam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_low1
+    {
+    buf = qtn_aknexslider_label_low1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_low2
+//    Text which is used for Minimam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_low2
+    {
+    buf = qtn_aknexslider_label_low2;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_high1
+//    Text which is used for Maximam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_high1
+    {
+    buf = qtn_aknexslider_label_high1;
+    }
+
+//----------------------------------------------------------------------------
+//
+//    r_aknexslider_label_high2
+//    Text which is used for Maximam label of slider
+//
+//----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexslider_label_high2
+    {
+    buf = qtn_aknexslider_label_high2;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexslider_cba_options_next
+//    ?description
+//
+// ----------------------------------------------------------------------------
+//
+
+RESOURCE CBA r_aknexslider_cba_options_next
+    {
+    buttons =
+        {
+        CBA_BUTTON 
+            {
+            id=EAknSoftkeyOptions; 
+            txt = text_softkey_option;
+            },
+        AVKON_CBA_BUTTON
+            {
+            id = EAknExSliderCbaCmdNext;
+            txt = qtn_aknexslider_cba_next;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    aknexslider_initail
+//    Title of StatusPane.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF16 r_aknexslider_initail
+    {
+    buf = qtn_aknexslider_initail;
+    }
+
+// End of File

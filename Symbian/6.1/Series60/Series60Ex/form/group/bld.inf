@@ -1,0 +1,22 @@
+/*
+* ============================================================================
+*  Name     : BLD.INF
+*  Part of  : AknExForm
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+//PRJ_EXPORTS
+// Specify the source file followed by its destination here
+// copy will be used to copy the source file to its destination
+// If there's no destination then the source file will be copied
+// to the same name in \epoc32\include
+//\AknSample\AknExForm\rom\AknExForm.iby \epoc32\rom\include\AknExForm.iby
+
+PRJ_MMPFILES
+AknExForm.mmp
+
+// End of File

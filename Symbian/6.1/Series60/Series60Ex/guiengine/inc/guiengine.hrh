@@ -1,0 +1,14 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+#ifndef __GUIENGINE_HRH__
+#define __GUIENGINE_HRH__
+
+
+enum
+	{
+	KClear = 100,
+	KSelectBrushCircle = 101,
+	KSelectBrushRectangle = 102
+	};
+
+
+#endif // __GUIENGINE_HRH__

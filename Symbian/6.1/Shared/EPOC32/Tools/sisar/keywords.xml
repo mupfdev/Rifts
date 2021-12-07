@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE keywords SYSTEM "keywords.dtd">
+
+<keywords version="1.0">
+
+<keyword word="Manufacturer" />
+<keyword word="ManufacturerHardwareRev" />
+<keyword word="ManufacturerSoftwareRev" />
+<keyword word="ManufacturerSoftwareBuild" />
+<keyword word="Model" />
+<keyword word="MachineUid" />
+<keyword word="DeviceFamily" />
+<keyword word="DeviceFamilyRev" />
+<keyword word="CPU" />
+<keyword word="CPUArch" />
+<keyword word="CPUABI" />
+<keyword word="CPUSpeed" />
+<keyword word="SystemTickPeriod" />
+<keyword word="MemoryRAM" />
+<keyword word="MemoryRAMFree" />
+<keyword word="MemoryROM" />
+<keyword word="MemoryPageSize" />
+<keyword word="PowerBackup" />
+<keyword word="Keyboard" />
+<keyword word="KeyboardDeviceKeys" />
+<keyword word="KeyboardAppKeys" />
+<keyword word="KeyboardClick" />
+<keyword word="KeyboardClickVolumeMax" />
+<keyword word="DisplayXPixels" />
+<keyword word="DisplayYPixels" />
+<keyword word="DisplayXTwips" />
+<keyword word="DisplayYTwips" />
+<keyword word="DisplayColors" />
+<keyword word="DisplayContrastMax" />
+<keyword word="Backlight" />
+<keyword word="Pen" />
+<keyword word="PenX" />
+<keyword word="PenY" />
+<keyword word="PenDisplayOn" />
+<keyword word="PenClick" />
+<keyword word="PenClickVolumeMax" />
+<keyword word="Mouse" />
+<keyword word="MouseX" />
+<keyword word="MouseY" />
+<keyword word="MouseButtons" />
+<keyword word="CaseSwitch" />
+<keyword word="LEDs" />
+<keyword word="IntegratedPhone" />
+<keyword word="DisplayBrightnessMax" />
+<keyword word="KeyboardBacklightState" />
+<keyword word="AccessoryPower" />
+<keyword word="NumHalAttributes" />
+<keyword word="Language" />
+<keyword word="RemoteInstall" />
+
+<!-- Manufacturer -->
+<keyword word="Ericsson" in-pkg="0" />
+<keyword word="Motorola" in-pkg="1" />
+<keyword word="Nokia" in-pkg="2" />
+<keyword word="Panasonic" in-pkg="3" />
+<keyword word="Psion" in-pkg="4" />
+<keyword word="Intel" in-pkg="5" />
+<keyword word="Cogent" in-pkg="6" />
+<keyword word="Cirrus" in-pkg="7" />
+
+<!-- MachineUID -->
+<keyword word="Brutus" in-pkg="1" />
+
+</keywords>

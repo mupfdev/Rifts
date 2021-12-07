@@ -1,0 +1,6 @@
+EXPORTS
+; NEW:
+	?GetTlsData@CMessenger@@QAEHXZ @ 1 NONAME ; public: int __thiscall CMessenger::GetTlsData(void)
+	?NewLC@CMessenger@@SAPAV1@AAVCConsoleBase@@ABVTDesC16@@@Z @ 2 NONAME ; public: static class CMessenger * __cdecl CMessenger::NewLC(class CConsoleBase &,class TDesC16 const &)
+	?ShowMessage@CMessenger@@QAEXXZ @ 3 NONAME ; public: void __thiscall CMessenger::ShowMessage(void)
+

@@ -1,0 +1,3 @@
+#define NEW_MESSAGE_TYPES_ARRAY                   0x4e518002
+#define R_PHAPE_SOFTKEYS_EMPTY                    0x4e518003
+#define R_PHAPE_BLANK_DLG                         0x4e518004

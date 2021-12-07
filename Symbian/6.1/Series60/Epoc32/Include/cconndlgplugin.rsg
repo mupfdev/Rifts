@@ -1,0 +1,7 @@
+#define R_CONNDLG_AUTHENTICATION                  0xf358002
+#define R_CONNDLG_RECONNECT                       0xf358003
+#define R_LIST_QUERY                              0xf358004
+#define R_CONNDLG_NEW_IAP                         0xf358005
+#define R_CONNDLG_NEW_CONNECTION_ATTEMPT          0xf358006
+#define R_EMPTY_POPUP_LIST_TEXT                   0xf358007
+#define R_WMLBROWSER_NEW_PUSH_MESSAGES_ICONS      0xf358008

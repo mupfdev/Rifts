@@ -1,0 +1,259 @@
+/*
+* =============================================================================
+*  Name     : AknExList resource header file
+*  Part of  : AknExList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+#ifndef AKNEXLIST_HRH
+#define AKNEXLIST_HRH
+
+enum TAknExListMenuCommands
+    {
+    EAknExListCmdEmptyOutline = 0x6000,
+
+    // Selection Item
+    EAknExListCmdSelectionItem,
+    EAknExListCmdOutline01,
+    EAknExListCmdOutline02,
+    EAknExListCmdOutline03,
+    EAknExListCmdOutline04,
+    EAknExListCmdOutline05,
+    EAknExListCmdOutline06,
+    EAknExListCmdOutline07,
+    EAknExListCmdOutline08,
+
+    // Style
+    EAknExListCmdStyle,
+    EAknExListCmdOutline09,
+    EAknExListCmdOutline10,
+    EAknExListCmdOutline11,
+    EAknExListCmdOutline12,
+    EAknExListCmdOutline13,
+    EAknExListCmdOutline14,
+    EAknExListCmdOutline15,
+    EAknExListCmdOutline16,
+    EAknExListCmdOutline17,
+    EAknExListCmdOutline18,
+    EAknExListCmdOutline19,
+    EAknExListCmdOutline20,
+    EAknExListCmdOutline21,
+    EAknExListCmdOutline22,
+    EAknExListCmdOutline23,
+
+    // Selection List
+    EAknExListCmdSelectionList,
+    EAknExListCmdOutline26,
+    EAknExListCmdOutline27,
+    EAknExListCmdOutline28,
+    EAknExListCmdOutline29,
+
+    // Multi selection List
+    EAknExListCmdMultiSelectionList,
+    EAknExListCmdOutline30,
+    EAknExListCmdOutline31,
+
+    // Markable List
+    EAknExListCmdMarkableList,
+    EAknExListCmdOutline32,
+    EAknExListCmdOutline33,
+
+    // Find box
+    EAknExListCmdFindbox,
+    EAknExListCmdOutline41,
+    
+    // Layout
+    EAknExListCmdLayout,
+    EAknExListCmdOutline36,
+    EAknExListCmdOutline43,
+    EAknExListCmdOutline44,
+    EAknExListCmdOutline45,
+    EAknExListCmdOutline46,
+    EAknExListCmdOutline47,
+    EAknExListCmdOutline48,
+    EAknExListCmdOutline49,
+    EAknExListCmdOutline50,
+    EAknExListCmdOutline51,
+    EAknExListCmdOutline52,
+    EAknExListCmdOutline53,
+    EAknExListCmdOutline54,
+    EAknExListCmdOutline55,
+    EAknExListCmdOutline56,
+    EAknExListCmdOutline57,
+    EAknExListCmdOutline58,
+    EAknExListCmdOutline59,
+    EAknExListCmdOutline60,
+    EAknExListCmdOutline61,
+    EAknExListCmdOutline62,
+    EAknExListCmdOutline63,
+
+    // Empty List
+    EAknExListCmdEmptyList,
+    EAknExListCmdOutline64,
+    EAknExListCmdOutline68,
+    EAknExListCmdOutline69,
+    EAknExListCmdOutline70,
+    EAknExListCmdOutline71,
+    EAknExListCmdOutline75,
+    EAknExListCmdOutline76,
+
+    // Softkey binding
+    EAknExListCmdSoftkeyBindings,
+    EAknExListCmdOutline65,
+
+    // Add and remove
+    EAknExListCmdAddAndRemove,
+    EAknExListCmdOutline66,
+    EAknExListCmdOutline67,
+    EAknExListCmdOutline74,
+
+    // Event action except for markable list
+    EAknExListCmdEvenAction,
+    EAknExListCmdOutline77,
+    EAknExListCmdOutline78,
+    EAknExListCmdOutline79,
+    EAknExListCmdOutline80,
+    EAknExListCmdOutline86,
+
+    // Event of markable list
+    EAknExListCmdEvntMarkable,
+    EAknExListCmdOutline81,
+    EAknExListCmdOutline82,
+    EAknExListCmdOutline83,
+    EAknExListCmdOutline87,
+
+    // Appearance of setting list
+    EAknExListCmdAppearanceSetting,
+    EAknExListCmdOutline84,
+    EAknExListCmdOutline85,
+
+    // Flag test
+    EAknExListCmdFlagTest,
+    EAknExListCmdOutline88,
+    EAknExListCmdOutline89,
+    EAknExListCmdOutline90,
+    EAknExListCmdOutline91,
+    EAknExListCmdOutline92,
+    EAknExListCmdOutline93,
+    EAknExListCmdOutline94,
+    EAknExListCmdOutline95,
+    EAknExListCmdOutline96,
+    EAknExListCmdOutline97,
+    EAknExListCmdOutline98,
+    EAknExListCmdOutline99,
+    EAknExListCmdOutline100,
+    EAknExListCmdOutline101,
+    EAknExListCmdOutline102,
+    EAknExListCmdOutline103,
+    EAknExListCmdOutline104,
+
+    EAknExListSoftkeyNextOutline
+    };
+
+enum TAknExListSubOutlineCommands
+    {
+    // Two types of Outline30
+    EAknExListCmdOutline30T1 = 0x7000,
+    EAknExListCmdOutline30T2,
+
+    // Three types of Outline41
+    EAknExListCmdOutline41T1,
+    EAknExListCmdOutline41T2,
+    EAknExListCmdOutline41T3,
+
+    // Sub of Outline80
+    EAknExListCmdOutline80Sub
+
+    };
+
+enum TAknExListDialogCtrlIds
+    {
+    EAknExListDlgLbx = 1,
+    EAknExListDlgFindBox
+    };
+
+enum TAknExListFlagTestTabId
+    {
+    // Flag test
+    EAknExListTabIdType01 = 0x7200,
+    EAknExListTabIdType02,
+    EAknExListTabIdType03,
+    EAknExListTabIdType04,
+    EAknExListTabIdType05,
+    EAknExListTabIdType06,
+    EAknExListTabIdType07,
+    EAknExListTabIdType08,
+    EAknExListTabIdType09,
+    EAknExListTabIdType10,
+    EAknExListTabIdType11,
+    EAknExListTabIdType12,
+    EAknExListTabIdType13,
+    EAknExListTabIdType14,
+    EAknExListTabIdType15,
+    EAknExListTabIdType16,
+    EAknExListTabIdType01Withs,
+    EAknExListTabIdType02Withs,
+    EAknExListTabIdType03Withs,
+    EAknExListTabIdType04Withs,
+    EAknExListTabIdType05Withs,
+    EAknExListTabIdType06Withs,
+    EAknExListTabIdType07Withs,
+    EAknExListTabIdType08Withs,
+    EAknExListTabIdType09Withs,
+    EAknExListTabIdType10Withs,
+    EAknExListTabIdType11Withs,
+    EAknExListTabIdType12Withs,
+    EAknExListTabIdType13Withs,
+    EAknExListTabIdType14Withs,
+    EAknExListTabIdType15Withs,
+    EAknExListTabIdType16Withs
+
+    };
+
+enum TAknExListSetPageItem
+    {
+    EAknExListSetPageTextLen = 20,
+    EAknExListSetPagePwdLen = 8,
+    EAknExListSetPageMaxVolume = 8,
+    EAknExListSetPageMinSliderValue = 0,
+    EAknExListSetPageMaxSliderValue = 150,
+    EAknExListSetPageSliderValueStep = 5,  
+    EAknExListSetPageMinYearInDateEditor = 1986,  
+    EAknExListSetPageMaxYearInDateEditor = 2986,
+    EAknExListSetPageMinHourInTimeEditor = 8,
+    EAknExListSetPageMaxHourInTimeEditor = 23
+    };
+
+enum TAknExListSetPageItemIndex
+    {
+    EAknExListEmptyItem = 1
+    };
+
+enum TAknExListSelListDlgMenuCmd
+    {
+    EAknExListCmdListDlgNone = 0x7600,
+    EAknExListCmdListDlgSelListProcCmd,
+    EAknExListCmdListDlgMultiSelListProcCmd,
+    EAknExListCmdListDlgMarkListProcCmd,
+    EAknExListCmdListDlgSimKey,
+    // According to Sw 4.0.12's 
+    // AknSelectionService::HandleMenuListOfferKeyEventL().
+    EAknExListCmdListDlgSimKeyNumber,
+    EAknExListCmdListDlgSimKeyDelete,
+    EAknExListCmdListDlgSimKeyLeftShift,
+    EAknExListCmdListDlgSimKeyRightShift,
+    EAknExListCmdListDlgSimKeyUp,
+    EAknExListCmdListDlgSimKeyDown,                
+    EAknExListCmdListDlgMarkListInitMPane1,
+    EAknExListCmdListDlgMarkListInitMPane2,
+    EAknExListCmdListDlgMarkListInitMItem1,
+    EAknExListCmdListDlgMarkListInitMItem2,
+    EAknExListCmdListDlgMarkListUpdateAfterCmd,
+    EAknExListCmdListDlgItemRemoval,
+    EAknExListCmdListDlgObserverTest
+    };
+
+#endif
+
+// End of File

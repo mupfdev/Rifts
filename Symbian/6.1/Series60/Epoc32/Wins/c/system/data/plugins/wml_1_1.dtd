@@ -1,0 +1,249 @@
+<!ENTITY % length "CDATA">
+<!ENTITY % vdata "CDATA">
+<!ENTITY % HREF "%vdata;">
+<!ENTITY % boolean "(true|false)">
+<!ENTITY % number "NMTOKEN">
+<!ENTITY % coreattrs "id ID #IMPLIED
+ class CDATA  #IMPLIED">
+<!ENTITY % emph "b | i | u | em | strong | big | small">
+<!ENTITY % layout "br">
+<!ENTITY % text "#PCDATA | %emph;">
+<!ENTITY % flow "%text; | %layout; | img | anchor | a | table">
+<!ENTITY % task "go | prev | noop | refresh">
+<!ENTITY % navelmts "do | onevent">
+<!ELEMENT wml ( head?, template?, card+ )>
+<!ATTLIST wml xml:lang NMTOKEN #IMPLIED  %coreattrs; >
+<!ENTITY % cardev "onenterforward  %HREF; #IMPLIED 
+ onenterbackward %HREF; #IMPLIED
+ ontimer         %HREF; #IMPLIED">
+<!ENTITY % fields  "%flow; | input | select | fieldset">
+<!ELEMENT card (onevent*, timer?, (do | p)*)>
+<!ATTLIST card  title %vdata; #IMPLIED
+  newcontext %boolean; "false"
+  ordered %boolean; "true"
+  xml:lang NMTOKEN #IMPLIED
+  %cardev; 
+  %coreattrs; 
+  >
+<!ELEMENT do (%task;)>
+<!ATTLIST do
+  type CDATA #REQUIRED
+  label %vdata; #IMPLIED
+  name NMTOKEN #IMPLIED
+  optional %boolean; "false"
+  xml:lang     NMTOKEN #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT onevent (%task;)>
+<!ATTLIST onevent
+  type         CDATA       #REQUIRED
+  %coreattrs;
+  >
+<!ELEMENT head ( access | meta )+>
+<!ATTLIST head
+  %coreattrs;
+  >
+<!ELEMENT template (%navelmts;)*>
+<!ATTLIST template
+  %cardev;
+  %coreattrs;
+  >
+<!ELEMENT access EMPTY>
+<!ATTLIST access
+  domain       CDATA       #IMPLIED
+  path         CDATA       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT meta EMPTY>
+<!ATTLIST meta
+  http-equiv     CDATA      #IMPLIED
+  name           CDATA      #IMPLIED
+  forua          %boolean;  #IMPLIED
+  content        CDATA      #REQUIRED
+  scheme         CDATA      #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT go (postfield | setvar)*>
+<!ATTLIST go
+  href            %HREF;           #REQUIRED
+  sendreferer     %boolean;       "false"
+  method          (post|get)      "get"
+  accept-charset  CDATA           #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT prev (setvar)*>
+<!ATTLIST prev
+  %coreattrs;
+  >
+<!ELEMENT refresh (setvar)*>
+<!ATTLIST refresh
+  %coreattrs;
+  >
+<!ELEMENT noop EMPTY>
+<!ATTLIST noop
+  %coreattrs;
+  >
+<!ELEMENT postfield EMPTY>
+<!ATTLIST postfield
+  name         %vdata;           #REQUIRED
+  value        %vdata;           #REQUIRED
+  %coreattrs;
+  >
+<!ELEMENT setvar EMPTY>
+<!ATTLIST setvar
+  name         %vdata;           #REQUIRED
+  value        %vdata;           #REQUIRED
+  %coreattrs;
+  >
+<!ELEMENT select (optgroup|option)+>
+<!ATTLIST select
+  title        %vdata;           #IMPLIED
+  name         NMTOKEN           #IMPLIED
+  value        %vdata;           #IMPLIED
+  iname        NMTOKEN           #IMPLIED
+  ivalue       %vdata;           #IMPLIED
+  multiple     %boolean;         "false"
+  tabindex     %number;          #IMPLIED
+  xml:lang     NMTOKEN           #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT optgroup (optgroup|option)+ >
+<!ATTLIST optgroup
+  title      %vdata;    #IMPLIED
+  xml:lang   NMTOKEN    #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT option (#PCDATA | onevent)*>
+<!ATTLIST option
+  value      %vdata;    #IMPLIED
+  title      %vdata;    #IMPLIED
+  onpick     %HREF;     #IMPLIED
+  xml:lang   NMTOKEN    #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT input EMPTY>
+<!ATTLIST input
+  name       NMTOKEN           #REQUIRED
+  type       (text|password)   "text"
+  value      %vdata;           #IMPLIED
+  format     CDATA             #IMPLIED
+  emptyok    %boolean;         "false"
+  size       %number;          #IMPLIED
+  maxlength  %number;          #IMPLIED
+  tabindex   %number;          #IMPLIED
+  title      %vdata;           #IMPLIED
+  xml:lang   NMTOKEN           #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT fieldset (%fields; | do)* >
+<!ATTLIST fieldset
+  title           %vdata;      #IMPLIED
+  xml:lang        NMTOKEN      #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT timer EMPTY>
+<!ATTLIST timer
+  name       NMTOKEN           #IMPLIED
+  value      %vdata;           #REQUIRED
+  %coreattrs;
+  >
+<!ENTITY % IAlign "(top|middle|bottom)" >
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+  alt        %vdata;      #REQUIRED
+  src        %HREF;       #REQUIRED
+  localsrc   %vdata;      #IMPLIED
+  vspace     %length;     "0"
+  hspace     %length;     "0"
+  align      %IAlign;     "bottom"
+  height     %length;     #IMPLIED
+  width      %length;     #IMPLIED
+  xml:lang   NMTOKEN      #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT anchor ( #PCDATA | br | img | go | prev | refresh )*>
+<!ATTLIST anchor
+  title        %vdata;      #IMPLIED
+  xml:lang     NMTOKEN      #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT a ( #PCDATA | br | img )*>
+<!ATTLIST a
+  href         %HREF;       #REQUIRED
+  title        %vdata;      #IMPLIED
+  xml:lang     NMTOKEN      #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT table (tr)+>
+<!ATTLIST table
+  title       %vdata;    #IMPLIED
+  align       CDATA      #IMPLIED
+  columns     %number;   #REQUIRED
+  xml:lang    NMTOKEN    #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT tr (td)+>
+<!ATTLIST tr
+  %coreattrs;
+  >
+<!ELEMENT td ( %text; | %layout; | img | anchor | a )*>
+<!ATTLIST td
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT em     (%flow;)*>
+<!ATTLIST em
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT strong (%flow;)*>
+<!ATTLIST strong
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT b      (%flow;)*>
+<!ATTLIST b
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT i      (%flow;)*>
+<!ATTLIST i
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT u      (%flow;)*>
+<!ATTLIST u
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT big    (%flow;)*>
+<!ATTLIST big
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT small  (%flow;)*>
+<!ATTLIST small
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ENTITY % TAlign "(left|right|center)">
+<!ENTITY % WrapMode "(wrap|nowrap)" >
+<!ELEMENT p (%fields; | do)*>
+<!ATTLIST p
+  align       %TAlign;     "left"
+  mode        %WrapMode;   #IMPLIED
+  xml:lang    NMTOKEN      #IMPLIED
+  %coreattrs;
+  >
+<!ELEMENT br EMPTY>
+<!ATTLIST br
+  xml:lang        NMTOKEN       #IMPLIED
+  %coreattrs;
+  >
+<!ENTITY quot  "&#34;">
+<!ENTITY amp   "&#38;#38;">
+<!ENTITY apos  "&#39;">
+<!ENTITY lt    "&#38;#60;">
+<!ENTITY gt    "&#62;">
+<!ENTITY nbsp  "&#160;">
+<!ENTITY shy   "&#173;">

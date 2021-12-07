@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The unique language identifiers used are the
+lower-case two-letter codes as defined by ISO 639-1.
+If no two letter code is defined for a language,
+then we shall use the three letter code as defined
+by ISO 639-2/T.
+If no three letter code has been defined either,
+then we shall use IANA registered codes,
+as listed at
+ftp://ftp.isi.edu/in-notes/iana/assignments/languages/tags.
+If a code has not been defined there either,
+we will use a proprietary extension to the standard;
+such extensions must be prefixed with an "x-". -->
+
+<!-- The unique country identifiers used are the
+upper-case two-letter codes as defined by ISO-3166. -->
+
+<!-- The variant identifiers are specific to this
+file. -->
+
+<locales version="1.0">
+
+	<locale language="x-test">
+		<TLanguage index="00">ELangTest</TLanguage>
+		<!-- Note that as no country code is specified,
+                     this text concerns all English dialects (en-*). -->
+		<name language="en">Test</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="en" country="GB">
+		<TLanguage index="01">ELangEnglish</TLanguage>
+		<code2>EN</code2>
+		<opl-const>KLangEnglish%</opl-const>
+		<name language="en">British English</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="fr" country="FR">
+		<TLanguage index="02">ELangFrench</TLanguage>
+		<code2>FR</code2>
+		<opl-const>KLangFrench%</opl-const>
+		<name language="en">French</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="de" country="DE">
+		<TLanguage index="03">ELangGerman</TLanguage>
+		<code2>GE</code2>
+		<opl-const>KLangGerman%</opl-const>
+		<name language="en">German</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="es" country="ES">
+		<TLanguage index="04">ELangSpanish</TLanguage>
+		<code2>SP</code2>
+		<opl-const>KLangSpanish%</opl-const>
+		<name language="en">Spanish</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="it" country="IT">
+		<TLanguage index="05">ELangItalian</TLanguage>
+		<code2>IT</code2>
+		<opl-const>KLangItalian%</opl-const>
+		<name language="en">Italian</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="sv" country="SE">
+		<TLanguage index="06">ELangSwedish</TLanguage>
+		<code2>SW</code2>
+		<opl-const>KLangSwedish%</opl-const>
+		<name language="en">Swedish</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="da">
+		<TLanguage index="07">ELangDanish</TLanguage>
+		<code2>DA</code2>
+		<opl-const>KLangDanish%</opl-const>
+		<name language="en">Danish</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="no">
+		<TLanguage index="08">ELangNorwegian</TLanguage>
+		<code2>NO</code2>
+		<opl-const>KLangNorwegian%</opl-const>
+		<name language="en">Norwegian</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="fi">
+		<TLanguage index="09">ELangFinnish</TLanguage>
+		<code2>FI</code2>
+		<opl-const>KLangFinnish%</opl-const>
+		<name language="en">Finnish</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="en" country="US">
+		<TLanguage index="10">ELangAmerican</TLanguage>
+		<code2>AM</code2>
+		<opl-const>KLangAmerican%</opl-const>
+		<name language="en">American English</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="fr" country="CH">
+		<TLanguage index="11">ELangSwissFrench</TLanguage>
+		<code2>SF</code2>
+		<opl-const>KLangSwissFrench%</opl-const>
+		<name language="en">Swiss French</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="de" country="CH">
+		<TLanguage index="12">ELangSwissGerman</TLanguage>
+		<code2>SG</code2>
+		<opl-const>KLangSwissGerman%</opl-const>
+		<name language="en">Swiss German</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="por" country="PT">
+		<TLanguage index="13">ELangPortuguese</TLanguage>
+		<code2>PO</code2>
+		<opl-const>KLangPortuguese%</opl-const>
+		<name language="en">Portuguese</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="tr" country="TR">
+		<TLanguage index="14">ELangTurkish</TLanguage>
+		<code2>TU</code2>
+		<opl-const>KLangTurkish%</opl-const>
+		<name language="en">Turkish</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="is">
+		<TLanguage index="15">ELangIcelandic</TLanguage>
+		<code2>IC</code2>
+		<opl-const>KLangIcelandic%</opl-const>
+		<name language="en">Icelandic</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ru">
+		<TLanguage index="16">ELangRussian</TLanguage>
+		<code2>RU</code2>
+		<opl-const>KLangRussian%</opl-const>
+		<name language="en">Russian</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="hu">
+		<TLanguage index="17">ELangHungarian</TLanguage>
+		<code2>HU</code2>
+		<opl-const>KLangHungarian%</opl-const>
+		<name language="en">Hungarian</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="nl">
+		<TLanguage index="18">ELangDutch</TLanguage>
+		<code2>DU</code2>
+		<opl-const>KLangDutch%</opl-const>
+		<name language="en">Dutch</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<!-- Earlier used "x-flm" for the language, and
+             some people use the non-ISO code "fl",
+             but Flemish can actually be considered
+	     to be Belgian Dutch. -->
+	<locale language="nl" country="BE">
+		<TLanguage index="19">ELangBelgianFlemish</TLanguage>
+		<code2>BL</code2>
+		<opl-const>KLangBelgianFlemish%</opl-const>
+		<name language="en">Belgian Flemish</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="en" country="AU">
+		<TLanguage index="20">ELangAustralian</TLanguage>
+		<code2>AU</code2>
+		<opl-const>KLangAustralian%</opl-const>
+		<name language="en">Australian English</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="fr" country="BE">
+		<TLanguage index="21">ELangBelgianFrench</TLanguage>
+		<code2>BF</code2>
+		<opl-const>KLangBelgianFrench%</opl-const>
+		<name language="en">Belgian French</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="de" country="AT">
+		<TLanguage index="22">ELangAustrian</TLanguage>
+		<code2>AS</code2>
+		<opl-const>KLangAustrian%</opl-const>
+		<name language="en">Austrian German</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="en" country="NZ">
+		<TLanguage index="23">ELangNewZealand</TLanguage>
+		<code2>NZ</code2>
+		<opl-const>KLangNewZealand%</opl-const>
+		<name language="en">New Zealand English</name>
+		<supported-by>
+			<app>AIF Builder</app>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="fr" variant="intl">
+		<TLanguage index="24">ELangInternationalFrench</TLanguage>
+		<code2>IF</code2>
+		<opl-const>KLangInternationalFrench%</opl-const>
+		<name language="en">International French</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="cs">
+		<TLanguage index="25">ELangCzech</TLanguage>
+		<code2>CS</code2>
+		<name language="en">Czech</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="sk">
+		<TLanguage index="26">ELangSlovak</TLanguage>
+		<code2>SK</code2>
+		<name language="en">Slovak</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="pl">
+		<TLanguage index="27">ELangPolish</TLanguage>
+		<code2>PL</code2>
+		<name language="en">Polish</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="sl">
+		<TLanguage index="28">ELangSlovenian</TLanguage>
+		<code2>SL</code2>
+		<name language="en">Slovenian</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="zh" country="TW">
+		<TLanguage index="29">ELangTaiwanChinese</TLanguage>
+		<code2>TC</code2>
+		<name language="en">Taiwan Chinese</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="zh" country="HK">
+		<TLanguage index="30">ELangHongKongChinese</TLanguage>
+		<code2>HK</code2>
+		<name language="en">Hong Kong Chinese</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="zh" country="CN">
+		<TLanguage index="31">ELangPrcChinese</TLanguage>
+		<code2>ZH</code2>
+		<name language="en">PRC Chinese</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ja">
+		<TLanguage index="32">ELangJapanese</TLanguage>
+		<code2>JA</code2>
+		<name language="en">Japanese</name>
+		<supported-by>
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="th">
+		<TLanguage index="33">ELangThai</TLanguage>
+		<code2>TH</code2>
+		<name language="en">Thai</name>
+		<supported-by>
+                        <!-- Last language for which makesis knows
+                             the two-letter code. The numeric
+                             values may still be used for
+                             the remaining languages. -->
+			<app>makesis</app>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="af">
+		<TLanguage index="34">ELangAfrikaans</TLanguage>
+		<name language="en">Afrikaans</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="sq">
+		<TLanguage index="35">ELangAlbanian</TLanguage>
+		<name language="en">Albanian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="am">
+		<TLanguage index="36">ELangAmharic</TLanguage>
+		<name language="en">Amharic</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ar">
+		<TLanguage index="37">ELangArabic</TLanguage>
+		<name language="en">Arabic</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="hy">
+		<TLanguage index="38">ELangArmenian</TLanguage>
+		<name language="en">Armenian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="az">
+		<TLanguage index="39">ELangAzerbaijani</TLanguage>
+		<name language="en">Azerbaijani</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="be">
+		<TLanguage index="40">ELangBelarussian</TLanguage>
+		<name language="en">Belarussian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="bn">
+		<TLanguage index="41">ELangBengali</TLanguage>
+		<name language="en">Bengali</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="bg">
+		<TLanguage index="42">ELangBulgarian</TLanguage>
+		<name language="en">Bulgarian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="my">
+		<TLanguage index="43">ELangBurmese</TLanguage>
+		<name language="en">Burmese</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ca">
+		<TLanguage index="44">ELangCatalan</TLanguage>
+		<name language="en">Catalan</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="hr">
+		<TLanguage index="45">ELangCroatian</TLanguage>
+		<name language="en">Croatian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="en-CA">
+		<TLanguage index="46">ELangCanadianEnglish</TLanguage>
+		<name language="en">Canadian English</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="en" variant="intl">
+		<TLanguage index="47">ELangInternationalEnglish</TLanguage>
+		<name language="en">International English</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="en" country="ZA">
+		<TLanguage index="48">ELangSouthAfricanEnglish</TLanguage>
+		<name language="en">South African English</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="et">
+		<TLanguage index="49">ELangEstonian</TLanguage>
+		<name language="en">Estonian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<!-- Note: Persian = Farsi -->
+	<locale language="fa">
+		<TLanguage index="50">ELangFarsi</TLanguage>
+		<name language="en">Persian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="fr" country="CA">
+		<TLanguage index="51">ELangCanadianFrench</TLanguage>
+		<name language="en">Canadian French</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="gd">
+		<TLanguage index="52">ELangScotsGaelic</TLanguage>
+		<name language="en">Scottish Gaelic</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ka">
+		<TLanguage index="53">ELangGeorgian</TLanguage>
+		<name language="en">Georgian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="el" country="GR">
+		<TLanguage index="54">ELangGreek</TLanguage>
+		<name language="en">Greek</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="el" country="CY">
+		<TLanguage index="55">ELangCyprusGreek</TLanguage>
+		<name language="en">Cyprus Greek</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="gu">
+		<TLanguage index="56">ELangGujarati</TLanguage>
+		<name language="en">Gujarati</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="he">
+		<TLanguage index="57">ELangHebrew</TLanguage>
+		<name language="en">Hebrew</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="hi">
+		<TLanguage index="58">ELangHindi</TLanguage>
+		<name language="en">Hindi</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="id">
+		<TLanguage index="59">ELangIndonesian</TLanguage>
+		<name language="en">Indonesian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ga">
+		<TLanguage index="60">ELangIrish</TLanguage>
+		<name language="en">Irish</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="it" country="CH">
+		<TLanguage index="61">ELangSwissItalian</TLanguage>
+		<name language="en">Swiss Italian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="kn">
+		<TLanguage index="62">ELangKannada</TLanguage>
+		<name language="en">Kannada</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="kk">
+		<TLanguage index="63">ELangKazakh</TLanguage>
+		<name language="en">Kazakh</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="km">
+		<TLanguage index="64">ELangKhmer</TLanguage>
+		<name language="en">Khmer</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ko">
+		<TLanguage index="65">ELangKorean</TLanguage>
+		<name language="en">Korean</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="lo">
+		<TLanguage index="66">ELangLao</TLanguage>
+		<name language="en">Lao</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="lv">
+		<TLanguage index="67">ELangLatvian</TLanguage>
+		<name language="en">Latvian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="lt">
+		<TLanguage index="68">ELangLithuanian</TLanguage>
+		<name language="en">Lithuanian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="mk">
+		<TLanguage index="69">ELangMacedonian</TLanguage>
+		<name language="en">Macedonian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ms">
+		<TLanguage index="70">ELangMalay</TLanguage>
+		<name language="en">Malay</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ml">
+		<TLanguage index="71">ELangMalayalam</TLanguage>
+		<name language="en">Malayalam</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="mr">
+		<TLanguage index="72">ELangMarathi</TLanguage>
+		<name language="en">Marathi</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="mo">
+		<TLanguage index="73">ELangMoldavian</TLanguage>
+		<name language="en">Moldavian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="mn">
+		<TLanguage index="74">ELangMongolian</TLanguage>
+		<name language="en">Mongolian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="nn">
+		<TLanguage index="75">ELangNorwegianNynorsk</TLanguage>
+		<name language="en">Norwegian Nynorsk</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="por" country="BR">
+		<TLanguage index="76">ELangBrazilianPortuguese</TLanguage>
+		<name language="en">Brazilian Portuguese</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="pa">
+		<TLanguage index="77">ELangPunjabi</TLanguage>
+		<!-- Punjabi in 639-1 -->
+		<name language="en">Panjabi</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ro">
+		<TLanguage index="78">ELangRomanian</TLanguage>
+		<name language="en">Romanian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="sr">
+		<TLanguage index="79">ELangSerbian</TLanguage>
+		<name language="en">Serbian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="si">
+		<TLanguage index="80">ELangSinhalese</TLanguage>
+		<name language="en">Sinhalese</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="so">
+		<TLanguage index="81">ELangSomali</TLanguage>
+		<name language="en">Somali</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="es" variant="intl">
+		<TLanguage index="82">ELangInternationalSpanish</TLanguage>
+		<name language="en">International Spanish</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="es" variant="lam">
+		<TLanguage index="83">ELangLatinAmericanSpanish</TLanguage>
+		<name language="en">Latin American Spanish</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="swa">
+		<TLanguage index="84">ELangSwahili</TLanguage>
+		<name language="en">Swahili</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="sv" country="FI">
+		<TLanguage index="85">ELangFinlandSwedish</TLanguage>
+		<name language="en">Finland-Swedish</name>
+		<name language="sv">Finlandssvenska</name>
+		<!-- This is normally written in lower case. -->
+		<name language="fi">Suomenruotsi</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="tg">
+		<TLanguage index="86">ELangTajik</TLanguage>
+		<name language="en">Tajik</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ta">
+		<TLanguage index="87">ELangTamil</TLanguage>
+		<name language="en">Tamil</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="te">
+		<TLanguage index="88">ELangTelugu</TLanguage>
+		<name language="en">Telugu</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="bo">
+		<TLanguage index="89">ELangTibetan</TLanguage>
+		<name language="en">Tibetan</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ti">
+		<TLanguage index="90">ELangTigrinya</TLanguage>
+		<name language="en">Tigrinya</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="tr" country="CY">
+		<TLanguage index="91">ELangCyprusTurkish</TLanguage>
+		<name language="en">Cyprus Turkish</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="tk">
+		<TLanguage index="92">ELangTurkmen</TLanguage>
+		<name language="en">Turkmen</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="uk">
+		<TLanguage index="93">ELangUkrainian</TLanguage>
+		<name language="en">Ukrainian</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="ur">
+		<TLanguage index="94">ELangUrdu</TLanguage>
+		<name language="en">Urdu</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="uz">
+		<TLanguage index="95">ELangUzbek</TLanguage>
+		<name language="en">Uzbek</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="vi">
+		<TLanguage index="96">ELangVietnamese</TLanguage>
+		<name language="en">Vietnamese</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="cy">
+		<TLanguage index="97">ELangWelsh</TLanguage>
+		<name language="en">Welsh</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="zu">
+		<TLanguage index="98">ELangZulu</TLanguage>
+		<name language="en">Zulu</name>
+		<supported-by>
+			<app>Sisar</app>
+		</supported-by>
+	</locale>
+
+	<locale language="x-other">
+		<TLanguage index="99">ELangOther</TLanguage>
+		<name language="en">Other</name>
+	</locale>
+
+</locales>

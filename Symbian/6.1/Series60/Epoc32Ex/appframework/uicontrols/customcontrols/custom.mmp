@@ -1,0 +1,17 @@
+// Custom.MMP
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+TARGET        Custom.app
+TARGETTYPE    app
+UID           0x100039ce 0x01000d00
+TARGETPATH    \system\apps\custom
+
+SOURCEPATH    .
+SOURCE        Custom.cpp
+RESOURCE      Custom.rss
+
+USERINCLUDE   .
+SYSTEMINCLUDE \epoc32\include
+LIBRARY       euser.lib cone.lib  apparc.lib bafl.lib
+LIBRARY       eikcore.lib eikcoctl.lib eikdlg.lib

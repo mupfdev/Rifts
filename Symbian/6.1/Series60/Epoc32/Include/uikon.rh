@@ -1,0 +1,558 @@
+#if !defined(__UIKON_RH__)
+#define __UIKON_RH__
+
+#if !defined(__BADEF_RH__)
+#include <BADEF.RH>
+#endif
+
+#if !defined(__UIKON_HRH__)
+#include <uikon.hrh>
+#endif
+
+STRUCT RESOURCE_LINK
+	{
+	LLINK id;
+	}
+
+STRUCT BTG_RESOURCE_COLLECTION
+    {
+    STRUCT btg_sets[];
+    STRUCT btg_buttons[];
+    }
+
+// EIKEDWIN.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define AKN_EDITOR_EXTENSIONS\
+	WORD default_case=EAknEditorTextCase;\
+	WORD allowed_case_modes=EAknEditorAllCaseModes;\
+	WORD numeric_keymap=EAknEditorStandardNumberModeKeymap;\
+	WORD allowed_input_modes=EAknEditorAllInputModes;\
+	WORD default_input_mode=EAknEditorTextInputMode;\
+	LLINK special_character_table=-1;\
+	WORD avkon_flags=EAknEditorFlagDefault;\
+	WORD max_view_height_in_lines=0;\
+	WORD base_line_delta=0;\
+	WORD spare=0;
+
+STRUCT EDWIN
+    {
+    LONG flags=0;
+    WORD width=0;
+    WORD lines=1;
+    WORD maxlength=0;
+	AKN_EDITOR_EXTENSIONS
+    }
+
+//#include <eikedwin.hrh>
+
+// EIKIMAGE.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+//#include <eiklabel.hrh>
+
+STRUCT IMAGE
+	{
+	WORD horiz_align=EEikLabelAlignHCenter;
+	WORD vert_align=EEikLabelAlignVTop;
+	LTEXT bmpfile="";
+    WORD bmpid;
+    WORD bmpmask=0xffff;
+	LLINK extension=0;
+	}
+
+// EIKLABEL.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+//#include <eiklabel.hrh>
+
+STRUCT LABEL
+    {
+	WORD flags = 0;
+	WORD horiz_align=EEikLabelAlignHCenter;
+	WORD vert_align=EEikLabelAlignVTop;
+	WORD standard_font=EEikLabelFontNormal;
+	WORD reserve_length=0;
+    LTEXT txt;
+    }
+
+// EIKLBX.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT LISTBOX
+	{
+	BYTE version=0;
+	WORD flags = 0;
+	WORD height = 5;		// in items
+	WORD width = 10;		// in chars
+    LLINK array_id = 0;
+	}
+
+//#include <eiklbx.hrh>
+
+// EIKMENU.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT HOTKEY
+    {
+    LONG command;
+    LONG key;
+    }
+
+STRUCT HOTKEYS
+    {
+    STRUCT plain[];
+    STRUCT control[];
+    STRUCT shift_control[];
+    }
+
+STRUCT MENU_PANE
+    {
+    STRUCT items[]; // MENU_ITEMs
+	LLINK extension=0;
+    }
+
+STRUCT MENU_ITEM
+    {
+    LONG command=0;
+    LLINK cascade=0;
+    LONG flags=0;
+    LTEXT txt;
+	LTEXT extratxt="";
+	LTEXT bmpfile="";
+    WORD bmpid=0xffff;
+    WORD bmpmask=0xffff;
+	LLINK extension=0;
+    }
+
+STRUCT MENU_BAR
+    {
+    STRUCT titles[]; // MENU_BAR_ITEMs
+	LLINK extension=0;
+    }
+
+STRUCT MENU_TITLE
+    {
+    LLINK menu_pane;
+    LTEXT txt;
+    LONG flags=0;
+	LTEXT bmpfile="";
+    WORD bmpid=0xffff;
+    WORD bmpmask=0xffff;
+	LLINK extension=0;
+    }
+
+//#include <eikmenu.hrh>
+
+// EIKMNBUT.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+//#include <eikcmbut.hrh>
+
+STRUCT MNBUT
+    {
+	LLINK popout=0;
+	BYTE version=0;
+	WORD behavior=0;
+	WORD layout=0; // ETextRightPictureLeft
+	LTEXT helptxt="";
+	LLINK extension=0;
+    LTEXT txt="";
+	LTEXT bmpfile="";
+    WORD bmpid=0xffff;
+    WORD bmpmask=0xffff;
+    }
+
+// EIKRUTIL.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// Removed by Bill
+//#include <eikfont.rh> // for STRUCT FONT
+
+STRUCT NUMBER_INT8
+	{
+	BYTE value=0;
+	}
+
+STRUCT NUMBER_INT16
+	{
+	WORD value=0;
+	}
+
+STRUCT NUMBER_INT32
+	{
+	LONG value=0;
+	}
+
+// EIKTBAR.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+//#include <eiktbar.hrh>
+
+STRUCT TOOLBAR
+    {
+	WORD length=0;
+	WORD breadth=KEikStdToolBarWidth;
+	BYTE lines=1;
+    LONG flags=0;
+    STRUCT controls[];
+	LLINK extension=0;
+    }
+
+STRUCT TOOLBAND
+    {
+	WORD length=0;
+	WORD breadth=KEikStdToolBandHeight;
+	BYTE lines=1;
+    LONG flags=EEikToolBarHorizontal;
+    STRUCT controls[];
+	LLINK extension=0;
+    }
+
+STRUCT TBAR_CTRL
+	{
+	WORD type;
+	WORD id=0;
+	WORD flags=0;
+	WORD length=0;
+	STRUCT control;
+	}
+
+STRUCT TBAR_BUTTON
+	{
+	WORD type=0; // EEikCtCommandButton;
+	WORD id=0;
+	WORD flags=0;
+	WORD length=0;
+	BYTE version=0;
+	WORD behavior=0;
+	WORD layout=0; // ETextRightPictureLeft|EEikCmdButShareExcess
+	LTEXT helptxt="";
+	LLINK extension=0;
+    LTEXT txt="";
+	LTEXT bmpfile="";
+    WORD bmpid=0xffff;
+    WORD bmpmask=0xffff;
+	}
+
+STRUCT TBAR_PICBUT
+	{			
+	WORD type=EEikCtTwoPictureCommandButton;
+	WORD id=0;
+	WORD flags=0;
+	WORD length=0;
+	BYTE version=0;
+	WORD behavior=0;
+	WORD layout=0; // ETextRightPictureLeft|EEikCmdButShareExcess
+	LTEXT helptxt="";
+	LLINK extension=0;
+    LTEXT txt="";
+	LTEXT bmpfile="";
+    WORD bmpid=0xffff;
+    WORD bmpmask=0xffff;
+    WORD bmpsecondid=0xffff;
+    WORD bmpsecondmask=0xffff;
+	}
+
+// EIKCMBUT.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+//#include <eikcmbut.hrh>
+
+STRUCT CMBUT
+    {
+	BYTE version=0;
+	WORD behavior=0;
+	WORD layout=0; // ETextRightPictureLeft|EEikCmdButShareExcess
+	LTEXT helptxt="";
+	LLINK extension=0;
+	LTEXT txt="";
+	LTEXT bmpfile="";
+    WORD bmpid=0xffff;
+    WORD bmpmask=0xffff;
+    }
+
+STRUCT PICMBUT
+    {
+	BYTE version=0;
+	WORD behavior=0;
+	WORD layout=0;	// ETextRightPictureLeft|EEikCmdButShareExcess
+	LTEXT helptxt="";
+	LLINK extension=0;
+	LTEXT txt="";
+	LTEXT bmpfile="";
+    WORD bmpid=0xffff;
+    WORD bmpmask=0xffff;
+    WORD bmpsecondid=0xffff;
+    WORD bmpsecondmask=0xffff;
+    }
+
+STRUCT TXTBUT
+    {
+	BYTE version=0;
+	WORD behavior=0;
+	WORD layout=0; // EFirstRightSecondLeft|EEikCmdButShareExcess
+	LTEXT helptxt="";
+	LLINK extension=0;
+    LTEXT txt1="";
+    LTEXT txt2="";
+    }
+
+STRUCT BMPBUT
+    {
+	BYTE version=0;
+	WORD behavior=0;
+	WORD layout=0; // ETextRightPictureLeft|EEikCmdButShareExcess
+	LTEXT helptxt="";
+	LLINK extension=0;
+	LTEXT bmp1file="";
+    WORD bmp1id=0xffff;
+    WORD bmp1mask;
+	LTEXT bmp2file="";
+    WORD bmp2id=0xffff;
+    WORD bmp2mask;
+    }
+
+// EIKCOLOR.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT COLOR
+	{
+	BYTE red;
+	BYTE green;
+	BYTE blue;
+	}
+
+STRUCT CTRL_COLOR
+	{
+	WORD logical_color;
+	STRUCT color; // COLOR
+	}
+
+STRUCT COLORLIST
+	{
+	LLINK array_id=0;
+	}
+
+STRUCT EIKCOLORLIST
+	{
+	LLINK array_id=0;
+	LLINK ext_id;
+	}
+
+//#include <eikcolor.hrh>
+
+// EIKFONT.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+//#include <eikfont.hrh>
+
+STRUCT FONT
+	{
+	LONG fontid; // a value from fontids.hrh
+	WORD flags=0; // a combination of EGulFontFlagXxxxs
+	}
+
+STRUCT NAMED_FONT
+	{
+	LTEXT name;
+	WORD height;	// in twips
+	WORD flags=0; // a combination of EGulFontFlagXxxxs
+	}
+
+STRUCT AVKON_SYSTEM_FONT
+	{
+	LONG fontuid; // a value from fontids.hrh
+	STRUCT named_font; // this must be a NAMED_FONT structure type
+	}
+
+// EIKLBBUT.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+//#include <eiklbbut.hrh>
+
+STRUCT LBBUT
+    {
+	WORD buttontype=0; // EEikCtCommandButton
+	STRUCT button;
+	LONG hotkey;
+	BYTE flags=1; // EEikLabeledButtonShowHotKey
+    }
+
+// EIKPRIV.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT INT16
+	{
+	WORD value;
+	}
+
+// EIKPRTPV.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// EIKDEF.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT RSS_SIGNATURE
+    {
+    LONG signature=EEikResourceSignatureValue;
+    SRLINK self;
+    }
+
+STRUCT TBUF1	{ BUF<1> buf; }
+STRUCT TBUF2	{ BUF<2> buf; }
+STRUCT TBUF4	{ BUF<4> buf; }
+STRUCT TBUF8	{ BUF<8> buf; }
+STRUCT TBUF9	{ BUF<9> buf; }
+STRUCT TBUF16	{ BUF<16> buf; }
+STRUCT TBUF32	{ BUF<32> buf; }
+STRUCT TBUF40	{ BUF<40> buf; }
+STRUCT TBUF64	{ BUF<64> buf; }
+STRUCT TBUF80	{ BUF<80> buf; }
+STRUCT TBUF128	{ BUF<128> buf; }
+STRUCT TBUF256	{ BUF<256> buf; }
+
+STRUCT CONTROLS
+	{
+	LEN BYTE STRUCT controls[];
+	}
+
+STRUCT EIK_APP_INFO
+    {
+    LLINK hotkeys=0;
+    LLINK menubar=0;
+    LLINK toolbar=0;
+    LLINK toolband=0;
+    LLINK cba=0;	
+    LLINK status_pane=0;
+    }
+
+STRUCT PAGESIZE
+	{
+	LONG width=0;
+	LONG height=0;
+	}
+
+STRUCT VIEW_ID
+	{
+	LONG appuid;
+	LONG viewuid;
+	}
+
+// EIKDIALG.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// only buttons defined in Uikon
+
+STRUCT DLG_BUTTONS
+    {
+	LONG flags=EEikButtonGroupAddToStack;
+    STRUCT buttons[];
+    }
+
+STRUCT DLG_BUTTON
+    {
+	WORD id=0;
+	WORD buttontype=0; // EEikCtCommandButton
+	STRUCT button;
+	LONG hotkey;
+	BYTE flags=1;
+	BYTE line=1;
+    }
+
+// EIKSPANE.RH
+//
+// Copyright (c) 1999 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT STATUS_PANE_SYSTEM_MODEL				// System wide status pane declaration
+	{
+	STRUCT panes[];							// entire set of valid SPANE_PANEs
+	LLINK default_layout;					// default STATUS_PANE_LAYOUT
+	LLINK layouts[];						// entire set of STATUS_PANE_LAYOUTs
+	}
+
+STRUCT SPANE_PANE
+	{
+	LONG id;
+	WORD flags=EEikStatusPaneServerOwned;
+	WORD type;
+	LLINK resource=0;
+	}
+
+STRUCT STATUS_PANE_LAYOUT
+	{
+	WORD position;
+	STRUCT pane_tree;						// SPANE_LAYOUT_TREE_NODE root of the layout tree
+	}
+
+STRUCT SPANE_LAYOUT_TREE_NODE
+	{
+	LONG id=0;
+	WORD flags;
+	WORD size;
+	STRUCT sub_panes[];						// SPANE_LAYOUT_TREE_NODE sub panes
+	}
+
+STRUCT STATUS_PANE_APP_MODEL				// Application specific status pane
+	{
+	LLINK layout=EEikStatusPaneUseDefaults;		// STATUS_PANE_LAYOUT to use for this app
+	STRUCT panes[];							// SPANE_PANE overrides to use for this app
+	}
+
+// EIKCBA.RH
+//
+// Copyright (c) 1998 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT CBA
+	{
+	LONG flags=EEikButtonGroupAddToStack;
+	WORD breadth=80; // !!! make this accessible from LAF
+	LLINK related_buttons=0;
+   	STRUCT buttons[];
+	}
+
+STRUCT CBA_BUTTON
+	{
+	BYTE version=0;
+	WORD id=0;
+   	LTEXT txt="";
+	LTEXT bmpfile="";
+  	WORD bmpid=0xffff;		// -1
+    WORD bmpmask=0xffff;	// -1
+	}
+
+#endif

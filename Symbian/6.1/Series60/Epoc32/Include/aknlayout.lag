@@ -1,0 +1,13 @@
+/*
+* ============================================================================
+*  Name     : aknlayout.lag
+*  Part of  : Avkon
+*  Copyright (c) 2003 Nokia
+* ============================================================================
+*/
+
+#if !defined(__aknlayout_LAG__)
+#define __aknlayout_LAG__
+#include <AknLayoutDef.h>
+
+#endif 

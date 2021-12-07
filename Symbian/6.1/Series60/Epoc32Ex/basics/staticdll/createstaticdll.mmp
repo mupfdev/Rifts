@@ -1,0 +1,26 @@
+// CreateStaticDLL.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+// exports are unfrozen
+
+TARGET        CreateStaticDLL.dll
+TARGETTYPE    dll
+UID           0x1000008d 0x10004268
+
+SOURCEPATH    .
+SOURCE        CreateStaticDLL.cpp
+
+USERINCLUDE   .
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib
+
+#if defined(WINS)
+    deffile .\CreateStaticDLLWINS.def
+#else if defined(ARM)
+    deffile .\CreateStaticDLLARM.def
+#endif
+nostrictdef
+

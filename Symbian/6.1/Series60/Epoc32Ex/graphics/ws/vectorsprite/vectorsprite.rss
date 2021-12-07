@@ -1,0 +1,58 @@
+// VectorSprite.rss
+//
+
+
+NAME MEAD
+
+#include <eikon.rh>
+#include <eikcore.rsg>
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF
+	{
+	buf = "";
+	}
+
+RESOURCE EIK_APP_INFO
+	{
+	menubar = r_appholder_menubar;
+	hotkeys = r_appholder_hotkeys;
+	}
+
+RESOURCE HOTKEYS r_appholder_hotkeys
+    {
+    control =
+        {
+        HOTKEY
+        	{
+        	command = EEikCmdExit;
+        	key = 'e';
+        	}
+        };
+    }
+
+RESOURCE MENU_BAR r_appholder_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+        	{
+        	menu_pane = r_appholder_file_menu;
+        	txt = "File";
+        	}
+	};
+    }
+
+RESOURCE MENU_PANE r_appholder_file_menu
+	{
+	items =
+		{
+		MENU_ITEM
+			{
+			command = EEikCmdExit;
+			txt = "Close";
+			}
+        };
+    }
+

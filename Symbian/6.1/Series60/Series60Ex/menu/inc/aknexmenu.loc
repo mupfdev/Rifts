@@ -1,0 +1,96 @@
+/*
+* ============================================================================
+*  Name     : AknExMenu.loc
+*  Part of  : AknExMenu
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include <bldvariant.hrh>
+
+// Caption
+#define qtn_apps_tamn_list          "AKNEXMENU"
+#define qtn_apps_tamn_grid          "AKNEXMENU"
+
+//  LOCALISATION STRINGS
+
+#define qtn_aknexmenu_title               "AknExMenu"
+#define qtn_aknexmenu_menu_system         "System"
+#define qtn_aknexmenu_menu_app            "App"
+#define qtn_aknexmenu_menu_state           "View"
+#define qtn_aknexmenu_menu_context        "Context"
+#define qtn_aknexmenu_menu_exit           "Exit"
+#ifdef __AVKON_APAC__
+#define qtn_aknexmenu_menu_app_cmd1       <0x589E><0x52A0><0x547D><0x4EE4>"1-901234567890"
+#define qtn_aknexmenu_menu_app_cmd2       <0x589E><0x52A0><0x547D><0x4EE4>"2"
+#else
+#define qtn_aknexmenu_menu_app_cmd1       "AppCmd1-901234567890"
+#define qtn_aknexmenu_menu_app_cmd2       "AppCmd2"
+#endif
+#define qtn_aknexmenu_menu_state_cmd1     "StateCmd1"
+#define qtn_aknexmenu_menu_state_cmd2     "StateCmd2"
+#define qtn_aknexmenu_menu_ctx_cmd1       "Dim AppCmd in oder"
+#define qtn_aknexmenu_menu_ctx_cmd2       "Delete StateCmd"
+#define qtn_aknexmenu_menu_ctx_cmd3       "Add StateCmd"
+#define qtn_aknexmenu_menu_sys_option     "System Options"
+#define qtn_aknexmenu_sub_menu_app_cmd1   "Press Enter !"
+#define qtn_aknexmenu_sub_menu_app_cmd2   "Press Right !"
+#define qtn_aknexmenu_sub_menu_state_cmd1 "SubStateCmd1"
+#define qtn_aknexmenu_sub_menu_state_cmd2 "SubStateCmd2"
+#define qtn_aknexmenu_sub_menu_ctx_cmd1   "SubCtxCmd1"
+#define qtn_aknexmenu_sub_menu_ctx_cmd2   "SubCtxCmd2"
+#define qtn_aknexmenu_menu_sub1           "Down to the end"
+#define qtn_aknexmenu_menu_sub2           "Long Menu"
+#define qtn_aknexmenu_menu_sub3           "Short Menu"
+#define qtn_aknexmenu_menu_sub4           "Sub_Cascade"
+#define qtn_aknexmenu_menu_sub5           "Item5"
+#define qtn_aknexmenu_menu_sub6           "Item6"
+#define qtn_aknexmenu_menu_sub7           "Item7"
+#define qtn_aknexmenu_menu_sub8           "Item8"
+#define qtn_aknexmenu_menu_sub9           "Item9-78901234567890"
+#define qtn_aknexmenu_menu_sub10          "Press Left !"
+#define qtn_aknexmenu_menu_sub11          "Press Enter !"
+#define qtn_aknexmenu_menu_sub_level3     "Level3"
+#define qtn_aknexmenu_menu_sub_level4     "Level4"
+#define qtn_aknexmenu_menu_sub_level5     "Level5"
+
+
+#define qtn_aknexmenu_menu_sub_new        "New Item %d"
+
+#define qtn_aknexmenu_no_sub_tab          "No sub-menu"
+#define qtn_aknexmenu_sub_tab             "Sub-menu"
+#define qtn_aknexmenu_ok_tab              "Ok-menu"
+
+#define qtn_aknexmenu_no_sub_up_text      "Press Options, look at the menu opened and press any key."
+#define qtn_aknexmenu_no_sub_low_text     "Close the menu and press rigth-arrow key to know sub-menu."
+#define qtn_aknexmenu_no_sub_title        "Confirming feature:1"
+#define qtn_aknexmenu_sub_up_text         "Press Options, look at the menu opened and press any key."
+#define qtn_aknexmenu_sub_low_text        "Close the menu and press left-arrow key to know no-sub-menu."
+#define qtn_aknexmenu_sub_title           "Confirming feature:2"
+
+#define qtn_aknexmenu_message_format      "Item ID is %d."
+
+#define qtn_aknexmenu_ok_title    "Confirming ok-menu"
+#define qtn_aknexmenu_ok_up_text  "Press 'ok' to show ok-menu."
+#ifdef __AVKON_APAC__
+#define qtn_aknexmenu_ok_low_text <0x5398><0x9801>"CEikEdwin"
+
+#define qtn_aknexmenu_ok_menu_item1 <0x632B><0x8B70><0x6687><0x6C7D><0x30FB><0x6715>"1"
+#define qtn_aknexmenu_ok_menu_item2 <0x632B><0x8B70><0x6687><0x6C7D><0x30FB><0x6715>"2"
+#else
+#define qtn_aknexmenu_ok_low_text "I'm CEikEdwin"
+
+#define qtn_aknexmenu_ok_menu_item1 "Ok-menu item1"
+#define qtn_aknexmenu_ok_menu_item2 "Ok-menu item2"
+#endif
+
+#ifdef __AVKON_APAC__
+#define	qtn_aknexmenu_sub_menu_cmd_longname	<0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#define qtn_aknexmenu_menu_sub_longname1 <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#define qtn_aknexmenu_menu_sub_longname2 <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#else
+#define	qtn_aknexmenu_sub_menu_cmd_longname	"Long name"
+#define qtn_aknexmenu_menu_sub_longname1 "abcdefghijklmnopqrstuvwxyz"
+#define qtn_aknexmenu_menu_sub_longname2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#endif
+#define qtn_aknexmenu_menu_sub_longname3 "012345678901234567"

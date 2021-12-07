@@ -1,0 +1,45 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+TARGET            Graphics.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B81
+TARGETPATH        \system\apps\graphics
+
+SOURCEPATH        ..\src
+SOURCE            sprite.cpp
+SOURCE            Graphics.cpp
+SOURCE            GraphicsApplication.cpp 
+SOURCE            GraphicsAppView.cpp
+SOURCE            GraphicsAppUi.cpp
+SOURCE            GraphicsDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          Graphics.rss
+
+SOURCEPATH        ..\..\helperfunctions
+SOURCE            bitmapmethods.cpp
+
+USERINCLUDE       ..\inc 
+USERINCLUDE       ..\group
+USERINCLUDE       ..\..\helperfunctions
+
+SYSTEMINCLUDE     \epoc32\include
+
+
+START BITMAP      images.mbm
+HEADER
+TARGETPATH        ..\..\..\..\wins\c\system\apps\graphics
+SOURCEPATH        ..\bitmaps
+SOURCE            c12  image1.bmp
+SOURCE            c12  image2.bmp
+SOURCE            c12  image2_mask.bmp
+END
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+
+LIBRARY           fbscli.lib
+LIBRARY           bitgdi.lib

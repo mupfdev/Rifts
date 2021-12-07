@@ -1,0 +1,108 @@
+/*
+* ============================================================================
+*  Name     : AknExSlider localise file
+*  Part of  : AknExSlider
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+//  LOCALISATION STRINGS
+
+// Application name
+#define qtn_aknexslider_caption_list      "AKNEXSLIDER"
+#define qtn_aknexslider_caption_grid      "AKNEXSLIDER"
+
+// Menu
+#define qtn_aknexslider_menu_layout       "Layout"
+#define qtn_aknexslider_menu_keyevent     "Key event"
+#define qtn_aknexslider_menu_colon        "Colon"
+#define qtn_aknexslider_menu_viewmode     "ViewMode"
+#define qtn_aknexslider_menu_form         "Form"
+#define qtn_aknexslider_menu_return       "Return value"
+#define qtn_aknexslider_menu_setting      "Setting"
+#define qtn_aknexslider_menu_valuechanged "Value changed"
+#define qtn_aknexslider_menu_valuetype    "Value types"
+#define qtn_aknexslider_menu_valuetext    "Value text"
+#define qtn_aknexslider_menu_exit         "Exit"
+
+// Sub menu for "Layout"
+#define qtn_aknexslider_sub_layout1       "Layout1"
+#define qtn_aknexslider_sub_layout2       "Layout2"
+#define qtn_aknexslider_sub_layout3       "Layout3"
+
+// Sub menu for "Key event"
+#define qtn_aknexslider_sub_keyevent1     "Key event1"
+#define qtn_aknexslider_sub_keyevent2     "key event2"
+#define qtn_aknexslider_sub_keyevent3     "key event3"
+
+// Sub menu for "Setting"
+#define qtn_aknexslider_sub_header        "Header"
+#define qtn_aknexslider_sub_minimum       "Minimum"
+#define qtn_aknexslider_sub_maximum       "Maximum"
+#define qtn_aknexslider_sub_range         "Range"
+#define qtn_aknexslider_sub_value         "Current value"
+#define qtn_aknexslider_sub_step          "Step size"
+
+// Sub menu for "Value type"
+#define qtn_aknexslider_sub_notshown      "Not shown"
+#define qtn_aknexslider_sub_bare          "Bare"
+#define qtn_aknexslider_sub_percent       "Percent"
+#define qtn_aknexslider_sub_fraction      "Fraction"
+#define qtn_aknexslider_sub_decimal       "Decimal"
+
+// Application Title
+#define qtn_aknexslider_app_title         "Slider\nSample Application"
+
+// Header label
+#define qtn_aknexslider_header_value1     "value"
+
+// Label
+#define qtn_aknexslider_label_dark        "Dark"
+#define qtn_aknexslider_label_bright      "Bright"
+#define qtn_aknexslider_label_min1        "MIN"
+#define qtn_aknexslider_label_min2        "min"
+#define qtn_aknexslider_label_max1        "MAX"
+#define qtn_aknexslider_label_max2        "max"
+#define qtn_aknexslider_label_low1        "LOW"
+#define qtn_aknexslider_label_low2        "low"
+#define qtn_aknexslider_label_high1       "HIGH"
+#define qtn_aknexslider_label_high2       "high"
+
+// Value label
+#define qtn_aknexslider_valuelabel_test1  "%U Series60"
+
+// Information
+//               1         2         3              1          2          3         4        5          6         7         8
+//      1234567890123456789012345678901    1234567890123456788901223456789012345678901234567890123456789012345678901234567890
+#define qtn_aknexslider_info_layout1      "With current value."
+#define qtn_aknexslider_info_layout2      "With minimum & maximum \nlabels."
+#define qtn_aknexslider_info_layout3      "With current value and\nminimum & maximum labels."
+#define qtn_aknexslider_info_colon        "Display heading text \"value\"\nand colon(':')."
+#define qtn_aknexslider_info_viewmode     "View mode in slider.\nYou don't change current\nvalue of slider.\nOnly display."
+#define qtn_aknexslider_info_keyevent1    "Press left or right key.\nCan be adjust value."
+#define qtn_aknexslider_info_keyevent2    "Keep pressing left or right\nkey.(Cause key repeat\nevent)\nSteps 1/10 of the total\namount."
+#define qtn_aknexslider_info_keyevent3    "Press left or right key.\nCan't be between steps."
+#define qtn_aknexslider_info_form         "Slider inside form"
+#define qtn_aknexslider_info_return       "Current value : %d\n\nPress left or right key.\nAnd press OK key.\nReturn current value."
+#define qtn_aknexslider_info_header       "Press OK key.\nHeading text is changed."
+#define qtn_aknexslider_info_minimum      "Press OK key.\nMinimum text is changed."
+#define qtn_aknexslider_info_maximum      "Press OK key.\nMaximum text is changed."
+#define qtn_aknexslider_info_range        "Minimum value : %d\nMaximum value : %d\n\nPress OK key."
+#define qtn_aknexslider_info_value        "Current value : %d\n\nPress OK key.\nCurrent value is changed!"
+#define qtn_aknexslider_info_step         "Now step size : %d\n\nPress OK key.\nAnd press left or right key.\nStep size is changed!"
+#define qtn_aknexslider_info_valuechanged "Current value : %d\n\nPress left or right key."
+#define qtn_aknexslider_info_valuetype    "Current value : %d\n\nMinimum value : 100\nMaximum value : 200"
+#define qtn_aknexslider_info_valuetype_decimal   "Current value : %4.1lf\n\nMinimum value : 10.0\nMaximum value : 20.0"
+#define qtn_aknexslider_info_not_shown    "value type : not shown"
+#define qtn_aknexslider_info_bare         "value type : bare figure"
+#define qtn_aknexslider_info_percent      "value type : percentage"
+#define qtn_aknexslider_info_fraction     "value type : fraction"
+#define qtn_aknexslider_info_decimal      "value type : decimal"
+#define qtn_aknexslider_info_operation    "Press right softkey to\ndisplay next sample"
+
+// For Cba
+//
+#define qtn_aknexslider_cba_next          "Next"
+
+// For Title
+#define qtn_aknexslider_initail            "AknExSlider"

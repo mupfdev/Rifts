@@ -1,0 +1,19 @@
+/*
+* ============================================================================
+*  Name     : Bld.inf
+*  Part of  : AknExScroller
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+PRJ_PLATFORMS
+WINS
+Thumb
+ARMI
+
+PRJ_EXPORTS
+//\AknSample\AknExScroller\rom\AknExScroller.iby \epoc32\rom\include\AknExScroller.iby
+
+PRJ_MMPFILES
+AknExScroller.mmp
+
+PRJ_TESTMMPFILES

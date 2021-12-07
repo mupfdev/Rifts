@@ -1,0 +1,38 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+/*
+-----------------------------------------------------------------------------
+
+    DESCRIPTION
+
+    This file contains the localised strings for Language application.
+
+-----------------------------------------------------------------------------
+*/
+
+
+//  APPLICATION INFORMATION
+#define ELanguage               ELangEnglish              // Caption language
+
+
+//  LOCALISATION STRINGS
+
+/*
+-----------------------------------------------------------------------------
+
+    Menu texts
+
+-----------------------------------------------------------------------------
+*/
+
+#define	LANG_MENU_COMMAND1	"Language 01"
+#define	LANG_MENU_EXIT		"Exit"
+
+/*
+-----------------------------------------------------------------------------
+
+    MessageBox text
+
+-----------------------------------------------------------------------------
+*/
+
+#define	LANG_I_COMMAND1	"English"

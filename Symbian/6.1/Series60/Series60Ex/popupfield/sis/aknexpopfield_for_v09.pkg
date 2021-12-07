@@ -1,0 +1,15 @@
+; AknExPopField.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExPopField"},(0x10005C2D),1,02,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExPopField.app"-"!:\system\apps\AknExPopField\AknExPopField.app"
+"..\..\..\epoc32\release\thumb\urel\AknExPopField.rsc"-"!:\system\apps\AknExPopField\AknExPopField.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExPopField.aif"-"!:\system\apps\AknExPopField\AknExPopField.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExPopField_caption.rsc"-"!:\system\apps\AknExPopField\AknExPopField_caption.rsc"

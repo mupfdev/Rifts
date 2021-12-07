@@ -1,0 +1,1412 @@
+/*
+* =============================================================================
+*  Name     : AknExNote.rss
+*  Part of  : AknExNote
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME EXNT
+
+//  INCLUDES
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <avkon.hrh>
+#include <avkon.loc>
+#include <AknexNote.mbg>
+
+#include "aknexnote.hrh"
+#include "aknexnote.loc"
+
+//   CONSTANTS
+#define AKNEXNOTE_IMAGE_MASK 0xffff
+
+#define AVKON_BMPFILE_NAME "z:\\system\\data\\avkon.mbm"
+#define AKNEXNOTE_BMPFILE_NAME "\\system\\apps\\aknexnote\\aknexnote.mbm"
+
+                                                                              
+//-----------------------------------------------------------------------------
+//
+//  RESOURCE DEFINITIONS
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+//-----------------------------------------------------------------------------
+//
+//   TBUF16
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF16
+    {
+    buf = "AknExNote";
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    EIK_APP_INFO
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = R_AVKON_STATUS_PANE_LAYOUT_USUAL;
+    menubar = r_aknexnote_menubar;
+    cba = r_aknexnote_cba_options_next;
+	}
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_view
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexnote_view
+    {
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_menubar
+//    MenuBar
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexnote_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexnote_menu;
+            txt = qtn_aknexnote_menubar;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_view_menu
+//    Menu pane
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexnote_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdNotestype;
+            cascade = r_aknexnote_menu_from_notestype_cascade;
+            txt = qtn_aknexnote_menu_notestype;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdText;
+            cascade = r_aknexnote_menu_from_text_cascade;
+            txt = qtn_aknexnote_menu_text;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdNoteWrappers;
+            cascade = r_aknexnote_menu_from_notewrappers_cascade;
+            txt = qtn_aknexnote_menu_notewrappers;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdProgressNote;
+            cascade = r_aknexnote_menu_from_progressnote_cascade;
+            txt = qtn_aknexnote_menu_progressnote;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdGlobalNoteShowNote;
+            cascade = r_aknexnote_menu_gnote_snote_cascade;
+            txt = qtn_aknexnote_menu_gnote_snote;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexnote_menu_exit;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_menu_from_Notestype_cascade
+//    Sub mune-pane of "Notestype" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexnote_menu_from_notestype_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline01;
+            txt = qtn_aknexnote_menu_outline01;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline02;
+            txt = qtn_aknexnote_menu_outline02;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline03;
+            txt = qtn_aknexnote_menu_outline03;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline04;
+            txt = qtn_aknexnote_menu_outline04;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline05;
+            txt = qtn_aknexnote_menu_outline05;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_menu_from_text_cascade
+//    Sub menu-pane of "Text" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexnote_menu_from_text_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline07;
+            txt = qtn_aknexnote_menu_outline07;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline08;
+            txt = qtn_aknexnote_menu_outline08;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_menu_from_notewrappers_cascade
+//    Sub menu-pane of "Note wrappers" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexnote_menu_from_notewrappers_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline31;
+            txt = qtn_aknexnote_menu_outline31;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline32;
+            txt = qtn_aknexnote_menu_outline32;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline33;
+            txt = qtn_aknexnote_menu_outline33;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline34;
+            txt = qtn_aknexnote_menu_outline34;
+            }
+        };
+    }
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_menu_from_progressnote_cascade
+//    Sub menu-pane of "progress note" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexnote_menu_from_progressnote_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline35;
+            txt = qtn_aknexnote_menu_outline35;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_menu_gnote_snote_cascade
+//    Sub menu-pane of "Global-ShowNote" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexnote_menu_gnote_snote_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline51;
+            txt = qtn_aknexnote_menu_outline51;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline52;
+            txt = qtn_aknexnote_menu_outline52;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline53;
+            txt = qtn_aknexnote_menu_outline53;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline54;
+            txt = qtn_aknexnote_menu_outline54;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline55;
+            txt = qtn_aknexnote_menu_outline55;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline56;
+            txt = qtn_aknexnote_menu_outline56;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline57;
+            txt = qtn_aknexnote_menu_outline57;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline58;
+            txt = qtn_aknexnote_menu_outline58;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline59;
+            txt = qtn_aknexnote_menu_outline59;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline60;
+            txt = qtn_aknexnote_menu_outline60;
+            },
+        MENU_ITEM
+            {
+            command = EAknExNoteCmdOutline61;
+            txt = qtn_aknexnote_menu_outline61;
+            }
+        };
+    }
+
+                                                                              
+                                                                              
+                                                                              
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_text_label_title
+//    Text which is used by label
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_text_label_title
+    {
+    buf = qtn_aknexnote_label_title;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_text_label_operation
+//    Text which is used by label
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_text_label_operation
+    {
+    buf = qtn_aknexnote_label_operation;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_text_status_pane_title??
+//    Text which is used on status pane
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title01
+    {
+    buf = qtn_aknexnote_menu_outline01;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title02
+    {
+    buf = qtn_aknexnote_menu_outline02;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title03
+    {
+    buf = qtn_aknexnote_menu_outline03;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title04
+    {
+    buf = qtn_aknexnote_menu_outline04;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title05
+    {
+    buf = qtn_aknexnote_menu_outline05;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title07
+    {
+    buf = qtn_aknexnote_menu_outline07;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title08
+    {
+    buf = qtn_aknexnote_menu_outline08;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title31
+    {
+    buf = qtn_aknexnote_menu_outline31;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title32
+    {
+    buf = qtn_aknexnote_menu_outline32;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title33
+    {
+    buf = qtn_aknexnote_menu_outline33;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title34
+    {
+    buf = qtn_aknexnote_menu_outline34;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title35
+    {
+    buf = qtn_aknexnote_menu_outline35;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_global_??_note_text
+//    Text which is used on global note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_global_general_note_text
+    {
+    buf = qtn_aknexnote_global_gen_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_global_warning_note_text
+    {
+    buf = qtn_aknexnote_global_war_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_global_confirmation_note_text
+    {
+    buf = qtn_aknexnote_global_con_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_global_error_note_text
+    {
+    buf = qtn_aknexnote_global_err_text;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_priority_global_error/warning_text
+//    Text which is used on global note for priority.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_priority_global_error_text
+    {
+    buf = qtn_aknexnote_prty_gbl_err_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_priority_global_warning_text
+    {
+    buf = qtn_aknexnote_prty_gbl_war_text;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_other_application_name
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_other_application_name
+    {
+    buf = qtn_aknexnote_other_app_name;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_perm_note_label
+//    Label of permanent note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_perm_note_label
+    {
+    buf = qtn_aknexnote_perm_label;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_error_note
+//    For error note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_error_note
+    {
+    flags = EAknErrorNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdErrorNote;
+            control = AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = qtn_aknexnote_error_singular;
+                plural_label = qtn_aknexnote_error_plural;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnoteerroricon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_warning_note
+//    For warning note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_warning_note
+    {
+    flags = EAknWarningNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdWarningNote;
+            control = AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = qtn_aknexnote_warning_singular;
+                plural_label = qtn_aknexnote_warning_plural;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnotewarningicon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_information_note
+//    For information note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_information_note
+    {
+    flags = EAknInformationNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdInformationNote;
+            control = AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = qtn_aknexnote_inf_singular;
+                plural_label = qtn_aknexnote_inf_plural;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnoteinformationicon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_confirmation_note
+//    For confirmation note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_confirmation_note
+    {
+    flags = EAknConfirmationNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdConfirmationNote;
+            control = AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = qtn_aknexnote_cnf_singular;
+                plural_label = qtn_aknexnote_cnf_plural;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnoteconfirmationicon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_progress_note
+//    For progress note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_progress_note
+    {
+    flags = EAknProgressNoteFlags;
+    buttons = r_aknexnote_softkeys_cancel;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdProgressNote;
+            control = AVKON_NOTE
+                {
+                layout = EProgressLayout;
+                singular_label = qtn_aknexnote_progress_singular;
+                plural_label = qtn_aknexnote_progress_plural;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnoteprogressicon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_dynamic_text
+//    For Dynamic text.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_dynamic_text
+    {
+    flags = EAknDialogGenericNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdDynamicText;
+            control = AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = qtn_aknexnote_dym_text_singular;
+                plural_label = qtn_aknexnote_dym_text_plural;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnoteinformationicon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_no_icon
+//    No graphic icon.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_no_icon
+    {
+    flags = EAknDialogGenericNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdNoImageNote;
+            control = AVKON_NOTE
+                {
+                layout = ENoteWithImageLayout;
+                singular_label = qtn_aknexnote_cnf_singular;
+                plural_label = qtn_aknexnote_cnf_plural;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_image_note
+//    For note with image.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_image_note
+    {
+    flags = EAknDialogGenericNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdImageNote;
+            control = AVKON_NOTE
+                {
+                layout = ENoteWithImageLayout;
+                singular_label = qtn_aknexnote_image_singular;
+                plural_label = qtn_aknexnote_image_plural;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnotePhoto; 
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                iconfile = AKNEXNOTE_BMPFILE_NAME;
+                iconid = EMbmAknexnoteIndicato; //EMbmAvkonIndicato;
+                iconmask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_wait_note_softkey_cancel
+//    Wait note with softkey Cancel.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_wait_note_softkey_cancel
+    {
+    flags = EAknWaitNoteFlags;
+    buttons = R_AVKON_SOFTKEYS_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdWaitNote;
+            control= AVKON_NOTE 
+                { 
+                layout = EWaitLayout;
+                singular_label = qtn_aknexnote_wait_prompt;
+                //plural_label = "";
+                imagefile = AVKON_BMPFILE_NAME;
+                imageid = EMbmAvkonQgn_note_voice;
+                imagemask = EMbmAvkonQgn_note_voice_mask;
+                //iconfile=AVKON_BMPFILE_NAME;
+                //iconid=EMbmAvkon30x40;
+                //iconmask=0xffff;
+                animation = R_QGN_GRAF_WAIT_BAR_ANIM;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_wait_note_softkey_ok_back
+//    Wait note with softkey Ok_Back.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_wait_note_softkey_ok_back
+    {
+    flags = EAknWaitNoteFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_BACK;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdWaitNote;
+            control= AVKON_NOTE 
+                { 
+                layout = EWaitLayout;
+                singular_label = qtn_aknexnote_wait_prompt;
+                //plural_label = "";
+                imagefile = AVKON_BMPFILE_NAME;
+                imageid = EMbmAvkonQgn_note_voice;
+                imagemask = EMbmAvkonQgn_note_voice_mask;
+                //iconfile=AVKON_BMPFILE_NAME;
+                //iconid=EMbmAvkon30x40;
+                //iconmask=0xffff;
+                animation = R_QGN_GRAF_WAIT_BAR_ANIM;
+                };
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_wait_note_softkey_empty
+//    Wait note with softkey empty.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_wait_note_softkey_empty
+    {
+    flags = EAknWaitNoteFlags;
+    buttons = R_AVKON_SOFTKEYS_EMPTY;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdWaitNote;
+            control= AVKON_NOTE 
+                { 
+                layout = EWaitLayout;
+                singular_label = qtn_aknexnote_wait_prompt;
+                //plural_label = "";
+                imagefile = AVKON_BMPFILE_NAME;
+                imageid = EMbmAvkonQgn_note_sml;
+                imagemask = EMbmAvkonQgn_note_sml_mask;
+                //iconfile=AVKON_BMPFILE_NAME;
+                //iconid=EMbmAvkon30x40;
+                //iconmask=0xffff;
+                animation = R_QGN_GRAF_WAIT_BAR_ANIM;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_priority_local_error_note
+//    Error local note for priority test.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_priority_local_error_note
+    {
+    flags = EAknErrorNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdPriorityLocalError;
+            control = AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = qtn_aknexnote_prty_loc_err_text;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnoteerroricon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_priority_local_warning_note
+//    Warning local note for priority test.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_priority_local_warning_note
+    {
+    flags = EAknWarningNoteFlags;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdPriorityLocalWarning;
+            control = AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = qtn_aknexnote_prty_loc_war_text;
+                imagefile = AKNEXNOTE_BMPFILE_NAME;
+                imageid = EMbmAknexnoteAknexnotewarningicon;
+                imagemask = AKNEXNOTE_IMAGE_MASK;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_tone_list_item
+//    For tone list item.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_wait_note_for_aknwaitdialog
+    {
+    flags = EAknWaitNoteFlags;
+    buttons = R_AVKON_SOFTKEYS_CANCEL;
+    items=
+        {
+        DLG_LINE
+            {
+            type = EAknCtNote;
+            id = EAknExNoteCtrlIdWaitNote;
+            control= AVKON_NOTE 
+                { 
+                layout = EWaitLayout;
+                singular_label = qtn_aknexnote_text_for_aknwaitdialog;
+                //plural_label = "";
+                imagefile = AVKON_BMPFILE_NAME;
+                imageid = EMbmAvkonQgn_note_voice;
+                imagemask = EMbmAvkonQgn_note_voice_mask;
+                //iconfile = avkon_bitmap_file;
+                //iconid = EMbmAvkon30x40;
+                //iconmask = 0xffff;
+                animation =R_QGN_GRAF_WAIT_BAR_ANIM;
+                };
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_tone_list_item
+//    For tone list item.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexnote_tone_list_item
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexnote_error_tone;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_warning_tone;
+            },
+       LBUF
+            {
+            txt = qtn_aknexnote_confirmation_tone;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_general_list_item
+//    For general list item.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexnote_general_list_item
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexnote_error_note;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_warning_note;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_information_note;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_confirmation_note;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_animation_list_item
+//    For animation list item.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexnote_animation_list_item
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexnote_wait_note;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_progress_note;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_ownlayout_list_item
+//    For ownlayout list item.
+//
+//-----------------------------------------------------------------------------
+//
+/**
+* In Avkon R33, cannot define the own layout note.
+*
+RESOURCE ARRAY r_aknexnote_ownlayout_list_item
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexnote_ownlayout_case1;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_ownlayout_case2;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_ownlayout_case3;
+            }
+        };
+    }
+**/
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_twolabel_list_item
+//    For twolabel list item.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexnote_twolabels_list_item
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexnote_singular_label;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_plural_label;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_global_note_list_item
+//    For global note list item.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexnote_global_note_list_item
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexnote_global_general;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_warning;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_confirmat;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_error;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_charging;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_not_charg;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_btry_full;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_btry_low;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_recha_btry;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_priority_note_list_item
+//    For priority of note list item.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexnote_priority_note_list_item
+    {
+    items =
+        {
+        LBUF
+            {
+            txt = qtn_aknexnote_local_local;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_global;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_local_global;
+            },
+        LBUF
+            {
+            txt = qtn_aknexnote_global_local;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_softkeys_cancel
+//    For Softkey of wait note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE CBA r_aknexnote_softkeys_cancel
+    {
+    buttons =
+        {
+        CBA_BUTTON
+            {
+            txt = qtn_aknexnote_softkey_empty;
+            },
+        CBA_BUTTON
+            {
+            id = EAknSoftkeyCancel;
+            txt = qtn_aknexnote_softkey_cancel;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_confirmationnote_text
+//    For Note Wrappers confirmation note.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_confirmationnote_text
+    {
+    buf = qtn_aknexnote_confirmationnote_text;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_waringnote_text
+//    For Note Wrappers waring query.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_warningnote_text
+    {
+    buf = qtn_aknexnote_warningnote_text;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_errornote_text
+//    For Note Wrappers error query.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_errornote_text
+    {
+    buf = qtn_aknexnote_errornote_text;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_informationnote_text
+//    For Note Wrappers information query.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexnote_informationnote_text
+    {
+    buf = qtn_aknexnote_informationnote_text;
+    }
+
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title51
+    {
+    buf = qtn_aknexnote_menu_outline51;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title52
+    {
+    buf = qtn_aknexnote_menu_outline52;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title53
+    {
+    buf = qtn_aknexnote_menu_outline53;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title54
+    {
+    buf = qtn_aknexnote_menu_outline54;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title55
+    {
+    buf = qtn_aknexnote_menu_outline55;
+    }
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title56
+    {
+    buf = qtn_aknexnote_menu_outline56;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title57
+    {
+    buf = qtn_aknexnote_menu_outline57;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title58
+    {
+    buf = qtn_aknexnote_menu_outline58;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title59
+    {
+    buf = qtn_aknexnote_menu_outline59;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title60
+    {
+    buf = qtn_aknexnote_menu_outline60;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_status_pane_title61
+    {
+    buf = qtn_aknexnote_menu_outline61;
+    }
+
+RESOURCE TBUF256 r_aknexnote_setpriority_label
+    {
+    buf = qtn_aknexnote_setpriority_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_setsoftkey_label
+    {
+    buf = qtn_aknexnote_setsoftkey_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_setgraphic_label
+    {
+    buf = qtn_aknexnote_setgraphic_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_setanimation_label
+    {
+    buf = qtn_aknexnote_setanimation_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_progresssetcurrentlabell_label
+    {
+    buf = qtn_aknexnote_progresssetcurrentlabell_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_cancelnotel_text
+    {
+    buf = qtn_aknexnote_cancelnotel_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_current_label
+    {
+    buf = qtn_aknexnote_text_current_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_current_label_deffrent
+    {
+    buf = qtn_aknexnote_text_current_label_deffrent;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalinformationnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalinformationnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalwarningnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalwarningnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalconfirmationnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalconfirmationnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalerrornote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalerrornote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalchargingnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalchargingnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalwaitnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalwaitnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalpermanentnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalpermanentnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalnotchargingnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalnotchargingnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalbatteryfullnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalbatteryfullnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalbatterylownote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalbatterylownote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalrechargebatterynote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalrechargebatterynote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_globalswitchingoffnote_text
+    {
+    buf = qtn_aknexnote_shownotel_globalswitchingoffnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_cancelglobalnote_text
+    {
+    buf = qtn_aknexnote_shownotel_cancelglobalnote_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_empty_text
+    {
+    buf = qtn_aknexnote_shownotel_empty_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_5line_text
+    {
+    buf = qtn_aknexnote_shownotel_5line_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_shownotel_5line_over_text
+    {
+    buf = qtn_aknexnote_shownotel_5line_over_text;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_current_empty_label
+    {
+    buf = qtn_aknexnote_text_current_empty_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_current_5line_label
+    {
+    buf = qtn_aknexnote_text_current_5line_label;
+    }
+
+RESOURCE TBUF256 r_aknexnote_text_current_5line_over_label
+    {
+    buf = qtn_aknexnote_text_current_5line_over_label;
+    }
+
+// ----------------------------------------------------------------------------
+//
+//    r_aknexnote_cba_options_next
+//    ?description
+//
+// ----------------------------------------------------------------------------
+//
+
+RESOURCE CBA r_aknexnote_cba_options_next
+    {
+    buttons =
+        {
+        CBA_BUTTON 
+            {
+            id = EAknSoftkeyOptions; 
+            txt = text_softkey_option;
+            },
+        AVKON_CBA_BUTTON
+            {
+            id = EAknExNoteCbaCmdNext;
+            txt = qtn_aknexnote_cba_next;
+            }
+        };
+    }
+// End of File

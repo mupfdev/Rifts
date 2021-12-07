@@ -1,0 +1,27 @@
+TARGET            BTAdvertiser.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B8C
+TARGETPATH        \system\apps\btadvertiser
+
+SOURCEPATH        ..\src
+SOURCE            BTAdvertiser.cpp
+SOURCE            BTAdvertiserApplication.cpp 
+SOURCE            BTAdvertiserAppView.cpp
+SOURCE            BTAdvertiserAppUi.cpp
+SOURCE            BTAdvertiserDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          BTAdvertiser.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY			  eikcoctl.lib 
+LIBRARY           avkon.lib  
+LIBRARY           bluetooth.lib 
+LIBRARY           sdpdatabase.lib

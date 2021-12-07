@@ -1,0 +1,27 @@
+/*
+* ============================================================================
+*  Name     : AknExPopListAif.rss
+*  Part of  : AknExPopList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include <aiftool.rh>
+
+RESOURCE AIF_DATA
+    {
+    app_uid=0x10005C2C;
+    caption_list=
+        {       
+        CAPTION
+            {
+            code=ELangEnglish;
+            caption="AKNEXPOPLIST";
+            }
+        };
+    num_icons=2;
+    embeddability=KAppNotEmbeddable;
+    newfile=KAppDoesNotSupportNewFile;
+    }
+
+// End of File

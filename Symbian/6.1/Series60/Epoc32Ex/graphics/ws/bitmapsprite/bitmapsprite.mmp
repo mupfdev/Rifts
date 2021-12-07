@@ -1,0 +1,26 @@
+// BitmapSprite.mmp
+//
+
+TARGET			BitmapSprite.app
+TARGETTYPE		app
+TARGETPATH      \system\apps\BitmapSprite
+UID				0x100039ce 0x100098e8
+SOURCEPATH		.
+SOURCE			AppHolder.cpp Base.cpp BitmapSprite.cpp
+RESOURCE		BitmapSprite.rss
+USERINCLUDE		.
+SYSTEMINCLUDE	\epoc32\include
+LIBRARY			euser.lib
+LIBRARY			apparc.lib
+LIBRARY			cone.lib
+LIBRARY			eikcore.lib 
+LIBRARY			ws32.lib    
+LIBRARY			gdi.lib    
+
+START BITMAP BitmapSprite.mbm
+	header
+	sourcepath .
+	source 2 Windml1a.bmp Windml2a.bmp Windml1b.bmp Windml2b.bmp 
+	source 2 Windml1c.bmp Windml2c.bmp Windml1d.bmp Windml2d.bmp 
+	source 2 Mil1mask.bmp Mil2mask.bmp 
+end 

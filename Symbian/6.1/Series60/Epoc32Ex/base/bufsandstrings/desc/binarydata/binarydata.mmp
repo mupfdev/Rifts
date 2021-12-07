@@ -1,0 +1,18 @@
+// BinaryData.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+
+TARGET        BinaryData.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        BinaryData.cpp
+
+USERINCLUDE   .
+USERINCLUDE   ..\..\..\CommonFramework
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib

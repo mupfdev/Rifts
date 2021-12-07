@@ -1,0 +1,35 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+
+TARGET            Bmpmanip.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B80
+TARGETPATH        \system\apps\bmpmanip
+
+SOURCEPATH        ..\src
+SOURCE            Bmpmanip.cpp
+SOURCE            BmpmanipApplication.cpp 
+SOURCE            BmpmanipAppView.cpp
+SOURCE            BmpmanipAppUi.cpp
+SOURCE            BmpmanipDocument.cpp 
+
+SOURCEPATH        ..\..\helperfunctions
+SOURCE            EikonEnvironment.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          Bmpmanip.rss
+
+USERINCLUDE       ..\inc 
+USERINCLUDE       ..\..\helperfunctions
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+LIBRARY           efsrv.lib
+LIBRARY           ws32.lib
+LIBRARY           MediaClientImage.lib
+LIBRARY           fbscli.lib

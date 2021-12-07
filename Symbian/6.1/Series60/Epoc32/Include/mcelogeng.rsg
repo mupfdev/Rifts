@@ -1,0 +1,4 @@
+#define R_MCE_LOG_ENG_PENDING_TEXT                0x10cf7002
+#define R_MCE_LOG_ENG_DELIVERED_TEXT              0x10cf7003
+#define R_MCE_LOG_ENG_FAILED_TEXT                 0x10cf7004
+#define R_MCE_LOG_ENG_CONCATENATED_TEXT           0x10cf7005

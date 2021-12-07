@@ -1,0 +1,18 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __BTPOINTTOPOINT_HRH__
+#define __BTPOINTTOPOINT_HRH__
+
+/** BTPointToPoint enumerate command codes */
+enum TBTPointToPointIds
+    {
+    EBTPointToPointStartReceiver = 1,  // start value must not be 0
+    EBTPointToPointStopReceiver,
+    EBTPointToPointConnect,
+    EBTPointToPointDisconnect,
+    EBTPointToPointSendMessage,
+    EBTPointToPointClearList
+    };
+
+
+#endif // __BTPOINTTOPOINT_HRH__

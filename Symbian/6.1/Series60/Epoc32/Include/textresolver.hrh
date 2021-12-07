@@ -1,0 +1,36 @@
+/*
+* ============================================================================
+*  Name     : TextResolver.hrh
+*  Part of  : CommonEngine
+*
+*  Description:
+*     This file contains declarations for resources of Text Resolver
+*     The file can be included in C++ or resource file.
+*     
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+* ============================================================================
+*/
+
+#ifndef TEXT_RESOLVER_HRH
+#define TEXT_RESOLVER_HRH
+
+//  CONSTANTS  
+
+#define ETextResolverPanicErrorFlag		0x00000001
+#define EErrorResPanicErrorFlag			0x00000001
+#define ETextResolverBlankErrorFlag		0x00000002 // used for filling in empty slots in error ranges
+#define EErrorResBlankErrorFlag			0x00000002 // used for filling in empty slots in error ranges
+#define ETextResolverUnknownErrorFlag		0x00000004 
+#define EErrorResUnknownErrorFlag		0x00000004 // indicates that error resolver does not support the error
+#define EErrorResOOMFlag			0x00000008 // Not enough memory for error resolving
+#endif
+
+// End of File

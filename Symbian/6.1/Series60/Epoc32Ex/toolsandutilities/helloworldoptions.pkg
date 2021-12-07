@@ -1,0 +1,38 @@
+;
+; Install file for minimal application
+;
+
+; Languages - 
+&EN
+
+; Installation header
+; UID is the app's UID - see HelloWorld.mmp
+#{"Minimal application"},(0x10004299),1,0,0
+
+; Display an option to the user
+ !({"Install sample document (1Kb)"}, 
+  {"Install sample document2 (1Kb)"}) 
+
+If option1 
+; install optional sample document
+	 "sample.txt"-"!:\Documents\sample.txt";
+endif
+
+If option2
+; install optional sample document
+	  "sample2.txt"-"!:\Documents\sample2.txt";
+endif
+
+; Only two files to install for the minimal application
+"HelloWorld.app"-"!:\system\apps\HelloWorld\HelloWorld.app"
+"HelloWorld.rsc"-"!:\system\apps\HelloWorld\HelloWorld.rsc"
+
+
+
+; Required files
+; None
+
+; Component .sis files
+; None
+
+

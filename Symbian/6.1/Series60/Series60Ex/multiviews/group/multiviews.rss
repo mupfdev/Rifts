@@ -1,0 +1,126 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+NAME MULT
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "MultiViews.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF r_multiviews_default_docname { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+	// no implementation required
+    }
+
+// ---------------------------------------------------------
+//   
+//    r_multiviews_view1
+//    Define view 1
+//
+// ---------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_multiviews_view1
+    {
+    menubar = r_multiviews_menubar1;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_multiviews_menubar1
+//   Menu title definition
+//
+// ---------------------------------------------------------
+RESOURCE MENU_BAR r_multiviews_menubar1
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_multiviews_menu1;}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_multiviews_menu1
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_multiviews_menu1
+    {
+    items = 
+        {
+        MENU_ITEM {command = EMultiViewsSwitchToView2;  txt = "Go to View 2";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//    r_multiviews_view2
+//    Define view 2
+//
+// ---------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_multiviews_view2
+    {
+	menubar = r_multiviews_menubar2;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_multiviews_menubar2
+//   Menu title definition
+//
+// ---------------------------------------------------------
+RESOURCE MENU_BAR r_multiviews_menubar2
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_multiviews_menu2;}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_multiviews_menu2
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_multiviews_menu2
+    {
+    items = 
+        {
+        MENU_ITEM {command = EMultiViewsSwitchToView1;  txt = "Go to View 1";},
+        MENU_ITEM {command = EMultiViewsCommand1;  txt = "Say hello";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }

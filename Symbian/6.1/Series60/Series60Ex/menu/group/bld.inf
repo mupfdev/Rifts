@@ -1,0 +1,19 @@
+/*
+* ============================================================================
+*  Name     : Bld.inf
+*  Part of  : AknExMenu
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+PRJ_EXPORTS
+//\AknSample\AknExMenu\rom\AknExMenu.iby \epoc32\rom\include\AknExMenu.iby
+
+PRJ_MMPFILES
+AknExMenu.mmp
+
+PRJ_TESTMMPFILES

@@ -1,0 +1,261 @@
+/*
+* ============================================================================
+*  Name     : AknExGrid localization string resource header file
+*  Part of  : AknExGrid
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+// Caption
+#define qtn_apps_tagr_list          "AKNEXGRID"
+#define qtn_apps_tagr_grid          "AKNEXGRID"
+
+//  LOCALISATION STRINGS
+
+//
+// NOTE: Exact layout information syntax for logical names has not been
+//       decided/approved yet.
+//
+
+#define qtn_aknexgrid_test_for_aknexgrid "AknExGrid"
+
+#define qtn_aknexgrid_menupain_main "App"
+#define qtn_aknexgrid_menuitem_main_title1 "Selection Grid"
+#define qtn_aknexgrid_menuitem_main_title2 "Application Grid"
+#define qtn_aknexgrid_menuitem_main_title3 "Pinboard Grid"
+#define qtn_aknexgrid_menuitem_main_title4 "Quickdial Grid"
+#define qtn_aknexgrid_menuitem_main_title5 "Calender Month Grid"
+#define qtn_aknexgrid_menuitem_main_title6 "Calender Week Grid"
+#define qtn_aknexgrid_menuitem_main_title7 "Calculator Grid"
+#define qtn_aknexgrid_menuitem_main_title8 "Menu Grid"
+#define qtn_aknexgrid_menuitem_main_title9 "Mark Sele Grid"
+#define qtn_aknexgrid_exit "Exit"
+
+#define qtn_aknexgrid_menupane_selection "Selection Grid"
+#define qtn_aknexgrid_menuitem_selection_title1 "Add Data"
+//#define qtn_aknexgrid_menuitem_title11 "Insert"
+//#define qtn_aknexgrid_menuitem_title12 "To the last"
+//#define qtn_aknexgrid_menuitem_title111 "One item"
+//#define qtn_aknexgrid_menuitem_title112 "Five items"
+//#define qtn_aknexgrid_menuitem_title121 "One item"
+//#define qtn_aknexgrid_menuitem_title122 "Five items"
+#define qtn_aknexgrid_menuitem_title11 "One item insert"                //
+#define qtn_aknexgrid_menuitem_title12 "Five items insert"              //
+#define qtn_aknexgrid_menuitem_title13 "One item to the last"           //
+#define qtn_aknexgrid_menuitem_title14 "Five items to the last"         //
+#define qtn_aknexgrid_menuitem_selection_title2 "Remove Data"
+//#define qtn_aknexgrid_menuitem_title21 "From the current item"
+//#define qtn_aknexgrid_menuitem_title211 "One item"
+//#define qtn_aknexgrid_menuitem_title212 "Five items"
+//#define qtn_aknexgrid_menuitem_title22 "From the last item"
+//#define qtn_aknexgrid_menuitem_title221 "One item"
+//#define qtn_aknexgrid_menuitem_title222 "Five items"
+//#define qtn_aknexgrid_menuitem_title23 "All items"
+#define qtn_aknexgrid_menuitem_title21 "One from the current"           //
+#define qtn_aknexgrid_menuitem_title22 "Five from the current"          //
+#define qtn_aknexgrid_menuitem_title23 "One from the last"              //
+#define qtn_aknexgrid_menuitem_title24 "Five from the last"             //
+#define qtn_aknexgrid_menuitem_title25 "All items"                      //
+#define qtn_aknexgrid_menuitem_selection_title3 "Filling Order"
+#define qtn_aknexgrid_menuitem_selection_title4 "Looping[Vert.]"
+#define qtn_aknexgrid_menuitem_selection_title41 "Follow items & loop"
+#define qtn_aknexgrid_menuitem_selection_title42 "Follow items & stop"
+#define qtn_aknexgrid_menuitem_selection_title43 "Follow grid"
+#define qtn_aknexgrid_menuitem_selection_title44 "stop at ends"
+#define qtn_aknexgrid_menuitem_selection_title5 "Looping[Horiz.]"
+#define qtn_aknexgrid_menuitem_selection_title51 "Follow items & loop"
+#define qtn_aknexgrid_menuitem_selection_title52 "Follow items & stop"
+#define qtn_aknexgrid_menuitem_selection_title53 "Follow grid"
+#define qtn_aknexgrid_menuitem_selection_title54 "stop at ends"
+#define qtn_aknexgrid_menuitem_selection_title6 "Change Size"
+#define qtn_aknexgrid_menuitem_selection_title7 "Contain"
+#define qtn_aknexgrid_menuitem_selection_title71 "Nothing"
+#define qtn_aknexgrid_menuitem_selection_title72 "Text"
+#define qtn_aknexgrid_menuitem_selection_title73 "Graphic"
+#define qtn_aknexgrid_menuitem_selection_title74 "Both"
+#define qtn_aknexgrid_about "About"
+#define qtn_aknexgrid_close "Close"
+
+#define qtn_aknexgrid_menuitem_application_title1 "Add Data"
+#define qtn_aknexgrid_menuitem_application_title2 "Remove Data"
+
+#define qtn_aknexgrid_menuitem_menu_title1 "Show Menu Grid"
+#define qtn_aknexgrid_menuitem_menu_title2 "Number Of Items"
+
+#define qtn_aknexgrid_menuitem_gms_title1 "Show Popup Grid"
+
+#define qtn_aknexgrid_menuitem_selectall        "Select all items"
+#define qtn_aknexgrid_menuitem_deselectall      "Deselect all items"
+#define qtn_aknexgrid_menuitem_toggleall        "Toggle all items"
+
+
+// Tab text
+#define qtn_aknexnotif_view_main_tab "View Main"
+#define qtn_aknexnotif_view_selection_tab "Sel. Grid"
+#define qtn_aknexnotif_view_application_tab "App. Grid"
+#define qtn_aknexnotif_view_menu_tab "Menu Grid"
+#define qtn_aknexnotif_view_markable_selection_tab "Mark Sele"
+#define qtn_aknexnotif_view_gms_tab "GMS Grid"
+
+//ViewAMain Label text
+#define qtn_aknexgrid_label_view_as_main "In View Main"
+#define qtn_aknexgrid_todolabel_view_as_main "check it now"
+
+//ViewAsApplication Label text
+#define qtn_aknexgrid_label_view_as_application "In View Application"
+#define qtn_aknexgrid_todolabel_view_as_application "check it now"
+
+// Selection Grid text
+#define qtn_aknexgrid_label_view_as_selection "In View Selection"
+#define qtn_aknexgrid_dolabel_view_as_selection "check it now"
+
+// Selection Grid text
+#define qtn_aknexgrid_label_view_as_menu "In View Menu"
+#define qtn_aknexgrid_dolabel_view_as_menu "check it now"
+
+//#define qtn_aknexgrid_text_dialog_fill_vert_horiz "0-Vert, 1-Horiz :"
+//#define qtn_aknexgrid_text_dialog_fill_bottom_top "To:0-Bot,1-Top   "
+//#define qtn_aknexgrid_text_dialog_fill_right_left "To:0-Right,1-Left"
+
+//#define qtn_aknexgrid_title_dialog_fillingorder "Filling Order"
+//#define qtn_aknexgrid_text_dialog_fillingorder1 "Primary Orientation:"
+//#define qtn_aknexgrid_text_dialog_fillingorder2 "Vertical Direction:"
+//#define qtn_aknexgrid_text_dialog_fillingorder3 "Horizontal Direction:"
+
+#define qtn_aknexgrid_formatstring_selectionitem "0\t%d item"
+#define qtn_aknexgrid_formatstring_markableitem  "0\t1\t%d Item"
+#define qtn_aknexgrid_formatstring_currentindex "Current Index: %d"
+
+#define qtn_aknexgrid_text_about_selection "Selection Grid"
+#define qtn_aknexgrid_text_about_application "Application Grid"
+#define qtn_aknexgrid_text_about_menu "Menu Grid"
+#define qtn_aknexgrid_text_about_markable "Markable Grid"
+
+#define qtn_aknexgrid_path_aknexgrid_mbm         "\\system\\apps\\AknExGrid\\AknExGrid.mbm"
+#define qtn_aknexgrid_path_aknexgrid_mbm_z_drive "z:\\system\\apps\\AknExGrid\\AknExGrid.mbm"
+
+#define qtn_aknexgrid_text_empty_selection_grid "empty"
+#define qtn_aknexgrid_text_no_item "empty"
+
+//Application Grid text
+#define qtn_aknexgrid_menupain_application "Application Grid"
+#define qtn_aknexgrid_text_empty_application_grid "empty"
+#define qtn_aknexgrid_text_application_grid_array1 "0\tSAMPLE\t1"
+#define qtn_aknexgrid_text_application_grid_array2 "0\tG1\t1"
+#define qtn_aknexgrid_text_application_grid_array3 "0\tG2\t1"
+#define qtn_aknexgrid_text_application_grid_array4 "0\tG3\t1"
+#define qtn_aknexgrid_text_application_grid_array5 "0\tG4\t1"
+#define qtn_aknexgrid_text_application_grid_array6 "0\tG5\t1"
+#define qtn_aknexgrid_text_application_grid_array7 "0\tG6\t1"
+#define qtn_aknexgrid_text_application_grid_array8 "0\tG7\t1"
+#define qtn_aknexgrid_text_application_grid_array9 "0\tG8\t1"
+#define qtn_aknexgrid_text_application_grid_array10 "0\tG9\t1"
+#define qtn_aknexgrid_text_application_grid_array11 "0\tG10\t1"
+#define qtn_aknexgrid_text_application_grid_array12 "0\tG11\t1"
+#define qtn_aknexgrid_text_application_grid_array13 "0\tG12"
+#define qtn_aknexgrid_text_application_grid_array14 "0\tG13"
+#define qtn_aknexgrid_text_application_grid_array15 "0\tG14"
+#define qtn_aknexgrid_text_application_grid_array16 "0\tG15"
+#define qtn_aknexgrid_text_application_grid_array17 "0\tG16"
+#define qtn_aknexgrid_text_application_grid_array18 "0\tG17"
+#define qtn_aknexgrid_text_application_grid_array19 "0\tG18"
+#define qtn_aknexgrid_text_application_grid_array20 "0\tG19"
+#define qtn_aknexgrid_text_application_grid_array21 "0\tG20"
+
+// information when act one item.
+#define qtn_aknexgrid_text_act_one_item "Current Index %d"
+
+// CBA command text
+#define qtn_aknexgrid_softkey_read     "Read"
+#define qtn_aknexgrid_softkey_exit     "Exit"
+
+// Dialog text about acting marked item simultaneously.
+#define qtn_aknexgrid_dynamic_message "Index %d is checked"
+
+//Selection Grid Change Size Dialog
+#define qtn_aknexgrid_title_dialog_change_size "Change Size"
+#define qtn_aknexgrid_title_dialog_change_size_columns "Columns "
+#define qtn_aknexgrid_title_dialog_change_size_rows "Rows    "
+
+#define qtn_aknexgrid_text_menugrid_title "Menu Grid Title:"
+
+#define qtn_aknexgrid_title_dialog_numberofitems "NumberOfItems"
+
+//GMS Grid text
+#define qtn_aknexgrid_formatstring_gmsgrid  "%d\t1"
+#define qtn_aknexgrid_text_popupgms_title "GMS Popup Grid"
+#define qtn_aknexgrid_text_popupgms_cancel "Listbox Cancelled"
+
+// for setting dialog
+#define qtn_aknexgrid_grid_min_item_number 0
+#define qtn_aknexgrid_grid_max_item_number 101
+
+#define qtn_aknexgrid_grid_min_width 1
+#define qtn_aknexgrid_grid_max_width 100
+
+#define qtn_aknexgrid_grid_min_hight 1
+#define qtn_aknexgrid_grid_max_hight 100
+
+//Filling Order
+#define qtn_aknexgrid_filling_order_vert "0-Vertical"
+#define qtn_aknexgrid_filling_order_horiz "1-Horizontal"
+#define qtn_aknexgrid_filling_order_bottom "0-Bottom"
+#define qtn_aknexgrid_filling_order_top "1-Top"
+#define qtn_aknexgrid_filling_order_right "0-Right"
+#define qtn_aknexgrid_filling_order_left "1-Left"
+#define qtn_aknexgrid_filling_order_primary "Primary Orientation"
+#define qtn_aknexgrid_filling_order_vert_direction "Vertical Direction"
+#define qtn_aknexgrid_filling_order_horiz_direction "Horizontal Direction"
+#define qtn_aknexgrid_filling_order_popfield "PopField"
+
+#define qtn_aknexgrid_menuitem_main_title10 "GMS Style Grid"
+
+#define qtn_aknexgrid_softkey_option "Options"
+#define qtn_aknexgrid_softkey_next "Next"
+
+#define qtn_aknexgrid_title_selection01 "Selection grid1"
+#define qtn_aknexgrid_title_selection02 "Selection grid2"
+#define qtn_aknexgrid_title_selection03 "Selection grid3"
+#define qtn_aknexgrid_title_selection04 "Selection grid4"
+#define qtn_aknexgrid_title_selection05 "Selection grid5"
+#define qtn_aknexgrid_title_selection06 "Selection grid6"
+#define qtn_aknexgrid_title_selection07 "Selection grid7"
+#define qtn_aknexgrid_title_selection08 "Selection grid8"
+#define qtn_aknexgrid_title_selection09 "Selection grid9"
+#define qtn_aknexgrid_title_selection10 "Selection grid10"
+#define qtn_aknexgrid_title_selection11 "Selection grid11"
+#define qtn_aknexgrid_title_selection12 "Selection grid12"
+#define qtn_aknexgrid_title_selection13 "Selection grid13"
+#define qtn_aknexgrid_title_selection14 "Selection grid14"
+#define qtn_aknexgrid_title_selection15 "Selection grid15"
+#define qtn_aknexgrid_title_selection16 "Selection grid16"
+#define qtn_aknexgrid_title_selection17 "Selection grid17"
+#define qtn_aknexgrid_title_selection18 "Selection grid18"
+
+#define qtn_aknexgrid_title_apprication01 "Apprication grid1"
+#define qtn_aknexgrid_title_apprication02 "Apprication grid2"
+#define qtn_aknexgrid_title_apprication03 "Apprication grid3"
+#define qtn_aknexgrid_title_apprication04 "Apprication grid4"
+#define qtn_aknexgrid_title_apprication05 "Apprication grid5"
+#define qtn_aknexgrid_title_apprication06 "Apprication grid6"
+#define qtn_aknexgrid_title_apprication07 "Apprication grid7"
+
+#define qtn_aknexgrid_title_menu01 "Menu grid1"
+#define qtn_aknexgrid_title_menu02 "Menu grid2"
+#define qtn_aknexgrid_title_menu03 "Menu grid3"
+#define qtn_aknexgrid_title_menu04 "Menu grid4"
+#define qtn_aknexgrid_title_menu05 "Menu grid5"
+#define qtn_aknexgrid_title_menu06 "Menu grid6"
+#define qtn_aknexgrid_title_menu07 "Menu grid7"
+#define qtn_aknexgrid_title_menu08 "Menu grid8"
+#define qtn_aknexgrid_title_menu09 "Menu grid9"
+#define qtn_aknexgrid_title_menu10 "Menu grid10"
+#define qtn_aknexgrid_title_menu11 "Menu grid11"
+#define qtn_aknexgrid_title_menu12 "Menu grid12"
+#define qtn_aknexgrid_title_menu13 "Menu grid13"
+
+#define qtn_aknexgrid_title_gms01 "GMS grid1"
+#define qtn_aknexgrid_title_gms02 "GMS grid2"
+
+#define qtn_aknexgrid_title_mark01 "Mark selection1"
+

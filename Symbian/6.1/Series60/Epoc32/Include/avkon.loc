@@ -1,0 +1,1795 @@
+/*
+ * ============================================================================
+ *  Name     : avkon.loc
+ *  Part of  : AVKON
+ *  Description:
+ *     This is a localisation file for AVKON
+ *     A avkon.loc file is the one and only place where the logical strings
+ *     to be localised are defined. 
+ * >>>
+ * The text between >>> and <<< is just to document the syntax and
+ * you can remove it if you like.
+ *
+ * Syntax of a logical name entry in this file is the following:
+ *
+ * // d:context description (line 1)
+ * // d:context description (line N)
+ * // l:P_No
+ * //
+ * #define qtn_?feature/?module_name_?freetext "?text"
+ * #define text_?feature/?module_name_?freetext "?text"
+ *
+ *   where
+ *         "qtn_" or "text_" starts a logical name, which does not
+ *          not contain dots.
+ *         "d:" starts description line(s), which
+ *              clarify entry's context with information like:
+ *              1. Is a word a verb in imperative or is it a noun ?
+ *                   - what does text "Set" mean ?
+ *              2. What will replace %U (unicode text parameter) or
+ *                 %N (number parameter) included in texts ?
+ *                   - is it phone number or email address ?
+ *         "l:" starts a layout information (one line).
+ *              "P" and "No" are symbols in LAF's information table
+ *                 - "P" is parent pane or current pane
+ *                 - "No" is reference number in table
+ *
+ *  Copyright © 2002 Nokia Corporation.
+ *  This material, including documentation and any related 
+ *  computer programs, is protected by copyright controlled by 
+ *  Nokia Corporation. All rights are reserved. Copying, 
+ *  including reproducing, storing,  adapting or translating, any 
+ *  or all of this material requires the prior written consent of 
+ *  Nokia Corporation. This material also contains confidential 
+ *  information which may not be disclosed to others without the 
+ *  prior written consent of Nokia Corporation.
+ * ============================================================================
+ */
+
+
+// LOCALISATION STRINGS
+
+
+// Softkey labels
+
+//d:Command text associated to a softkey in the control pane.
+//d:Opens options menu.
+//l:control_pane_1
+//
+#define text_softkey_option "Options"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Selects currently visually indicated option.
+//l:control_pane_1
+//
+#define text_softkey_select "Select"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Selects or accepts item.
+//l:control_pane_1
+//
+#define text_softkey_ok "Ok"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Accepts the operation and pass information to the "application".
+//l:control_pane_1
+//
+#define text_softkey_done "Done"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Softkey for making a call.
+//l:control_pane_1
+//
+#define text_softkey_call "Call"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Confirms operation.
+//l:control_pane_1
+//
+#define text_softkey_yes "Yes"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Rejects operation.
+//l:control_pane_1
+//
+#define text_softkey_no "No"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Cancels previous operation without action.
+//l:control_pane_1
+//
+#define text_softkey_cancel "Cancel"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Exits from the current state.
+//l:control_pane_1
+//
+#define text_softkey_exit "Exit"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Quits from the current state.
+//l:control_pane_1
+//
+#define text_softkey_quit "Quit"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Back functionality.
+//l:control_pane_1
+//
+#define text_softkey_back "Back"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Insert character (from special character table).
+//l:control_pane_1
+//
+#define text_softkey_insert_char "Insert"
+
+//d:Command text associated to a softkey in the control pane.
+//d:
+//l:control_pane_2
+//
+#define text_softkey_close "Close"
+
+//d:Command text associated to a softkey in the control pane.
+//d:There's no command associated with the Softkey. (One space char)
+//l:control_pane_1
+//
+#define text_softkey_empty " "
+
+//d:Command text associated to a softkey in the control pane.
+//d:Save functionality.
+//l:control_pane_1 
+//
+#define text_softkey_save "Save"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Show a certain show notification (e.g.Missed Calls)
+//l:control_pane_1 
+//
+#define text_softkey_show "Show"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Search functionality.
+//l:control_pane_1 
+//
+#define text_softkey_search "Search"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Used e.g. in soft notification to read a mail
+//l:control_pane_1 
+//
+#define text_softkey_read "Read"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Softkey associated with listening voice mailbox messages
+//l:control_pane_1 
+//
+#define text_softkey_listen "Listen"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Answer to e.g. USSD message. 
+//l:control_pane_1
+//
+#define text_softkey_answer "Answer"
+
+//d:Command text associated to a softkey in the control pane.
+//d:After a name tag found, the user can start voice recognition
+//d:procedure again by selecting the left softkey Again (Voice Dialling).
+//l:control_pane_1
+//
+#define text_softkey_again "Again"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Unlock functionality.
+//l:control_pane_1 
+//
+#define text_softkey_unlock "Unlock"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Mark functionality.
+//l:control_pane_1 
+//
+#define text_softkey_mark "Mark"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Unmark functionality.
+//l:control_pane_1 
+//
+#define text_softkey_unmark "Unmark"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Copy functionality.
+//l:control_pane_1 
+//
+#define text_softkey_copy "Copy"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Paste functionality.
+//l:control_pane_2 
+//
+#define text_softkey_paste "Paste"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Opens a view for detailed information.
+//l:control_pane_1
+//
+#define text_softkey_details "Details"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Stop -functionality in different media players.
+//l:control_pane_1 
+//
+#define text_softkey_stop "Stop" 
+
+//d:Command text associated to a softkey in the control pane.
+//d:Pause -functionality in different media players.
+//l:control_pane_1 
+//
+#define text_softkey_pause "Pause"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Command key to accept the suggested operation.
+//l:control_pane_1 
+//
+#define text_softkey_accept "Accept"
+
+// d: Left softkey label in notification
+// l: control_pane_1
+//
+#define qtn_chat_invite_snotif_sk_join "Join"
+
+
+// Common option menu items
+
+//d:Command in options menu.
+//d:Cut operation to a text or item.
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_cut "Cut"
+
+//d:Command in options menu.
+//d:Copy operation to a text or item.
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_copy "Copy"
+
+//d:Command in options menu.
+//d:Paste operation to a text or item.
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_paste "Paste"
+
+//d:Command in options menu.
+//d:Undo operation
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_undo "Undo"
+
+//d:Options menu item "Edit List". Option for marking submenu.
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_options_list "Edit list"
+
+//d:Command in options menu.
+//d:Mark-operation. Marks selected item.
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_list_mark_one "Mark"
+
+//d:Command in options menu.
+//d:Unmark-operation. Unmarks selected marked item.
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_list_unmark_one "Unmark"
+
+//d:Command in options menu.
+//d:Mark all -operation. Marks all items.
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_list_mark_all "Mark all"
+
+//d:Command in options menu.
+//d:Unmark all -operation. Unmarks all marked items.
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_list_unmark_all "Unmark all"
+
+//d:Command in options menu.
+//d:Opens help application and shows context sensitive help related to the current state or item.
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_clipb_litxt_help "Help"
+
+//d: Editing menu item to activate 'insert number' data query
+//d: to insert number in number input mode
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_edit_insert_number "Insert number"
+
+//d: Options editing submenu item to activate 'insert number' data query
+//d: to insert number in number input mode
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_insert_number "Insert number"
+
+//d: Edit menu item to activate special character table.
+//d:
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_edit_insert_symbol "Insert symbol"
+
+//d: Options editing submenu item to activate special character table.
+//d:
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_insert_symbol "Insert symbol"
+
+//d: Option submenu item to activate cut -operation
+//d:
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_edit_cut "Cut"
+
+//d: Option submenu item to activate copy -operation
+//d:
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_edit_copy "Copy"
+
+//d: Option submenu item to activate paste -operation
+//d:
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_edit_paste "Paste"
+
+//d: Option submenu item to activate undo -operation
+//d:
+//l:list_single_popup_submenu_pane_1
+//
+#define qtn_options_edit_undo "Undo"
+
+//d: Option menu item for changing settings.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_change "Change"
+
+//d: Shift menu item to activate multi tab input mode
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_editing_shift_menu_alpha "Alpha mode"
+
+//d: Shift menu item to activate number input mode
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_editing_shift_menu_numbers "Number mode"
+
+//d: Shift menu item to activate predictive text input mode
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_editing_shift_menu_t9 "Predictive mode"
+
+//d: Shift menu item to activate cut -operation
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_editing_shift_menu_cut "Cut"
+
+//d: Shift menu item to activate copy -operation
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_editing_shift_menu_copy "Copy"
+
+//d: Shift menu item to activate paste -operation
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_editing_shift_menu_paste "Paste"
+
+//d: Shift menu item to activate undo -operation
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_editing_shift_menu_undo "Undo"
+
+
+// Forms
+
+//d:Command in form's options menu.
+//d:Switch form item to edit state.
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_form_litxt_edit "Edit"
+
+//d:Command in form's options menu.
+//d:Saves changes in form fields made since the mode was changed to edit state.
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_form_litxt_save "Save"
+
+//d:Confirmation query prompt.
+//d:Does the edited unsaved data is saved when the user exits from form.
+//l: popup_note_window_1
+//
+#define qtn_form_quest_save_changes "Save changes?"
+
+//d:Confirmation query prompt.
+//d:Does the selected field is deleted from the form.
+//l: popup_note_window_1
+//
+#define qtn_form_quest_remove_field "Delete field?"
+
+//d: Confirmation note text.
+//d: Confirms that the form data is saved.
+//l: popup_note_window_1 
+//
+#define qtn_form_conf_saved "Saved"
+
+//d: T9 Activation note text
+//d: Confirms that T9 text entry has been activated by using options menu
+//l: popup_note_window_1
+//
+#define text_t9_enabled_conf "T9 activated"
+
+//d: T9 DeActivation note text
+//d: Confirms that T9 text entry has been deactivated by using options menu
+//l: popup_note_window_1
+//
+#define text_t9_disabled_conf "T9 deactivated"
+
+//d: T9 No Dictionary Available note text
+//d: Informs user that there is no available t9 dictionary for a selected language
+//l: popup_note_window_1
+//
+#define text_t9_no_ldb_available "No predictive text dictionary available"
+
+//d:If the SS sending procedure was successful the user is informed
+//d:using an confirmation note with this text.
+//d:Confirmation note when service request is done.
+//l:popup_note_window_1
+//
+#define text_done "Done"
+
+//d:If the SS sending procedure was unsuccessful the user is informed
+//d:using an information note with this text.
+//d:Error note text when service request unsuccesful.
+//l:popup_note_window_1
+//
+#define text_not_done "Not done"
+
+
+// Find
+
+//d: Options menu item for activating find pop up window
+//l: list_single_popup_menu_pane_1
+#define qtn_find_pop_up_window "Find"
+
+// Listbox
+
+//d: Empty listbox
+//l: main_pane_1_empty
+#define qtn_selec_empty_list "No data"
+
+//d: Find, Empty list texts, list is empty after matched with entered string
+//l: main_pane_1_empty_find
+#define qtn_find_no_matches "No matches"
+
+// PopupField Queries
+
+//d: Query prompt text shown when entering a new value
+//d:
+//l: popup_query_data_window_1
+//
+#define text_popupfield_prompt_for_text		"Enter Text:"
+
+//d: Query prompt text shown when entering a new value
+//d:
+//l: popup_query_data_window_1
+//
+#define text_popupfield_prompt_for_number	"Enter Number:"
+
+//d: Query prompt text shown when entering a new value
+//d:
+//l: popup_query_data_window_1
+//
+#define text_popupfield_prompt_for_phonenumber "Enter Phone Number:"
+
+//d: Query prompt text shown when entering a new value
+//d:
+//l: popup_query_data_window_1
+//
+#define text_popupfield_prompt_for_time		"Enter Time:"
+
+//d: Query prompt text shown when entering a new value
+//d:
+//l: popup_query_data_window_1
+//
+#define text_popupfield_prompt_for_date		"Enter Date:"
+
+//d: Query prompt text shown when entering a new value
+//d:
+//l: popup_query_data_window_1
+//
+#define text_popupfield_prompt_for_duration	"Enter Duration:"
+
+
+// Queries
+
+//d: Query prompt text to insert a word with multi-tab mode.
+//d:
+//l: popup_query_data_window_1
+//
+#define text_t9_spell_query "Insert word:"
+
+//d: Query prompt text to edit a word with multi-tab mode.
+//d:
+//l: popup_query_data_window_1
+//
+#define text_t9_edit_query "Edit word:"
+
+//d: List query prompt to select correct match from matches suggested by 
+//d: predictive input module.
+//l: popup_list_heading_pane_1
+//
+#define qtn_t9_list_head_select_word "Select word:"
+
+//d: Query prompt text to enter number.
+//d:
+//l: popup_query_data_window_1
+//
+#define text_insert_number_query "Number:"
+
+//d: Special character table query prompt text.
+//d:
+//l: popup_list_heading_pane_1
+//
+#define qtn_pop_up_select_character "Select character:"
+
+//d: 'Insert word' list item as a last item in a list query to select correct match 
+//d: from matches suggested by predictive input module. 'Insert word' item in
+//d: the list query activates a data query to insert word in multi tab mode
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_t9_list_query_spell "Insert word"
+
+//
+//
+// Setting List and Setting Item
+//
+//
+
+//d: Setting field value when there's no data
+//l: list_setting_pane_2
+//
+#define qtn_selec_sett_val_field_none	"None"
+
+//d: Text to show in Text Setting item value field when there is no text
+//d: Network data case (not the default)
+//l: list_setting_pane_2
+//
+#define qtn_selec_sett_val_field_unknow	"Unknown"
+
+// d: Settings list item value
+// d: Means that this setting is not defined & must be defined.
+// l: list_setting_pane_2
+//
+#define qtn_selec_setting_compulsory	"Compulsory"
+
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_jan "Jan"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_feb "Feb"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_mar "Mar"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_apr "Apr"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_may "May"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_jun "Jun"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_jul "Jul"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_aug "Aug"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_sep "Sep"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_oct "Oct"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_nov "Nov"
+
+//d: Month name with 3 letters
+//d:
+//l:(none)
+//
+#define qtn_month_three_chars_dec "Dec"
+
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_january "January"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_february "February"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_march "March"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_april "April"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_may "May"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_june "June"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_july "July"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_august "August"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_september "September"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_october "October"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_november "November"
+
+//d: Month name
+//d:
+//l:(none)
+//
+#define qtn_month_long_december "December"
+
+
+//d: Weekday name with 2 letters
+//d:
+//l: main_pane_1_week_view
+//
+#define qtn_week_two_chars_mo "Mo"
+
+//d: Weekday name with 2 letters
+//d:
+//l: main_pane_1_week_view
+//
+#define qtn_week_two_chars_tu "Tu"
+
+//d: Weekday name with 2 letters
+//d:
+//l: main_pane_1_week_view
+//
+#define qtn_week_two_chars_we "We"
+
+//d: Weekday name with 2 letters
+//d:
+//l: main_pane_1_week_view
+//
+#define qtn_week_two_chars_th "Th"
+
+//d: Weekday name with 2 letters
+//d:
+//l: main_pane_1_week_view
+//
+#define qtn_week_two_chars_fr "Fr"
+
+//d: Weekday name with 2 letters
+//d:
+//l: main_pane_1_week_view
+//
+#define qtn_week_two_chars_sa "Sa"
+
+//d: Weekday name with 2 letters
+//d:
+//l: main_pane_1_week_view
+//
+#define qtn_week_two_chars_su "Su"
+
+
+//d: Weekday name
+//d:
+//l:(none)
+//
+#define qtn_week_long_monday "Monday"
+
+//d: Weekday name
+//d:
+//l:(none)
+//
+#define qtn_week_long_tuesday "Tuesday"
+
+//d: Weekday name
+//d:
+//l:(none)
+//
+#define qtn_week_long_wednesday "Wednesday"
+
+//d: Weekday name
+//d:
+//l:(none)
+//
+#define qtn_week_long_thursday "Thursday"
+
+//d: Weekday name
+//d:
+//l:(none)
+//
+#define qtn_week_long_friday "Friday"
+
+//d: Weekday name
+//d:
+//l:(none)
+//
+#define qtn_week_long_saturday "Saturday"
+
+//d: Weekday name
+//d:
+//l:(none)
+//
+#define qtn_week_long_sunday "Sunday"
+
+//d: Size of data in bytes
+//d:
+//l:(none)
+//
+#define qtn_size_b " %N B"
+
+//d: Size of data in kilo bytes
+//d:
+//l:(none)
+//
+#define qtn_size_kb " %N kB"
+
+//d: Size of data in mega bytes
+//d:
+//l:(none)
+//
+#define qtn_size_mb " %N MB"
+
+//d: Size of data in giga bytes
+//d:
+//l:(none)
+//
+#define qtn_size_gb " %N GB"
+
+
+
+//d: Two lines of text for empty text.
+//d: The lines are separated by character \n.
+//l: list_setting_pane_2
+//
+#define qtn_selec_set_pane_empty "No Data"
+
+// Keylock text
+
+//d: Offer keylock left softkey
+//l: control_pane_1
+//
+#define text_keylock_offer_lock "Lock Keys?"
+
+//d: Offer keylock right softkey
+//l: control_pane_2
+//
+#define text_keylock_quit_offer_lock "Quit"
+
+
+//d: Keypad locked note
+//l: popup_note_window_1
+//
+#define qtn_keyg_conf_keypad_locked		"Keypad Locked"
+
+//d: Offer unlock note
+//l: popup_note_window_1
+//
+#define qtn_keyg_quest_unlock_keypad "Unlock Keypad?"
+
+//d: Keypad error note
+//l: popup_note_window_1
+//
+#define qtn_keyg_err_unaccept_press "Press Unlock to activate keypad"
+
+//d: Keypad unlocked note
+//l: popup_note_window_1
+//
+#define qtn_keyg_conf_keypad_active "Keypad Active"
+
+
+
+
+//d: Option for adding selected item(s) to pinboard.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_add_to_pinboard "Add to pinboard"
+
+//d: Creating a call to a selected number.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_call "Call"
+
+//d: Option or shift menu item for editing submenu
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_edit "Edit text"
+
+//d: Option or shift menu item for editing submenu
+//l: list_single_popup_menu_pane_1
+//
+#define text_pup_option_edit_text "Edit text"
+
+//d: A common option in a options list for closing application.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_exit "Exit"
+
+//d: Option for find item submenu.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_find "Find item"
+
+//d: Option for finding e-mail address. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_find_email_address "E-mail address"
+
+//d: Option for finding phone number. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_find_phone_number "Phone number"
+
+//d: Option for finding URL address. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_find_url_address "URL address"
+
+//d: Getting help via options Help selection.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_help "Help"
+
+//d: List query heading text in input language list query.
+//l: popup_list_heading_pane_1
+//
+#define qtn_options_input_language "Input language:"
+
+//d: Option or shift menu item for input language submenu
+//l: list_single_popup_menu_pane_1
+//
+#define text_pup_option_input_language "Input language"
+
+//d: Option for organizing submenu. 
+//d: TODO: Remove this item if it is not used anywhere??
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_org "Organize"
+
+//d: Option for moving item(s). Options menu item.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_org_move "Move"
+
+//d: Option for moving item(s) to folder. Options menu item.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_org_move_to_folder "Move to folder"
+
+//d: Option for creating new folder. Options menu item.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_org_new_folder "New folder"
+
+//d: Option for sending submenu
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_send_via "Send"
+
+//d: Option for sending data via BT. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_send_via_bt "Bluetooth"
+
+//d: Option for sending data via e-mail. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_send_via_email "E-mail"
+
+//d: Option for sending data via fax. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_send_via_fax "Fax"
+
+//d: Option for sending data via IR. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_send_via_ir "Infrared"
+
+//d: Option for sending data via MMS. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_send_via_mms "MMS"
+
+//d: Option for sending data via SMS. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_send_via_sms "SMS"
+
+//d: Option or shift menu item for T9 submenu.
+//d: 
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_t9 "Predictive text"
+
+//d: Option or shift menu item for T9 submenu.
+//d: 
+//l: list_single_popup_menu_pane_1
+//
+#define text_pup_option_predictive_text "Predictive text"
+
+//d: Option for editing T9 word. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_t9_edit_word "Edit word"
+
+//d: Option for adding words to T9 dictionary. Options submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_t9_insert_word "Insert word"
+
+//d: Option for finding matches from T9 dictionary. 
+//d: Option item in T9 submenu.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_t9_matches "Matches"
+
+//d: Option for finding matches from T9 dictionary. 
+//d: Option item in T9 submenu.
+//l: list_single_popup_submenu_pane_1
+//
+#define text_pup_option_matches "Matches"
+
+//d: Option for disable T9. Edit menu submenu item.
+//l: list_single_popup_submenu_pane_1
+//
+#define qtn_options_t9_off "Off"
+
+//d: Option for activate T9. Edit menu item.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_options_t9_on "Predictive text on"
+
+
+// COMMON DELETE? CONFIRMATION QUERY
+
+//d: Used as a confirmation query in situations where user wants to 
+//d: delete an object/objects. %U must be defined case by case; 
+//d: it might be name of the object/item, or a separate UI text 
+//d: having a separate logical name 
+//d: (e.g. "%N items" qtn_fldr_del_items_query).
+//l: popup_note_window_1
+//
+#define qtn_query_common_conf_delete "Delete?\n%U"
+
+//d: Confirmation query when the user tries to remove an object.
+//d: %U stands for object name.
+//l: popup_note_window_1
+//
+#define qtn_query_common_conf_remove "Remove\n%U?"
+
+
+// GENERAL FOLDER TEXTS FROM FOLDERS SPEC
+
+//d: Option in options menu for creating a new folder.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_new "New folder"
+
+//d: Option in options menu for opening focused folder.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_open "Open"
+
+//d: Option in options menu for deleting selected folder(s). 
+//d: Can be used for deleting other items as well, if there 
+//d: are folders and other items in same list.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_delete "Delete"
+
+//d: Option in options menu for deleting items in folders.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_delete_items "Delete"
+
+//d: Option in options menu for renaming folder.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_rename "Rename"
+
+//d: Option in options menu for moving items inside the list.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_move_item "Move"
+
+//d:Wait/progress note text that is shown when items are deleted.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_fldr_deleting_wait_note "Deleting"
+
+//d:Wait/progress note text that is shown when items are moved to folder.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_fldr_moving_wait_note "Moving"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_adding "Adding"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_copying "Copying"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_fetching "Fetching"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_removing "Removing"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_processing "Processing"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_saving "Saving"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_sending "Sending"
+
+//d:This general text is used with corresponding wait/progress note.
+//d:
+//l:popup_note_wait_window_1
+//
+#define qtn_gen_note_opening "Opening"
+
+//d: Prompt text shown in the data query when creating new folder.
+//l: popup_query_data_window_1
+//
+#define qtn_fldr_name_prmpt "Folder name:"
+
+//d: Default name in the data query's editing field when creating new folder.
+//l: popup_query_data_window_2
+//
+#define qtn_fldr_name_default "New folder"
+
+//d: Information note which is shown when the user is trying to 
+//d: name the folder with a name which is already in use.
+//l: popup_note_window_1
+//
+#define qtn_fldr_name_already_used "Name already in use:\n%U"
+
+//d:Confirmation query text when the user tries to delete 
+//d:several selected items. Selected items
+//d:can be also other items than folders.
+//d: %N represents the number of the selected items to be deleted.
+//l: popup_note_window_1
+//
+#define qtn_fldr_del_items_query "Delete %N items?"
+
+//d: Confirmation query text. Confirms if the user wants to delete
+//d: a folder that contains items.
+//d: If accepted, items inside the folder will be deleted as well.
+//l: popup_note_window_1
+//
+#define qtn_fldr_del_full_fldrs_query "Delete selected folder and items in it?"
+
+//d: "Option in the options menu, when items can be moved to folder."
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_move_to_folder "Move to folder"
+
+//d: Prompt text shown in the list query where the user can 
+//d: select to which folder he wants to move items.
+//l: popup_list_heading_pane_1
+//
+#define qtn_fldr_move_to_prmpt "Move to:"
+
+//d: 
+//l: popup_note_window_1
+//
+#define qtn_fldr_no_folders_exist "No folders exist"
+
+//d: 
+//l: list_single_graphic_pane_1
+//
+#define qtn_fldr_root_level "Root level"
+
+//d: Options menu item with which the user can create new group.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_new_group "New group"
+
+//d: Options menu item for opening focused group.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_open_group "Open"
+
+//d: Options menu item for deleting group(s).
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_delete_group "Delete"
+
+//d: Options menu item for renaming group.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_rename_group "Rename"
+
+//d: Options menu item in the group list with which the user 
+//d: can add items to selected group(s)
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_add_to_selected_group "Add items to group"
+
+//d: Prompt text shown in the data query when creating new group.
+//l: popup_query_data_window_1
+//
+#define qtn_fldr_group_name_prmpt "Group name:"
+
+//d: Default name in the data querys editing field when creating new group.
+//l: popup_query_data_window_2
+//
+#define qtn_fldr_default_group_name "New group %N"
+
+//d: Confirmation query text that is shown when several empty groups are selected
+//d: and the user activates deleting operation.
+//l: popup_note_window_1
+//
+#define qtn_fldr_del_empty_groups "Delete %N groups?"
+
+//d: Confirmation query text that is shown when at least one group, that contains items, is selected
+//d: and the user activates deleting operation.
+//l: popup_note_window_1 
+//
+#define qtn_fldr_del_full_groups_query "Delete selected groups and links in them?"
+
+//d: "Prompt text in the list query where the user can select,
+//d: what items to add to group."
+//l: popup_list_heading_pane_1
+//
+#define qtn_fldr_add_to_group_prmpt "Select items:"
+
+//d: Options menu item with which the user can add items to group 
+//d: when he is inside the group
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_add_to_group "Add items "
+
+//d: Prompt text in the list query where the user can select,
+//d: into what group he wants to add items.
+//l: popup_list_heading_pane_1
+//
+#define qtn_fldr_select_group_prmpt "Select group:"
+
+//d: 
+//l: popup_note_window_1
+//
+#define qtn_fldr_no_groups_exist "No groups exist"
+
+//d: Link items can be removed from a group.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_fldr_remove_items "Remove"
+
+//d: Conf. query after qtn_fldr_remove_items. %U is the name 
+//d: of the link to be removed from a group.
+//l: popup_note_window_1
+//
+#define qtn_fldr_rem_one_item_query "Remove?\n%U"
+
+//d: Conf. query after qtn_fldr_remove_items. %N stands for the 
+//d: amount of links selected to be removed from a group.
+//l: popup_note_window_1
+//
+#define qtn_fldr_rem_items_query "Remove?\n%N items"
+
+//d: Items with same name: the user is provided a possibility 
+//d: to overwrite the old item with a new one.
+//l: popup_note_window_1
+//
+#define qtn_fldr_overwrite_query "%U already exists. Overwrite?"
+
+//d: After qtn_fldr_overwrite_query: user does not want to 
+//d: overwrite the old item. Data query with prompt "New name:"
+//d: will be displayed.
+//l: popup_query_data_window_1
+//
+#define qtn_fldr_item_name_prmpt "New name:"
+
+//d: Items with same name: the user is NOT provided a possibility
+//d: to overwrite the old item, but only to give a new name.
+//l: popup_note_window_1
+//
+#define qtn_fldr_rename_query "%U already exists. Rename?"
+
+//d: Error note when the user tries to move item to the folder
+//d: and the item cannot be moved.
+//l: popup_note_window_1
+//
+#define qtn_fldr_item_cannot_be_moved "Can't move:\n%U"
+
+//d: Error note when the user tries to move items to the folder
+//d: and two or more of the items cannot be moved.
+//l: popup_note_window_1
+//
+#define qtn_fldr_some_items_cant_move "Can't move:\n%N items"
+
+//d: Error note shown when the user tries to remove a folder
+//d: which contains items which cannot be deleted.
+//l: popup_note_window_1
+//
+#define qtn_fldr_cant_delete_item "Can't delete:\n%U"
+
+//d: %N items in the folder cannot be deleted.
+//l: popup_note_window_1
+//
+#define qtn_fldr_cant_delete_items "Can't delete:\n%N items"
+
+//d: Error note shown when the user tries to delete folder
+//d: which cannot be deleted.
+//l: popup_note_window_1
+//
+#define qtn_fldr_cant_delete_folder "Can't delete:\n%U"
+
+//d: Error note shown when two or more folders cannot be deleted.
+//l: popup_note_window_1
+//
+#define qtn_fldr_cant_delete_folders "Can't delete:\n%N folders"
+
+//d: When a file, which is got for example as a attachment in mail, 
+//d: is being saved to the device, confirmation note is shown
+//d: so that the user knows where the file is actually saved.
+//d: Confirmation note text.
+//l: popup_note_window_1
+//
+#define qtn_fldr_file_saved_to  "File saved to %U"
+
+//d: If saving of a file takes more than 1 second, wait note is displayed
+//d: during saving (instead of confirmation note). Wait note informs
+//d: the user where the file is actually saved.
+//d: The wait note text.
+//l: popup_note_wait_window_1
+//
+#define qtn_fldr_file_saving_wait "Saving file to %U"
+
+//d: If the name user entered is too long or consist solely of single
+//d: or double dot, this information note is displayed and after that
+//d: the data entry is opened (name is highlighted in the editor) so that
+//d: the user can correct the name.
+//l: popup_note_window_1
+//
+#define qtn_fldr_bad_file_name "Unsuitable file name"
+
+//d: If the name of the file contains other illegal characters than mentioned
+//d: in 'qtn_fldr_bad_file_name', this information note is displayed.
+//d: There has to be '\' character before '"' character. This combination
+//d: is shown as '"' character. Also '\\' is shown as '\' char.
+//l: popup_note_window_1
+//
+#define qtn_fldr_illegal_characters "Name can’t contain following characters:\n< > \" \\ / | : * ?"
+
+//d: Below critical level of free memory. 
+//d: Operation that consumes lot of memory is not possible.
+//l: popup_note_window_1_four_rows
+//
+#define qtn_memlo_not_enough_memory "Not enough memory to execute operation. Delete some documents and try again."
+
+//d:When the memory Warning Level is passed, it is warned to user by system. Global
+//d: query with this text is shown. Low memory situation is informed for the user also when:
+//d: - System is booted (after battery off, etc.).
+//d: - System unlocked.
+//d: In these cases, if WL is passed, on the screen comes the same global query. 
+//l: popup_note_window_1
+//
+#define qtn_memlo_memory_running_out "Running out of memory. Try deleting some data."
+
+//d: Memory full note: When this Critical Level is passed, it is warned to user by system. Low memory
+//d: situation is informed also when system is booted (after battery off, etc.). Global
+//d: query with this text is shown. Query has only left softkey OK §text.softkey.ok§ . This softkey confirms that 
+//d: user will see the note. User has to press softkey or Selection key and after that the note disappears.
+//l: popup_note_window_1
+//
+#define qtn_memlo_memory_full "Memory is full. Delete some documents"
+
+//d: The query text to be displayed If there is not enough memory 
+//d: to perform the message receiving operation
+//l: popup_note_window_1
+//
+#define qtn_memlo_memory_low_messages "Not enough memory to receive messages. Delete some documents and try again."
+
+//d: Text to be displayed in information note if there is not enough memory to perform the data receiving operation
+//d: (example via bluetooth), is shown an Information note 
+//l: popup_note_window_1
+//
+#define qtn_memlo_memory_low_data "Not enough memory to receive data. Delete some data and try again."
+
+//d: Text to be dispalyed when device must be rebooted.
+//d: Confirmation Query is shown to the user. There is
+//d: only left softkey OK §text.softkey.ok§ and the device reboot after the user has
+//d: pressed that or selection key.
+//l: popup_note_window_1
+#define qtn_memlo_reboot "System have to reboot."
+
+//d: If some database is corrupted, the owner of the database will try to recover it or
+//d: reinitialise it. This text is shown in an Information Note.
+//l: popup_note_window_1
+#define qtn_memlo_database_corrupted "Database corrupted. Some data might have been lost."
+
+//d:If RAM is low, applications will be closed in background (order prioritized by
+//d: Epoc). If needed,the text in information note is this.
+//l: popup_note_window_1_four_rows
+#define  qtn_memlo_ram_out_of_mem "Out of memory. Try closing unnessary applications."
+
+//d: When the system or the phone or some other critical application don’t start.
+//d: Global permanent error note with this text is shown 
+//l: popup_note_window_1
+#define qtn_memlo_contact_service "Contact service"
+
+//d: Application busy note text. This message is displayed when a waiting control
+//d: (dialog, setting page, etc) is dismissed, but the scheduler can’t stop yet.
+//d: This wait note indicates for a user that application is busy at the moment
+//d: and cannot receive any user input.
+//l: popup_note_wait_window_1
+//
+#define qtn_memlo_application_busy "Application is busy"
+
+//d: Query text to be displayed if SIM is full when
+//d: message receiving operation was performed.
+//l: popup_note_window_1
+//
+#define qtn_memlo_memory_low_sim_mes "SIM full. Empty it to receive SIM short messages."
+
+//d:Confirmation query text that is shown when the user wants to kill an application from 
+//d:fastswap window by pressing clear key. 
+//d:Same confirmation query can be shown also in memory low situations.
+//d:%U refers to the name of the application.
+//l:popup_note_window_1
+//
+#define qtn_memlo_confirm_close "Confirm close \"%U\"?"
+
+//d: Text in error note when there is an error updating sim.
+//l: popup_note_window_1
+//
+#define text_fdn_card_error "SIM card error"
+
+//d:Information note text.
+//d:The note is shown if SIM memory is not ready.
+//l:popup_note_window_1
+//
+#define text_scm_select_b_memory "SIM card not ready"
+
+//d:Information note text that is shown if the user tries to open an attachment
+//d:that has been encrypted or it is an unsupported type by the device.
+//l:popup_note_window_1
+//
+#define qtn_mail_info_atta_encrypted "Unsupported type. Cannot open"
+
+//d: 
+//d: 
+//l:(none)
+//
+#define text_calc_decimal_separator "."
+
+//d: 
+//d: 
+//l:(none)
+//
+#define qtn_cnv_decimal_separator "."
+
+
+// Softkey labels
+//d:Command text associated to a softkey in the control pane.
+//d:Clear functionality.
+//l:control_pane_2 
+//
+#define text_softkey_clear "Clear"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Show previous word from T9 dictionary's matches list
+//l:control_pane_2 
+//
+#define text_softkey_previous "Previous"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Launches insert word query in multi tab mode when 
+//d:there are not (any more) matches in T9 dictionary available
+//l:control_pane_1
+//
+#define text_softkey_spell "Spell"
+
+//d:Command text associated to a softkey in the control pane.
+//d:Launches special character table
+//l:control_pane_1
+//
+#define text_softkey_symbol "Symbol"
+
+
+//d:Command in options sub-menu.
+//d:This menu item is show only when predictive text input mode is on.
+//d:Launches insert word query in multitab mode.
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_insert_word "Insert word"
+
+//d:Command in options T9 sub-menu.
+//d:This menu item is show only when predictive text is on
+//d:and a word is active. Launches edit word query in multi tab mode.
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_edit_word "Edit Word"
+
+//d:Command in options T9 sub menu.
+//d:Switches predictive text input (T9) off.
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_t9_off "T9 off"
+
+//d:Command in options T9 sub-menu.
+//d:Switches predictive text input (T9) on.
+//l:list_single_popup_submenu_pane_1
+//
+#define text_pup_option_t9_on "T9 on"
+
+//d: Shift menu item to change input mode to multi tab mode.
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define text_pup_option_multitap_mode "Alpha mode"
+
+//d: Shift menu item to change input mode to number mode.
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define text_pup_option_number_mode "Number mode"
+
+//d: Shift menu item to change input mode to predictive (T9) mode.
+//d:
+//l:list_single_popup_menu_pane_1
+//
+#define text_pup_option_t9_mode "Predictive Mode"
+
+
+//d:
+//d:default text displayed for the screensaver
+//l:(none)
+//
+#define qtn_sanim_text_default			"Nokia"
+
+
+// d: Global default document file name.
+// d: The name is used only when some application
+// d: doesn't offer a name itself.
+// l: list_single_large_graphic_pane_1
+//
+#define qtn_dochui_default_docname "Unnamed"
+
+
+//d: "No Data" default text for popup lists, if the list has
+//d: no items. (This has not been specified in component
+//d: specifications; the logical name has been invented by
+//d: implementation) It is shown currently in a confirmation note.
+//l: popup_note_window_1
+//
+#define qtn_empty_popup_list_text		"No Data"
+
+
+//d:two or more supplementary services are in conflict 
+//l:popup_note_window_1 
+//
+#define qtn_srvrq_info_confl "Services in conflict" 
+
+//d:request failed, no network coverage 
+//l:popup_note_window_1 
+//
+#define text_no_service "No network coverage" 
+
+//d:request was denied 
+//d:currently defined in BasicCallHandling.loc, psui.loc and PhoneClient.loc 
+//l:popup_note_window_1_four_rows 
+//
+#define text_not_allowed "Not allowed" 
+
+//d:request result is unknown 
+//d:currently defined in PhoneClient.loc and psui.loc 
+//l:popup_note_window_1 
+//
+#define text_result_unknown "Result unknown" 
+
+//d: Displayed in the "To/From" section for bluetooth objects in message centre.
+//l: list_double_graphic_pane_1
+//
+#define qtn_mce_bt_message "Bluetooth message"
+
+
+
+// Logical names for APAC variant.
+
+//d: Edit menu item to activate pinyin input mode.
+//d: Only Chinese.
+//l:list_single_popup_menu_pane_1
+//
+#define text_chi_input_pinyin "Pinyin"
+
+//d: Edit menu item to activate zhuyin input mode.
+//d: Only Chinese.
+//l:list_single_popup_menu_pane_1
+//
+#define text_chi_input_zhuyin "Zhuyin" 
+
+//d: Edit menu item to activate strokes input mode.
+//d: Only Chinese.
+//l:list_single_popup_menu_pane_1
+//
+#define text_chi_input_stroke "Strokes" 
+
+//d: Edit menu item to activate latin multi-tab input mode.
+//d: Character case is upper case.
+//d: Only Chinese.
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_chi_input_latin_upper "Latin upper case" 
+
+//d: Edit menu item to activate latin multi-tab input mode.
+//d: Character case is lower case.
+//d: Only Chinese.
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_chi_input_latin_lower "Latin lower case"
+
+//d: Edit menu item to activate number input mode.
+//d: Only Chinese.
+//l:list_single_popup_menu_pane_1
+//
+#define text_chi_input_number_entry "Number entry"
+
+//d: Edit menu item to get a brief explanation on how
+//d: to input Chinese text.
+//d: Only Chinese.
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_chi_input_instructions "Instructions"
+
+//d: This note is shown when pinyin, zhuyin or strokes
+//d: input method is selected from the edit menu.
+//d: Only Chinese.
+//l: popup_note_window_1
+//
+#define text_chi_t9_enabled_conf "T9 predictive text activated"
+
+//d: Extreme Error Handling related string
+//d: General error text to be displayed in most error cases
+//l: popup_note_window_1_one_row_error
+#define qtn_err_eikon_general 	"System error."
+
+//d: Extreme Error Handling related string
+//d: Error text in AlertWin when device has run OOM or OOD  
+//l: popup_note_window_1_one_row_error
+#define qtn_err_eikon_mem		"Out of memory."
+
+//d: Extreme Error Handling related string
+//d: General error text for Resource problems (BAFL related problems)
+//l: popup_note_window_1_one_row_error
+#define qtn_err_eikon_res		"Resource error."
+
+//d: String for the first line in panic notes
+//l: popup_note_window_1_one_row_error
+#define qtn_err_program_closed "Program closed:"
+
+//d: The help text that explains how to input Chinese text.
+//d: Describes the basic functions of Chinese Input Editor.
+//d: Only Chinese.
+//l: popup_query_wml_sign_window_2
+//
+#define qtn_chi_input_help_instr "Describes the basic functions of Chinese Input Editor"
+
+//d: Heading for Chinese input instructions.
+//d: Heading of the input instructions message query.
+//d: Only Chinese.
+//l:popup_list_heading_pane_1
+#define qtn_chi_heading_instr "Instructions:"
+
+//d: Edit menu item to activate zhuyin find mode.
+//d: Only Chinese.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_chi_find_zhuyin "Zhuyin find"
+
+//d: Edit menu item to activate stroke find mode.
+//d: Only Chinese.
+//l: list_single_popup_menu_pane_1
+//
+#define qtn_chi_find_stroke  "Stroke find"
+
+
+#ifdef __SERIES60_KEYPAD_NO_SLIDER
+
+//d: Note is shown when user has pressed "Unlock" when keypad is in locked state
+//l: popup_note_window_1
+//
+#define qtn_keyg_info_nowpress "Now press *"
+
+//d: Is shown when the user presses other key than "Unlock" when keypad is in locked state
+//l: popup_note_window_1
+//
+#define qtn_keyg_err_unaccept_presses "Press Unlock and then * to activate keypad"
+
+#endif //#ifdef SERIES60_KEYPAD_NO_SLIDER
+
+
+//d:Command in form's options menu.
+//d:Add new item to a form (generic).
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_form_litxt_add "Add field"
+
+//d:Command in form's options menu.
+//d:Edit the label of the current form item (generic).
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_form_litxt_label "Edit label"
+
+//d:Command in form's options menu.
+//d:Delete current form item (generic).
+//l:list_single_popup_menu_pane_1
+//
+#define qtn_form_litxt_delete "Delete field"
+
+//d:Query prompt for editing a form label (generic).
+//l:popup_query_data_window_1
+//
+#define qtn_form_prmpt_field_gen_label "Label:"
+
+
+//d: The prompt for the unlock MMC dialog.
+//d: Only when secure MMC is supported.
+//l: popup_query_data_window_1 
+//
+#define qtn_mem_card_unlock_prompt "Password:"
+
+//d: The error message when the wrong password
+//d: is supplied to the unlock MMC dialog
+//l: popup_query_data_window_1
+//
+#define qtn_mem_card_unlock_error "Incorrect password! Try again:"
+
+// d: Memory card specific string. 
+// d: Text to be displayed when there is not enough space in memory card to save data.
+// l: popup_note_window_1 
+#define qtn_memlo_mmc_not_enough_memory "Not enough memory in memory card to execute operation. Delete some documents and try again." 
+
+
+//d:Left softkey in the CCBS activation query.
+//d:This will request the CCBS activation from the network.
+//l:control_pane_1
+//
+#define qtn_ccbs_softkey_queue "Queue"
+
+//d: Text in information note that is shown when some network related operation is tried while
+//d: offline mode is active.
+//l: popup_note_window_1
+//
+#define qtn_offline_not_possible  "Operation not possible in Off-line mode"
+
+//d: Used when the user has selected Off-line profile from Profiles or Power key menu and 
+//d: the previously active profile was other than Off-line. After accepting this query phone 
+//d: will make a reboot and start in Off-line mode.
+//l: popup_note_window_1
+//
+#define qtn_tc_enter_offline_mode_query "Off-line profile selected. Phone will restart. Continue?"
+
+//d: Used when the user has selected a profile other than Off-line from Profiles or 
+//d: power key menu and the previously active profile was Off-line. After accepting this query phone 
+//d: will make a reboot and start in non-Off-line mode.
+//l: popup_note_window_1
+#define qtn_tc_leave_offline_mode_query "Are you sure you want to exit off-line profile? Phone will restart."
+
+// End of File
+

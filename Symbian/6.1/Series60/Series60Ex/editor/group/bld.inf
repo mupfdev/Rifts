@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : Bld.inf
+*  Part of  : AknExEditor
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+PRJ_PLATFORMS
+WINS
+Thumb
+ARMI
+
+PRJ_EXPORTS
+//\AknSample\AknExEditor\rom\AknExEditor.iby \epoc32\rom\include\AknExEditor.iby
+
+PRJ_MMPFILES
+AknExEditor.mmp

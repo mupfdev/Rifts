@@ -1,0 +1,15 @@
+; HelloWorldPlus.pkg
+;
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"HelloWorldPlus"},(0x10005b95),1,0,0
+
+;Supports Series 60 v 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+;
+"..\..\..\epoc32\release\thumb\urel\HelloWorldPlus.APP"-"C:\system\apps\HelloWorldPlus\HelloWorldPlus.app"
+"..\..\..\epoc32\release\thumb\urel\HelloWorldPlus.rsc"-"C:\system\apps\HelloWorldPlus\HelloWorldPlus.rsc"
+"..\..\..\epoc32\release\thumb\urel\HelloWorldPlus_caption.rsc"-"C:\system\apps\HelloWorldPlus\HelloWorldPlus_caption.rsc"

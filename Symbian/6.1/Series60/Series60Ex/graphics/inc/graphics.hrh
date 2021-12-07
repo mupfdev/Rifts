@@ -1,0 +1,15 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+#ifndef __GRAPHICS_HRH__
+#define __GRAPHICS_HRH__
+
+/** Graphics enumerate command codes */
+enum TGraphicsIds
+    {
+    EGaphicsNoOffScreenDemo = 1,
+	EGaphicsOffScreenDemo,
+	EGaphicsStopDemo
+    };
+
+
+#endif // __GRAPHICS_HRH__

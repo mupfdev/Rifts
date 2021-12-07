@@ -1,0 +1,61 @@
+// Mda\Common\Resource.hrh
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __MDA_COMMON_RESOURCE_HRH__ 
+#define __MDA_COMMON_RESOURCE_HRH__
+
+#include <Mda\Common\Port.hrh>
+
+enum TMdaResourceStringType
+	{
+	EMdaResStringText=0x01,
+	EMdaResStringData=0x02
+	};
+
+enum TMdaResourceUsage
+	{
+	EMdaResUsageSrc=0x01,
+	EMdaResUsageDst=0x02,
+	EMdaResUsageSrcAndDst=0x03 // EMdaResUsageSrc|EMdaResUsageDst
+	};
+
+enum TMdaResourceConfigDefType
+	{
+	EMdaResConfigDefChoiceList=0x01,
+	EMdaResConfigDefInteger=0x02,
+	EMdaResConfigDefText=0x03,
+	//
+	EMdaResConfigDefChoiceListReadOnly=0x81,
+	EMdaResConfigDefIntegerReadOnly=0x82,
+	EMdaResConfigDefTextReadOnly=0x83
+	};
+
+enum TMdaResourceSigType
+	{
+	EMdaResSigTypeData=0,
+	EMdaResSigTypeNamePattern=1,
+	EMdaResSigTypeMime=2
+	};
+
+#define KUidMdaResourceManagerDefine			268450122
+
+#define KUidMdaFileResLocDefine					268450124
+#define KUidMdaDesResLocDefine					268450125
+
+#define KUidMdaSourceClipDefine					268450126
+#define KUidMdaDestinationClipDefine			268450127
+#define KUidMdaClipLocationDefine				268450128
+#define KUidMdaClipFormatDefine					268450129
+
+#define KUidMdaSourceStreamDefine				268450130
+#define KUidMdaDestinationStreamDefine			268450131
+#define KUidMdaStreamDeviceDefine				268450132
+
+#define KUidMdaClipDurationDefine				268450133
+#define KUidMdaClipPrimeWindowDefine			268450166
+
+#define KUidMdaClipCropDefine					268450197
+
+#endif

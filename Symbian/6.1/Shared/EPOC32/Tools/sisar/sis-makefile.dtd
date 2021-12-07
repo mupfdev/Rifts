@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT sis-makefile (locales, description?, name, uid,
+major-version, minor-version, build-number, close-applications?,
+non-compressed?, sis-type, sign?, requisites?, capabilities?,
+entries?)>
+<!ATTLIST sis-makefile
+  version CDATA #FIXED "1.0">
+
+<!-- For a list of supported locale codes, see those entries in
+     SupportedLocales.xml, which have been marked as supported by Sisar. -->
+<!ELEMENT locales (locale)*>
+<!ELEMENT locale EMPTY>
+<!ATTLIST locale
+  language CDATA #REQUIRED
+  country CDATA #IMPLIED
+  variant CDATA #IMPLIED>
+
+<!-- Description of the component. -->
+<!ELEMENT description (#PCDATA)>
+
+<!-- The name of the component in all the locales it supports. -->
+<!ELEMENT name (for-locale)*>
+
+<!-- Always provide these elements for each of the supported
+     locales, regardless of the context. -->
+<!ELEMENT for-locale (#PCDATA)>
+<!ATTLIST for-locale
+  language CDATA #REQUIRED
+  country CDATA #IMPLIED
+  variant CDATA #IMPLIED>
+
+<!-- An unsigned 32-bit integer.
+     Both decimal and hexadecimal are acceptable.
+     Hexadecimal values must be prefixed with "0x". -->
+<!ELEMENT uid (#PCDATA)>
+
+<!-- An unsigned 16-bit integer.
+     Both decimal and hexadecimal are acceptable. -->
+<!ELEMENT major-version (#PCDATA)>
+<!-- An unsigned 16-bit integer.
+     Both decimal and hexadecimal are acceptable. -->
+<!ELEMENT minor-version (#PCDATA)>
+<!-- An unsigned 32-bit integer.
+     Both decimal and hexadecimal are acceptable. -->
+<!ELEMENT build-number (#PCDATA)>
+
+<!-- This optional element specifies that applications
+     should be closed for the duration of the install. -->
+<!ELEMENT close-applications EMPTY>
+
+<!-- This optional element specifies that the SIS
+     file should not be compressed. -->
+<!ELEMENT non-compressed EMPTY>
+
+<!ELEMENT sis-type EMPTY>
+<!ATTLIST sis-type
+  type (application|shared-component|optional-component|
+        configuration|patch|upgrade) "application">
+
+<!-- This element, if present, indicates that the SIS file
+     is to be signed. -->
+<!ELEMENT sign (public-key-certificate, private-key)>
+<!ELEMENT public-key-certificate EMPTY>
+<!-- The name of the file containing the certificate or
+     the certificate chain must be provided. -->
+<!ATTLIST public-key-certificate
+  file CDATA #REQUIRED>
+<!ELEMENT private-key EMPTY>
+<!-- The passphrase only needs to be provided
+     if the private key is encrypted. -->
+<!ATTLIST private-key
+  file CDATA #REQUIRED
+  passphrase CDATA #IMPLIED>
+
+<!ELEMENT requisites (requisite*)>
+<!ELEMENT requisite (uid, major-version, minor-version, build-number,
+name)>
+
+<!ELEMENT capabilities (capability*)>
+<!ELEMENT capability EMPTY>
+<!ATTLIST capability
+  key CDATA #REQUIRED
+  value CDATA #REQUIRED>
+
+<!-- This element forms the main body of the file,
+     similarly to BODY in HTML. -->
+<!ELEMENT entries
+     (comment|group|embedded-sis|options|conditional|copy|
+      show|application-created|open|execute)*>
+
+<!ELEMENT comment (#PCDATA)>
+
+<!ELEMENT group (comment|group|embedded-sis|options|conditional|copy|
+                 show|application-created|open|execute)*>
+<!ATTLIST group
+  label CDATA #IMPLIED>
+
+<!ELEMENT embedded-sis EMPTY>
+<!ATTLIST embedded-sis
+  file CDATA #REQUIRED
+  uid CDATA #IMPLIED>
+
+<!ELEMENT options (option)*>
+<!-- You can have no more than 128 option elements
+     within an options element. Unfortunately, this
+     limitation cannot be enforced by the DTD. -->
+<!ELEMENT option (for-locale)*>
+<!ATTLIST option
+  nickname CDATA #IMPLIED>
+
+<!ELEMENT conditional (if, elseif*, else?)>
+<!ELEMENT if (comment|group|embedded-sis|options|conditional|copy|
+              show|application-created|open|execute)*>
+<!ATTLIST if
+  condition CDATA #REQUIRED>
+<!ELEMENT elseif (comment|group|embedded-sis|options|conditional|copy|
+                  show|application-created|open|execute)*>
+<!ATTLIST elseif
+  condition CDATA #REQUIRED>
+<!ELEMENT else (comment|group|embedded-sis|options|conditional|copy|
+                show|application-created|open|execute)*>
+
+<!ELEMENT copy ((source|sources), target)>
+<!ELEMENT source EMPTY>
+<!ATTLIST source
+  file CDATA #REQUIRED>
+<!ELEMENT sources (for-locale)*>
+<!ELEMENT target EMPTY>
+<!ATTLIST target
+  drive CDATA "any"
+  file CDATA #REQUIRED>
+
+<!-- Show the contents of a text file on screen. -->
+<!ELEMENT show ((source|sources), yes-no-buttons?)>
+<!-- By default, only a "Continue" button will be displayed.
+     This element instructs the installer to show
+     both "Yes" and "No" buttons. "Yes" has the same
+     action as continue does. "No" has the specified action. -->
+<!ELEMENT yes-no-buttons EMPTY>
+<!-- skip  - skip next file.
+     undo  - abort and undo installation.
+     abort - abort installation. -->
+<!ATTLIST yes-no-buttons
+  no-action (skip|undo|abort) "skip">
+
+<!-- This is an instruction to have something deleted on uninstall. -->
+<!ELEMENT application-created (target)>
+
+<!-- Open the specified file with the application associated
+     with the specified mime type. -->
+<!ELEMENT open ((source|sources), target)>
+<!ATTLIST open
+  mime-type CDATA #REQUIRED
+  closed (wait-until|upon-completion) "wait-until">
+
+<!ELEMENT execute ((source|sources), target)>
+<!ATTLIST execute
+  when (installation|uninstallation|both) "installation"
+  closed (wait-until|upon-completion) "wait-until">

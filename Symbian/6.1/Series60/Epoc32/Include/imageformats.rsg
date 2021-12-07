@@ -1,0 +1,15 @@
+#define VIDEO_LIBRARY                             1
+#define CLIP_FORMAT_MBM                           2
+#define MBM_CODEC                                 3
+#define CLIP_FORMAT_BMP                           4
+#define BMP_CODEC_1BPP                            5
+#define BMP_CODEC_4BPP                            6
+#define BMP_CODEC_8BPP                            7
+#define BMP_CODEC_24BPP                           8
+#define BITMAP_STREAM_DEVICE                      9
+#define CLIP_FORMAT_JPG                           10
+#define JPG_CODEC                                 11
+#define CLIP_FORMAT_WBMP                          12
+#define WBMP_CODEC                                13
+#define CLIP_FORMAT_OTA                           14
+#define OTA_CODEC                                 15

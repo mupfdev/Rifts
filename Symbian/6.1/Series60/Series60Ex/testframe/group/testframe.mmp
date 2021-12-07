@@ -1,0 +1,40 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+TARGET            testframe.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B86
+TARGETPATH        \system\apps\testframe
+
+SOURCEPATH        ..\src
+SOURCE          testexecutor.cpp
+SOURCE          exampletotest.cpp
+SOURCE          Testframe.cpp
+SOURCE          TestframeApplication.cpp 
+SOURCE          TestframeAppView.cpp
+SOURCE          TestframeAppUi.cpp
+SOURCE          TestframeDocument.cpp
+SOURCE          Loggingselection.cpp
+SOURCE          StaticOverrideAccess.cpp
+SOURCE          StaticOverrides.cpp
+
+
+SOURCEPATH      ..\..\helperfunctions
+SOURCE          Logfile.cpp
+SOURCE          eikonenvironment.cpp
+
+SOURCEPATH      ..\group
+RESOURCE        Testframe.rss
+
+USERINCLUDE      ..\inc ..\..\helperfunctions
+
+SYSTEMINCLUDE    \epoc32\include
+
+LIBRARY          euser.lib
+LIBRARY          apparc.lib
+LIBRARY          cone.lib 
+LIBRARY          eikcore.lib  
+LIBRARY          avkon.lib
+LIBRARY          efsrv.lib
+LIBRARY          ws32.lib
+LIBRARY          hal.lib
+LIBRARY          charconv.lib

@@ -1,0 +1,76 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+NAME BMPM
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "Bmpmanip.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_bmpmanip_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_bmpmanip_menubar
+//   Menubar for Bmpmanip example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_bmpmanip_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_bmpmanip_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_bmpmanip_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_bmpmanip_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = EBmpmanipCmdRotate90;  txt = "Rotate by 90"<0xB0>;},
+        MENU_ITEM {command = EBmpmanipCmdRotate180;  txt = "Rotate by 180"<0xB0>;},
+        MENU_ITEM {command = EBmpmanipCmdRotate270;  txt = "Rotate by 270"<0xB0>;},
+        MENU_ITEM {command = EBmpmanipCmdSave;  txt = "Save";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }

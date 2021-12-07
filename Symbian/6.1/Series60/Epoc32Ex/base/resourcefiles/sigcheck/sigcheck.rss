@@ -1,0 +1,18 @@
+// SigCheck.rss
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+NAME BASE
+
+#include "SigCheck.rh" // include for common structures
+
+// signature, for ConfirmSignature()
+
+RESOURCE SIGNATURE { version=023; }
+
+// define resources
+
+RESOURCE STRING r_base_hello
+	{
+	text="Bore da, pawb!";
+	}

@@ -1,0 +1,22 @@
+// FontsShell.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+
+TARGET        FontsShell.app
+TARGETTYPE    app
+UID           0x100039ce 0x1000525d
+TARGETPATH    \system\apps\FontsShell
+
+SOURCEPATH    .
+SOURCE        FontsShell.cpp FontsGraphicsControl.cpp  Fonts.cpp Hello.cpp
+RESOURCE      FontsShell.rss
+
+USERINCLUDE   .
+USERINCLUDE   ..\CommonGraphicsExampleFiles
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib  gdi.lib   ws32.lib 
+LIBRARY       cone.lib  apparc.lib eikcore.lib  eikcoctl.lib 

@@ -1,0 +1,252 @@
+/*
+* ============================================================================
+*  Name     : AknExEditor.hrh
+*  Part of  : AknExEditor
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXEDITOR_HRH
+#define AKNEXEDITOR_HRH
+
+#include <avkon.hrh>
+
+
+enum TAknExEditorTabViewId
+    {
+    EAknExEditorView1Tab= 1
+    };
+
+
+enum TAknExEditorAppMenuCommands
+    {
+    EAknExEditorCmdTopNotShow = 6200,
+    EAknExEditorCmdPrev,
+    EAknExEditorCmdNext,
+    EAknExEditorCmdSelectView,
+    EAknExEditorCmdActivateView1,
+    EAknExEditorCmdActivateView2,
+    EAknExEditorCmdActivateView3,
+    EAknExEditorCmdActivateView4,
+    EAknExEditorCmdActivateView5,
+    EAknExEditorCmdActivateView6,
+    EAknExEditorCmdActivateView7,
+    EAknExEditorCmdActivateView8,
+    EAknExEditorCmdActivateView9,
+    EAknExEditorCmdActivateView10,
+    EAknExEditorCmdActivateView11,
+    EAknExEditorCmdActivateView12,
+    EAknExEditorCmdActivateView13,
+    EAknExEditorCmdActivateView14,
+    EAknExEditorCmdActivateView15,
+    EAknExEditorCmdActivateView16,
+    EAknExEditorCmdActivateView17,
+    EAknExEditorCmdActivateView18,
+    EAknExEditorCmdActivateView19,
+    EAknExEditorCmdActivateView20,
+    EAknExEditorCmdActivateView21,
+    EAknExEditorCmdActivateView22,
+    EAknExEditorCmdActivateView23,
+    EAknExEditorCmdActivateView24,
+    EAknExEditorCmdActivateView25,
+    EAknExEditorCmdActivateView26,
+    EAknExEditorCmdActivateView27,
+    EAknExEditorCmdAPI
+    };
+
+enum TAknExEditorViewMenuCommands
+    {
+    EAknExEditorCmdSelectEdwin1 = 6300,
+    EAknExEditorCmdSelectEdwin2,
+    EAknExEditorCmdSelectEdwin3,
+    EAknExEditorCmdSelectEdwin4,
+    EAknExEditorCmdSelectGTextEd1,
+    EAknExEditorCmdSelectGTextEd2,
+    EAknExEditorCmdSelectGTextEd3,
+    EAknExEditorCmdSelectGTextEd4,
+    EAknExEditorCmdSelectDateEditor,
+    EAknExEditorCmdSelectTimeEditor,
+    EAknExEditorCmdSelectDurationEditor,
+    EAknExEditorCmdSelectTimeAndDateEditor,
+
+    EAknExEditorCmdSelect12HoursEditor,
+    EAknExEditorCmdSelect24HoursEditor,
+
+    EAknExEditorCmdSelectNumSecretEditor,
+    EAknExEditorCmdSelectSecretEditor,
+    EAknExEditorCmdView23InitializeDisplay5,
+    EAknExEditorCmdView23InitializeDisplay10,
+    EAknExEditorCmdView23Reset,
+    EAknExEditorCmdView23SetMaxLength5,
+    EAknExEditorCmdView23SetMaxLength10,
+    EAknExEditorCmdView23SetText,
+
+    EAknExEditorCmdExpandEdwin,
+    EAknExEditorCmdExpandGTextEd,
+    EAknExEditorCmdFont1,
+    EAknExEditorCmdFont2,
+    EAknExEditorCmdFont3,
+    EAknExEditorCmdFont4,
+    EAknExEditorCmdFont5,
+    EAknExEditorCmdFont6,
+    EAknExEditorCmdFont7,
+    EAknExEditorCmdShowForm,
+    EAknExEditorCmdShowEditorText,
+
+    EAknExEditorCmdInputNone,
+    EAknExEditorCmdInputNumIntP,
+    EAknExEditorCmdInputNumIntN,
+    EAknExEditorCmdInputNumReal,
+    EAknExEditorCmdInputAlphabetic,
+    EAknExEditorCmdInputDialable,
+    EAknExEditorCmdInputSecret,
+    EAknExEditorCmdInputAll,
+    EAknExEditorCmdInputNavi,
+
+    EAknExEditorCmdLatinPlain12,
+    EAknExEditorCmdLatinBold12,
+    EAknExEditorCmdLatinBold13,
+    EAknExEditorCmdLatinBold17,
+    EAknExEditorCmdLatinBold19,
+    EAknExEditorCmdNumberPlain5,
+    EAknExEditorCmdClockBold30,
+    EAknExEditorCmdLatinClock14,
+
+    EAknExEditorCmdReadIPAddress,
+    EAknExEditorCmdDisplayIPAddress,
+
+    EAknExEditorCmdView27MainMenu,
+    EAknExEditorKeepDocument,
+    EAknExEditorSegmentedStorage,
+    EAknExEditorWidthInPixels,
+    EAknExEditorNoAutoSelection,
+    EAknExEditorAutoSelection,
+    EAknExEditorJustAutoCurEnd,
+    EAknExEditorNoWrap,
+    EAknExEditorLineCursor,
+    EAknExEditorNoHorizScrolling,
+    EAknExEditorInclusiveSizeFixed,
+    EAknExEditorUserSuppliedText,
+    EAknExEditorOwnsWindow,
+    EAknExEditorDisplayOnly,
+    EAknExEditorAlwaysShowSelection,
+    EAknExEditorReadOnly,
+    EAknExEditorAllowPictures,
+    EAknExEditorAllowUndo,
+    EAknExEditorNoLineOrParaBreaks,
+    EAknExEditorOnlyASCIIChars,
+    EAknExEditorResizable,
+    EAknExEditorIgnoreVirtualCursor,
+    EAknExEditorNoCustomDraw,
+    EAknExEditorSeries60Editor,
+    EAknExEditorSeries60DisableCursor,
+    EAknExEditorSeries60NotEditable,
+
+    EAknExEditorCmdView28MainMenu,
+    EAknExEditorTextLength,
+    EAknExEditorSetReadOnlyTrue,
+    EAknExEditorSetReadOnlyFalse,
+    EAknExEditorSetTextLimit,
+    EAknExEditorSetBackgroundColor,
+    EAknExEditorTextLimit0,
+    EAknExEditorTextLimit10,
+    EAknExEditorTextLimit20,
+    EAknExEditorTextLimit30,
+    EAknExEditorTextLimit40,
+    EAknExEditorBgColor1,
+    EAknExEditorBgColor2,
+    EAknExEditorBgColor3,
+    EAknExEditorBgColor4,
+    EAknExEditorSetDimmed,
+    EAknExEditorLineCursorWidth,
+
+
+    EAknExEditorCmdView29MainMenu,
+    EAknExEditorCancelFepTransaction,
+    EAknExEditorHandleTextChanged,
+
+    EAknExEditorSelectText,
+    EAknExEditorClearSelection,
+    EAknExEditorCut,
+    EAknExEditorCopy,
+    EAknExEditorPaste,
+    EAknExEditorUndo,
+
+    EAknExEditorSetDimmedTrue,
+    EAknExEditorSetDimmedFalse,
+    EAknExEditorNone,
+    EAknExEditorSingleGray,
+    EAknExEditorSingleBlack,
+    EAknExEditorSingleDotted,
+    EAknExEditorShallowRaised,
+    EAknExEditorShallowSunken,
+    EAknExEditorDeepRaised,
+    EAknExEditorDeepRaisedWithOutline,
+    EAknExEditorDeepSunken,
+    EAknExEditorDeepSunkenWithOutline,
+    EAknExEditorThickDeepRaisedWithOutline,
+    EAknExEditorVerticalBar,
+    EAknExEditorHorizontalBar,
+
+    EAknExEditorSetWordWrapTrue,
+    EAknExEditorSetWordWrapFalse,
+
+    EAknExEditorSetDocumentOwnership,
+    EAknExEditorSetDocumentOwnershipTrue,
+    EAknExEditorSetDocumentOwnershipFalse,
+    EAknExEditorTestDocumentOwnership,
+    EAknExEditorBorderViewMargin1,
+    EAknExEditorBorderViewMargin2,
+    EAknExEditorBorderViewMargin3,
+
+    EAknExEditorCreateScrollBar,
+    EAknExEditorUpdateScrollBar,
+
+    EAknExEditorMoveCursor,
+    EAknExEditorMoveCursorNoMovement,
+    EAknExEditorMoveCursorLeft,
+    EAknExEditorMoveCursorRight,
+    EAknExEditorMoveCursorLineUp,
+    EAknExEditorMoveCursorLineDown,
+    EAknExEditorMoveCursorPageUp,
+    EAknExEditorMoveCursorPageDown,
+    EAknExEditorMoveCursorLineBeg,
+    EAknExEditorMoveCursorLineEnd,
+
+    EAknExEditorMoveDisplay,
+    EAknExEditorMoveDisplayNoMovement,
+    EAknExEditorMoveDisplayLeft,
+    EAknExEditorMoveDisplayRight,
+    EAknExEditorMoveDisplayLineUp,
+    EAknExEditorMoveDisplayLineDown,
+    EAknExEditorMoveDisplayPageUp,
+    EAknExEditorMoveDisplayPageDown,
+    EAknExEditorMoveDisplayLineBeg,
+    EAknExEditorMoveDisplayLineEnd,
+
+    //Not really a command more a control
+    EAknExEditorBlankNote
+
+    };
+
+
+enum TAknExEditorIDsForForm 
+    {
+    EAknExEditorIDForForm8Edwin = 6500,
+    EAknExEditorIDForForm8Global,
+
+    EAknExEditorIDForForm9Edwin,
+    EAknExEditorIDForForm9Global,
+
+    EAknExEditorIDForForm22Time,
+    EAknExEditorIDForForm22Date,
+    EAknExEditorIDForForm22Duration,
+
+    EAknExEditorIDForForm23NumericSecret,
+    EAknExEditorIDForForm23Secret,
+    
+    EAknExEditorIDForForm2512Hours,
+    EAknExEditorIDForForm2524Hours
+    };
+
+#endif      //  AKNEXEDITOR

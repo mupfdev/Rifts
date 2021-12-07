@@ -1,0 +1,11 @@
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"BTHCI"},(0x10005B97),1,0,0
+
+;Supports Series 60 v 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+"..\..\..\epoc32\release\thumb\urel\BTHCI.app"-"!:\system\apps\BTHCI\BTHCI.app"
+"..\..\..\epoc32\release\thumb\urel\BTHCI.rsc"-"!:\system\apps\BTHCI\BTHCI.rsc"

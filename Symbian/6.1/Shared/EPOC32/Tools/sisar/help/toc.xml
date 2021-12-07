@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+
+  <tocitem target="root" text="Sisar Guide">
+
+    <tocitem target="SisarIntro.toc" text="Introduction to Sisar">
+
+      <tocitem target="SisarIntro.about" text="About Sisar" />
+      <tocitem target="SisarIntro.launch" text="How to launch from the command line" />
+      <tocitem target="SisarIntro.ui-overview" text="Overview of the Sisar user interface" />
+      <tocitem target="SisarIntro.menusummary" text="Menu summary" />
+
+    </tocitem>
+
+    <tocitem target="Sisar.toc" text="Using Sisar to edit package building instructions"> 
+
+      <tocitem target="Sisar.HowTo.loadandsave" text="How to create, load and save projects" />
+      <tocitem target="Sisar.HowTo.LoadExistingFiles" text="How to import existing PKG and AIFB files" />
+      <tocitem target="Sisar.HowTo.HeaderTab" text="How to use the Header tab" />
+      <tocitem target="Sisar.HowTo.NameTab" text="How to use the name tab" />
+      <tocitem target="Sisar.HowTo.RequisitesTab" text="How to use the requisites tab" />
+      <tocitem target="Sisar.HowTo.CapabilitiesTab" text="How to use the capabilities tab" />
+      <tocitem target="Sisar.HowTo.EntriesTab" text="How to use the entries tab" />
+      <tocitem target="Sisar.HowTo.ConfigurationTab" text="How to use the configuration tab" />
+
+    </tocitem>
+
+  </tocitem>
+
+</toc>

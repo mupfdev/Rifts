@@ -1,0 +1,5 @@
+#define R_APP_START_PARAMS                        1
+#define R_APPS_LIST_LIST                          2
+#define R_APP_NORMAL_START_LIST                   3
+#define R_APP_FATAL_ERROR_LIST                    4
+#define R_STARTUP_ERROR                           5

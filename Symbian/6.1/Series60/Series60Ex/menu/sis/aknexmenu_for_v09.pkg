@@ -1,0 +1,15 @@
+; AknExMenu.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExMenu"},(0x10005C30),1,01,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExMenu.app"-"!:\system\apps\AknExMenu\AknExMenu.app"
+"..\..\..\epoc32\release\thumb\urel\AknExMenu.rsc"-"!:\system\apps\AknExMenu\AknExMenu.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExMenu.aif"-"!:\system\apps\AknExMenu\AknExMenu.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExMenu_caption.rsc"-"!:\system\apps\AknExMenu\AknExMenu_caption.rsc"

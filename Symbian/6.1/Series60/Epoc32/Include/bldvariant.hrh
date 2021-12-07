@@ -1,0 +1,72 @@
+/*
+* ============================================================================
+*  Name     : BldVariant.hrh
+*  Origin   : SERIES60, MSW
+*  Copyright (c) 2002 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef __BLDVARIANT_HRH
+#define __BLDVARIANT_HRH
+
+#ifndef __AVKON_ELAF__
+#define __AVKON_ELAF__
+#endif
+
+#define __AVERELL_MMC
+#define __AVERELL_CAMERA_CAMEL_DUNE
+#define __AVERELL_KEYPAD_NO_SLIDER
+#define __AVERELL_KEYPAD_CIRCULAR
+#define __AVERELL_KEYPAD_NO_VOICE_KEY
+#define __AVERELL_HELP
+#define __AVERELL_PHONE_NUMBER_GROUPING
+#define __AVERELL_PHONE_CNAP
+#define __AVERELL_PHONE_TTY
+#define __AVERELL_MIDI
+#define __AVERELL_SETTINGS_PROTECTION
+#define __AVERELL_WAP_US
+#define __AVERELL_MMS_US
+#define __AVERELL_VIDEO_TRABANT_2
+#define __AVERELL_NO_PROXIMITY_SENSOR
+#define __AVERELL_EOTD_FTD_DISPLAY
+#define __AVERELL_CAMERA_CAMEL_DUNE_HWA
+#define __AVERELL_CAMERON_SPECIFIC
+#define __SERIES60_MMC
+#define __SERIES60_CAMERA_CAMEL_DUNE
+#define __SERIES60_KEYPAD_NO_SLIDER
+#define __SERIES60_KEYPAD_CIRCULAR
+#define __SERIES60_KEYPAD_NO_VOICE_KEY
+#define __SERIES60_HELP
+#define __SERIES60_PHONE_NUMBER_GROUPING
+#define __SERIES60_PHONE_CNAP
+#define __SERIES60_PHONE_TTY
+#define __SERIES60_MIDI
+#define __SERIES60_SETTINGS_PROTECTION
+#define __SERIES60_WAP_US
+#define __SERIES60_MMS_US
+#define __SERIES60_VIDEO_TRABANT_2
+#define __SERIES60_NO_PROXIMITY_SENSOR
+#define __SERIES60_EOTD_FTD_DISPLAY
+#define __SERIES60_CAMERA_CAMEL_DUNE_HWA
+#define __SERIES60_CAMERON_SPECIFIC
+#define __SERIES60_MMS_ENHANCED_UNSUPPORTED
+#define __SERIES60_DRM
+#define __SERIES60_DISPLAY_CONTRAST_SETTING
+#define __SERIES60_PHONE_2DIGIT_DIAL
+#define __SERIES60_PHONE_HIDE_MO_DATACALL_NUMBER
+#define __SERIES60_CAMERA_RSK_EXIT
+#define __SERIES60_MOBILE_BROWSER
+#define __SERIES60_
+#define __Series60_
+#define __SYMBIAN_6_
+#define __SERIES60_BT_AUDIO
+#define __SERIES60_IR
+#define __SERIES60_BT
+#define __SERIES60_REAL_PLAYER
+#define __SERIES60_VIDEO_RECORDER
+#define __SERIES60_FAX_MODEM
+#define __SERIES60_MIDP_WMA_API
+#define __SERIES60_MIDP_MM_API
+#endif      // __BLDVARIANT_HRH   
+
+// End of File

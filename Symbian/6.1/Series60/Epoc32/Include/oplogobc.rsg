@@ -1,0 +1,5 @@
+#define R_USE_LOGO                                0x3c627003
+#define R_TITLE_OPERATOR_LOGO                     0x3c627004
+#define R_SM_REPLACE_LOGO                         0x3c627005
+#define R_SM_NOTE_LOGO_COPIED                     0x3c627006
+#define R_SM_DELETE_ALL_LOGOS                     0x3c627007

@@ -1,0 +1,43 @@
+/*
+* ============================================================================
+*  Name     : AknExForm.mmp
+*  Part of  : AknExForm
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET          AknExForm.app
+TARGETTYPE      app
+UID             0x100039CE 0x10005C33
+TARGETPATH      \System\Apps\AknExForm
+
+RESOURCE        AknExForm.rss
+RESOURCE        AknExForm_caption.rss
+LANG            SC
+
+SOURCEPATH      ..\Src
+SOURCE          AknExFormApp.cpp 
+SOURCE          AknExFormAppUi.cpp
+SOURCE          AknExFormDocument.cpp
+SOURCE          AknExFormView.cpp
+SOURCE          AknExFormContainer.cpp
+SOURCE          AknExFormSaveForm.cpp
+
+USERINCLUDE     . ..\Inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY         euser.lib
+LIBRARY         apparc.lib
+LIBRARY         cone.lib
+LIBRARY         eikcore.lib
+LIBRARY         eikcoctl.lib
+LIBRARY         avkon.lib
+LIBRARY         eikdlg.lib
+LIBRARY         eikctl.lib
+
+// DEFFILE ?filename
+AIF AknExForm.aif ..\aif AknExFormaif.rss \
+    c12 AknExFormIcon.bmp AknExFormIconMask.bmp aknexForm_lst.bmp aknexForm_lst_mask.bmp
+
+// End of File

@@ -1,0 +1,1 @@
+\epoc32\release\winc\udeb\reszip.exe %1

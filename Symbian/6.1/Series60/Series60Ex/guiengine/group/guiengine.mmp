@@ -1,0 +1,29 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+TARGET            GuiEngine.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B7D
+TARGETPATH        \system\apps\GuiEngine
+
+SOURCEPATH        ..\src
+SOURCE            GuiEngine.cpp
+SOURCE            GuiEngineApplication.cpp 
+SOURCE            GuiEngineAppView.cpp
+SOURCE            GuiEngineAppUi.cpp
+SOURCE            GuiEngineDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          GuiEngine.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           ShapeListManager.lib
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+LIBRARY           estor.lib
+LIBRARY           ws32.lib

@@ -1,0 +1,15 @@
+; AknExSettingList.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExSettingList"},(0x10005C29),1,03,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExSettingList.app"-"!:\system\apps\AknExSettingList\AknExSettingList.app"
+"..\..\..\epoc32\release\thumb\urel\AknExSettingList.rsc"-"!:\system\apps\AknExSettingList\AknExSettingList.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExSettingList.aif"-"!:\system\apps\AknExSettingList\AknExSettingList.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExSettingList_caption.rsc"-"!:\system\apps\AknExSettingList\AknExSettingList_caption.rsc"

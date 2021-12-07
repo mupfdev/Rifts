@@ -1,0 +1,85 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+NAME LANG
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "Language.hrh"
+#include "Language.loc"
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_language_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_language_menubar
+//   Menubar for Language example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_language_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_language_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_language_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_language_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = ELanguageCommand1;  txt = LANG_MENU_COMMAND1;},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = LANG_MENU_EXIT;}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//    Strings used by the application
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF r_language_string_command1
+	{ 
+	buf = LANG_I_COMMAND1; 
+	}
+

@@ -1,0 +1,13 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __HELLOWORLD_HRH__
+#define __HELLOWORLD_HRH__
+
+/** HelloWorld enumerate command codes */
+enum THelloWorldIds
+    {
+    EHelloWorldCommand1 = 1  // start value must not be 0
+    };
+
+
+#endif // __HELLOWORLD_HRH__

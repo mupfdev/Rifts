@@ -1,0 +1,74 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+NAME ERRO
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "ErrorUi.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF r_errorui_default_doc_name { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_errorui_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_errorui_menubar
+//   Menubar for ErrorUi example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_errorui_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_errorui_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_errorui_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_errorui_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = EErrorUiNote;		txt = "Show Error Note ";},
+        MENU_ITEM {command = EErrorUiQuery;     txt = "Show Error Query";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }

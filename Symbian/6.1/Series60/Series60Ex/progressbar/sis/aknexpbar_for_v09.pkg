@@ -1,0 +1,15 @@
+; AknExPbar.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExPbar"},(0x10005C2E),1,03,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExPbar.app"-"!:\system\apps\AknExPbar\AknExPbar.app"
+"..\..\..\epoc32\release\thumb\urel\AknExPbar.rsc"-"!:\system\apps\AknExPbar\AknExPbar.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExPbar.aif"-"!:\system\apps\AknExPbar\AknExPbar.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExPbar_caption.rsc"-"!:\system\apps\AknExPbar\AknExPbar_caption.rsc"

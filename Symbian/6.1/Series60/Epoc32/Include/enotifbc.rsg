@@ -1,0 +1,14 @@
+#define R_FETCH_MAIL                              0x1a9f6003
+#define R_TITLE_EMAIL_NOTIFICATION                0x1a9f6004
+#define R_MAILNOTIF_STRING                        0x1a9f6005
+#define R_MAILNOTIF_FROM                          0x1a9f6006
+#define R_MAILNOTIF_SUBJECT                       0x1a9f6007
+#define R_MAILNOTIF_DATE                          0x1a9f6008
+#define R_MAILNOTIF_SIZE                          0x1a9f6009
+#define R_MAILNOTIF_ATTACHMENTS                   0x1a9f600a
+#define R_MAILNOTIF_TO                            0x1a9f600b
+#define R_MAILNOTIF_CC                            0x1a9f600c
+#define R_MAILNOTIF_UID                           0x1a9f600d
+#define R_BASIC_MAILNOTIF_SINGULAR                0x1a9f600e
+#define R_BASIC_MAILNOTIF_PLURAL                  0x1a9f600f
+#define R_BASIC_MAILNOTIF_NO                      0x1a9f6010

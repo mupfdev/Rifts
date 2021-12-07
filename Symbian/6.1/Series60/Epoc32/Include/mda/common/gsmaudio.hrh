@@ -1,0 +1,19 @@
+// GsmAudio.hrh
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __GSMAUDIO_HRH__
+#define __GSMAUDIO_HRH__
+
+//*******************************************************************
+//* INCLUDE FILES:
+//*******************************************************************
+
+#define KUidMdaGsmWavCodecDefine			268457500
+#define KUidMdaGsmWavCodecLibraryDefine			268457501
+
+#define KMdaWavFormatTypeGsmData			{0x31, 0} // Little endian
+#define KMdaWavFormatTypeGsm				0x31
+
+#endif  // __GSMAUDIO_HRH__

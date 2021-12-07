@@ -1,0 +1,10 @@
+#define R_FINDITEM_TITLE_PHONE                    0x1e933002
+#define R_FINDITEM_TITLE_URL                      0x1e933003
+#define R_FINDITEM_TITLE_MAIL                     0x1e933004
+#define R_FINDITEM_DEFAULT_BOOKMARK_NAME          0x1e933005
+#define R_FINDITEM_NO_ITEMS_FOUND_NOTE_MSG        0x1e933006
+#define R_FINDITEM_PHONENUMBER_MENU               0x1e933007
+#define R_FINDITEM_URL_ADDRESS_MENU               0x1e933008
+#define R_FINDITEM_MAIL_ADDRESS_MENU              0x1e933009
+#define R_FINDITEM_MESSAGE_SUBMENU                0x1e93300a
+#define R_FINDITEM_DIALOG                         0x1e93300b

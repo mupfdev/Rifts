@@ -1,0 +1,55 @@
+// NETERR.RA
+//
+// Copyright (c) 1999 Symbian Ltd. All rights reserved.
+//
+
+RESOURCE ARRAY r_error_res_network_errors
+	{
+	items=
+		{
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_no_modem;			// -3001
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_modem_error;		// -3002
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_login_fail;		// -3003
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_script_timeout;	// -3004
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_script_error;		// -3005
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_no_iap;			// -3006
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_no_iap;			// -3007
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_net_no_iap;			// -3008
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_hscsd_not_supported;	// -3009
+			}
+		};
+	}
+
+RESOURCE TBUF r_error_res_net_no_modem					{ buf="No response from phone. Ensure phone is switched on"; }
+RESOURCE TBUF r_error_res_net_modem_error				{ buf="Problem communicating with Internet service's modem"; }
+RESOURCE TBUF r_error_res_net_login_fail				{ buf="Internet username or password is incorrect. (See \"Internet\" Control panel)"; }
+RESOURCE TBUF r_error_res_net_script_timeout			{ buf="Internet service login script timed out. Internet service login script may be incorrect. (See \"Internet\" Control panel)"; }
+RESOURCE TBUF r_error_res_net_script_error				{ buf="Problem with Internet service login script. Internet service login script may be incorrect. (See \"Internet\" in Control panel)"; }
+RESOURCE TBUF r_error_res_net_no_iap					{ buf="No Internet Access Points are defined. (See \"Internet\" in Control panel)"; }
+RESOURCE TBUF r_error_res_hscsd_not_supported			{ buf="High speed (HSCSD) is not supported by the network."; }

@@ -1,0 +1,17 @@
+#define R_CALC_STATUS_PANE                        0xeac9004
+#define R_CALC_VIEW_INFO                          0xeac9005
+#define R_CALC_MENUBAR                            0xeac9006
+#define R_CALC_POPUPMENU                          0xeac9007
+#define R_CALC_MEMORY_MENU                        0xeac9008
+#define R_CALC_ERROR_OUTOFRANGE                   0xeac9009
+#define R_CALC_ERROR_DIVISIONBYZERO               0xeac900a
+#define R_CALC_OUTSHEET_OPERATOR_ARRAY            0xeac900b
+#define R_CALC_EDITOR_OPERATOR_ARRAY              0xeac900c
+#define R_CALC_STTUS_SAVED_TO_MEM                 0xeac900d
+#define R_CALC_STTUS_SAVED_TO_MEM_SHA             0xeac900e
+#define R_CALC_MINUS_INDICATOR                    0xeac900f
+#define R_CALC_EDITOR_NUMBERENTRY_SHADOW_FONTID   0xeac9010
+#define R_CALC_EDITOR_NUMBERENTRY_FONTID          0xeac9011
+#define R_CALC_EDITOR_OPERATOR_SHADOW_FONTID      0xeac9012
+#define R_CALC_EDITOR_OPERATOR_FONTID             0xeac9013
+#define R_CALC_OUTSHEET_OPERATOR_FONTID           0xeac9014

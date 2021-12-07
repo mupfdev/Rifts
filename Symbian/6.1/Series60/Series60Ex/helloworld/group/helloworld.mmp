@@ -1,0 +1,25 @@
+TARGET            HelloWorld.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B91
+TARGETPATH        \system\apps\helloworld
+LANG              SC
+
+SOURCEPATH        ..\src
+SOURCE            HelloWorld.cpp
+SOURCE            HelloWorldApplication.cpp 
+SOURCE            HelloWorldAppView.cpp
+SOURCE            HelloWorldAppUi.cpp
+SOURCE            HelloWorldDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          HelloWorld.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  

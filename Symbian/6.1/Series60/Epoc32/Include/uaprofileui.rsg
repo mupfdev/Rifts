@@ -1,0 +1,3 @@
+#define R_UAP_DIALOG_NOTE                         0x6533a002
+#define R_TEXT_EDITOR_VIEW_MENUBAR                0x6533a003
+#define R_TEXT_EDITOR_VIEW_FILE_MENU              0x6533a004

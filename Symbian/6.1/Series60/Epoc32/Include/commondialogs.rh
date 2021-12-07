@@ -1,0 +1,131 @@
+/*
+* ============================================================================
+*  Name     : CommonDialogs.rh
+*  Part of  : Common File Dialogs
+*
+*  Description:
+*     This file contains declarations for resources of Common File Dialogs.
+*     The file can be included only in resource file.
+*  Version:
+*
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+* ============================================================================
+*/
+
+//  INCLUDES
+#include <avkon.loc>
+
+//  STRUCTURE DEFINITIONS
+
+// ---------------------------------------------------------
+//    FILTER
+//    FILTER is a resource structure for filter definition.
+//    "filter_type" defines if the filter is an attribute or a filename filter.
+//    "filter_style" defines if the filter is an inclusive or an exclusive filter.
+//    Inclusive filter doesn't accept anything but the files and folders (entries)
+//    that match with the filter. Exclusive filter accepts only those entries
+//    that match with the filter.
+//    "filter_data" is an array of strings:
+//    In filename filter data is wildcards ("*.jpg", "*.gif", ...).
+//    In attribute filter data is first letters of attributes
+//    ("R", "H", "S", ... or "RHS").
+//    The attributes in Symbian OS file system are:
+//    Read only, Hidden, System, Volume, Directory and Archive
+//    Note! Files and directories with System attribute are always hidden
+//    from user.
+// ---------------------------------------------------------
+//
+STRUCT FILTER
+	{
+	WORD filter_type;
+	WORD filter_style;
+	LTEXT filter_data[];
+	}
+
+// ---------------------------------------------------------
+//    LOCATION
+//    LOCATION is a resource structure that defines a root path and a default folder.
+//    "root_path" is the absolute path to be considered as root when browsing.
+//    e.g. "C:\\Nokia\\"
+//    "default_folder" is the folder where browsing is started.
+//    e.g. "Images\\Pictures\\"
+//    Note! Do not put folder names in .LOC file! These are
+//    physical file system paths. Possible localization is done
+//    in the DLL.
+//    Note! Remeber to use trailing backslash!
+// ---------------------------------------------------------
+//
+STRUCT LOCATION
+	{
+	LTEXT root_path;
+	LTEXT default_folder;
+	}
+
+// ---------------------------------------------------------
+//    MEMORYSELECTIONDIALOG
+//    MEMORYSELECTIONDIALOG is a resource structure for memory selection dialog.
+//    In this structure a title and texts for softkeys can be defined.
+//    "title" is "Select memory:" by default if it is not defined.
+//    Locations of the memories can be defined.
+// ---------------------------------------------------------
+//
+STRUCT MEMORYSELECTIONDIALOG
+	{
+	LTEXT title;
+	LTEXT softkey_1;
+	LTEXT softkey_2;
+	STRUCT locations[]; // LOCATION
+	}
+
+// ---------------------------------------------------------
+//    FILESELECTIONDIALOG
+//    This is a resource structure for file selection dialog.
+//    In this structure a title and texts for softkeys can be defined.
+//    "title" is "Select from:" by default if it is not defined.
+//    "softkey_1_file" is shown when a file is focused.
+//    "softkey_1_folder" is shown when a folder is focused.
+//    "softkey_2_root_level" is shown when user is browsing in the first level (root folder).
+//    "softkey_2_subfolder" is shown when user is browsing in a subfolder
+//    "root_path" and "default_folder" can be defined. They are explained in LOCATION struct.
+//    Filters can be defined with FILTER structures.
+// ---------------------------------------------------------
+//
+STRUCT FILESELECTIONDIALOG
+	{
+	LTEXT title;
+	LTEXT softkey_1_file;
+	LTEXT softkey_1_folder;
+	LTEXT softkey_2_root_level;
+	LTEXT softkey_2_subfolder;
+	LTEXT root_path;
+	LTEXT default_folder;
+	STRUCT filters[]; // FILTER structs
+	}
+
+// ---------------------------------------------------------
+//    FILENAMEPROMPTDIALOG
+//    A structure for prompting a single filename.
+//    In this structure a title and texts for softkeys can be defined.
+//    "default_filename" defines the default filename. Extension is not shown.
+//    "path" is the path that the file is supposed to save.
+//    If path is set, it can be checked if file already exists.
+// ---------------------------------------------------------
+//
+STRUCT FILENAMEPROMPTDIALOG
+	{
+	LTEXT filename_prompt; // title
+	LTEXT default_filename;
+	LTEXT path;
+	LTEXT softkey_1;
+	LTEXT softkey_2;
+	}
+
+// End of File

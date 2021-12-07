@@ -1,0 +1,39 @@
+// Mda\Server\Base.rh
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#include <Mda\Common\Base.hrh>
+
+enum TMdaLibraryObjectPreference
+	{
+	EMdaLibraryObjectNeverDefault=0, // Can never be a default of this type
+	EMdaLibraryObjectLowPreference=16,
+	EMdaLibraryObjectNormalPreference=32,
+	EMdaLibraryObjectRaisedPreference=48, 
+	EMdaLibraryObjectHighestPreference=64 // Always the default of this type
+	}
+
+STRUCT MDA_LIBRARY_VERSION
+	{
+	BYTE major=0x01;
+	BYTE minor=0x00;
+	WORD build;
+	}
+
+STRUCT MDA_LIBRARY
+	{
+	LONG library_uid;
+	STRUCT version; // must be MDA_LIBRARY_VERSION
+	STRUCT objects[];
+	}
+
+STRUCT MDA_OBJECT_ENTRY
+	{
+	LONG object_identifier_uid;
+	LONG object_type_uid;
+	BYTE preference = EMdaLibraryObjectNormalPreference;
+	BYTE version = 0;
+	LLINK info_entry = 0;
+	}
+

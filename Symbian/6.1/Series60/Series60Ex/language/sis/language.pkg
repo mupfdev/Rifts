@@ -1,0 +1,20 @@
+; Language.pkg
+;
+
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"Language"},(0x10005B90),1,0,0
+
+;Supports Series 60 v 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+;
+"..\..\..\epoc32\release\thumb\urel\Language.APP"-"C:\system\apps\Language\Language.app"
+"..\..\..\epoc32\release\thumb\urel\Language.R01"-"C:\system\apps\Language\Language.r01"
+"..\..\..\epoc32\release\thumb\urel\Language.R02"-"C:\system\apps\Language\Language.r02"
+"..\..\..\epoc32\release\thumb\urel\Language.R03"-"C:\system\apps\Language\Language.r03"
+"..\..\..\epoc32\release\thumb\urel\Language.R06"-"C:\system\apps\Language\Language.r06"
+"..\..\..\epoc32\release\thumb\urel\Language.R09"-"C:\system\apps\Language\Language.r09"
+"..\..\..\epoc32\release\thumb\urel\Language.R10"-"C:\system\apps\Language\Language.r10"

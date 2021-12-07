@@ -1,0 +1,18 @@
+// GlassTerm.MMP
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+
+TARGET        GlassTerm.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        GlassTerm.cpp
+
+USERINCLUDE   .
+USERINCLUDE   ..\CommonFiles
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib efsrv.lib c32.lib

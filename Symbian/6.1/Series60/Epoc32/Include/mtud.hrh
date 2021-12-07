@@ -1,0 +1,26 @@
+// MTUD.HRH
+//
+// Copyright (C) Symbian Ltd 1998
+//
+
+//
+// Function flags - for TMtmUiFunction::iFlags
+#define	EMtudContextSpecific			0x01
+#define	EMtudAsynchronous				0x02
+#define EMtudRemoteOnly 				0x04
+
+//
+// Function types - for TMtmUiFunction::iFunctionType
+#define	EMtudCommandTransferSend		0x1000
+#define	EMtudCommandTransferReceive		0x2000
+#define EMtudCommandSendAs				0x4000
+
+//
+// Key flags - for TMtmUiFunction::iPreferredHotKeyModifiers
+#define	EMtudShift						0x01
+#define	EMtudCtrl						0x02
+
+//
+// State flags for ContextIcon
+#define EMtudEntryStateOpen				0x0001
+#define EMtudEntryStateSubFolder		0x0002

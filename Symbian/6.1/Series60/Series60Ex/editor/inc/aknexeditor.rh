@@ -1,0 +1,69 @@
+/*
+* ============================================================================
+*  Name     : AknExEditor.rh
+*  Part of  : AknExEditor
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#if !defined(__UIKON_RH__)
+#define __UIKON_RH__
+#endif
+
+#if !defined(__BADEF_RH__)
+#include <BADEF.RH>
+#endif
+
+#if !defined(__UIKON_HRH__)
+#include <uikon.hrh>
+#endif
+
+
+#define KNone                       0
+#define KSingleGray                 4194305
+#define KSingleBlack                524289
+#define KSingleDotted               3
+#define KShallowRaised              4416
+#define KShallowSunken              4384
+#define KDeepRaised                 8513
+#define KDeepRaisedWithOutline      8513
+#define KDeepSunken                 8481
+#define KDeepSunkenWithOutline      8481
+#define KThickDeepRaisedWithOutline 12609
+#define KVerticalBar                2105664
+#define KHorizontalBar              3154240
+
+
+#define KGulAdjNone                 0
+#define KGulAdjTop                  1
+#define KGulAdjBottom               2
+#define KGulAdjLeft                 4
+#define KGulAdjRight                8
+
+//  RESOURCE STRUCTURE DEFINITIONS
+
+
+STRUCT AKNEXEDITOR_EDWIN_FLAGTEST
+    {
+    LONG flags;
+    LTEXT editor_text;
+    LTEXT label_text;
+    }
+
+//
+// AknExEditor resource definitions
+//
+STRUCT EDITOR_CONTROL
+    {
+    LTEXT label="";
+    WORD type=0;
+    STRUCT control;
+    }
+
+STRUCT EDITOR_CONTROL_ARRAY
+    {
+    LTEXT heading="";
+    STRUCT controls[];
+    }
+
+

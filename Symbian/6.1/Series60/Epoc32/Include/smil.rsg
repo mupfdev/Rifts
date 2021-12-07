@@ -1,0 +1,4 @@
+#define R_COMPOSE_PARAMS                          0x5dadd002
+#define R_IMAGE_REGION_ATTRIBUTES                 0x5dadd003
+#define R_TEXT_REGION_ATTRIBUTES                  0x5dadd004
+#define R_SLIDE_ATTRIBUTES                        0x5dadd005

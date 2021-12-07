@@ -1,0 +1,26 @@
+// MultiRead2.rss
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+NAME USER
+
+#include "MultiRead.rh" // include for common structures
+#include <SigCheck.rsg> // include for symbols from SigCheck.rss
+
+// another structure
+
+STRUCT STRINGREF
+	{
+	LLINK stringlink;
+	}
+
+// signature, for ConfirmSignature()
+
+RESOURCE SIGNATURE { version=017; }
+
+// define resources
+
+RESOURCE STRINGREF r_user_helloref
+	{
+	stringlink=R_BASE_HELLO;
+	}

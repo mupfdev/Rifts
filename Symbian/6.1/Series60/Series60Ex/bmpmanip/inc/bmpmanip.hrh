@@ -1,0 +1,16 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+#ifndef __BMPMANIP_HRH__
+#define __BMPMANIP_HRH__
+
+/** Bmpmanip enumerate command codes */
+enum TBmpmanipIds
+    {
+	EBmpmanipCmdRotate90 = 1,
+	EBmpmanipCmdRotate180,
+	EBmpmanipCmdRotate270,
+	EBmpmanipCmdSave
+    };
+
+
+#endif // __BMPMANIP_HRH__

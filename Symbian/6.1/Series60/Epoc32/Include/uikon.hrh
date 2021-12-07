@@ -1,0 +1,827 @@
+#if !defined(__UIKON_HRH__)
+#define __UIKON_HRH__
+
+#include <eikcolor.hrh>
+
+
+// EIKBTGPC.HRH   (Added by GT)
+
+#define EEikButtonGroupAddToStack		0x01
+#define EEikButtonGroupDelayActivation	0x02
+#define EEikButtonGroupUseMaxSize		0x04
+
+
+
+// EIKBUTB.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikButStaysClear			0x000
+#define EEikButStaysSet				0x100
+#define EEikButLatches				0x200
+#define EEikButReportOnPointerDown	0x400// EIKCHLST.HRH
+
+// EIKEDWIN.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// Introduced in avkon temporarily and deprecated:
+#define EEikEdwinAutoSelection			0x00000000
+
+// CEikEdwin Flags
+#define EEikEdwinKeepDocument			0x00000001
+#define EEikEdwinSegmentedStorage		0x00000002
+#define EEikEdwinWidthInPixels			0x00000004
+#define EEikEdwinNoAutoSelection		0x00000008
+#define EEikEdwinJustAutoCurEnd			0x00000010
+#define EEikEdwinNoWrap					0x00000020
+#define EEikEdwinLineCursor				0x00000040 
+#define EEikEdwinNoHorizScrolling		0x00000080 
+#define EEikEdwinInclusiveSizeFixed		0x00000100 
+#define EEikEdwinUserSuppliedText		0x00000200
+#define EEikEdwinOwnsWindow				0x00000400
+#define EEikEdwinDisplayOnly			0x00000800
+#define EEikEdwinAlwaysShowSelection	0x00001000
+#define EEikEdwinReadOnly				0x00002000
+#define EEikEdwinAllowPictures			0x00004000
+#define EEikEdwinAllowUndo				0x00008000
+#define EEikEdwinNoLineOrParaBreaks		0x00010000
+#define EEikEdwinOnlyASCIIChars			0x00020000
+#define EEikEdwinResizable				0x00040000
+#define EEikEdwinIgnoreVirtualCursor	0x00080000 //(Added by GT)
+#define EEikEdwinNoCustomDraw			0x01000000
+#define EEikEdwinAvkonDisableCursor		0x04000000
+#define EEikEdwinAvkonNotEditable		0x08000000
+
+#define EEikEdwinAlternativeWrapping	0x10000000
+#define EEikCidFontBoldBut			1
+#define EEikCidFontItalicBut		2
+#define EEikCidFontUnderlineBut		3
+
+// AVKON EDWIN CONSTANTS
+
+enum TAknEditorNumericKeymap
+	{
+	EAknEditorStandardNumberModeKeymap,
+	EAknEditorPlainNumberModeKeymap,
+	EAknEditorCalculatorNumberModeKeymap,
+	EAknEditorConverterNumberModeKeymap,
+	EAknEditorToFieldNumberModeKeymap,
+	EAknEditorFixedDiallingNumberModeKeymap,		
+	EAknEditorSATNumberModeKeymap,
+	EAknEditorSATHiddenNumberModeKeymap,
+	EAknEditorReservedInternalUseKeymap = 100	// do not use - for internal use only 
+	};
+
+#define EAknEditorUpperCase		0x1
+#define	EAknEditorLowerCase		0x2
+#define EAknEditorTextCase		0x4
+#define EAknEditorAllCaseModes  EAknEditorUpperCase | EAknEditorLowerCase | EAknEditorTextCase
+
+#define EAknEditorNullInputMode				0x0
+#define EAknEditorTextInputMode				0x1
+#define EAknEditorNumericInputMode			0x2
+#define EAknEditorSecretAlphaInputMode		0x4
+#define EAknEditorAllInputModes				EAknEditorTextInputMode | EAknEditorNumericInputMode | EAknEditorSecretAlphaInputMode
+
+// next two will be deprecated
+#define EAknEditorAlphaInputMode			EAknEditorTextInputMode
+#define EAknEditorPredictiveInputMode		EAknEditorTextInputMode
+//
+
+#define EAknEditorFlagDefault					0x000
+#define EAknEditorFlagFixedCase					0x001
+#define EAknEditorFlagNoT9						0x002
+#define EAknEditorFlagNoEditIndicators			0x004
+#define EAknEditorFlagNoLRNavigation			0x008
+#define EAknEditorFlagSupressShiftMenu			0x010
+#define EAknEditorFlagEnableScrollBars			0x020
+#define EAknEditorFlagMTAutoOverwrite			0x040
+#define EAknEditorFlagUseSCTNumericCharmap		0x080
+#define EAknEditorFlagLatinInputModesOnly		0x100
+#define EAknEditorFlagForceTransparentFepModes	0x200
+
+// EIKLABEL.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikLabelAlignHLeft		0x00
+#define EEikLabelAlignHCenter	0x01
+#define EEikLabelAlignHRight	0x02
+#define EEikLabelAlignVTop		0x00
+#define EEikLabelAlignVCenter	0x10
+#define EEikLabelAlignVBottom	0x20
+
+#define	EikLabelUnderline 	0x01
+#define	EikLabelStrikeThrough   0x02
+
+enum EEikLabelStandardFont
+	{
+	EEikLabelFontNormal,
+	EEikLabelFontLegend,
+	EEikLabelFontAnnotation
+	};
+	
+// EIKLBBUT.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikLabeledButtonShowHotKey		0x01
+#define EEikLabeledButtonPlainHotKey	0x02
+#define EEikLabeledButtonIsDefault				0x04
+
+// EIKLBX.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikListBoxMultipleSelection			0x0001
+#define EEikListBoxNoExtendedSelection			0x0002
+#define EEikListBoxIncrementalMatching			0x0004
+#define EEikListBoxScrollBarSizeExcluded		0x0080
+#define EEikListBoxCreateOwnWindow				0x0200
+#define EEikListBoxNoFirstLetterMatching		0x0400
+#define	EEikListBoxPaintedSelection				0x0800
+
+// EIKMENU.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikMenuItemDimmed              0x0001
+#define EEikMenuItemSeparatorAfter      0x0002
+#define EEikMenuItemCheckBox            0x0008
+#define EEikMenuItemRadioStart          0x0010
+#define EEikMenuItemRadioMiddle         0x0020
+#define EEikMenuItemRadioEnd            0x0040
+#define EEikMenuItemSymbolOn            0x0080
+#define EEikMenuItemSymbolIndeterminate 0x0100
+
+// more flags to determine the type of scroll bar to be used
+// deprecated in Uikon 1.2
+#define EEikMenuItemScrollBarLeft		0x0200
+#define EEikMenuItemScrollBarArrowHead	0x0400
+
+// remaining flags only used internally
+#define EEikMenuItemFlagCtrlHK          0x001000
+#define EEikMenuItemFlagShiftCtrlHK     0x002000
+#define EEikMenuTitleIsChangeable		0x004000
+#define EEikMenuItemUpdateTitle			0x008000
+#define EEikMenuTitleRightAlign			0x010000
+//The following value is reserved		0x020000
+#define EEikMenuTitleIconRightAlign		0x040000  //(Added by GT)
+
+// EIKTBAR.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// Toolbar flags
+
+#define EEikToolBarHorizontal							0x01
+#define EEikToolBarDelayActivation						0x02
+#define EEikToolBarDistributeControlsEvenlyBetweenLines	0x04
+#define EEikToolBarAllControlsSameSize					0x08
+
+// Toolbar control flags
+
+#define EEikToolBarCtrlHasSetMinLength		0x01
+#define EEikToolBarCtrlIsStretchable		0x02
+
+// standard toolbat sizes
+
+#define KEikStdToolBarWidth				70
+#define KEikStdToolBandHeight			25
+#define KEikStdFileNameLabelHeight		24
+#define KEikStdFileNameLabelWidth		68
+#define KEikStdToolBarButtonHeight		37
+#define KEikStdGapBelowClock			2
+
+#define EEikStdTwoStateIconicToolBandButtonWidth	35
+#define EEikStdIconicPopoutToolBandButtonWidth		51
+#define EEikStdShortTextPopoutToolBandButtonWidth	68
+#define EEikStdLongTextPopoutToolBandButtonWidth	115
+
+// EIKCMBUT.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikCmdButTextRightPictureLeft	0x000
+#define EEikCmdButTextBottomPictureTop	0x001
+#define EEikCmdButTextTopPictureBottom	0x002
+#define EEikCmdButTextLeftPictureRight	0x003
+
+#define EEikCmdButDenseFont				0x0008
+
+#define EEikCmdButShareExcess			0x0000
+#define EEikCmdButExcessToText			0x0010
+#define EEikCmdButExcessToPicture		0x0020
+
+#define EEikCmdButFirstRightSecondLeft	0x000
+#define EEikCmdButFirstBottomSecondTop	0x001
+#define EEikCmdButFirstTopSecondBottom	0x002
+#define EEikCmdButFirstLeftSecondRight	0x003
+
+#define EEikCmdButShareExcess			0x0000
+#define EEikCmdButExcessToFirst			0x0010
+#define EEikCmdButExcessToSecond		0x0020
+
+//to be removed ...  (Comment added by GT)
+#define EEikCmdButNormal				0x0000
+#define EEikCmdButInverter				0x1000
+#define EEikCmdButChangeWithImage		0x2000
+#define EEikCmdButChangeWithoutImage	0x3000
+
+// EIKLBBUT.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikLabeledButtonShowHotKey		0x01
+#define EEikLabeledButtonPlainHotKey	0x02
+
+// EIKDEF.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+
+#ifdef LANGUAGE_10
+#if !defined LANGUAGE_US
+#define LANGUAGE_US
+#endif
+#endif
+
+#define EEikResourceSignatureValue 4
+
+#define EEikEdwinFindStringMaxLen  500
+
+#define KSoftHyphen		0x00AD
+#define KHyphen 		0x2010
+#define KAppBitmapFile		42
+#define KEllipsis			0x2026	// cp1252=133
+#define KLeftSingleQuote	0x2018	// cp1252=145
+#define KRightSingleQuote	0x2019	// cp1252=146
+#define KLeftDoubleQuote	0x201c	// cp1252=147
+#define KRightDoubleQuote	0x201d	// cp1252=148
+#define KCopyright			169
+
+enum TEikAppResourceFileStandardOffset
+	{
+	ESignatureResourceOffset=1,
+	EDefaultNameResourceOffset,
+	EAppInfoResourceOffset
+	};
+
+// Added by Bill
+// Built-in app UIDs
+
+#if !defined(_UNICODE)
+#define KEikUidDataAppValue			268435590
+#define KEikUidAgendaAppValue		268435588
+#define KEikUidWordAppValue			268435583
+#define KEikUidSheetAppValue		268435592
+#else
+#define KEikUidDataAppValue			0x10003A61
+#define KEikUidAgendaAppValue		0x10003A5C
+#define KEikUidWordAppValue			0x10003A64
+#define KEikUidSheetAppValue		0x10003A7D
+#endif
+
+#if !defined(_UNICODE)
+#define KEikUidPaintAppValue		268435581
+#define KEikUidCommsAppValue		268435591
+#define KEikUidTextEdAppValue		268435589
+#define KEikUidJotterAppValue		268438762
+#define KEikUidContactsAppValue		0x1000183C
+#define KEikUidShellAppValue            268435574
+#else
+#define KEikUidPaintAppValue		0x10003A62
+#define KEikUidCommsAppValue		0x10003A60
+#define KEikUidTextEdAppValue		0x10003A63
+#define KEikUidJotterAppValue		0x10003a70
+#define KEikUidContactsAppValue		0x10003a74
+#define KEikUidShellAppValue            0x10003A5D
+#endif
+
+#define KEikUidCalcAppValue			268435587
+#define KEikUidTimewAppValue		268435584
+#define KEikUidRecordAppValue		268435582
+#define KEikUidSpellAppValue		268435586
+#define KEikUidBombsAppValue		268435753
+
+#define KUidUikonLibraryValue	0x10004CC1
+
+// EIKCMDS.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikCmdCanceled        0
+
+#define EEikCmdExit             0x100
+#define EEikCmdFileOpen         0x101
+#define EEikCmdFileOpenAnother  0x102
+#define EEikCmdFileSaveAs       0x103
+#define EEikCmdFileNew          0x104
+#define EEikCmdFileSave         0x105
+#define EEikCmdFileImport       0x106
+#define EEikCmdFileExport       0x107
+#define EEikCmdFileRevert       0x108
+#define EEikCmdFileMerge        0x109
+
+#define EEikCmdHelpContents     0x110
+#define EEikCmdHelpSearch	    0x111
+#define EEikCmdHelpAbout	    0x112
+
+#define EEikCmdEditCut		    0x120
+#define EEikCmdEditCopy		    0x121
+#define EEikCmdEditPaste	    0x122
+#define EEikCmdEditUndo         0x123
+#define EEikCmdEditRedo         0x124
+#define EEikCmdEditSelectAll    0x125
+#define EEikCmdEditPicture      0x126
+#define EEikCmdEditPictureFormat		0x127
+#define EEikCmdEditUpdateCurrentField	0x128
+#define EEikCmdEditUpdateAllFields		0x129
+
+#define EEikCmdIrdaSend		    0x130
+#define EEikCmdIrdaReceive	    0x131
+
+#define EEikCmdZoomNormal	    0x140
+#define EEikCmdZoomIn		    0x141
+#define EEikCmdZoomOut		    0x142
+
+#define EEikCmdInsertSymbol     0x150
+#define EEikCmdInsertField      0x151
+#define EEikCmdInsertPicture    0x152
+
+#define EEikCmdSearchFind       0x160
+#define EEikCmdSearchFindAgain  0x161
+#define EEikCmdSearchReplace    0x162
+
+#define EEikCmdPrintSetup		0x170
+#define EEikCmdPrintPreview     0x171
+#define EEikCmdPrintPrint       0x172
+#define EEikCmdPrintPaginate    0x173
+
+#define EEikCmdFontChange       0x180
+#define EEikCmdFontBold         0x181
+#define EEikCmdFontItalic       0x182
+#define EEikCmdFontUnderline    0x183
+
+#define EEikCmdParaAlign		0x184
+#define EEikCmdParaBorder		0x185
+#define EEikCmdParaSpacing		0x186
+#define EEikCmdParaIndent		0x187
+#define EEikCmdParaTabs			0x188
+#define EEikCmdFormatObject		0x189
+
+#define EEikCmdFieldFileName		0x190
+#define EEikCmdFieldPageNumber		0x191
+#define EEikCmdFieldCurrentTime		0x192
+#define EEikCmdFieldCurrentDate		0x193
+#define EEikCmdFieldNumberOfPages	0x194
+#define EEikCmdFieldInsertObject	0x195
+
+#define EEikBidYes				0x195
+
+// EIKCTRLS.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+enum TEikStockControls
+	{
+	EEikCtCommandButton,
+	EEikCtLabeledButton,
+	EEikCtEdwin,
+	EEikCtRichTextEditor,
+	EEikCtSecretEd,
+	EEikCtCheckBox,
+	EEikCtChoiceList,
+	EEikCtOptionButton,
+	EEikCtHorOptionButList,
+	EEikCtFileNameSel,
+	EEikCtFileNameEd,
+	EEikCtFolderNameSel,
+	EEikCtFolderNameEd,
+	EEikCtDriveNameSel,
+	EEikCtListBox,
+	EEikCtCharMap,
+	EEikCtCharEd,
+	EEikCtImage,
+	EEikCtImageArray,
+	EEikCtLabel,
+	EEikCtComboBox,
+	EEikCtProgInfo,
+	EEikCtFlPtEd,
+	EEikCtFxPtEd,
+	EEikCtTwipsEd,
+	EEikCtNumberEditor,
+	EEikCtRangeEditor,
+	EEikCtTimeEditor,
+	EEikCtDateEditor,
+	EEikCtTimeAndDateEditor,
+	EEikCtDurationEditor,
+	EEikCtTimeOffsetEditor,
+	EEikCtLatitudeEditor_Not_Supported,
+	EEikCtLongitudeEditor_Not_Supported,
+	EEikCtBorderPreview,
+	EEikCtFontPreview,
+	EEikCtGraySelector,
+	EEikCtWorldSelector,
+	EEikCtGlobalTextEditor,
+	EEikCtSoundSelector,
+	EEikCtClock,
+	EEikCtPrintPreview,
+	EEikCtMenuButton,
+	EEikCtDirContentsListBox,
+	EAknCtIpFieldEditor,
+	EEikCtCalendar,
+	EEikCtSpacer,
+	EEikCtColListBox,
+	EEikCtRangeRefEditor,
+	EEikCtTextButton,
+	EEikCtBitmapButton,
+	EEikCtDialogToolBar,
+	EEikCtFileBrowser,
+	EEikCtFileNameLabel,
+	EEikCtUnifiedFileSel,
+	EEikCtTelephoneNumberEditor,
+	EEikCtTwoPictureCommandButton,
+	EEikCtInverterCommandButton,
+	EEikCtScrollBar,
+	EEikCtArrowHeadScrollBar
+	};
+
+// not available before Release 6.1
+enum TEikStockButtonGroupControls
+	{
+	EEikBgToolBar,
+	EEikBgButtonPanel,
+	EEikBgCba
+	};
+
+// EIKPRIV.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define EEikCidAlertText1		1
+#define EEikCidAlertText2		2
+
+#define EEikCidInfoText			1
+
+#define EEikCidTitleBarLabel			1
+#define EEikCidTitleBatFileNameLabel	2
+
+#define EEikCidHeapRateNumed    1
+
+#define EEikCidFileOpenFilSel   1
+#define EEikCidFileSelBrowse	201   // > EEikBidDeferValidateFocusControl
+#define EEikCidFileDirectoryEd  1
+#define EEikCidFileSaveAsFilEd  1
+
+#define EEikCidFontNameList		    1
+#define EEikCidFontSizeList		    2
+#define EEikCidFontBoldTkBx 		3
+#define EEikCidFontItalicTkBx   	4
+#define EEikCidFontUnderlineTkBx    5
+#define EEikCidFontPreviewLabelOne  6
+#define EEikCidFontStrikethruTkBx   7
+#define	EEikCidFontPrintPosList	    8
+#define EEikCidTextColor			9
+#define EEikCidFontPreviewLabelTwo  10
+
+#define EEikCidSpecialChar			1
+#define EEikCidSpecialCharLabel		2
+
+#define EEikCidProgButsNameList     1
+#define EEikCidProgButsModsList     2
+#define EEikCidProgButsEdwin        3
+
+#define EEikCidAlignList           	1
+
+#define EEikCidIndentLeftEd         1
+#define EEikCidIndentRightEd        2
+#define EEikCidIndentFirstLineEd    3
+
+#define EEikCidLineSpaceList			1
+#define EEikCidLineSpaceEd				2	
+#define EEikCidSpaceAboveEd				3	
+#define EEikCidSpaceBelowEd				4
+#define EEikCidSpaceTogetherTkBx     	5
+#define EEikCidSpaceNextTkBx     		6
+#define EEikCidSpaceNewPageTkBx         7
+#define EEikCidSpaceWidowOrphanTkBx		8
+
+#define EEikCidBorderLeft		1
+#define EEikCidBorderRight		2
+#define EEikCidBorderTop		3
+#define EEikCidBorderBottom		4
+#define EEikCidBorderMarginEd	5
+#define EEikCidBorderPreview	6
+#define EEikCidColorLeftBorder		7
+#define EEikCidColorRightBorder		8
+#define EEikCidColorTopBorder		9
+#define EEikCidColorBottomBorder	10
+#define EEikCidColorBackground		11
+#define EEikCidBorderColorPreview	12
+
+#define EEikCidColorLeftBorder2		13
+#define EEikCidColorRightBorder2	14
+#define EEikCidColorTopBorder2		15
+#define EEikCidColorBottomBorder2	16
+#define EEikCidColorBackground2		17
+
+#define EEikCidFindStringEd         1
+#define EEikCidFindDirectionRbGp    2
+#define EEikCidFindWholeWordTkBx	3
+#define EEikCidFindCaseSenTkBx		4
+#define	EEikCidFindUpRb	            5  
+#define	EEikCidFindDownRb	        6  
+#define EEikCidReplaceStringEd      7
+
+#define EEikBidReplaceSkip			1
+#define EEikBidReplaceAll           2
+
+//preview dialog
+
+#define EEikCidPrintPrev				1
+#define EEikBidPrintPrevGoToPageBut		2
+#define EEikBidSetup					3
+
+#define EEikCidSingleNumberEd		1
+
+// setup menubutton
+
+#define EEikCmdPageSetup		1
+#define EEikCmdPrinterSetup		2
+#define EEikCmdPreviewSetup		3
+#define EEikCmdRangeSetup		4
+
+//printer setup
+
+#define EEikCidPrintPrinterModels	1 
+#define EEikCidPrinterPort			2
+#define EEikBidPortSetup			3
+#define EEikBidPrinterProperties	4
+
+//serial port setup
+
+#define EEikCidSerialBaudRate   	1
+#define EEikCidSerialDataBits		2
+#define EEikCidSerialStopBits   	3
+#define EEikCidSerialParity			4
+#define EEikCidSerialIgnoreParitykBx   	5
+#define EEikCidXonOffTkBx		6
+#define EEikCidRtsCtsTkBx   	7
+#define EEikCidDsrDtrTkBx		8
+#define EEikCidDcdTkBx			9
+
+//printrange setup
+
+#define EEikCidPrinterName			1
+#define EEikCidPrintAll				2
+#define EEikCidPrintPageRange		3
+#define EEikCidPrintNoOfCopies		4
+#define EEikBidPrinterSetup			5
+
+//print progress
+									 
+#define EEikCidPrintProgressBar   	1
+#define EEikCidPrinterNameWithPort	2
+
+//previewrange setup
+
+#define EEikCidPerviewNoOfPages		1
+#define EEikCidPreviewMarginsTkBx	2
+
+//page setup
+
+#define EEikCidPageSpecSizeName   	1
+#define EEikCidPageSpecWidth		2
+#define EEikCidPageSpecHeight   	3
+#define EEikCidPageSpecOrientation	4
+#define EEikCidPageSpecPortrait   	5
+#define EEikCidPageSpecLandscape	6
+#define EEikCidPageMarginLeft   	7
+#define EEikCidPageMarginRight		8
+#define EEikCidPageMarginTop   		9
+#define EEikCidPageMarginBottom		10 
+#define EEikCidPageHeaderTxt		11
+#define EEikCidHeaderRTxtTBar		12
+#define EEikCidHeaderMargin			13
+#define EEikCidPageFooterTxt		14
+#define EEikCidFooterRTxtTBar		15
+#define EEikCidFooterMargin			16
+#define EEikCidNumOfFirstPage		17
+#define EEikCidIncludeHeaderOnFPage	18
+#define EEikCidIncludeFooterOnFPage	19
+#define EEikCidDone					20
+
+#define EEikPidFooter				1
+
+#define EEikCidFontDialog			6
+#define EEikCidPageSetupFormat		7
+#define EEikCidPageSetupInsert		8
+
+#define EEikCidPaginate		1
+
+#define EEikCidHeapFailRate						1
+#define EEikCidHeapFailTypeBack					2
+#define EEikCidHeapFailTypeBackRandom			3
+#define EEikCidHeapFailTypeBackDeterministic	4
+#define EEikCidHeapFailOff						5
+#define EEikCidWservHeapFailRate						6
+#define EEikCidWservHeapFailTypeBack					7
+#define EEikCidWservHeapFailTypeBackRandom				8
+#define EEikCidWservHeapFailTypeBackDeterministic		9
+#define EEikCidWservHeapFailOff							10
+
+#define EEikCidFileFailRate					10
+#define EEikCidFileFailChbx					11
+
+#define EEikCidPictureScaleWidth   	1
+#define EEikCidPictureScaleHeight	2
+#define EEikCidPictureDisplayWidth  3
+#define EEikCidPictureDisplayHeight	4
+#define EEikCidPictureOriginalWidth   	5
+#define EEikCidPictureOriginalHeight	6
+#define EEikCidPictureCropLeft   	7
+#define EEikCidPictureCropRight		8
+#define EEikCidPictureCropTop   	9
+
+#define EEikCidPictureCropBottom	10
+#define EEikCidFselCreateFolder         1
+#define EEikCidFSelAvailableDriveList	1
+#define EEikCidFSelDirTreeListBox		2
+#define EEikCidFSelDirContentsListBox	3
+#define EEikCidFSelOrderAToZ			4
+#define EEikCidFSelOrderByExt			5
+#define EEikCidFSelOrderBySize			6
+#define EEikCidFSelOrderByDate			7
+#define EEikCidFSelReadOnly             1
+#define EEikCidFselCreateFolder		1
+#define EEikCidFselDummy			2
+#define EEikCidFieldTypeList                1
+#define EEikCidFSelReadOnly		1
+#define EEikCidFSelHidden		2
+#define EEikCidFSelSystem		3
+#define EEikCidFSelSize			4
+#define EEikCidFSelDate			5
+#define EEikCidDefaultTab               1
+#define EEikCidFieldTypeList		    1
+#define EEikCidIrDialogTopLabel         1
+#define EEikCidDefaultTab		1
+#define EEikCidNewTabStop		2
+#define EEikCidTabAlignment		3
+#define EEikCidTabsList			4
+#define EEikCidCurrentTab		5
+#define EEikCidTabTBar			6
+#define EEikCidSetTab			7
+#define EEikCidClearTab			8
+#define EEikCidClearAllTabs		9
+#define EEikCidInsertObjectApps         1
+#define EEikCidIrDialogTopLabel		1
+#define EEikCidIrDialogBottomLabel	2
+#define EEikCidIrDialogProgInfo		3
+#define EEikCidIrDialogImageArray	4
+#define EEikCidIrSaveAsLabelId		5
+#define EEikCidPassword                                 1
+#define EEikCidInsertObjectApps		1
+#define EEikCidFileBrowse               1
+#define EEikCidPassword					1
+#define EEikCidPasswordConfirm			2
+#define EEikCidPictureScaleWidth                        1
+#define EEikCidFileBrowse		1
+
+#define EEikCidPictureScaleWidth			1
+#define EEikCidPictureScaleHeight			2
+#define EEikCidPictureDisplayWidth			3
+#define EEikCidPictureDisplayHeight			4
+#define EEikCidPictureOriginalWidth   		5
+#define EEikCidPictureOriginalHeight		6
+#define EEikCidPictureCropLeft   			7
+#define EEikCidPictureCropRight				8
+#define EEikCidPictureCropTop   			9
+#define EEikCidPictureCropBottom			10
+#define EEikCidObjectFormatDlgLabel			11
+#define EEikCidObjectFormatIconicCheckBox	12
+// EIKDIALG.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+ 
+#define EEikDialogFlagWait				0x001
+#define EEikDialogFlagNotifyEsc			0x002
+#define EEikDialogFlagButtonsBelow		0x004
+#define EEikDialogFlagButtonsRight		0x008
+#define EEikDialogFlagNoUserExit		0x010
+#define EEikDialogFlagModeless			0x020
+#define EEikDialogFlagNoTitleBar		0x040
+#define EEikDialogFlagAllKeysToButtons	0x080
+#define EEikDialogFlagFillScreen		0x100
+#define EEikDialogFlagNoDrag			0x200
+#define EEikDialogFlagDensePacking		0x400
+#define EEikDialogFlagNoBackup			0x800
+#define EEikDialogFlagFillAppClientRect	0x1000
+#define EEikDialogFlagCbaButtons		0x2000
+#define EEikDialogFlagNoBorder			0x4000
+#define EEikDialogFlagNoShadow			0x8000
+// eikdialg.cpp seems to define 0x10000, 0x20000, 0x40000
+#define EEikDialogFlagNoBackgroundFade  0x80000
+// eikdialg.cpp seems to define 0x100000
+#define EEikDialogFlagDontEatUpDownEvents 0x200000
+
+
+#define EEikDlgItemNoSeparator          0
+#define EEikDlgItemNoSeparator		0
+// EEikDlgItemSeparatorAfter has been deprecated.
+#define EEikDlgItemSeparatorAfter	1 
+#define EEikDlgItemSeparatorBefore	1
+#define EEikDlgItemColumnEnd		2
+#define EEikDlgItemSeparatorMask	0x03
+#define EEikDlgItemLatent			0x04
+#define EEikDlgItemLglf				0x08
+#define EEikDlgItemTakesEnterKey	0x10
+#define EEikDlgItemOfferAllHotKeys	0x20
+#define EEikDlgItemNoBorder			0x40
+#define EEikDlgItemNonFocusing		0x80
+#define EEikDlgItemAsLabel			0xc0
+#define EEikDlgItemTrailerAfterEar	0x100
+#define EEikDlgItemCtlMinHeightOrLess	0x200
+#define EEikDlgItemCtlMinWidthOrLess	0x400
+#define EEikDlgItemCtlMinSizeOrLess		0x600
+#define EEikDlgItemCtlGetsWidthFirst	0x800
+#define EEikDlgItemCtlSharesWidth		0x1000
+
+#define EEikDlgPagePreAllocScrollBarBreadth		0x0001
+
+#define EEikDlgItemIndirect		-1
+#define EEikDlgMainPageIndirect -1
+
+#define EEikBidCancel       -1
+#define EEikBidOk           -2
+#define EEikBidTab          -3
+#define EEikBidDelete		-4
+#define EEikBidSpace		-5
+#define EEikBidSelect       -6   // AKNLAF
+#define EEikBidBlank		-7   // (Added by GT)
+
+#define EEikFormShowEmptyFields		0   // default
+#define EEikFormHideEmptyFields		1
+#define EEikFormShowBitmaps			2
+#define EEikFormEditModeOnly		4
+#define EEikFormUseDoubleSpacedFormat 	8
+
+// EIKSPANE.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// Status pane server, pane declaration flags
+#define EEikStatusPaneServerOwned 0
+#define EEikStatusPaneAppOwned 1
+
+
+// Status pane server, top level layout flags
+#define EEikStatusPanePositionTop 0
+#define EEikStatusPanePositionBottom 1
+#define EEikStatusPanePositionLeft 2
+#define EEikStatusPanePositionRight 3
+
+#define EEikStatusPaneLayoutHorizontal 0
+#define EEikStatusPaneLayoutVertical 4
+
+
+// Status pane server, pane layout flags
+#define EEikStatusPaneIsStretchable 1
+
+
+// Status pane app constants
+#define EEikStatusPaneUseDefaults 0
+
+
+// Redefine the base-defined keys to Avkon-specific names
+#define EKeyOK			EKeyDevice3
+#define EKeyCBA1		EKeyDevice0
+#define EKeyCBA2		EKeyDevice1
+#define EKeyPhoneSend	EKeyYes
+#define EKeyPhoneEnd	EKeyNo
+#define EKeyApplication EKeyApplication0
+#define EKeyPowerOff	EKeyDevice2
+#define EKeyGripOpen	EKeyDevice4
+#define EKeyGripClose	EKeyDevice5
+#define EKeySide		EKeyDevice6
+
+#define R_AKN_DEFAULT_FORM_EDITOR EDWIN {flags= EEikEdwinNoHorizScrolling | EEikEdwinResizable; max_view_height_in_lines=6; base_line_delta=21;	}
+
+#endif
+

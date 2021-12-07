@@ -1,0 +1,26 @@
+TARGET            CSSync.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B79
+TARGETPATH        \system\apps\CSSync
+
+SOURCEPATH        ..\src
+SOURCE            TimeServerSession.cpp
+SOURCE            CSSync.cpp
+SOURCE            CSSyncApplication.cpp 
+SOURCE            CSSyncAppView.cpp
+SOURCE            CSSyncAppUi.cpp
+SOURCE            CSSyncDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          CSSync.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+//LIBRARY           CSSyncServer.lib
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  

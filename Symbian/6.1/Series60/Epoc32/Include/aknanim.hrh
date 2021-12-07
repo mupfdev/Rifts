@@ -1,0 +1,44 @@
+/*
+*  Copyright © 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+*/
+// AknAnim.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// Avkon Animation Resource Header
+
+#define EAnimClearScreen			0x001
+#define EAnimWaitBetweenSections	0x002
+#define EAnimWaitForeverAtEnd		0x004
+
+
+enum TAnimStepCommand
+	{
+	EAnimNullStep = 200,
+	EAnimWait,
+	EAnimWaitUntilComplete,
+	EAnimBlitPreviousView,
+	EAnimBlitPartPreviousView,
+	EAnimBlitNewView,
+	EAnimBlitPartNewView,
+	EAnimRevealPartNewViewFromLeft,
+	EAnimRevealPartNewViewFromRight,
+	EAnimRevealPartNewViewFromTop,
+	EAnimRevealPartNewViewFromBottom,
+	EAnimBlitSlideNewView,
+	EAnimBlitSlideNewViewClearBehind,
+	EAnimSetColor,
+	EAnimDrawLine,
+	EAnimDrawRect,
+	EAnimDrawFilledRect
+	};
+

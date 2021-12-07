@@ -1,0 +1,26 @@
+TARGET            ErrorUi.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B9C
+TARGETPATH        \system\apps\errorui
+LANG              SC
+
+SOURCEPATH        ..\src
+SOURCE            ErrorUi.cpp
+SOURCE            ErrorUiApplication.cpp 
+SOURCE            ErrorUiAppView.cpp
+SOURCE            ErrorUiAppUi.cpp
+SOURCE            ErrorUiDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          ErrorUi.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+LIBRARY		  commonui.lib

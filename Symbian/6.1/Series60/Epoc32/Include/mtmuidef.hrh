@@ -1,0 +1,34 @@
+// MTMUIDEF.HRH
+//
+// Copyright (c) 1998 Symbian Ltd.  All rights reserved.
+//
+
+// Function ids
+#define KMtmUiFunctionPrint			 				0x200000	// KMtmFirstFreeMtmFunctionId + 0x100000
+#define KMtmUiFunctionPrintPreview	 				0x200001
+#define KMtmUiMessagingInitialisation	 			0x200002
+#define KMtmUiFunctionGetNew						0x200003
+#define KMtmUiFunctionSendAs						0x200004
+#define KMtmUiFunctionFetchAll						0x200005
+#define KMtmUiFunctionFetchNew						0x200006
+#define KMtmUiFunctionFetchSelected					0x200007
+#define KMtmFirstFreeMtmUiFunctionId 				0x201000	
+
+// Capabilities 
+#define KUidMsvMtmUiQueryCanPrintMsgValue			0x100017FF	
+#define KUidMsvMtmUiQueryCanPrintPreviewMsgValue	0x1000182D
+#define KUidMsvMtmUiQueryConnectionOrientedServices	0x100038EC
+#define KUidMsvMtmUiQueryMessagingInitialisation	0x1000484E
+#define KUidMsvMtmUiQueryServiceAttributes			0x10004F4D
+#define KUidMsvMtmUiQueryCanGetNew					0x100055A7
+#define KUidMsvMtmUiQueryCanOpenServiceOnAction		0x100055A8
+#define KUidMsvMtmUiQueryExtendedOpenProgress		0x1000560E
+
+// Flags for KUidMsvMtmUiQueryServiceAttributes
+#define	EMtmUiAttributeLaunchingService				0x0001
+#define	EMtmUiAttributeContainerService				0x0002
+#define	EMtmUiAttributeConnectionOrientedService	0x0004
+
+// Preferences
+#define EMtmUiFlagEditorPreferEmbedded				0x0001
+#define EMtmUiFlagEditorNoWaitForExit				0x0002

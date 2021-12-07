@@ -1,0 +1,1300 @@
+/*
+* ============================================================================
+*  Name     : AknExScroller.rss
+*  Part of  : AknExScroller
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    EXSC// 4 letter ID
+
+//  INCLUDES
+#include <eikon.rh>
+#include <eikon.rsg>
+//#include <eikon.mbg>
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include "AknExScroller.hrh"
+#include "AknExScroller.loc"
+
+//  RESOURCE DEFINITIONS
+
+//----------------------------------------------------
+//
+//    RSS_SIGNATURE
+//    EPOC requirement
+//
+//----------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+//----------------------------------------------------
+//
+//    TBUF
+//    EPOC requirement
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF
+    {
+    buf = "AknExScroller";
+    }
+
+//----------------------------------------------------
+//
+//    EIK_APP_INFO
+//    EPOC requirement
+//
+//----------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = r_aknexscroller_status_pane;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_view1
+//    View1 definition for total.
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexscroller_view1
+    {
+    menubar = r_aknexscroller_menubar_view1;
+    cba = r_aknexscroller_softkeys_options_next;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menubar_view1
+//    Menu bar for View1
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexscroller_menubar_view1
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexscroller_menupane_view1;
+            txt = qtn_aknexscroller_menu_pane;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menupane_view1
+//    Menu pane for View1
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexscroller_menupane_view1
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExScrollerCascade1;
+            cascade = r_aknexscroller_menupane_cascade_view1;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_cascade;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_01;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_02;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_03;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_04;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_05;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_06;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_07;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_08;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_09;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_10;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_11;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_12;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_13;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_14;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_15;
+            },
+        MENU_ITEM
+            {
+            command = EAknExScrollerCascade1;
+            cascade = r_aknexscroller_menupane_cascade_view1;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_cascade;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menupane_cascade_view1
+//    Cascaded Menu Pane of depth 1 for View1
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexscroller_menupane_cascade_view1
+    {
+    items =
+        {
+//        MENU_ITEM
+//            {
+//            command = EAknExScrollerCascade2;
+//            cascade = r_aknexscroller_menupane_cascade2_view1;
+//            flags = EEikMenuItemSeparatorAfter;
+//            txt = qtn_aknexscroller_menu_pane_cascade;
+//            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_000;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_001;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_002;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_003;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_004;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_005;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_006;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_007;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_008;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_009;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_010;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_011;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_012;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_013;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_014;
+            }//,
+//        MENU_ITEM
+//            {
+//            command = EAknExScrollerCascade2;
+//            cascade = r_aknexscroller_menupane_cascade2_view1;
+//            flags = EEikMenuItemSeparatorAfter;
+//            txt = qtn_aknexscroller_menu_pane_cascade;
+//            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menupane_cascade2_view1
+//    Cascaded Menu Pane of depth 2 for View1
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexscroller_menupane_cascade2_view1
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExScrollerCascade3;
+            cascade = r_aknexscroller_menupane_cascade3_view1;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_cascade;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0000;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0001;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0002;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0003;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0004;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0005;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0006;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0007;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0008;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0009;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0010;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0011;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0012;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0013;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_0014;
+            },
+        MENU_ITEM
+            {
+            command = EAknExScrollerCascade3;
+            cascade = r_aknexscroller_menupane_cascade3_view1;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_cascade;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menupane_cascade3_view1
+//    Cascaded Menu Pane of depth 3 for View1
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexscroller_menupane_cascade3_view1
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00000;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00001;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00002;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00003;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00004;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00005;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00006;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00007;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00008;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00009;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00010;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00011;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00012;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00013;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00014;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00015;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view1_00016;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_view2
+//    View2 definition for total.
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexscroller_view2
+    {
+    menubar=r_aknexscroller_menubar_view2;
+    cba=r_aknexscroller_softkeys_options_next;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_cba_view2
+//    CBA definition for View2
+//
+//----------------------------------------------------
+//
+RESOURCE CBA r_aknexscroller_cba_view2
+    {
+    buttons =
+        {
+        CBA_BUTTON
+            {
+            id = EAknExScrollerCBACommnadAdd;
+            txt = qtn_aknexscroller_cba_add;
+            },
+        CBA_BUTTON
+            {
+            id = EAknExScrollerCBACommnadDel;
+            txt = qtn_aknexscroller_cba_del;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_view3
+//    View3 definition for total.
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexscroller_view3
+    {
+    menubar = r_aknexscroller_menubar_view3;
+    cba = r_aknexscroller_softkeys_options_next;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menubar_view3
+//    Menu bar for View3
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexscroller_menubar_view3
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexscroller_menupane_view3;
+            txt = qtn_aknexscroller_menu_pane;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menupane_view3
+//    Menu pane for View3
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexscroller_menupane_view3
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExScrollerForm;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view3_0;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view3_1;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_dialog
+//    Dialog for form implementation
+//
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_aknexscroller_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect
+          | EEikDialogFlagButtonsRight | EEikDialogFlagNoTitleBar
+          | EEikDialogFlagCbaButtons /*| EEikDialogFlagModeless */;
+    buttons =  R_AVKON_SOFTKEYS_OPTIONS_BACK ;
+    form = r_aknexscroller_form;
+    } 
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_form
+//    Form definition
+//
+//----------------------------------------------------
+//
+RESOURCE FORM r_aknexscroller_form
+    {
+    flags = EAknExScrollerInt0;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_0;
+            id = EAknExScrollerDlgLineEdwin0;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexscroller_form_1;
+            id = EAknExScrollerDlgLineNumberEd;
+            itemflags = EEikDlgItemSeparatorAfter ;
+            control = NUMBER_EDITOR
+                {
+                min = EAknExScrollerInt0;
+                max = EAknExScrollerInt10;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_number;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_2;
+            id = EAknExScrollerDlgLineEdwin2;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_3;
+            id = EAknExScrollerDlgLineEdwin3;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_4;
+            id = EAknExScrollerDlgLineEdwin4;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_5;
+            id = EAknExScrollerDlgLineEdwin5;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_6;
+            id = EAknExScrollerDlgLineEdwin6;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_7;
+            id = EAknExScrollerDlgLineEdwin7;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_8;
+            id = EAknExScrollerDlgLineEdwin8;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_9;
+            id = EAknExScrollerDlgLineEdwin9;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_10;
+            id = EAknExScrollerDlgLineEdwin10;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_11;
+            id = EAknExScrollerDlgLineEdwin11;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_12;
+            id = EAknExScrollerDlgLineEdwin12;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_13;
+            id = EAknExScrollerDlgLineEdwin13;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_14;
+            id = EAknExScrollerDlgLineEdwin14;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_15;
+            id = EAknExScrollerDlgLineEdwin15;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexscroller_form_16;
+            id = EAknExScrollerDlgLineEdwin16;
+            control = EDWIN
+                {
+                maxlength = EAknExScrollerInt256;
+                width = EAknExScrollerInt6;
+                lines = EAknExScrollerInt5;
+                };
+            tooltip = qtn_aknexscroller_form_tooltip_text;
+            }           
+        } ;
+    } 
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_status_pane
+//    Status pane definition
+//
+//----------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_aknexscroller_status_pane
+    {
+    panes=
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidNavi;
+            type = EAknCtNaviPane;
+            resource = r_aknexscroller_navi_decorator;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_navi_decorator
+//    Status pane definition of details
+//
+//----------------------------------------------------
+//
+RESOURCE NAVI_DECORATOR r_aknexscroller_navi_decorator
+    {
+    type = ENaviDecoratorControlTabGroup;
+    control = TAB_GROUP
+        {
+        tab_width = EAknTabWidthWithTwoTabs;  // two tabs
+        active = 0;
+        tabs = {
+            TAB
+                {
+                id = EAknExScrollerView1Tab; // from application hrh
+                txt = qtn_aknexscroller_view1_tab;
+                },
+            TAB
+                {
+                id = EAknExScrollerView2Tab;
+                txt = qtn_aknexscroller_view2_tab;
+                },
+            TAB
+                {
+                id = EAknExScrollerView3Tab;
+                txt = qtn_aknexscroller_view3_tab;
+                },
+            TAB
+                {
+                id = EAknExScrollerView4Tab;
+                txt = qtn_aknexscroller_view4_tab;
+                }
+            };
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_label_view1
+//    View1 Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexscroller_label_view1
+    {
+    buf = qtn_aknexscroller_label_view1;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_dolabel_view1
+//    View1 Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexscroller_dolabel_view1
+    {
+    buf = qtn_aknexscroller_dolabel_view1;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_item_list_box
+//    Item text in list box
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexscroller_item_list_box
+    {
+    buf = qtn_aknexscroller_item_list_box;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_label_view3
+//    View3 Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexscroller_label_view3
+    {
+    buf = qtn_aknexscroller_label_view3;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_dolabel_view3
+//    View3 Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexscroller_dolabel_view3
+    {
+    buf = qtn_aknexscroller_dolabel_view3;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_view4
+//    View2 definition for total.
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexscroller_view4
+    {
+    menubar = r_aknexscroller_menubar_view4;  // same option menu as view4
+    cba = r_aknexscroller_softkeys_options_next;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menubar_view3
+//    Menu bar for View3
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexscroller_menubar_view4
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexscroller_menupane_view4;
+            txt = qtn_aknexscroller_menu_pane;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_menupane_view1
+//    Menu pane for View1
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexscroller_menupane_view4
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExScrollerView1;
+            txt = qtn_aknexscroller_view1_tab;
+            },
+        MENU_ITEM
+            {
+            command = EAknExScrollerView2;
+            txt = qtn_aknexscroller_view2_tab;
+            },
+        MENU_ITEM
+            {
+            command = EAknExScrollerView3;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_view3_tab;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view4_exit;
+            }
+        };
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_label_view4
+//    View4 Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexscroller_label_view4
+    {
+    buf = qtn_aknexscroller_label_view4;
+    }
+
+
+//----------------------------------------------------
+//
+//    r_aknexscroller_dolabel_view4
+//    View4 Label text
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexscroller_dolabel_view4
+    {
+    buf = qtn_aknexscroller_dolabel_view4;
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view1_edwin
+//    resource for edit window control on view1
+//----------------------------------------------------
+//
+RESOURCE EDWIN r_aknexscroller_view4_editor
+    {
+    flags= EEikEdwinNoHorizScrolling | EEikEdwinResizable; 
+    lines= qnn_aknexscroller_view4_edwin_lines;
+    maxlength = qnn_aknexscroller_view4_edwin_maxlength;
+    }
+
+RESOURCE CBA r_aknexscroller_softkeys_options_next
+    {
+    buttons =
+        {
+        CBA_BUTTON
+            {
+            id = EAknSoftkeyOptions;
+            txt = qtn_aknexscroller_cba_options;
+            },
+        CBA_BUTTON
+            {
+            id = EAknExScrollerCBACommnadNext;
+            txt = qtn_aknexscroller_cba_next;
+            }
+        };
+    }
+
+RESOURCE MENU_BAR r_aknexscroller_menubar_view2
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexscroller_menupane_view2;
+            txt = qtn_aknexscroller_menu_pane;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_aknexscroller_menupane_view2
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExScrollerCBACommnadAdd;
+            txt = qtn_aknexscroller_menu_pane_view2_0;
+            },
+        MENU_ITEM
+            {
+            command = EAknExScrollerCBACommnadDel;
+            flags = EEikMenuItemSeparatorAfter;
+            txt = qtn_aknexscroller_menu_pane_view2_1;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexscroller_menu_pane_view2_2;
+            }
+        };
+    }
+
+RESOURCE ARRAY r_aknexscroller_view4_items
+    {
+    items =
+        {
+        LBUF { txt = qtn_aknexscroller_view4_item00; },
+        LBUF { txt = qtn_aknexscroller_view4_item01; },
+        LBUF { txt = qtn_aknexscroller_view4_item02; },
+        LBUF { txt = qtn_aknexscroller_view4_item03; },
+        LBUF { txt = qtn_aknexscroller_view4_item04; },
+        LBUF { txt = qtn_aknexscroller_view4_item05; },
+        LBUF { txt = qtn_aknexscroller_view4_item06; },
+        LBUF { txt = qtn_aknexscroller_view4_item07; },
+        LBUF { txt = qtn_aknexscroller_view4_item08; },
+        LBUF { txt = qtn_aknexscroller_view4_item09; },
+        LBUF { txt = qtn_aknexscroller_view4_item10; },
+        LBUF { txt = qtn_aknexscroller_view4_item11; },
+        LBUF { txt = qtn_aknexscroller_view4_item12; },
+        LBUF { txt = qtn_aknexscroller_view4_item13; },
+        LBUF { txt = qtn_aknexscroller_view4_item14; },
+        LBUF { txt = qtn_aknexscroller_view4_item15; },
+        LBUF { txt = qtn_aknexscroller_view4_item16; },
+        LBUF { txt = qtn_aknexscroller_view4_item17; },
+        LBUF { txt = qtn_aknexscroller_view4_item18; },
+        LBUF { txt = qtn_aknexscroller_view4_item19; },
+        LBUF { txt = qtn_aknexscroller_view4_item20; },
+        LBUF { txt = qtn_aknexscroller_view4_item21; },
+        LBUF { txt = qtn_aknexscroller_view4_item22; },
+        LBUF { txt = qtn_aknexscroller_view4_item23; },
+        LBUF { txt = qtn_aknexscroller_view4_item24; },
+        LBUF { txt = qtn_aknexscroller_view4_item25; },
+        LBUF { txt = qtn_aknexscroller_view4_item26; },
+        LBUF { txt = qtn_aknexscroller_view4_item27; },
+        LBUF { txt = qtn_aknexscroller_view4_item28; },
+        LBUF { txt = qtn_aknexscroller_view4_item29; },
+        LBUF { txt = qtn_aknexscroller_view4_item30; },
+        LBUF { txt = qtn_aknexscroller_view4_item31; },
+        LBUF { txt = qtn_aknexscroller_view4_item32; },
+        LBUF { txt = qtn_aknexscroller_view4_item33; },
+        LBUF { txt = qtn_aknexscroller_view4_item34; },
+        LBUF { txt = qtn_aknexscroller_view4_item35; },
+        LBUF { txt = qtn_aknexscroller_view4_item36; }
+        };
+    }
+
+RESOURCE TBUF64 r_aknexscroller_formatstring_operatortest
+    {
+    buf = qtn_aknexscroller_formatstring_operatortest;
+    }
+
+RESOURCE TBUF64 r_aknexscroller_formatstring_scrollbaruseful
+    {
+    buf = qtn_aknexscroller_formatstring_scrollbaruseful;
+    }
+
+RESOURCE TBUF64 r_aknexscroller_formatstring_maxthumbpos
+    {
+    buf = qtn_aknexscroller_formatstring_maxthumbpos;
+    }
+
+RESOURCE TBUF64 r_aknexscroller_formatstring_checkbounds
+    {
+    buf = qtn_aknexscroller_formatstring_checkbounds;
+    }
+
+RESOURCE TBUF64 r_aknexscroller_formatstring_thumbposition
+    {
+    buf = qtn_aknexscroller_formatstring_thumbposition;
+    }
+
+RESOURCE TBUF64 r_aknexscroller_formatstring_increasenudgebutton
+    {
+    buf = qtn_aknexscroller_formatstring_increasenudgebutton;
+    }
+
+RESOURCE TBUF64 r_aknexscroller_formatstring_decreasenudgebutton
+    {
+    buf = qtn_aknexscroller_formatstring_decreasenudgebutton;
+    }
+
+RESOURCE TBUF256 r_aknexscroller_view4_string
+    {
+    buf = qtn_aknexscroller_view4_string;
+    }
+
+RESOURCE TBUF64 r_aknexscroller_not_enough_string
+    {
+    buf = qtn_aknexscroller_not_enough_string;
+    }
+// End of File

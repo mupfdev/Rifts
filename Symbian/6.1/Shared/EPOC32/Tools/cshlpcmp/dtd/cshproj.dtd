@@ -1,0 +1,56 @@
+<?xml encoding="ISO-8859-1"?>
+<!-- The CS-Help xml DTD for project files 
+Version 002
+Date 17-01-01
+Copyright 2001 Symbian Ltd.
+-->
+
+<!-- Parameter elements -->
+
+<!-- The CS-Help project file -->
+<!ELEMENT cshproj (helpfileUID,directories,files)>
+
+<!-- directories -->
+<!ELEMENT helpfileUID (#PCDATA)>
+
+<!-- directories -->
+<!ELEMENT directories (input,output,headers,graphics,working)>
+
+<!-- input -->
+<!ELEMENT input (#PCDATA)>
+
+<!-- output -->
+<!ELEMENT output (#PCDATA)>
+
+<!-- headers -->
+<!ELEMENT headers (#PCDATA)>
+
+<!-- graphics -->
+<!ELEMENT graphics (#PCDATA)>
+
+<!-- working -->
+<!ELEMENT working (#PCDATA)>
+
+<!-- files -->
+<!ELEMENT files (source,graphicssource,destination,customization)>
+
+<!-- source -->
+<!ELEMENT source (file|xmlfile)+>
+
+<!-- graphics -->
+<!ELEMENT graphicssource (file)+>
+
+<!-- files -->
+<!ELEMENT file (#PCDATA)>
+<!ELEMENT xmlfile (#PCDATA)>
+
+<!-- destination -->
+<!ELEMENT destination (#PCDATA)>
+
+<!-- customization -->
+<!ELEMENT customization (#PCDATA)>
+
+
+
+
+

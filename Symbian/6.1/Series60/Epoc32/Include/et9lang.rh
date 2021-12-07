@@ -1,0 +1,118 @@
+// ET9LANG.RH
+//
+// Taken from T9API.H  COPYRIGHT 1997 TEGIC COMMUNICATIONS
+//
+
+// T9 Language codes for use in FEP Resources
+
+
+#define PLDBID_Arabic       (0x0001)
+#define PLDBID_Bulgarian    (0x0002)
+#define PLDBID_Catalan      (0x0003)
+#define PLDBID_Chinese      (0x0004)
+#define PLDBID_Czech        (0x0005)
+#define PLDBID_Danish       (0x0006)
+#define PLDBID_German       (0x0007)
+#define PLDBID_Greek        (0x0008)
+#define PLDBID_English      (0x0009)
+#define PLDBID_Spanish      (0x000A)
+#define PLDBID_Finnish      (0x000b)
+#define PLDBID_French       (0x000c)
+#define PLDBID_Hebrew       (0x000D)
+#define PLDBID_Hungarian    (0x000E)
+#define PLDBID_Icelandic    (0x000F)
+#define PLDBID_Italian      (0x0010)
+#define PLDBID_Japanese     (0x0011)
+#define PLDBID_Korean       (0x0012)
+#define PLDBID_Dutch        (0x0013)
+#define PLDBID_Norwegian    (0x0014)
+#define PLDBID_Polish       (0x0015)
+#define PLDBID_Portuguese   (0x0016)
+#define PLDBID_RhaetoRoman  (0x0017)
+#define PLDBID_Romanian     (0x0018)
+#define PLDBID_Russian      (0x0019)
+#define PLDBID_SerboCroat   (0x001A)
+#define PLDBID_Slovak       (0x001B)
+#define PLDBID_Albanian     (0x001C)
+#define PLDBID_Swedish      (0x001D)
+#define PLDBID_Thai         (0x001E)
+#define PLDBID_Turkish      (0x001F)
+#define PLDBID_Urdu         (0x0020)
+#define PLDBID_Indonesian   (0x0021)
+#define PLDBID_Ukrainian    (0x0022)
+#define PLDBID_Byelorussian (0x0023)
+#define PLDBID_Slovenian    (0x0024)
+#define PLDBID_Estonian     (0x0025)
+#define PLDBID_Latvian      (0x0026)
+#define PLDBID_Lithuanian   (0x0027)
+#define PLDBID_Maori        (0x0028)
+#define PLDBID_Farsi        (0x0029)
+#define PLDBID_Vietnamese   (0x002A)
+#define PLDBID_Laotian      (0x002b)
+#define PLDBID_Kampuchean   (0x002C)
+#define PLDBID_Basque       (0x002D)
+#define PLDBID_Sorbian      (0x002E)
+#define PLDBID_Macedonian   (0x002F)
+#define PLDBID_Sutu         (0x0030)
+#define PLDBID_Tsonga       (0x0031)
+#define PLDBID_Tswana       (0x0032)
+#define PLDBID_Venda        (0x0033)
+#define PLDBID_Xhosa        (0x0034)
+#define PLDBID_Zulu         (0x0035)
+#define PLDBID_Afrikaans    (0x0036)
+#define PLDBID_Faeroese     (0x0038)
+#define PLDBID_Maltese      (0x003A)
+#define PLDBID_Sami         (0x003b)
+#define PLDBID_ScotsGaelic  (0x003c)
+#define PLDBID_Malay        (0x003e)
+
+// Secondary language data base indentifier definitions for use in FEP Resources
+#define SLDBID_EnglishUs            (0x0100)
+#define SLDBID_FrenchCanadian       (0x0300)
+#define SLDBID_PortugueseBrazilian  (0x0200)
+#define SLDBID_Spanish              (0x0100)
+
+// Addition defines
+
+#define PLDBID_Croatian   (0x00F0)
+#define PLDBID_Serbian   (0x00F1)
+#define PLDBID_Tagalog   (0x00F2)
+
+#define PLDBID_Slovene    (0x0024)
+
+
+
+// Language names
+
+#define T9NAME_English  "English"	
+#define T9NAME_Lithuanian    "Lietuvi"<0x0173>	
+#define T9NAME_Malay    "Malaysia"	
+#define T9NAME_Polish    "Polski"	
+#define T9NAME_Portuguese    "Portugu"<0x00EA>"s"	
+#define T9NAME_Romanian    "Rom"<0x00E2>"n"<0x0103>	
+#define T9NAME_Serbian    "Srpski"	
+#define T9NAME_Slovak    "Sloven"<0x010D>"ina"	
+#define T9NAME_Slovene    "Sloven"<0x0161><0x010D>"ina"	
+#define T9NAME_Spanish    "Espa"<0x00F1>"ol"	
+#define T9NAME_Swedish    "Svenska"	
+#define T9NAME_Tagalog    "Pilipino"	
+#define T9NAME_Turkish    "Türk"<0x00E7>"e"	
+#define T9NAME_Czech    <0x010C>"e"<0x0161>"tina"	
+#define T9NAME_Dutch    "Nederlands"	
+#define T9NAME_Estonian    "Eesti"	
+#define T9NAME_French    "Fran"<0x00E7>"ais"	
+#define T9NAME_Greek    <0x0395><0x03BB><0x03BB><0x03B7><0x03BD><0x03B9><0x03BA><0x03AC>	
+#define T9NAME_Icelandic    <0x00CD>"slenska"	
+#define T9NAME_Indonesian    "Indonesia"	
+#define T9NAME_Italian    "Italiano"	
+#define T9NAME_Latvian    "Latvie"<0x0161>"u"	
+#define T9NAME_Croatian    "Hrvatski"	
+#define T9NAME_German    "Deutsch"	
+#define T9NAME_Hungarian    "Magyar"	
+#define T9NAME_Bulgarian    <0x0411><0x044A><0x043B><0x0433><0x0430><0x0440><0x0441><0x043A><0x0438>	
+#define T9NAME_Finnish    "Suomi"	
+#define T9NAME_Russian    <0x0420><0x0443><0x0441><0x0441><0x043A><0x0438><0x0439>	
+#define T9NAME_Danish    "Dansk"	
+#define T9NAME_Norwegian    "Norsk"	
+#define T9NAME_Ukrainian    <0x0423><0x043A><0x0440><0x0430><0x0457><0x043D><0x0441><0x044C><0x043A><0x0430>
+

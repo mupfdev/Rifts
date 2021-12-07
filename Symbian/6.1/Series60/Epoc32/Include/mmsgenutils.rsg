@@ -1,0 +1,3 @@
+#define R_ADDRESSEE_OPEN                          1
+#define R_ADDRESSEE_CLOSE                         2
+#define R_SENDER_NAME_FORMAT                      3

@@ -1,0 +1,93 @@
+<!-- The CS-Help compiler xml DTD for asptml files
+Version 002
+Date 18-01-01
+Copyright 2001 Symbian Ltd.
+-->
+
+<!-- Parameter elements -->
+<!-- charater formatting -->
+<!ENTITY % charformat 'cs|b|i|sup|sub'>
+
+<!-- The asptml document -->
+<!ELEMENT asptml (uid,topic+)>
+
+<!-- the uid of the category -->
+<!ELEMENT uid EMPTY>
+<!ATTLIST uid value CDATA #REQUIRED>
+
+<!-- topics -->
+<!ELEMENT topic (category,topictitle,(context|index)*,synonyms?,(p|list|deflist)*)>
+
+<!-- category -->
+<!ELEMENT category (#PCDATA)>
+
+<!-- topic title -->
+<!ELEMENT topictitle (#PCDATA|%charformat;)*>
+
+<!-- context -->
+<!ELEMENT context EMPTY>
+<!ATTLIST context contextUID CDATA #REQUIRED>
+<!ATTLIST context comment CDATA #IMPLIED>
+
+<!-- index -->
+<!ELEMENT index (#PCDATA|%charformat;)*>
+
+<!-- synonyms -->
+<!ELEMENT synonyms (#PCDATA)>
+
+<!-- plain text paragraphs -->
+<!ELEMENT p (#PCDATA|%charformat;|graphic)*>
+<!ATTLIST p style CDATA #IMPLIED>
+
+<!-- lists -->
+<!ELEMENT list (list|listitem|p)+>
+<!ATTLIST list style CDATA #REQUIRED>
+
+<!-- listitem -->
+<!ELEMENT listitem (#PCDATA|%charformat;|graphic)*>
+<!ATTLIST listitem value CDATA #IMPLIED>
+
+<!-- definition list -->
+<!ELEMENT deflist (term,definition)+>
+
+<!-- definition term -->
+<!ELEMENT term (#PCDATA|%charformat;|graphic)*>
+
+<!-- definition -->
+<!ELEMENT definition (#PCDATA|%charformat;|graphic)*>
+
+<!-- graphic -->
+<!ELEMENT graphic EMPTY>
+<!ATTLIST graphic filename CDATA #REQUIRED>
+
+<!-- character style -->
+<!ELEMENT cs (#PCDATA)>
+<!ATTLIST cs style CDATA #REQUIRED>
+
+<!-- Bold text formatting -->
+<!ELEMENT b (#PCDATA|i|sup|sub)*>
+
+<!-- italic text formatting -->
+<!ELEMENT i (#PCDATA|sup|sub)*>
+
+<!-- supscript text formatting -->
+<!ELEMENT sup (#PCDATA|sub)*>
+
+<!-- subscript text formatting -->
+<!ELEMENT sub (#PCDATA)>
+
+<!-- document entities -->
+<!ENTITY ldquote "&#8220;">
+<!ENTITY rdquote "&#8221;">
+<!ENTITY lquote "&#8216;">
+<!ENTITY rquote "&#8217;">
+<!ENTITY mdash "&#8212;">
+<!ENTITY ndash "&#8211;">
+<!ENTITY break "&#8232;">
+<!ENTITY nbhyphen "&#8208;">
+<!ENTITY nbspace "&#160;">
+<!ENTITY tab '&#160;&#160;&#160;'>
+
+<!-- any other special-purpose declarations or
+re-definitions go in here -->
+

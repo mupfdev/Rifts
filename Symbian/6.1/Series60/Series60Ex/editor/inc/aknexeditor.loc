@@ -1,0 +1,241 @@
+/*
+* ============================================================================
+*  Name     : AknExEditor.loc
+*  Part of  : AknExEditor
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+// Caption
+#define qtn_apps_taed_list          "AKNEXEDITOR"
+#define qtn_apps_taed_grid          "AKNEXEDITOR"
+
+//d:Font names
+#define qfn_aknexeditor_fontname1   "Corier"
+#define qfn_aknexeditor_fontname2   "Arial"
+#define qfn_aknexeditor_fontname3   "Arial"
+#define qfn_aknexeditor_fontname4   "Times New Roman"
+#define qfn_aknexeditor_fontname5   "Times New Roman"
+#define qfn_aknexeditor_fontname6   "LatinBold12"
+
+//d:Font size
+#define qfn_aknexeditor_fontsize1   220
+#define qfn_aknexeditor_fontsize2   140
+#define qfn_aknexeditor_fontsize3   180
+#define qfn_aknexeditor_fontsize4   260
+#define qfn_aknexeditor_fontsize5   320
+#define qfn_aknexeditor_fontsize6   140
+
+
+//d:NUMERIC value for resource
+#define qnn_aknexeditor_tab_active_init     0
+
+#define qnn_aknexeditor_view1_edwin_width       10
+#define qnn_aknexeditor_view1_edwin_height      1
+#define qnn_aknexeditor_view1_edwin_maxlength   10
+#define qnn_aknexeditor_view1_gtexted_width     120
+#define qnn_aknexeditor_view1_gtexted_height    20
+#define qnn_aknexeditor_view1_gtexted_numlines  1
+#define qnn_aknexeditor_view1_gtexted_textlimit 10
+
+#define qnn_aknexeditor_view4_gtexted_width     120
+#define qnn_aknexeditor_view4_gtexted_height    100
+#define qnn_aknexeditor_view4_gtexted_numlines  5
+#define qnn_aknexeditor_view4_gtexted_textlimit 50
+
+#define qnn_aknexeditor_view5_edwin_width       3
+#define qnn_aknexeditor_view5_edwin_height      1
+#define qnn_aknexeditor_view5_edwin_maxlength   10
+#define qnn_aknexeditor_view5_gtexted_width     40
+#define qnn_aknexeditor_view5_gtexted_height    20
+#define qnn_aknexeditor_view5_gtexted_numlines  1
+#define qnn_aknexeditor_view5_gtexted_textlimit 10
+
+#define qnn_aknexeditor_view6_edwin_width       3
+#define qnn_aknexeditor_view6_edwin_height      1
+#define qnn_aknexeditor_view6_edwin_maxlength   10
+#define qnn_aknexeditor_view6_gtexted_width     40
+#define qnn_aknexeditor_view6_gtexted_height    20
+#define qnn_aknexeditor_view6_gtexted_numlines  1
+#define qnn_aknexeditor_view6_gtexted_textlimit 10
+
+#define qnn_aknexeditor_view7_gtexted_width     120
+#define qnn_aknexeditor_view7_gtexted_height    20
+#define qnn_aknexeditor_view7_gtexted_numlines  1
+#define qnn_aknexeditor_view7_gtexted_textlimit 10
+
+#define qnn_aknexeditor_view9_edwin_width       10
+#define qnn_aknexeditor_view9_edwin_height      2
+#define qnn_aknexeditor_view9_edwin_maxlength   40
+#define qnn_aknexeditor_view9_gtexted_width     120
+#define qnn_aknexeditor_view9_gtexted_height    40
+#define qnn_aknexeditor_view9_gtexted_numlines  2
+#define qnn_aknexeditor_view9_gtexted_textlimit 100
+
+//d:STRING value for resource
+//d:Application title
+#define qtn_aknexeditor_appilcation_title   "AknExEditor"
+
+//d:for tabs
+#define qtn_aknexeditor_tab_dummy       ""
+
+//d:cba buttons
+#define qtn_aknexeditor_cba_options     "Options"
+#define qtn_aknexeditor_cba_next        "Next"
+
+//d:menu strings
+#define qtn_aknexeditor_menu_dummy      ""
+#define qtn_aknexeditor_menu_exit       "Exit"
+
+#define qtn_aknexeditor_menu_prev_view      "Prev view"
+#define qtn_aknexeditor_menu_next_view      "Next view"
+#define qtn_aknexeditor_menu_select_view    "Select view"
+
+#define qtn_aknexeditor_menu_select_edwin       "Select Edwin"
+#define qtn_aknexeditor_menu_select_gtexted     "Select GTextEd"
+#define qtn_aknexeditor_menu_select_edwin1      "Select Edwin (1)"
+#define qtn_aknexeditor_menu_select_gtexted1    "Select GTextEd (1)"
+#define qtn_aknexeditor_menu_select_edwin2      "Select Edwin (2)"
+#define qtn_aknexeditor_menu_select_gtexted2    "Select GTextEd (2)"
+
+#define qtn_aknexeditor_menu_expand_edwin       "Expand Edwin"
+#define qtn_aknexeditor_menu_expand_gtexted     "Expand GTextEd"
+
+#define qtn_aknexeditor_menu_input_none             "None"
+#define qtn_aknexeditor_menu_input_num_int_positive "Num-Int-Positive"
+#define qtn_aknexeditor_menu_input_num_int_negative "Num-Int-Negative"
+#define qtn_aknexeditor_menu_input_num_real         "Num-Real"
+#define qtn_aknexeditor_menu_input_alphabetic       "Alphabetic"
+#define qtn_aknexeditor_menu_input_dialable         "Dialable"
+#define qtn_aknexeditor_menu_input_secret           "Secret"
+#define qtn_aknexeditor_menu_input_all              "All"
+#define qtn_aknexeditor_menu_input_navi             "Navigation"
+
+#define qtn_aknexeditor_menu_select_12hours_editor "Select 12Hours Editor"
+#define qtn_aknexeditor_menu_select_24hours_editor "Select 24Hours Editor"
+
+#define qtn_aknexeditor_select_font1    "Corier(11pt)"
+#define qtn_aknexeditor_select_font2    "Arial(7pt)"
+#define qtn_aknexeditor_select_font3    "Arial(9pt)"
+#define qtn_aknexeditor_select_font4    "Times New Roman(13pt)"
+#define qtn_aknexeditor_select_font5    "Times New Roman(16pt)"
+#define qtn_aknexeditor_select_font6    "LatinBold12(7pt)"
+
+#define qtn_aknexeditor_select_sysfont1 "LatinPlain12(Sys)"
+#define qtn_aknexeditor_select_sysfont2 "LatinBold12(Sys)"
+#define qtn_aknexeditor_select_sysfont3 "LatinBold13(Sys)"
+#define qtn_aknexeditor_select_sysfont4 "LatinBold17(Sys)"
+#define qtn_aknexeditor_select_sysfont5 "LatinBold19(Sys)"
+#define qtn_aknexeditor_select_sysfont6 "NumberPlain5(Sys)"
+#define qtn_aknexeditor_select_sysfont7 "ClockBold30(Sys)"
+#define qtn_aknexeditor_select_sysfont8 "LatinClock14(Sys)"
+
+
+
+#define qtn_aknexeditor_menu_showform   "Show form"
+
+#define qtn_aknexeditor_menu_select_time_editor          "Time editor"
+#define qtn_aknexeditor_menu_select_date_editor          "Date editor"
+#define qtn_aknexeditor_menu_select_duration_editor      "Duration editor"
+#define qtn_aknexeditor_menu_select_time_and_date_editor "Time & Date Editor"
+
+#define qtn_aknexeditor_menu_select_numsecret_editor     "Pin-code editor"
+#define qtn_aknexeditor_menu_select_secret_editor        "AlphaNumeric editor"
+#define qtn_aknexeditor_menu_show_editortext             "Show Editor Text"
+
+//d:label strings
+#define qtn_aknexeditor_label_edwin     "Edwin"
+#define qtn_aknexeditor_label_gtexted   "GTextEd"
+
+#define qtn_aknexeditor_view4_label1    "Use menu to set font"
+
+#define qtn_aknexeditor_view5_label1    "Edwin"
+#define qtn_aknexeditor_view5_label2    "GTextEd"
+#define qtn_aknexeditor_view5_label3    "Upper"
+#define qtn_aknexeditor_view5_label4    "Lower"
+#define qtn_aknexeditor_view5_label5    "Text"
+#define qtn_aknexeditor_view5_label6    "Title"
+
+#define qtn_aknexeditor_view6_label1    "Edwin"
+#define qtn_aknexeditor_view6_label2    "GTextEd"
+#define qtn_aknexeditor_view6_label3    "Allow to change case"
+#define qtn_aknexeditor_view6_label4    "Don't allow to change"
+
+#define qtn_aknexeditor_view7_label1    "Left"
+#define qtn_aknexeditor_view7_label2    "Center"
+#define qtn_aknexeditor_view7_label3    "Right"
+
+#define qtn_aknexeditor_view21_label     "IP address editor"
+
+#define qtn_aknexeditor_view22_label1   "Time editor"
+#define qtn_aknexeditor_view22_label2   "Date editor"
+#define qtn_aknexeditor_view22_label3   "Duration editor"
+#define qtn_aknexeditor_view22_label4   "Time&Date editor"
+
+#define qtn_aknexeditor_view23_label1   "Pin-code"
+#define qtn_aknexeditor_view23_label2   "Alpha numeric"
+
+#define qtn_aknexeditor_view25_label1 "12 hours format"
+#define qtn_aknexeditor_view25_label2 "24 hours format"
+
+//d:strings for dialogs
+#define qtn_aknexeditor_view22_dialog_prompt1   "Time"
+#define qtn_aknexeditor_view22_dialog_prompt2   "Date"
+#define qtn_aknexeditor_view22_dialog_prompt3   "Duration"
+
+#define qtn_aknexeditor_view23_dialog_prompt1   "Pin-code"
+#define qtn_aknexeditor_view23_dialog_prompt2   "AlphaNum"
+
+#define qtn_aknexeditor_view25_dialog_prompt1   "12Hours"
+#define qtn_aknexeditor_view25_dialog_prompt2   "24Hours"
+
+//d:strings for "EAknNaviPaneEditorIndicatorMessageLength"
+#define qtn_aknexeditor_editor_indicator_text_format    "%d/%d"
+
+#define qtn_aknexeditor_editor_normal_title        "View %d"
+#define qtn_aknexeditor_editor_abnormal_title      "View %d Not Found"
+#define qtn_aknexeditor_container4_label_format_pt " %d pt"
+
+//New additions to overcome hardcode descriptors
+
+//View21 strings
+#define qtn_aknexeditor_menu21_readipaddress            "ReadIPAddress"
+#define qtn_aknexeditor_menu21_displayipaddress         "Display IP Address"
+#define qtn_aknexeditor_view21_createfromresource       "Created From Resource"
+#define qtn_aknexeditor_view21_setgetminmax             "Set & Get Min&Max Using API"
+
+
+#define qtn_aknexeditor_menu23_initializedisplay        "InitializeDisplay"
+#define qtn_aknexeditor_menu23_initializedisplay_five   "5"
+#define qtn_aknexeditor_menu23_initializedisplay_ten    "10"
+#define qtn_aknexeditor_menu23_reset                    "Reset"
+#define qtn_aknexeditor_menu23_setmaxlength             "SetMaxLength"
+#define qtn_aknexeditor_menu23_setmaxlength_five        "5"
+#define qtn_aknexeditor_menu23_setmaxlength_ten         "10"
+#define qtn_aknexeditor_menu23_settext                  "SetText-pin"
+#define qtn_aknexeditor_view23_settext_pin              "pin"
+
+
+
+//Strings for View 30
+#define qtn_aknexeditor_view30_input            "Sample"
+#define qtn_aknexeditor_view30_enabled          "Cut,Copy,Paste enabled"
+#define qtn_aknexeditor_view30_disabled         "Cut,Copy,Paste disabled"
+#define qtn_aknexeditor_menu30_ccpusupport      "CCPU Support"
+#define qtn_aknexeditor_menu30_selecttext       "Select Text"
+#define qtn_aknexeditor_menu30_clearselection   "Clear Selection"
+#define qtn_aknexeditor_menu30_cut              "Cut"
+#define qtn_aknexeditor_menu30_copy             "Copy"
+#define qtn_aknexeditor_menu30_paste            "Paste"
+#define qtn_aknexeditor_menu30_undo             "Undo"
+
+
+//Strings for View33
+#define qtn_aknexeditor_view33_flagset          "NoWrap-Flag set"
+#define qtn_aknexeditor_view33_flagnotset       "NoWrap-Flag not set"
+#define qtn_aknexeditor_menu33_wordwraptrue     "Set WordWrap True"
+#define qtn_aknexeditor_menu33_wordwrapfalse    "Set WordWrap False"
+
+
+// End of file.
+

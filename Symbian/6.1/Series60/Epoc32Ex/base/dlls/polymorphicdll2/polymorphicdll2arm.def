@@ -1,0 +1,4 @@
+EXPORTS
+; NEW:
+	NewMessenger__Fv @ 1 NONAME ; NewMessenger(void)
+

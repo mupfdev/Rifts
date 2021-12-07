@@ -1,0 +1,56 @@
+// GraphicsShell.rss
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+NAME GRSH
+
+
+#include <eikon.rh>
+#include "EmbeddingShell.hrh"
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf=""; }
+
+RESOURCE EIK_APP_INFO
+	{
+	menubar=r_grsh_menubar;
+	hotkeys=r_grsh_hotkeys;
+	}
+
+
+RESOURCE HOTKEYS r_grsh_hotkeys
+    {
+    control=
+        {
+        HOTKEY { command=EEikCmdExit; key='e'; }
+        };
+    }
+
+RESOURCE MENU_BAR r_grsh_menubar
+    {
+    titles=
+        {
+        MENU_TITLE {menu_pane=menu1; txt="File"; },
+	MENU_TITLE {menu_pane=menu2; txt="List Of Programs "; }
+	};
+    }
+
+
+RESOURCE MENU_PANE menu1
+	{
+	items=
+		{
+		MENU_ITEM { command=EEikCmdExit; txt="Exit"; }
+        };
+    }
+
+RESOURCE MENU_PANE menu2
+	{
+	items=
+		{
+		
+		MENU_ITEM { command=EExampleShellSelectPicture; txt="Picture"; }
+		
+        };
+    }

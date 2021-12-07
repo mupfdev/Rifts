@@ -1,0 +1,14 @@
+#define R_ICS_NOTE_USE_ANOTHER_AP                 0x10ff4003
+#define R_EXT_ERR_NO_NETWORK_COVER                0x10ff4004
+#define R_ICS_QUERY_USE_EXTNG                     0x10ff4005
+#define R_ICS_NOTE_CLOSE_CONNECTION               0x10ff4006
+#define R_WML_QUERY_NEW_CONN                      0x10ff4007
+#define R_WML_QUERY_MAKE_SECURE_CONN              0x10ff4008
+#define R_WML_CONF_CONN_NEED                      0x10ff4009
+#define R_ICS_WAIT_CONNECTING_ELL                 0x10ff400a
+#define R_ICS_WAIT_CONNECTING                     0x10ff400b
+#define R_CONNMAN_CONF_QUERY                      0x10ff400c
+#define R_CONNMAN_WAIT_NOTE_CSD                   0x10ff400d
+#define R_CONNMAN_WAIT_NOTE_GPRS                  0x10ff400e
+#define R_CONNMAN_WAIT_NOTE                       0x10ff400f
+#define R_CONNMAN_INFORMATION_NOTE                0x10ff4010

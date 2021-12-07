@@ -1,0 +1,12 @@
+#define R_APP_START_PARAMS                        1
+#define R_APPS_LIST_LIST                          2
+#define R_APP_NORMAL_START_LIST                   3
+#define R_APP_TEST_START_LIST                     4
+#define R_APP_SELFTESTFAIL_START_LIST             5
+#define R_APP_CHARGING_START_LIST                 6
+#define R_APP_ALARM_START_LIST                    7
+#define R_APP_ALARM_TO_NORMAL_START_LIST          8
+#define R_APP_CHARGING_TO_NORMAL_START_LIST       9
+#define R_APP_FATAL_ERROR_LIST                    10
+#define R_APP_MODULE_TEST_START_LIST1             11
+#define R_STARTUP_ERROR                           12

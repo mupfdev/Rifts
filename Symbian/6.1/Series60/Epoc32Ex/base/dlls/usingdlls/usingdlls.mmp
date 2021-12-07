@@ -1,0 +1,20 @@
+// UsingDLLs.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET        UsingDLLs.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        UsingDLLs.cpp
+
+USERINCLUDE   .
+USERINCLUDE   ..\..\CommonFramework
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib  efsrv.lib
+
+

@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : AknExScroller_caption.rss
+*  Part of  : AknExScroller
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include "AknExScroller.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = qtn_apps_tasl_list;
+    shortcaption = qtn_apps_tasl_grid;
+    }
+
+// End of File

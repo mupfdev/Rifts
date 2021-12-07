@@ -1,0 +1,28 @@
+TARGET            HelloWorldPlus.app
+TARGETTYPE        app
+
+// change the second number here ot change the UID for this application
+UID               0x100039CE 0x10005b95
+TARGETPATH        \system\apps\helloworldplus
+
+SOURCEPATH        ..\src
+SOURCE            HelloWorldPlus.cpp
+SOURCE            HelloWorldPlusApplication.cpp 
+SOURCE            HelloWorldPlusAppView.cpp
+SOURCE            HelloWorldPlusAppUi.cpp
+SOURCE            HelloWorldPlusDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          HelloWorldPlus.rss
+RESOURCE          HelloWorldPlus_caption.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib 
+LIBRARY           commonengine.lib

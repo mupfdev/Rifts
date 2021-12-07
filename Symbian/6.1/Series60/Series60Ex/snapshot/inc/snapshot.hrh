@@ -1,0 +1,14 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+#ifndef __SNAPSHOT_HRH__
+#define __SNAPSHOT_HRH__
+
+/** Camera enumerate command codes */
+enum TSnapShotIds
+    {
+    ESnapShotTakePicture = 1  // start value must not be 0
+    // add further enumerations here
+    };
+
+
+#endif // __SNAPSHOT_HRH__

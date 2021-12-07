@@ -1,0 +1,5 @@
+#define R_TEXT_MAIL_UTILS_REPLYATTA_BEGIN         0xeaf6002
+#define R_TEXT_MAIL_UTILS_REPLYATTA_END           0xeaf6003
+#define R_TEXT_MAIL_UTILS_REPLYATTA_ATTACH        0xeaf6004
+#define R_TEXT_MAIL_OUT_OF_MEMORY                 0xeaf6005
+#define R_MAIL_BANNED_CHARS                       0xeaf6006

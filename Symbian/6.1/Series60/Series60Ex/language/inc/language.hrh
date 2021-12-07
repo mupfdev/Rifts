@@ -1,0 +1,13 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __LANGUAGE_HRH__
+#define __LANGUAGE_HRH__
+
+/** Language enumerate command codes */
+enum TLanguageIds
+    {
+    ELanguageCommand1 = 1  // start value must not be 0
+    };
+
+
+#endif // __LANGUAGE_HRH__

@@ -1,0 +1,78 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+NAME BTOB
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "BTObjectExchange.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_btobjectexchange_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_btobjectexchange_menubar
+//   Menubar for BTObjectExchange example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_btobjectexchange_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_btobjectexchange_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_btobjectexchange_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_btobjectexchange_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = EBTObjectExchangeStartServer;  txt = "Start Server";},
+        MENU_ITEM {command = EBTObjectExchangeStopServer;  txt = "Stop Server";},
+        MENU_ITEM {command = EBTObjectExchangeConnect;  txt = "Connect";},
+        MENU_ITEM {command = EBTObjectExchangeSendMessage;  txt = "Send Object";},
+        MENU_ITEM {command = EBTObjectExchangeDisconnect;  txt = "Disconnect";},
+        MENU_ITEM {command = EBTObjectExchangeClearList;  txt = "Clear List";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }

@@ -1,0 +1,21 @@
+;
+; Basic install file for minimal application
+;
+
+; Languages
+; none -  English only by default
+
+; Installation header
+; Only one component name as we only support English
+; UID is the app's UID - see HelloWorld.mmp
+
+#{"Minimal application"},(0x10004299),1,0,0
+; Only two files to install for the minimal application
+"HelloWorld.app"-"!:\system\apps\HelloWorld\HelloWorld.app"
+"HelloWorld.rsc"-"!:\system\apps\HelloWorld\HelloWorld.rsc"
+
+; Required files
+; None
+
+; Component .sis files
+; None

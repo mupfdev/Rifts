@@ -1,0 +1,32 @@
+/*
+* ============================================================================
+*  Name     : AknExPbaraif.rss
+*  Part of  : AknExPbar
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+// INCLUDES
+#include <aiftool.rh>
+
+// CONSTANTS
+
+// RESOURCE DEFINITIONS
+RESOURCE AIF_DATA
+    {
+    app_uid = 0x10005C2E;
+    caption_list=
+        {       
+        CAPTION 
+            { 
+            code = ELangEnglish; 
+            caption = "AKNEXPBAR";
+            }
+        };
+    num_icons = 2;
+    embeddability = KAppNotEmbeddable;
+//    embeddability = KAppEmbeddable;
+    newfile = KAppDoesNotSupportNewFile;
+    }
+
+// End of File

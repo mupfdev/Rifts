@@ -1,0 +1,5 @@
+This directory contains shared library components that are used solely by Symbian developer tools running on a Windows platform.  
+
+All files present are compiled for a Java 1.2.2 Runtime Environment.
+
+These files are not libraries required for Symbian Java development, and will not function on a Symbian JVM.

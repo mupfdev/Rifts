@@ -1,0 +1,6 @@
+#{"Application with Licence"},(0x10004299),1,0,0,TYPE=SISAPP
+"HelloWorldl.txt"-"",FT,TA
+; Files to be installed - only two no language variants
+"HelloWorld.app"-"!:\system\apps\HelloWorld\HelloWorld.app"
+"HelloWorld.rsc"-"!:\system\apps\HelloWorld\HelloWorld.rsc"
+"Helloworld.doc"-"!:\system\apps\HelloWorld.doc",FR,RI

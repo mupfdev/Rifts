@@ -1,0 +1,153 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+NAME CIPH
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "Cipher.hrh"
+
+
+#define AKNEXQUERY_SECRETED_NUM_LETTERS 8
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF r_cipher_default_doc_name { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_cipher_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_cipher_menubar
+//   Menubar for Cipher example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_cipher_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_cipher_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_cipher_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_cipher_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = ECipherEncrypt;  txt = "Encrypt";},
+        MENU_ITEM {command = ECipherDecrypt;  txt = "Decrypt";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_dialog_password_query
+//    Resource of password Query.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_dialog_password_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = ECodeLayout;
+                label = "Enter password";
+                control = SECRETED
+                    {
+                    num_letters = AKNEXQUERY_SECRETED_NUM_LETTERS;
+                    };
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_dialog_text_password_query
+//    Resource of text and password Query.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_dialog_text_password_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtMultilineQuery;
+            id = EMultilineFirstLine;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EMultiDataFirstEdwin;
+                label = "Text to Encrypt";
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                    width = 25;
+                    lines = 1;
+                    maxlength = 20;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EAknCtMultilineQuery;
+            id = EMultilineSecondLine;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EMultiDataSecondSecEd;
+                label = "Password";
+                control = SECRETED
+                    {
+                    num_letters = 5;
+                    };
+                };
+            }
+        };
+    }

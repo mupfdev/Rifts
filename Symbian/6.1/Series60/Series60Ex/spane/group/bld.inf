@@ -1,0 +1,27 @@
+/*
+* ============================================================================
+*  Name     : Bld.inf
+*  Part of  : AknExSpane
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+PRJ_EXPORTS
+// Specify the source file followed by its destination here
+// copy will be used to copy the source file to its destination
+// If there's no destination then the source file will be copied
+// to the same name in \epoc32\include
+//\AknSample\AknExSpane\rom\AknExSpane.iby \epoc32\rom\include\AknExSpane.iby
+
+PRJ_MMPFILES
+
+// Specify the .mmp files required for building the important component
+// releasables. Note that you should specify any .mmp files for test
+// programs further down the file.
+//
+AknExSpane.mmp
+
+PRJ_TESTMMPFILES

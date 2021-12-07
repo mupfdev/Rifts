@@ -1,0 +1,3 @@
+#define AUDIO_LIBRARY                             1
+#define CLIP_FORMAT_RAW_AMR                       2
+#define RAW_AMR_CODEC                             3

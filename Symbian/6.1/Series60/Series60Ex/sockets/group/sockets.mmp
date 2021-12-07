@@ -1,0 +1,35 @@
+TARGET            Sockets.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B78
+TARGETPATH        \system\apps\sockets
+
+SOURCEPATH        ..\src
+SOURCE            Sockets.cpp
+SOURCE            SocketsApplication.cpp 
+SOURCE            SocketsAppView.cpp
+SOURCE            SocketsAppUi.cpp
+SOURCE            SocketsDocument.cpp 
+
+SOURCEPATH        ..\engine
+SOURCE            socketswriter.cpp
+SOURCE            socketsreader.cpp
+SOURCE            timeouttimer.cpp
+SOURCE            socketsengine.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          Sockets.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+LIBRARY           eikcoctl.lib
+LIBRARY           insock.lib
+LIBRARY           esock.lib
+LIBRARY           eikctl.lib
+LIBRARY           aknnotify.lib

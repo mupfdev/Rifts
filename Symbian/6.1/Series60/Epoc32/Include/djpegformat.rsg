@@ -1,0 +1,3 @@
+#define VIDEO_LIBRARY                             1
+#define CLIP_FORMAT_DRM_JPG                       2
+#define DRM_JPG_CODEC                             3

@@ -1,0 +1,175 @@
+/*
+* ============================================================================
+*  Name     : EikClock.rh
+*  Part of  : EikCtl
+*
+*  Description:
+*     This file contains declarations for resources of EikClock.
+*     The file can be included only in resource file.
+*     
+*  Version:
+*
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+*
+* ============================================================================
+*/
+
+#ifndef EIKCLOCK_RH
+#define EIKCLOCK_RH
+
+#include <EikClockCtrl.hrh>
+   
+// STRUCTURE DEFINITIONS
+
+// ------------------------------------------------------------
+//  CLOCK
+//  Clock for Series 60
+// ------------------------------------------------------------
+//
+STRUCT CLOCK
+    {
+    BYTE type = EEikLocaleConformantClockTypeChangesFormatAccordingToLocale;
+    BYTE typeneverchanges = 0;
+    LLINK digitalresourceid = 0;    // DIGITAL_CLOCK
+    LLINK analogresourceid = 0;     // ANALOG_CLOCK_FACE
+    LLINK ampmresourceid = 0;       // AMPM_CLOCK
+    }
+
+// ------------------------------------------------------------
+//  DIGITAL_CLOCK
+//  Special digital clock for Series 60.
+// ------------------------------------------------------------
+//
+STRUCT DIGITAL_CLOCK
+    {
+    WORD offsetfromuniversaltime = 0;
+    BYTE backgroundcolor;
+    BYTE withshadow = 0;                // 1:in Phone idle, 0:in Clock
+    BYTE withampm = 0;                  // 1:with AmPm, 0:not
+    LEN BYTE STRUCT textsections[2];    // DIGITAL_CLOCK_TEXT_SECTION
+    STRUCT shadowimages;                // DIGITAL_SHADOW_IMAGES
+    STRUCT ampm;                        // AMPM_CLOCK when withampm = 1.
+    }
+
+// ------------------------------------------------------------
+//  DIGITAL_CLOCK_TEXT_SECTION
+//  Digital clock text setting.
+// ------------------------------------------------------------
+//
+STRUCT DIGITAL_CLOCK_TEXT_SECTION
+    {
+    STRUCT font;            // FONT
+    BYTE textcolor;
+    BYTE leftmargin12 = 0;
+    BYTE rightmargin12 = 0;
+    BYTE leftmargin24 = 0;
+    BYTE rightmargin24 = 0;
+    BYTE baseline;
+    BYTE justification = EEikResourceConstructedClockTextJustificationLeft;
+    }
+
+// ------------------------------------------------------------
+//  DIGITAL_SHADOW_IMAGES
+//  Array of digital shadow images.
+// ------------------------------------------------------------
+//
+STRUCT DIGITAL_SHADOW_IMAGES
+    {
+    LTEXT filecontainingimage;  // full path
+    LEN BYTE LONG images[];     // image Id
+    LEN BYTE STRUCT rects[];    // RECT
+    }
+
+// ------------------------------------------------------------
+//  AMPM_CLOCK
+//  Special am/pm clock for Series 60.
+//  Show am/pm text.
+// ------------------------------------------------------------
+//
+STRUCT AMPM_CLOCK
+    {
+    WORD offsetfromuniversaltime=0;
+    STRUCT font;                    // FONT
+    BYTE textcolor;
+    BYTE leftmargin = 0;
+    BYTE rightmargin = 0;
+    BYTE baseline;
+    BYTE justification = EEikResourceConstructedClockTextJustificationLeft;
+    }
+
+// ------------------------------------------------------------
+//  ANALOG_CLOCK_FACE
+//  Special analog clock for Series 60.
+// ------------------------------------------------------------
+//
+STRUCT ANALOG_CLOCK_FACE
+    {
+    WORD offsetfromuniversaltime=0;
+    BYTE withdate=0;                // for Series 60
+    LTEXT filecontainingface;       // multi-bitmap file
+    LONG faceid;                    // a value defined in a *.MBG file
+    LONG centerpointid;             // By H.Domon,K3 19 Jun 2001
+    STRUCT centeroffset;            // POINT offset from left-top point of face
+    LEN BYTE STRUCT hands[];        // ANALOG_CLOCK_HANDs
+    STRUCT date;                    // ANALOG_CLOCK_DATE
+    }
+
+// ------------------------------------------------------------
+//  ANALOG_CLOCK_DATE
+//  Data for date region
+// ------------------------------------------------------------
+//
+STRUCT ANALOG_CLOCK_DATE
+    {
+    STRUCT font;                    // FONT
+    BYTE textcolor;
+    BYTE leftmargin = 0;
+    BYTE rightmargin = 0;
+    BYTE baseline;
+    BYTE justification = EEikResourceConstructedClockTextJustificationLeft;
+    }
+
+// ------------------------------------------------------------
+//  RECT
+//  
+// ------------------------------------------------------------
+//
+STRUCT RECT
+    {
+    STRUCT position;    // POINT
+    STRUCT size;        // SIZE
+    }
+
+// ------------------------------------------------------------
+//  SIZE
+//  Data for size
+// ------------------------------------------------------------
+//
+STRUCT SIZE
+    {
+    WORD w;
+    WORD h;
+    }
+
+// ------------------------------------------------------------
+//  ANALOG_CLOCK_HAND
+//  
+// ------------------------------------------------------------
+//
+STRUCT ANALOG_CLOCK_HAND
+    {
+    BYTE type; // one of the EEikResourceConstructedClockAnalogDisplayHandOneRevPerXxxxxs
+    STRUCT featureline; // ANALOG_CLOCK_HAND_FEATURE_LINEs
+    }
+
+#endif // EIKCLOCK_RH
+
+// End of file

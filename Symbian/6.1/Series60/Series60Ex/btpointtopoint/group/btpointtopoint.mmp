@@ -1,0 +1,40 @@
+TARGET            BTPointToPoint.app
+TARGETTYPE        app
+UID               0x100039ce 0x10005B8B
+TARGETPATH        \system\apps\btpointtopoint
+
+SOURCEPATH        ..\src
+SOURCE            MessageClient.cpp
+SOURCE            MessageServer.cpp
+SOURCE            BTPointToPoint.cpp
+SOURCE            BTPointToPointApplication.cpp 
+SOURCE            BTPointToPointAppView.cpp
+SOURCE            BTPointToPointAppUi.cpp
+SOURCE            BTPointToPointDocument.cpp 
+SOURCE            SdpAttributeParser.cpp
+SOURCE            MessageServiceSearcher.cpp
+SOURCE            MessageServiceAdvertiser.cpp
+SOURCE            BTServiceSearcher.cpp
+SOURCE            BTServiceAdvertiser.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          BTPointToPoint.rss
+RESOURCE          BTPointToPoint_caption.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           eikcoctl.lib
+LIBRARY           avkon.lib  
+LIBRARY           bafl.lib
+LIBRARY	          esock.lib
+LIBRARY	          bluetooth.lib 
+LIBRARY           btextnotifiers.lib
+LIBRARY           btmanclient.lib
+LIBRARY           sdpagent.lib
+LIBRARY           sdpdatabase.lib

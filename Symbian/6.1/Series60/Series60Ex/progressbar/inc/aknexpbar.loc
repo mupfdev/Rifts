@@ -1,0 +1,89 @@
+/*
+* ============================================================================
+*  Name     : AknExPbar localization string resource header file
+*  Part of  : AknExPbar
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+// Caption
+#define qtn_apps_tapb_list          "AKNEXPBAR"
+#define qtn_apps_tapb_grid          "AKNEXPBAR"
+
+// LOCALISATION STRINGS
+
+/*
+//EXAMPLES:
+
+//d:Command in options list in short term memories.
+//d:Opens the call list view that is focused.
+//l:list_single_popup_menu_pane_1
+//
+#define text_logs_stm_cmd_open "Open"
+
+//d:Title pane text in converter main state.
+//l:title_pane_1
+//
+#define qtn_cnv_title "Converter"
+
+//d:Prompt text for currency data query in converter.
+//l:popup_query_data_window_1
+//
+#define qtn_cnv_edit_name_prompt "Currency name"
+
+//d:Active call is terminated and a held call becomes active.
+//d:Operation is confirmed with this info note.
+//d:%U stands for the call identification of the activated call.
+//l:popup_note_window_1
+//
+#define qtn_multc_unhold_done_note "%U active"
+*/
+
+
+//  LOCALISATION STRINGS
+
+//
+// NOTE: Exact layout information syntax for logical names has not been
+//       decided/approved yet.
+//
+
+// ?item_context_comment
+//
+//#define qtn_?feature/app_?freetext "?text"
+#define qtn_aktapbar_menu "Menu"
+
+#define qtn_aknexpbar_step_back "Step back"
+#define qtn_aknexpbar_jump_back "Jump back"
+#define qtn_aknexpbar_reset "Reset"
+#define qtn_aknexpbar_exit "Exit"
+
+#define qtn_aknexpbar_view1_tab ""
+#define qtn_aknexpbar_caption "AknExPbar"
+
+#define qtn_aknexpbar_text_none "Text None"
+#define qtn_aknexpbar_text_percentage "Text Percentage"
+#define qtn_aknexpbar_text_fraction "Text Fraction"
+#define qtn_aknexpbar_set_final_value_1 "Set Final Value 1"
+#define qtn_aknexpbar_set_final_value_2 "Set Final Value 2"
+#define qtn_aknexpbar_show_info1 "Show Info 1"
+#define qtn_aknexpbar_show_info2 "Show Info 2"
+#define qtn_aknexpbar_show_info3 "Show Info 3"
+#define qtn_aknexpbar_show_info4 "Show Info 4"
+
+#define qtn_aknexpbar_formatstring_info "%d,%d,%d,%d,%d,%d"
+
+#define qtn_aknexpbar_softkey_option "Options"
+#define qtn_aknexpbar_softkey_next   "Next"
+
+#define qtn_aknexpbar_title_stepback "Step Back"
+#define qtn_aknexpbar_title_jumpback "Jump Back"
+#define qtn_aknexpbar_title_backwards "Backwards"
+#define qtn_aknexpbar_title_resetallvalues "Reset All Values"
+#define qtn_aknexpbar_title_progresstextnone "Progress Text None"
+#define qtn_aknexpbar_title_progresstextpercentage "Progress Text Percentage"
+#define qtn_aknexpbar_title_progresstextfraction "Progress Text Fraction"
+#define qtn_aknexpbar_title_setfinalvalue1 "Set Final Value 1"
+#define qtn_aknexpbar_title_setfinalvalue2 "Set Final Value 2"
+#define qtn_aknexpbar_title_showinfo "Show Info %d"
+
+// End of File

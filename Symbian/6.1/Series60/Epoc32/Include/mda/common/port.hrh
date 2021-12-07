@@ -1,0 +1,12 @@
+// Mda\Common\Port.hrh
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __MDA_COMMON_PORT_HRH__
+#define __MDA_COMMON_PORT_HRH__
+
+#define KUidMdaSourcePortDefine			 268450134
+#define KUidMdaDestinationPortDefine     268450135
+
+#endif

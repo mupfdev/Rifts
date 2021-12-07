@@ -1,0 +1,2 @@
+#define R_ACTIVE_CALLS                            0x33f7003
+#define R_CONFIRM_RFS                             0x33f7004

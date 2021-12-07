@@ -1,0 +1,76 @@
+/*
+* ============================================================================
+*  Name     : AknExEditor.mmp
+*  Part of  : AknExEditor
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET  AknExEditor.app
+TARGETTYPE  app
+UID  0x100039CE 0x10005C34
+TARGETPATH \system\apps\AknExEditor
+
+SOURCEPATH  ..\src  
+SOURCE      AknExEditorApp.cpp 
+SOURCE      AknExEditorAppUi.cpp
+SOURCE      AknExEditorDocument.cpp
+
+SOURCE      AknExEditorScenarioManager.cpp
+SOURCE      AknExEditorCapability.cpp
+
+SOURCE      AknExEditorDialog.cpp
+
+SOURCE      AknExEditorContainer1.cpp
+SOURCE      AknExEditorView1.cpp
+SOURCE      AknExEditorContainer4.cpp
+SOURCE      AknExEditorView4.cpp
+SOURCE      AknExEditorContainer5.cpp
+SOURCE      AknExEditorView5.cpp
+SOURCE      AknExEditorContainer6.cpp
+SOURCE      AknExEditorView6.cpp
+SOURCE      AknExEditorContainer7.cpp
+SOURCE      AknExEditorView7.cpp
+SOURCE      AknExEditorContainer9.cpp
+SOURCE      AknExEditorView9.cpp
+SOURCE      AknExEditorContainer21.cpp
+SOURCE      AknExEditorView21.cpp
+SOURCE      AknExEditorContainer22.cpp
+SOURCE      AknExEditorView22.cpp
+SOURCE      AknExEditorContainer23.cpp
+SOURCE      AknExEditorView23.cpp
+SOURCE      AknExEditorContainer25.cpp
+SOURCE      AknExEditorView25.cpp
+SOURCE      AknExEditorContainer30.cpp
+SOURCE      AknExEditorView30.cpp
+SOURCE      AknExEditorContainer33.cpp
+SOURCE      AknExEditorView33.cpp
+
+
+RESOURCE    ..\group\AknExEditor.rss
+RESOURCE    ..\group\AknExEditor_caption.rss
+LANG        SC
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY     euser.lib
+LIBRARY     apparc.lib
+LIBRARY     cone.lib
+LIBRARY     eikcore.lib
+LIBRARY     eikcoctl.lib
+LIBRARY     avkon.lib
+LIBRARY     bafl.lib
+LIBRARY     eikdlg.lib
+LIBRARY     eikctl.lib
+LIBRARY     etext.lib
+LIBRARY     gdi.lib
+LIBRARY     insock.lib
+LIBRARY     EGUL.lib
+
+// AIF file
+AIF AknExEditor.aif ..\aif AknExEditorAif.rss \
+    c12 AknExEditorIcon.bmp AknExEditorIconMask.bmp AknExEditorSmallIcon.bmp AknExEditorSmallIconMask.bmp
+
+// End of file.

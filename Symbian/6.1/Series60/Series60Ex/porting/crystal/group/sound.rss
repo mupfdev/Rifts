@@ -1,0 +1,166 @@
+// Copyright c 2000, Nokia. All rights reserved.
+
+NAME SND
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include "Sound.hrh"
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar=r_sound_menubar;
+    hotkeys=r_sound_hotkeys;
+    cba=r_sound_cba;
+    }
+
+
+// ---------------------------------------------------------
+//
+// CBA "toolbars"
+//
+// ---------------------------------------------------------
+RESOURCE  CBA r_sound_cba
+    {
+    breadth=80;
+        buttons=
+                {
+        CBA_BUTTON
+            {
+            id=ESoundCmdPlay;
+            txt="Play";
+            },
+        CBA_BUTTON
+            {
+            id=ESoundCmdRecord;
+            txt="Record";
+            },
+        CBA_BUTTON
+            {
+            id=ESoundCmdStop;
+            txt="Stop";
+            },
+        CBA_BUTTON
+            {
+            id=ESoundCmdChange;
+            txt="Change";
+            }
+        };
+    }
+
+
+
+// ---------------------------------------------------------
+//
+// hot keys
+//
+// ---------------------------------------------------------
+RESOURCE HOTKEYS r_sound_hotkeys
+    {
+    control=
+        {
+        HOTKEY { command=EEikCmdExit;	    key='e'; },
+        HOTKEY { command=ESoundCmdPlay;     key='p'; },
+        HOTKEY { command=ESoundCmdRecord;   key='r'; },
+        HOTKEY { command=ESoundCmdStop;     key='s'; },
+        HOTKEY { command=ESoundCmdChange;   key='m'; }
+        };
+    }
+
+// ---------------------------------------------------------
+//
+// menu items
+//
+// ---------------------------------------------------------
+RESOURCE MENU_BAR r_sound_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_sound_file_menu; txt="File"; },
+        MENU_TITLE { menu_pane=r_sound_sound_menu; txt="Sound"; }
+        };
+    }
+
+RESOURCE MENU_PANE r_sound_file_menu
+    {
+    items=
+        {
+        MENU_ITEM { command=EEikCmdExit; txt="Close"; }
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_sound_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_sound_sound_menu
+    {
+    items=
+        {
+        MENU_ITEM { command=ESoundCmdPlay; txt="Play"; },
+        MENU_ITEM { command=ESoundCmdRecord; txt="Record"; },
+        MENU_ITEM { flags=EEikMenuItemSeparatorAfter; command=ESoundCmdStop; txt="Stop"; },
+        MENU_ITEM { command=ESoundCmdChange; cascade=r_sound_utility_menu; txt="Change utility"; }
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_sound_utility_menu
+//   Small cascaded menu to chose sound player type
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_sound_utility_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command=ESoundCmdTone;
+            txt="Tone utility";
+            flags=EEikMenuItemRadioStart;
+            },
+        MENU_ITEM
+            {
+            command=ESoundCmdPlayer;
+            txt="Player utility";
+            flags=EEikMenuItemRadioMiddle;
+            },
+        MENU_ITEM
+            {
+            command=EESoundCmdRecorder;
+            txt="Recorder utility";
+            flags=EEikMenuItemRadioEnd;
+            }
+        };
+    }
+

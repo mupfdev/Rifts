@@ -1,0 +1,16 @@
+[sockman]
+protocols= irmux,tinytp
+
+[irmux]
+filename= irda.prt
+index= 1
+
+[tinytp]
+filename= irda.prt
+index= 2
+irPod= jeteye7401
+irBaud= 115200
+irPhysicalComPort= 3
+irLinkDisconnectTime= 20
+irSupportedBauds= 319
+irWindowSize= 1

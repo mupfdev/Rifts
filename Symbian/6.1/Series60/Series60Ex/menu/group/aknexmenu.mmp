@@ -1,0 +1,39 @@
+/*
+* ============================================================================
+*  Name     : AknExMenu.mmp
+*  Part of  : AknExMenu
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET  AknExMenu.app
+TARGETTYPE  app
+UID  0x100039CE 0x10005C30
+TARGETPATH \system\apps\AknExMenu
+
+SOURCEPATH  ..\src  
+SOURCE      AknExMenuApp.cpp 
+SOURCE      AknExMenuAppUi.cpp
+SOURCE      AknExMenuDocument.cpp
+SOURCE      AknExMenuContainer.cpp
+SOURCE      AknExMenuView.cpp
+SOURCE      AknExMenuSubContainer.cpp
+SOURCE      AknExMenuSubView.cpp
+SOURCE      AknExMenuOkContainer.cpp
+SOURCE      AknExMenuOkView.cpp
+
+SOURCEPATH  ..\group
+RESOURCE    AknExMenu.rss
+RESOURCE    AknExMenu_caption.rss
+LANG     SC
+
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY euser.lib apparc.lib cone.lib eikcore.lib
+LIBRARY eikcoctl.lib avkon.lib
+
+AIF AknExMenu.aif ..\Aif AknExMenuAif.rss \
+    c12 AknExMenuIcon.bmp AknExMenuIcon_mask.bmp AknExMenuIcon_42x29.bmp AknExMenuIcon_42x29_mask.bmp

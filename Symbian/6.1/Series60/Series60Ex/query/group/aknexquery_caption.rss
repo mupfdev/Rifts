@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : AknExQuery_caption.rss
+*  Part of  : AknExQuery
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include "AknExQuery.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = qtn_aknexquery_caption_list;
+    shortcaption = qtn_aknexquery_caption_grid;
+    }
+
+// End of File

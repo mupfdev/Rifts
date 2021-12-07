@@ -1,0 +1,31 @@
+TARGET            Dialer.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B82
+TARGETPATH        \system\apps\dialer
+
+SOURCEPATH        ..\src
+SOURCE            Dialer.cpp
+SOURCE            DialerApplication.cpp 
+SOURCE            DialerAppView.cpp
+SOURCE            DialerAppUi.cpp
+SOURCE            DialerDocument.cpp 
+
+SOURCEPATH        ..\..\helperfunctions
+SOURCE            EikonEnvironment.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          Dialer.rss
+
+USERINCLUDE       ..\inc 
+USERINCLUDE       ..\..\helperfunctions
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+LIBRARY           etel.lib
+LIBRARY           ws32.lib
+LIBRARY           efsrv.lib

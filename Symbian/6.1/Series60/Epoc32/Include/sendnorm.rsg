@@ -1,0 +1,6 @@
+#define R_SENDUI_MENUITEM_SEND                    0x5c494002
+#define R_SENDUI_MENU                             0x5c494003
+#define R_SENDUI_LIST_QUERY                       0x5c494004
+#define R_SENDUI_CREATE_MAILBOX_CONFIRMATION_QUERY 0x5c494005
+#define R_SENDUI_WAIT_NOTE                        0x5c494006
+#define R_SENDUI_SETTINGS_NOT_OK                  0x5c494007

@@ -1,0 +1,323 @@
+/*
+* ============================================================================
+*  Name     : AknExPbar.rss
+*  Part of  : AknExPbar
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    EXPB // 4 letter ID
+
+//  INCLUDES
+#include <eikon.rh>
+//#include <eikon.mbg>
+
+#include <avkon.rh>
+#include <avkon.rsg>
+#include <avkon.mbg>
+
+#include "eikon.rsg"
+#include "AknExPbar.hrh"
+#include "AknExPbar.loc"
+
+
+//  CONSTANTS  
+#define FINALVAL_1 15
+#define FINALVAL_2 20
+#define WIDTH_2    114
+
+//  RESOURCE DEFINITIONS 
+
+//----------------------------------------------------
+//
+//    RSS_SIGNATURE
+//    EPOC requirement
+//
+//----------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+//----------------------------------------------------
+//
+//    TBUF
+//    EPOC requirement
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF
+    {
+    buf = qtn_aknexpbar_caption;
+    }
+
+//----------------------------------------------------
+//
+//    EIK_APP_INFO
+//    EPOC requirement
+//
+//----------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = r_aknexpbar_status_pane;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexpbar_view1
+//    View1 definition
+//
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexpbar_view1
+    {
+    menubar = r_aknexpbar_menubar_view1;  
+    cba = r_aknexpbar_softkeys_options_next;
+    }
+
+// ---------------------------------------------------------
+//
+//    r_aktnapbar_menubar
+//    Menu bar (dummy)
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexpbar_menubar_view1
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexpbar_main_menu;
+            txt = qtn_aknexpbar_menu;
+            }
+        };
+    }
+
+
+// ---------------------------------------------------------
+//
+//    r_aknexpbar_main_menu
+//    Menu pane, which shows command list
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexpbar_main_menu
+    {
+    items=
+        {
+        MENU_ITEM 
+            {
+            command = EProgCmdStepBackwards;
+            txt = qtn_aknexpbar_step_back;
+            },
+        MENU_ITEM
+            {
+            command = EProgCmdReset;
+            txt = qtn_aknexpbar_reset;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EProgCmdChangeSetFinalValue1;
+            txt = qtn_aknexpbar_set_final_value_1;
+            },
+        MENU_ITEM
+            {
+            command = EProgCmdChangeSetFinalValue2;
+            txt = qtn_aknexpbar_set_final_value_2;
+            },
+        MENU_ITEM
+            {
+            command = EProgCmdChangeShowInfo1;
+            txt = qtn_aknexpbar_show_info1;
+            },
+        MENU_ITEM
+            {
+            command = EProgCmdChangeShowInfo2;
+            txt = qtn_aknexpbar_show_info2;
+            },
+        MENU_ITEM
+            {
+            command = EProgCmdChangeShowInfo3;
+            txt = qtn_aknexpbar_show_info3;
+            },
+        MENU_ITEM
+            {
+            command = EProgCmdChangeShowInfo4;
+            txt = qtn_aknexpbar_show_info4;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexpbar_exit;
+            }
+        };      
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexpbar_status_pane
+//    Status pane difinition
+//
+//----------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_aknexpbar_status_pane
+    {
+    panes=
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidNavi;
+            type = EAknCtNaviPane;
+            resource = r_aknexpbar_navi_decorator;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexpbar_navi_decorator
+//    Status pane difinition of details
+//
+//----------------------------------------------------
+//
+RESOURCE NAVI_DECORATOR r_aknexpbar_navi_decorator
+    {
+    type = ENaviDecoratorControlTabGroup;
+    control = TAB_GROUP
+        {
+        tab_width = EAknTabWidthWithOneTab;
+        active = 0;
+        tabs = {
+            TAB
+                {
+                id = EAknExpbarView1Tab;
+                txt = qtn_aknexpbar_view1_tab;
+                }
+            };
+        };
+    }
+
+
+
+// ---------------------------------------------------------
+//
+//    r_aknexpbar_progress_bar_1
+//    One of progress bar definition 
+//
+// ---------------------------------------------------------
+//
+RESOURCE PROGRESSINFO r_aknexpbar_progress_bar_1
+    {
+    finalval = FINALVAL_1;
+    }
+
+
+// ---------------------------------------------------------
+//
+//    r_aknexpbar_progress_bar_2
+//    One of progress bar definition 
+//
+// ---------------------------------------------------------
+//
+RESOURCE PROGRESSINFO r_aknexpbar_progress_bar_2
+    {
+    finalval = FINALVAL_2;
+    width    = WIDTH_2;
+    }
+
+RESOURCE PROGRESSINFO r_aknexpbar_progress_bar_1_textpercentage
+    {
+    text_type = 1;
+    finalval = FINALVAL_1;
+    }
+
+RESOURCE PROGRESSINFO r_aknexpbar_progress_bar_1_textfraction
+    {
+    text_type = 2;
+    finalval = FINALVAL_1;
+    }
+
+RESOURCE PROGRESSINFO r_aknexpbar_progress_bar_2_textpercentage
+    {
+    text_type = 1;
+    finalval = FINALVAL_2;
+    width    = WIDTH_2;
+    }
+
+RESOURCE PROGRESSINFO r_aknexpbar_progress_bar_2_textfraction
+    {
+    text_type = 2;
+    finalval = FINALVAL_2;
+    width    = WIDTH_2;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_formatstring_info
+    {
+    buf = qtn_aknexpbar_formatstring_info;
+    }
+
+RESOURCE CBA r_aknexpbar_softkeys_options_next
+	{
+	buttons =
+		{
+		CBA_BUTTON {id=EAknSoftkeyOptions; txt = qtn_aknexpbar_softkey_option;},
+		CBA_BUTTON {id=EProgSoftkeyNext; txt = qtn_aknexpbar_softkey_next; }
+		};
+	}
+
+RESOURCE TBUF40 r_aknexpbar_title_stepback
+    {
+    buf=qtn_aknexpbar_title_stepback;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_jumpback
+    {
+    buf=qtn_aknexpbar_title_jumpback;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_backwards
+    {
+    buf=qtn_aknexpbar_title_backwards;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_resetallvalues
+    {
+    buf=qtn_aknexpbar_title_resetallvalues;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_progresstextnone
+    {
+    buf=qtn_aknexpbar_title_progresstextnone;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_progresstextpercentage
+    {
+    buf=qtn_aknexpbar_title_progresstextpercentage;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_progresstextfraction
+    {
+    buf=qtn_aknexpbar_title_progresstextfraction;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_setfinalvalue1
+    {
+    buf=qtn_aknexpbar_title_setfinalvalue1;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_setfinalvalue2
+    {
+    buf=qtn_aknexpbar_title_setfinalvalue2;
+    }
+
+RESOURCE TBUF40 r_aknexpbar_title_showinfo
+    {
+    buf=qtn_aknexpbar_title_showinfo;
+    }
+
+// End of File

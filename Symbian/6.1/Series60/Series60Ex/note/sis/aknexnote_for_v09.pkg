@@ -1,0 +1,16 @@
+; AknExNote.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExNote"},(0x10005C2F),1,02,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExNote.app"-"!:\system\apps\AknExNote\AknExNote.app"
+"..\..\..\epoc32\release\thumb\urel\AknExNote.rsc"-"!:\system\apps\AknExNote\AknExNote.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExNote.aif"-"!:\system\apps\AknExNote\AknExNote.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExNote.mbm"-"!:\System\apps\AknExNote\AknExNote.mbm"
+"..\..\..\epoc32\release\thumb\urel\AknExNote_caption.rsc"-"!:\system\apps\AknExNote\AknExNote_caption.rsc"

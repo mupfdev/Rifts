@@ -1,0 +1,6 @@
+#define R_QTN_MODE_GENERAL                        0x4dfd4002
+#define R_QTN_MODE_SILENT                         0x4dfd4003
+#define R_QTN_MODE_MEETING                        0x4dfd4004
+#define R_QTN_MODE_OUTDOOR                        0x4dfd4005
+#define R_QTN_MODE_PAGER                          0x4dfd4006
+#define R_QTN_TC_SILENTTONEFILE                   0x4dfd4007

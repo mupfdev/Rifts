@@ -1,0 +1,9 @@
+#define R_PINBMDL_DEFAULT_LINK_FILE_PATH          0x4f3ad002
+#define R_PINBMDL_LINK_FILE_PATH                  0x4f3ad003
+#define R_PINBMDL_LINK_FILE_PATH_MMC              0x4f3ad004
+#define R_PINBMDL_MENU_ADD_TO_PINBOARD            0x4f3ad005
+#define R_PINBMDL_DEFAULT_LINK_FILE_NAME          0x4f3ad006
+#define R_PINBMDL_LINK_FILE_EXTENSION             0x4f3ad007
+#define R_PINBMDL_PINBOARD_APP_UID                0x4f3ad008
+#define R_PINBMDL_LINK_CONFIRMATION_NOTE          0x4f3ad009
+#define R_PINBMDL_LINK_PROGRESS_NOTE              0x4f3ad00a

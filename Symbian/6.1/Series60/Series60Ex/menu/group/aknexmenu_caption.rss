@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : AknExMenu_caption.rss
+*  Part of  : AknExMenu
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include "AknExMenu.loc"
+#include <apcaptionfile.rh>
+
+RESOURCE CAPTION_DATA
+    {
+    caption = qtn_apps_tamn_list;
+    shortcaption = qtn_apps_tamn_grid;
+    }
+
+// End of File

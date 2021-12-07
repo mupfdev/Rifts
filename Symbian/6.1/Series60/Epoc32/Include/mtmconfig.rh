@@ -1,0 +1,35 @@
+// MTMTOOL.RH
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __MTMTOOL_RH__
+#define __MTMTOOL_RH__
+
+#include <badef.rh>
+#include <msvstd.hrh>
+
+STRUCT VERSION
+	{
+	WORD major;
+	WORD minor;
+	WORD build;
+	}
+
+STRUCT MTM_COMPONENT
+	{
+	LTEXT human_readable_name = "";
+	LONG component_uid;
+	LONG specific_uid;
+	WORD entry_point;
+	STRUCT version;
+	}
+
+STRUCT MTM_INFO_FILE
+	{
+	LONG mtm_type_uid;
+	LONG technology_type_uid;
+	STRUCT components[];
+	}
+
+#endif

@@ -1,0 +1,15 @@
+; AknExForm.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExForm"},(0x10005C33),1,02,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExForm.app"-"!:\system\apps\AknExForm\AknExForm.app"
+"..\..\..\epoc32\release\thumb\urel\AknExForm.rsc"-"!:\system\apps\AknExForm\AknExForm.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExForm.aif"-"!:\system\apps\AknExForm\AknExForm.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExForm_caption.rsc"-"!:\system\apps\AknExForm\AknExForm_caption.rsc"

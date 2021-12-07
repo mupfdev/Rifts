@@ -1,0 +1,28 @@
+TARGET            MultiViews.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B92
+TARGETPATH        \system\apps\multiviews
+LANG              SC
+
+SOURCEPATH        ..\src
+SOURCE            MultiViews.cpp
+SOURCE            MultiViewsApplication.cpp 
+SOURCE            MultiViewsAppUi.cpp
+SOURCE            MultiViewsDocument.cpp 
+SOURCE            MultiViewsView1.cpp
+SOURCE            MultiViewsContainer1.cpp
+SOURCE            MultiViewsView2.cpp
+SOURCE            MultiViewsContainer2.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          MultiViews.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib
+LIBRARY           eikcore.lib
+LIBRARY           avkon.lib

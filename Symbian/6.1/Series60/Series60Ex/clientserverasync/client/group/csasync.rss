@@ -1,0 +1,74 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+NAME CSAS
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "CSAsync.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_csasync_menubar;
+	cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_csasync_menubar
+//   Menubar for CSAsync example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_csasync_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_csasync_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_csasync_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_csasync_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = EStartClock; txt = "Start Clock";},
+        MENU_ITEM {command = EStopClock; txt = "Stop Clock";},
+        MENU_ITEM {command = EAknSoftkeyExit;  txt = "Exit";}
+        };
+    }

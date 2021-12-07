@@ -1,0 +1,17 @@
+// Simple.mmp
+//
+
+TARGET			Simple.app
+TARGETTYPE		app
+TARGETPATH      	\system\apps\simple
+UID			0x100039ce 0x100098e2
+SOURCEPATH		.
+SOURCE			AppHolder.cpp Base.cpp Simple.cpp
+RESOURCE		Simple.rss
+USERINCLUDE		.
+SYSTEMINCLUDE		\epoc32\include
+LIBRARY			euser.lib
+LIBRARY			apparc.lib
+LIBRARY			cone.lib
+LIBRARY			eikcore.lib 
+LIBRARY			ws32.lib    

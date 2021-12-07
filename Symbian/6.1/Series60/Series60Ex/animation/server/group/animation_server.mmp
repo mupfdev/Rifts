@@ -1,0 +1,26 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+TARGET          animation_server.dll
+TARGETTYPE      ani
+UID             0x10003b22 0x100008EE
+TARGETPATH      system\apps\animation
+
+SOURCEPATH      ..\src
+SOURCE          serverdll.cpp
+SOURCE          serverimage.cpp
+SOURCE          servertimeouttimer.cpp
+
+USERINCLUDE     ..\inc
+USERINCLUDE     ..\..\gui\inc
+SYSTEMINCLUDE   \epoc32\include
+
+// inform the linker about the window server
+#if defined(WINS)
+  deffile       \epoc32\release\wins\WSANIM.DEF
+#elif defined(MARM)
+  deffile       \epoc32\release\marm\WSANIM.DEF
+#else
+  error
+#endif
+
+LIBRARY         euser.lib
+

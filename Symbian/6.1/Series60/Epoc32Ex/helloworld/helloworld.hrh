@@ -1,0 +1,13 @@
+// HelloWorld.hrh
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+
+
+enum TExampleMenuCommands
+	{
+	EExampleItem0 = 200,
+	EExampleItem1,
+	EExampleItem2
+	};
+

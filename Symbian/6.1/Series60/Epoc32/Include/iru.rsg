@@ -1,0 +1,14 @@
+#define R_IRU_SEND_PROGRESS_SENDING               0x2e8b1002
+#define R_IRU_SEND_OUTBOX_SENDING                 0x2e8b1003
+#define R_IRU_BT_SEND_OUTBOX_SENDING              0x2e8b1004
+#define R_IRU_CONNECTING                          0x2e8b1005
+#define R_IRU_CANNOT_ESTABLISH                    0x2e8b1006
+#define R_IRU_SENDING_DATA                        0x2e8b1007
+#define R_IRU_SENDING_FAILED                      0x2e8b1008
+#define R_IRU_DATA_SENT                           0x2e8b1009
+#define R_BT_CONNECTING                           0x2e8b100a
+#define R_BT_SENDING_DATA                         0x2e8b100b
+#define R_BT_DEV_NOT_AVAIL                        0x2e8b100c
+#define R_BT_DATA_SENT                            0x2e8b100d
+#define R_MESSAGE_NOT_OPENED                      0x2e8b100e
+#define R_BT_FAILED_TO_SEND                       0x2e8b100f

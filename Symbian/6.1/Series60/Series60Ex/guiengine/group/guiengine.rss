@@ -1,0 +1,111 @@
+// Copyright (c) 2001, Nokia. All rights reserved.
+
+
+NAME GUIE
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "GuiEngine.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document FileName
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf="c:\system\apps\GuiEngine\GuiEngineState"; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_gui_engine_menubar;
+	cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_gui_engine_menubar
+//   Menubar for GuiEngine example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_gui_engine_menubar
+    {
+    titles =
+		{
+        MENU_TITLE {menu_pane = r_gui_engine_menu;}
+		};
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_shape_cascade
+//   Menu for "Shape"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_shape_cascade
+	{
+	items = 
+		{
+		MENU_ITEM
+			{
+			txt = "Circle";
+			command = KSelectBrushCircle;
+			},
+		MENU_ITEM
+			{
+			txt = "Rectangle";
+			command = KSelectBrushRectangle;
+			}
+		};
+	}
+
+// ---------------------------------------------------------
+//   
+//   r_gui_engine_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_gui_engine_menu
+	{
+    items = 
+       {
+       MENU_ITEM
+			{
+			txt = "Shape";
+			cascade = r_shape_cascade;
+			},
+       MENU_ITEM
+			{
+			txt = "Clear";
+			command = KClear;
+			},
+       MENU_ITEM
+			{
+            txt = "Exit";
+			command = EAknSoftkeyExit;  
+            }
+       };
+    }

@@ -1,0 +1,51 @@
+/*
+* ============================================================================
+*  Name     : AknExSettingList.hrh
+*  Part of  : AknExSettingList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXSETTINGLIST_HRH
+#define AKNEXSETTINGLIST_HRH
+
+enum TAknExSettingListMenuCommands
+    {
+    EAknExSettingListCmdEmptyOutline = 0x6000,
+
+    EAknExSettingListCmdSettingList,
+    EAknExSettingListCmdOutline01,
+    EAknExSettingListCmdOutline02,
+    EAknExSettingListCmdOutline03,
+    EAknExSettingListCmdOutline04,
+    EAknExSettingListCmdOutline05,
+    EAknExSettingListCmdOutline06,
+    EAknExSettingListCmdOutline07,
+    EAknExSettingListCmdOutline08,
+    EAknExSettingListCmdOutline09,
+    EAknExSettingListCmdOutline10
+    };
+
+enum TAknExSettingItems
+    {
+    EAknExSettingText,
+    EAknExSettingVolume,
+    EAknExSettingEnumText,
+    EAknExSettingSlider,
+    EAknExSettingDate,
+    EAknExSettingTime,
+    EAknExSettingBinary,
+    EAknExSettingPassAlph,
+    EAknExSettingPassNumber,
+    EAknExSettingIpAddress
+    };
+
+enum TAknExSetListCba
+    {
+    EAknExSetListCbaCmdNext = 0x6300
+    };
+
+
+#endif // AKNEXSETTINGLIST_HRH
+
+// End of File

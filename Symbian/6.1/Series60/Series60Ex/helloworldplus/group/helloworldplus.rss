@@ -1,0 +1,109 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+NAME HELL
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "HelloWorldPlus.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF r_default_document_name { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_helloworldplus_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_helloworldplus_menubar
+//   Menubar for HelloWorldPlus example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_helloworldplus_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_helloworldplus_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_helloworldplus_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_helloworldplus_menu
+    {
+    items = 
+        {
+        // added the new Options menu command here
+        MENU_ITEM 
+		    {
+			command = EHelloWorldPlusCommand;  
+		    txt = "Hello World Plus!";
+			},
+        MENU_ITEM 
+		    {
+			command = EHelloWorldPlusDrawNow;  
+		    txt = "Request Screen Update";
+			},
+        MENU_ITEM 
+		    {
+			command = EHelloWorldPlusUserDraw; 
+		    txt = "Force Screen Update";
+			},         
+
+        MENU_ITEM 
+		    {
+			command = EHelloWorldPlusCommand1;  
+			txt = "Hello";
+			},
+        MENU_ITEM 
+		    {
+			command = EAknSoftkeyExit;   
+			txt = "Exit";
+			}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//    New string resource
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF32 r_new_string_resource 
+    { 
+	buf="This is Hello World Plus!"; 
+	}

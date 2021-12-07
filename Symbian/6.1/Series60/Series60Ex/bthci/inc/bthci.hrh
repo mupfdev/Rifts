@@ -1,0 +1,16 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __BTHCI_HRH__
+#define __BTHCI_HRH__
+
+/** BTHCI enumerate command codes */
+enum TBTHCIIds
+    {
+    EBTHCILocalVersion = 1,
+    EBTHCILocalFeatures,
+    EBTHCILocalAddress,
+    EBTHCIClear
+    };
+
+
+#endif // __BTHCI_HRH__

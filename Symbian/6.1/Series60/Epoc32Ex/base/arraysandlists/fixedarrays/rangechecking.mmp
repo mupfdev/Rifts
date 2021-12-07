@@ -1,0 +1,19 @@
+// RangeChecking.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+
+TARGET        RangeChecking.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        RangeChecking.cpp
+
+USERINCLUDE   ..\..\CommonFramework
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib
+
+

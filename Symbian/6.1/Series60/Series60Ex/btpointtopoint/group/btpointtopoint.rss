@@ -1,0 +1,78 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+NAME BTPO
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "BTPointToPoint.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_btpointtopoint_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_btpointtopoint_menubar
+//   Menubar for BTPointToPoint example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_btpointtopoint_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_btpointtopoint_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_btpointtopoint_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_btpointtopoint_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = EBTPointToPointStartReceiver;  txt = "Start Receiver";},
+        MENU_ITEM {command = EBTPointToPointStopReceiver;  txt = "Stop Receiver";},
+        MENU_ITEM {command = EBTPointToPointConnect;  txt = "Connect";},
+        MENU_ITEM {command = EBTPointToPointDisconnect; txt = "Disconnect";},
+        MENU_ITEM {command = EBTPointToPointSendMessage;  txt = "Send Message";},
+        MENU_ITEM {command = EBTPointToPointClearList;  txt = "Clear List";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }

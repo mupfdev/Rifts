@@ -1,0 +1,27 @@
+/*
+* ============================================================================
+*  Name     : AknExNoteaif.rss
+*  Part of  : AknExNote
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include <aiftool.rh>
+
+RESOURCE AIF_DATA
+    {
+    app_uid = 0x10005C2F;
+    caption_list=
+        {
+        CAPTION
+            {
+            code = ELangEnglish;
+            caption = "AKNEXNOTE";
+            }
+        };
+    num_icons = 2;
+    embeddability=KAppNotEmbeddable;
+    newfile=KAppDoesNotSupportNewFile;
+    }
+
+// End of File

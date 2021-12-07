@@ -1,0 +1,206 @@
+/*
+* ============================================================================
+*  Name     : AknExForm localise file
+*  Part of  : AknExForm
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+
+//  LOCALISATION STRINGS
+#define qtn_aknexform_title         "AknExForm"
+
+// Caption
+#define qtn_apps_tafm_list          "AKNEXFORM"
+#define qtn_apps_tafm_grid          "AKNEXFORM"
+
+// MenuBar
+#define qtn_aknexform_menubar           "Option"
+#define qtn_aknexform_menu_form_states  "Form states"
+#define qtn_aknexform_menu_move_in_form "Moving"
+#define qtn_aknexform_menu_gen_form_prm "General form prm"
+#define qtn_aknexform_menu_field_label  "Field label"
+#define qtn_aknexform_menu_text_field   "Text field"
+#define qtn_aknexform_menu_separator    "Separator"
+#define qtn_aknexform_menu_empty_form   "Empty form"
+#define qtn_aknexform_menu_add_field    "Add field"
+#define qtn_aknexform_menu_remove_field "Remove field"
+#define qtn_aknexform_menu_laf          "For LAF"
+#define qtn_aknexform_menu_savetest     "Save"
+#define qtn_aknexform_menu_exit         "Exit"
+
+#define qtn_aknexform_menu_double_line  "Double Line"
+
+#define qtn_aknexform_menu_outline102   "Double & Single"
+
+
+// Sub menubar of "Form states" menu
+#define qtn_aknexform_menu_outline02    "Form States"
+
+// Sub menubar of "Moving" menu
+#define qtn_aknexform_menu_outline14    "Fields"
+#define qtn_aknexform_menu_outline16    "Views"
+
+// Sub menubar of "General form parameter" menu
+#define qtn_aknexform_menu_outline22    "Form Layout Type"
+
+// Sub menubar of "Field label" menu
+#define qtn_aknexform_menu_outline25    "Edit Field Label"
+
+// Sub menubar of "Text field" menu
+#define qtn_aknexform_menu_outline29    "Editors"
+#define qtn_aknexform_menu_outline31    "Long Text"
+
+// Sub menubar of "Separator" menu
+#define qtn_aknexform_menu_outline52    "Separator"
+
+// Sub menubar of "Empty form" menu
+#define qtn_aknexform_menu_outline54    "Form is Empty"
+
+// Sub menubar of "Adding a field" menu
+#define qtn_aknexform_menu_outline55    "Add Field"
+
+// Sub menubar of "Removing a field" menu
+#define qtn_aknexform_menu_outline57    "Delete Field"
+
+// Sub menubar of "For LAF" menu
+#define qtn_aknexform_menu_outline68    "Sliders"
+#define qtn_aknexform_menu_outline70    "Cursor Position"
+
+// Sub menubar of "For LAF" menuSave test
+#define qtn_aknexform_menu_outline83    "Save data"
+
+// Messages
+#define qtn_aknexform_label_title       "AknExForm\nSample Application"
+#define qtn_aknexform_label_operation   "AknExForm\nSample Application"
+
+// Label field text
+#define qtn_aknexform_form_label_edwin  "edwin"
+#define qtn_aknexform_form_label_ed1    "ed1"
+#define qtn_aknexform_form_label_ed2    "ed2"
+#define qtn_aknexform_form_label_ed3    "ed3"
+#define qtn_aknexform_form_label_ed4    "ed4"
+#define qtn_aknexform_form_label_ed5    "ed5"
+#define qtn_aknexform_form_label_ed6    "ed6"
+#define qtn_aknexform_form_label_ed7    "ed7"
+#define qtn_aknexform_form_label_ed8    "ed8"
+#define qtn_aknexform_form_label_ed9    "ed9"
+#define qtn_aknexform_form_label_ed10   "ed10"
+#define qtn_aknexform_form_label_ed11   "ed11"
+#define qtn_aknexform_form_label_ed12   "ed12"
+#define qtn_aknexform_form_label_ed13   "ed13"
+#define qtn_aknexform_form_label_ed14   "ed14"
+#define qtn_aknexform_form_label_ed15   "ed15"
+#define qtn_aknexform_form_label_ed16   "ed16"
+#define qtn_aknexform_form_label_ed17   "ed17"
+#define qtn_aknexform_form_label_number "value"
+#define qtn_aknexform_form_label_num1   "num1"
+#define qtn_aknexform_form_label_num2   "num2"
+#define qtn_aknexform_form_label_num3   "num3"
+#define qtn_aknexform_form_label_num4   "num4"
+#define qtn_aknexform_form_label_num5   "num5"
+#define qtn_aknexform_form_label_num6   "num6"
+#define qtn_aknexform_form_label_date   "date"
+#define qtn_aknexform_form_label_date1  "date1"
+#define qtn_aknexform_form_label_date2  "date2"
+#define qtn_aknexform_form_label_date3  "date3"
+#define qtn_aknexform_form_label_date4  "date4"
+#define qtn_aknexform_form_label_date5  "date5"
+#define qtn_aknexform_form_label_date6  "date6"
+#define qtn_aknexform_form_label_time   "time"
+#define qtn_aknexform_form_label_time1  "time1"
+#define qtn_aknexform_form_label_time2  "time2"
+#define qtn_aknexform_form_label_time3  "time3"
+#define qtn_aknexform_form_label_time4  "time4"
+#define qtn_aknexform_form_label_time5  "time5"
+#define qtn_aknexform_form_label_time6  "time6"
+#define qtn_aknexform_form_label_durat  "durat"
+#define qtn_aknexform_form_label_durat1 "durat1"
+#define qtn_aknexform_form_label_durat2 "durat2"
+#define qtn_aknexform_form_label_durat3 "durat3"
+#define qtn_aknexform_form_label_durat4 "durat4"
+#define qtn_aknexform_form_label_durat5 "durat5"
+#define qtn_aknexform_form_label_durat6 "durat6"
+#define qtn_aknexform_form_label_secret "pswd"
+#define qtn_aknexform_form_label_secr1  "pswd1"
+#define qtn_aknexform_form_label_secr2  "pswd2"
+#define qtn_aknexform_form_label_secr3  "pswd3"
+#define qtn_aknexform_form_label_secr4  "pswd4"
+#define qtn_aknexform_form_label_secr5  "pswd5"
+#define qtn_aknexform_form_label_secr6  "pswd6"
+#define qtn_aknexform_form_label_slider "slider"
+#define qtn_aknexform_form_label_sldr1  "slider1"
+#define qtn_aknexform_form_label_sldr2  "slider2"
+#define qtn_aknexform_form_label_sldr3  "slider3"
+#define qtn_aknexform_form_label_add_ed "Add ed"
+
+// Navipane page label text
+#define qtn_aknexform_form_label_page1  "Page1"
+#define qtn_aknexform_form_label_page2  "Page2"
+#define qtn_aknexform_form_label_page3  "Page3"
+#define qtn_aknexform_form_label_page4  "Page4"
+#define qtn_aknexform_form_label_edwin  "edwin"
+#define qtn_aknexform_form_label_num    "num"
+#define qtn_aknexform_form_label_date   "date"
+#define qtn_aknexform_form_label_time   "time"
+#define qtn_aknexform_form_label_durat  "durat"
+#define qtn_aknexform_form_label_pass   "pass"
+
+// Slider label text
+#define qtn_aknexform_form_label_sdmin  "min"
+#define qtn_aknexform_form_label_sdmax  "max"
+#define qtn_aknexform_form_value_label  "%U"
+#define qtn_aknexform_form_header_label "HeaderLabel"
+
+// Bitmap file path
+// +++++1234567890123456789012345678901++123456789012345678901234567890++++
+#define qtn_aknexform_bmpfile_path      "Z:\\System\\Data\\avkon.mbm"
+
+// Sample Editor text
+#define qtn_aknexform_form_edwin_text   "Edwin text."
+#define qtn_aknexform_form_secret_text  "Password"
+
+// Derived Form Menu text
+#define qtn_aknexform_menu_change_focus				  "Change Focus"
+#define qtn_aknexform_menu_try_change_focus_to_first  "Try To Focus First"
+#define qtn_aknexform_menu_try_change_focus_to_middle "Try To Focus Middle"
+#define qtn_aknexform_menu_try_change_focus_to_last   "Try To Focus Last"
+#define qtn_aknexform_menu_rotate_focus_by_one        "Rotate Focus +1"
+#define qtn_aknexform_menu_rotate_focus_by_three      "Rotate Focus +3"
+#define qtn_aknexform_menu_rotate_focus_by_minus_two  "Rotate Focus -2"
+
+#define qtn_aknexform_menu_set_caption				  "Set Caption"
+#define qtn_aknexform_menu_set_caption_from_resource  "From Resource"
+#define qtn_aknexform_menu_set_caption_from_user	  "From User"
+
+
+#define qtn_aknexform_menu_activate_page			  "Activate Page"
+#define qtn_aknexform_menu_activate_first_page		  "First Page"
+
+#define qtn_aknexform_menu_checks					  "Checks"
+#define qtn_aknexform_menu_active_page				  "Active Page"
+#define qtn_aknexform_menu_get_border_style			  "Get Border Style"
+#define qtn_aknexform_menu_get_flags				  "Get Flags"
+#define qtn_aknexform_menu_get_line					  "1st Line on 1st page"
+
+#define qtn_aknexform_menu_reset_line				  "Reset Line"
+#define qtn_aknexform_menu_reset_line_minimum_sizes	  "Minimum Sizes"
+
+#define qtn_aknexform_menu_pre_n_post				  "Pre N Post"
+
+#define qtn_aknexform_menu_size_n_pos				  "Size N Pos"
+#define qtn_aknexform_menu_size_n_pos_10x10			  "10 x 10"
+#define qtn_aknexform_menu_size_n_pos_100x100		  "100 x 100"
+
+#define qtn_aknexform_menu_save_test				  "Save Test"
+#define qtn_aknexform_menu_set_changes_pending_true   "Changes Pending True"
+#define qtn_aknexform_menu_set_changes_pending_false  "Changes Pending False"
+
+
+// texts used in derived form
+#define qtn_aknexform_resource_caption	"Resource"
+
+
+
+
+// End of File

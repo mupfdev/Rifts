@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % sis-makefile-module SYSTEM "sis-makefile.dtd">
+%sis-makefile-module;
+
+<!ELEMENT sisar-configuration (default-directory,
+path-conversion-rule, default-public-key-certificate?,
+default-private-key?, increment-build-number?, sis-file?)>
+<!ATTLIST sisar-configuration
+  version CDATA #FIXED "1.0">
+
+<!ELEMENT default-directory EMPTY>
+<!ATTLIST default-directory
+  path CDATA #REQUIRED>
+
+<!-- Currently only a single string replacement is supported. -->
+<!ELEMENT path-conversion-rule (replace)>
+<!ELEMENT replace (replacement)>
+<!ATTLIST replace
+  match-at (start) "start"
+  pattern CDATA #REQUIRED>
+<!ELEMENT replacement (target)>
+
+<!ELEMENT default-public-key-certificate (public-key-certificate)>
+
+<!ELEMENT default-private-key (private-key)>
+
+<!ELEMENT increment-build-number EMPTY>
+
+<!ELEMENT sis-file EMPTY>
+<!ATTLIST sis-file
+  file CDATA #REQUIRED>

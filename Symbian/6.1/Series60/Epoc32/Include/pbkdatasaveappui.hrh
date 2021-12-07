@@ -1,0 +1,39 @@
+/*
+* ============================================================================
+*  Name     : PbkDataSaveAppUi.hrh
+*  Part of  : PbkView.dll
+*
+*  Description:
+*    Resource constants for Phonebook data save service.
+*  Version:
+*
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+* ============================================================================
+*/
+
+#ifndef __PbkDataSaveAppUi_HRH__
+#define __PbkDataSaveAppUi_HRH__
+
+// CONSTANTS
+
+/**
+ * Command Ids for Phonebook's data save service.
+ */
+enum TPbkDataSaveCommandId
+    {
+    EPbkCmdDataSaveBase = 0,
+    EPbkCmdDataSaveCreateNew,
+    EPbkCmdDataSaveAddToExisting
+    };
+
+#endif // __PbkDataSaveAppUi_HRH__
+            
+// End of File

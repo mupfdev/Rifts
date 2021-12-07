@@ -1,0 +1,12 @@
+#define R_TASKMGR_HOTKEYS                         0x606a1004
+#define R_TASKMGR_LISTVIEW_MENUBAR                0x606a1005
+#define R_TASKMGR_FILE_MENU                       0x606a1006
+#define R_TASKMGR_VIEW_MENU                       0x606a1007
+#define R_TASKMGR_VIEW_MENU_CASCADE               0x606a1008
+#define R_TASKMGR_TASK_MENU                       0x606a1009
+#define R_TASKMGR_LISTBOX_RESOURCE                0x606a100a
+#define R_TASKMGR_OK_BACK_CBA                     0x606a100b
+#define R_TASKMGR_MEMORY_BACK_CBA                 0x606a100c
+#define R_TASKMGR_MORE_BACK_CBA                   0x606a100d
+#define R_TASKMGR_ADDRESS_QUERY                   0x606a100e
+#define R_TASKMGR_LISTVIEW                        0x606a100f

@@ -1,0 +1,8 @@
+#define R_MSG_ERRH_NO_AP                          0x41e40002
+#define R_MSG_ERRH_INVALID_AP                     0x41e40003
+#define R_MSG_ERRH_CONN_IN_USE                    0x41e40004
+#define R_MSG_ERRH_DISK_LOW_1                     0x41e40005
+#define R_MSG_ERRH_DISK_LOW_N                     0x41e40006
+#define R_MSG_ERRH_MEMORY_LOW                     0x41e40007
+#define R_MSG_ERRH_ROAMING_REMINDER               0x41e40008
+#define R_MSG_ERRH_SEND_ERROR                     0x41e40009

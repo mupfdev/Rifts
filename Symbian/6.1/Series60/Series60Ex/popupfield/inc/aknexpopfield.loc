@@ -1,0 +1,301 @@
+/*
+* =============================================================================
+*  Name     : AknExPopField localise file
+*  Part of  : AknExPopField
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+#include <bldvariant.hrh>
+
+//  LOCALISATION STRINGS
+
+// Caption
+#define qtn_apps_tapf_list				"AKNEXPOPFIELD"
+#define qtn_apps_tapf_grid				"AKNEXPOPFIELD"
+
+// MenuBar
+#define qtn_aknexpopfield_menubar        "Options"
+#define qtn_aknexpopfield_menu_state     "Popup field state"
+#define qtn_aknexpopfield_menu_pop_list  "Popup selection"
+#define qtn_aknexpopfield_menu_select    "Select item"
+#define qtn_aknexpopfield_menu_softkey   "Softkey"
+#define qtn_aknexpopfield_menu_moving    "Moving"
+#define qtn_aknexpopfield_menu_item      "Item of selection"
+#define qtn_aknexpopfield_menu_own_val   "Enter own value"
+#define qtn_aknexpopfield_menu_data      "Data type"
+#define qtn_aknexpopfield_menu_graphic   "With graphic"
+#define qtn_aknexpopfield_menu_focus     "Focus color"
+#define qtn_aknexpopfield_menu_page      "Focus in pages"
+#define qtn_aknexpopfield_menu_fldtext	 "Field text"
+#define qtn_aknexpopfield_menu_attribset "Attrib Set"
+#define qtn_aknexpopfield_menu_exit      "Exit"
+
+// Sub menubar of "Popup field state" menu
+#define qtn_aknexpopfield_menu_out01    "view or edit state"
+#define qtn_aknexpopfield_menu_out02    "Select item to edit"
+#define qtn_aknexpopfield_menu_out03    "edit state"
+
+// Sub menubar of "Popup selection list" menu
+#define qtn_aknexpopfield_menu_out04    "Select item to edit"
+#define qtn_aknexpopfield_menu_out05    "In View state,Not available to select"
+#define qtn_aknexpopfield_menu_out06    "In edit state, Accessing select list "
+#define qtn_aknexpopfield_menu_out07    "Expanded Selection list"
+#define qtn_aknexpopfield_menu_out08    "Hilighted Item"
+
+// Sub menubar of "Select item" menu
+#define qtn_aknexpopfield_menu_out09    "Optionally setuped"
+#define qtn_aknexpopfield_menu_out10    "Sected value"
+#define qtn_aknexpopfield_menu_out11    "List Shrinking"
+#define qtn_aknexpopfield_menu_out12    "Use Right soft key."
+
+// Sub menubar of "Softkey" menu
+#define qtn_aknexpopfield_menu_out13    "defined Logical texts for softkeys"
+
+// Sub menubar of "Moving" menu
+#define qtn_aknexpopfield_menu_out14    "Movable Up/Down"
+#define qtn_aknexpopfield_menu_out15    "Select or Exit"
+#define qtn_aknexpopfield_menu_out16    "Focus Moving in Edit State"
+#define qtn_aknexpopfield_menu_out17    "Focus Moving in View State"
+#define qtn_aknexpopfield_menu_out18    "Scrolling Selection List"
+
+// Sub menubar of "Item of selection list" menu
+#define qtn_aknexpopfield_menu_out19    "Item of selection list1"
+#define qtn_aknexpopfield_menu_out20    "Item of selection list2"
+
+// Sub menubar of "Enter own value" menu
+#define qtn_aknexpopfield_menu_out21    "Enter own value1"
+#define qtn_aknexpopfield_menu_out22    "Enter own value2"
+#define qtn_aknexpopfield_menu_out23    "Enter own value3"
+#define qtn_aknexpopfield_menu_out24    "Enter own value4"
+
+// Sub menubar of "Data type" menu
+#define qtn_aknexpopfield_menu_out25    "Data type1"
+#define qtn_aknexpopfield_menu_out26    "Data type2"
+#define qtn_aknexpopfield_menu_out27    "Data type3"
+
+// Sub menubar of "With graphic" menu
+#define qtn_aknexpopfield_menu_out28    "With graphic1"
+#define qtn_aknexpopfield_menu_out29    "With graphic2"
+
+// Sub menubar of "Focus color" menu
+#define qtn_aknexpopfield_menu_out30    "Focus color 1"
+#define qtn_aknexpopfield_menu_out31    "Focus color 2"
+
+// Sub menubar of "Focus in pages" menu
+#define qtn_aknexpopfield_menu_out32    "Focus in pages"
+
+// Sub menubar of "Field Text" menu
+#define qtn_aknexpopfield_menu_out33	"Field Text"
+
+// Sub menubar of "Attrib Set" menu
+#define qtn_aknexpopfield_menu_out34	"Attrib Set"
+
+// Extra manu item for AttribSetDialog
+#define qtn_aknexpopfield_menu_edit_entry     "Edit Entry"
+
+// Messages
+#define qtn_aknexpopfield_label_title   "AknExPopField\nSample Application"
+#define qtn_aknexpopfield_operation     "Press right softkey to\ndisplay next view"
+
+// Label field text
+#ifdef __AVKON_APAC__
+#define qtn_aknexpopfield_label_pop00       <0x6D41><0x884C><0x7684>"0"
+#define qtn_aknexpopfield_label_pop01       <0x6D41><0x884C><0x7684>"1"
+#define qtn_aknexpopfield_label_pop02       <0x6D41><0x884C><0x7684>"2"
+#define qtn_aknexpopfield_label_pop03       <0x6D41><0x884C><0x7684>"3"
+#define qtn_aknexpopfield_label_pop04       <0x6D41><0x884C><0x7684>"4"
+#define qtn_aknexpopfield_label_pop05       <0x6D41><0x884C><0x7684>"5"
+#define qtn_aknexpopfield_label_pop06       <0x6D41><0x884C><0x7684>"6"
+#define qtn_aknexpopfield_label_pop07       <0x6D41><0x884C><0x7684>"7"
+#define qtn_aknexpopfield_label_pop08       <0x6D41><0x884C><0x7684>"8"
+#define qtn_aknexpopfield_label_pop09       <0x6D41><0x884C><0x7684>"9"
+#define qtn_aknexpopfield_label_pop10       <0x6D41><0x884C><0x7684>"10"
+#define qtn_aknexpopfield_label_pop11       <0x6D41><0x884C><0x7684>"11"
+#define qtn_aknexpopfield_label_pop12       <0x6D41><0x884C><0x7684>"12"
+#define qtn_aknexpopfield_label_txt         <0x6587><0x672C>
+#define qtn_aknexpopfield_label_txt01       <0x6587><0x672C>"1"
+#define qtn_aknexpopfield_label_txt02       <0x6587><0x672C>"2"
+#define qtn_aknexpopfield_label_txt03       <0x6587><0x672C>"3"
+#define qtn_aknexpopfield_label_txt04       <0x6587><0x672C>"4"
+#define qtn_aknexpopfield_label_txt05       <0x6587><0x672C>"5"
+#define qtn_aknexpopfield_label_txt06       <0x6587><0x672C>"6"
+#define qtn_aknexpopfield_label_num         <0x6570>
+#define qtn_aknexpopfield_label_num01       <0x6570>"1"
+#define qtn_aknexpopfield_label_num02       <0x6570>"2"
+#define qtn_aknexpopfield_label_num03       <0x6570>"3"
+#define qtn_aknexpopfield_label_num04       <0x6570>"4"
+#define qtn_aknexpopfield_label_num05       <0x6570>"5"
+#define qtn_aknexpopfield_label_num06       <0x6570>"6"
+#define qtn_aknexpopfield_label_phon        <0x7535><0x8BDD>
+#define qtn_aknexpopfield_label_phon01      <0x7535><0x8BDD>"1"
+#define qtn_aknexpopfield_label_phon02      <0x7535><0x8BDD>"2"
+#define qtn_aknexpopfield_label_phon03      <0x7535><0x8BDD>"3"
+#define qtn_aknexpopfield_label_phon04      <0x7535><0x8BDD>"4"
+#define qtn_aknexpopfield_label_phon05      <0x7535><0x8BDD>"5"
+#define qtn_aknexpopfield_label_phon06      <0x7535><0x8BDD>"6"
+#define qtn_aknexpopfield_label_time        <0x65F6><0x95F4>
+#define qtn_aknexpopfield_label_time01      <0x65F6><0x95F4>"1"
+#define qtn_aknexpopfield_label_time02      <0x65F6><0x95F4>"2"
+#define qtn_aknexpopfield_label_time03      <0x65F6><0x95F4>"3"
+#define qtn_aknexpopfield_label_time04      <0x65F6><0x95F4>"4"
+#define qtn_aknexpopfield_label_time05      <0x65F6><0x95F4>"5"
+#define qtn_aknexpopfield_label_time06      <0x65F6><0x95F4>"6"
+#define qtn_aknexpopfield_label_date        <0x65E5><0x671F>
+#define qtn_aknexpopfield_label_date01      <0x65E5><0x671F>"1"
+#define qtn_aknexpopfield_label_date02      <0x65E5><0x671F>"2"
+#define qtn_aknexpopfield_label_date03      <0x65E5><0x671F>"3"
+#define qtn_aknexpopfield_label_date04      <0x65E5><0x671F>"4"
+#define qtn_aknexpopfield_label_date05      <0x65E5><0x671F>"5"
+#define qtn_aknexpopfield_label_date06      <0x65E5><0x671F>"6"
+#define qtn_aknexpopfield_label_dura        <0x8010><0x7528>
+#define qtn_aknexpopfield_label_dura01      <0x8010><0x7528>"1"
+#define qtn_aknexpopfield_label_dura02      <0x8010><0x7528>"2"
+#define qtn_aknexpopfield_label_dura03      <0x8010><0x7528>"3"
+#define qtn_aknexpopfield_label_dura04      <0x8010><0x7528>"4"
+#define qtn_aknexpopfield_label_dura05      <0x8010><0x7528>"5"
+#define qtn_aknexpopfield_label_dura06      <0x8010><0x7528>"6"
+#define qtn_aknexpopfield_label_fldtext01   <0x957F><0x6587><0x672C><0x957F><0x6587><0x672C>"01"
+#define qtn_aknexpopfield_label_fldtext02   <0x957F><0x6587><0x672C><0x957F><0x6587><0x672C>"02"
+#define qtn_aknexpopfield_label_attribset01 <0x5C5E><0x6027><0x88C5><0x7F6E>"01"
+#define qtn_aknexpopfield_label_attribset02 <0x5C5E><0x6027><0x88C5><0x7F6E>"02"
+#else
+#define qtn_aknexpopfield_label_pop00       "pop0"
+#define qtn_aknexpopfield_label_pop01       "pop1"
+#define qtn_aknexpopfield_label_pop02       "pop2"
+#define qtn_aknexpopfield_label_pop03       "pop3"
+#define qtn_aknexpopfield_label_pop04       "pop4"
+#define qtn_aknexpopfield_label_pop05       "pop5"
+#define qtn_aknexpopfield_label_pop06       "pop6"
+#define qtn_aknexpopfield_label_pop07       "pop7"
+#define qtn_aknexpopfield_label_pop08       "pop8"
+#define qtn_aknexpopfield_label_pop09       "pop9"
+#define qtn_aknexpopfield_label_pop10       "pop10"
+#define qtn_aknexpopfield_label_pop11       "pop11"
+#define qtn_aknexpopfield_label_pop12       "pop12"
+#define qtn_aknexpopfield_label_txt         "txt"
+#define qtn_aknexpopfield_label_txt01       "txt1"
+#define qtn_aknexpopfield_label_txt02       "txt2"
+#define qtn_aknexpopfield_label_txt03       "txt3"
+#define qtn_aknexpopfield_label_txt04       "txt4"
+#define qtn_aknexpopfield_label_txt05       "txt5"
+#define qtn_aknexpopfield_label_txt06       "txt6"
+#define qtn_aknexpopfield_label_num         "num"
+#define qtn_aknexpopfield_label_num01       "num1"
+#define qtn_aknexpopfield_label_num02       "num2"
+#define qtn_aknexpopfield_label_num03       "num3"
+#define qtn_aknexpopfield_label_num04       "num4"
+#define qtn_aknexpopfield_label_num05       "num5"
+#define qtn_aknexpopfield_label_num06       "num6"
+#define qtn_aknexpopfield_label_phon        "phon"
+#define qtn_aknexpopfield_label_phon01      "phon1"
+#define qtn_aknexpopfield_label_phon02      "phon2"
+#define qtn_aknexpopfield_label_phon03      "phon3"
+#define qtn_aknexpopfield_label_phon04      "phon4"
+#define qtn_aknexpopfield_label_phon05      "phon5"
+#define qtn_aknexpopfield_label_phon06      "phon6"
+#define qtn_aknexpopfield_label_time        "time"
+#define qtn_aknexpopfield_label_time01      "time1"
+#define qtn_aknexpopfield_label_time02      "time2"
+#define qtn_aknexpopfield_label_time03      "time3"
+#define qtn_aknexpopfield_label_time04      "time4"
+#define qtn_aknexpopfield_label_time05      "time5"
+#define qtn_aknexpopfield_label_time06      "time6"
+#define qtn_aknexpopfield_label_date        "date"
+#define qtn_aknexpopfield_label_date01      "date1"
+#define qtn_aknexpopfield_label_date02      "date2"
+#define qtn_aknexpopfield_label_date03      "date3"
+#define qtn_aknexpopfield_label_date04      "date4"
+#define qtn_aknexpopfield_label_date05      "date5"
+#define qtn_aknexpopfield_label_date06      "date6"
+#define qtn_aknexpopfield_label_dura        "dura"
+#define qtn_aknexpopfield_label_dura01      "dura1"
+#define qtn_aknexpopfield_label_dura02      "dura2"
+#define qtn_aknexpopfield_label_dura03      "dura3"
+#define qtn_aknexpopfield_label_dura04      "dura4"
+#define qtn_aknexpopfield_label_dura05      "dura5"
+#define qtn_aknexpopfield_label_dura06      "dura6"
+#define qtn_aknexpopfield_label_fldtext01   "fldtext01"
+#define qtn_aknexpopfield_label_fldtext02   "fldtext02"
+#define qtn_aknexpopfield_label_attribset01 "attribset01"
+#define qtn_aknexpopfield_label_attribset02 "attribset02"
+#endif
+
+// Text in popfield selection list
+#ifdef __AVKON_APAC__
+#define qtn_aknexpopfield_list_text01   <0x9009><0x62E9><0x4EA7><0x54C1>" 1"
+#define qtn_aknexpopfield_list_text02   <0x9009><0x62E9><0x4EA7><0x54C1>" 2"
+#define qtn_aknexpopfield_list_text03   <0x9009><0x62E9><0x4EA7><0x54C1>" 3"
+#define qtn_aknexpopfield_list_text04   <0x9009><0x62E9><0x4EA7><0x54C1>" 4"
+#define qtn_aknexpopfield_list_text05   <0x9009><0x62E9><0x4EA7><0x54C1>" 5"
+#define qtn_aknexpopfield_list_text06   <0x9009><0x62E9><0x4EA7><0x54C1>" 6"
+#define qtn_aknexpopfield_list_text07   <0x9009><0x62E9><0x4EA7><0x54C1>" 7"
+#define qtn_aknexpopfield_list_text08   <0x9009><0x62E9><0x4EA7><0x54C1>" 8"
+#define qtn_aknexpopfield_list_text09   <0x9009><0x62E9><0x4EA7><0x54C1>" 9"
+#define qtn_aknexpopfield_list_text10   <0x9009><0x62E9><0x4EA7><0x54C1>" 10"
+#define qtn_aknexpopfield_list_text11   <0x9009><0x62E9><0x4EA7><0x54C1>" 11"
+#define qtn_aknexpopfield_list_text12   <0x9009><0x62E9><0x4EA7><0x54C1>" 12"
+#define qtn_aknexpopfield_list_other    <0x5176><0x4ED6><0x7684>"..."
+#else
+#define qtn_aknexpopfield_list_text01   "Select Item 1"
+#define qtn_aknexpopfield_list_text02   "Select Item 2"
+#define qtn_aknexpopfield_list_text03   "Select Item 3"
+#define qtn_aknexpopfield_list_text04   "Select Item 4"
+#define qtn_aknexpopfield_list_text05   "Select Item 5"
+#define qtn_aknexpopfield_list_text06   "Select Item 6"
+#define qtn_aknexpopfield_list_text07   "Select Item 7"
+#define qtn_aknexpopfield_list_text08   "Select Item 8"
+#define qtn_aknexpopfield_list_text09   "Select Item 9"
+#define qtn_aknexpopfield_list_text10   "Select Item 10"
+#define qtn_aknexpopfield_list_text11   "Select Item 11"
+#define qtn_aknexpopfield_list_text12   "Select Item 12"
+#define qtn_aknexpopfield_list_other    "Other..."
+#endif
+
+// Phone array text in popfield selection list
+#define qtn_aknexpopfield_list_phone01  "11 1111 111111"
+#define qtn_aknexpopfield_list_phone02  "22 2222 222222"
+#define qtn_aknexpopfield_list_phone03  "33 3333 333333"
+#define qtn_aknexpopfield_list_phone04  "44 4444 444444"
+#define qtn_aknexpopfield_list_phone05  "55 5555 555555"
+#define qtn_aknexpopfield_list_phone06  "66 6666 666666"
+
+// Time array text in popfield selection list
+#define qtn_aknexpopfield_time_text     "000000."
+
+// Date array text in popfield selection list
+#define qtn_aknexpopfield_date_text     "20000000:"
+
+// Navipane page label text
+#define qtn_aknexpopfield_label_page1   "text"
+#define qtn_aknexpopfield_label_page2   "num"
+#define qtn_aknexpopfield_label_page3   "phon"
+#define qtn_aknexpopfield_label_page4   "time"
+#define qtn_aknexpopfield_label_page5   "date"
+#define qtn_aknexpopfield_label_page6   "dura"
+
+// Each format string text
+#define qtn_aknexpopfield_num_format    "%d"
+#define qtn_aknexpopfield_phon_format   "%d"
+#define qtn_aknexpopfield_time_format   "%-B%:0%J%:1%T%:2%S%:3%+B"
+#define qtn_aknexpopfield_date_format   "%D%M%Y%/0%1%/1%2%/2%3%/3"
+#define qtn_aknexpopfield_dura_format   "%02d:%02d'%02d\""
+
+// Hint text
+#define qtn_aknexpopfield_hint_text     "PopField"
+#define qtn_aknexpopfield_hint_text2	"PopupFieldText"
+
+// Data query prompt
+#define qtn_aknexpopfield_query_prompt  "Enter other item"
+
+
+// Extra strings for AttribSet Dialog
+#define qtn_aknexpopfield_empty_text_replacement "An empty value."
+#define qtn_aknexpopfield_other_text_replacement "Another value."
+
+#define qtn_aknexpopfield_empty_list_note "This list is empty."
+
+// For Cba
+#define qtn_aknexpopfield_cba_next          "Next"
+
+// End of File

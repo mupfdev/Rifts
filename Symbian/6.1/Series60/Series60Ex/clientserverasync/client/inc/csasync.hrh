@@ -1,0 +1,14 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+#ifndef __CSASYNC_HRH__
+#define __CSASYNC_HRH__
+
+/** CSAsync enumerate command codes */
+enum TCSAsyncIds
+    {
+    EStartClock=1,
+    EStopClock
+    };
+
+
+#endif // __CSASYNC_HRH__

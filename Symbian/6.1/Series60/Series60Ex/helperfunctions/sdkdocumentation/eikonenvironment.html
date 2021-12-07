@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+		<title>NEikonEnvironment</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script language="JavaScript" type="text/javascript">
+<!--
+function codewindow(theURL)
+  { win = window.open(theURL, 'codewindow', 'scrollbars,resizable,width=750,height=500')
+    win.focus() }
+// -->
+</script>
+		<style type="text/css" media="screen"><!--
+.ButtonBox { background-image: url(../../../_stock/gradient.jpg); }
+--></style>
+	</head>
+<body><a name="_top"></a><a name="2"></a>
+
+<hr noshade size="1">
+
+
+<hr noshade size="1">
+<div class="AuthoredContent">
+
+<p>Location: 
+<code><a href="javascript:void(0)" onclick="codewindow('eikonenvironment.h.htm')" title="eikonenvironment.h">eikonenvironment.h</a></code>
+</p>
+</div><div class="Head1">
+<a name="%3a%3aNEikonEnvironment"></a>
+
+<h1>Namespace <code>NEikonEnvironment</code></h1>
+</div><div class="Bodytext"><p class="Prototype"><code>NEikonEnvironment</code></p>
+<h4 class="subheading">Description</h4>
+<p>Provides useful functions connected with the Eikon environment.
+</p>
+
+<p>Defined in <code>NEikonEnvironment</code>:
+<br>
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aEikAppUi%28%29" title="The appui">EikAppUi()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aEikEnv%28%29" title="The eikon environment">EikEnv()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aEikDocument%28%29" title="The document.">EikDocument()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aAddToStackL%28%29" title="Add a control to the control stack.">AddToStackL()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aAddToStackL%28%29" title="Add a control to the control stack given a priority and flags.">aAddToStackL()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aRemoveFromStack%28%29" title="Remove a control from the control stack.">RemoveFromStack()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aAppFullName%28%29" title="The full name of the application.">AppFullName()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aApplicationDriveAndPath%28%29" title="The drive and path of the application.">ApplicationDriveAndPath()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aAddPath%28%29" title="Convert a filename to a filename with the drive and path of the application added.">AddPath()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aMessageBox%28%29" title="Display a message box.">MessageBox()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aFlushWindowServer%28%29" title="Flush the windows server to ensure all changes to the display are reflected on the screen.">FlushWindowServer()</a></code>,
+<code class="ApiItem"><a href="#%3a%3aNEikonEnvironment%3a%3aTheRFs%28%29" title="The eikon frameworks file server connection.">TheRFs()</a></code>,
+
+</p>
+<a name="2.5"></a>
+</div>
+
+<div class="Head2">
+<hr size="2" noshade>
+<h2>Eikon environment</h2>
+</div>
+
+<div class="Bodytext"> <a name="2.5.2"></a> </div>
+
+<div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aEikAppUi%28%29"></a>
+<hr size="1" noshade>
+<h3><code>EikAppUi()</code></h3>
+</div>
+
+<div class="Bodytext"><p class="Prototype"><code>static void EikAppUi();</code>
+</p>
+
+<h4 class="subheading">Description</h4>
+<p>The appui.</p>
+
+<h4 class="subheading">Return value</h4>
+<table cellpadding="0" border="0" cellspacing="0">
+<tr><td class="ValueTableWrap">
+<table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">TCEikAppUi&amp;</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to the CEikAppUi.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+
+
+<a name="2.6.2"></a>
+
+</div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aEikEnv%28%29"></a>
+<hr size="1" noshade>
+<h3><code>EikEnv()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>static CEikonEnv&amp; EikEnv();</code></p>
+<h4 class="subheading">Description</h4>
+<p>The eikon environment.</p>
+
+<h4 class="subheading">Return value</h4>
+<table cellpadding="0" border="0"
+cellspacing="0"><tr><td class="ValueTableWrap">
+<table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CEikonEnv&amp;</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to the CEikonEnv.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+
+<a name="2.6.3"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aEikDocument%28%29"></a>
+<hr size="1" noshade>
+<h3><code>EikDocument()</code></h3>
+</div>
+
+<div class="Bodytext"><p class="Prototype"><code>static CEikDocument&amp; EikDocument();</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>The document.</p>
+
+
+
+<h4 class="subheading">Return value</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CEikDocument&amp;</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to CEikDocument.</p></td>
+</tr>
+</table></td></tr></table>
+<a name="2.6.4"></a></div>
+
+
+
+<div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aAddToStackL%28%29"></a>
+<hr size="1" noshade>
+<h3><code>AddToStackL()</code></h3>
+</div>
+<div class="Bodytext"><p class="Prototype"><code>static void AddToStackL(CCoeControl&amp; aControl);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Add a control to the control stack.</p>
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0"
+cellspacing="0"><tr><td class="ValueTableWrap"><table border="0"
+cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CCoeControl&amp; aControl</code></td>
+<td class="Cell"><p class="ValueDesc">The control to add.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+<a name="2.6.5"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aAddToStackL%28%29"></a>
+
+<hr size="1" noshade>
+<h3><code>AddToStackL()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>void AddToStackL(CCoeControl&amp; aControl,TInt aPriority,TInt aStackingFlags)</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Add a control to the control stack given a priority and flags.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CCoeControl& aControl</code></td>
+<td class="Cell"><p class="ValueDesc">The control to add.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">TInt aPriority</code></td>
+<td class="Cell"><p class="ValueDesc">The priority.</p></td>
+</tr>
+<tr valign="top">
+<td class="Cell" ><code class="Value">TInt aStackingFlags</code></td>
+<td class="Cell"><p class="ValueDesc">The flags.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+
+
+<a name="2.6.6"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aRemoveFromStack%28%29"></a>
+<hr size="1" noshade>
+<h3><code>RemoveFromStack()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>void RemoveFromStack(CCoeControl&amp; aControl);</code></p><h4 class="subheading">Description</h4>
+<p>Remove a control from the control stack.</p>
+
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">CCoeControl&amp; aControl</code></td>
+<td class="Cell"><p class="ValueDesc">The control to remove.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+
+<a name="2.6.7"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aAppFullName%28%29"></a>
+<hr size="1" noshade>
+
+
+<h3><code>AppFullName()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>TFileName AppFullName();</code></p>
+<h4 class="subheading">Description</h4>
+<p>The full name of the application.</p>
+
+
+
+<h4 class="subheading">Return value</h4>
+<table cellpadding="0" border="0"
+cellspacing="0"><tr><td class="ValueTableWrap"><table border="0"
+cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">TFileName</code></td>
+<td class="Cell"><p class="ValueDesc">The name.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+
+<a name="2.6.8"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aApplicationDriveAndPath%28%29"></a>
+<hr size="1" noshade>
+<h3><code>ApplicationDriveAndPath()</code></h3>
+</div>
+
+
+<div class="Bodytext"><p class="Prototype"><code>TFileName ApplicationDriveAndPath();</code></p>
+<h4 class="subheading">Description</h4>
+<p>The drive and path of the application.</p>
+
+
+<h4 class="subheading">Return value</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">TFileName</code></td>
+<td class="Cell"><p class="ValueDesc">The drive and path.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+<a name="2.6.9"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aAddPath%28%29"></a>
+<hr size="1" noshade>
+<h3><code>AddPath()</code></h3>
+
+
+
+</div><div class="Bodytext"><p class="Prototype"><code>	TFileName AddPath(const TDesC& aFileName);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Convert a filename to a filename with the drive and path of the application added.</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap">
+<table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">const TDesC&amp aFileName</code></td>
+<td class="Cell"><p class="ValueDesc">The file name to convert.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+<h4 class="subheading">Return value</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">TFileName</code></td>
+<td class="Cell"><p class="ValueDesc">The drive, path and filename.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+<a name="2.6.10"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aMessageBox%28%29"></a>
+<hr size="1" noshade>
+
+<h3><code>MessageBox()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>void MessageBox(const TDesC&amp; aMessage);</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Display a message box</p>
+
+
+<h4 class="subheading">Parameters</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap">
+<table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">const TDesC&amp; aMessage</code></td>
+<td class="Cell"><p class="ValueDesc">The message to display.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+
+<a name="2.7.2"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aFlushWindowServer%28%29"></a>
+<hr size="1" noshade>
+<h3><code>FlushWindowServer()</code></h3>
+</div><div class="Bodytext"><p class="Prototype"><code>void FlushWindowServer();</code></p>
+
+<h4 class="subheading">Description</h4>
+<p>Flush the windows server to ensure all changes to the display are reflected on the screen.</p>
+
+
+
+<a name="2.7.3"></a></div><div class="Head3">
+<a name="%3a%3aNEikonEnvironment%3a%3aTheRFs%28%29"></a>
+<hr size="1" noshade>
+<h3><code>TheRFs()</code></h3>
+</div><div class="Bodytext">
+<p class="Prototype"><code>RFs&amp; TheRFs();</code></p>
+<h4 class="subheading">Description</h4>
+
+<p>The eikon frameworks file server connection.</p>
+
+<h4 class="subheading">Return value</h4>
+<table cellpadding="0" border="0" cellspacing="0"><tr><td class="ValueTableWrap"><table border="0" cellpadding="5" cellspacing="1">
+<tr valign="top">
+<td class="Cell" ><code class="Value">RFs&amp;</code></td>
+<td class="Cell"><p class="ValueDesc">A reference to the RFs.</p></td>
+</tr>
+</table></td></tr></table>
+
+
+</div><div class="Footer">
+<hr noshade size="1">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="bottom">
+<td></td>
+<td align="right"></td>
+</table>
+</div>
+</body>
+</html>

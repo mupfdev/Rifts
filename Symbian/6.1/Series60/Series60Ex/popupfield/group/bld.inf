@@ -1,0 +1,22 @@
+/*
+* =============================================================================
+*  Name     : BLD.INF
+*  Part of  : AknExPopField
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+///PRJ_EXPORTS
+// Specify the source file followed by its destination here
+// copy will be used to copy the source file to its destination
+// If there's no destination then the source file will be copied
+// to the same name in \epoc32\include
+///\AknSample\AknExPopField\rom\AknExPopField.iby \epoc32\rom\include\AknExPopField.iby
+
+PRJ_MMPFILES
+AknExPopField.mmp
+
+// End of File

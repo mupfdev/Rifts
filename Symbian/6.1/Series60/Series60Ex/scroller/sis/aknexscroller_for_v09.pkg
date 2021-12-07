@@ -1,0 +1,15 @@
+; AknExScroller.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExScroller"},(0x10005C2A),1,05,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExScroller.app"-"!:\system\apps\AknExScroller\AknExScroller.app"
+"..\..\..\epoc32\release\thumb\urel\AknExScroller.rsc"-"!:\system\apps\AknExScroller\AknExScroller.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExScroller.aif"-"!:\system\apps\AknExScroller\AknExScroller.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExScroller_caption.rsc"-"!:\system\apps\AknExScroller\AknExScroller_caption.rsc"

@@ -1,0 +1,15 @@
+; SnapShot.pkg
+;
+
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"Snapshot"},(0x10005B89),1,0,0
+
+;Supports Series 60 v 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+;
+"..\..\..\epoc32\release\thumb\urel\Snapshot.APP"-"C:\system\apps\Snapshot\Snapshot.app"
+"..\..\..\epoc32\release\thumb\urel\Snapshot.rsc"-"C:\system\apps\Snapshot\Snapshot.rsc"

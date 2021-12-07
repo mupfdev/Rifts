@@ -1,0 +1,7 @@
+#define R_MMS_ERROR_ACTIONS                       1
+#define R_MMS_FETCH_INTERVALS                     2
+#define R_MMS_FETCHING_MESSAGE                    3
+#define R_MMS_REFETCHING_MESSAGE                  4
+#define R_MMS_UPDATING_INFORMATION_MESSAGE        5
+#define R_MMS_MESSAGE_EVENT_TYPE                  6
+#define R_MMS_DELIVERED                           7

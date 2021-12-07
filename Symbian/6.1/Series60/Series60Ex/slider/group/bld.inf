@@ -1,0 +1,23 @@
+/*
+* ============================================================================
+*  Name     : BLD.INF
+*  Part of  : AknExSlider
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+PRJ_EXPORTS
+// Specify the source file followed by its destination here
+// copy will be used to copy the source file to its destination
+// If there's no destination then the source file will be copied
+// to the same name in \epoc32\include
+//\AknSample\AknExSlider\rom\AknExSlider.iby \epoc32\rom\include\AknExSlider.iby
+
+PRJ_MMPFILES
+AknExSlider.mmp
+//\AknSample\AknExSlider\Group\AknExSlider.mmp
+
+// End of File

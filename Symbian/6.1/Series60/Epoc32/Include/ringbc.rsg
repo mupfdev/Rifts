@@ -1,0 +1,13 @@
+#define R_SM_PLAYBACK                             0x5a123003
+#define R_SM_ADD_COMPOSER                         0x5a123004
+#define R_RINGCONTROL_SOFTKEYS_STOP               0x5a123005
+#define R_SM_TITLE_RINGING_TONE                   0x5a123006
+#define R_BASE_STRING                             0x5a123007
+#define R_SM_NOTE_TONE_COPIED                     0x5a123008
+#define R_SM_TONE_NAME                            0x5a123009
+#define R_FLDR_BAD_FILE_NAME                      0x5a12300a
+#define R_FLDR_ILLEGAL_CHARACTERS                 0x5a12300b
+#define R_FLDR_RENAME_QUERY                       0x5a12300c
+#define R_SM_QUERY_RINGING_TONE                   0x5a12300d
+#define R_WAVFILE_PATHNAME_IN_WINS                0x5a12300e
+#define R_RINGTONE_SAVE_PATH                      0x5a12300f

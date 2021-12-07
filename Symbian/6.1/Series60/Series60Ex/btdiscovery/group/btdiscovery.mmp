@@ -1,0 +1,33 @@
+TARGET            btdiscovery.app
+TARGETTYPE        app
+UID               0x100039ce 0x10005B8D
+TARGETPATH        \system\apps\btdiscovery
+
+SOURCEPATH        ..\src
+SOURCE            btdiscovery.cpp
+SOURCE            btdiscoveryapplication.cpp 
+SOURCE            btdiscoveryappView.cpp
+SOURCE            btdiscoveryappUi.cpp
+SOURCE            btdiscoverydocument.cpp 
+SOURCE            btdiscoverer.cpp 
+SOURCE            btattributevaluelister.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          btdiscovery.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib 
+LIBRARY           btextnotifiers.lib
+LIBRARY           bluetooth.lib 
+LIBRARY           sdpdatabase.LIB
+LIBRARY           sdpagent.LIB
+LIBRARY           bafl.lib 
+LIBRARY	          eikcoctl.lib 
+LIBRARY	          eikctl.lib 

@@ -1,0 +1,4 @@
+#define GENERIC_AUDIO_DEVICE                      1
+#define LOCAL_AUDIO_STREAM_DEVICE                 2
+#define TELEPHONY_AUDIO_STREAM_DEVICE             3
+#define TONE_GENERATOR_DEVICE                     4

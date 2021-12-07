@@ -1,0 +1,10 @@
+#define R_SERQ_REQUESTING_WAIT_NOTE               0x5c50d002
+#define R_TEXT_UNCONFIRMED                        0x5c50d003
+#define R_TEXT_NOT_DONE                           0x5c50d004
+#define R_TEXT_NOT_ALLOWED                        0x5c50d005
+#define R_TEXT_RESULT_UNKNOWN                     0x5c50d006
+#define R_TEXT_DONE                               0x5c50d007
+#define R_TEXT_NO_SERVICE                         0x5c50d008
+#define R_QTN_SRVRQ_INFO_CONFL                    0x5c50d009
+#define R_TEXT_REQUEST_REJECTED                   0x5c50d00a
+#define R_TEXT_PASSWORD_ERROR                     0x5c50d00b

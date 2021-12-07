@@ -1,0 +1,384 @@
+/*
+* ============================================================================
+*  Name     : PbkFields.hrh
+*  Part of  : PbkEng.dll
+*
+*  Description:
+*     This file contains declarations for resources of PbkEng.dll
+*     The file can be included in C++ or resource file.
+*  Version:
+*
+*  Copyright (C) 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+* ============================================================================
+*/
+
+#ifndef PbkFields_HRH
+#define PbkFields_HRH
+
+// INCLUDES
+#include <bldvariant.hrh>
+
+
+////////////////////////////////////////////////////////////
+// C++ compilation only section
+
+#ifdef __cplusplus
+
+#include <e32base.h>    // for CArrayFixFlat
+
+/**
+ * Type of Phonbeook field IDs.
+ */
+typedef TInt TPbkFieldId;
+
+/**
+ * Type of Phonebook group IDs.
+ */
+typedef TInt TPbkFieldGroupId;
+
+/**
+ * Array of Phonebook field IDs.
+ */
+class CPbkFieldIdArray : public CArrayFixFlat<TPbkFieldId>
+    {
+    public:
+        inline CPbkFieldIdArray() : CArrayFixFlat<TPbkFieldId>(8)
+            {
+            }
+
+        inline TInt Find(TPbkFieldId aFieldId) const
+            {
+            const TInt count = Count();
+            for (TInt i=0; i < count; ++i)
+                {
+                if (At(i)==aFieldId)
+                    {
+                    return i;
+                    }
+                }
+            return KErrNotFound;
+            }
+
+        inline TBool Contains(TPbkFieldId aFieldId) const
+            {
+            return (Find(aFieldId) != KErrNotFound);
+            }
+    };
+
+#endif
+
+
+////////////////////////////////////////////////////////////
+// Common section for C++ and resource compilation
+
+//  CONSTANTS  
+
+// Unique Phonebook field type ids
+#define EPbkFieldIdNone                             0x00
+#define EPbkFieldIdLastName                         0x01
+#define EPbkFieldIdFirstName                        0x02
+#define EPbkFieldIdPhoneNumberGeneral               0x03
+#define EPbkFieldIdPhoneNumberStandard              EPbkFieldIdPhoneNumberGeneral
+#define EPbkFieldIdPhoneNumberHome                  0x04
+#define EPbkFieldIdPhoneNumberWork                  0x05
+#define EPbkFieldIdPhoneNumberMobile                0x06
+#define EPbkFieldIdFaxNumber                        0x07
+#define EPbkFieldIdPagerNumber                      0x08
+#define EPbkFieldIdEmailAddress                     0x09
+#define EPbkFieldIdPostalAddress                    0x0a
+#define EPbkFieldIdURL                              0x0b
+#define EPbkFieldIdJobTitle                         0x0c
+#define EPbkFieldIdCompanyName                      0x0d
+#define EPbkFieldIdCompanyAddress                   EPbkFieldIdPostalAddress
+#define EPbkFieldIdDTMFString                       0x0f
+#define EPbkFieldIdDate                             0x10
+#define EPbkFieldIdNote                             0x11
+#define EPbkFieldIdPicture                          0x12
+#define EPbkFieldIdThumbnailImage                   0x13
+#define EPbkFieldIdVoiceTagIndication               0x14
+#define EPbkFieldIdSpeedDialIndication              0x15
+#define EPbkFieldIdPersonalRingingToneIndication    0x16
+#define EPbkFieldIdPOBox                            0x17
+#define EPbkFieldIdExtendedAddress                  0x18
+#define EPbkFieldIdStreetAddress                    0x19
+#define EPbkFieldIdPostalCode                       0x1a
+#define EPbkFieldIdCity                             0x1b
+#define EPbkFieldIdState                            0x1c
+#define EPbkFieldIdCountry                          0x1d
+#define EPbkFieldIdWVID								0x1e
+
+#define KPbkFieldIdMask                             0xff
+
+// Unique Phonebook field type group ids
+#define EPbkFieldGroupIdNone                        0x00
+#define EPbkFieldGroupIdPostalAddress                   0x01
+#define EPbkFieldGroupIdHomeAddress                 0x02
+#define EPbkFieldGroupIdCompanyAddress              0x03
+
+/// Maximum length for phone number field
+#define KPbkPhoneNumberMaxLength                    48
+
+// Definitions for minimum and maximum date values
+#define KPbkDateMinDay                              0   // from 0 to 27/28/29/30 inclusive
+#define KPbkDateMinMonth                            0   // from 0 to 11 inclusive
+#define KPbkDateMinYear                             0001
+#define KPbkDateMaxDay                              30  // from 0 to 27/28/29/30 inclusive
+#define KPbkDateMaxMonth                            11  // from 0 to 11 inclusive
+#define KPbkDateMaxYear                             2100
+
+
+/**
+ * Phonebook field type ordering groups.
+ */
+enum TPbkOrderingGroup
+	{
+	EPbkOrderingGroupNames = 1,
+	EPbkOrderingGroupPhoneNumbers,
+	EPbkOrderingGroupAddresses,
+	EPbkOrderingGroupDates,
+	EPbkOrderingGroupNotes,
+	EPbkOrderingGroupImages,
+    EPbkOrderingGroupIndicators
+	};
+
+/**
+ * Phonebook field type ordering items.
+ */
+enum TPbkOrderingItem
+	{
+    // Names
+#ifdef __AVKON_ELAF__
+    EPbkOrderingItemFirstName = 1,
+	EPbkOrderingItemLastName,
+#endif //__AVKON_ELAF__
+
+#ifdef __AVKON_APAC__
+    // Different order for last name/first name in Chinese
+	EPbkOrderingItemLastName = 1,
+    EPbkOrderingItemFirstName,
+#endif //__AVKON_APAC__
+
+	EPbkOrderingItemCompanyName,
+	EPbkOrderingItemJobTitle,
+
+    // Phone numbers
+	EPbkOrderingItemPhoneNumberGeneral,
+	EPbkOrderingItemPhoneNumberHome,
+	EPbkOrderingItemPhoneNumberWork,
+	EPbkOrderingItemPhoneNumberMobile,
+	EPbkOrderingItemPhoneNumberMobileHome,
+	EPbkOrderingItemPhoneNumberMobileWork,
+	EPbkOrderingItemFaxNumber,
+	EPbkOrderingItemFaxNumberHome,
+	EPbkOrderingItemFaxNumberWork,
+	EPbkOrderingItemPagerNumber,
+	EPbkOrderingItemDTMFString,
+
+	// Addresses
+	EPbkOrderingItemEmailAddress,
+	EPbkOrderingItemEmailAddressHome,
+	EPbkOrderingItemEmailAddressWork,
+	EPbkOrderingItemWVAddress,
+    EPbkOrderingItemAddress,
+    EPbkOrderingItemAddressHome,
+    EPbkOrderingItemAddressWork,
+    EPbkOrderingItemPostalAddressPOBox,
+    EPbkOrderingItemPostalAddressExtension,
+    EPbkOrderingItemPostalAddressStreet,
+    EPbkOrderingItemPostalAddressPostalCode,
+    EPbkOrderingItemPostalAddressCity,
+    EPbkOrderingItemPostalAddressState,
+    EPbkOrderingItemPostalAddressCountry,
+    EPbkOrderingItemHomeAddressPOBox,
+    EPbkOrderingItemHomeAddressExtension,
+    EPbkOrderingItemHomeAddressStreet,
+    EPbkOrderingItemHomeAddressPostalCode,
+    EPbkOrderingItemHomeAddressCity,
+    EPbkOrderingItemHomeAddressState,
+    EPbkOrderingItemHomeAddressCountry,
+    EPbkOrderingItemCompanyAddressPOBox,
+    EPbkOrderingItemCompanyAddressExtension,
+    EPbkOrderingItemCompanyAddressStreet,
+    EPbkOrderingItemCompanyAddressPostalCode,
+    EPbkOrderingItemCompanyAddressCity,
+    EPbkOrderingItemCompanyAddressState,
+    EPbkOrderingItemCompanyAddressCountry,
+	EPbkOrderingItemURL,
+	EPbkOrderingItemURLHome,
+	EPbkOrderingItemURLWork,
+
+	// Dates
+    EPbkOrderingItemDate,
+
+	// Notes
+    EPbkOrderingItemNote,
+
+	// Images
+    EPbkOrderingItemPicture,
+	EPbkOrderingItemThumbnailImage,
+
+    // Indicators
+    EPbkOrderingItemRingingTone
+	};
+
+/**
+ * Phonebook Add Item field ordering.
+ */
+enum TPbkAddItemOrdering
+    {
+    // Company info
+    EPbkAddItemOrderCompanyName = 1,
+    EPbkAddItemOrderJobTitle,
+    
+    // Phone numbers
+    EPbkAddItemOrderPhoneNumberGeneral,
+    EPbkAddItemOrderPhoneNumberHome,
+    EPbkAddItemOrderPhoneNumberWork,    
+    EPbkAddItemOrderPhoneNumberMobile,
+    EPbkAddItemOrderPhoneNumberMobileHome,
+    EPbkAddItemOrderPhoneNumberMobileWork,
+    EPbkAddItemOrderPhoneNumberFax,     
+    EPbkAddItemOrderPhoneNumberFaxHome, 
+    EPbkAddItemOrderPhoneNumberFaxWork, 
+    EPbkAddItemOrderPhoneNumberPager,
+    
+    // Internet fields    
+    EPbkAddItemOrderEmail,      
+    EPbkAddItemOrderEmailHome,  
+    EPbkAddItemOrderEmailWork,
+	EPbkAddItemOrderWVAddress,
+    EPbkAddItemOrderURL,
+    EPbkAddItemOrderURLHome,
+    EPbkAddItemOrderURLWork,
+    
+    // General address
+    EPbkAddItemOrderPostalAddress,      // group for general address    
+    EPbkAddItemOrderPOBox,
+    EPbkAddItemOrderExtensionAddress,
+    EPbkAddItemOrderStreet,
+    EPbkAddItemOrderPostalCode,
+    EPbkAddItemOrderCity,
+    EPbkAddItemOrderState,
+    EPbkAddItemOrderCountry,
+    
+    // Home address
+    EPbkAddItemOrderHomeAddress,         // group for home address
+    EPbkAddItemOrderPOBoxHome,
+    EPbkAddItemOrderExtensionAddressHome,
+    EPbkAddItemOrderStreetHome,
+    EPbkAddItemOrderPostalCodeHome,
+    EPbkAddItemOrderCityHome,
+    EPbkAddItemOrderStateHome,
+    EPbkAddItemOrderCountryHome,
+    
+    // Work address
+    EPbkAddItemOrderCompanyAddress,     // group for work address
+    EPbkAddItemOrderPOBoxWork,
+    EPbkAddItemOrderExtensionAddressWork,
+    EPbkAddItemOrderStreetWork,
+    EPbkAddItemOrderPostalCodeWork,
+    EPbkAddItemOrderCityWork,
+    EPbkAddItemOrderStateWork,
+    EPbkAddItemOrderCountryWork,
+    
+    // Additional items
+    EPbkAddItemOrderDTMF,
+    EPbkAddItemOrderDate,
+    EPbkAddItemOrderNote,
+    EPbkAddItemOrderNone
+    };
+
+/**
+ * Phonebook field type information: 
+ * maximum number of fields per contact entry.
+ */
+enum TPbkFieldMultiplicity
+    {
+    EPbkFieldMultiplicityOne  = 1,
+    EPbkFieldMultiplicityMany = 2
+    };
+
+/**
+ * Phonebook field type information: editing mode of field.
+ */
+enum TPbkFieldEditMode
+    {
+    EPbkFieldEditModeAlpha = 1,
+    EPbkFieldEditModeNumeric,
+    EPbkFieldEditModeDate,
+    EPbkFieldEditModeSelector,
+    EPbkFieldEditModeTBD,
+    EPbkFieldEditModeLatinOnly
+    };
+
+
+/**
+ * Phonebook field type information: default editing character case.
+ */
+enum TPbkFieldDefaultCase
+    {
+    EPbkFieldDefaultCaseNone = 0,
+    EPbkFieldDefaultCaseLower,
+    EPbkFieldDefaultCaseText 
+    };
+
+/**
+ * Phonebook field type information: editor control type.
+ */
+enum TPbkFieldCtrlType
+	{
+	EPbkFieldCtrlTypeNone = 0,
+	EPbkFieldCtrlTypeTextEditor,
+	EPbkFieldCtrlTypeDateEditor
+	};
+
+/**
+ * Phonebook field location information: work/home/none.
+ */
+enum TPbkFieldLocation
+	{
+	EPbkFieldLocationNone = 0,
+	EPbkFieldLocationHome,
+	EPbkFieldLocationWork
+	};
+
+/**
+ * The storage type of data in Versit.dll.
+ * Note that corresponding Uids exist in 
+ * vuid.h.
+ */
+enum TPbkVersitStorageType
+	{
+    EPbkVersitPropertyNULL = 0,
+    EPbkVersitPropertyHBufC,
+    EPbkVersitPropertyBinary,
+    EPbkVersitPropertyCDesCArray,
+    EPbkVersitPropertyMultiDateTime,
+    EPbkVersitPropertyDateTime,
+    EPbkVersitPropertyInt
+	};
+
+////////////////////////////////////////////////////////////
+// Phonebook field type information flags
+
+/// No flags set
+#define KPbkFieldFlagNull               0x00000000
+/// Field is included in the default template
+#define KPbkFieldFlagDefTemplate        0x00000001
+/// Field can be added with "Add item" function
+#define KPbkFieldFlagUserCanAddField    0x00000002
+/// field is not visible in editors
+#define KPbkFieldFlagDisableEdit        0x00000004
+
+
+#endif
+
+// End of File

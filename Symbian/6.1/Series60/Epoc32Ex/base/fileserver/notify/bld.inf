@@ -1,0 +1,11 @@
+// BLD.INF
+// Component description file
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+PRJ_MMPFILES
+
+Notify.mmp
+
+PRJ_EXPORTS
+dataFile ..\wins\c\dataFile

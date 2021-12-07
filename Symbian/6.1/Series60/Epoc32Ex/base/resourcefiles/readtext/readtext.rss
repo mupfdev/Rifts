@@ -1,0 +1,17 @@
+// ReadText.rss
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// define sundry structures
+
+STRUCT STRING
+	{
+	LTEXT text;
+	}
+
+// define resources
+
+RESOURCE STRING hello
+	{
+	text="Hello world!";
+	}

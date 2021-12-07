@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT keywords (keyword)*>
+<!ATTLIST keywords
+  version CDATA #FIXED "1.0">
+
+<!ELEMENT keyword EMPTY>
+<!ATTLIST keyword
+  word CDATA #REQUIRED
+  in-pkg CDATA #IMPLIED>

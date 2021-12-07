@@ -1,0 +1,27 @@
+/*
+* ============================================================================
+*  Name     : AknExScrollerAif.rss
+*  Part of  : AknExScroller
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include <aiftool.rh>
+
+RESOURCE AIF_DATA
+    {
+    app_uid = 0x10005C2A;
+    caption_list=
+        {       
+        CAPTION 
+            { 
+            code = ELangEnglish; 
+            caption = "AKNEXSCROLLER";
+            }
+        };
+    num_icons = 2;
+    embeddability = KAppNotEmbeddable;
+    newfile = KAppDoesNotSupportNewFile;
+    }
+
+// End of File

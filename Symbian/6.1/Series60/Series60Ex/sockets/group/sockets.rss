@@ -1,0 +1,140 @@
+// Copyright (c) 2001, Nokia. All rights reserved
+
+NAME SOCK
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "Sockets.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF r_default_document_name { buf = ""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_sockets_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_sockets_menubar
+//   Menubar for Sockets example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_sockets_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_sockets_menu;}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_sockets_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_sockets_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = ESocketsCmdConnect;  txt = "Connect";},
+        MENU_ITEM {command = ESocketsCmdDisconnect;  txt = "Disconnect";},
+        MENU_ITEM {command = ESocketsCmdClear;  txt = "Clear";},
+        MENU_ITEM {command = EAknSoftkeyExit;  txt = "Exit";}
+        };
+    }
+
+
+// ---------------------------------------------------------
+//
+// r_sockets_dialog_connect
+// Dialog for connection details
+//
+// ---------------------------------------------------------
+
+RESOURCE DIALOG r_sockets_dialog_connect
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtMultilineQuery;
+            id = ESocketsServerNameEdwin;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EMultiDataFirstEdwin;
+                label = "Server Address";
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                    width = 20;
+                    lines = 1;
+                    maxlength = KMaxServerNameLength;
+                    default_input_mode = EAknEditorNumericInputMode;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EAknCtMultilineQuery;
+            id = ESocketsPortNumberEdwin;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EMultiDataSecondNumEd;
+                label = "Port Number";
+			    control = AVKON_INTEGER_EDWIN
+			        {
+                        min = 0;
+				        max = 65535;
+			        };
+                };
+            }
+        };
+
+    }
+
+//----------------------------------------------------
+//    r_output_rtexted
+//    resource for rich text editor control on main view
+//----------------------------------------------------
+//
+RESOURCE RTXTED r_output_view_rtexted
+    {
+    numlines = 5;
+    textlimit= 500;
+    fontcontrolflags = EGulFontControlAll;
+    fontnameflags = EGulNoSymbolFonts;
+    default_input_mode = EAknEditorNullInputMode;
+    }

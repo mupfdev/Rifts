@@ -1,0 +1,18 @@
+//////////////////////////////////////////////////////////////////////////
+//
+//	SMSS.HRH
+//
+//	Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+//////////////////////////////////////////////////////////////////////////
+
+#ifndef SMSS_HRH_
+#define SMSS_HRH_
+
+#define SMS_GIVEN_NAME	"%A"
+#define SMS_FAMILY_NAME	"%B"
+
+#define L_SMS_GIVEN_NAME	_L("%A")
+#define L_SMS_FAMILY_NAME	_L("%B")
+
+#endif

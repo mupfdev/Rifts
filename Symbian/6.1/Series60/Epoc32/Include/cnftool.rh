@@ -1,0 +1,39 @@
+// CNFTOOL.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+
+///////////////////////////
+// HEADER INFO
+///////////////////////////
+
+STRUCT CNF_FILE
+	{
+	LONG dll_uid;
+	
+	LEN WORD STRUCT converter_list[]; // Converter_data
+	}
+
+STRUCT CONVERTER_DATA
+	{
+	LONG conv_uid;
+	//
+	LEN WORD STRUCT from_list[]; // Mime Type
+	LEN WORD STRUCT to_list[]; // Mime Type
+	//
+	}
+
+#define KMaxMimeType 256
+#define KMaxTranslation 50
+STRUCT MIME
+	{
+	LTEXT8 type(KMaxMimeType);
+	LEN WORD STRUCT lang_list[] ; //lang_data
+	}
+
+STRUCT LANG_DATA
+	{
+	WORD lang_id;
+	LTEXT	translation(KMaxTranslation);
+	}

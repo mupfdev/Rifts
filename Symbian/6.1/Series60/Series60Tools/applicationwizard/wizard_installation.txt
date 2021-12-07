@@ -1,0 +1,16 @@
+Quick guide for Wizard installation:
+=========================
+
+1. Copy AvkonAppWiz.awx and AvkonAppWiz.hlp files to Visual C++ template directory e.g 
+c:\Program Files\Microsoft Visual Studio\Common\MsDev98\Template
+
+2. Start VC and Open File/New dialog. On "Projects" tab you should
+find "Series 60 AppWizard" item. Select that.
+
+3. Specify project name and press OK.
+
+4. From the wizard dialog you can select which type of application you
+would like to create.
+
+5. After OK wizard automatically opens the generated project to VC.
+

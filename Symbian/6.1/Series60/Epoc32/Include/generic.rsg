@@ -1,0 +1,3 @@
+#define GENERAL_LIBRARY                           1
+#define CLIP_LOCATION_FILE                        2
+#define CLIP_LOCATION_DES                         3

@@ -1,0 +1,13 @@
+#define C_DIRECTORIES                             0x3f745003
+#define E_DIRECTORIES                             0x3f745004
+#define C_EXCLUDED_DIRECTORIES                    0x3f745005
+#define E_EXCLUDED_DIRECTORIES                    0x3f745006
+#define C_EXTRADATAFILES                          0x3f745007
+#define E_EXTRADATAFILES                          0x3f745008
+#define C_SPECIAL_DATADIRS                        0x3f745009
+#define E_SPECIAL_DATADIRS                        0x3f74500a
+#define UIDARRAY                                  0x3f74500b
+#define EXTARRAY                                  0x3f74500c
+#define DATAGROUPNAMEARRAY                        0x3f74500d
+#define DATAGROUPUIDARRAY                         0x3f74500e
+#define DATAGROUPEXTARRAY                         0x3f74500f

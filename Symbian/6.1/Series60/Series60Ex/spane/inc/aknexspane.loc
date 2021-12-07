@@ -1,0 +1,315 @@
+/*
+* ============================================================================
+*  Name     : AknExSpane.loc
+*  Part of  : AknExSpane
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#include <bldvariant.hrh>
+
+// Caption
+#define qtn_apps_tasp_list          "AKNEXSPANE"
+#define qtn_apps_tasp_grid          "AKNEXSPANE"
+
+//  LOCALISATION STRINGS
+#define qtn_aknexspane_title        "AknExSpane"
+
+// data define for tab dialog
+#define qtn_aknexspane_tab_dialog_number_editor_min -100
+#define qtn_aknexspane_tab_dialog_number_editor_max 100
+
+#define qtn_aknexspane_tab_dialog_text_box_width           120
+#define qtn_aknexspane_tab_dialog_text_box_height          20
+#define qtn_aknexspane_tab_dialog_textbox_numlines         1
+#define qtn_aknexspane_tab_dialog_textbox_textlimit        40
+#define qtn_aknexspane_tab_dialog_textbox_flags            0
+#define qtn_aknexspane_tab_dialog_textbox_fontcontrolflags 1
+
+#define qtn_aknexspane_tab_dialog_image_select_textOnRight 1
+#define qtn_aknexspane_tab_dialog_pages 0
+
+// Menu information
+#define qtn_aknexspane_back         "Back"
+#define qtn_aknexspane_systemmenu   "System"
+#define qtn_aknexspane_appmenu      "App"
+#define qtn_aknexspane_viewmenu     "View"
+
+#define qtn_aknexspane_layout       "Switch layout"
+#define qtn_aknexspane_visibility   "Switch visibility"
+#define qtn_aknexspane_layout_power_off_recharge       "Switch recharge"
+#define qtn_aknexspane_layout_empty                    "Switch empty"
+#define qtn_aknexspane_layout_idle                    "Switch idle"
+#define qtn_aknexspane_layout_usual                    "Switch usual"
+#define qtn_aknexspane_exit         "Exit"
+
+#define qtn_aknexspane_avkonbitmap  "z:\\system\\data\\avkon.mbm"
+#define qtn_aknexspane_aknexspane_bitmap  "\\system\\apps\\aknexspane\\aknexspane.mbm"
+
+//navi sub menu
+#define qtn_aknexspane_navi_tab_style   "Tab Style"
+#define qtn_aknexspane_navi_tab_edit    "Tab Edit"
+//#define qtn_aknexspane_navi_tab         "Tab property"
+#define qtn_aknexspane_navi_array       "Navi icon"
+
+//#define qtn_aknexspane_tab_style        "Tab Style"
+#define qtn_aknexspane_tab_add          "Add Tab"
+#define qtn_aknexspane_tab_replace      "Replace Tab"
+#define qtn_aknexspane_tab_del          "Delete Tab"
+#define qtn_aknexspane_tab_sel          "Select Tab"
+
+#define qtn_aknexspane_tab_style_1      "One"
+#define qtn_aknexspane_tab_style_2s     "Two Short"
+#define qtn_aknexspane_tab_style_2l     "Two Long"
+#define qtn_aknexspane_tab_style_3s     "Three Short"
+#define qtn_aknexspane_tab_style_3l     "Three Long"
+#define qtn_aknexspane_tab_style_4s     "Four Short"
+
+#define qtn_aknexspane_array_left_on    "Left  ON"
+#define qtn_aknexspane_array_left_fade  "Left  Fade"
+#define qtn_aknexspane_array_right_on   "Right ON"
+#define qtn_aknexspane_array_right_fade "Right Fade"
+#define qtn_aknexspane_array_enable     "Visible"
+#define qtn_aknexspane_array_disable    "Invisible"
+
+// Navi  dialog
+#define qtn_aknexspane_dlg_add_tab_title     "Add Tab"
+#define qtn_aknexspane_dlg_replace_tab_title "Replace Tab"
+#define qtn_aknexspane_dlg_select_tab_title  "Select Tab"
+
+#define qtn_aknexspane_dlg_tab_text      "Text"
+#define qtn_aknexspane_dlg_tab_index     "Index"
+#define qtn_aknexspane_dlg_tab_image     "Image(0:NO,1:S,2:M,3:L)"
+
+// The following string is define for Popup Window test
+// all of the message would be displayed on the screen 
+// during the test to show the progress of test. 
+//
+#define qtn_aknexspane_popup_item00 "On context pane"
+#define qtn_aknexspane_popup_item01 "Context&main pane"
+#define qtn_aknexspane_popup_item02 "On signal &\ncontext pane"
+#define qtn_aknexspane_popup_item03 "On title, indicator\n& navi pane"
+#define qtn_aknexspane_popup_item04 "Special content on\nnavi pane"
+#define qtn_aknexspane_popup_item05 "Back to default\nno popup"
+#define qtn_aknexspane_popup_item06 "Switch Layout Off"
+#define qtn_aknexspane_popup_item07 "Switch Layout On"
+#define qtn_aknexspane_popup_item08 "Switch Visibility Off"
+#define qtn_aknexspane_popup_item09 "Switch Visibility On"
+#define qtn_aknexspane_popup_item10 "Press left/right keys\nto change tabs"
+
+#define qtn_aknexspane_popup_title  "Popup sample view"
+#define qtn_aknexspane_popup_info   " Next for \n  next sample "
+
+
+// The following string is define for Context view
+// all of the message would be displayed on the screen 
+// during the test to show the progress of test. 
+//
+#define qtn_aknexspane_context_item00 "Default App icon"
+#define qtn_aknexspane_context_item01 "Small image"
+#define qtn_aknexspane_context_item02 "Medium image"
+#define qtn_aknexspane_context_item03 "Big image"
+#define qtn_aknexspane_context_item04 "Image from file"
+#define qtn_aknexspane_context_item05 "Image from resource"
+#define qtn_aknexspane_context_item06 "Switch Layout Off"
+#define qtn_aknexspane_context_item07 "Switch Layout On"
+#define qtn_aknexspane_context_item08 "Switch Visibility Off"
+#define qtn_aknexspane_context_item09 "Switch Visibility On"
+#define qtn_aknexspane_context_item10 "Press left/right keys\nto change tabs"
+
+#define qtn_aknexspane_context_title  "Context pane sample\nview"
+#define qtn_aknexspane_context_info   " Next for \n  next sample "
+
+// The following string is define for Title Window test
+// all of the message would be displayed on the screen 
+// during the test to show the progress of test. 
+//
+#define qtn_aknexspane_title_item01 "Default: App name"
+#define qtn_aknexspane_title_item02 "Empty text"
+#define qtn_aknexspane_title_item03 "Short text"
+#define qtn_aknexspane_title_item04 "One line text"
+#define qtn_aknexspane_title_item05 "One line full"
+#define qtn_aknexspane_title_item06 "Too much for one \nline"
+#define qtn_aknexspane_title_item07 "2 line text"
+#define qtn_aknexspane_title_item08 "2 line text"
+#define qtn_aknexspane_title_item09 "One char out of full"
+#define qtn_aknexspane_title_item10 "Text to the label"
+#define qtn_aknexspane_title_item11 "Full"
+#define qtn_aknexspane_title_item12 "One char too much"
+#define qtn_aknexspane_title_item13 "Long text"
+#define qtn_aknexspane_title_item14 "Extra long text"
+#define qtn_aknexspane_title_item15 "Variable long text"
+#define qtn_aknexspane_title_item16 "Small image"
+#define qtn_aknexspane_title_item17 "Medium image"
+#define qtn_aknexspane_title_item18 "Big image"
+#define qtn_aknexspane_title_item19 "Image from file"
+#define qtn_aknexspane_title_item20 "Text from resource"
+#define qtn_aknexspane_title_item21 "Image from resource"
+#define qtn_aknexspane_title_item22 "Switch Layout Off"
+#define qtn_aknexspane_title_item23 "Switch Layout On"
+#define qtn_aknexspane_title_item24 "Switch Visibility Off"
+#define qtn_aknexspane_title_item25 "Switch Visibility On"
+#define qtn_aknexspane_title_item26 "Press left/right keys\nto change tabs"
+
+//#define qtn_aknexspane_title_title00 "Dimming Status spane"
+#define qtn_aknexspane_title_title01 ""
+#define qtn_aknexspane_title_title02 ""
+#define qtn_aknexspane_title_title03 "T"
+#define qtn_aknexspane_title_title04 "Sample text"
+#define qtn_aknexspane_title_title05 "iiiiiiiiiiiiiiiiiiii"
+#define qtn_aknexspane_title_title06 "iiiiiiiiiiiiiiiiiiiii"
+#define qtn_aknexspane_title_title07 "iiiiiiiiiiiiiiiiiiiiiiiiiii"
+#define qtn_aknexspane_title_title08 "Little longer two line text"
+#define qtn_aknexspane_title_title09 "Sample to the label"
+#define qtn_aknexspane_title_title10 "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+#define qtn_aknexspane_title_title11 "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+#define qtn_aknexspane_title_title12 "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+#define qtn_aknexspane_title_title13 "A long sample text to the title_title pane"
+#define qtn_aknexspane_title_title14 "Extra long sample text that does't fit to the title_title pane, This text even exceed the buffer size in the implementation"
+#define qtn_aknexspane_title_title15 "A bcdefgqh ijklmno pgqrs tuvw xyz 0123 456789 CDEFGTIJK"
+#define qtn_aknexspane_title_title16 ""
+#define qtn_aknexspane_title_title17 ""
+#define qtn_aknexspane_title_title18 ""
+#define qtn_aknexspane_title_title19 ""
+#define qtn_aknexspane_title_title20 ""
+#define qtn_aknexspane_title_title21 ""
+#define qtn_aknexspane_title_title22 ""
+#define qtn_aknexspane_title_title23 ""
+#define qtn_aknexspane_title_title24 ""
+#define qtn_aknexspane_title_title25 ""
+#define qtn_aknexspane_title_title26 ""
+
+#define qtn_aknexspane_title_title  "Title pane sample view"
+#define qtn_aknexspane_title_info   " Next for \n  next sample "
+
+// The following string is define for Navi view
+// all of the message would be displayed on the screen 
+// during the test to show the progress of test. 
+//
+#define qtn_aknexspane_navi_item00 "Empty Navi pane"
+#define qtn_aknexspane_navi_item01 "Two Tabs"
+#define qtn_aknexspane_navi_item02 "Two long tabs"
+#define qtn_aknexspane_navi_item03 "Three Tabs"
+#define qtn_aknexspane_navi_item04 "Three long tabs"
+#define qtn_aknexspane_navi_item05 "Active: 1st"
+#define qtn_aknexspane_navi_item06 "Active: 2nd"
+#define qtn_aknexspane_navi_item07 "Active: 3rd"
+#define qtn_aknexspane_navi_item08 "Active: 4th"
+#define qtn_aknexspane_navi_item09 "Tab contains\nicon and text"
+#define qtn_aknexspane_navi_item10 "Four Tabs"
+#define qtn_aknexspane_navi_item11 "Active: Not available"
+#define qtn_aknexspane_navi_item12 "Active: 1st"
+#define qtn_aknexspane_navi_item13 "Active: 2nd"
+#define qtn_aknexspane_navi_item14 "Active: 3rd"
+#define qtn_aknexspane_navi_item15 "Active: 4th"
+#define qtn_aknexspane_navi_item16 "Active: 5th"
+#define qtn_aknexspane_navi_item17 "Active: 6th"
+#define qtn_aknexspane_navi_item18 "Active: Not available"
+#define qtn_aknexspane_navi_item19 "Add tab"
+#define qtn_aknexspane_navi_item20 "Replace tab"
+#define qtn_aknexspane_navi_item21 "Delete current tab"
+#define qtn_aknexspane_navi_item22 "Active by id: -2\n(last tab)"
+#define qtn_aknexspane_navi_item23 "Active by id: 1\n (not found)"
+#define qtn_aknexspane_navi_item24 "Navi image"
+#define qtn_aknexspane_navi_item25 "Navi image +\nLeft arrow"
+#define qtn_aknexspane_navi_item26 "Navi image +\nRight arrow"
+#define qtn_aknexspane_navi_item27 "Navi image +\nBoth arrows"
+#define qtn_aknexspane_navi_item28 "Label: short"
+#define qtn_aknexspane_navi_item29 "Label: long"
+#define qtn_aknexspane_navi_item30 "Navi label +\nLeft arrow"
+#define qtn_aknexspane_navi_item31 "Navi label +\nRight arrow"
+#define qtn_aknexspane_navi_item32 "Navi label +\nBoth arrows"
+#define qtn_aknexspane_navi_item33 "Long navi label +\nBoth arrows"
+#define qtn_aknexspane_navi_item34 "Hint text"
+#define qtn_aknexspane_navi_item35 "Hint text: long"
+#define qtn_aknexspane_navi_item40 "Volume indicator: 3"
+#define qtn_aknexspane_navi_item41 "Volume indicator: 8"
+#define qtn_aknexspane_navi_item42 "Recorder indicator:10"
+#define qtn_aknexspane_navi_item43 "Recorder indicator: 1"
+#define qtn_aknexspane_navi_item44 "Switch Layout Off"
+#define qtn_aknexspane_navi_item45 "Switch Layout On"
+#define qtn_aknexspane_navi_item46 "Switch Visibility Off"
+#define qtn_aknexspane_navi_item47 "Switch Visibility On"
+#define qtn_aknexspane_navi_item48 "Press left/right keys\nto change tabs"
+#define qtn_aknexspane_navi_item_no " \n "
+#define qtn_aknexspane_navi_title  "Navi pane sample view"
+#define qtn_aknexspane_navi_info   " Next for \n  next sample "
+#define qtn_aknexspane_navi_one    "One Tab"
+
+#define qtn_aknexspane_navi_add         "Add. info"
+#define qtn_aknexspane_navi_longlab     "Long label text! This is longer that the field"
+#define qtn_aknexspane_navi_naviinfo    "Navi info"
+#define qtn_aknexspane_navi_longnavi    "Long navi info label"
+#define qtn_aknexspane_navi_text        "Hint text!"
+#define qtn_aknexspane_navi_longtext    "Long hint text! This is longer than the field"
+
+
+// The following string is define for resource file
+// all of the message would be displayed on the screen 
+// during the test to show the progress of test. 
+//
+#define qtn_aknexspane_rs_auto         "Auto test"
+#define qtn_aknexspane_rs_rchg_batt    "Recharge battery"
+#define qtn_aknexspane_rs_stop_chg     "Stop charging"
+
+#define qtn_aknexspane_rs_from_sr      "Title from resource"
+#ifdef __AVKON_APAC__
+#define qtn_aknexspane_rs_views        <0x250C><0x72D0>
+#define qtn_aknexspane_rs_blue         <0x59A5><0x59A5>
+#define qtn_aknexspane_rs_green        <0x643E><0x30FB>
+#define qtn_aknexspane_rs_red          <0x30FB><0x30FB>
+#else
+#define qtn_aknexspane_rs_views        "Views"
+#define qtn_aknexspane_rs_blue         "Blue"
+#define qtn_aknexspane_rs_green        "Green"
+#define qtn_aknexspane_rs_red          "Red"
+#endif
+#define qtn_aknexspane_rs_te1          "TE1"
+#define qtn_aknexspane_rs_te2          "TE2"
+#define qtn_aknexspane_rs_te3          "TE3"
+#define qtn_aknexspane_rs_32_32        "32/32"
+#define qtn_aknexspane_rs_te4          "TE4"
+#define qtn_aknexspane_rs_a            "A"
+#define qtn_aknexspane_rs_b            "B"
+#define qtn_aknexspane_rs_c            "C"
+#define qtn_aknexspane_rs_d            "D"
+#define qtn_aknexspane_rs_e            "E"
+#define qtn_aknexspane_rs_0            "0"
+#define qtn_aknexspane_rs_11           "11"
+#define qtn_aknexspane_rs_m8           "-8"
+#define qtn_aknexspane_rs_re1          "RE1"
+#define qtn_aknexspane_rs_re2          "RE2"
+#define qtn_aknexspane_rs_re3          "RE3"
+#define qtn_aknexspane_rs_re4          "RE4"
+
+#define qtn_aknexspane_rs_n1           "N1"
+#define qtn_aknexspane_rs_m1           "M1"
+
+#define qtn_aknexspane_rs_not_show     "Not shown in idle layout"
+#define qtn_aknexspane_rs_spane_app    "Status pane sample app."
+#define qtn_aknexspane_rs_title        "Title"
+#define qtn_aknexspane_rs_context      "Context"
+#define qtn_aknexspane_rs_navi         "Navi"
+#define qtn_aknexspane_rs_popup        "PopUp"
+#define qtn_aknexspane_rs_indic        "Indicator"
+#define qtn_aknexspane_rs_other        "Other"
+
+#define qtn_aknexspane_formatstring_currentstep "Step %d"
+#define qtn_aknexspane_goback_nowisfirst "Step1 can not be rollback."
+
+// For bubble indicator
+#define qtn_aknexspane_bubble_setting   "Bubble Indicator..."
+
+#define qtn_aknexspane_bubble_bit01 "Call state"
+#define qtn_aknexspane_bubble_bit2  "NoCiphering"
+#define qtn_aknexspane_bubble_bit3  "Muted"
+#define qtn_aknexspane_bubble_bit4  "Visible"
+#define qtn_aknexspane_bubble_bit5  "Fax"
+#define qtn_aknexspane_bubble_bit6  "Data"
+#define qtn_aknexspane_bubble_bit7  "Hscsd"
+#define qtn_aknexspane_bubble_bit8  "Line2"
+
+#define qtn_aknexspane_softkey_options "Options"
+#define qtn_aknexspane_softkey_next "Next"
+
+// End of File

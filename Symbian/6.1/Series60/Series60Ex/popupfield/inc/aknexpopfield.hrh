@@ -1,0 +1,162 @@
+/*
+* =============================================================================
+*  Name     : AknExPopField resource header file
+*  Part of  : AknExPopField
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+#ifndef AKNEXPOPFIELD_HRH
+#define AKNEXPOPFIELD_HRH
+
+enum TAknExPopFieldMenuCommands
+    {
+    EAknExPopFieldCmdEmptyOutline = 0x6000,
+
+    EAknExPopFieldCmdPopFieldState,
+    EAknExPopFieldCmdOutline01,
+    EAknExPopFieldCmdOutline02,
+    EAknExPopFieldCmdOutline03,
+
+    EAknExPopFieldCmdPopFieldPopList,
+    EAknExPopFieldCmdOutline04,
+    EAknExPopFieldCmdOutline05,
+    EAknExPopFieldCmdOutline06,
+    EAknExPopFieldCmdOutline07,
+    EAknExPopFieldCmdOutline08,
+
+    EAknExPopFieldCmdPopFieldSelect,
+    EAknExPopFieldCmdOutline09,
+    EAknExPopFieldCmdOutline10,
+    EAknExPopFieldCmdOutline11,
+    EAknExPopFieldCmdOutline12,
+
+    EAknExPopFieldCmdPopFieldSoftkey,
+    EAknExPopFieldCmdOutline13,
+
+    EAknExPopFieldCmdPopfieldMoving,
+    EAknExPopFieldCmdOutline14,
+    EAknExPopFieldCmdOutline15,
+    EAknExPopFieldCmdOutline16,
+    EAknExPopFieldCmdOutline17,
+    EAknExPopFieldCmdOutline18,
+
+    EAknExPopFieldCmdPopFieldItem,
+    EAknExPopFieldCmdOutline19,
+    EAknExPopFieldCmdOutline20,
+
+    EAknExPopFieldCmdPopfieldOwnValue,
+    EAknExPopFieldCmdOutline21,
+    EAknExPopFieldCmdOutline22,
+    EAknExPopFieldCmdOutline23,
+    EAknExPopFieldCmdOutline24,
+
+    EAknExPopFieldCmdPopFieldData,
+    EAknExPopFieldCmdOutline25,
+    EAknExPopFieldCmdOutline26,
+    EAknExPopFieldCmdOutline27,
+
+    EAknExPopFieldCmdPopFieldGraphic,
+    EAknExPopFieldCmdOutline28,
+    EAknExPopFieldCmdOutline29,
+
+    EAknExPopFieldCmdPopFieldFocusColor,
+    EAknExPopFieldCmdOutline30,
+    EAknExPopFieldCmdOutline31,
+
+    EAknExPopFieldCmdPopFieldFocusInPages,
+    EAknExPopFieldCmdOutline32,
+
+    EAknExPopFieldCmdPopFieldText,
+    EAknExPopFieldCmdOutline33,
+
+    EAknExPopFieldCmdPopFieldAttribSet,
+    EAknExPopFieldCmdOutline34
+    };
+
+enum TAknExPopFieldAttribSetMenuCommands
+    {
+    EAknExPopFieldCmdEditEntry = 0x6100
+    };
+
+enum TAknExPopFieldDialogControlIds
+    {
+    EAknExPopFieldDlgCtrlIdPop00 = 0x100,
+    EAknExPopFieldDlgCtrlIdPop01,
+    EAknExPopFieldDlgCtrlIdPop02,
+    EAknExPopFieldDlgCtrlIdPop03,
+    EAknExPopFieldDlgCtrlIdPop04,
+    EAknExPopFieldDlgCtrlIdPop05,
+    EAknExPopFieldDlgCtrlIdPop06,
+    EAknExPopFieldDlgCtrlIdPop07,
+    EAknExPopFieldDlgCtrlIdPop08,
+    EAknExPopFieldDlgCtrlIdPop09,
+    EAknExPopFieldDlgCtrlIdPop10,
+    EAknExPopFieldDlgCtrlIdPop11,
+    EAknExPopFieldDlgCtrlIdPop12,
+    EAknExPopFieldDlgCtrlIdText01,
+    EAknExPopFieldDlgCtrlIdText02,
+    EAknExPopFieldDlgCtrlIdText03,
+    EAknExPopFieldDlgCtrlIdText04,
+    EAknExPopFieldDlgCtrlIdText05,
+    EAknExPopFieldDlgCtrlIdText06,
+    EAknExPopFieldDlgCtrlIdNum01,
+    EAknExPopFieldDlgCtrlIdNum02,
+    EAknExPopFieldDlgCtrlIdNum03,
+    EAknExPopFieldDlgCtrlIdNum04,
+    EAknExPopFieldDlgCtrlIdNum05,
+    EAknExPopFieldDlgCtrlIdNum06,
+    EAknExPopFieldDlgCtrlIdPhon01,
+    EAknExPopFieldDlgCtrlIdPhon02,
+    EAknExPopFieldDlgCtrlIdPhon03,
+    EAknExPopFieldDlgCtrlIdPhon04,
+    EAknExPopFieldDlgCtrlIdPhon05,
+    EAknExPopFieldDlgCtrlIdPhon06,
+    EAknExPopFieldDlgCtrlIdTime01,
+    EAknExPopFieldDlgCtrlIdTime02,
+    EAknExPopFieldDlgCtrlIdTime03,
+    EAknExPopFieldDlgCtrlIdTime04,
+    EAknExPopFieldDlgCtrlIdTime05,
+    EAknExPopFieldDlgCtrlIdTime06,
+    EAknExPopFieldDlgCtrlIdDate01,
+    EAknExPopFieldDlgCtrlIdDate02,
+    EAknExPopFieldDlgCtrlIdDate03,
+    EAknExPopFieldDlgCtrlIdDate04,
+    EAknExPopFieldDlgCtrlIdDate05,
+    EAknExPopFieldDlgCtrlIdDate06,
+    EAknExPopFieldDlgCtrlIdDura01,
+    EAknExPopFieldDlgCtrlIdDura02,
+    EAknExPopFieldDlgCtrlIdDura03,
+    EAknExPopFieldDlgCtrlIdDura04,
+    EAknExPopFieldDlgCtrlIdDura05,
+    EAknExPopFieldDlgCtrlIdDura06,
+    EAknExPopFieldDlgCtrlIdFldText01,
+    EAknExPopFieldDlgCtrlIdFldText02,
+    EAknExPopFieldDlgCtrlIdAttribSet01,
+    EAknExPopFieldDlgCtrlIdAttribSet02
+    };
+
+enum TAknExPopFieldPageControlIds
+    {
+    EAknExPopFieldPageCtrlIdPage01 = 1,
+    EAknExPopFieldPageCtrlIdPage02,
+    EAknExPopFieldPageCtrlIdPage03,
+    EAknExPopFieldPageCtrlIdPage04,
+    EAknExPopFieldPageCtrlIdPage05,
+    EAknExPopFieldPageCtrlIdPage06
+    };
+
+enum TAknExPopFieldCba
+	{
+	EAknExPopFieldCbaCmdNext = 0x6300
+	};
+
+
+enum TAknExPopFieldNoteIds
+	{
+	EAknExPopFieldEmptyListNoteId = 1
+	};
+
+#endif
+
+// End of File

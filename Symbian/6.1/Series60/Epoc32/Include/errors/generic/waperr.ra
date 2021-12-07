@@ -1,0 +1,336 @@
+// WAPERR.RA
+//
+// Copyright (c) 2000 Symbian Ltd. All rights reserved.
+//
+
+RESOURCE ARRAY r_error_res_wap_errors_engine
+	{
+	items=
+		{
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_general_error;					// -10000
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_doc_not_found;					// -10001
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_doc_corrupt;					// -10002
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_access_violation;				// -10003
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_data_call_dropped;				// -10004
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_data_call_unavail;				// -10005
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_script_not_found;				// -10006
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_script_error;					// -10007
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_script_corrupt;				// -10008
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_script_illegal_action;			// -10009
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_script_obscure_call;			// -10010
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_auth_failed;					// -10011
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_protocol_not_supported;		// -10012
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_access_point_not_setup;		// -10013
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_access_point_not_setup_ussd;	// -10014
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_access_point_not_setup_sms;	// -10015
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_access_point_not_setup_csd;	// -10016
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_image_conv_failed;				// -10017
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_plugin_not_found;				// -10018
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_corrupt_url;					// -10019
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_corrupt_scheme;				// -10020
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_unknown_scheme;				// -10021
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_dtd_unavailable;				// -10022
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_invalid_dtd;					// -10023
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_unknown_document;				// -10024
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_wap_mime_type_missing;				// -10025
+			}		
+		};
+	}
+
+RESOURCE TBUF r_error_res_wap_general_error					{ buf="A general error has occurred"; }
+RESOURCE TBUF r_error_res_wap_doc_not_found					{ buf="The requested document cannot be found"; }
+RESOURCE TBUF r_error_res_wap_doc_corrupt					{ buf="This document is corrupt and cannot be read"; }
+RESOURCE TBUF r_error_res_wap_access_violation				{ buf="Access to this document has been denied"; }
+RESOURCE TBUF r_error_res_wap_data_call_dropped				{ buf="The data call has been closed"; }
+RESOURCE TBUF r_error_res_wap_data_call_unavail				{ buf="The data call is being used by another application"; }
+RESOURCE TBUF r_error_res_wap_script_not_found				{ buf="The requested script has not been found"; }
+RESOURCE TBUF r_error_res_wap_script_error					{ buf="This script has returned a fatal error"; }
+RESOURCE TBUF r_error_res_wap_script_corrupt				{ buf="There is an error in this script"; }
+RESOURCE TBUF r_error_res_wap_script_illegal_action			{ buf="The script attempted an illegal action and has been terminated"; }
+RESOURCE TBUF r_error_res_wap_script_obscure_call			{ buf="The script has attempted a function which is unavailable"; }
+RESOURCE TBUF r_error_res_wap_auth_failed					{ buf="Authorization has failed"; }
+RESOURCE TBUF r_error_res_wap_protocol_not_supported		{ buf="The current network does not support the requested service"; }
+RESOURCE TBUF r_error_res_wap_access_point_not_setup		{ buf="Access point information is missing"; }
+RESOURCE TBUF r_error_res_wap_access_point_not_setup_ussd	{ buf="Access point information is missing (USSD)"; }
+RESOURCE TBUF r_error_res_wap_access_point_not_setup_sms	{ buf="Access point information is missing (SMS)"; }
+RESOURCE TBUF r_error_res_wap_access_point_not_setup_csd	{ buf="Access point information is missing (CSD)"; }
+RESOURCE TBUF r_error_res_wap_image_conv_failed				{ buf="Image conversion has failed"; }
+RESOURCE TBUF r_error_res_wap_plugin_not_found				{ buf="The requested plugin has not been found"; }
+RESOURCE TBUF r_error_res_wap_corrupt_url					{ buf="Part of the URL contains invalid characters"; }
+RESOURCE TBUF r_error_res_wap_corrupt_scheme				{ buf="Part of the scheme contains invalid characters"; }
+RESOURCE TBUF r_error_res_wap_unknown_scheme				{ buf="Unknown scheme"; }
+RESOURCE TBUF r_error_res_wap_dtd_unavailable				{ buf="Document cannot be validated as DTD is not available"; }
+RESOURCE TBUF r_error_res_wap_invalid_dtd					{ buf="DTD is invalid"; }
+RESOURCE TBUF r_error_res_wap_unknown_document				{ buf="The document requested cannot be found"; }
+RESOURCE TBUF r_error_res_wap_mime_type_missing				{ buf="MIME information is missing"; }
+
+RESOURCE ARRAY r_error_res_wap_errors_http
+	{
+	items=
+		{
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_general_error;				// -20000
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_cannot_find_server;			// -20001
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_cannot_find_plugin;			// -20002
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_unsupported_method;			// -20003
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_read_failure;					// -20004
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_dial_setup_failed;			// -20005
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_wtls_config_failed;			// -20006
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_wtls_bad_server_cert;			// -20007
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_wtls_cert_rejected;			// -20008
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_wtls_cipher_rejected;			// -20009
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_auth_failed;					// -20010
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_auth_aborted;					// -20011
+			}
+		};
+	}
+
+RESOURCE TBUF r_error_res_http_general_error		{ buf="A general error has occurred"; }
+RESOURCE TBUF r_error_res_http_cannot_find_server	{ buf="The URL specified a non-existent or inaccessible server"; }
+RESOURCE TBUF r_error_res_http_cannot_find_plugin	{ buf="The plugin name/type was not found on the device"; }
+RESOURCE TBUF r_error_res_http_unsupported_method	{ buf="The method requested is not supported"; }
+RESOURCE TBUF r_error_res_http_read_failure			{ buf="Access point information is missing"; }
+RESOURCE TBUF r_error_res_http_dial_setup_failed	{ buf="Net dial setup has failed"; }
+RESOURCE TBUF r_error_res_http_wtls_config_failed	{ buf="The WAP stack has been configured incorrectly for WTLS"; }
+RESOURCE TBUF r_error_res_http_wtls_bad_server_cert	{ buf="The WAP stack has rejected the gateway certificate"; }
+RESOURCE TBUF r_error_res_http_wtls_cert_rejected	{ buf="The security certificate has been rejected and the session will be aborted"; }
+RESOURCE TBUF r_error_res_http_wtls_cipher_rejected	{ buf="The session has been aborted due to low security status"; }
+RESOURCE TBUF r_error_res_http_auth_failed			{ buf="Authorization has failed"; }
+RESOURCE TBUF r_error_res_http_auth_aborted			{ buf="Authorization has been aborted"; }
+
+
+RESOURCE ARRAY r_error_res_wap_statuses_http400
+	{
+	items=
+		{
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_400;				// -20400
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_401;				// -20401
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_402;				// -20402
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_403;				// -20403
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_404;				// -20404
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_405;				// -20405
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_406;				// -20406
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_407;				// -20407
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_408;				// -20408
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_409;				// -20409
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_410;				// -20410
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_411;				// -20411
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_412;				// -20412
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_413;				// -20413
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_414;				// -20414
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_415;				// -20415
+			}
+		};
+	}
+
+RESOURCE ARRAY r_error_res_wap_statuses_http500
+	{
+	items=
+		{
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_500;				// -20500
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_501;				// -20501
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_502;				// -20502
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_503;				// -20503
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_504;				// -20504
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_http_505;				// -20505
+			}
+		};
+	}
+
+RESOURCE TBUF r_error_res_http_400				{ buf="The request sent does not use the correct syntax"; }
+RESOURCE TBUF r_error_res_http_401				{ buf="Unauthorized request, authentication must be used"; }
+RESOURCE TBUF r_error_res_http_402				{ buf="Payment is required for this action to succeed"; }
+RESOURCE TBUF r_error_res_http_403				{ buf="The document requested cannot be disclosed by the server"; }
+RESOURCE TBUF r_error_res_http_404				{ buf="The document requested cannot be found on the server"; }
+RESOURCE TBUF r_error_res_http_405				{ buf="The method requested is not currently allowed"; }
+RESOURCE TBUF r_error_res_http_406				{ buf="The header information of the returned resource is incorrect"; }
+RESOURCE TBUF r_error_res_http_407				{ buf="Proxy authentication is required"; }
+RESOURCE TBUF r_error_res_http_408				{ buf="The request has timed out"; }
+RESOURCE TBUF r_error_res_http_409				{ buf="A Conflict has occurred"; }
+RESOURCE TBUF r_error_res_http_410				{ buf="The document requested cannot be found on the server"; }
+RESOURCE TBUF r_error_res_http_411				{ buf="Length is required here"; }
+RESOURCE TBUF r_error_res_http_412				{ buf="A precondition has not been met"; }
+RESOURCE TBUF r_error_res_http_413				{ buf="The request entity is too large"; }
+RESOURCE TBUF r_error_res_http_414				{ buf="The URL requested is too long"; }
+RESOURCE TBUF r_error_res_http_415				{ buf="The media type requested is unsupported"; }
+RESOURCE TBUF r_error_res_http_500				{ buf="An internal server error has occurred"; }
+RESOURCE TBUF r_error_res_http_501				{ buf="An internal server error has occurred"; }
+RESOURCE TBUF r_error_res_http_502				{ buf="An error has occurred within the WAP gateway"; }
+RESOURCE TBUF r_error_res_http_503				{ buf="The service requested is unavailable"; }
+RESOURCE TBUF r_error_res_http_504				{ buf="The connection to the gateway has timed out"; }
+RESOURCE TBUF r_error_res_http_505				{ buf="This HTTP version is not supported"; }

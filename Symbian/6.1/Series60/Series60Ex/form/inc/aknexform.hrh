@@ -1,0 +1,172 @@
+/*
+* ============================================================================
+*  Name     : AknExForm resource header file
+*  Part of  : AknExForm
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXFORM_HRH
+#define AKNEXFORM_HRH
+
+enum TAknExFormMenuCommands
+    {
+    EAknExFormCmdEmptyOutline = 0x600,
+
+    EAknExFormCmdFormStates,
+    EAknExFormCmdOutline02,
+
+    EAknExFormCmdMovingInsideForm,
+    EAknExFormCmdOutline14,
+    EAknExFormCmdOutline16,
+
+    EAknExFormCmdGeneralFormParameters,
+    EAknExFormCmdOutline22,
+
+    EAknExFormCmdFieldLabel,
+    EAknExFormCmdOutline25,
+
+    EAknExFormCmdTextField,
+    EAknExFormCmdOutline29,
+    EAknExFormCmdOutline31,
+
+    EAknExFormCmdSeparator,
+    EAknExFormCmdOutline52,
+
+    EAknExFormCmdEmptyForm,
+    EAknExFormCmdOutline54,
+
+    EAknExFormCmdAddingField,
+    EAknExFormCmdOutline55,
+
+    EAknExFormCmdRemovingField,
+    EAknExFormCmdOutline57,
+
+    EAknExFormCmdLAF,
+    EAknExFormCmdOutline68,
+    EAknExFormCmdOutline70,
+
+    EAknExFormCmdSaveTest,
+    EAknExFormCmdOutline83,
+
+    EAknExFormCmdDoubleLine,
+    EAknExFormCmdOutline102,
+
+// Cmds for derived form
+
+    EAknExFormCmdAPITestChangeFocus,
+    EAknExFormCmdAPITestTryChangeFocusToFirst,
+    EAknExFormCmdAPITestTryChangeFocusToMiddle,
+    EAknExFormCmdAPITestTryChangeFocusToLast,
+    EAknExFormCmdAPITestRotateFocusByOne,
+    EAknExFormCmdAPITestRotateFocusByThree,
+    EAknExFormCmdAPITestRotateFocusByMinusTwo,
+
+    EAknExFormCmdAPITestSetCaption,
+    EAknExFormCmdAPITestSetCaptionFromResource,
+    EAknExFormCmdAPITestSetCaptionFromUser,
+
+    EAknExFormCmdAPITestActivatePage,
+    EAknExFormCmdAPITestActivateFirstPage,
+
+//    EAknExFormCmdAPITestCustomCnt,
+
+//    EAknExFormCmdAPITestConvertCnt,
+
+    EAknExFormCmdAPITestChecks,
+    EAknExFormCmdAPITestActivePage,
+    EAknExFormCmdAPITestGetBorderStyle,
+    EAknExFormCmdAPITestGetFlags,
+    EAknExFormCmdAPITestGetLine,
+
+    EAknExFormCmdAPITestResetLine,
+    EAknExFormCmdAPITestResetLineMinimumSizes,
+
+    EAknExFormCmdAPITestPreNPost,
+
+    EAknExFormCmdAPITestSizeNPos,
+    EAknExFormCmdAPITestSizeNPos10x10,
+    EAknExFormCmdAPITestSizeNPos100x100,
+
+    EAknExFormCmdAPITestSaveTest,
+    EAknExFormCmdAPITestSetChangesPendingTrue,
+    EAknExFormCmdAPITestSetChagnesPendingFalse
+
+
+
+
+    };
+
+enum TAknExFormDialogControlIds
+    {
+    EAknExFormDlgCtrlIdEdwin01 = 0x100,
+    EAknExFormDlgCtrlIdEdwin02,
+    EAknExFormDlgCtrlIdEdwin03,
+    EAknExFormDlgCtrlIdEdwin04,
+    EAknExFormDlgCtrlIdEdwin05,
+    EAknExFormDlgCtrlIdEdwin06,
+    EAknExFormDlgCtrlIdEdwin07,
+    EAknExFormDlgCtrlIdEdwin08,
+    EAknExFormDlgCtrlIdEdwin09,
+    EAknExFormDlgCtrlIdEdwin10,
+    EAknExFormDlgCtrlIdEdwin11,
+    EAknExFormDlgCtrlIdEdwin12,
+    EAknExFormDlgCtrlIdEdwin13,
+    EAknExFormDlgCtrlIdEdwin14,
+    EAknExFormDlgCtrlIdEdwin15,
+    EAknExFormDlgCtrlIdEdwin16,
+    EAknExFormDlgCtrlIdEdwin17,
+    EAknExFormDlgCtrlIdNumber01,
+    EAknExFormDlgCtrlIdNumber02,
+    EAknExFormDlgCtrlIdNumber03,
+    EAknExFormDlgCtrlIdNumber04,
+    EAknExFormDlgCtrlIdNumber05,
+    EAknExFormDlgCtrlIdNumber06,
+    EAknExFormDlgCtrlIdDate01,
+    EAknExFormDlgCtrlIdDate02,
+    EAknExFormDlgCtrlIdDate03,
+    EAknExFormDlgCtrlIdDate04,
+    EAknExFormDlgCtrlIdDate05,
+    EAknExFormDlgCtrlIdDate06,
+    EAknExFormDlgCtrlIdTime01,
+    EAknExFormDlgCtrlIdTime02,
+    EAknExFormDlgCtrlIdTime03,
+    EAknExFormDlgCtrlIdTime04,
+    EAknExFormDlgCtrlIdTime05,
+    EAknExFormDlgCtrlIdTime06,
+    EAknExFormDlgCtrlIdDuration01,
+    EAknExFormDlgCtrlIdDuration02,
+    EAknExFormDlgCtrlIdDuration03,
+    EAknExFormDlgCtrlIdDuration04,
+    EAknExFormDlgCtrlIdDuration05,
+    EAknExFormDlgCtrlIdDuration06,
+    EAknExFormDlgCtrlIdSecret01,
+    EAknExFormDlgCtrlIdSecret02,
+    EAknExFormDlgCtrlIdSecret03,
+    EAknExFormDlgCtrlIdSecret04,
+    EAknExFormDlgCtrlIdSecret05,
+    EAknExFormDlgCtrlIdSecret06,
+    EAknExFormDlgCtrlIdSlider01,
+    EAknExFormDlgCtrlIdSlider02,
+    EAknExFormDlgCtrlIdSlider03
+    };
+
+enum TAknExFormPageControlIds
+    {
+    EAknExFormPageCtrlIdPage01 = 1,
+    EAknExFormPageCtrlIdPage02,
+    EAknExFormPageCtrlIdPage03,
+    EAknExFormPageCtrlIdPage04,
+    EAknExFormPageCtrlIdPage05,
+    EAknExFormPageCtrlIdPage06
+    };
+
+enum TAknExFormFieldInfo
+    {
+    EAknExFormLabelMaxLength = 64,
+    EAknExFormEdwinMaxLength = 64
+    };
+
+#endif
+
+// End of File

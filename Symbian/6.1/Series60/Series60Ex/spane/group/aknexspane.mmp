@@ -1,0 +1,71 @@
+/*
+* ============================================================================
+*  Name     : AknExSpane.mmp
+*  Part of  : AknExSpane
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET  AknExSpane.app
+TARGETTYPE  app
+UID  0x100039CE 0x10005C27
+TARGETPATH \system\apps\AknExSpane
+SOURCEPATH ..\SRC    
+
+SOURCE  AknExSpaneApp.cpp 
+SOURCE  AknExSpaneAppUi.cpp
+SOURCE  AknExSpaneDocument.cpp
+SOURCE  AknExSpaneTitleView.cpp
+SOURCE  AknExSpaneTitleViewContainer.cpp
+SOURCE  AknExSpaneContextView.cpp
+SOURCE  AknExSpaneContextViewContainer.cpp
+SOURCE  AknExSpaneNaviView.cpp
+SOURCE  AknExSpaneNaviViewContainer.cpp
+SOURCE  AknExSpanePopupView.cpp
+SOURCE  AknExSpanePopupViewContainer.cpp
+SOURCE  AknExSpanePopupWindow.cpp
+SOURCE  AknExSpaneNaviTabDialog.cpp
+
+RESOURCE ..\group\AknExSpane.rss
+RESOURCE ..\group\AknExSpane_caption.rss
+LANG     SC
+
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include  
+
+LIBRARY euser.lib apparc.lib cone.lib eikcore.lib ws32.lib
+LIBRARY eikcoctl.lib avkon.lib eikdlg.lib
+
+
+START WINS      
+// ?wins_specific_information
+END
+
+START MARM
+// ?marm_specific_information
+END
+
+// Other possible keywords:
+// DEFFILE ?filename
+// AIF ?filename
+AIF AknExSPane.aif ..\Aif AknExSPaneAif.rss \
+    c12 AknExSPaneIcon.bmp AknExSPaneIcon_mask.bmp AknExSPaneIcon_42x29.bmp AknExSPaneIcon_42x29_mask.bmp
+
+//bitmap
+start bitmap aknexspane.mbm
+header
+targetpath \system\apps\AknExSpane
+sourcepath ..\datasrc
+source  c8 context.bmp
+source  c8 title.bmp
+source  c8 navi.bmp
+source  c8 indicato.bmp
+source  c8 indicatoM.bmp
+source  c8 LShellIcon.bmp
+source  c8 LShellIconM.bmp
+source  c8 Testimage1.bmp
+source  c8 Testimage1Mask.bmp
+end
+

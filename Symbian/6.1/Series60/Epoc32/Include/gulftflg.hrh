@@ -1,0 +1,23 @@
+// GULFTFLG.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#define KTextSelectionMaxLen	40
+
+#define	EGulFontControlAll				0x001
+#define	EGulFontControlName				0x002
+#define	EGulFontControlSize				0x004
+#define	EGulFontControlBold				0x008
+#define	EGulFontControlItalic			0x010
+#define	EGulFontControlUnderline		0x020
+#define	EGulFontControlStrikethrough	0x040
+#define	EGulFontControlTextColor		0x080
+#define	EGulFontControlPrintPos			0x100 
+
+#define	EGulAllFonts					0x01
+#define	EGulMonospaceFontsOnly			0x02
+#define	EGulNoMonospaceFonts			0x04
+#define	EGulSymbolFontsOnly				0x08
+#define	EGulNoSymbolFonts				0x10
+#define	EGulNoMonospaceOrSymbolFonts	0x20

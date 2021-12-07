@@ -1,0 +1,55 @@
+/*
+* ============================================================================
+*  Name     : AknExSlider resource header file
+*  Part of  : AknExSlider
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXSLIDER_HRH
+#define AKNEXSLIDER_HRH
+
+enum TAknExSliderMenuCommands
+    {
+    EAknExSliderCmdEmpty,
+    EAknExSliderCmdLayout       = 0x6000,
+    EAknExSliderCmdLayout1,
+    EAknExSliderCmdLayout2,
+    EAknExSliderCmdLayout3,
+    EAknExSliderCmdViewMode     = 0x6020,
+    EAknExSliderCmdKeyEvent     = 0x6030,
+    EAknExSliderCmdKeyEvent1,
+    EAknExSliderCmdKeyEvent2,
+    EAknExSliderCmdKeyEvent3,
+    EAknExSliderCmdForm         = 0x6040,
+    EAknExSliderCmdReturn       = 0x6050,
+    EAknExSliderCmdSetting      = 0x6060,
+    EAknExSliderCmdSetMinimum,
+    EAknExSliderCmdSetMaximum,
+    EAknExSliderCmdSetRange,
+    EAknExSliderCmdSetValue,
+    EAknExSliderCmdSetStep,
+    EAknExSliderCmdValueChanged = 0x6070,
+    EAknExSliderCmdValueType    = 0x6080,
+    EAknExSliderCmdTypeNotShown,
+    EAknExSliderCmdTypeBare,
+    EAknExSliderCmdTypePercent,
+    EAknExSliderCmdTypeFraction,
+    EAknExSliderCmdTypeDecimal,
+    EAknExSliderCmdValueText    = 0x6090
+    };
+
+enum TAknExSliderDlgId
+    {
+    EAknExSliderDlgId = 0x100
+    };
+    
+
+enum TAknExSliderCba
+    {
+    EAknExSliderCbaCmdNext = 0x6300
+    };
+
+#endif
+
+// End of File

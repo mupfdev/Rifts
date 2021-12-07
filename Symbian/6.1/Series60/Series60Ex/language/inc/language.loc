@@ -1,0 +1,20 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifdef LANGUAGE_01
+#include "Language.l01"
+#endif
+#ifdef LANGUAGE_02
+#include "Language.l02"
+#endif
+#ifdef LANGUAGE_03
+#include "Language.l03"
+#endif
+#ifdef LANGUAGE_06
+#include "Language.l06"
+#endif
+#ifdef LANGUAGE_09
+#include "Language.l09"
+#endif
+#ifdef LANGUAGE_10
+#include "Language.l10"
+#endif

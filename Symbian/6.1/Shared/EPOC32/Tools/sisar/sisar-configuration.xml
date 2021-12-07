@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sisar-configuration SYSTEM "sisar-configuration.dtd">
+
+<sisar-configuration version="1.0">
+  <default-directory path="" />
+  <path-conversion-rule>
+    <replace pattern="c:\">
+      <replacement>
+        <target drive="Any" file="\System\Apps\appname\" />
+      </replacement>
+    </replace>
+  </path-conversion-rule>
+  <default-public-key-certificate>
+    <public-key-certificate file="public.cer" />
+  </default-public-key-certificate>
+  <default-private-key>
+    <private-key file="private.key" />
+  </default-private-key>
+  <increment-build-number />
+</sisar-configuration>

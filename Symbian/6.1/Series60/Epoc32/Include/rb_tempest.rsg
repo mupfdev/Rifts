@@ -1,0 +1,2 @@
+#define R_WMLBROWSER_SCT_DIALOG                   0x628d6003
+#define R_BROWSER_FONTS                           0x628d6004

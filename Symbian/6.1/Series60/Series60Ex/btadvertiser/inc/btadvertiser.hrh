@@ -1,0 +1,14 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __BTADVERTISER_HRH__
+#define __BTADVERTISER_HRH__
+
+/** BTAdvertiser enumerate command codes */
+enum TBTAdvertiserIds
+    {
+    EBTAdvertiserStartAdvertiser = 1,  // start value must not be 0
+	EBTAdvertiserStopAdvertiser
+    };
+
+
+#endif // __BTADVERTISER_HRH__

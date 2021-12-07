@@ -1,0 +1,128 @@
+/*
+* ============================================================================
+*  Name     : AknExGrid resource header file
+*  Part of  : AknExGrid
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXGRID_HRH
+#define AKNEXGRID_HRH
+
+enum TAknExGridMenuCommands
+    {
+    EAknExGridCmdMain = 0x300,
+    EAknExGridCmdSelection,
+    EAknExGridCmdApplication,
+    EAknExGridCmdPinboard,
+    EAknExGridCmdQuickdial,
+    EAknExGridCmdCaleMonth,
+    EAknExGridCmdCaleWeek,
+    EAknExGridCmdCalculator,
+    EAknExGridCmdMenu,
+    EAknExGridCmdMarkableSelection,
+
+    EAknExGridCmdAddOneItem,
+    EAknExGridCmdAddOneItemInsert,
+    EAknExGridCmdAddOneItemToTheLast,
+    EAknExGridCmdAddFiveItems,
+    EAknExGridCmdAddFiveItemsInsert,
+    EAknExGridCmdAddFiveItemsToTheLast,
+    EAknExGridCmdRemoveOneItem,
+    EAknExGridCmdRemoveOneItemFromCurrent,
+    EAknExGridCmdRemoveOneItemFromLast,
+    EAknExGridCmdRemoveFiveItems,
+    EAknExGridCmdRemoveFiveItemsFromCurrent,
+    EAknExGridCmdRemoveFiveItemsFromLast,
+    EAknExGridCmdRemoveAllItems,
+
+    EAknExGridCmdFillingOrder,
+
+    EAknExGridCmdLoopingVertFollowLoop,
+    EAknExGridCmdLoopingVertFollowStop,
+    EAknExGridCmdLoopingVertFollowGrid,
+    EAknExGridCmdLoopingVertStopEnd,
+
+    EAknExGridCmdLoopingHorizFollowLoop,
+    EAknExGridCmdLoopingHorizFollowStop,
+    EAknExGridCmdLoopingHorizFollowGrid,
+    EAknExGridCmdLoopingHorizStopEnd,
+
+    EAknExGridCmdChangeSize,
+
+    EAknExGridCmdContainNothing,
+    EAknExGridCmdContaionText,
+    EAknExGridCmdContainGraphic,
+    EAknExGridCmdContainBoth,
+
+    EAknExGridCmdShowMenu,
+    EAknExGridCmdNumOfItems,
+
+    EAknExGridCmdAbout,
+    EAknExGridCmdClose,
+
+    EAknExGridCmdSelectAll,
+    EAknExGridCmdDeselectAll,
+    EAknExGridCmdToggle,
+
+    EAknExGridCmdShowPopupGMS,
+    EAknExGridCmdGMSGrid
+    };
+
+enum TAknExGridTabViewId
+    {
+    EAknExGridViewTab = 1,
+    EAknExGridViewSelectionTab,
+    EAknExGridViewMenuTab,
+    EAknExGridViewMarkableSelectionTab,
+    EAknExGridViewGMSTab
+    };
+
+enum TAknExGridDialogId
+    {
+    EAknExGridDialogFillingOrderPrimaryOrientation = 1,
+    EAknExGridDialogFillingOrderVerticalDirection,
+    EAknExGridDialogFillingOrderHorizontalDirection,
+    EAknExGridDialogChangeSizeColumns,
+    EAknExGridDialogChangeSizeRows,
+    EAknExGridDialogNumberOfItems  // ,
+//    EAknExGridDialogFillingOrderLabel1,
+//    EAknExGridDialogFillingOrderLabel2,
+//    EAknExGridDialogFillingOrderLabel3,
+//    EAknExGridDialogFillingOrderLabel4
+
+    };
+
+enum TAknExGridDialogFillOrderPrimary
+    {
+    EAknExGridDialogFillingOrderVert = 0,
+    EAknExGridDialogFillingOrderHoriz
+    };
+
+enum TAknExGridDialogFillOrderVertical
+    {
+    EAknExGridDialogFillingOrderToBottom = 0,
+    EAknExGridDialogFillingOrderToTop
+    };
+
+enum TAknExGridDialogFillOrderHorizontal
+    {
+    EAknExGridDialogFillingOrderToRight = 0,
+    EAknExGridDialogFillingOrderToLeft
+    };
+
+//CBA Commands for dialog about acting marked items simulutaneously.
+enum TAknExNotifTextNotifCommands
+    {
+    ESoftKeyRead = 101,
+    ESoftKeyExit,
+    ESGridSoftKeyNext
+    };
+
+// Dialog element ID
+enum TAknExNotifDialogID
+    {
+    EAknExNotifTextNotification = 0x700
+    };
+
+#endif      //  AKNEXGRID_HRH

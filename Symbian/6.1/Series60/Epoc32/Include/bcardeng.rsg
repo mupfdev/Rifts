@@ -1,0 +1,4 @@
+#define R_QTN_BCARD_FILENAME_PICTURE              2
+#define R_QTN_BCARD_FILENAME_THUMBNAIL            3
+#define R_PBK_BCARD_NAME_UID_MAPPING              4
+#define R_PBK_BCARD_EXPORT_VCARD                  5

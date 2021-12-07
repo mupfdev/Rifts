@@ -1,0 +1,86 @@
+/*
+* ============================================================================
+*  Name     : AknExScroller.hrh
+*  Part of  : AknExScroller
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXSCROLLER_HRH
+#define AKNEXSCROLLER_HRH
+
+// Enumeration
+
+// Command codes of cascade in Menu pane
+enum TAknExScrollerMenuCommands
+    {
+    EAknExScrollerForm = 0x600,
+    EAknExScrollerCascade1 = 0x601,
+    EAknExScrollerCascade2,
+    EAknExScrollerCascade3,
+    EAknExScrollerView1,
+    EAknExScrollerView2,
+    EAknExScrollerView3,
+	EAknExScrollerView4
+    };
+
+// Tab ID in Status Pane for View 1, 2 & 3
+enum TAknExScrollerTabViewId
+    {
+    EAknExScrollerView1Tab = 1,
+    EAknExScrollerView2Tab,
+    EAknExScrollerView3Tab,
+    EAknExScrollerView4Tab
+    };
+
+// CBA Command ID
+enum TAknExScrollerCBACommands
+    {
+    EAknExScrollerCBACommnadAdd = 0x700,
+    EAknExScrollerCBACommnadDel,
+	EAknExScrollerCBACommnadNext
+    };
+
+// Integer
+enum TAknExScrollerInteger
+    {
+    EAknExScrollerInt0 = 0,
+    EAknExScrollerInt1,
+    EAknExScrollerInt2,
+    EAknExScrollerInt3,
+    EAknExScrollerInt4,
+    EAknExScrollerInt5,
+    EAknExScrollerInt6,
+    EAknExScrollerInt7,
+    EAknExScrollerInt8,
+    EAknExScrollerInt9,
+    EAknExScrollerInt10,
+    EAknExScrollerInt256 = 256
+    };
+
+// Form element ID
+enum TAknExScrollerDlgLineID
+    {
+    EAknExScrollerDlgLineEdwin0 = 100,
+    EAknExScrollerDlgLineEdwin1,
+    EAknExScrollerDlgLineEdwin2,
+    EAknExScrollerDlgLineEdwin3,
+    EAknExScrollerDlgLineEdwin4,
+    EAknExScrollerDlgLineEdwin5,
+    EAknExScrollerDlgLineEdwin6,
+    EAknExScrollerDlgLineEdwin7,
+    EAknExScrollerDlgLineEdwin8,
+    EAknExScrollerDlgLineEdwin9,
+    EAknExScrollerDlgLineEdwin10,
+    EAknExScrollerDlgLineEdwin11,
+    EAknExScrollerDlgLineEdwin12,
+    EAknExScrollerDlgLineEdwin13,
+    EAknExScrollerDlgLineEdwin14,
+    EAknExScrollerDlgLineEdwin15,
+    EAknExScrollerDlgLineEdwin16,
+    EAknExScrollerDlgLineNumberEd
+    };
+
+#endif  // AKNEXSCROLLER_HRH
+
+// End of File

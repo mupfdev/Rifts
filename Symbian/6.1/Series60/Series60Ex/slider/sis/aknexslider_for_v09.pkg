@@ -1,0 +1,15 @@
+; AknExSlider.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExSlider"},(0x10005C28),1,02,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExSlider.app"-"!:\system\apps\AknExSlider\AknExSlider.app"
+"..\..\..\epoc32\release\thumb\urel\AknExSlider.rsc"-"!:\system\apps\AknExSlider\AknExSlider.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExSlider.aif"-"!:\system\apps\AknExSlider\AknExSlider.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExSlider_caption.rsc"-"!:\system\apps\AknExSlider\AknExSlider_caption.rsc"

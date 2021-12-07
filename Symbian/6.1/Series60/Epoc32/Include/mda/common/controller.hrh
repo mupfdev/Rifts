@@ -1,0 +1,16 @@
+// Mda\Common\Controller.hrh
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#ifndef __MDA_COMMON_CONTROLLER_HRH__
+#define __MDA_COMMON_CONTROLLER_HRH__
+
+#define KUidMdaControllerTypeDefine 					268450119
+#define KUidMdaControllerDefine 						268450120
+
+#define KUidMdaDataTypeSettingsDefine					268450121
+
+#define KUidMdaElapsedTimeDefine						268450165
+
+#endif

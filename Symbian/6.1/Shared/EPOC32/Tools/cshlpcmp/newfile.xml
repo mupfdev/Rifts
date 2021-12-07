@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE asptml SYSTEM "file:///G:/EPOC32/Tools/cshlpcmp/dtd/asptml.dtd">
+<?xml:stylesheet href="file:///G:/EPOC32/Tools/cshlpcmp/xsl/asptml.xsl" title="asptml" type="text/xsl"?>
+<asptml>
+<!--
+Author:
+Date:
+Version:
+-->
+<uid value="0x00000000"/>
+
+<topic>
+<category>Category</category>
+<topictitle>Topic title</topictitle>
+<context contextUID="context1" comment="with a comment"/>
+<index>this is an index entry</index>
+<synonyms>Synonyms for the topic</synonyms>
+<p>Text for the topic.</p>
+</topic>
+
+</asptml>

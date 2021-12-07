@@ -1,0 +1,12 @@
+// TXTSHELL.HRH
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+
+enum TExampleMenuCommands
+	{
+	EExampleShellSelectGlobal=100,
+	EExampleShellSelectRich,
+	EExampleShellSelectStyled,
+	EExampleShellSelectView
+	};

@@ -1,0 +1,2 @@
+#define AUDIO_LIBRARY                             1
+#define WAV_CODEC_GSM                             2

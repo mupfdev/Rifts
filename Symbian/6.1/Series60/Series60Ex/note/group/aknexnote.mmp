@@ -1,0 +1,76 @@
+/*
+* =============================================================================
+*  Name     : AknExNote.mmp
+*  Part of  : AknExNote
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+TARGET          AknExNote.app
+TARGETTYPE      app
+UID             0x100039CE 0x10005C2F
+TARGETPATH      \system\apps\AknExNote
+
+RESOURCE        AknExNote.rss
+RESOURCE        AknExNote_caption.rss
+LANG            SC
+
+SOURCEPATH      ..\src
+SOURCE          AknExNoteApp.cpp
+SOURCE          AknExNoteAppUi.cpp
+SOURCE          AknExNoteDocument.cpp
+SOURCE          AknExNoteContainer.cpp
+SOURCE          AknExNoteView.cpp
+SOURCE          AknExNoteBaseListEventHandler.cpp
+SOURCE          AknExNoteToneListEventHandler.cpp
+SOURCE          AknExNoteGeneralListEventHandler.cpp
+SOURCE          AknExNoteAnimationListEventHandler.cpp
+SOURCE          AknExNoteTwoLabelsListEventHandler.cpp
+SOURCE          AknExNoteGlobalNoteListEventHandler.cpp
+SOURCE          AknExNotePriorityNoteListEventHandler.cpp
+
+USERINCLUDE     . ..\inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY         avkon.lib
+LIBRARY         euser.lib
+LIBRARY         apparc.lib
+LIBRARY         cone.lib
+LIBRARY         eikcore.lib
+LIBRARY         eikcoctl.lib
+LIBRARY         eikctl.lib
+LIBRARY         aknnotify.lib
+LIBRARY         apgrfx.lib
+LIBRARY         eikdlg.lib
+
+// Other possible keywords:
+START BITMAP aknexnote.mbm
+HEADER
+TARGETPATH \System\Apps\AknExNote
+SOURCEPATH ..\DataSrc
+SOURCE c12 AknExNoteErrorIcon.bmp
+SOURCE c12 AknExNoteWarningIcon.bmp
+SOURCE c12 AknExNoteInformationIcon.bmp
+SOURCE c12 AknExNoteConfirmationIcon.bmp
+SOURCE c12 AknExNoteWaitIcon.bmp
+SOURCE c12 AknExNotePermanentIcon.bmp
+SOURCE c12 AknExNoteProgressIcon.bmp
+source c8 indicato.bmp
+source 1  indicatom.bmp
+source c8 Testimage1.bmp
+source 1  Testimage1Mask.bmp
+source c8 qgn_indi_attach_audio.bmp
+source 1  qgn_indi_attach_audio_mask.bmp
+source c8 LShellIcon.bmp
+source 1  LShellIconM.bmp
+source c8 Photo.bmp
+source c8 30x40.bmp
+END
+
+
+// DEFFILE ?filename
+AIF AknExNote.aif ..\aif AknExNoteaif.rss c12 \
+    AknExNote_Icon.bmp AknExNote_Icon_mask.bmp aknexnote_lst.bmp aknexnote_lst_mask.bmp
+
+// End of File

@@ -1,0 +1,10 @@
+#define R_BIOUD_FUNCTION_ARRAY                    0xb5ab003
+#define R_QTN_MCE_INFO_MESSAGE_NOT_OPENED         0xb5ab004
+#define R_QTN_SM_INFO_GMS                         0xb5ab005
+#define R_QTN_SM_INFO_CALENDAR                    0xb5ab006
+#define R_QTN_SM_INFO_BUSINESS_CARD               0xb5ab007
+#define R_QTN_SM_TITLE_CONFIGURATION              0xb5ab008
+#define R_QTN_SM_INFO_RINGING_TONE                0xb5ab009
+#define R_QTN_SM_INFO_OPERATOR_LOGO               0xb5ab00a
+#define R_QTN_SM_INFO_EMAIL_NOTIFICATION          0xb5ab00b
+#define R_QTN_SM_INFO_SYNC_PROFILE                0xb5ab00c

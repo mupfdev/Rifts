@@ -1,0 +1,53 @@
+/*
+* ============================================================================
+*  Name     : AknExMenu.hrh
+*  Part of  : AknExMenu
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+#ifndef AKNEXMNEU_HRH
+#define AKNEXMNEU_HRH
+
+enum TAknExMenuMenuCommands
+    {
+    EAknExMenuAppCmd1 = 1,
+    EAknExMenuAppCmd2,
+    EAknExMenuStateCmd1,
+    EAknExMenuStateCmd2,
+    EAknExMenuCtxCmd1,
+    EAknExMenuCtxCmd2,
+    EAknExMenuCtxCmd3,
+    EAknExMenuSystemOptions,
+    EAknExMenuSubAppCmd1,
+    EAknExMenuSubAppCmd2,
+    EAknExMenuSubStateCmd1,
+    EAknExMenuSubStateCmd2,
+    EAknExMenuSubCtxCmd1,
+    EAknExMenuSubCtxCmd2,
+    EAknExMenuCmdSub1,
+    EAknExMenuCmdSub2,
+    EAknExMenuCmdSubMoreItems,
+    EAknExMenuCmdSubLessItems,
+    EAknExMenuCmdSubLevel3,
+    EAknExMenuCmdSubLevel4,
+    EAknExMenuCmdSubLevel5,
+
+    EAknExMenuCmdOkMenuItem1,
+    EAknExMenuCmdOkMenuItem2,
+
+    EAknExMenuSubAppCmdLongName,
+    EAknExMenuCmdSubLongName1,
+    EAknExMenuCmdSubLongName2,
+	EAknExMenuCmdSubLongName3
+    };
+
+enum TAknExMenuTabViewId
+    {
+    EAknExMenuNoSubTab = 1,
+    EAknExMenuSubTab,
+    EAknExMenuOkTab
+    };
+ 
+
+#endif      //  AKNEXMNEU_HRH

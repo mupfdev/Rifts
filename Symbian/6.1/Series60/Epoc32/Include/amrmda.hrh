@@ -1,0 +1,69 @@
+/*
+ * NOKIA MOBILE PHONES
+ * DIGITAL CONVERGENCE
+ * LINDA SW
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *          AMR Codec Plug-In
+ *          -----------------
+ *
+ *          SW Include Document - C++
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * Module name: AmrMda
+ *
+ * $Archive:$
+ *
+ * $Revision:$ 
+ *
+ *
+ * Copyright (c) 2002. Nokia Mobile Phones
+ *
+ *
+ * Change History:
+ *
+ * $History:$
+ *
+ *-----------------------------------------------------------------------------
+ */
+
+
+/*
+-----------------------------------------------------------------------------
+
+    DESCRIPTION
+
+    AMR plug-in DLL/Library/Object UIDs
+
+-----------------------------------------------------------------------------
+*/
+#ifndef __AMRMDA_HRH__
+#define __AMRMDA_HRH__
+
+
+//  AMR Codec UID defines
+
+#define KUidMdaAmrAudioLibraryDefine  268437990 // AMR Codec library (0x100009E6)
+#define KUidMdaRawAmrCodecDefine      268437991 // AMR Codec object
+#define KUidMdaClipFormatRawAmrDefine 268437992 // Raw AMR Clip Format object
+#define KUidMdaClipFormatWavAmrDefine 268438107 // Wav AMR Clip Format object
+#define KUidAmrDllLibraryDefine       268438087 // AMR DLL library (0x10000A47)
+#define KSharedLibraryUidDefine       268435597 // UID2 of static interface DLL
+
+#endif //__AMRMDA_HRH__
+//-----------------------------------------------------------------------------
+//  End of File
+//-----------------------------------------------------------------------------

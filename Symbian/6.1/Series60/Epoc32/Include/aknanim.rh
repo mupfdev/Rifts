@@ -1,0 +1,121 @@
+/*
+*  Copyright © 2002 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation. All rights are reserved. Copying, 
+*  including reproducing, storing,  adapting or translating, any 
+*  or all of this material requires the prior written consent of 
+*  Nokia Corporation. This material also contains confidential 
+*  information which may not be disclosed to others without the 
+*  prior written consent of Nokia Corporation.
+*/
+
+// AknAnim.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+// Avkon Animation Resource Header
+
+#include <aknanim.hrh>
+
+STRUCT ANIM_BLIT_PREVIOUS_VIEW
+	{
+	BYTE type = EAnimBlitPreviousView;
+	WORD x;
+	WORD y;
+	}
+
+STRUCT ANIM_BLIT_NEXT_VIEW
+	{
+	BYTE type = EAnimBlitNewView;
+	WORD x;
+	WORD y;
+	}
+
+STRUCT ANIM_BLIT_PART_PREVIOUS_VIEW
+	{
+	BYTE type = EAnimBlitPartPreviousView;
+	WORD srcX;
+	WORD srcY;
+	WORD width;
+	WORD height;
+	WORD destX;
+	WORD destY;
+	}
+
+STRUCT ANIM_BLIT_PART_NEXT_VIEW
+	{
+	BYTE type = EAnimBlitPartNewView;
+	WORD steps = 1;
+	WORD srcX;
+	WORD srcY;
+	WORD width;
+	WORD height;
+	WORD destX = -32760;
+	WORD destY = -32760;
+	}
+
+STRUCT ANIM_DRAW_LINE
+	{
+	BYTE type = EAnimDrawLine;
+	WORD steps = 1;
+	WORD fromX;
+	WORD fromY;
+	WORD toX;
+	WORD toY;
+	}
+
+STRUCT ANIM_SET_COLOR
+	{
+	BYTE type = EAnimSetColor;
+	BYTE red;
+	BYTE green;
+	BYTE blue;
+	}
+
+STRUCT ANIM_SLIDE_PART_NEXT_VIEW
+	{
+	BYTE type = EAnimBlitSlideNewView;
+	WORD steps = 1;
+	WORD srcX;
+	WORD srcY;
+	WORD width;
+	WORD height;
+	WORD slideToX;
+	WORD slideToY;
+	WORD slideFromX;
+	WORD slideFromY;
+	}
+
+STRUCT ANIM_WAIT_UNTIL_COMPLETE
+	{
+	BYTE type = EAnimWaitUntilComplete;
+	}
+
+STRUCT ANIM_WAIT
+	{
+	BYTE type = EAnimWait;
+	WORD steps = 0;
+	}
+
+
+STRUCT ANIM_STEP
+	{
+	STRUCT draw_steps[];
+	}
+
+STRUCT ANIM_SECTION
+	{
+	STRUCT steps[];
+	}
+
+
+STRUCT ANIM_DATA
+	{
+	WORD flags = 0;
+	LONG interval = 0;
+	LLINK sections[];
+	}
+
+

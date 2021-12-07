@@ -1,0 +1,19 @@
+// UseStaticDLL.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+
+TARGET        UseStaticDLL.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        UseStaticDLL.cpp
+
+USERINCLUDE   .
+USERINCLUDE   ..\CommonFramework
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib  CreateStaticDLL.lib
+

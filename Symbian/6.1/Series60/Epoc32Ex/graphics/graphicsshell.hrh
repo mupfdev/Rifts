@@ -1,0 +1,9 @@
+// GraphicsShell.hrh
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+enum TExampleMenuCommands
+	{
+	EExampleShellSelectDraw=400,
+	EExampleShellSelectZoom
+	};

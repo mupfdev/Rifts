@@ -1,0 +1,8 @@
+EXPORTS
+; NEW:
+	??0CGeneral@@QAE@AAVCConsoleBase@@@Z @ 1 NONAME ; public: __thiscall CGeneral::CGeneral(class CConsoleBase &)
+	??0CSetter@@QAE@AAVCConsoleBase@@@Z @ 2 NONAME ; public: __thiscall CSetter::CSetter(class CConsoleBase &)
+	?SetStaticTextL@CSetter@@QAEXABVTDesC16@@@Z @ 3 NONAME ; public: void __thiscall CSetter::SetStaticTextL(class TDesC16 const &)
+	?ShowStaticText@CGeneral@@QBEXXZ @ 4 NONAME ; public: void __thiscall CGeneral::ShowStaticText(void)const 
+	?ShowStaticText@CSetter@@QBEXXZ @ 5 NONAME ; public: void __thiscall CSetter::ShowStaticText(void)const 
+

@@ -1,0 +1,77 @@
+// BIFTOOL.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+//
+// Contains definitions for the resource files that are input to BIO Information Files (BIF)
+
+//
+// Constants, must match those in BIF.H
+#define KUidUseNoApp		0x00000000	
+#define KUidUseDefaultApp	0x100052b2		
+#define KMaxDescription		128
+#define KMaxFileExtension	10
+#define KMaxFilename		256		// must match KMaxFileName in E32std.h
+#define KMaxIDText		128
+#define KCharSetDefault		0x10003b10	// ISO-8859-1 is default, must match CharConv component
+
+
+STRUCT BIO_INFO_FILE
+	{
+	LONG message_type_uid=0x00000000;	// Must not be left as default value
+	LONG message_parser_uid=0x00000000;
+
+	LONG message_app_uid=KUidUseNoApp;	// Can be KUidUseNoApp, KUidUseDefaultApp or the uid of an app
+
+	LONG message_appctrl_uid=0x00000000;
+
+	LTEXT description(KMaxDescription)="default description"; 	// Used to set subject text of message
+	LTEXT file_extension(KMaxFileExtension)=""; 
+
+	WORD general_data1=0x0000;		// Bio message type specific and/or future expansion
+	WORD general_data2=0x0000;		// Bio message type specific and/or future expansion
+	WORD general_data3=0x0000;		// Bio message type specific and/or future expansion
+
+	LTEXT icons_filename(KMaxFilename)="";	// filename of MBM holding icons
+	LEN WORD WORD icon_zoom_levels[];	// must list zoom levels of icons in the order that the 
+						// icons are store in the MBM
+
+	LEN WORD STRUCT ids[];			// array of ID
+	}
+
+enum ID_TYPE		// Must match TIDType in BIF.H
+	{
+	EUnknown,
+	EIana,
+	ENbs,
+
+	//Receiving over WDP
+	EWap,
+	EWapSecure,
+
+	//Receiving over WSP
+	EWsp,
+	EWspSecure
+	};
+
+enum ID_CONFIDENCE		// Must match TRecognitionConfidence in APMREC.H
+	{
+	ECertain=2147483647,	// KMaxTInt
+	EProbable=100,		
+	EPossible=0,		
+	EUnlikely=-100,		
+	ENotRecognized=-2147483647	// KMinTInt, should be -2147483648 but resource compiler won't allow it
+	};
+
+STRUCT ID							// Used by Bio message parser to id message
+	{
+	WORD type=EUnknown;				// ID_TYPE
+	LONG confidence=EPossible;		// ID_CONFIDENCE
+	LONG character_set=KCharSetDefault;	
+	LTEXT text(KMaxIDText)="";	
+	WORD port=0;	
+	WORD general_id_data=0x0000;		// Bio message type specific and/or future expansion
+	}
+
+
+

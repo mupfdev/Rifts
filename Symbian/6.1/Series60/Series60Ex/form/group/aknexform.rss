@@ -1,0 +1,3118 @@
+/*
+* ============================================================================
+*  Name     : AknExForm.rss
+*  Part of  : AknExForm
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+// RESOURCE IDENTIFIER
+NAME EXFM
+
+// INCLUDES
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rsg>
+#include <avkon.hrh>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include "aknexform.loc"
+#include "AknExForm.hrh"
+
+//  CONSTANTS
+#define AKNEXFORM_EDWIN_WIDTH                  1
+#define AKNEXFORM_EDWIN_LINES                  2
+#define AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01   10
+#define AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01   30
+#define AKNEXFORM_NUMBER_EDITOR_MIN_VALUE02    0
+#define AKNEXFORM_NUMBER_EDITOR_MAX_VALUE02   10
+#define AKNEXFORM_DATE_MAX_DAY_VALUE          30
+#define AKNEXFORM_DATE_MIN_DAY_VALUE           0
+#define AKNEXFORM_DATE_MAX_MONTH_VALUE        11
+#define AKNEXFORM_DATE_MIN_MONTH_VALUE         0
+#define AKNEXFORM_DATE_MAX_YEAR_VALUE       2009
+#define AKNEXFORM_DATE_MIN_YEAR_VALUE       2000
+#define AKNEXFORM_TIME_MIN_SECOND_VALUE        0
+#define AKNEXFORM_TIME_MAX_SECOND_VALUE       59
+#define AKNEXFORM_TIME_MIN_MINUTE_VALUE        0
+#define AKNEXFORM_TIME_MAX_MINUTE_VALUE       59
+#define AKNEXFORM_TIME_MIN_HOUR_VALUE          0
+#define AKNEXFORM_TIME_MAX_HOUR_VALUE         23
+#define AKNEXFORM_DURATION_MIN_VALUE           0
+#define AKNEXFORM_DURATION_MAX_VALUE        3600
+#define AKNEXFORM_SECRET_MAX_LENGTH            8
+#define AKNEXFORM_EDWIN_CHANGE_WIDTH           3
+#define AKNEXFORM_EDWIN_CHANGE_LINES           5
+#define AKNEXFORM_SLIDER_MIN_VALUE             0
+#define AKNEXFORM_SLIDER_MAX_VALUE            20
+#define AKNEXFORM_SLIDER_STEP                  2
+
+//  MACROS
+
+//  RESOURCE DEFINITIONS
+//-----------------------------------------------------------------------------
+//
+//    RSS_SIGNATURE
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    TBUF16
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF16
+    {
+    buf = qtn_aknexform_title;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    EIK_APP_INFO
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_aknexform_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknextest_view
+//
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexform_view
+    {
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menubar
+//    MenuBar
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexform_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexform_menu;
+            txt = qtn_aknexform_menubar;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu
+//    Menu pane
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdFormStates;
+            cascade = r_aknexform_menu_form_states_cascade;
+            txt = qtn_aknexform_menu_form_states;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdMovingInsideForm;
+            cascade = r_aknexform_menu_moving_inside_form_cascade;
+            txt = qtn_aknexform_menu_move_in_form;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdGeneralFormParameters;
+            cascade = r_aknexform_menu_general_form_parameters_cascade;
+            txt = qtn_aknexform_menu_gen_form_prm;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdFieldLabel;
+            cascade = r_aknexform_menu_field_label_cascade;
+            txt = qtn_aknexform_menu_field_label;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdTextField;
+            cascade = r_aknexform_menu_text_field_cascade;
+            txt = qtn_aknexform_menu_text_field;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdSeparator;
+            cascade = r_aknexform_menu_separator_cascade;
+            txt = qtn_aknexform_menu_separator;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdEmptyForm;
+            cascade = r_aknexform_menu_empty_form_cascade;
+            txt = qtn_aknexform_menu_empty_form;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAddingField;
+            cascade = r_aknexform_menu_adding_field_cascade;
+            txt = qtn_aknexform_menu_add_field;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdRemovingField;
+            cascade = r_aknexform_menu_removing_field_cascade;
+            txt = qtn_aknexform_menu_remove_field;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdLAF;
+            cascade = r_aknexform_menu_laf_cascade;
+            txt = qtn_aknexform_menu_laf;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdSaveTest;
+            cascade = r_aknexform_menu_savetest_cascade;
+            txt = qtn_aknexform_menu_savetest;
+            },
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexform_menu_exit;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdDoubleLine;
+            cascade = r_aknexform_menu_double_line_cascade;
+            txt = qtn_aknexform_menu_double_line;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_form_states_cascade
+//    Sub menu-pane of "Form states" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_form_states_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline02;
+            txt = qtn_aknexform_menu_outline02;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_moving_inside_form_cascade
+//    Sub menu-pane of "Moving Inside Form" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_moving_inside_form_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline14;
+            txt = qtn_aknexform_menu_outline14;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline16;
+            txt = qtn_aknexform_menu_outline16;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_general_form_parameters_cascade
+//    Sub menu-pane of "General Form Parameters" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_general_form_parameters_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline22;
+            txt = qtn_aknexform_menu_outline22;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_field_label_cascade
+//    Sub menu-pane of "Field label" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_field_label_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline25;
+            txt = qtn_aknexform_menu_outline25;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_text_field_cascade
+//    Sub menu-pane of "Text field" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_text_field_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline29;
+            txt = qtn_aknexform_menu_outline29;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline31;
+            txt = qtn_aknexform_menu_outline31;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_separator_cascade
+//    Sub menu-pane of "Separator" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_separator_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline52;
+            txt = qtn_aknexform_menu_outline52;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_empty_form_cascade
+//    Sub menu-pane of "Empty Form" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_empty_form_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline54;
+            txt = qtn_aknexform_menu_outline54;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_adding_field_cascade
+//    Sub menu-pane of "Adding Field" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_adding_field_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline55;
+            txt = qtn_aknexform_menu_outline55;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_removing_field_cascade
+//    Sub menu-pane of "Removing Field" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_removing_field_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline57;
+            txt = qtn_aknexform_menu_outline57;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_laf_cascade
+//    Sub menu-pane of "LAF" menu
+//
+//-----------------------------------------------------------------------------
+//
+
+RESOURCE MENU_PANE r_aknexform_menu_laf_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline68;
+            txt = qtn_aknexform_menu_outline68;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline70;
+            txt = qtn_aknexform_menu_outline70;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_savetest_cascade
+//    Sub menu-pane of "Save test" menu
+//
+//-----------------------------------------------------------------------------
+//
+
+RESOURCE MENU_PANE r_aknexform_menu_savetest_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline83;
+            txt = qtn_aknexform_menu_outline83;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_double_line_cascade
+//    Sub menu-pane of "Double Line" menu
+//
+//-----------------------------------------------------------------------------
+//
+
+RESOURCE MENU_PANE r_aknexform_menu_double_line_cascade
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdOutline102;
+            txt = qtn_aknexform_menu_outline102;
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_label_title
+//    Text which is used by label
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexform_text_label_title
+    {
+    buf = qtn_aknexform_label_title;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_label_operation
+//    Text which is used by label
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexform_text_label_operation
+    {
+    buf = qtn_aknexform_label_operation;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_edwin_text
+//    Text which is used by editors
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexform_text_edwin_text
+    {
+    buf = qtn_aknexform_form_edwin_text;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_secret_text
+//    Text which is used by editors
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexform_text_secret_text
+    {
+    buf = qtn_aknexform_form_secret_text;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_status_pane_title??
+//    Text which is used on status pane
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexform_text_status_pane_title02
+    {
+    buf = qtn_aknexform_menu_outline02;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title14
+    {
+    buf = qtn_aknexform_menu_outline14;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title16
+    {
+    buf = qtn_aknexform_menu_outline16;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title22
+    {
+    buf = qtn_aknexform_menu_outline22;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title25
+    {
+    buf = qtn_aknexform_menu_outline25;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title29
+    {
+    buf = qtn_aknexform_menu_outline29;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title31
+    {
+    buf = qtn_aknexform_menu_outline31;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title52
+    {
+    buf = qtn_aknexform_menu_outline52;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title54
+    {
+    buf = qtn_aknexform_menu_outline54;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title55
+    {
+    buf = qtn_aknexform_menu_outline55;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title57
+    {
+    buf = qtn_aknexform_menu_outline57;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title68
+    {
+    buf = qtn_aknexform_menu_outline68;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title70
+    {
+    buf = qtn_aknexform_menu_outline70;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title83
+    {
+    buf = qtn_aknexform_menu_outline83;
+    }
+
+RESOURCE TBUF256 r_aknexform_text_status_pane_title102
+    {
+    buf = qtn_aknexform_menu_outline102;
+    }
+
+RESOURCE TBUF256 r_aknexform_resource_caption
+    {
+    buf = qtn_aknexform_resource_caption;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_field_dialog
+//    Standard for Form. there are two text fields.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_text_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexform_text_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_field_form
+//    Standard for Form. there are two text fields.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_text_field_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed1;
+            id = EAknExFormDlgCtrlIdEdwin01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed2;
+            id = EAknExFormDlgCtrlIdEdwin02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_field_dialog
+//    Standard for Form. there are a text field and number field.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_text_number_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexform_text_number_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_field_form
+//    Standard for Form. there are a text field and number field.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_text_number_field_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_number;
+            id = EAknExFormDlgCtrlIdNumber01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_many_row_field_dialog
+//    For Outline14,15
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_many_row_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexform_many_row_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_many_row_field_form
+//    For Outline14,15
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_many_row_field_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed1;
+            id = EAknExFormDlgCtrlIdEdwin01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed2;
+            id = EAknExFormDlgCtrlIdEdwin02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed3;
+            id = EAknExFormDlgCtrlIdEdwin03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed4;
+            id = EAknExFormDlgCtrlIdEdwin04;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed5;
+            id = EAknExFormDlgCtrlIdEdwin05;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed6;
+            id = EAknExFormDlgCtrlIdEdwin06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed7;
+            id = EAknExFormDlgCtrlIdEdwin07;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed8;
+            id = EAknExFormDlgCtrlIdEdwin08;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed9;
+            id = EAknExFormDlgCtrlIdEdwin09;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed10;
+            id = EAknExFormDlgCtrlIdEdwin10;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed11;
+            id = EAknExFormDlgCtrlIdEdwin11;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed12;
+            id = EAknExFormDlgCtrlIdEdwin12;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed13;
+            id = EAknExFormDlgCtrlIdEdwin13;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed14;
+            id = EAknExFormDlgCtrlIdEdwin14;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed15;
+            id = EAknExFormDlgCtrlIdEdwin15;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed16;
+            id = EAknExFormDlgCtrlIdEdwin16;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed17;
+            id = EAknExFormDlgCtrlIdEdwin17;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_navipane_dialog
+//    For Outline16
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_navipane_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    pages = r_aknexform_navipane_pages;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_navipane_pages
+//    For Outline16
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexform_navipane_pages
+    {
+    items =
+        {
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage01;
+            text = qtn_aknexform_form_label_page1;
+            form = r_aknexform_text_field_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage02;
+            text = qtn_aknexform_form_label_page2;
+            form = r_aknexform_text_number_field_another_form;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_field_another_form
+//    there are a text field and number field.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_text_number_field_another_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_number;
+            id = EAknExFormDlgCtrlIdNumber01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_with_icon_dialog
+//    For Outline22
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_text_number_with_icon_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    pages = r_aknexform_text_number_with_icon_pages;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_with_icon_pages
+//    For Outline22
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexform_text_number_with_icon_pages
+    {
+    items =
+        {
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage01;
+            text = qtn_aknexform_form_label_page1;
+            form = r_aknexform_text_number_field_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage02;
+            text = qtn_aknexform_form_label_page2;
+            form = r_aknexform_only_icon_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage03;
+            text = qtn_aknexform_form_label_page3;
+            form = r_aknexform_text_number_with_icon_form;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_only_icon_form
+//    For Outline22
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_only_icon_form
+    {
+    flags = EEikFormShowBitmaps;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            id = EAknExFormDlgCtrlIdEdwin02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_folder_small;
+            bmpmask = EMbmAvkonQgn_prop_folder_small_mask;
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            id = EAknExFormDlgCtrlIdNumber02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_nrtyp_phone;
+            bmpmask = EMbmAvkonQgn_prop_nrtyp_phone_mask;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_with_icon_form
+//    For Outline22
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_text_number_with_icon_form
+    {
+    flags = EEikFormShowBitmaps;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_folder_small;
+            bmpmask = EMbmAvkonQgn_prop_folder_small_mask;
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_number;
+            id = EAknExFormDlgCtrlIdNumber03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_nrtyp_phone;
+            bmpmask = EMbmAvkonQgn_prop_nrtyp_phone_mask;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_date_with_icon_dialog
+//    For Outline23
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_text_number_date_with_icon_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    pages = r_aknexform_text_number_date_with_icon_pages;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_date_with_icon_pages
+//    For Outline23
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexform_text_number_date_with_icon_pages
+    {
+    items =
+        {
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage01;
+            text = qtn_aknexform_form_label_page1;
+            form = r_aknexform_text_number_date_without_icon_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage02;
+            text = qtn_aknexform_form_label_page2;
+            form = r_aknexform_text_number_date_with_icon_form;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_date_without_icon_form
+//    For Outline23
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_text_number_date_without_icon_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            id = EAknExFormDlgCtrlIdNumber01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_text_number_date_with_icon_form
+//    For Outline23
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_text_number_date_with_icon_form
+    {
+    flags = EEikFormShowBitmaps;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_folder_small;
+            bmpmask = EMbmAvkonQgn_prop_folder_small_mask;
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            id = EAknExFormDlgCtrlIdNumber02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_nrtyp_phone;
+            bmpmask = EMbmAvkonQgn_prop_nrtyp_phone_mask;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_all_editor_field_dialog
+//    For Outline29,59
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_all_editor_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexform_all_editor_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_all_editor_field_form
+//    For Outline29,59
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_all_editor_field_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_number;
+            id = EAknExFormDlgCtrlIdNumber01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            prompt = qtn_aknexform_form_label_date;
+            id = EAknExFormDlgCtrlIdDate01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MIN_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MIN_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MIN_YEAR_VALUE;
+                    };
+                maxDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MAX_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MAX_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MAX_YEAR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            prompt = qtn_aknexform_form_label_time;
+            id = EAknExFormDlgCtrlIdTime01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = TIME_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MIN_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MIN_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MIN_HOUR_VALUE;
+                    };
+                maxTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MAX_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MAX_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MAX_HOUR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            prompt = qtn_aknexform_form_label_durat;
+            id = EAknExFormDlgCtrlIdDuration01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DURATION_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MIN_VALUE;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MAX_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            prompt = qtn_aknexform_form_label_secret;
+            id = EAknExFormDlgCtrlIdSecret01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = SECRETED
+                {
+                num_letters = AKNEXFORM_SECRET_MAX_LENGTH;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_separator_field_dialog
+//    For Outline52
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_separator_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexform_separator_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_separator_feild_form
+//    For Outline52
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_separator_field_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed1;
+            id = EAknExFormDlgCtrlIdEdwin01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed2;
+            id = EAknExFormDlgCtrlIdEdwin02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys |
+                        EEikDlgItemSeparatorAfter;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed3;
+            id = EAknExFormDlgCtrlIdEdwin03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_none_field_dialog
+//    For Outline54
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_none_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexform_none_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_none_field_form
+//    For Outline54
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_none_field_form
+    {
+    items =
+        {
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_label_add_edwin
+//    For Outline55
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE TBUF256 r_aknexform_label_add_edwin
+    {
+    buf = qtn_aknexform_form_label_add_ed;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_three_slider_field_dialog
+//    For Outline68
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_three_slider_field_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagButtonsRight | EEikDialogFlagNoTitleBar |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    form = r_aknexform_three_slider_field_form;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_three_slider_field_form
+//    For Outline68
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_three_slider_field_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtSlider;
+            prompt = qtn_aknexform_form_label_sldr1;
+            id = EAknExFormDlgCtrlIdSlider01;
+            control = SLIDER
+                {
+                layout = EAknFormSliderLayout1;
+                minvalue = AKNEXFORM_SLIDER_MIN_VALUE;
+                maxvalue = AKNEXFORM_SLIDER_MAX_VALUE;
+                step = AKNEXFORM_SLIDER_STEP;
+                minlabel = qtn_aknexform_form_label_sdmin;
+                maxlabel = qtn_aknexform_form_label_sdmax;
+//del for SA                valuelabel = qtn_aknexform_form_value_label;
+                valuetype = EAknSliderValuePercentage;  //add for SA
+                };
+            },
+        DLG_LINE
+            {
+            type = EAknCtSlider;
+            prompt = qtn_aknexform_form_label_sldr2;
+            id = EAknExFormDlgCtrlIdSlider02;
+            control = SLIDER
+                {
+                layout = EAknFormSliderLayout2;
+                minvalue = AKNEXFORM_SLIDER_MIN_VALUE;
+                maxvalue = AKNEXFORM_SLIDER_MAX_VALUE;
+                step = AKNEXFORM_SLIDER_STEP;
+                minlabel = qtn_aknexform_form_label_sdmin;
+                maxlabel = qtn_aknexform_form_label_sdmax;
+//del for SA                valuelabel = qtn_aknexform_form_value_label;
+                valuetype = EAknSliderValuePercentage;  //add for SA
+                };
+            },
+        DLG_LINE
+            {
+            type = EAknCtSlider;
+            prompt = qtn_aknexform_form_label_sldr3;
+            id = EAknExFormDlgCtrlIdSlider03;
+            control = SLIDER
+                {
+                layout = EAknFormSliderLayout3;
+                minvalue = AKNEXFORM_SLIDER_MIN_VALUE;
+                maxvalue = AKNEXFORM_SLIDER_MAX_VALUE;
+                step = AKNEXFORM_SLIDER_STEP;
+                minlabel = qtn_aknexform_form_label_sdmin;
+                maxlabel = qtn_aknexform_form_label_sdmax;
+//del for SA                valuelabel = qtn_aknexform_form_value_label;
+                valuetype = EAknSliderValuePercentage;  //add for SA
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_navigate_six_pages_dialog
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_navigate_six_pages_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    pages = r_aknexform_navigate_six_pages;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_navigate_six_pages
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexform_navigate_six_pages
+    {
+    items =
+        {
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage01;
+            text = qtn_aknexform_form_label_edwin;
+            form = r_aknexform_six_edwin_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage02;
+            text = qtn_aknexform_form_label_num;
+            form = r_aknexform_six_number_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage03;
+            text = qtn_aknexform_form_label_date;
+            form = r_aknexform_six_date_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage04;
+            text = qtn_aknexform_form_label_time;
+            form = r_aknexform_six_time_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage05;
+            text = qtn_aknexform_form_label_durat;
+            form = r_aknexform_six_duration_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage06;
+            text = qtn_aknexform_form_label_pass;
+            form = r_aknexform_six_secret_form;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_six_edwin_form
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_six_edwin_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed1;
+            id = EAknExFormDlgCtrlIdEdwin01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed2;
+            id = EAknExFormDlgCtrlIdEdwin02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed3;
+            id = EAknExFormDlgCtrlIdEdwin03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed4;
+            id = EAknExFormDlgCtrlIdEdwin04;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed5;
+            id = EAknExFormDlgCtrlIdEdwin05;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_ed6;
+            id = EAknExFormDlgCtrlIdEdwin06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_six_number_form
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_six_number_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_num1;
+            id = EAknExFormDlgCtrlIdNumber01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_num2;
+            id = EAknExFormDlgCtrlIdNumber02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_num3;
+            id = EAknExFormDlgCtrlIdNumber03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_num4;
+            id = EAknExFormDlgCtrlIdNumber04;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_num5;
+            id = EAknExFormDlgCtrlIdNumber05;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_num6;
+            id = EAknExFormDlgCtrlIdNumber06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_six_date_form
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_six_date_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            prompt = qtn_aknexform_form_label_date1;
+            id = EAknExFormDlgCtrlIdDate01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MIN_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MIN_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MIN_YEAR_VALUE;
+                    };
+                maxDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MAX_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MAX_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MAX_YEAR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            prompt = qtn_aknexform_form_label_date2;
+            id = EAknExFormDlgCtrlIdDate02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MIN_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MIN_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MIN_YEAR_VALUE;
+                    };
+                maxDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MAX_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MAX_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MAX_YEAR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            prompt = qtn_aknexform_form_label_date3;
+            id = EAknExFormDlgCtrlIdDate03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MIN_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MIN_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MIN_YEAR_VALUE;
+                    };
+                maxDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MAX_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MAX_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MAX_YEAR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            prompt = qtn_aknexform_form_label_date4;
+            id = EAknExFormDlgCtrlIdDate04;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MIN_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MIN_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MIN_YEAR_VALUE;
+                    };
+                maxDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MAX_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MAX_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MAX_YEAR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            prompt = qtn_aknexform_form_label_date5;
+            id = EAknExFormDlgCtrlIdDate05;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MIN_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MIN_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MIN_YEAR_VALUE;
+                    };
+                maxDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MAX_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MAX_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MAX_YEAR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            prompt = qtn_aknexform_form_label_date6;
+            id = EAknExFormDlgCtrlIdDate06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MIN_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MIN_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MIN_YEAR_VALUE;
+                    };
+                maxDate = DATE
+                    {
+                    day = AKNEXFORM_DATE_MAX_DAY_VALUE;
+                    month = AKNEXFORM_DATE_MAX_MONTH_VALUE;
+                    year = AKNEXFORM_DATE_MAX_YEAR_VALUE;
+                    };
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_six_time_form
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_six_time_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            prompt = qtn_aknexform_form_label_time1;
+            id = EAknExFormDlgCtrlIdTime01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = TIME_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MIN_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MIN_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MIN_HOUR_VALUE;
+                    };
+                maxTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MAX_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MAX_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MAX_HOUR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            prompt = qtn_aknexform_form_label_time2;
+            id = EAknExFormDlgCtrlIdTime02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = TIME_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MIN_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MIN_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MIN_HOUR_VALUE;
+                    };
+                maxTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MAX_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MAX_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MAX_HOUR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            prompt = qtn_aknexform_form_label_time3;
+            id = EAknExFormDlgCtrlIdTime03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = TIME_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MIN_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MIN_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MIN_HOUR_VALUE;
+                    };
+                maxTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MAX_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MAX_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MAX_HOUR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            prompt = qtn_aknexform_form_label_time4;
+            id = EAknExFormDlgCtrlIdTime04;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = TIME_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MIN_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MIN_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MIN_HOUR_VALUE;
+                    };
+                maxTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MAX_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MAX_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MAX_HOUR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            prompt = qtn_aknexform_form_label_time5;
+            id = EAknExFormDlgCtrlIdTime05;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = TIME_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MIN_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MIN_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MIN_HOUR_VALUE;
+                    };
+                maxTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MAX_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MAX_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MAX_HOUR_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            prompt = qtn_aknexform_form_label_time6;
+            id = EAknExFormDlgCtrlIdTime06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = TIME_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MIN_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MIN_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MIN_HOUR_VALUE;
+                    };
+                maxTime = TIME
+                    {
+                    second = AKNEXFORM_TIME_MAX_SECOND_VALUE;
+                    minute = AKNEXFORM_TIME_MAX_MINUTE_VALUE;
+                    hour = AKNEXFORM_TIME_MAX_HOUR_VALUE;
+                    };
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_six_duration_form
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_six_duration_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            prompt = qtn_aknexform_form_label_durat1;
+            id = EAknExFormDlgCtrlIdDuration01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DURATION_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MIN_VALUE;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MAX_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            prompt = qtn_aknexform_form_label_durat2;
+            id = EAknExFormDlgCtrlIdDuration02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DURATION_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MIN_VALUE;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MAX_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            prompt = qtn_aknexform_form_label_durat3;
+            id = EAknExFormDlgCtrlIdDuration03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DURATION_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MIN_VALUE;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MAX_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            prompt = qtn_aknexform_form_label_durat4;
+            id = EAknExFormDlgCtrlIdDuration04;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DURATION_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MIN_VALUE;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MAX_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            prompt = qtn_aknexform_form_label_durat5;
+            id = EAknExFormDlgCtrlIdDuration05;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DURATION_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MIN_VALUE;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MAX_VALUE;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            prompt = qtn_aknexform_form_label_durat6;
+            id = EAknExFormDlgCtrlIdDuration06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = DURATION_EDITOR
+                {
+                flags = EEikTimeForce24HourFormat;
+                minDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MIN_VALUE;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = AKNEXFORM_DURATION_MAX_VALUE;
+                    };
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_six_secret_form
+//    For Outline70
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_six_secret_form
+    {
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            prompt = qtn_aknexform_form_label_secr1;
+            id = EAknExFormDlgCtrlIdSecret01;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = SECRETED
+                {
+                num_letters = AKNEXFORM_SECRET_MAX_LENGTH;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            prompt = qtn_aknexform_form_label_secr2;
+            id = EAknExFormDlgCtrlIdSecret02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = SECRETED
+                {
+                num_letters = AKNEXFORM_SECRET_MAX_LENGTH;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            prompt = qtn_aknexform_form_label_secr3;
+            id = EAknExFormDlgCtrlIdSecret03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = SECRETED
+                {
+                num_letters = AKNEXFORM_SECRET_MAX_LENGTH;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            prompt = qtn_aknexform_form_label_secr4;
+            id = EAknExFormDlgCtrlIdSecret04;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = SECRETED
+                {
+                num_letters = AKNEXFORM_SECRET_MAX_LENGTH;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            prompt = qtn_aknexform_form_label_secr5;
+            id = EAknExFormDlgCtrlIdSecret05;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = SECRETED
+                {
+                num_letters = AKNEXFORM_SECRET_MAX_LENGTH;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            prompt = qtn_aknexform_form_label_secr6;
+            id = EAknExFormDlgCtrlIdSecret06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = SECRETED
+                {
+                num_letters = AKNEXFORM_SECRET_MAX_LENGTH;
+                };
+            }
+        };
+    }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_double_and_single_line_form
+//    For Outline102
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexform_double_and_single_line_form
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    pages = r_aknexform_double_and_single_line_form_pages;
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_double_and_single_line_form_pages
+//    For Outline102
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE ARRAY r_aknexform_double_and_single_line_form_pages
+    {
+    items =
+        {
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage01;
+            text = qtn_aknexform_form_label_page1;
+            form = r_aknexform_double_line_text_number_field_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage02;
+            text = qtn_aknexform_form_label_page2;
+            form = r_aknexform_text_number_field_form;
+            },
+       PAGE
+            {
+            id = EAknExFormPageCtrlIdPage03;
+            text = qtn_aknexform_form_label_page3;
+            form = r_aknexform_double_line_icon_form;
+            },
+        PAGE
+            {
+            id = EAknExFormPageCtrlIdPage04;
+            text = qtn_aknexform_form_label_page4;
+            form = r_aknexform_double_line_text_number_with_icon_form;
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_double_line_text_number_field_form
+//    For Outline102
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_double_line_text_number_field_form
+    {
+    flags = EEikFormUseDoubleSpacedFormat;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin11;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+
+                };
+            tooltip = qtn_aknexform_hint_text_edwin;
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_number;
+            id = EAknExFormDlgCtrlIdNumber06;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            tooltip = qtn_aknexform_hint_text_number;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_double_line_icon_form
+//    For Outline102
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_double_line_icon_form
+    {
+    flags = EEikFormShowBitmaps | EEikFormUseDoubleSpacedFormat;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            id = EAknExFormDlgCtrlIdEdwin02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            tooltip = qtn_aknexform_hint_text_edwin;
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_folder_small;
+            bmpmask = EMbmAvkonQgn_prop_folder_small_mask;
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            id = EAknExFormDlgCtrlIdNumber02;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            tooltip = qtn_aknexform_hint_text_number;
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_nrtyp_phone;
+            bmpmask = EMbmAvkonQgn_prop_nrtyp_phone_mask;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_double_line_text_number_with_icon_form
+//    For Outline102
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE FORM r_aknexform_double_line_text_number_with_icon_form
+    {
+    flags = EEikFormShowBitmaps | EEikFormUseDoubleSpacedFormat;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = qtn_aknexform_form_label_edwin;
+            id = EAknExFormDlgCtrlIdEdwin03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = EDWIN
+                {
+                flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                width = AKNEXFORM_EDWIN_WIDTH;
+                lines = AKNEXFORM_EDWIN_LINES;
+                maxlength = EAknExFormEdwinMaxLength;
+                // added to limit expanding in forms. 
+                // If you want full screen use 5 here
+                max_view_height_in_lines = 5; 
+                // if you have the line above, you must have this.  
+                // It's calculable from LAF
+                base_line_delta = 21; 
+                };
+            tooltip = qtn_aknexform_hint_text_edwin;
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_folder_small;
+            bmpmask = EMbmAvkonQgn_prop_folder_small_mask;
+            },
+        DLG_LINE
+            {
+            type = EEikCtNumberEditor;
+            prompt = qtn_aknexform_form_label_number;
+            id = EAknExFormDlgCtrlIdNumber03;
+            itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+            control = NUMBER_EDITOR
+                {
+                min = AKNEXFORM_NUMBER_EDITOR_MIN_VALUE01;
+                max = AKNEXFORM_NUMBER_EDITOR_MAX_VALUE01;
+                };
+            tooltip = qtn_aknexform_hint_text_number;
+            bmpfile = qtn_aknexform_bmpfile_path;
+            bmpid = EMbmAvkonQgn_prop_nrtyp_phone;
+            bmpmask = EMbmAvkonQgn_prop_nrtyp_phone_mask;
+            }
+        };
+    }
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_api_test_menubar
+//    MenuBar
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexform_api_test_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_aknexform_api_test_menu; }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_api_test_menu
+//    Menu-pane of derived form
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_api_test_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestChangeFocus;
+            cascade = r_aknexform_menu_change_focus_cascade;
+            txt = qtn_aknexform_menu_change_focus;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSetCaption;
+            cascade = r_aknexform_menu_set_caption_cascade;
+            txt = qtn_aknexform_menu_set_caption;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestActivatePage;
+            cascade = r_aknexform_menu_activate_page_cascade;
+            txt = qtn_aknexform_menu_activate_page;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestChecks;
+            cascade = r_aknexform_menu_checks_cascade;
+            txt = qtn_aknexform_menu_checks;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestResetLine;
+            cascade = r_aknexform_menu_reset_line_cascade;
+            txt = qtn_aknexform_menu_reset_line;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestPreNPost;
+            cascade = r_aknexform_menu_pre_n_post_cascade;
+            txt = qtn_aknexform_menu_pre_n_post;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSizeNPos;
+            cascade = r_aknexform_menu_size_n_pos_cascade;
+            txt = qtn_aknexform_menu_size_n_pos;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSaveTest;
+            cascade = r_aknexform_menu_save_test_cascade;
+            txt = qtn_aknexform_menu_save_test;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_change_focus_cascade
+//    Sub menu-pane of "Change Focus" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_change_focus_cascade
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestTryChangeFocusToFirst;
+            txt = qtn_aknexform_menu_try_change_focus_to_first;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestTryChangeFocusToMiddle;
+            txt = qtn_aknexform_menu_try_change_focus_to_middle;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestTryChangeFocusToLast;
+            txt = qtn_aknexform_menu_try_change_focus_to_last;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestRotateFocusByOne;
+            txt = qtn_aknexform_menu_rotate_focus_by_one;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestRotateFocusByThree;
+            txt = qtn_aknexform_menu_rotate_focus_by_three;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestRotateFocusByMinusTwo;
+            txt = qtn_aknexform_menu_rotate_focus_by_minus_two;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_set_caption_cascade
+//    Sub menu-pane of "Set Caption" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_set_caption_cascade
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSetCaptionFromResource;
+            txt = qtn_aknexform_menu_set_caption_from_resource;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSetCaptionFromUser;
+            txt = qtn_aknexform_menu_set_caption_from_user;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_activate_page_cascade
+//    Sub menu-pane of "Activate Page" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_activate_page_cascade
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestActivateFirstPage;
+            txt = qtn_aknexform_menu_activate_first_page;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_checks_cascade
+//    Sub menu-pane of "Checks" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_checks_cascade
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestActivePage;
+            txt = qtn_aknexform_menu_active_page;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestGetBorderStyle;
+            txt = qtn_aknexform_menu_get_border_style;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestGetFlags;
+            txt = qtn_aknexform_menu_get_flags;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestGetLine;
+            txt = qtn_aknexform_menu_get_line;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_reset_line_cascade
+//    Sub menu-pane of "Reset Line" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_reset_line_cascade
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestResetLineMinimumSizes;
+            txt = qtn_aknexform_menu_reset_line_minimum_sizes;
+            }
+        };
+    }
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_pre_n_post_cascade
+//    Sub menu-pane of "Pre N Post" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_pre_n_post_cascade
+    {
+    items=
+        {
+/*        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestPreNPost;
+            txt = qtn_aknexform_menu_pre_n_post;
+            }
+  */      };
+    }
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_size_n_pos_cascade
+//    Sub menu-pane of "Size N Pos" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_size_n_pos_cascade
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSizeNPos10x10;
+            txt = qtn_aknexform_menu_size_n_pos_10x10;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSizeNPos100x100;
+            txt = qtn_aknexform_menu_size_n_pos_100x100;
+            }
+
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexform_menu_save_test_cascade
+//    Sub menu-pane of "Save Test" menu
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexform_menu_save_test_cascade
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSetChangesPendingTrue;
+            txt = qtn_aknexform_menu_set_changes_pending_true;
+            },
+        MENU_ITEM
+            {
+            command = EAknExFormCmdAPITestSetChagnesPendingFalse;
+            txt = qtn_aknexform_menu_set_changes_pending_false;
+            }
+        };
+    }
+
+// End of File

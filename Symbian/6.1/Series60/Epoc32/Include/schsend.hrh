@@ -1,0 +1,52 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+//	SCHSEND.HRH
+//
+//	Copyright (c) 1999 Symbian Ltd.  All rights reserved. 
+//
+/////////////////////////////////////////////////////////////////////////////
+
+#ifndef SCHSEND_HRH_
+#define SCHSEND_HRH_
+
+/////////////////////////////////////////////////////////////////////////////
+//
+//	Enums
+//
+/////////////////////////////////////////////////////////////////////////////
+
+#define KActionMask				0x0003
+#define KActionFail				0x0000
+#define KActionRetryImmediately	0x0001
+#define KActionRetryLater		0x0002
+#define KActionSentAlready		0x0003
+
+#define KRetriesMask			0x0004
+#define KRetriesFixed			0x0000
+#define KRetriesInfinite		0x0004
+
+#define KRetrySpacingMask		0x0008
+#define KRetrySpacingStatic		0x0000
+#define KRetrySpacingVariable	0x0008
+
+enum TMsvSendAction
+	{
+	ESendActionFail				= KActionFail,
+	ESendActionRetryImmediately	= KActionRetryImmediately,
+	ESendActionRetryLater		= KActionRetryLater,
+	ESendActionSentAlready		= KActionSentAlready
+	};
+
+enum TMsvSendRetries
+	{
+	ESendRetriesFixed			= KRetriesFixed,
+	ESendRetriesInfinite		= KRetriesInfinite
+	};
+
+enum TMsvSendRetrySpacing
+	{
+	ESendRetrySpacingStatic		= KRetrySpacingStatic,
+	ESendRetrySpacingVariable	= KRetrySpacingVariable
+	};
+
+#endif

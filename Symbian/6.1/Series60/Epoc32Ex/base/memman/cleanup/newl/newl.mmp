@@ -1,0 +1,17 @@
+// NewL.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET        NewL.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        NewL.cpp
+
+USERINCLUDE   .
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib

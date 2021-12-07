@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE cshproj SYSTEM "/epoc32/tools/cshlpcmp/dtd/cshproj.dtd">
+<?xml:stylesheet href="/epoc32/tools/cshlpcmp/xsl/CSHproj.xsl" title="CS-Help project" type="text/xsl"?>
+<cshproj>
+<helpfileUID>0x10008AB6</helpfileUID>
+<directories>
+	<input></input>
+	<output>..\..\..\..\epoc32\wins\c\system\help\</output>
+	<graphics></graphics>
+	<working>temp\</working>
+</directories>
+<files>
+	<source>
+	<file>shapes.rtf</file>
+	</source>
+	<destination>Shapes.hlp</destination>
+	<customization>custom.xml</customization>
+	</files>
+</cshproj>

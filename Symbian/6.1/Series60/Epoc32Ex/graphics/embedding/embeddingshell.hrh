@@ -1,0 +1,9 @@
+// EmbeddingShell.hrh
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+enum TExampleMenuCommands
+	{
+	
+	EExampleShellSelectPicture=200
+	};

@@ -1,0 +1,16 @@
+; Bmpmanip.pkg
+;
+
+;Language - standard language definitions
+&EN
+
+; standard sis file header
+#{"bmpmanip"},(0x10005B80),1,0,0
+
+;Supports Series 60 v 0.9
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+;
+"..\..\..\epoc32\release\thumb\urel\bmpmanip.APP"-"C:\system\apps\bmpmanip\bmpmanip.app"
+"..\..\..\epoc32\release\thumb\urel\bmpmanip.rsc"-"C:\system\apps\bmpmanip\bmpmanip.rsc"
+"..\gifs\image1.gif"-"C:\system\apps\bmpmanip\image1.gif"

@@ -1,0 +1,4 @@
+EXPORTS
+; NEW:
+	StartThread__Fv @ 1 NONAME ; StartThread(void)
+

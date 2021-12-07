@@ -1,0 +1,16 @@
+; AknExQuery.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExQuery"},(0x10005C2B),1,02,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExQuery.app"-"!:\system\apps\AknExQuery\AknExQuery.app"
+"..\..\..\epoc32\release\thumb\urel\AknExQuery.rsc"-"!:\system\apps\AknExQuery\AknExQuery.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExQuery.aif"-"!:\system\apps\AknExQuery\AknExQuery.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExQuery.mbm"-"!:\system\apps\AknExQuery\AknExQuery.mbm"
+"..\..\..\epoc32\release\thumb\urel\AknExQuery_caption.rsc"-"!:\system\apps\AknExQuery\AknExQuery_caption.rsc"

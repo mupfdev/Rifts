@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+	<head>
+		<title>CLogFile</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script language="JavaScript" type="text/javascript">
+<!--
+function codewindow(theURL)
+  { win = window.open(theURL, 'codewindow', 'scrollbars,resizable,width=750,height=500')
+    win.focus() }
+// -->
+</script>
+		<style type="text/css" media="screen"><!--
+.ButtonBox { background-image: url(../../../_stock/gradient.jpg); }
+--></style>
+	</head>
+
+	<body>
+		<a name="_top"></a><a name="2"></a>
+		<hr noshade size="1">
+		<hr noshade size="1">
+		<div class="AuthoredContent">
+			<p>Location: <code><a href="javascript:void(0)" onclick="codewindow('logfile.h.htm')" title="logfile.h">logfile.h</a></code></p>
+		</div>
+		<div class="Head1">
+			<a name="%3a%3aCLogFile"></a>
+			<h1>Class <code>CLogFile</code></h1>
+		</div>
+		<div class="Bodytext">
+			<p class="Prototype"><code>CLogFile</code></p>
+			<h4 class="subheading">Description</h4>
+			<p>Class to generate a text file containing logging information.</p>
+			<p>Defined in <code>CLogFile</code>:<br>
+				<code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aNewL%28%29" title="Create a CLogFile object.">NewL()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aNewLC%28%29" title="Create a CLogFile object.">NewLC()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3a~CLogFile%28%29" title="Destroy the object and release all memory objects.">~LogFile()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aLog%28%29" title="Append the byte, integer or text to the log file.">Log()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3LogTime%28%29" title="Append a timestamp to the log file.">LogTime()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aLogBytes%28%29" title="Append the bytes to the log file.">LogBytes()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aLogNewLine%28%29" title="Start a newline in the log file.">LogNewLine()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aSetAutoFlush%28%29" title="Turn AutoFlush on or off.">SetAutoFlush()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aSetAutoTimeStamp%28%29" title="Turn AutoTimeStamp on or off.">SetAutoTimeStamp()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aSetAutoNewline%28%29" title="Turn AutoNewline on or off.">SetAutoNewline()</a></code>, <code class="ApiItem"><a href="#%3a%3aNCLogFile%3a%3aStaticLogL%28%29" title="Static option to append text to the log file">StaticLogL()</a></code></p>
+			<a name="2.5"></a></div>
+		<div class="Head2">
+			<hr size="2" noshade>
+			<h2></h2>
+		</div>
+		<div class="Bodytext">
+			<a name="2.5.2"></a></div>
+		<div class="Head3">
+			<a name="%3a%3aNCLogFile%3a%3aNewL%28%29"></a>
+			<hr size="1" noshade>
+			<h3><code>NewL()</code></h3>
+		</div>
+		<div class="Bodytext">
+			<p class="Prototype"><code>static CLogFile* NewL(const TDesC&amp; aFileName, TBool aInitialiseLog);</code></p>
+			<h4 class="subheading">Description</h4>
+			<p>Create a CLogFile object.</p>
+			<h4 class="subheading">Parameters</h4>
+			<table cellpadding="0" border="0" cellspacing="0">
+				<tr>
+					<td class="ValueTableWrap">
+						<table border="0" cellpadding="5" cellspacing="1">
+							<tr valign="top">
+								<td class="Cell"><code class="Value">const TDesC&amp; aFileName</code></td>
+								<td class="Cell">
+									<p class="ValueDesc">The name of the file to create.</p>
+								</td>
+							</tr>
+							<tr valign="top">
+								<td class="Cell"><code class="Value">TBool aInitialiseLog</code></td>
+								<td class="Cell">
+									<p class="ValueDesc">If true, and the log file already exists, previous contents will be deleted. If false, append to any existing contents.</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<h4 class="subheading">Return value</h4>
+			<table cellpadding="0" border="0" cellspacing="0">
+				<tr>
+					<td class="ValueTableWrap">
+						<table border="0" cellpadding="5" cellspacing="1">
+							<tr valign="top">
+								<td class="Cell"><code class="Value">CCLogFile*</code></td>
+								<td class="Cell">
+									<p class="ValueDesc">A pointer to the created instance of CLogFile.</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<a name="2.6.2"></a></div>
+		<div class="Head3">
+			<a name="%3a%3aNCLogFile%3a%3aNewLC%28%29"></a>
+			<hr size="1" noshade>
+			<h3><code>NewLC()</code></h3>
+		</div>
+		<div class="Bodytext">
+			<p class="Prototype"><code>static CLogFile* NewLC(const TDesC&amp; aFileName, TBool aInitialiseLog);</code></p>
+			<h4 class="subheading">Description</h4>
+			<p>Create a CLogFile object.</p>
+			<h4 class="subheading">Parameters</h4>
+			<table cellpadding="0" border="0" cellspacing="0">
+				<tr>
+					<td class="ValueTableWrap">
+						<table border="0" cellpadding="5" cellspacing="1">
+							<tr valign="top">
+								<td class="Cell"><code class="Value">const TDesC&amp; aFileName</code></td>
+								<td class="Cell">
+									<p class="ValueDesc">The name of the file to create.</p>
+								</td>
+							</tr>
+							<tr valign="top">
+								<td class="Cell"><code class="Value">TBool aInitialiseLog</code></td>
+								<td class="Cell">
+									<p class="ValueDesc">If true, and the log file already exists, previous contents will be deleted. If false, append to any existing contents.</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<h4 class="subheading">Return value</h4>
+			<table cellpadding="0" border="0" cellspacing="0">
+				<tr>
+					<td class="ValueTableWrap">
+						<table border="0" cellpadding="5" cellspacing="1">
+							<tr valign="top">
+								<td class="Cell"><code class="Value">CCLogFile*</code></td>
+								<td class="Cell">
+									<p class="ValueDesc">A pointer to the created instance of CLogFile.</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<a name="2.6.3"></a></div>
+		<div class="Head3">
+			<a name="%3a%3aNCLogFile%3a%3a~CLogFile%28%29"></a>
+			<hr size="1" noshade>
+			<h3><code>~CLogFile()</code></h3>
+		</div>
+		<div class="Bodytext">
+			<p class="Prototype"><code>~CLogFile();</code></p>
+			<h4 class="subheading">Description</h4>
+			<p>Destroy the object and release all memory objects.</p>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3aLog%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>Log()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>void Log(TUint8 aByte);<br>
+						void Log(TUint aNumber);<br>
+						void Log(const TDesC8&amp; aText);<br>
+						void Log(const TDesC&amp; aText);<br>
+					</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Append the byte to the log file (if not a printable char, it will be logged as ascii-hex).<br>
+					Append the integer to the log file (logged as ascii-hex).<br>
+					Append text to the log file.</p>
+				<h4 class="subheading">Parameters</h4>
+				<table cellpadding="0" border="0" cellspacing="0">
+					<tr>
+						<td class="ValueTableWrap">
+							<table border="0" cellpadding="5" cellspacing="1">
+								<tr valign="top">
+									<td class="Cell"><code class="Value">TUint8 aByte</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The byte to log.</p>
+									</td>
+								</tr>
+								<tr valign="top">
+									<td class="Cell"><code class="Value">TUint aNumber</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The integer to log.</p>
+									</td>
+								</tr>
+								<tr valign="top">
+									<td class="Cell"><code class="Value">const TDesC8&amp; aText</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The text to log.</p>
+									</td>
+								</tr>
+								<tr valign="top">
+									<td class="Cell"><code class="Value">const TDesC&amp; aText</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The text to log.</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<a name="2.6.5"></a></div>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3LogTime%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>LogTime()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>void LogTime();</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Append a timestamp to the log file. Timestamps are in seconds with three decimal places (but resolution is limited to system timer tick period)</p>
+				<a name="2.6.6"></a></div>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3aLogBytes%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>LogBytes()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>void LogBytes(const TDesC8&amp; aBuffer);</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Append the bytes to the log file (non-printable bytes will be logged as ascii-hex)</p>
+				<h4 class="subheading">Parameters</h4>
+				<table cellpadding="0" border="0" cellspacing="0">
+					<tr>
+						<td class="ValueTableWrap">
+							<table border="0" cellpadding="5" cellspacing="1">
+								<tr valign="top">
+									<td class="Cell"><code class="Value">const TDesC8&amp; aBuffer</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The bytes to log.</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<a name="2.6.7"></a></div>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3aLogNewline%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>LogNewline()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>void LogNewline();</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Start a newline in the log file.</p>
+				<a name="2.6.8"></a></div>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3aSetAutoFlush%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>SetAutoFlush()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>void SetAutoFlush(TBool aOn);</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Turn AutoFlush on or off. AutoFlush will automatically flush the log file after each write.</p>
+				<h4 class="subheading">Parameters</h4>
+				<table cellpadding="0" border="0" cellspacing="0">
+					<tr>
+						<td class="ValueTableWrap">
+							<table border="0" cellpadding="5" cellspacing="1">
+								<tr valign="top">
+									<td class="Cell"><code class="Value">cTBool aOn</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">If true turns AutoFlush on.</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<a name="2.6.9"></a></div>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3aSetAutoTimeStamp%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>SetAutoTimeStamp()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>void SetAutoTimeStamp(TBool aOn);</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Turn AutoTimeStamp on or off. AutoTimeStamp will add a timestamp to the start of each new line in the log.</p>
+				<h4 class="subheading">Parameters</h4>
+				<table cellpadding="0" border="0" cellspacing="0">
+					<tr>
+						<td class="ValueTableWrap">
+							<table border="0" cellpadding="5" cellspacing="1">
+								<tr valign="top">
+									<td class="Cell"><code class="Value">TBool aOn</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">If true turn AutoTimeStamp on.</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<a name="2.6.10"></a></div>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3aSetAutoNewline%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>SetAutoNewline()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>void SetAutoNewline(TBool aOn);</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Turn AutoNewline on or off. AutoNewline starts a new line after each log operation.</p>
+				<h4 class="subheading">Parameters</h4>
+				<table cellpadding="0" border="0" cellspacing="0">
+					<tr>
+						<td class="ValueTableWrap">
+							<table border="0" cellpadding="5" cellspacing="1">
+								<tr valign="top">
+									<td class="Cell"><code class="Value">TBool aOn</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">If true turn AutoNewline on.</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<a name="2.7.2"></a></div>
+			<div class="Head3">
+				<a name="%3a%3aNCLogFile%3a%3aStaticLogL%28%29"></a>
+				<hr size="1" noshade>
+				<h3><code>StaticLogL()</code></h3>
+			</div>
+			<div class="Bodytext">
+				<p class="Prototype"><code>static void StaticLogL(const TDesC&amp; aFileName, const TDesC8&amp; aText);<br>
+						static void StaticLogL(const TDesC&amp; aFileName, const TDesC&amp; aText);</code></p>
+				<h4 class="subheading">Description</h4>
+				<p>Static option to append text to the log file.</p>
+				<h4 class="subheading">Parameters</h4>
+				<table cellpadding="0" border="0" cellspacing="0">
+					<tr>
+						<td class="ValueTableWrap">
+							<table border="0" cellpadding="5" cellspacing="1">
+								<tr valign="top">
+									<td class="Cell"><code class="Value">const TDesC&amp; aFileName</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The file to append to.</p>
+									</td>
+								</tr>
+								<tr valign="top">
+									<td class="Cell"><code class="Value">const TDesC8&amp; aText</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The text to append.</p>
+									</td>
+								</tr>
+								<tr valign="top">
+									<td class="Cell"><code class="Value">const TDesC&amp; aText</code></td>
+									<td class="Cell">
+										<p class="ValueDesc">The text to append.</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="Footer">
+				<hr noshade size="1">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr valign="bottom">
+						<td></td>
+						<td align="right"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>

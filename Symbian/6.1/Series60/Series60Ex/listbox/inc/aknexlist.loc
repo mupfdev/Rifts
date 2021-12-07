@@ -1,0 +1,868 @@
+/*
+* =============================================================================
+*  Name     : AknExList localise file
+*  Part of  : AknExList
+*  Copyright (c) 2003 Nokia.
+* =============================================================================
+*/
+
+#include <bldvariant.hrh>
+
+//  LOCALISATION STRINGS
+
+// Caption
+#define qtn_apps_tals_list          "AKNEXLIST"
+#define qtn_apps_tals_grid          "AKNEXLIST"
+
+// Menu title
+#define qtn_aknexlist_menu1         "Selection item"
+#define qtn_aknexlist_menu2         "Style"
+#define qtn_aknexlist_menu4         "Selection list"
+#define qtn_aknexlist_menu5         "Multi selection list"
+#define qtn_aknexlist_menu6         "Markable list"
+#define qtn_aknexlist_menu7         "Features of list"
+#define qtn_aknexlist_menu8         "Find box"
+#define qtn_aknexlist_menu9         "Layout"
+#define qtn_aknexlist_menu10        "Empty list"
+#define qtn_aknexlist_menu11        "Softkey bindings"
+#define qtn_aknexlist_menu12        "Add and remove"
+#define qtn_aknexlist_menu13        "Event action"
+#define qtn_aknexlist_menu14        "Event of markable"
+#define qtn_aknexlist_menu15        "Setting list item"
+#define qtn_aknexlist_menu16        "Flag"
+#define qtn_aknexlist_menu17        "List Dialog"
+#define qtn_aknexlist_menu18        "Mark List Dialog"
+#define qtn_aknexlist_exit          "Exit"
+#define qtn_aknexlist_mark_all      "Mark all"
+#define qtn_aknexlist_unmark_all    "Unmark all"
+
+// Menu cascade
+
+#define qtn_aknexlist_outline1      "Hilighted Item"
+#define qtn_aknexlist_outline2      "Scroll"
+#define qtn_aknexlist_outline3      "Focussed the Visible"
+#define qtn_aknexlist_outline4      "Focussed the Non-Visible"
+#define qtn_aknexlist_outline5      "Non-loop mode"
+#define qtn_aknexlist_outline6      "loop mode"
+#define qtn_aknexlist_outline7      "Scrolling indicator"
+#define qtn_aknexlist_outline8      "Long Text"
+#define qtn_aknexlist_outline9      "SingleItem"
+#define qtn_aknexlist_outline10     "Sng. with number"
+#define qtn_aknexlist_outline11     "Sng. with heading"
+#define qtn_aknexlist_outline12     "Sng. with graphic"
+#define qtn_aknexlist_outline13     "Sng. with graphic and text"
+#define qtn_aknexlist_outline14     "Sng. with number and text"
+#define qtn_aknexlist_outline15     "Sng. with l-graphic"
+#define qtn_aknexlist_outline16     "Big Single"
+#define qtn_aknexlist_outline17     "Big Sng. with number"
+#define qtn_aknexlist_outline18     "Big Sng. with l-graphic"
+#define qtn_aknexlist_outline19     "Double Item"
+#define qtn_aknexlist_outline20     "Dbl. with number"
+#define qtn_aknexlist_outline21     "Dbl. with l-graphic"
+#define qtn_aknexlist_outline22     "Setting Item"
+#define qtn_aknexlist_outline23     "Stng with number"
+#define qtn_aknexlist_outline26     "Selection List"
+#define qtn_aknexlist_outline27     "Open"
+#define qtn_aknexlist_outline30     "Multi Selection List"
+#define qtn_aknexlist_outline31     "Check box in multi selection list"
+#define qtn_aknexlist_outline32     "Markable list feature"
+#define qtn_aknexlist_outline33     "Graphical mark"
+#define qtn_aknexlist_outline36     "Item shown as fitting to display"
+#define qtn_aknexlist_outline41     "Find box"
+#define qtn_aknexlist_outline43     "Layout of column"
+#define qtn_aknexlist_outline44     "Alignment of additional icon"
+#define qtn_aknexlist_outline45     "Layout of general list pane"
+#define qtn_aknexlist_outline46     "Layout of list single item"
+#define qtn_aknexlist_outline47     "Layout of signel with number"
+#define qtn_aknexlist_outline48     "Layout of single with text"
+#define qtn_aknexlist_outline49     "Layout of single with graphci"
+#define qtn_aknexlist_outline50     "Layout of single with graphics and text"
+#define qtn_aknexlist_outline51     "Layout of single with number and text"
+#define qtn_aknexlist_outline52     "Layout of single with l-graphic"
+#define qtn_aknexlist_outline53     "Layout of double with number"
+#define qtn_aknexlist_outline54     "Layout of Big with number"
+#define qtn_aknexlist_outline55     "Layout of double with graphic"
+#define qtn_aknexlist_outline56     "Layout of double with time"
+#define qtn_aknexlist_outline57     "Layout of double with l-graphics"
+#define qtn_aknexlist_outline58     "Layout of Big with l-graphics"
+#define qtn_aknexlist_outline59     "Layout of settings with number"
+#define qtn_aknexlist_outline60     "Vertical line"
+#define qtn_aknexlist_outline61     "Horizontal line"
+#define qtn_aknexlist_outline62     "Layout of Highlights"
+#define qtn_aknexlist_outline63     "Layout of find pane"
+#define qtn_aknexlist_outline64     "Layout of No data"
+#define qtn_aknexlist_outline65     "Softkey bindings"
+#define qtn_aknexlist_outline66     "Add&Remove in single"
+#define qtn_aknexlist_outline67     "Add&Remove in double"
+#define qtn_aknexlist_outline68     "No data in FormattedCellListbox"
+#define qtn_aknexlist_outline69     "Empty list"
+#define qtn_aknexlist_outline70     "2lines in Empty list in ColumnListBox"
+#define qtn_aknexlist_outline71     "2lines in Empty list in FormattedListBox"
+#define qtn_aknexlist_outline74     "Add&Remvoe in settings"
+#define qtn_aknexlist_outline75     "Empty list in SettingListBox"
+#define qtn_aknexlist_outline76     "2lines empty list in SettingListBox"
+#define qtn_aknexlist_outline77     "Keypad event for Selection List"
+#define qtn_aknexlist_outline78     "Keypad event for Multiselection List"
+#define qtn_aknexlist_outline79     "Keypad event for setting list"
+#define qtn_aknexlist_outline80     "Change open meaning in selection list"
+#define qtn_aknexlist_outline81     "un/mark all"
+#define qtn_aknexlist_outline82     "Event action of markable list"
+#define qtn_aknexlist_outline83     "all items are unmaked...."
+#define qtn_aknexlist_outline84     "REMOVED"
+#define qtn_aknexlist_outline85     "No data in setting list"
+#define qtn_aknexlist_outline86     "REMOVED"
+#define qtn_aknexlist_outline87     "Action at alone in markable"
+#define qtn_aknexlist_outline88     "Flag: SelectionList"
+#define qtn_aknexlist_outline89     "REMOVED"
+#define qtn_aknexlist_outline90     "Flag:MenuList"
+#define qtn_aknexlist_outline91     "Flag:MarkableList"
+#define qtn_aknexlist_outline92     "REMOVED"
+#define qtn_aknexlist_outline93     "Flag:MultiselectionList"
+#define qtn_aknexlist_outline94     "REMOVED"
+#define qtn_aknexlist_outline95     "Flag:SelectionGridWithShortcuts"
+#define qtn_aknexlist_outline96     "REMOVED"
+#define qtn_aknexlist_outline97     "Flag:MarkableGrid"
+#define qtn_aknexlist_outline98     "REMOVED"
+#define qtn_aknexlist_outline99     "Flag:MenuGrid"
+#define qtn_aknexlist_outline102    "Flag:ViewerFlag"
+
+// Title for sub outline
+#define qtn_aknexlist_outline80sub  "Sub Outline"
+
+// Title of Setting page
+#define qtn_aknexlist_binary_title  "Binary editor"
+
+// Application Title
+#define qtn_aknexlist_app_title     "ListBox\nSample Application"
+
+// Empty list label
+#define qtn_aknexlist_empty_label1  "Empty list"
+#define qtn_aknexlist_empty_label2  "Two lines\nEmpty list"
+
+// Tab
+#define qtn_aknexlist_tab           "\t"
+
+// Information message
+#define qtn_aknexlist_msg           "Can not add"
+#define qtn_aknexlist_mark_info     "Marked item is "
+#define qtn_aknexlist_format        "%d,"
+#define qtn_aknexlist_no_mark       "none"
+#define qtn_aknexlist_resource_msg  "Make from resource"
+#define qtn_aknexlist_internal_msg  "Made from code"
+#define qtn_aknexlist_user_num_msg  "User defined number"
+#define qtn_aknexlist_auto_num_msg  "Automatic numbering"
+#define qtn_aknexlist_item_count    "Number of item : "
+#define qtn_aknexlist_item_open     "Open"
+
+// ListBox items
+
+// single item
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_s1       " \t"<0x5634>
+#define qtn_aknexlist_item_s2       " \t"<0x6BCD><0x725B>
+#define qtn_aknexlist_item_s3       " \t"<0x8001><0x864E>
+#define qtn_aknexlist_item_s4       " \t"<0x5154><0x5B50>
+#define qtn_aknexlist_item_s5       " \t"<0x9F99>
+#define qtn_aknexlist_item_s6       " \t"<0x86C7>
+#define qtn_aknexlist_item_s7       " \t"<0x9A6C>
+#define qtn_aknexlist_item_s8       " \t"<0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_s9       " \t"<0x7334><0x5B50><0x7334><0x5B50><0x7334><0x5B50><0x7334><0x5B50><0x7334><0x5B50><0x7334><0x5B50>
+#define qtn_aknexlist_item_s10      " \t"<0x9E1F>"\t1"
+#define qtn_aknexlist_item_s11      " \t"<0x72D7>"\t1\t2"
+#define qtn_aknexlist_item_s12      " \t"<0x91CE><0x732A>"\t1"
+#define qtn_aknexlist_item_s13      " \t"<0x5634><0x5634><0x5634>
+#define qtn_aknexlist_item_s14      " \t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_s15      " \t"<0x8001><0x864E><0x8001><0x864E>
+#define qtn_aknexlist_item_s16      " \t"<0x5154><0x5B50><0x5154><0x5B50>
+#define qtn_aknexlist_item_s17      " \t"<0x9F99><0x9F99><0x9F99><0x9F99>
+#define qtn_aknexlist_item_s18      " \t"<0x86C7><0x86C7><0x86C7><0x86C7>
+#define qtn_aknexlist_item_s19      " \t"<0x9A6C><0x9A6C><0x9A6C><0x9A6C>
+#else
+#define qtn_aknexlist_item_s1       " \taaaaaa"
+#define qtn_aknexlist_item_s2       " \tbbbbbb"
+#define qtn_aknexlist_item_s3       " \tcccccc"
+#define qtn_aknexlist_item_s4       " \tdddddd"
+#define qtn_aknexlist_item_s5       " \teeeeee"
+#define qtn_aknexlist_item_s6       " \tffffff"
+#define qtn_aknexlist_item_s7       " \tgggggg"
+#define qtn_aknexlist_item_s8       " \thhhhhh"
+#define qtn_aknexlist_item_s9       " \tabcdefghiklmnopqrstuvwxyz"
+#define qtn_aknexlist_item_s10      " \taaaaaa\t1"
+#define qtn_aknexlist_item_s11      " \tdddddd\t1\t2"
+#define qtn_aknexlist_item_s12      " \tcccccc\t1"
+#define qtn_aknexlist_item_s13      " \tiiiiii"
+#define qtn_aknexlist_item_s14      " \tjjjjjj"
+#define qtn_aknexlist_item_s15      " \tkkkkkk"
+#define qtn_aknexlist_item_s16      " \tllllll"
+#define qtn_aknexlist_item_s17      " \tmmmmmm"
+#define qtn_aknexlist_item_s18      " \tnnnnnn"
+#define qtn_aknexlist_item_s19      " \toooooo"
+#endif
+
+// single item with number
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_sn1      "8\t"<0x5634>
+#define qtn_aknexlist_item_sn2      "7\t"<0x6BCD><0x725B>
+#define qtn_aknexlist_item_sn3      "6\t"<0x8001><0x864E>
+#define qtn_aknexlist_item_sn4      "5\t"<0x5154><0x5B50>
+#define qtn_aknexlist_item_sn5      "4\t"<0x9F99>
+#define qtn_aknexlist_item_sn6      "3\t"<0x86C7>
+#define qtn_aknexlist_item_sn7      "2\t"<0x9A6C>
+#define qtn_aknexlist_item_sn8      "1\t"<0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_sn9      "0\t"<0x7334><0x5B50>
+#define qtn_aknexlist_item_sn10     "0\t"<0x9E1F>
+#define qtn_aknexlist_item_sn11     "0\t"<0x72D7>
+#define qtn_aknexlist_item_sn12     "0\t"<0x91CE><0x732A>
+#define qtn_aknexlist_item_sn13     "0\t"<0x5634><0x5634><0x5634>
+#define qtn_aknexlist_item_sn14     "0\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_sn15     "0\t"<0x8001><0x864E><0x8001><0x864E>
+#else
+#define qtn_aknexlist_item_sn1      "8\taaaaaa"
+#define qtn_aknexlist_item_sn2      "7\tbbbbbb"
+#define qtn_aknexlist_item_sn3      "6\tcccccc"
+#define qtn_aknexlist_item_sn4      "5\tdddddd"
+#define qtn_aknexlist_item_sn5      "4\teeeeee"
+#define qtn_aknexlist_item_sn6      "3\tffffff"
+#define qtn_aknexlist_item_sn7      "2\tgggggg"
+#define qtn_aknexlist_item_sn8      "1\thhhhhh"
+#define qtn_aknexlist_item_sn9      "0\tiiiiii"
+#define qtn_aknexlist_item_sn10     "0\tjjjjjj"
+#define qtn_aknexlist_item_sn11     "0\tkkkkkk"
+#define qtn_aknexlist_item_sn12     "0\tllllll"
+#define qtn_aknexlist_item_sn13     "0\tmmmmmm"
+#define qtn_aknexlist_item_sn14     "0\tnnnnnn"
+#define qtn_aknexlist_item_sn15     "0\toooooo"
+#endif
+#define qtn_aknexlist_item_sni1     "0\t0%"
+#define qtn_aknexlist_item_sni2     "0\t1-7%"
+#define qtn_aknexlist_item_sni3     "0\t7-13%"
+#define qtn_aknexlist_item_sni4     "0\t13-20%"
+#define qtn_aknexlist_item_sni5     "0\t20-27%"
+#define qtn_aknexlist_item_sni6     "0\t27-33%"
+#define qtn_aknexlist_item_sni7     "0\t33-40%"
+#define qtn_aknexlist_item_sni8     "0\t40-47%"
+#define qtn_aknexlist_item_sni9     "0\t47-53%"
+#define qtn_aknexlist_item_sni10    "0\t53-60%"
+#define qtn_aknexlist_item_sni11    "0\t60-67%"
+#define qtn_aknexlist_item_sni12    "0\t67-73%"
+#define qtn_aknexlist_item_sni13    "0\t73-80%"
+#define qtn_aknexlist_item_sni14    "0\t80-87%"
+#define qtn_aknexlist_item_sni15    "0\t87-93%"
+#define qtn_aknexlist_item_sni16    "0\t93-99%"
+#define qtn_aknexlist_item_sni17    "0\t100%"
+
+// single item with heading
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_sh1      " Head1\t"<0x5634>
+#define qtn_aknexlist_item_sh2      " Head2\t"<0x6BCD><0x725B>
+#define qtn_aknexlist_item_sh3      " Head3\t"<0x8001><0x864E>
+#define qtn_aknexlist_item_sh4      " Head4\t"<0x5154><0x5B50>
+#define qtn_aknexlist_item_sh5      " Head5\t"<0x9F99>
+#define qtn_aknexlist_item_sh6      " Head6\t"<0x86C7>
+#define qtn_aknexlist_item_sh7      " Head7\t"<0x9A6C>
+#define qtn_aknexlist_item_sh8      " Head8\t"<0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_sh9      " Head9\t"<0x7334><0x5B50>
+#define qtn_aknexlist_item_sh10     " Head10\t"<0x9E1F>
+#define qtn_aknexlist_item_sh11     " Head11\t"<0x72D7>
+#define qtn_aknexlist_item_sh12     " Head12\t"<0x91CE><0x732A>
+#define qtn_aknexlist_item_sh13     " Head13\t"<0x5634><0x5634><0x5634>
+#define qtn_aknexlist_item_sh14     " Head14\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_sh15     " Head15\t"<0x8001><0x864E><0x8001><0x864E>
+#else
+#define qtn_aknexlist_item_sh1      " Head1\taaaaaa"
+#define qtn_aknexlist_item_sh2      " Head2\tbbbbbb"
+#define qtn_aknexlist_item_sh3      " Head3\tcccccc"
+#define qtn_aknexlist_item_sh4      " Head4\tdddddd"
+#define qtn_aknexlist_item_sh5      " Head5\teeeeee"
+#define qtn_aknexlist_item_sh6      " Head6\tffffff"
+#define qtn_aknexlist_item_sh7      " Head7\tgggggg"
+#define qtn_aknexlist_item_sh8      " Head8\thhhhhh"
+#define qtn_aknexlist_item_sh9      " Head9\tiiiiii"
+#define qtn_aknexlist_item_sh10     " Head10\tjjjjjj"
+#define qtn_aknexlist_item_sh11     " Head11\tkkkkkk"
+#define qtn_aknexlist_item_sh12     " Head12\tllllll"
+#define qtn_aknexlist_item_sh13     " Head13\tmmmmmm"
+#define qtn_aknexlist_item_sh14     " Head14\tnnnnnn"
+#define qtn_aknexlist_item_sh15     " Head15\toooooo"
+#endif
+
+// single item with graphic
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_sg1      "1\t"<0x5634>
+#define qtn_aknexlist_item_sg2      "1\t"<0x6BCD><0x725B>
+#define qtn_aknexlist_item_sg3      "1\t"<0x8001><0x864E>
+#define qtn_aknexlist_item_sg4      "1\t"<0x5154><0x5B50>
+#define qtn_aknexlist_item_sg5      "1\t"<0x9F99>
+#define qtn_aknexlist_item_sg6      "1\t"<0x86C7>
+#define qtn_aknexlist_item_sg7      "1\t"<0x9A6C>
+#define qtn_aknexlist_item_sg8      "1\t"<0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_sg9      "1\t"<0x7334><0x5B50>
+#define qtn_aknexlist_item_sg10     "1\t"<0x9E1F>
+#define qtn_aknexlist_item_sg11     "1\t"<0x72D7>
+#define qtn_aknexlist_item_sg12     "1\t"<0x91CE><0x732A>
+#define qtn_aknexlist_item_sg13     "1\t"<0x5634><0x5634><0x5634>
+#define qtn_aknexlist_item_sg14     "1\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_sg15     "1\t"<0x8001><0x864E><0x8001><0x864E>
+#else
+#define qtn_aknexlist_item_sg1      "1\taaaaaa"
+#define qtn_aknexlist_item_sg2      "1\tbbbbbb"
+#define qtn_aknexlist_item_sg3      "1\tcccccc"
+#define qtn_aknexlist_item_sg4      "1\tdddddd"
+#define qtn_aknexlist_item_sg5      "1\teeeeee"
+#define qtn_aknexlist_item_sg6      "1\tffffff"
+#define qtn_aknexlist_item_sg7      "1\tgggggg"
+#define qtn_aknexlist_item_sg8      "1\thhhhhh"
+#define qtn_aknexlist_item_sg9      "1\tiiiiii"
+#define qtn_aknexlist_item_sg10     "1\tjjjjjj"
+#define qtn_aknexlist_item_sg11     "1\tkkkkkk"
+#define qtn_aknexlist_item_sg12     "1\tllllll"
+#define qtn_aknexlist_item_sg13     "1\tmmmmmm"
+#define qtn_aknexlist_item_sg14     "1\tnnnnnn"
+#define qtn_aknexlist_item_sg15     "1\toooooo"
+#endif
+
+// single item with large graphic
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_slg1     "1\t"<0x5634>
+#define qtn_aknexlist_item_slg2     "1\t"<0x6BCD><0x725B>
+#define qtn_aknexlist_item_slg3     "1\t"<0x8001><0x864E>
+#define qtn_aknexlist_item_slg4     "1\t"<0x5154><0x5B50>
+#define qtn_aknexlist_item_slg5     "1\t"<0x9F99>
+#define qtn_aknexlist_item_slg6     "1\t"<0x86C7>
+#define qtn_aknexlist_item_slg7     "1\t"<0x9A6C>
+#define qtn_aknexlist_item_slg8     "1\t"<0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_slg9     "1\t"<0x7334><0x5B50>
+#define qtn_aknexlist_item_slg10    "1\t"<0x9E1F>
+#define qtn_aknexlist_item_slg11    "1\t"<0x72D7>
+#define qtn_aknexlist_item_slg12    "1\t"<0x91CE><0x732A>
+#define qtn_aknexlist_item_slg13    "1\tmmmmmm"
+#define qtn_aknexlist_item_slg14    "1\tnnnnnn"
+#define qtn_aknexlist_item_slg15    "1\toooooo"
+#else
+#define qtn_aknexlist_item_slg1     "1\taaaaaa"
+#define qtn_aknexlist_item_slg2     "1\tbbbbbb"
+#define qtn_aknexlist_item_slg3     "1\tcccccc"
+#define qtn_aknexlist_item_slg4     "1\tdddddd"
+#define qtn_aknexlist_item_slg5     "1\teeeeee"
+#define qtn_aknexlist_item_slg6     "1\tffffff"
+#define qtn_aknexlist_item_slg7     "1\tgggggg"
+#define qtn_aknexlist_item_slg8     "1\thhhhhh"
+#define qtn_aknexlist_item_slg9     "1\tiiiiii"
+#define qtn_aknexlist_item_slg10    "1\tjjjjjj"
+#define qtn_aknexlist_item_slg11    "1\tkkkkkk"
+#define qtn_aknexlist_item_slg12    "1\tllllll"
+#define qtn_aknexlist_item_slg13    "1\tmmmmmm"
+#define qtn_aknexlist_item_slg14    "1\tnnnnnn"
+#define qtn_aknexlist_item_slg15    "1\toooooo"
+#endif
+
+// single item with graphics and heading
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_sgh1     "1\tHead1\t"<0x5634>
+#define qtn_aknexlist_item_sgh2     "1\tHead2\t"<0x6BCD><0x725B>
+#define qtn_aknexlist_item_sgh3     "1\tHead3\t"<0x8001><0x864E>
+#define qtn_aknexlist_item_sgh4     "1\tHead4\t"<0x5154><0x5B50>
+#define qtn_aknexlist_item_sgh5     "1\tHead5\t"<0x9F99>
+#define qtn_aknexlist_item_sgh6     "1\tHead6\t"<0x86C7>
+#define qtn_aknexlist_item_sgh7     "1\tHead7\t"<0x9A6C>
+#define qtn_aknexlist_item_sgh8     "1\tHead8\t"<0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_sgh9     "2\t   "<0x7334>" \t"<0x7334>"                "<0x5B50>
+#define qtn_aknexlist_item_sgh10    "1\tHead8\t"<0x5634>"\t1"
+#define qtn_aknexlist_item_sgh11    "1\tHead11\t"<0x7334><0x5B50>
+#define qtn_aknexlist_item_sgh12    "1\tHead12\t"<0x9E1F>
+#define qtn_aknexlist_item_sgh13    "1\tHead13\t"<0x72D7>
+#define qtn_aknexlist_item_sgh14    "1\tHead14\t"<0x91CE><0x732A>
+#define qtn_aknexlist_item_sgh15    "1\tHead15\tmmmmmm"
+#define qtn_aknexlist_item_sgh16    "1\tHead16\tnnnnnn"
+#define qtn_aknexlist_item_sgh17    "1\tHead17\toooooo"
+#else
+#define qtn_aknexlist_item_sgh1     "1\tHead1\taaaaaa"
+#define qtn_aknexlist_item_sgh2     "1\tHead2\tbbbbbb"
+#define qtn_aknexlist_item_sgh3     "1\tHead3\tcccccc"
+#define qtn_aknexlist_item_sgh4     "1\tHead4\tdddddd"
+#define qtn_aknexlist_item_sgh5     "1\tHead5\teeeeee"
+#define qtn_aknexlist_item_sgh6     "1\tHead6\tffffff"
+#define qtn_aknexlist_item_sgh7     "1\tHead7\tgggggg"
+#define qtn_aknexlist_item_sgh8     "1\tHead8\thhhhhh"
+#define qtn_aknexlist_item_sgh9     "2\t   B \t    C               D"
+#define qtn_aknexlist_item_sgh10    "1\tHead8\taaaaaa\t1"
+#define qtn_aknexlist_item_sgh11    "1\tHead11\tiiiiii"
+#define qtn_aknexlist_item_sgh12    "1\tHead12\tjjjjjj"
+#define qtn_aknexlist_item_sgh13    "1\tHead13\tkkkkkk"
+#define qtn_aknexlist_item_sgh14    "1\tHead14\tllllll"
+#define qtn_aknexlist_item_sgh15    "1\tHead15\tmmmmmm"
+#define qtn_aknexlist_item_sgh16    "1\tHead16\tnnnnnn"
+#define qtn_aknexlist_item_sgh17    "1\tHead17\toooooo"
+#endif
+
+// single item with number and heading
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_snh1     "8\tHead1\t"<0x5634>
+#define qtn_aknexlist_item_snh2     "7\tHead2\t"<0x6BCD><0x725B>
+#define qtn_aknexlist_item_snh3     "6\tHead3\t"<0x8001><0x864E>
+#define qtn_aknexlist_item_snh4     "5\tHead4\t"<0x5154><0x5B50>
+#define qtn_aknexlist_item_snh5     "4\tHead5\t"<0x9F99>
+#define qtn_aknexlist_item_snh6     "3\tHead6\t"<0x86C7>
+#define qtn_aknexlist_item_snh7     "2\tHead7\t"<0x9A6C>
+#define qtn_aknexlist_item_snh8     "1\tHead8\t"<0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_snh9     "0\tHead9\t"<0x7334><0x5B50>
+#define qtn_aknexlist_item_snh10    "0\tHead10\t"<0x9E1F>
+#define qtn_aknexlist_item_snh11    "0\tHead11\t"<0x72D7>
+#define qtn_aknexlist_item_snh12    "0\tHead12\t"<0x91CE><0x732A>
+#define qtn_aknexlist_item_snh13    "0\tHead13\tmmmmmm"
+#define qtn_aknexlist_item_snh14    "0\tHead14\tnnnnnn"
+#define qtn_aknexlist_item_snh15    "0\tHead15\toooooo"
+#else
+#define qtn_aknexlist_item_snh1     "8\tHead1\taaaaaa"
+#define qtn_aknexlist_item_snh2     "7\tHead2\tbbbbbb"
+#define qtn_aknexlist_item_snh3     "6\tHead3\tcccccc"
+#define qtn_aknexlist_item_snh4     "5\tHead4\tdddddd"
+#define qtn_aknexlist_item_snh5     "4\tHead5\teeeeee"
+#define qtn_aknexlist_item_snh6     "3\tHead6\tffffff"
+#define qtn_aknexlist_item_snh7     "2\tHead7\tgggggg"
+#define qtn_aknexlist_item_snh8     "1\tHead8\thhhhhh"
+#define qtn_aknexlist_item_snh9     "0\tHead9\tiiiiii"
+#define qtn_aknexlist_item_snh10    "0\tHead10\tjjjjjj"
+#define qtn_aknexlist_item_snh11    "0\tHead11\tkkkkkk"
+#define qtn_aknexlist_item_snh12    "0\tHead12\tllllll"
+#define qtn_aknexlist_item_snh13    "0\tHead13\tmmmmmm"
+#define qtn_aknexlist_item_snh14    "0\tHead14\tnnnnnn"
+#define qtn_aknexlist_item_snh15    "0\tHead15\toooooo"
+#endif
+
+// big single item
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_bs1      " \t"<0x5634>"\t "
+#define qtn_aknexlist_item_bs2      " \t"<0x6BCD><0x725B>"\t "
+#define qtn_aknexlist_item_bs3      " \t"<0x8001><0x864E>"\t "
+#define qtn_aknexlist_item_bs4      " \t"<0x5154><0x5B50>"\t "
+#define qtn_aknexlist_item_bs5      " \t"<0x9F99>"\t "
+#define qtn_aknexlist_item_bs6      " \t"<0x86C7>"\t "
+#define qtn_aknexlist_item_bs7      " \t"<0x9A6C>"\t "
+#define qtn_aknexlist_item_bs8      " \t"<0x7EF5><0x7F8A>"\t "
+#define qtn_aknexlist_item_bs9      " \t"<0x7334><0x5B50>"\t "
+#define qtn_aknexlist_item_bs10     " \t"<0x9E1F>"\t "
+#define qtn_aknexlist_item_bs11     " \t"<0x72D7>"\t "
+#define qtn_aknexlist_item_bs12     " \t"<0x91CE><0x732A>"\t "
+#define qtn_aknexlist_item_bs13     " \tmmmmmm\t "
+#define qtn_aknexlist_item_bs14     " \tnnnnnn\t "
+#define qtn_aknexlist_item_bs15     " \toooooo\t "
+#else
+#define qtn_aknexlist_item_bs1      " \taaaaaa\t "
+#define qtn_aknexlist_item_bs2      " \tbbbbbb\t "
+#define qtn_aknexlist_item_bs3      " \tcccccc\t "
+#define qtn_aknexlist_item_bs4      " \tdddddd\t "
+#define qtn_aknexlist_item_bs5      " \teeeeee\t "
+#define qtn_aknexlist_item_bs6      " \tffffff\t "
+#define qtn_aknexlist_item_bs7      " \tgggggg\t "
+#define qtn_aknexlist_item_bs8      " \thhhhhh\t "
+#define qtn_aknexlist_item_bs9      " \tiiiiii\t "
+#define qtn_aknexlist_item_bs10     " \tjjjjjj\t "
+#define qtn_aknexlist_item_bs11     " \tkkkkkk\t "
+#define qtn_aknexlist_item_bs12     " \tllllll\t "
+#define qtn_aknexlist_item_bs13     " \tmmmmmm\t "
+#define qtn_aknexlist_item_bs14     " \tnnnnnn\t "
+#define qtn_aknexlist_item_bs15     " \toooooo\t "
+#endif
+
+// big single item with number
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_bsn1     "8\t"<0x5634>"\t "
+#define qtn_aknexlist_item_bsn2     "7\t"<0x6BCD><0x725B>"\t "
+#define qtn_aknexlist_item_bsn3     "6\t"<0x8001><0x864E>"\t "
+#define qtn_aknexlist_item_bsn4     "5\t"<0x5154><0x5B50>"\t "
+#define qtn_aknexlist_item_bsn5     "4\t"<0x9F99>"\t "
+#define qtn_aknexlist_item_bsn6     "3\t"<0x86C7>"\t "
+#define qtn_aknexlist_item_bsn7     "2\t"<0x9A6C>"\t "
+#define qtn_aknexlist_item_bsn8     "1\t"<0x7EF5><0x7F8A>"\t "
+#define qtn_aknexlist_item_bsn9     "0\t"<0x7334><0x5B50>"\t "
+#define qtn_aknexlist_item_bsn10    "0\t"<0x9E1F>"\t "
+#define qtn_aknexlist_item_bsn11    "0\t"<0x72D7>"\t "
+#define qtn_aknexlist_item_bsn12    "0\t"<0x91CE><0x732A>"\t "
+#define qtn_aknexlist_item_bsn13    "0\tmmmmmm\t "
+#define qtn_aknexlist_item_bsn14    "0\tnnnnnn\t "
+#define qtn_aknexlist_item_bsn15    "0\toooooo\t "
+#else
+#define qtn_aknexlist_item_bsn1     "8\taaaaaa\t "
+#define qtn_aknexlist_item_bsn2     "7\tbbbbbb\t "
+#define qtn_aknexlist_item_bsn3     "6\tcccccc\t "
+#define qtn_aknexlist_item_bsn4     "5\tdddddd\t "
+#define qtn_aknexlist_item_bsn5     "4\teeeeee\t "
+#define qtn_aknexlist_item_bsn6     "3\tffffff\t "
+#define qtn_aknexlist_item_bsn7     "2\tgggggg\t "
+#define qtn_aknexlist_item_bsn8     "1\thhhhhh\t "
+#define qtn_aknexlist_item_bsn9     "0\tiiiiii\t "
+#define qtn_aknexlist_item_bsn10    "0\tjjjjjj\t "
+#define qtn_aknexlist_item_bsn11    "0\tkkkkkk\t "
+#define qtn_aknexlist_item_bsn12    "0\tllllll\t "
+#define qtn_aknexlist_item_bsn13    "0\tmmmmmm\t "
+#define qtn_aknexlist_item_bsn14    "0\tnnnnnn\t "
+#define qtn_aknexlist_item_bsn15    "0\toooooo\t "
+#endif
+
+// big single item with large graphic
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_bsg1     "1\t"<0x5634>"\t "
+#define qtn_aknexlist_item_bsg2     "1\t"<0x6BCD><0x725B>"\t "
+#define qtn_aknexlist_item_bsg3     "1\t"<0x8001><0x864E>"\t "
+#define qtn_aknexlist_item_bsg4     "1\t"<0x5154><0x5B50>"\t "
+#define qtn_aknexlist_item_bsg5     "1\t"<0x9F99>"\t "
+#define qtn_aknexlist_item_bsg6     "1\t"<0x86C7>"\t "
+#define qtn_aknexlist_item_bsg7     "1\t"<0x9A6C>"\t "
+#define qtn_aknexlist_item_bsg8     "1\t"<0x7EF5><0x7F8A>"\t "
+#define qtn_aknexlist_item_bsg9     "1\t"<0x7334><0x5B50>"\t "
+#define qtn_aknexlist_item_bsg10    "1\t"<0x9E1F>"\t "
+#define qtn_aknexlist_item_bsg11    "1\t"<0x72D7>"\t "
+#define qtn_aknexlist_item_bsg12    "1\t"<0x91CE><0x732A>"\t "
+#define qtn_aknexlist_item_bsg13    "1\tmmmmmm\t "
+#define qtn_aknexlist_item_bsg14    "1\tnnnnnn\t "
+#define qtn_aknexlist_item_bsg15    "1\toooooo\t "
+#else
+#define qtn_aknexlist_item_bsg1     "1\taaaaaa\t "
+#define qtn_aknexlist_item_bsg2     "1\tbbbbbb\t "
+#define qtn_aknexlist_item_bsg3     "1\tcccccc\t "
+#define qtn_aknexlist_item_bsg4     "1\tdddddd\t "
+#define qtn_aknexlist_item_bsg5     "1\teeeeee\t "
+#define qtn_aknexlist_item_bsg6     "1\tffffff\t "
+#define qtn_aknexlist_item_bsg7     "1\tgggggg\t "
+#define qtn_aknexlist_item_bsg8     "1\thhhhhh\t "
+#define qtn_aknexlist_item_bsg9     "1\tiiiiii\t "
+#define qtn_aknexlist_item_bsg10    "1\tjjjjjj\t "
+#define qtn_aknexlist_item_bsg11    "1\tkkkkkk\t "
+#define qtn_aknexlist_item_bsg12    "1\tllllll\t "
+#define qtn_aknexlist_item_bsg13    "1\tmmmmmm\t "
+#define qtn_aknexlist_item_bsg14    "1\tnnnnnn\t "
+#define qtn_aknexlist_item_bsg15    "1\toooooo\t "
+#endif
+
+// double item
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_d1       " \t"<0x5634>"\t"<0x5634><0x5634>
+#define qtn_aknexlist_item_d2       " \t"<0x6BCD><0x725B>"\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_d3       " \t"<0x8001><0x864E>"\t"<0x8001><0x864E><0x8001><0x864E>
+#define qtn_aknexlist_item_d4       " \t"<0x5154><0x5B50>"\t"<0x5154><0x5B50><0x5154><0x5B50>
+#define qtn_aknexlist_item_d5       " \t"<0x9F99>"\t"<0x9F99>
+#define qtn_aknexlist_item_d6       " \t"<0x86C7>"\t"<0x86C7><0x86C7>
+#define qtn_aknexlist_item_d7       " \t"<0x9A6C>"\t"<0x9A6C><0x9A6C>
+#define qtn_aknexlist_item_d8       " \t"<0x7EF5><0x7F8A>"\t"<0x7EF5><0x7F8A><0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_d9       " \t"<0x7334><0x5B50>"\t"<0x7334><0x5B50><0x7334><0x5B50>
+#define qtn_aknexlist_item_d10      " \t"<0x9E1F>"\t"<0x9E1F><0x9E1F>
+#define qtn_aknexlist_item_d11      " \t"<0x72D7>"\t"<0x72D7><0x72D7>
+#define qtn_aknexlist_item_d12      " \t"<0x91CE><0x732A>"\t"<0x91CE><0x732A><0x91CE><0x732A>
+#define qtn_aknexlist_item_d13      " \tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_d14      " \tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_d15      " \tOOOOOO\toooooo"
+#else
+#define qtn_aknexlist_item_d1       " \tAAAAAA\taaaaaa"
+#define qtn_aknexlist_item_d2       " \tBBBBBB\tbbbbbb"
+#define qtn_aknexlist_item_d3       " \tCCCCCC\tcccccc"
+#define qtn_aknexlist_item_d4       " \tDDDDDD\tdddddd"
+#define qtn_aknexlist_item_d5       " \tEEEEEE\teeeeee"
+#define qtn_aknexlist_item_d6       " \tFFFFFF\tffffff"
+#define qtn_aknexlist_item_d7       " \tGGGGGG\tgggggg"
+#define qtn_aknexlist_item_d8       " \tHHHHHH\thhhhhh"
+#define qtn_aknexlist_item_d9       " \tIIIIII\tiiiiii"
+#define qtn_aknexlist_item_d10      " \tJJJJJJ\tjjjjjj"
+#define qtn_aknexlist_item_d11      " \tKKKKKK\tkkkkkk"
+#define qtn_aknexlist_item_d12      " \tLLLLLL\tllllll"
+#define qtn_aknexlist_item_d13      " \tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_d14      " \tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_d15      " \tOOOOOO\toooooo"
+#endif
+
+// double item with number
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_dn1      "8\t"<0x5634>"\t"<0x5634><0x5634>
+#define qtn_aknexlist_item_dn2      "7\t"<0x6BCD><0x725B>"\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_dn3      "6\t"<0x8001><0x864E>"\t"<0x8001><0x864E><0x8001><0x864E>
+#define qtn_aknexlist_item_dn4      "5\t"<0x5154><0x5B50>"\t"<0x5154><0x5B50><0x5154><0x5B50>
+#define qtn_aknexlist_item_dn5      "4\t"<0x9F99>"\t"<0x9F99><0x9F99>
+#define qtn_aknexlist_item_dn6      "3\t"<0x86C7>"\t"<0x86C7><0x86C7>
+#define qtn_aknexlist_item_dn7      "2\t"<0x9A6C>"\t"<0x9A6C><0x9A6C>
+#define qtn_aknexlist_item_dn8      "1\t"<0x7EF5><0x7F8A>"\t"<0x7EF5><0x7F8A><0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_dn9      "0\t"<0x7334><0x5B50>"\t"<0x7334><0x5B50><0x7334><0x5B50>
+#define qtn_aknexlist_item_dn10     "0\t"<0x9E1F>"\t"<0x9E1F><0x9E1F>
+#define qtn_aknexlist_item_dn11     "0\t"<0x72D7>"\t"<0x72D7><0x72D7>
+#define qtn_aknexlist_item_dn12     "0\t"<0x91CE><0x732A>"\t"<0x91CE><0x732A><0x91CE><0x732A>
+#define qtn_aknexlist_item_dn13     "0\tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_dn14     "0\tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_dn15     "0\tOOOOOO\toooooo"
+#else
+#define qtn_aknexlist_item_dn1      "8\tAAAAAA\taaaaaa"
+#define qtn_aknexlist_item_dn2      "7\tBBBBBB\tbbbbbb"
+#define qtn_aknexlist_item_dn3      "6\tCCCCCC\tcccccc"
+#define qtn_aknexlist_item_dn4      "5\tDDDDDD\tdddddd"
+#define qtn_aknexlist_item_dn5      "4\tEEEEEE\teeeeee"
+#define qtn_aknexlist_item_dn6      "3\tFFFFFF\tffffff"
+#define qtn_aknexlist_item_dn7      "2\tGGGGGG\tgggggg"
+#define qtn_aknexlist_item_dn8      "1\tHHHHHH\thhhhhh"
+#define qtn_aknexlist_item_dn9      "0\tIIIIII\tiiiiii"
+#define qtn_aknexlist_item_dn10     "0\tJJJJJJ\tjjjjjj"
+#define qtn_aknexlist_item_dn11     "0\tKKKKKK\tkkkkkk"
+#define qtn_aknexlist_item_dn12     "0\tLLLLLL\tllllll"
+#define qtn_aknexlist_item_dn13     "0\tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_dn14     "0\tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_dn15     "0\tOOOOOO\toooooo"
+#endif
+
+// double item with graphic
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_dg1      "1\t"<0x5634>"\t"<0x5634><0x5634>
+#define qtn_aknexlist_item_dg2      "1\t"<0x6BCD><0x725B>"\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_dg3      "1\t"<0x8001><0x864E>"\t"<0x8001><0x864E><0x8001><0x864E>
+#define qtn_aknexlist_item_dg4      "1\t"<0x5154><0x5B50>"\t"<0x5154><0x5B50><0x5154><0x5B50>
+#define qtn_aknexlist_item_dg5      "1\t"<0x9F99>"\t"<0x9F99><0x9F99>
+#define qtn_aknexlist_item_dg6      "1\t"<0x86C7>"\t"<0x86C7><0x86C7>
+#define qtn_aknexlist_item_dg7      "1\t"<0x9A6C>"\t"<0x9A6C><0x9A6C>
+#define qtn_aknexlist_item_dg8      "1\t"<0x7EF5><0x7F8A>"\t"<0x7EF5><0x7F8A><0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_dg9      "1\t"<0x7334><0x5B50>"\t"<0x7334><0x5B50><0x7334><0x5B50>
+#define qtn_aknexlist_item_dg10     "1\t"<0x9E1F>"\t"<0x9E1F><0x9E1F>
+#define qtn_aknexlist_item_dg11     "1\t"<0x72D7>"\t"<0x72D7><0x72D7>
+#define qtn_aknexlist_item_dg12     "1\t"<0x91CE><0x732A>"\t"<0x91CE><0x732A><0x91CE><0x732A>
+#define qtn_aknexlist_item_dg13     "1\tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_dg14     "1\tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_dg15     "1\tOOOOOO\toooooo"
+#else
+#define qtn_aknexlist_item_dg1      "1\tAAAAAA\taaaaaa"
+#define qtn_aknexlist_item_dg2      "1\tBBBBBB\tbbbbbb"
+#define qtn_aknexlist_item_dg3      "1\tCCCCCC\tcccccc"
+#define qtn_aknexlist_item_dg4      "1\tDDDDDD\tdddddd"
+#define qtn_aknexlist_item_dg5      "1\tEEEEEE\teeeeee"
+#define qtn_aknexlist_item_dg6      "1\tFFFFFF\tffffff"
+#define qtn_aknexlist_item_dg7      "1\tGGGGGG\tgggggg"
+#define qtn_aknexlist_item_dg8      "1\tHHHHHH\thhhhhh"
+#define qtn_aknexlist_item_dg9      "1\tIIIIII\tiiiiii"
+#define qtn_aknexlist_item_dg10     "1\tJJJJJJ\tjjjjjj"
+#define qtn_aknexlist_item_dg11     "1\tKKKKKK\tkkkkkk"
+#define qtn_aknexlist_item_dg12     "1\tLLLLLL\tllllll"
+#define qtn_aknexlist_item_dg13     "1\tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_dg14     "1\tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_dg15     "1\tOOOOOO\toooooo"
+#endif
+
+// double item with large graphic
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_dlg1     "1\t"<0x5634>"\t"<0x5634><0x5634>
+#define qtn_aknexlist_item_dlg2     "1\t"<0x6BCD><0x725B>"\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_dlg3     "1\t"<0x8001><0x864E>"\t"<0x8001><0x864E><0x8001><0x864E>
+#define qtn_aknexlist_item_dlg4     "1\t"<0x5154><0x5B50>"\t"<0x5154><0x5B50><0x5154><0x5B50>
+#define qtn_aknexlist_item_dlg5     "1\t"<0x9F99>"\t"<0x9F99><0x9F99>
+#define qtn_aknexlist_item_dlg6     "1\t"<0x86C7>"\t"<0x86C7><0x86C7>
+#define qtn_aknexlist_item_dlg7     "1\t"<0x9A6C>"\t"<0x9A6C><0x9A6C>
+#define qtn_aknexlist_item_dlg8     "1\t"<0x7EF5><0x7F8A>"\t"<0x7EF5><0x7F8A><0x7EF5><0x7F8A>
+#define qtn_aknexlist_item_dlg9     "1\t"<0x7334><0x5B50>"\t"<0x7334><0x5B50><0x7334><0x5B50>
+#define qtn_aknexlist_item_dlg10    "1\t"<0x9E1F>"\t"<0x9E1F><0x9E1F>
+#define qtn_aknexlist_item_dlg11    "1\t"<0x72D7>"\t"<0x72D7><0x72D7>
+#define qtn_aknexlist_item_dlg12    "1\t"<0x91CE><0x732A>"\t"<0x91CE><0x732A><0x91CE><0x732A>
+#define qtn_aknexlist_item_dlg13    "1\tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_dlg14    "1\tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_dlg15    "1\tOOOOOO\toooooo"
+#else
+#define qtn_aknexlist_item_dlg1     "1\tAAAAAA\taaaaaa"
+#define qtn_aknexlist_item_dlg2     "1\tBBBBBB\tbbbbbb"
+#define qtn_aknexlist_item_dlg3     "1\tCCCCCC\tcccccc"
+#define qtn_aknexlist_item_dlg4     "1\tDDDDDD\tdddddd"
+#define qtn_aknexlist_item_dlg5     "1\tEEEEEE\teeeeee"
+#define qtn_aknexlist_item_dlg6     "1\tFFFFFF\tffffff"
+#define qtn_aknexlist_item_dlg7     "1\tGGGGGG\tgggggg"
+#define qtn_aknexlist_item_dlg8     "1\tHHHHHH\thhhhhh"
+#define qtn_aknexlist_item_dlg9     "1\tIIIIII\tiiiiii"
+#define qtn_aknexlist_item_dlg10    "1\tJJJJJJ\tjjjjjj"
+#define qtn_aknexlist_item_dlg11    "1\tKKKKKK\tkkkkkk"
+#define qtn_aknexlist_item_dlg12    "1\tLLLLLL\tllllll"
+#define qtn_aknexlist_item_dlg13    "1\tMMMMMM\tmmmmmm"
+#define qtn_aknexlist_item_dlg14    "1\tNNNNNN\tnnnnnn"
+#define qtn_aknexlist_item_dlg15    "1\tOOOOOO\toooooo"
+#endif
+
+// double item with time
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_dt1      "11:00\tam\t"<0x5634>"\t"<0x5634><0x5634>
+#define qtn_aknexlist_item_dt2      "12:00\t \t"<0x6BCD><0x725B>"\t"<0x6BCD><0x725B><0x6BCD><0x725B>
+#define qtn_aknexlist_item_dt3      " 1:00\tpm\t"<0x8001><0x864E>"\t"<0x8001><0x864E><0x8001><0x864E>
+#define qtn_aknexlist_item_dt4      "14:00\t \t"<0x5154><0x5B50>"\t"<0x5154><0x5B50><0x5154><0x5B50>
+#define qtn_aknexlist_item_dt5      "15:00\t \t"<0x9F99>"\t"<0x9F99><0x9F99>
+#define qtn_aknexlist_item_dt6      "16:00\t \t"<0x86C7>"\t"<0x86C7><0x86C7>
+#define qtn_aknexlist_item_dt7      "17:00\t \t"<0x9A6C>"\t"<0x9A6C><0x9A6C>
+#define qtn_aknexlist_item_dt8      "18:00\t \t"<0x7EF5><0x7F8A>"\t"<0x7EF5><0x7F8A><0x7EF5><0x7F8A>
+#else
+#define qtn_aknexlist_item_dt1      "11:00\tam\tAAAAAA\taaaaaa"
+#define qtn_aknexlist_item_dt2      "12:00\t \tBBBBBB\tbbbbbb"
+#define qtn_aknexlist_item_dt3      " 1:00\tpm\tCCCCCC\tcccccc"
+#define qtn_aknexlist_item_dt4      "14:00\t \tDDDDDD\tdddddd"
+#define qtn_aknexlist_item_dt5      "15:00\t \tEEEEEE\teeeeee"
+#define qtn_aknexlist_item_dt6      "16:00\t \tFFFFFF\tffffff"
+#define qtn_aknexlist_item_dt7      "17:00\t \tGGGGGG\tgggggg"
+#define qtn_aknexlist_item_dt8      "18:00\t \tHHHHHH\thhhhhh"
+#endif
+
+// setting item
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_st1      " \t"<0x5634>"\t0\toff"
+#define qtn_aknexlist_item_st2      " \t"<0x6BCD><0x725B>"\t0\toff"
+#define qtn_aknexlist_item_st3      " \t"<0x8001><0x864E>"\t0\toff"
+#define qtn_aknexlist_item_st4      " \t"<0x5154><0x5B50>"\t0\toff"
+#define qtn_aknexlist_item_st5      " \t"<0x9F99>"\t0\toff"
+#define qtn_aknexlist_item_st6      " \t"<0x86C7>"\t0\toff"
+#define qtn_aknexlist_item_st7      " \t"<0x9A6C>"\t0\toff"
+#define qtn_aknexlist_item_st8      " \t"<0x7EF5><0x7F8A>"\t0\toff"
+#define qtn_aknexlist_item_st9      " \t"<0x7334><0x5B50>"\t0\toff"
+#define qtn_aknexlist_item_st10     " \t"<0x9E1F>"\t0\toff"
+#define qtn_aknexlist_item_st11     " \t"<0x72D7>"\t0\toff"
+#define qtn_aknexlist_item_st12     " \t"<0x91CE><0x732A>"\t0\toff"
+#define qtn_aknexlist_item_st13     " \tMMMMMM\t0\toff"
+#define qtn_aknexlist_item_st14     " \tNNNNNN\t0\toff"
+#define qtn_aknexlist_item_st15     " \tOOOOOO\t0\toff"
+#else
+#define qtn_aknexlist_item_st1      " \tAAAAAA\t0\toff"
+#define qtn_aknexlist_item_st2      " \tBBBBBB\t0\toff"
+#define qtn_aknexlist_item_st3      " \tCCCCCC\t0\toff"
+#define qtn_aknexlist_item_st4      " \tDDDDDD\t0\toff"
+#define qtn_aknexlist_item_st5      " \tEEEEEE\t0\toff"
+#define qtn_aknexlist_item_st6      " \tFFFFFF\t0\toff"
+#define qtn_aknexlist_item_st7      " \tGGGGGG\t0\toff"
+#define qtn_aknexlist_item_st8      " \tHHHHHH\t0\toff"
+#define qtn_aknexlist_item_st9      " \tIIIIII\t0\toff"
+#define qtn_aknexlist_item_st10     " \tJJJJJJ\t0\toff"
+#define qtn_aknexlist_item_st11     " \tKKKKKK\t0\toff"
+#define qtn_aknexlist_item_st12     " \tLLLLLL\t0\toff"
+#define qtn_aknexlist_item_st13     " \tMMMMMM\t0\toff"
+#define qtn_aknexlist_item_st14     " \tNNNNNN\t0\toff"
+#define qtn_aknexlist_item_st15     " \tOOOOOO\t0\toff"
+#endif
+
+// setting number item
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_item_stn1     "8\t"<0x5634>"\t0\toff"
+#define qtn_aknexlist_item_stn2     "7\t"<0x6BCD><0x725B>"\t0\toff"
+#define qtn_aknexlist_item_stn3     "6\t"<0x8001><0x864E>"\t0\toff"
+#define qtn_aknexlist_item_stn4     "5\t"<0x5154><0x5B50>"\t0\toff"
+#define qtn_aknexlist_item_stn5     "4\t"<0x9F99>"\t0\toff"
+#define qtn_aknexlist_item_stn6     "3\t"<0x86C7>"\t0\toff"
+#define qtn_aknexlist_item_stn7     "2\t"<0x9A6C>"\t0\toff"
+#define qtn_aknexlist_item_stn8     "1\t"<0x7EF5><0x7F8A>"\t0\toff"
+#define qtn_aknexlist_item_stn9     "0\t"<0x7334><0x5B50>"\t0\toff"
+#define qtn_aknexlist_item_stn10    "0\t"<0x9E1F>"\t0\toff"
+#define qtn_aknexlist_item_stn11    "0\t"<0x72D7>"\t0\toff"
+#define qtn_aknexlist_item_stn12    "0\t"<0x91CE><0x732A>"\t0\toff"
+#define qtn_aknexlist_item_stn13    "0\tMMMMMM\t0\toff"
+#define qtn_aknexlist_item_stn14    "0\tNNNNNN\t0\toff"
+#define qtn_aknexlist_item_stn15    "0\tOOOOOO\t0\toff"
+#else
+#define qtn_aknexlist_item_stn1     "8\tAAAAAA\t0\toff"
+#define qtn_aknexlist_item_stn2     "7\tBBBBBB\t0\toff"
+#define qtn_aknexlist_item_stn3     "6\tCCCCCC\t0\toff"
+#define qtn_aknexlist_item_stn4     "5\tDDDDDD\t0\toff"
+#define qtn_aknexlist_item_stn5     "4\tEEEEEE\t0\toff"
+#define qtn_aknexlist_item_stn6     "3\tFFFFFF\t0\toff"
+#define qtn_aknexlist_item_stn7     "2\tGGGGGG\t0\toff"
+#define qtn_aknexlist_item_stn8     "1\tHHHHHH\t0\toff"
+#define qtn_aknexlist_item_stn9     "0\tIIIIII\t0\toff"
+#define qtn_aknexlist_item_stn10    "0\tJJJJJJ\t0\toff"
+#define qtn_aknexlist_item_stn11    "0\tKKKKKK\t0\toff"
+#define qtn_aknexlist_item_stn12    "0\tLLLLLL\t0\toff"
+#define qtn_aknexlist_item_stn13    "0\tMMMMMM\t0\toff"
+#define qtn_aknexlist_item_stn14    "0\tNNNNNN\t0\toff"
+#define qtn_aknexlist_item_stn15    "0\tOOOOOO\t0\toff"
+#endif
+
+// sub item
+#define qtn_aknexlist_item_open1    " \tOpen 1"
+#define qtn_aknexlist_item_open2    " \tOpen 2"
+#define qtn_aknexlist_item_sub1     " \tback"
+
+// add item
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_add_item_s    " \t"<0x6DFB><0x52A0><0x9879><0x76EE>
+#define qtn_aknexlist_add_item_d    " \t"<0x52A0>"\t"<0x9879><0x76EE>
+#define qtn_aknexlist_add_item_st   " \t"<0x6DFB><0x52A0><0x9879><0x76EE>"\t0\toff"
+#else
+#define qtn_aknexlist_add_item_s    " \tadd item"
+#define qtn_aknexlist_add_item_d    " \tADD\tITEM"
+#define qtn_aknexlist_add_item_st   " \tADD ITEM\t0\toff"
+
+#endif
+
+// ListBox type number
+#ifdef __AVKON_APAC__
+#define qtn_aknexlist_type_1        <0x7C7B><0x578B>" 1"
+#define qtn_aknexlist_type_2        <0x7C7B><0x578B>" 2"
+#define qtn_aknexlist_type_3        <0x7C7B><0x578B>" 3"
+#define qtn_aknexlist_type_4        <0x7C7B><0x578B>" 4"
+#define qtn_aknexlist_type_5        <0x7C7B><0x578B>" 5"
+#define qtn_aknexlist_type_6        <0x7C7B><0x578B>" 6"
+#define qtn_aknexlist_type_7        <0x7C7B><0x578B>" 7"
+#define qtn_aknexlist_type_8        <0x7C7B><0x578B>" 8"
+#define qtn_aknexlist_type_9        <0x7C7B><0x578B>" 9"
+#define qtn_aknexlist_type_10       <0x7C7B><0x578B>" 10"
+#define qtn_aknexlist_type_11       <0x7C7B><0x578B>" 11"
+#define qtn_aknexlist_type_12       <0x7C7B><0x578B>" 12"
+#define qtn_aknexlist_type_13       <0x7C7B><0x578B>" 13"
+#define qtn_aknexlist_type_14       <0x7C7B><0x578B>" 14"
+#define qtn_aknexlist_type_15       <0x7C7B><0x578B>" 15"
+#define qtn_aknexlist_type_16       <0x7C7B><0x578B>" 16"
+#else
+#define qtn_aknexlist_type_1        "Type 1"
+#define qtn_aknexlist_type_2        "Type 2"
+#define qtn_aknexlist_type_3        "Type 3"
+#define qtn_aknexlist_type_4        "Type 4"
+#define qtn_aknexlist_type_5        "Type 5"
+#define qtn_aknexlist_type_6        "Type 6"
+#define qtn_aknexlist_type_7        "Type 7"
+#define qtn_aknexlist_type_8        "Type 8"
+#define qtn_aknexlist_type_9        "Type 9"
+#define qtn_aknexlist_type_10       "Type 10"
+#define qtn_aknexlist_type_11       "Type 11"
+#define qtn_aknexlist_type_12       "Type 12"
+#define qtn_aknexlist_type_13       "Type 13"
+#define qtn_aknexlist_type_14       "Type 14"
+#define qtn_aknexlist_type_15       "Type 15"
+#define qtn_aknexlist_type_16       "Type 16"
+#endif
+
+// Style of findbox
+#define qtn_aknexlist_find_fixed    "Fixed"
+#define qtn_aknexlist_find_popup    "Popup"
+
+// For setting list of outline 85.
+#define qtn_aknexlist_setpage_empty_item   "Empty"
+#define qtn_aknexlist_setpage_empty_label  "Empty"
+
+// For outline 108, 109
+#define qtn_aknexlist_listdlg_itemselected "Item %N is selected." 
+#define qtn_aknexlist_listdlg_cancelled    "Cancel is selected."
+
+// For observer test for list dialog
+#define qtn_aknexlist_listdlg_rec_obsevent "Received observer event"
+
+// For List dialog menu
+#define qtn_aknexlist_listdlg_sellist_proccmd_menu     "Process command" 
+#define qtn_aknexlist_listdlg_multilist_proccmd_menu   "MultiSel ProcCmd"
+#define qtn_aknexlist_listdlg_marklist_proccmd_menu    "Process command"
+#define qtn_aknexlist_listdlg_sim_key_menu             "Simulate KeyEvent"
+#define qtn_aknexlist_listdlg_marklist_initmpane1_menu "Init menu pane-1"  
+#define qtn_aknexlist_listdlg_marklist_initmpane2_menu "Init menu pane-2"  
+#define qtn_aknexlist_listdlg_marklist_initmitem1_menu "Init menu item-1" 
+#define qtn_aknexlist_listdlg_marklist_initmitem2_menu "Init menu item-2" 
+#define qtn_aknexlist_listdlg_marklist_aftercmd_menu   "Update after cmd" 
+#define qtn_aknexlist_listdlg_item_removal_menu        "Item removal"
+#define qtn_aknexlist_listdlg_item_obstext_menu        "Observer"
+#define qtn_aknexlist_listdlg_none_menu                "None"
+ 
+#define qtn_aknexlist_listdlg_sim_key_num_menu         "Number"
+#define qtn_aknexlist_listdlg_sim_key_delete_menu      "Delete"
+#define qtn_aknexlist_listdlg_sim_key_lshift_menu      "Left shift" 
+#define qtn_aknexlist_listdlg_sim_key_rshift_menu      "Right shift"
+#define qtn_aknexlist_listdlg_sim_key_up_menu          "Up"
+#define qtn_aknexlist_listdlg_sim_key_down_menu        "Down"
+
+// For next softkey
+#define qtn_aknexlist_softkey_next        "Next"
+
+// For Outline65
+#define qtn_aknexlist_empty_label  "Empty"
+
+//Label text for outline 100, 101, 103, 104
+#define qtn_aknexlist_flagtest_dialog_label "-Press left arrow key\n   show list of previous type\n\n-Press right arrow key\n   show list of next type"
+
+// End of File

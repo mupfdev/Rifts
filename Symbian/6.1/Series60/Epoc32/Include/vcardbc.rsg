@@ -1,0 +1,3 @@
+#define R_QTN_SM_ADD_PHONEBOOK                    0xf246003
+#define R_QTN_SM_TITLE_BUSINESS_CARD              0xf246004
+#define R_QTN_BCARD_SAVED_TO_PB_AS_NEW            0xf246005

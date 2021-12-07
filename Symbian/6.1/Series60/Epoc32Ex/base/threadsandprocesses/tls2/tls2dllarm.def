@@ -1,0 +1,6 @@
+EXPORTS
+; NEW:
+	GetTlsData__10CMessenger @ 1 NONAME ; CMessenger::GetTlsData(void)
+	NewLC__10CMessengerR12CConsoleBaseRC7TDesC16 @ 2 NONAME ; CMessenger::NewLC(CConsoleBase &, TDesC16 const &)
+	ShowMessage__10CMessenger @ 3 NONAME ; CMessenger::ShowMessage(void)
+

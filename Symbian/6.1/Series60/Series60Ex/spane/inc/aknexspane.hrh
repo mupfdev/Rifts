@@ -1,0 +1,149 @@
+/*
+* ============================================================================
+*  Name     : AknExSpane.hrh
+*  Part of  : AknExSpane
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+// define the display position and size
+#define AKNEXSPANE_TOP_POINT TPoint(5,5)
+#define AKNEXSPANE_TOP_POINT_IDLE TPoint(0,12)
+#define AKNEXSPANE_MID_POINT TPoint(15,40)
+#define AKNEXSPANE_MID_POINT_IDLE TPoint(15,52)
+#define AKNEXSPANE_MID_SIZE  TSize(160,60)
+#define AKNEXSPANE_LOW_POINT TPoint(30,100)
+#define AKNEXSPANE_LOW_POINT_IDLE TPoint(30,112)
+#define AKNEXSPANE_ADD_POINT_IDLE TPoint(63,12)
+#define AKNEXSPANE_ZERO_SIZE_AREA TRect(0,0,0,0)
+#define AKNEXSPANE_SCREEN_WIDTH 176
+#define KLengthOfTempString 40
+
+// define the view color
+#define AKNEXSPANE_KRGB_RED     TRgb(0x0000ff)
+#define AKNEXSPANE_KRGB_GREEN   TRgb(0x00ff00)
+#define AKNEXSPANE_KRGB_YELLOW  TRgb(0x00ffff)
+#define AKNEXSPANE_KRGB_BLUE    TRgb(0xff0000)
+#define AKNEXSPANE_KRGB_GRAY    TRgb(0xaaaaaa)
+
+// Sppane application view ids.
+enum  TAknExSpaneViewNumber
+    {
+    EAknExSpaneTitleViewId = 1,   
+    EAknExSpaneContextViewId,
+    EAknExSpaneNaviViewId,
+    EAknExSpanePopUpViewId
+    };
+
+// Tab's image selection for navi pane's tab test
+enum  TAknExSpaneTabImageSelection
+    {
+    EAknExSpaneNaviTabNoImage,
+    EAknExSpaneNaviTabImage1,
+    EAknExSpaneNaviTabImage2,
+    EAknExSpaneNaviTabImage3
+    };
+
+enum  TAknExSpaneTabControlDialog
+    {
+    EAknExSpaneNaviDialogTabIndex = 6500,      // used by tab property dialog as item id
+    EAknExSpaneNaviDialogTabText,       // used by tab property dialog as item id
+    EAknExSpaneNaviDialogTabImage      // used by tab property dialog as item id
+    };
+
+
+// Spane application command ids.
+enum  TAknExSpaneCmdNumber
+    {
+    EAknExSpaneCmdSwitchSpLayout = 200,
+    EAknExSpaneCmdSwitchSpVisible,
+    EAknExSpaneCmdSwitchSpPowerOffRecharge,
+    EAknExSpaneCmdSwitchSpEmpty,
+    EAknExSpaneCmdSwitchSpIdle,
+    EAknExSpaneCmdSwitchSpUsual,
+    //
+    EAknExSpaneCmdNextTest,
+    EAknExSpaneCmdLastTest,
+
+    // used by navi pane test
+    EAknExSpaneNaviTabSubEdit,      // submenu title
+    EAknExSpaneNaviTabAdd,      // open the add_tab dialog
+    EAknExSpaneNaviTabReplace,  // open the replace_tab dialog
+    EAknExSpaneNaviTabDelete,   // open the delete_tab/select_tab dialog
+    EAknExSpaneNaviTabSelect,   // open the delete_tab/select_tab dialog
+
+    EAknExSpaneNaviTabSubStyle,    // submenu title : change tab style sub menu title
+    EAknExSpaneNaviTabStyleOne,         // set tab style to One_Tab
+    EAknExSpaneNaviTabStyleTwoShort,    // set tab style to Two_Short_Tab
+    EAknExSpaneNaviTabStyleTwoLong,     // set tab style to Two_Long_Tab
+    EAknExSpaneNaviTabStyleThreeShort,  // set tab style to Three_Short_Tab
+    EAknExSpaneNaviTabStyleThreeLong,   // set tab style to Three_Long_Tab
+    EAknExSpaneNaviTabStyleFour,        // set tab style to Four_Tab 
+
+    EAknExSpaneNaviArraySub,            // Navi_Icon control sub menu title
+    EAknExSpaneNaviArrayLeftOn,         // set left Navi_Icon on
+    EAknExSpaneNaviArrayLeftFade,       // set left Navi_Icon fade
+    EAknExSpaneNaviArrayEnable,         // set left Navi_Icon off
+    EAknExSpaneNaviArrayRightOn,        // set right Navi_Icon on
+    EAknExSpaneNaviArrayRightFade,      // set tight Navi_Icon fade
+    EAknExSpaneNaviArrayDisable,        // set right Navi_Icon off
+
+    EAknExSpaneSwitchEditor,
+    EAknExSpaneCmdShowBubbleFlagDialog
+
+    // confirm the last value small than 0x100
+    };
+
+// Tab ids for navi pane (used by long tab group) 
+enum  TAknExSpaneNaviTabNumber
+    {
+    EAknExSpaneNaviTabNumber0 = 12,   
+    EAknExSpaneNaviTabNumber1 = 13,
+    EAknExSpaneNaviTabNumber7 = 14,
+    EAknExSpaneNaviTabNumber2 = 15,
+    EAknExSpaneNaviTabNumber3 = 16,
+    EAknExSpaneNaviTabNumber4 = 17,
+    EAknExSpaneNaviTabNumber5 = 18,
+    EAknExSpaneNaviTabNumber6 = 19,
+    EAknExSpaneNaviTabNumber8 = 169
+    };
+
+// Tab ids for navi pane (used by short tab group)
+enum  TAknExSpaneNaviSTabNumber
+    {
+    EAknExSpaneNaviSTabNumber0 = 31,   
+    EAknExSpaneNaviSTabNumber1 = 32,
+    EAknExSpaneNaviSTabNumber2 = 35,
+    EAknExSpaneNaviSTabNumber3 = 36,
+    EAknExSpaneNaviSTabNumber4 = 56,
+    EAknExSpaneNaviSTabNumber5 = 65,
+    EAknExSpaneNaviSTabNumber6 = 43,
+    EAknExSpaneNaviSTabNumber7 = 44,
+    EAknExSpaneNaviSTabNumber8 = -2
+    };
+
+// Numbers for navi pane (used as tab's id or tab index number when select an tab)
+enum  TAknExSpaneNaviNumber
+    {
+    EAknExSpaneNaviNumberM2 = -2,   // This item is used as tabid.
+    EAknExSpaneNaviNumberM1 = -1,   // This item is used as tab index   
+    EAknExSpaneNaviNumber0  = 0,    // This item is used as tab index   
+    EAknExSpaneNaviNumber1,     // This item is used as both tabid and tab index.
+    EAknExSpaneNaviNumber2,     // This item is used as tab index   
+    EAknExSpaneNaviNumber3,     // This item is used as tab index   
+    EAknExSpaneNaviNumber4,     // This item is used as tab index   
+    EAknExSpaneNaviNumber5,     // This item is used as tab index   
+    EAknExSpaneNaviNumber6,     // Not be used
+    EAknExSpaneNaviNumber7,     // Not be used
+    EAknExSpaneNaviNumber8,     // This item is used as tab index   
+    EAknExSpaneNaviNumber9,     // This item is used as tab index   
+    EAknExSpaneNaviNumber14=14  // This item is used as tabid
+    };
+
+
+enum TAknExSpaneSoftkeyCommand
+    {
+    EAknExSpaneSoftkeyNext=300
+    };
+
+// End of File

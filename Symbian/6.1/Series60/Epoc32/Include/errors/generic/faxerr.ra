@@ -1,0 +1,276 @@
+// FAXERR.RA
+//
+// Copyright (c) 1999 Symbian Ltd. All rights reserved.
+//
+
+RESOURCE ARRAY r_error_res_fax_errors
+	{
+	items=
+		{
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_modem_not_working;			// -101
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -102
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -103
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -104
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_frame_fail;				// -105
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -106
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -107
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -108
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -109
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_no_dial;					// -110
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_no_dial_tone;				// -111
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_busy;						// -112
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_no_answer;					// -113
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_no_carrier;				// -114
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_remote_no_receive;			// -115
+			},
+		SINGLE_ERROR
+			{
+			flags=EErrorResPanicErrorFlag;					// -116
+			},
+		SINGLE_ERROR
+			{
+			flags=EErrorResPanicErrorFlag;					// -117
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -118
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -119
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -120
+			},
+		SINGLE_ERROR
+			{
+			flags=EErrorResPanicErrorFlag;					// -121
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -122
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_receive_timeout;			// -123
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_end;				// -124
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -125
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -126
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -127
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -128
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_premature_hangup;			// -129
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -130
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -131
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -132
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -133
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -134
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -135
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -136
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -137
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -138
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -139
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -140
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -141
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -142
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -143
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -144
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -145
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -146
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -147
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -148
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -149
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -150
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -151
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -152
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -153
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -154
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -155
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -156
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -157
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -158
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -159
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -160
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -161
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -162
+			},
+		SINGLE_ERROR
+			{
+			text=r_error_res_fax_cannot_connect;			// -163
+			}
+		};
+	}
+
+RESOURCE TBUF r_error_res_fax_modem_not_working		{ buf="Could not connect to the fax machine. The fax modem has failed"; }
+RESOURCE TBUF r_error_res_fax_cannot_connect		{ buf="Could not connect to the fax machine."; }
+RESOURCE TBUF r_error_res_fax_frame_fail			{ buf="The connection to the fax machine has been broken."; }
+RESOURCE TBUF r_error_res_fax_no_dial				{ buf="Could not connect to the fax machine. Could not dial fax number"; }
+RESOURCE TBUF r_error_res_fax_no_dial_tone			{ buf="Could not connect to the fax machine. No dial tone was detected"; }
+RESOURCE TBUF r_error_res_fax_busy					{ buf="Could not connect to the fax machine. The line is busy"; }
+RESOURCE TBUF r_error_res_fax_no_answer				{ buf="Could not connect to the fax machine. The call was not answered"; }
+RESOURCE TBUF r_error_res_fax_no_carrier			{ buf="Could not connect to the fax machine. The call was not answered by a fax machine"; }
+RESOURCE TBUF r_error_res_fax_remote_no_receive		{ buf="Could not send to the fax machine. The fax machine is unable to receive faxes"; }
+RESOURCE TBUF r_error_res_fax_receive_timeout		{ buf="Could not send to the fax machine. The connection timed out"; }
+RESOURCE TBUF r_error_res_fax_cannot_end			{ buf="The connection to the fax machine has been broken"; }
+RESOURCE TBUF r_error_res_fax_premature_hangup		{ buf="Could not receive fax. The fax machine ended the call"; }

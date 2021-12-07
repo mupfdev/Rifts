@@ -1,0 +1,32 @@
+TARGET            Language.app
+TARGETTYPE        app
+UID               0x100039ce 0x10005B90
+TARGETPATH        \system\apps\Language
+
+LANG 01 02 03 06 09 10
+
+SOURCEPATH        ..\src
+SOURCE            Language.cpp
+SOURCE            LanguageApplication.cpp 
+SOURCE            LanguageAppView.cpp
+SOURCE            LanguageAppUi.cpp
+SOURCE            LanguageDocument.cpp 
+
+SOURCEPATH        ..\..\helperfunctions
+SOURCE            EikonEnvironment.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          Language.rss
+
+USERINCLUDE       ..\inc 
+USERINCLUDE       ..\..\helperfunctions
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+LIBRARY           efsrv.lib
+LIBRARY           ws32.lib

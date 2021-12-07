@@ -1,0 +1,30 @@
+TARGET            Cipher.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005C34
+TARGETPATH        \system\apps\cipher
+LANG              SC
+
+SOURCEPATH        ..\src
+SOURCE            Cipher.cpp
+SOURCE            CipherApplication.cpp 
+SOURCE            CipherAppView.cpp
+SOURCE            CipherAppUi.cpp
+SOURCE            CipherDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          Cipher.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib  
+LIBRARY           avkon.lib  
+LIBRARY	          eikcoctl.lib 
+LIBRARY	          eikctl.lib 
+LIBRARY           bafl.lib 
+LIBRARY           estor.lib
+LIBRARY           efsrv.lib

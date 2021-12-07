@@ -1,0 +1,29 @@
+// BitmapsShell.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET        BitmapsShell.app
+TARGETTYPE    app
+UID           0x100039ce 0x1000525B
+TARGETPATH    \system\apps\BitmapsShell
+
+SOURCEPATH    .
+SOURCE        Bitmap.cpp  BitmapsShell.cpp FontBitmapServer.cpp
+SOURCE        BitmapsGraphicsControl.cpp 
+RESOURCE      BitmapsShell.rss
+
+USERINCLUDE   .
+USERINCLUDE   ..\CommonGraphicsExampleFiles
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib efsrv.lib  
+LIBRARY       gdi.lib   bitgdi.lib ws32.lib fbscli.lib
+LIBRARY       cone.lib  apparc.lib
+LIBRARY       eikcore.lib  eikcoctl.lib
+
+START BITMAP grbmap.mbm
+	HEADER
+	SOURCE c8 Smiley.bmp Smilmask.bmp
+END 

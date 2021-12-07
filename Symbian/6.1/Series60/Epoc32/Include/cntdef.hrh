@@ -1,0 +1,156 @@
+// CNTDEF.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+#if !defined(__CNTDEF_HRH__)
+#define __CNTDEF_HRH__
+
+// speed dial uids
+#define KUidSpeedDialOneValue		0x100067C8
+#define KUidSpeedDialTwoValue		0x100067C9
+#define KUidSpeedDialThreeValue		0x100067Ca
+#define KUidSpeedDialFourValue		0x100067Cb
+#define KUidSpeedDialFiveValue		0x100067Cc
+#define KUidSpeedDialSixValue		0x100067Cd
+#define KUidSpeedDialSevenValue		0x100067Ce
+#define KUidSpeedDialEightValue		0x100067Cf
+#define KUidSpeedDialNineValue		0x100067d0
+
+
+// UID's 0x1000401C-0x10004043	Allocated to CntModel
+// UID's 0x1000401C				Note value
+// UID's 0x1000401D-0x10004033	UID values
+// UID's 0x10004034-6			Birthday/URL/inline
+
+#define KUidContactFieldAddressValue        0x1000130C
+#define KUidContactFieldPostOfficeValue		0x10004DF4
+#define KUidContactFieldExtendedAddressValue		0x10004DF5
+#define KUidContactFieldLocalityValue		0x10004DF6
+#define KUidContactFieldRegionValue			0x10004DF7
+#define KUidContactFieldPostCodeValue		0x10004DF8
+#define KUidContactFieldCountryValue		0x10004DF9
+
+#define KUidContactFieldCompanyNameValue    0x1000130D
+#define KUidContactFieldPhoneNumberValue    0x1000130E
+#define KUidContactFieldGivenNameValue      0x1000137C
+#define KUidContactFieldFamilyNameValue     0x1000137D
+#define KUidContactFieldAdditionalNameValue 0x1000178A
+#define KUidContactFieldSuffixNameValue     0x1000178B
+#define KUidContactFieldPrefixNameValue     0x1000178C
+#define KUidContactFieldHiddenValue         0x1000178D
+#define KUidContactFieldEMailValue          0x1000178E
+#define KUidContactFieldMsgValue            0x1000178F
+#define KUidContactFieldSmsValue            0x10001790
+#define KUidContactFieldFaxValue            0x10001791
+
+#define KUidContactFieldDefinedTextValue    0x10001792
+#define KUidContactFieldNoteValue			0x1000401C
+#define KUidContactFieldBirthdayValue		0x10004034
+#define KUidContactFieldUrlValue			0x10004035
+#define KUidContactFieldStorageInlineValue	0x10004036
+#define KUidContactFieldTemplateLabelValue	0x10005780
+#define KUidContactFieldPictureValue		0x10005DD1
+#define KUidContactFieldRingToneValue		0x10006517
+#define KUidContactFieldDTMFValue			0x10006518
+#define KUidContactsVoiceDialFieldValue		0x10006646
+#define KUidContactFieldNoneValue           0x0
+#define KUidContactFieldJobTitleValue		0x10009398
+//
+
+#define KIntContactFieldVCardMapWORK    0x100039DA
+#define KIntContactFieldVCardMapHOME    0x100039DB
+#define KIntContactFieldVCardMapMSG     0x100039DC
+#define KIntContactFieldVCardMapVOICE   0x100039DD
+#define KIntContactFieldVCardMapFAX     0x100039DE
+#define KIntContactFieldVCardMapPREF    0x10003E70
+#define KIntContactFieldVCardMapCELL    0x10003E71
+#define KIntContactFieldVCardMapPAGER   0x10003E72
+#define KIntContactFieldVCardMapBBS     0x100039D5
+#define KIntContactFieldVCardMapMODEM   0x100039D6
+#define KIntContactFieldVCardMapCAR     0x100039D7
+#define KIntContactFieldVCardMapISDN    0x100039D8
+#define KIntContactFieldVCardMapVIDEO   0x100039D9
+#define KIntContactFieldVCardMapDOM     0x10003E80
+
+#define KIntContactFieldVCardMapADR             0x1000401D // now street only
+#define KIntContactFieldVCardMapPOSTOFFICE		0x10004DEA
+#define KIntContactFieldVCardMapEXTENDEDADR	0x10004DEB
+#define KIntContactFieldVCardMapLOCALITY		0x10004DEC
+#define KIntContactFieldVCardMapREGION			0x10004DED
+#define KIntContactFieldVCardMapPOSTCODE		0x10004DEE
+#define KIntContactFieldVCardMapCOUNTRY			0x10004DEF
+#define KIntContactFieldVCardMapAGENT           0x1000401E
+#define KIntContactFieldVCardMapBDAY            0x1000401F
+#define KIntContactFieldVCardMapEMAILINTERNET   0x10004020
+#define KIntContactFieldVCardMapGEO             0x10004021
+#define KIntContactFieldVCardMapLABEL           0x10004022
+#define KIntContactFieldVCardMapLOGO            0x10004023
+#define KIntContactFieldVCardMapMAILER          0x10004024
+#define KIntContactFieldVCardMapNOTE            0x10004025
+#define KIntContactFieldVCardMapORG             0x10004026
+#define KIntContactFieldVCardMapPHOTO           0x10004027
+#define KIntContactFieldVCardMapROLE            0x10004028
+#define KIntContactFieldVCardMapSOUND           0x10004029
+#define KIntContactFieldVCardMapTEL             0x1000402A
+#define KIntContactFieldVCardMapTELFAX          0x1000402B
+#define KIntContactFieldVCardMapTITLE           0x1000402C
+#define KIntContactFieldVCardMapURL             0x1000402D
+#define KIntContactFieldVCardMapUnusedN         0x1000402E
+#define KIntContactFieldVCardMapUnusedFN        0x1000402F
+#define KIntContactFieldVCardMapNotRequired     0x10004030
+#define KIntContactFieldVCardMapUnknownXDash    0x10004031
+#define KIntContactFieldVCardMapUnknown         0x10004032
+#define KIntContactFieldVCardMapUID             0x10004033
+#define KIntContactFieldVCardMapINTL            0x10005DBE
+#define KIntContactFieldVCardMapPOSTAL          0x10005DBF
+#define KIntContactFieldVCardMapPARCEL          0x10005DC0
+#define KIntContactFieldVCardMapGIF		        0x10005DC1
+#define KIntContactFieldVCardMapCGM             0x10005DC2
+#define KIntContactFieldVCardMapWMF             0x10005DC3
+#define KIntContactFieldVCardMapBMP             0x10005DC4
+#define KIntContactFieldVCardMapMET             0x10005DC5
+#define KIntContactFieldVCardMapPMB             0x10005DC6
+#define KIntContactFieldVCardMapDIB             0x10005DC7
+#define KIntContactFieldVCardMapPICT            0x10005DC8
+#define KIntContactFieldVCardMapTIFF            0x10005DC9
+#define KIntContactFieldVCardMapPDF             0x10005DCA
+#define KIntContactFieldVCardMapPS              0x10005DCB
+#define KIntContactFieldVCardMapJPEG            0x10005DCC
+#define KIntContactFieldVCardMapMPEG            0x10005DCD
+#define KIntContactFieldVCardMapMPEG2           0x10005DCE
+#define KIntContactFieldVCardMapAVI             0x10005DCF
+#define KIntContactFieldVCardMapQTIME           0x10005DD0
+#define KIntContactFieldVCardMapTZ				0x10006519
+#define KIntContactFieldVCardMapKEY				0x1000651A
+
+#define KIntContactFieldVCardMapX509			0x1000654E
+#define KIntContactFieldVCardMapPGP				0x1000654F
+#define KIntContactFieldVCardMapSMIME			0x10006550
+
+
+
+
+
+#define KStorageTypeText			0
+#define KStorageTypeStore			1
+#define KStorageTypeContactItemId	2
+#define KStorageTypeDateTime		3
+
+enum EContactFieldCategory
+	{
+	EContactCategoryNone=0,
+	EContactCategoryHome=1,
+	EContactCategoryWork=2,
+	EContactCategoryOther=3
+	};
+
+enum EContactFieldFlags
+	{
+	EContactFieldFlagHidden			=0x01,
+	EContactFieldFlagReadOnly		=0x02,
+	EContactFieldFlagSynchronize	=0x04,
+	EContactFieldFlagDisabled		=0x08
+	};
+
+#endif

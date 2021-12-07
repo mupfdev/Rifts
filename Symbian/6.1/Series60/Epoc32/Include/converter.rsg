@@ -1,0 +1,17 @@
+#define R_CNV_MAINFORM                            0x112f0004
+#define R_CNV_MAINFORM_FORM                       0x112f0005
+#define R_CNV_MAINFORM_MENUBAR                    0x112f0006
+#define R_CNV_MAINFORM_MENUPANE                   0x112f0007
+#define R_CNV_RATESFORM                           0x112f0008
+#define R_CNV_RATESFORM_FORM                      0x112f0009
+#define R_CNV_RATESFORM_TITLE                     0x112f000a
+#define R_CNV_RATESFORM_MENUBAR                   0x112f000b
+#define R_CNV_RATESFORM_MENUPANE                  0x112f000c
+#define R_CNV_RATESFORM_SOFTKEYS                  0x112f000d
+#define R_CNV_CONFIRMATION_QUERY                  0x112f000e
+#define R_CNV_UNITNAME_QUERY                      0x112f000f
+#define R_QTN_FLDR_NAME_ALREADY_USED              0x112f0010
+#define R_CNV_MAINFORM_NORATE                     0x112f0011
+#define R_CNV_MAINFORM_NORATE_PLURAL              0x112f0012
+#define R_CNV_MAINFORM_INVALIDVALUE               0x112f0013
+#define R_CNV_MODEL                               0x112f0014

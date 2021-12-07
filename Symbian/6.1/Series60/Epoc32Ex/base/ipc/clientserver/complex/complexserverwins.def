@@ -1,0 +1,4 @@
+EXPORTS
+; NEW:
+	?StartThread@@YAHXZ @ 1 NONAME ; int __cdecl StartThread(void)
+

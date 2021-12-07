@@ -1,0 +1,14 @@
+/* Copyright (c) 2002, Nokia. All rights reserved */
+
+#ifndef __ERRORUI_HRH__
+#define __ERRORUI_HRH__
+
+/** ErrorUi enumerate command codes */
+enum TErrorUiIds
+    {
+    EErrorUiNote	= 1,  // start value must not be 0
+    EErrorUiQuery	= 2
+    };
+
+
+#endif // __ERRORUI_HRH__

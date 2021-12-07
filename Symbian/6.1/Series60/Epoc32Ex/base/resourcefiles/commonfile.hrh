@@ -1,0 +1,29 @@
+// ReadDataFromRF.HRH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+
+				// define the maximum length of the txt string
+#define TEXTMAX 256
+
+				// define some flags
+#define EFlagItem1  0x0001
+#define EFlagItem2  0x0002
+#define EFlagItem3  0x0004
+#define EFlagItem4  0x0008
+
+#define EFlagItem5  0x0010
+#define EFlagItem6  0x0020
+#define EFlagItem7  0x0040
+#define EFlagItem8  0x0080
+
+#define EFlagItem9  0x0100
+#define EFlagItem10 0x0200
+#define EFlagItem11 0x0400
+#define EFlagItem12 0x0800
+
+#define EFlagItem13 0x1000
+#define EFlagItem14 0x2000
+#define EFlagItem15 0x4000
+#define EFlagItem16 0x8000

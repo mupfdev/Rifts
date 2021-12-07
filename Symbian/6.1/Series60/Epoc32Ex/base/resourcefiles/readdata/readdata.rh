@@ -1,0 +1,26 @@
+// ReadData.rh
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+//
+//changes made - Moved TEXT and LTEXT to position before byte and double
+
+#include "CommonFile.hrh"
+
+// for defining a single data resource
+STRUCT DATA
+	{
+	WORD  	wrd=16;
+	WORD  	flags=0;
+	LONG  	lng;
+	LTEXT  	txt(TEXTMAX);// variable length but fixed max.
+	LTEXT 	ltxt;		 // variable length
+	BYTE  	byt; 
+	DOUBLE 	dbl=0.0;
+	}
+
+// for first resource in file, for ConfirmSignature()
+STRUCT SIGNATURE
+	{
+	LONG version;
+	SRLINK self;
+	}

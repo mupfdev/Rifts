@@ -1,0 +1,21 @@
+/*
+* ============================================================================
+*  Name     : Bld.inf
+*  Part of  : AknExGrid
+*  Copyright (c) 2003 Nokia.
+* ============================================================================
+*/
+
+
+PRJ_PLATFORMS
+WINS THUMB ARMI
+
+PRJ_EXPORTS
+//\AknSample\AknExGrid\rom\AknExGrid.iby \epoc32\rom\include\AknExGrid.iby
+
+PRJ_MMPFILES
+AknExGrid.mmp
+
+PRJ_TESTMMPFILES
+
+// End of File

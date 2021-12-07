@@ -1,0 +1,11 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+#ifndef __TESTFRAME_HRH__
+#define __TESTFRAME_HRH__
+
+
+enum TtestframeIds
+	{
+	ETestFrameCmdRunTests = 100
+	};
+
+#endif // __TESTFRAME_HRH__

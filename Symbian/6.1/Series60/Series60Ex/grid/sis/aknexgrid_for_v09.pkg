@@ -1,0 +1,16 @@
+; AknExGrid.pkg
+
+; Languages
+&EN
+
+; Header
+#{"AknExGrid"},(0x10005C32),1,03,223
+
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Target
+"..\..\..\epoc32\release\thumb\urel\AknExGrid.aif"-"!:\system\apps\AknExGrid\AknExGrid.aif"
+"..\..\..\epoc32\release\thumb\urel\AknExGrid.app"-"!:\system\apps\AknExGrid\AknExGrid.app"
+"..\..\..\epoc32\release\thumb\urel\AknExGrid.mbm"-"!:\system\apps\AknExGrid\AknExGrid.mbm"
+"..\..\..\epoc32\release\thumb\urel\AknExGrid.rsc"-"!:\system\apps\AknExGrid\AknExGrid.rsc"
+"..\..\..\epoc32\release\thumb\urel\AknExGrid_caption.rsc"-"!:\system\apps\AknExGrid\AknExGrid_caption.rsc"

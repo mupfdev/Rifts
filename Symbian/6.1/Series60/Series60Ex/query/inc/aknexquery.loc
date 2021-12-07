@@ -1,0 +1,312 @@
+/*
+* =============================================================================
+*  Name     : AknExQuery localise file
+*  Part of  : AknExQuery
+*  Copyright (c) 2003 Nokia.
+* =============================================================================
+*/
+
+#include <bldvariant.hrh>
+
+//  LOCALISATION STRINGS
+
+// Caption
+#define qtn_aknexquery_caption_list     "AKNEXQUERY"
+#define qtn_aknexquery_caption_grid     "AKNEXQUERY"
+
+
+
+//
+// For menu
+//
+#define qtn_aknexquery_app_menu_text1   "Data Query"
+#define qtn_aknexquery_app_menu_text2   "Confirmation Query"
+#define qtn_aknexquery_app_menu_text3   "List Query"
+#define qtn_aknexquery_app_menu_text4   "MultiSelection Query"
+#define qtn_aknexquery_app_menu_text5   "Layout"
+#define qtn_aknexquery_app_menu_text7   "MultiLine Data Query"
+#define qtn_aknexquery_app_menu_text9   "Exit"
+ 
+//
+// For r_aknexquery_data_list_menu1
+//
+#define qtn_aknexquery_data_list_text1   "TEXT INPUT 1"
+#define qtn_aknexquery_data_list_text4   "TEXT INPUT 2"
+#define qtn_aknexquery_data_list_text8   "TEXT INPUT 3"
+
+
+//
+// For r_aknexquery_data_list_menu2
+//
+#define qtn_aknexquery_data_list_text10  "SELECT YES/NO"
+#define qtn_aknexquery_data_list_text16  "SELECT OK/CANCEL"
+
+
+//
+// For r_aknexquery_data_list_menu3
+//
+#define qtn_aknexquery_data_list_text48  "SELECT LIST 1"
+#define qtn_aknexquery_data_list_text52  "SELECT LIST 2"
+#define qtn_aknexquery_data_list_text61  "GLOBAL LIST"
+
+//
+// For r_aknexquery_data_list_menu4
+//
+#define qtn_aknexquery_data_list_text54  "MULTISELECT LIST"
+
+
+//
+// For r_aknexquery_data_list_menu5
+//
+#define qtn_aknexquery_data_list_text28  "NUMBER INPUT"
+#define qtn_aknexquery_data_list_text30  "CODE INPUT"
+#define qtn_aknexquery_data_list_text33  "TIME INPUT"
+#define qtn_aknexquery_data_list_text35  "DATE INPUT"
+
+//
+// For r_aknexquery_data_list_menu7
+//
+#define qtn_aknexquery_data_list_text44  "MULTIPLE INPUT"
+
+
+
+//
+// For CBA
+//
+#define qtn_aknexquery_tdlg_cba_ok       " Ok "
+#define qtn_aknexquery_tdlg_cba_back     " Back "
+
+//
+// For operation message 
+//
+#define qtn_aknexquery_title_message     "Query\nSample Application"
+#define qtn_aknexquery_operate_message   "Press right softkey to\ndisplay next sample"
+
+//
+// For confirmation query
+//
+#define qtn_aknexquery_con_label_text    "Do you wish\nto continue\nthe task?"
+
+//
+// For answer message
+//
+#define qtn_aknexquery_yes_ok_message    "approved"
+#define qtn_aknexquery_no_can_message    "discarded"
+
+//
+// For data query
+//
+#define qtn_aknexquery_data_label_text   "Enter name :"
+#ifdef __AVKON_APAC__
+#define qtn_aknexquery_initial_text      <0x957F><0x540D><0x5B57>
+#define qtn_aknexquery_long_text         <0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>"\n"<0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>"\n"<0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>"\n"<0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57><0x957F><0x540D><0x5B57>
+#else
+#define qtn_aknexquery_initial_text      "abcdefg"
+#define qtn_aknexquery_long_text         "AAAAAAAaaaaaaa\nBBBBBBBbbbbbbb\nCCCCCCCcccccc\nDDDDDDDddddddd"
+#endif
+
+//
+// For code query
+//
+#define qtn_aknexquery_code_label_text   "Enter code :"
+
+//
+// For date query
+//
+#define qtn_aknexquery_date_label_text   "Enter date :"
+#define qtn_aknexquery_date_initial      "20000222:"
+#define qtn_aknexquery_date_initial2     "20000111:"
+
+//
+// For time query
+//
+#define qtn_aknexquery_time_label_text   "Enter time :"
+#define qtn_aknexquery_time_initial      "20000222:100500.000000"
+#define qtn_aknexquery_time_initial2     "20000111:200600.000000"
+
+//
+// For number query
+//
+#define qtn_aknexquery_num_label_text    "Enter number :"
+
+//
+// For duration query
+//
+#define qtn_aknexquery_dura_label_text   "Enter duration :"
+
+//
+// For phoneunmber query
+//
+#define qtn_aknexquery_phonenumber_label_text   "Enter phone number"
+
+//
+// For pin query
+//
+#define qtn_aknexquery_pin_label_text           "Enter pin code :"
+
+//
+// For listbox item of editor handler
+//
+#define qtn_aknexquery_editor_item1      " Text"
+#define qtn_aknexquery_editor_item2      " Password"
+#define qtn_aknexquery_editor_item3      " Date"
+#define qtn_aknexquery_editor_item4      " Time"
+#define qtn_aknexquery_editor_item5      " Duration"
+#define qtn_aknexquery_editor_item6      " Number"
+
+//
+// For listbox item of roller handler
+//
+#define qtn_aknexquery_roller_item1      " Date"
+#define qtn_aknexquery_roller_item2      " Time"
+
+//
+// For listbox item of multiline handler
+//
+#define qtn_aknexquery_multiline_item1   " Text and Text"
+#define qtn_aknexquery_multiline_item2   " Text and Code"
+#define qtn_aknexquery_multiline_item3   " Code and Text"
+#define qtn_aknexquery_multiline_item4   " Code and Code"
+#define qtn_aknexquery_multiline_item5   " Text and Date"
+#define qtn_aknexquery_multiline_item6   " Text and Time"
+#define qtn_aknexquery_multiline_item7   " Code and Date"
+#define qtn_aknexquery_multiline_item8   " Code and Time"
+#define qtn_aknexquery_multiline_item9   " Date and Date"
+#define qtn_aknexquery_multiline_item10  " Date and Time"
+#define qtn_aknexquery_multiline_item11  " Time and Date"
+#define qtn_aknexquery_multiline_item12  " Time and Time"
+#define qtn_aknexquery_multiline_item13  " Text and Number"
+#define qtn_aknexquery_multiline_item14  " Code and Number"
+#define qtn_aknexquery_multiline_item15  " Text and Duration"
+#define qtn_aknexquery_multiline_item16  " Code and Duration"
+#define qtn_aknexquery_multiline_item17  " Date and Duration"
+#define qtn_aknexquery_multiline_item18  " Time and Duration"
+
+//
+// For listbox item of key handler
+//
+#define qtn_aknexquery_key_item1         " Text (1 row)"
+#define qtn_aknexquery_key_item2         " Text (5 rows)"
+#define qtn_aknexquery_key_item3         " Multiline data query"
+
+//
+// For listbox item of icon handler
+//
+#define qtn_aknexquery_icon_item1        " Text"
+#define qtn_aknexquery_icon_item2        " Code"
+
+//
+// For sub popup data
+//
+#define qtn_aknexquery_sub_popup_title   "Select Item :"
+#define qtn_aknexquery_sub_popup_data1   "Item 1"
+#define qtn_aknexquery_sub_popup_data2   "Item 2"
+#define qtn_aknexquery_sub_popup_data3   "Item 3"
+#define qtn_aknexquery_sub_popup_data4   "Item 4"
+#define qtn_aknexquery_sub_popup_data5   "Item 5"
+
+//
+// For list query tittle message
+//
+#define qtn_aknexquery_list_title        "Welcome note :"
+
+//
+// For list single pane
+//
+#define qtn_aknexquery_list_item1        "Edit"
+#define qtn_aknexquery_list_item2        "On"
+#define qtn_aknexquery_list_item3        "Off"
+
+//
+// For list single heading pane
+//
+#define qtn_aknexquery_list_head_item1   "Head1\tEdit"
+#define qtn_aknexquery_list_head_item2   "Head2\tOn"
+#define qtn_aknexquery_list_head_item3   "Head3\tOff"
+
+//
+// For list single graphic pane
+//      
+#define qtn_aknexquery_list_graph_item1  "1\tEdit"
+#define qtn_aknexquery_list_graph_item2  "1\tOn"
+#define qtn_aknexquery_list_graph_item3  "1\tOff"
+
+//
+// For list single graphic pane
+//      
+#define qtn_aknexquery_head_graph_item1  "1\tHead1\tEdit"
+#define qtn_aknexquery_head_graph_item2  "1\tHead2\tOn"
+#define qtn_aknexquery_head_graph_item3  "1\tHead3\tOff"
+
+//
+// For multi selection query
+//
+#define qtn_aknexquery_selection_title   "Ringing :"
+#define qtn_aknexquery_selection_item1   "1\tVIP"
+#define qtn_aknexquery_selection_item2   "1\tFamily"
+#define qtn_aknexquery_selection_item3   "1\tColleogues"
+#define qtn_aknexquery_selection_item4   "1\tClients"
+#define qtn_aknexquery_selection_item5   "1\tFriends"
+
+//
+// For number query with heading
+//
+#define qtn_aknexquery_numquery_withhead_head   "Heading text"  
+#define qtn_aknexquery_numquery_withhead_prompt "Enter number:"
+
+// For message query
+//
+#ifdef __AVKON_APAC__
+#define qtn_aknexquery_message_text1   <0x54C8><0x7F57>","<0x5F53><0x4F60><0x80FD><0x6CE8><0x610F><0x5230><0x65F6>","<0x6211><0x662F><0x4E00><0x5168><0x7403><0x6027><0x4FE1><0x606F><0x95EE><0x9898>"."<0x6211><0x975E><0x5E38><0x51C9><0x6210><0x5206><0x662F>","<0x4F60><0x4E0D><0x601D><0x8003><0x5417>"?"<0x4E00><0x4FE1><0x606F><0x95EE><0x9898><0x80FD><0x4E3E><0x884C><0x8BB8><0x591A><0x6587><0x672C><0x548C><0x5B83><0x968F><0x7740><0x4E00><0x5F62><0x8C61><0x6709><0x4E00><0x4E2A><0x88C5><0x6876><0x76D6><0x7684><0x5DE5><0x4EBA>"."
+#else
+#define qtn_aknexquery_message_text1   "Hello, I'm a global message query as you can see. I'm very cool component, don't you think? A message query can hold a lot of text and it has a header with an image."
+#endif
+#define qtn_aknexquery_message_text2   "1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890"
+#define qtn_aknexquery_message_text3   "3.\n1415926535 8979323846 2643383279 5028841971 6939937510 5820974944 5923078164 0628620899 8628034825 3421170679 8214808651 3282306647 0938446095 5058223172 5359408128 4811174502 8410270193 8521105559 6446229489 5493038196"
+#define qtn_aknexquery_prompt_text     "Header text"
+
+// For  query with prompt text
+//
+#define qtn_aknexquery_prompt_1_line   "Enter Name:"
+#define qtn_aknexquery_prompt_2_line   "Long prompt text of two line:"
+#define qtn_aknexquery_prompt_3_line   "Long prompt text of three line abcdefg hijklmn:"      
+
+
+// For ShowMessageQueryL
+#define qtn_aknexquery_message_text4 "Very long text entry for message query %d. "
+#define qtn_aknexquery_message_text5 "Now two empty lines:\n\n\n...and text continues\n"
+#define qtn_aknexquery_message_text6 " Crap text many lines:\n"
+#define qtn_aknexquery_message_text7 "Loop: "
+#define qtn_aknexquery_message_text8 "\nTHE END!"
+#define qtn_aknexquery_heading_text  "Ari's header"
+
+// For ShowQueryWithHeadingLineL
+#define qtn_aknexquery_message_text9 "Dynamic header as well!"
+
+// For ShowListQueryL
+#define qtn_aknexquery_querydiscarded "Query discarded!!"
+#define qtn_aknexquery_item_selected  "Item %d selected"
+
+// For initial password
+#define qtn_aknexquery_initial_password "root"
+
+// For Cba
+#define qtn_aknexquery_cba_next          "Next"
+
+//
+// For message
+//
+#define qtn_aknexquery_received_message  "Received: "  
+#define qtn_aknexquery_approved_message  "Query approved!!"
+
+// For 
+//
+#define qtn_aknexquery_list_item4        "SMS"
+#define qtn_aknexquery_list_item5        "email"
+#define qtn_aknexquery_list_item6        "fax"
+#define qtn_aknexquery_list_title2       "Send message as:"
+#define qtn_aknexquery_message_text10    "Item %d selected"
+#define qtn_aknexquery_message_text11    "Listbox Cancelled"
+
+// 
+// End of file

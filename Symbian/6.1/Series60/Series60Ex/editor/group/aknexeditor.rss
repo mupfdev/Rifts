@@ -1,0 +1,1842 @@
+/*
+* ============================================================================
+*  Name     : AknExEditor.rss
+*  Part of  : AknExEditor
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    EXED
+
+//  INCLUDES
+
+#include <eikon.rh>
+//#include <eikon.mbg>
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <gulftflg.hrh>
+#include "eikon.rsg"
+
+#include "AknExEditor.rh"
+#include "aknexeditor.hrh"
+#include "aknexeditor.loc"
+
+
+
+//  CONSTANTS
+
+//  MACROS
+
+//  RESOURCE DEFINITIONS
+#define avkon_bitmap_file "z:\\system\\data\\avkon.mbm"
+
+STRUCT AKNEXEDITOR_EDWIN_BORDERTEST
+{
+LONG border_type;
+LONG adjacent;
+WORD editor_width;
+WORD text_limit;
+WORD number_of_lines;
+}
+
+RESOURCE RSS_SIGNATURE
+    {
+    }
+
+RESOURCE TBUF
+    {
+    buf = qtn_aknexeditor_appilcation_title;
+    }
+
+RESOURCE EIK_APP_INFO
+    {
+    status_pane = r_aknexeditor_status_pane;
+    }
+
+
+//----------------------------------------------------
+//   
+//    r_aknexeditor_status_pane
+//    status pane definition
+//
+//----------------------------------------------------
+//
+RESOURCE STATUS_PANE_APP_MODEL r_aknexeditor_status_pane
+    {
+    panes=
+        {
+        SPANE_PANE
+            {
+            id = EEikStatusPaneUidNavi;
+            type = EAknCtNaviPane;
+            resource = r_aknexeditor_navi_decorator;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexeditor_navi_decorator
+//    navi decorator definition.
+//
+//----------------------------------------------------
+//
+RESOURCE NAVI_DECORATOR r_aknexeditor_navi_decorator
+    {
+    type = ENaviDecoratorControlTabGroup;
+    control = TAB_GROUP
+        {
+        tab_width = EAknTabWidthWithOneTab;
+        active = qnn_aknexeditor_tab_active_init; // 0
+        tabs =
+            {
+            TAB
+                {
+                id = EAknExEditorView1Tab; // from application hrh
+                txt = qtn_aknexeditor_tab_dummy;
+                }
+            };
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexeditor_app_menu
+//    application menu pane definition.
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_app_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknCmdExit;
+            txt = qtn_aknexeditor_menu_exit;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdPrev;
+            txt = qtn_aknexeditor_menu_prev_view;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdNext;
+            txt = qtn_aknexeditor_menu_next_view;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_softkeys_options_next
+//    CBA definition (OPTIONS - NEXT)
+//
+//----------------------------------------------------
+//
+RESOURCE CBA r_softkeys_options_next
+    {
+    buttons =
+        {
+        CBA_BUTTON 
+            {
+            id = EAknSoftkeyOptions; 
+            txt = qtn_aknexeditor_cba_options;
+            },
+        CBA_BUTTON 
+            {
+            id = EAknExEditorCmdNext; 
+            txt = qtn_aknexeditor_cba_next;
+            }
+        };
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view1
+//    view1 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view1
+    {
+    menubar = r_aknexeditor_menubar_view1;  
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view1
+//    menu bar definition for view1
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view1
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt=qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane=r_aknexeditor_view1_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view1_menu
+//    menu pane definition for view1
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_view1_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectEdwin1;
+            txt = qtn_aknexeditor_menu_select_edwin;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectGTextEd1;
+            txt = qtn_aknexeditor_menu_select_gtexted;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view1_edwin
+//    resource for edit window control on view1
+//----------------------------------------------------
+//
+RESOURCE EDWIN r_aknexeditor_view1_edwin
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view1_edwin_width;
+    lines= qnn_aknexeditor_view1_edwin_height;
+    maxlength = qnn_aknexeditor_view1_edwin_maxlength;
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view1_gtexted
+//    resource for global text editor control on view1
+//----------------------------------------------------
+//
+RESOURCE GTXTED r_aknexeditor_view1_gtexted
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view1_gtexted_width;
+    height = qnn_aknexeditor_view1_gtexted_height;
+    numlines = qnn_aknexeditor_view1_gtexted_numlines;
+    textlimit= qnn_aknexeditor_view1_gtexted_textlimit;
+    fontcontrolflags = EGulFontControlAll;
+    fontnameflags = EGulNoSymbolFonts;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view1_label1
+//    resource for upper label control on view1
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view1_label1
+    {
+    buf = qtn_aknexeditor_label_edwin;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view1_edwin
+//    resource for lower label control on view1
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view1_label2
+    {
+    buf = qtn_aknexeditor_label_gtexted;
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view4
+//    view4 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view4
+    {
+    menubar = r_aknexeditor_menubar_view4;  
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view4
+//    menu bar definition for view4
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view4
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt=qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane=r_aknexeditor_view4_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view4_menu
+//    menu pane definition for view4
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_view4_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdFont1;
+            txt = qtn_aknexeditor_select_font1;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdFont2;
+            txt = qtn_aknexeditor_select_font2;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdFont3;
+            txt = qtn_aknexeditor_select_font3;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdFont4;
+            txt = qtn_aknexeditor_select_font4;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdFont5;
+            txt = qtn_aknexeditor_select_font5;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdFont6;
+            txt = qtn_aknexeditor_select_font6;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdLatinPlain12;
+            txt = qtn_aknexeditor_select_sysfont1;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdLatinBold12;
+            txt = qtn_aknexeditor_select_sysfont2;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdLatinBold13;
+            txt = qtn_aknexeditor_select_sysfont3;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdLatinBold17;
+            txt = qtn_aknexeditor_select_sysfont4;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdLatinBold19;
+            txt = qtn_aknexeditor_select_sysfont5;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdNumberPlain5;
+            txt = qtn_aknexeditor_select_sysfont6;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdClockBold30;
+            txt = qtn_aknexeditor_select_sysfont7;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdLatinClock14;
+            txt = qtn_aknexeditor_select_sysfont8;
+            }
+
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view4_gtexted
+//    resource for global text editor control on view4
+//----------------------------------------------------
+//
+RESOURCE GTXTED r_aknexeditor_view4_gtexted
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view4_gtexted_width;
+    height = qnn_aknexeditor_view4_gtexted_height;
+    numlines = qnn_aknexeditor_view4_gtexted_numlines;
+    textlimit= qnn_aknexeditor_view4_gtexted_textlimit;
+    fontcontrolflags = EGulFontControlAll;
+    fontnameflags = EGulNoSymbolFonts;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view4_label1
+//    resource for label control on view4
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view4_label1
+    {
+    buf = qtn_aknexeditor_view4_label1;
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view5
+//    view5 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view5
+    {
+    menubar = r_aknexeditor_menubar_view5;
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view5
+//    menu bar definition for view5
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view5
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view5_edwin
+//    resource for edit window controls on view5
+//----------------------------------------------------
+//
+RESOURCE EDWIN r_aknexeditor_view5_edwin
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view5_edwin_width;
+    lines= qnn_aknexeditor_view5_edwin_height;
+    maxlength = qnn_aknexeditor_view5_edwin_maxlength;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view5_gtexted
+//    resource for global text editor controls on view5
+//----------------------------------------------------
+//
+RESOURCE GTXTED r_aknexeditor_view5_gtexted
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view5_gtexted_width;
+    height = qnn_aknexeditor_view5_gtexted_height;
+    numlines = qnn_aknexeditor_view5_gtexted_numlines;
+    textlimit= qnn_aknexeditor_view5_gtexted_textlimit;
+    fontcontrolflags = EGulFontControlAll;
+    fontnameflags = EGulNoSymbolFonts;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view5_edwin
+//    strings for label controls on view5
+//----------------------------------------------------
+//
+RESOURCE ARRAY r_aknexeditor_view5_labels
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexeditor_view5_label1; },
+        LBUF { txt = qtn_aknexeditor_view5_label2; },
+        LBUF { txt = qtn_aknexeditor_view5_label3; },
+        LBUF { txt = qtn_aknexeditor_view5_label4; },
+        LBUF { txt = qtn_aknexeditor_view5_label5; },
+        LBUF { txt = qtn_aknexeditor_view5_label6; }
+        };
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view6
+//    view6 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view6
+    {
+    menubar = r_aknexeditor_menubar_view6;
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view6
+//    resource for edit window control on view6
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view6
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view6_edwin
+//    resource for edit window controls on view6
+//----------------------------------------------------
+//
+RESOURCE EDWIN r_aknexeditor_view6_edwin
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view6_edwin_width;
+    lines= qnn_aknexeditor_view6_edwin_height;
+    maxlength = qnn_aknexeditor_view6_edwin_maxlength;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view6_gtexted
+//    resource for global text editor coltrols on view6
+//----------------------------------------------------
+//
+RESOURCE GTXTED r_aknexeditor_view6_gtexted
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view6_gtexted_width;
+    height = qnn_aknexeditor_view6_gtexted_height;
+    numlines = qnn_aknexeditor_view6_gtexted_numlines;
+    textlimit= qnn_aknexeditor_view6_gtexted_textlimit;
+    fontcontrolflags = EGulFontControlAll;
+    fontnameflags = EGulNoSymbolFonts;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view6_labels
+//    strings for label controls on view6
+//----------------------------------------------------
+//
+RESOURCE ARRAY r_aknexeditor_view6_labels
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexeditor_view6_label1; },
+        LBUF { txt = qtn_aknexeditor_view6_label2; },
+        LBUF { txt = qtn_aknexeditor_view6_label3; },
+        LBUF { txt = qtn_aknexeditor_view6_label4; }
+        };
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view7
+//    view7 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view7
+    {
+    menubar = r_aknexeditor_menubar_view7;
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view7
+//    resource for edit window control on view7
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view7
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view7_gtexted
+//    resource for global text editor coltrols on view7
+//----------------------------------------------------
+//
+RESOURCE GTXTED r_aknexeditor_view7_gtexted
+    {
+    flags = EAknEditorFlagDefault;
+    width = qnn_aknexeditor_view7_gtexted_width;
+    height = qnn_aknexeditor_view7_gtexted_height;
+    numlines = qnn_aknexeditor_view7_gtexted_numlines;
+    textlimit= qnn_aknexeditor_view7_gtexted_textlimit;
+    fontcontrolflags = EGulFontControlAll;
+    fontnameflags = EGulNoSymbolFonts;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view7_labels
+//    strings for label controls on view7
+//----------------------------------------------------
+//
+RESOURCE ARRAY r_aknexeditor_view7_labels
+    {
+    items = 
+        {
+        LBUF { txt = qtn_aknexeditor_view7_label1; },
+        LBUF { txt = qtn_aknexeditor_view7_label2; },
+        LBUF { txt = qtn_aknexeditor_view7_label3; }
+        };
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view9
+//    view9 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view9
+    {
+    menubar = r_aknexeditor_menubar_view9;  
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view9
+//    menu bar definition for view9
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view9
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane=r_aknexeditor_view9_menu;
+            txt=qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view9_menu
+//    menu pane definition for view9
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_view9_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectEdwin1;
+            txt = qtn_aknexeditor_menu_select_edwin;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectGTextEd1;
+            txt = qtn_aknexeditor_menu_select_gtexted;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdShowForm;
+            txt = qtn_aknexeditor_menu_showform;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view9_edwin
+//    resource for edit window control on view9
+//----------------------------------------------------
+//
+RESOURCE EDWIN r_aknexeditor_view9_edwin
+    {
+    flags = EEikEdwinAllowUndo;
+    width = qnn_aknexeditor_view9_edwin_width;
+    lines= qnn_aknexeditor_view9_edwin_height;
+    maxlength = qnn_aknexeditor_view9_edwin_maxlength;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view9_gtexted
+//    resource for global text editor control on view9
+//----------------------------------------------------
+//
+RESOURCE GTXTED r_aknexeditor_view9_gtexted
+    {
+    flags = EEikEdwinAllowUndo;
+    width = qnn_aknexeditor_view9_gtexted_width;
+    height = qnn_aknexeditor_view9_gtexted_height;
+    numlines = qnn_aknexeditor_view9_gtexted_numlines;
+    textlimit= qnn_aknexeditor_view9_gtexted_textlimit;
+    fontcontrolflags = EGulFontControlAll;
+    fontnameflags = EGulNoSymbolFonts;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view9_label1
+//    resource for upper label control on view9
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view9_label1
+    {
+    buf = qtn_aknexeditor_label_edwin;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view9_label2
+//    resource for lower label control on view9
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view9_label2
+    {
+    buf = qtn_aknexeditor_label_gtexted;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view9_dialog
+//    view9 dialog resource
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_aknexeditor_view9_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagButtonsRight | EEikDialogFlagCbaButtons |
+            EEikDialogFlagNoTitleBar;
+    buttons = R_AVKON_SOFTKEYS_OK_BACK;
+    form = r_aknexeditor_form_view9;
+    } 
+// ---------------------------------------------------------
+//    r_aknexeditor_view9_form
+//    view9 form definition
+// ---------------------------------------------------------
+//
+RESOURCE FORM r_aknexeditor_form_view9
+    {
+    flags = 0;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            id = EAknExEditorIDForForm9Edwin;
+            prompt = qtn_aknexeditor_label_edwin;
+            control = EDWIN
+                {
+                flags = EAknEditorFlagDefault;
+                width = qnn_aknexeditor_view9_edwin_width;
+                lines = qnn_aknexeditor_view9_edwin_height;
+                maxlength = qnn_aknexeditor_view9_edwin_maxlength;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtGlobalTextEditor;
+            id = EAknExEditorIDForForm9Global;
+            prompt = qtn_aknexeditor_label_gtexted;
+            control = GTXTED
+                {
+                flags = EAknEditorFlagDefault;
+                width = qnn_aknexeditor_view9_gtexted_width;
+                height = qnn_aknexeditor_view9_gtexted_height;
+                numlines = qnn_aknexeditor_view9_gtexted_numlines;
+                textlimit = qnn_aknexeditor_view9_gtexted_textlimit;
+                fontcontrolflags = EGulFontControlAll;
+                fontnameflags = EGulNoSymbolFonts;
+                };
+            }
+        };
+    }
+
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view21
+//    view21 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view21
+    {
+    menubar = r_aknexeditor_menubar_view21;  
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view21
+//    menu bar definition for view21
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view21
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_view21_menu;
+            //txt = qtn_aknexeditor_menu_dummy;
+            }
+
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view21_menu
+//    menu pane definition for view21
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_view21_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdReadIPAddress;
+            txt = qtn_aknexeditor_menu21_readipaddress;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdDisplayIPAddress;
+            txt = qtn_aknexeditor_menu21_displayipaddress;
+            }
+        };
+    }
+
+
+RESOURCE IP_FIELD r_aknexeditor_view21_ipaddress
+    {
+    first_field = 12;
+    second_field = 34;
+    third_field = 56;
+    fourth_field = 78;
+    }
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view21_label
+//    resource for view21 label
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view21_label
+    {
+    buf = qtn_aknexeditor_view21_label;
+    }
+
+//String definitions
+
+RESOURCE TBUF32 r_aknexeditor_view21_createdfromresource
+    {
+    buf = qtn_aknexeditor_view21_createfromresource;
+    }
+
+RESOURCE TBUF32 r_aknexeditor_view21_setgetminmax
+    {
+    buf = qtn_aknexeditor_view21_setgetminmax;
+    }
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view22
+//    view22 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view22
+    {
+    menubar = r_aknexeditor_menubar_view22;
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view22
+//    menu bar definition for view22
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view22
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_view22_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view22_menu
+//    menu pane definition for view22
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_view22_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectTimeEditor;
+            txt = qtn_aknexeditor_menu_select_time_editor;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectDateEditor;
+            txt = qtn_aknexeditor_menu_select_date_editor;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectDurationEditor;
+            txt = qtn_aknexeditor_menu_select_duration_editor;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectTimeAndDateEditor;
+            txt = qtn_aknexeditor_menu_select_time_and_date_editor;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdShowForm;
+            txt = qtn_aknexeditor_menu_showform;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view22_label1
+//    resource for view22 label1
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view22_label1
+    {
+    buf = qtn_aknexeditor_view22_label1;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view22_label2
+//    resource for view22 label2
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view22_label2
+    {
+    buf = qtn_aknexeditor_view22_label2;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view22_label3
+//    resource for view22 label3
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view22_label3
+    {
+    buf = qtn_aknexeditor_view22_label3;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view22_label4
+//    resource for view22 label4
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view22_label4
+    {
+    buf = qtn_aknexeditor_view22_label4;
+    }
+// ---------------------------------------------------------
+//   r_aknexeditor_view22_time_editor
+//   Time editor control
+// ---------------------------------------------------------
+//
+RESOURCE TIME_EDITOR r_aknexeditor_view22_time_editor
+    {
+    minTime = TIME
+        {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        };
+    maxTime = TIME
+        {
+        second = 59;
+        minute = 59;
+        hour = 23;
+        };
+    }
+// ---------------------------------------------------------
+//   r_aknexeditor_view22_date_editor
+//   Date editor control
+// ---------------------------------------------------------
+//
+RESOURCE DATE_EDITOR r_aknexeditor_view22_date_editor
+    {
+    minDate = DATE
+        {
+        year = 1900;
+        };
+    maxDate = DATE
+        {
+        year = 2100;
+        };
+    }
+// ---------------------------------------------------------
+//   r_aknexeditor_view22_time_and_date_editor
+//   TimeAndDate editor control
+// ---------------------------------------------------------
+//
+
+RESOURCE TIME_AND_DATE_EDITOR r_aknexeditor_view22_time_and_date_editor
+    {
+    minTimeAndDate = TIME_AND_DATE
+        {
+        year = 1900;
+        };
+    maxTimeAndDate = TIME_AND_DATE
+        {
+        year = 2100;
+        };
+    flags = EEikTimeWithoutSecondsField;
+    }
+// ---------------------------------------------------------
+//   r_aknexeditor_view22_duration_editor
+//   TimeAndDate editor control
+// ---------------------------------------------------------
+//
+// This seems not to be used (RSD 4.4.2002)
+RESOURCE DURATION_EDITOR r_aknexeditor_view22_duration_editor
+    {
+    minDuration = DURATION
+        {
+        seconds = 0;
+        };
+    maxDuration = DURATION
+        {
+        // 20 hours
+        seconds = 72000;
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view22_dialog
+//    view22 dialog resource
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_aknexeditor_view22_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagButtonsRight | EEikDialogFlagCbaButtons |
+            EEikDialogFlagNoTitleBar;
+    buttons = R_AVKON_SOFTKEYS_OK_BACK;
+    form = r_aknexeditor_form_view22;
+    } 
+// ---------------------------------------------------------
+//    r_aknexeditor_view22_form
+//    view22 form definition
+// ---------------------------------------------------------
+//
+RESOURCE FORM r_aknexeditor_form_view22
+    {
+    flags = 0;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            id = EAknExEditorIDForForm22Time;
+            prompt = qtn_aknexeditor_view22_dialog_prompt1;
+            control = TIME_EDITOR
+                {
+                minTime = TIME
+                    {
+                    second = 0;
+                    minute = 0;
+                    hour = 0;
+                    };
+                maxTime = TIME
+                    {
+                    second = 59;
+                    minute = 59;
+                    hour = 23;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDateEditor;
+            id = EAknExEditorIDForForm22Date;
+            prompt = qtn_aknexeditor_view22_dialog_prompt2;
+            control = DATE_EDITOR
+                {
+                minDate = DATE
+                    {
+                    year = 1900;
+                    };
+                maxDate = DATE
+                    {
+                    year = 2100;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtDurationEditor;
+            id = EAknExEditorIDForForm22Duration;
+            prompt = qtn_aknexeditor_view22_dialog_prompt3;
+            control = DURATION_EDITOR
+                {
+                minDuration = DURATION
+                    {
+                    seconds = 0;
+                    };
+                maxDuration = DURATION
+                    {
+                    seconds = 720000;
+                    };
+                };
+            }
+        };
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view23
+//    view23 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view23
+    {
+    menubar = r_aknexeditor_menubar_view23;
+    cba = r_softkeys_options_next;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view23
+//    menu bar definition for view23
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view23
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_view23_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view23_menu
+//    menu pane definition for view23
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_view23_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectNumSecretEditor;
+            txt = qtn_aknexeditor_menu_select_numsecret_editor;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelectSecretEditor;
+            txt = qtn_aknexeditor_menu_select_secret_editor;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdShowEditorText;
+            txt = qtn_aknexeditor_menu_show_editortext;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdShowForm;
+            txt = qtn_aknexeditor_menu_showform;
+            },
+        MENU_ITEM
+            {
+            cascade = r_aknexeditor_view23_menu_initializedisplay;
+            txt = qtn_aknexeditor_menu23_initializedisplay;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdView23Reset;
+            txt = qtn_aknexeditor_menu23_reset;
+            },
+        MENU_ITEM
+            {
+            cascade = r_aknexeditor_view23_menu_setmaxlength;
+            txt = qtn_aknexeditor_menu23_setmaxlength;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdView23SetText;
+            txt = qtn_aknexeditor_menu23_settext;
+            }
+
+        };
+    }
+
+RESOURCE MENU_PANE r_aknexeditor_view23_menu_initializedisplay
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdView23InitializeDisplay5;
+            txt = qtn_aknexeditor_menu23_initializedisplay_five;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdView23InitializeDisplay10;
+            txt = qtn_aknexeditor_menu23_initializedisplay_ten;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_aknexeditor_view23_menu_setmaxlength
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdView23SetMaxLength5;
+            txt = qtn_aknexeditor_menu23_setmaxlength_five;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdView23SetMaxLength10;
+            txt = qtn_aknexeditor_menu23_setmaxlength_ten;
+            }
+        };
+    }
+
+
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view23_label2
+//    resource for view23 label1
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view23_label1
+    {
+    buf = qtn_aknexeditor_view23_label1;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view23_label2
+//    resource for view23 label2
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view23_label2
+    {
+    buf = qtn_aknexeditor_view23_label2;
+    }
+// ---------------------------------------------------------
+//   r_aknexeditor_view23_numsecret_editor
+//   Numeric password editor control
+// ---------------------------------------------------------
+//
+RESOURCE NUMSECRETED r_aknexeditor_view23_numsecret_editor
+    {
+    num_code_chars = 6;
+    }
+// ---------------------------------------------------------
+//   r_aknexeditor_view23_secret_editor
+//   Alpha numecir password editor control
+// ---------------------------------------------------------
+//
+RESOURCE SECRETED r_aknexeditor_view23_secret_editor
+    {
+    num_letters = 7;
+    }
+
+RESOURCE SECRETED r_aknexeditor_view23_secret_editor_apitester
+    {   
+
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view23_dialog
+//    view23 dialog resource
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_aknexeditor_view23_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagButtonsRight | EEikDialogFlagCbaButtons |
+            EEikDialogFlagNoTitleBar;
+    buttons = R_AVKON_SOFTKEYS_OK_BACK;
+    form = r_aknexeditor_form_view23;
+    } 
+// ---------------------------------------------------------
+//    r_aknexeditor_view23_form
+//    view23 form definition
+// ---------------------------------------------------------
+//
+RESOURCE FORM r_aknexeditor_form_view23
+    {
+    flags = 0;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtNumericSecretEditor;
+            id = EAknExEditorIDForForm23NumericSecret;
+            prompt = qtn_aknexeditor_view23_dialog_prompt1;
+            control = NUMSECRETED
+                {
+                num_code_chars = 5;
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtSecretEd;
+            id = EAknExEditorIDForForm23Secret;
+            prompt = qtn_aknexeditor_view23_dialog_prompt2;
+            control = SECRETED
+                {
+                num_letters = 6;
+                };
+            }
+        };
+    }
+
+
+RESOURCE TBUF32 r_aknexeditor_view23_settext_pin
+    {
+    buf = qtn_aknexeditor_view23_settext_pin;
+    }
+
+
+//----------------------------------------------------
+//    r_aknexeditor_view25
+//    view25 definition
+//----------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_aknexeditor_view25
+    {
+    menubar = r_aknexeditor_menubar_view25;
+    cba = r_softkeys_options_next;
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_menubar_view25
+//    menu bar definition for view25
+//---------------r-------------------------------------
+//
+RESOURCE MENU_BAR r_aknexeditor_menubar_view25
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_view25_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view25_menu
+//    menu pane definition for view25
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_aknexeditor_view25_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelect12HoursEditor;
+            txt = qtn_aknexeditor_menu_select_12hours_editor;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdSelect24HoursEditor;
+            txt = qtn_aknexeditor_menu_select_24hours_editor;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCmdShowForm;
+            txt = qtn_aknexeditor_menu_showform;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view25_label1
+//    resource for view25 label1
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view25_label1
+    {
+    buf = qtn_aknexeditor_view25_label1;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_view25_label2
+//    resource for view25 label2
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view25_label2
+    {
+    buf = qtn_aknexeditor_view25_label2;
+    }
+
+// ---------------------------------------------------------
+//   r_aknexeditor_view25_12hours_editor
+//   Time editor control
+// ---------------------------------------------------------
+//
+RESOURCE TIME_EDITOR r_aknexeditor_view25_12hours_editor
+    {
+    minTime = TIME
+        {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        };
+    maxTime = TIME
+        {
+        second = 59;
+        minute = 59;
+        hour = 11;
+        };
+    }
+
+// ---------------------------------------------------------
+//   r_aknexeditor_view25_24hours_editor
+//   Time editor control
+// ---------------------------------------------------------
+//
+RESOURCE TIME_EDITOR r_aknexeditor_view25_24hours_editor
+    {
+    minTime = TIME
+        {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        };
+    maxTime = TIME
+        {
+        second = 59;
+        minute = 59;
+        hour = 23;
+        };
+    flags = EEikTimeForce24HourFormat;
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view25_dialog
+//    view25 dialog resource
+//----------------------------------------------------
+//
+RESOURCE DIALOG r_aknexeditor_view25_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagButtonsRight | EEikDialogFlagCbaButtons |
+            EEikDialogFlagNoTitleBar;
+    buttons = R_AVKON_SOFTKEYS_OK_BACK;
+    form = r_aknexeditor_form_view25;
+    } 
+
+// ---------------------------------------------------------
+//    r_aknexeditor_form_view25
+//    view25 form definition
+// ---------------------------------------------------------
+//
+RESOURCE FORM r_aknexeditor_form_view25
+    {
+    flags = 0;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            id = EAknExEditorIDForForm2512Hours;
+            prompt = qtn_aknexeditor_view25_dialog_prompt1;
+            control = TIME_EDITOR
+                {
+                minTime = TIME
+                    {
+                    second = 0;
+                    minute = 0;
+                    hour = 0;
+                    };
+                maxTime = TIME
+                    {
+                    second = 59;
+                    minute = 59;
+                    hour = 11;
+                    };
+                };
+            },
+        DLG_LINE
+            {
+            type = EEikCtTimeEditor;
+            id = EAknExEditorIDForForm2524Hours;
+            prompt = qtn_aknexeditor_view25_dialog_prompt2;
+            control = TIME_EDITOR
+                {
+                minTime = TIME
+                    {
+                    second = 0;
+                    minute = 0;
+                    hour = 0;
+                    };
+                maxTime = TIME
+                    {
+                    second = 59;
+                    minute = 59;
+                    hour = 23;
+                    };
+                flags = EEikTimeForce24HourFormat;
+                };
+            }
+        };
+    }
+
+//------------------------------------------------------
+//
+// Start of resource for AknExEditor view 30
+//
+//------------------------------------------------------
+
+
+RESOURCE AVKON_VIEW r_aknexeditor_view30
+    {
+    menubar = r_aknexeditor_menubar_view30;
+    cba = r_softkeys_options_next;
+    }
+
+
+RESOURCE MENU_BAR r_aknexeditor_menubar_view30
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_view30_mainmenu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_aknexeditor_view30_mainmenu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            cascade = r_aknexeditor_view30_ccpumenu;
+            txt = qtn_aknexeditor_menu30_ccpusupport;
+            }
+        };
+    }
+
+
+RESOURCE MENU_PANE r_aknexeditor_view30_ccpumenu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorSelectText;
+            txt = qtn_aknexeditor_menu30_selecttext;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorClearSelection;
+            txt = qtn_aknexeditor_menu30_clearselection;
+            },
+
+        MENU_ITEM
+            {
+            command = EAknExEditorCut;
+            txt = qtn_aknexeditor_menu30_cut;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorCopy;
+            txt = qtn_aknexeditor_menu30_copy;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorPaste;
+            txt = qtn_aknexeditor_menu30_paste;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorUndo;
+            txt = qtn_aknexeditor_menu30_undo;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view30_input
+//    resource for view30 input
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view30_input
+    {
+    buf = qtn_aknexeditor_view30_input;
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view30_enabled
+//    resource for view30 enabled
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view30_enabled
+    {
+    buf = qtn_aknexeditor_view30_enabled;
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view30_disabled
+//    resource for view30 disabled
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view30_disabled
+    {
+    buf = qtn_aknexeditor_view30_disabled;
+    }
+
+//------------------------------------------------------
+//
+// Start of resource for AknExEditor view 33
+//
+//------------------------------------------------------
+
+
+RESOURCE AVKON_VIEW r_aknexeditor_view33
+    {
+    menubar = r_aknexeditor_menubar_view33;
+    cba = r_softkeys_options_next;
+    }
+
+
+RESOURCE MENU_BAR r_aknexeditor_menubar_view33
+    {
+    titles=
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_app_menu;
+            txt = qtn_aknexeditor_menu_dummy;
+            },
+        MENU_TITLE
+            {
+            menu_pane = r_aknexeditor_view33_mainmenu;
+            txt = qtn_aknexeditor_menu_dummy;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_aknexeditor_view33_mainmenu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EAknExEditorSetWordWrapTrue;
+            txt = qtn_aknexeditor_menu33_wordwraptrue;
+            },
+        MENU_ITEM
+            {
+            command = EAknExEditorSetWordWrapFalse;
+            txt = qtn_aknexeditor_menu33_wordwrapfalse;
+            }
+        };
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view33_flagset
+//    resource for view33 flagset
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view33_flagset
+    {
+    buf = qtn_aknexeditor_view33_flagset;
+    }
+
+//----------------------------------------------------
+//    r_aknexeditor_view33_flagnotset
+//    resource for view33 flagnotset
+//----------------------------------------------------
+//
+RESOURCE TBUF32 r_aknexeditor_view33_flagnotset
+    {
+    buf = qtn_aknexeditor_view33_flagnotset;
+    }
+
+//-----------------------------------------------------
+//    r_aknexeditor_font1
+//    font
+//----------------------------------------------------
+//
+RESOURCE NAMED_FONT r_aknexeditor_font1
+    {
+    name = qfn_aknexeditor_fontname1;
+    height = qfn_aknexeditor_fontsize1;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_font2
+//    font
+//----------------------------------------------------
+//
+RESOURCE NAMED_FONT r_aknexeditor_font2
+    {
+    name = qfn_aknexeditor_fontname2;
+    height = qfn_aknexeditor_fontsize2;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_font3
+//    font
+//----------------------------------------------------
+//
+RESOURCE NAMED_FONT r_aknexeditor_font3
+    {
+    name = qfn_aknexeditor_fontname3;
+    height = qfn_aknexeditor_fontsize3;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_font4
+//    font
+//----------------------------------------------------
+//
+RESOURCE NAMED_FONT r_aknexeditor_font4
+    {
+    name = qfn_aknexeditor_fontname4;
+    height = qfn_aknexeditor_fontsize4;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_font5
+//    font
+//----------------------------------------------------
+//
+RESOURCE NAMED_FONT r_aknexeditor_font5
+    {
+    name = qfn_aknexeditor_fontname5;
+    height = qfn_aknexeditor_fontsize5;
+    }
+//----------------------------------------------------
+//    r_aknexeditor_font6
+//    font
+//----------------------------------------------------
+//
+RESOURCE NAMED_FONT r_aknexeditor_font6
+    {
+    name = qfn_aknexeditor_fontname6;
+    height = qfn_aknexeditor_fontsize6;
+    }
+
+//----------------------------------------------------
+//   
+//    r_aknexeditor_editor_indicator_text_format
+//    Text format for "EAknNaviPaneEditorIndicatorMessageLength"
+//
+//----------------------------------------------------
+//
+RESOURCE TBUF16 r_aknexeditor_editor_indicator_text_format
+    {
+    buf = qtn_aknexeditor_editor_indicator_text_format;
+    }
+
+RESOURCE TBUF32 r_aknexeditor_editor_normal_title
+    {
+    buf = qtn_aknexeditor_editor_normal_title;
+    }
+
+RESOURCE TBUF32 r_aknexeditor_editor_abnormal_title
+    {
+    buf = qtn_aknexeditor_editor_abnormal_title;
+    }
+
+RESOURCE TBUF32 r_aknexeditor_container4_label_format_pt
+    {
+    buf = qtn_aknexeditor_container4_label_format_pt;
+    }
+
+// added by Srini Chokkarapu
+
+RESOURCE IP_FIELD_EDITOR r_ip_field_editor
+    {
+    min_field_values = IP_FIELD
+        {
+        first_field=1;
+        second_field=1;
+        third_field=1;
+        fourth_field=1;
+        };
+    max_field_values = IP_FIELD
+        {
+        first_field=128;
+        second_field=128;
+        third_field=128;
+        fourth_field=128;
+        };
+    flags = 0;
+    }
+
+
+RESOURCE DIALOG r_aknexeditor_blank_note
+    {
+    flags = EAknInformationNoteFlags;
+    buttons=R_AVKON_SOFTKEYS_EMPTY;
+    items=
+        {
+        DLG_LINE
+            {
+            type=EAknCtNote;
+            id=EAknExEditorBlankNote;
+            control= AVKON_NOTE
+                {
+                layout = EGeneralLayout;
+                singular_label = "";
+                plural_label = "";
+                imagefile = avkon_bitmap_file;
+                imageid = EMbmAvkonQgn_note_info;
+                imagemask = EMbmAvkonQgn_note_info_mask;
+                };
+            }
+        };
+    }
+
+// End of File

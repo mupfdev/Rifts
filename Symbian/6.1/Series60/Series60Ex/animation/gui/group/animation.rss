@@ -1,0 +1,74 @@
+// Copyright c 2001, Nokia. All rights reserved.
+
+
+NAME ANIM
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "animation.hrh"
+
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF { buf=""; }
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+    menubar = r_animation_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_animation_menubar
+//   Menubar for Animation example
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_BAR r_animation_menubar
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_animation_menu;}
+       };
+    }
+
+
+// ---------------------------------------------------------
+//   
+//   r_animation_menu
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_animation_menu
+    {
+    items = 
+        {
+        MENU_ITEM {command = EEikCmdReset; txt = "Reset";},
+        MENU_ITEM {command = EAknSoftkeyExit;  txt = "Exit";}
+        };
+    }

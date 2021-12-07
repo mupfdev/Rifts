@@ -1,0 +1,30 @@
+// Copyright (c) 2001, Nokia. All rights reserved.
+
+TARGET			sound.app
+TARGETTYPE		app
+UID				0x100039ce 0x10005b87
+TARGETPATH		\system\apps\sound
+
+SOURCEPATH		..\src
+SOURCE			soundapp.cpp 
+SOURCE			soundappui.cpp 
+SOURCE			sounddoc.cpp
+SOURCE			soundview.cpp
+SOURCE			toneadapter.cpp
+SOURCE			playeradapter.cpp
+SOURCE			recorderadapter.cpp
+
+SOURCEPATH		..\group
+RESOURCE		sound.rss
+
+USERINCLUDE     ..\inc
+
+SYSTEMINCLUDE   \epoc32\include
+
+LIBRARY			euser.lib 
+LIBRARY         apparc.lib
+LIBRARY			cone.lib
+LIBRARY			eikcore.lib 
+LIBRARY			eikcoctl.lib
+LIBRARY			mediaclientaudio.lib
+LIBRARY			avkon.lib

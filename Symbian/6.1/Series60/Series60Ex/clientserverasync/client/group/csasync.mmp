@@ -1,0 +1,27 @@
+TARGET            CSAsync.app
+TARGETTYPE        app
+UID               0x100039CE 0x10005B7B
+TARGETPATH        \system\apps\CSAsync
+
+SOURCEPATH        ..\src
+SOURCE            CSAsyncRequestHandler.cpp
+SOURCE            TimeServerSession.cpp
+SOURCE            CSAsync.cpp
+SOURCE            CSAsyncApplication.cpp 
+SOURCE            CSAsyncAppView.cpp
+SOURCE            CSAsyncAppUi.cpp
+SOURCE            CSAsyncDocument.cpp 
+
+SOURCEPATH        ..\group
+RESOURCE          CSAsync.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           cone.lib 
+LIBRARY           eikcore.lib
+LIBRARY           eikcoctl.lib
+LIBRARY           avkon.lib  

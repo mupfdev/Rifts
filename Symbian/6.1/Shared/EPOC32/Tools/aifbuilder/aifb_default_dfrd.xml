@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<SUPPORTEDDFRDS>
+	<DFRD BPP = "c8">
+		<NAME>Avkon</NAME>
+		<ICONS>
+			<ICON HEIGHT = "42" WIDTH = "29">42x29</ICON>
+			<ICON HEIGHT = "44" WIDTH = "44">44x44</ICON>
+		</ICONS>
+	</DFRD>
+</SUPPORTEDDFRDS>
+

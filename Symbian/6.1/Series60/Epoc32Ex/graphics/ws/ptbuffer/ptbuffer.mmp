@@ -1,0 +1,17 @@
+// PtBuffer.mmp
+//
+
+TARGET			PtBuffer.app
+TARGETTYPE		app
+TARGETPATH      	\system\apps\PtBuffer
+UID			0x100039ce 0x100098e4
+SOURCEPATH		.
+SOURCE			AppHolder.cpp Base.cpp PointerMoveBuffer.cpp
+RESOURCE		PtBuffer.rss
+USERINCLUDE		.
+SYSTEMINCLUDE		\epoc32\include
+LIBRARY			euser.lib
+LIBRARY			apparc.lib
+LIBRARY			cone.lib
+LIBRARY			eikcore.lib 
+LIBRARY			ws32.lib    

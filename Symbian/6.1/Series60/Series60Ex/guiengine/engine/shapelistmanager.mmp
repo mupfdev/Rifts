@@ -1,0 +1,17 @@
+// ShapeListManager.mmp
+//
+
+TARGET		ShapeListManager.dll
+TARGETTYPE		dll
+UID			0x1000008d 0x10005B7E
+
+SOURCEPATH		..\engine
+SOURCE		ShapeListManager.cpp 
+SOURCE		Shape.cpp
+SOURCE		Rectangle.cpp
+SOURCE		Circle.cpp
+
+USERINCLUDE		..\inc
+SYSTEMINCLUDE	\epoc32\include
+LIBRARY		euser.lib
+LIBRARY		estor.lib

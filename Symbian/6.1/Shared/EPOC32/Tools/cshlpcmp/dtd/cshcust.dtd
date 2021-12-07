@@ -1,0 +1,104 @@
+<?xml encoding="ISO-8859-1"?>
+<!-- The CS-Help xml DTD for customization files 
+Version 002
+Date 18-01-01
+Copyright 2001 Symbian Ltd.
+-->
+
+<!-- Parameter elements -->
+
+<!-- The CS-Help customization file -->
+<!ELEMENT cshcust (bodystyle|titlestyle|lists|listbullet1style|listbullet2style
+|tipeffects|noteeffects|importanteffects|parastyle|charstyle)*>
+
+<!-- paragraph style -->
+<!ELEMENT parastyle (#PCDATA|b|i|sup|sub)*> <!-- contents is text (e.g "Note:") -->
+<!ATTLIST parastyle name CDATA #REQUIRED>  
+<!ATTLIST parastyle font CDATA #REQUIRED>
+<!ATTLIST parastyle size CDATA #REQUIRED>
+<!ATTLIST parastyle style (normal|roman|bold|italic|bolditalic) "normal"> <!-- normal and roman are equivalent -->
+<!ATTLIST parastyle color (foreground|background|CDATA) "foreground"> <!-- device fore, back, or 0xBBGGRR -->
+<!ATTLIST parastyle justify (left|right|centre|center|full) "left">
+<!ATTLIST parastyle spacing CDATA "0"> <!-- line spacing within para -->
+<!ATTLIST parastyle before CDATA "0">
+<!ATTLIST parastyle after CDATA "0">
+<!ATTLIST parastyle left CDATA "0">
+<!ATTLIST parastyle right CDATA "0"> 
+<!ATTLIST parastyle image CDATA ""> 
+
+<!-- character style -->
+<!ELEMENT charstyle EMPTY> 
+<!ATTLIST charstyle name CDATA #IMPLIED>  
+<!ATTLIST charstyle font CDATA #IMPLIED>
+<!ATTLIST charstyle style (normal|roman|bold|italic|bolditalic) #IMPLIED> <!-- normal and roman are equivalent -->
+<!ATTLIST charstyle size CDATA #IMPLIED>
+<!ATTLIST charstyle color (foreground|background|CDATA) #IMPLIED> <!-- device fore, back, or 0xBBGGRR -->
+
+<!-- body style="parastyle" --> <!-- Not required if <bodystyle> is declared, but that is deprecated -->
+<!ELEMENT body EMPTY>
+<!ATTLIST body style CDATA #REQUIRED>
+
+<!-- bodystyle --> <!-- Deprecated, use parastyle -->
+<!ELEMENT bodystyle EMPTY>
+<!ATTLIST bodystyle fontstyle CDATA #IMPLIED>
+<!ATTLIST bodystyle size CDATA #IMPLIED>
+
+<!-- titlestyle --> <!-- Deprecated -->
+<!ELEMENT titlestyle EMPTY>
+<!ATTLIST titlestyle fontstyle CDATA #IMPLIED>
+<!ATTLIST titlestyle size CDATA #IMPLIED>
+
+<!-- lists -->
+<!ELEMENT lists EMPTY>
+<!ATTLIST lists leftindent CDATA #REQUIRED>
+
+<!-- listbullet1style -->
+<!ELEMENT listbullet1style EMPTY>
+<!ATTLIST listbullet1style bulletchar CDATA #REQUIRED>
+
+<!-- listbullet2style -->
+<!ELEMENT listbullet2style EMPTY>
+<!ATTLIST listbullet2style bulletchar CDATA #REQUIRED>
+
+<!-- tipeffects --> <!-- Deprecated, use parastyle -->
+<!ELEMENT tipeffects (#PCDATA|b|i|sup|sub)*>
+<!ATTLIST tipeffects leftindent CDATA #IMPLIED>
+<!ATTLIST tipeffects archive CDATA #IMPLIED>
+<!ATTLIST tipeffects name CDATA #IMPLIED>
+
+<!-- noteffects --> <!-- Deprecated, use parastyle -->
+<!ELEMENT noteeffects (#PCDATA|b|i|sup|sub)*>
+<!ATTLIST noteeffects leftindent CDATA #IMPLIED>
+<!ATTLIST noteeffects archive CDATA #IMPLIED>
+<!ATTLIST noteeffects name CDATA #IMPLIED>
+
+<!-- importanteffects --> <!-- Deprecated, use parastyle -->
+<!ELEMENT importanteffects (#PCDATA|b|i|sup|sub)*>
+<!ATTLIST importanteffects leftindent CDATA #IMPLIED>
+<!ATTLIST importanteffects archive CDATA #IMPLIED>
+<!ATTLIST importanteffects name CDATA #IMPLIED>
+
+<!-- manual formating -->
+<!-- Bold text formatting -->
+<!ELEMENT b (#PCDATA|i|sup|sub)*>
+
+<!-- italic text formatting -->
+<!ELEMENT i (#PCDATA|sup|sub)*>
+
+<!-- supscript text formatting -->
+<!ELEMENT sup (#PCDATA|sub)*>
+
+<!-- subscript text formatting -->
+<!ELEMENT sub (#PCDATA)>
+
+<!-- Effect text entities -->
+<!ENTITY ldquote "&#8220;">
+<!ENTITY rdquote "&#8221;">
+<!ENTITY lquote "&#8216;">
+<!ENTITY rquote "&#8217;">
+<!ENTITY mdash "&#8212;">
+<!ENTITY ndash "&#8211;">
+<!ENTITY break "&#8232;">
+<!ENTITY nbhyphen "&#8208;">
+<!ENTITY nbspace "&#160;">
+<!ENTITY tab '&#160;&#160;&#160;'>

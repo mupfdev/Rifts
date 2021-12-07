@@ -1,0 +1,13 @@
+// COSMILEY.RH
+//
+// Copyright (c) 1997-1999 Symbian Ltd.  All rights reserved.
+//
+
+STRUCT SMILEYCONTROL
+	{
+	BYTE mood=EHappy;
+	WORD width=300;
+	}
+
+
+

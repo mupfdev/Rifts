@@ -1,0 +1,9 @@
+// BitmapsShell.hrh
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+enum TExampleMenuCommands
+	{
+	EExampleShellSelectBitmap=100,
+	EExampleShellSelectFbs=101
+	};

@@ -1,0 +1,17 @@
+// ReadAllEntries.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for sourcepath and user includes
+
+TARGET	       ReadAllEntries.exe
+TARGETTYPE     exe
+UID            0
+
+SOURCEPATH     .
+SOURCE	       ReadAllEntries.cpp
+
+USERINCLUDE    ..\CommonFiles
+SYSTEMINCLUDE  \Epoc32\include
+
+LIBRARY	       euser.lib efsrv.lib estor.lib agnmodel.lib

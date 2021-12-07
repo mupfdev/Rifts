@@ -1,0 +1,83 @@
+/*
+* =============================================================================
+*  Name     : AknExList.mmp
+*  Part of  : AknExList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+TARGET          AknExList.app
+TARGETTYPE      app
+TARGETPATH      \system\apps\AknExList
+UID             0x100039CE 0x10005C31
+
+RESOURCE        AknExList.rss
+RESOURCE        AknExList_caption.rss
+LANG            SC
+
+SOURCEPATH      ..\Src
+SOURCE          AknExListApp.cpp 
+SOURCE          AknExListAppUi.cpp
+SOURCE          AknExListDocument.cpp
+SOURCE          AknExListBaseView.cpp
+SOURCE          AknExListBaseContainer.cpp
+SOURCE          AknExListColumnView.cpp
+SOURCE          AknExListColumnContainer.cpp
+SOURCE          AknExListFlagTestView.cpp
+SOURCE          AknExListFlagTestContainer.cpp
+SOURCE          AknExListFormView.cpp
+SOURCE          AknExListFormContainer.cpp
+SOURCE          AknExListMarkView.cpp
+SOURCE          AknExListMarkContainer.cpp
+SOURCE          AknExListSettingView.cpp
+SOURCE          AknExListSettingContainer.cpp
+SOURCE          AknExListSetPageView.cpp
+SOURCE          AknExListSetPageContainer.cpp
+SOURCE          AknExListSetPage.cpp
+
+USERINCLUDE     . ..\Inc
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY         euser.lib
+LIBRARY         apparc.lib
+LIBRARY         cone.lib
+LIBRARY         eikcore.lib
+LIBRARY         eikcoctl.lib
+LIBRARY         avkon.lib
+LIBRARY         eikctl.lib 
+LIBRARY         bafl.lib
+
+// Creates Mbm file.
+START BITMAP    AknExList.mbm
+HEADER
+TARGETPATH      \system\apps\AknExList
+SOURCEPATH      ..\DataSrc
+SOURCE          C12 golgo2.bmp
+SOURCE          C12 golgo2m.bmp
+SOURCE          C12 golgo3.bmp
+SOURCE          C12 golgo3m.bmp
+SOURCE          C12 golgo4.bmp
+SOURCE          C12 golgo4m.bmp
+SOURCE          C12 golgo5.bmp
+SOURCE          C12 golgo5m.bmp
+SOURCE          C12 golgo6.bmp
+SOURCE          C12 golgo6m.bmp
+SOURCE          C12 athene.bmp
+SOURCE          C12 athenem.bmp
+SOURCE          C12 marked_add.bmp
+SOURCE          C12 marked_add_m.bmp
+SOURCE          C12 check.bmp
+SOURCE          1   checkm.bmp
+SOURCE          C12 non_check.bmp
+SOURCE          1   non_checkm.bmp
+SOURCE          C12 prop_group_small.bmp
+SOURCE          1   prop_group_small_m.bmp
+SOURCE          C12 LShellIcon.bmp
+SOURCE          1   LShellIconM.bmp
+END
+
+// DEFFILE ?filename
+AIF AknExList.aif ..\aif AknExListaif.rss c12 \
+    AknExList_Icon.bmp AknExList_Icon_mask.bmp aknexlist_lst.bmp aknexlist_lst_mask.bmp
+
+// End of File

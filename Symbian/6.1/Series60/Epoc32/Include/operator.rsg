@@ -1,0 +1,3 @@
+#define OPERATOR_HOME_PAGE_SETTINGS               0x4af76002
+#define OPERATOR_HOME_PAGE_SOFTKEY                0x4af76003
+#define OPERATOR_HOME_PAGE_COMMAND                0x4af76004

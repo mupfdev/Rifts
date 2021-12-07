@@ -1,0 +1,43 @@
+/*
+* ============================================================================
+*  Name     : AknExSettingList.mmp
+*  Part of  : AknExSettingList
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* ============================================================================
+*/
+
+TARGET          AknExSettingList.app
+TARGETTYPE      app
+UID             0x100039CE 0x10005C29
+TARGETPATH      \System\Apps\AknExSettingList
+
+RESOURCE        AknExSettingList.rss
+RESOURCE        AknExSettingList_caption.rss
+LANG            SC
+
+SOURCEPATH	..\Src
+SOURCE          AknExSettingListApp.cpp
+SOURCE          AknExSettingListAppUi.cpp
+SOURCE          AknExSettingListDocument.cpp
+SOURCE          AknExSettingListView.cpp
+SOURCE          AknExSettingListContainer.cpp
+SOURCE          AknExSettingListListBox.cpp
+SOURCE          AknExSettingListItemData.cpp
+
+USERINCLUDE     . ..\Inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY         euser.lib
+LIBRARY         apparc.lib
+LIBRARY         cone.lib
+LIBRARY         eikcore.lib
+LIBRARY         eikcoctl.lib
+LIBRARY         avkon.lib
+LIBRARY         insock.lib
+
+// DEFFILE ?filename
+AIF AknExSettingList.aif ..\aif AknExSettingListAif.rss c12 \
+  ..\aif\AknExSettingList_Icon.bmp ..\aif\AknExSettingList_Icon_mask.bmp \
+  ..\aif\aknexsettinglist_lst.bmp ..\aif\aknexsettinglist_lst_mask.bmp
+

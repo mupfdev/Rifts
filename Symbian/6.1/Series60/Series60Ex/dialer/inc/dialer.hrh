@@ -1,0 +1,13 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+
+#ifndef __DIALER_HRH__
+#define __DIALER_HRH__
+
+/** Dialer enumerate command codes */
+enum TDialerIds
+    {
+    EDialerDial = 1  // start value must not be 0
+    };
+
+
+#endif // __DIALER_HRH__

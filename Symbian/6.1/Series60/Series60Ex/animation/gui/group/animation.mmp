@@ -1,0 +1,28 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+TARGET            animation.app
+TARGETTYPE        app
+UID               0x100039ce 0x10005b88
+TARGETPATH        \system\apps\animation
+
+SOURCEPATH        ..\src
+SOURCE            animationapplication.cpp
+SOURCE            animationdocument.cpp 
+SOURCE            animationappui.cpp
+SOURCE            animationappview.cpp
+SOURCE            animation.cpp
+
+SOURCEPATH        ..\group
+RESOURCE          animation.rss
+
+USERINCLUDE       ..\inc
+USERINCLUDE       ..\..\client\inc
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib
+LIBRARY           apparc.lib
+LIBRARY           ws32.lib
+LIBRARY           cone.lib
+LIBRARY           animation_client.lib
+LIBRARY           eikcore.lib
+LIBRARY           avkon.lib

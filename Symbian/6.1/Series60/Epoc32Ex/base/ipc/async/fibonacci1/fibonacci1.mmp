@@ -1,0 +1,17 @@
+// Fibonacci1.mmp
+//
+// Copyright (c) 2000 Symbian Ltd.  All rights reserved.
+
+// using relative paths for source and userinclude directories
+
+TARGET        Fibonacci1.exe
+TARGETTYPE    exe
+UID           0
+
+SOURCEPATH    .
+SOURCE        Fibonacci1.cpp
+
+USERINCLUDE   .
+SYSTEMINCLUDE \Epoc32\include
+
+LIBRARY       euser.lib

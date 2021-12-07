@@ -1,0 +1,143 @@
+/*
+* ============================================================================
+*  Name     : fontids.hrh
+*  Part of  : Fonts
+*
+*  Description:
+*		This file contains the definitions of the Avkon font uids and also
+*		defines additional Symbian OS uids used in the past to them
+*  Copyright (c) 2002 Nokia. All rights reserved.
+* ============================================================================
+*/
+#ifndef __FONTIDS_HRH__
+#define __FONTIDS_HRH__
+
+// Avkon font names
+
+
+
+
+#define KScreenFontUidPrcPlain12 0x100059F0
+#define KScreenFontUidPrcPlain16 0x100059F1
+#define KScreenFontUidHongKongPlain16 0x100059F2
+#define KScreenFontUidHongKongPlain12 0x100059F3
+#define KScreenFontUidTaiwanPlain16   0x100059F4
+#define KScreenFontUidTaiwanPlain12   0x100059F5
+#define KScreenFontUidCombinedChinesePlain16  0x100059F6
+#define KScreenFontUidCombinedChinesePlain12  0x100059F7
+
+#define KScreenFontUidStrokes 270491681
+
+
+#define KScreenFontUidAlb12 268458256
+#define KScreenFontUidAlb13 268458257
+#define KScreenFontUidAlb17 268458258
+#define KScreenFontUidAlb19 268458259
+#define KScreenFontUidAlp12 268458260
+#define KScreenFontUidFont17 268458261
+
+#define KScreenFontUidAco13 268458263
+#define KScreenFontUidAco21 268458264
+#define KScreenFontUidAcalc21 268458265
+
+#define KScreenFontUidAcb14 268458266
+#define KScreenFontUidAcb30 268458267
+#define KScreenFontUidAcp5 268458268
+
+#define KScreenFontUidAlpi12 268458353
+#define KScreenFontUidAlbi12 268458355
+#define KScreenFontUidAlp13  268458357
+#define KScreenFontUidAlpi13 268458354
+#define KScreenFontUidAlbi13 268458356
+#define KScreenFontUidAlp17 268458358
+#define KScreenFontUidAlb17b 268458352
+#define KScreenFontUidAlbi17b 268458360
+#define KScreenFontUidAlpi17 268458359
+
+#define KFontStoreSeries60European 268458361
+#define KFontStoreSeries60CalcEuropean 268458362
+#define KFontStoreSeries60BrowserEuropean 268458363
+
+//////////// Deprecated ////////////
+#define KFontStoreCalypsoEuropean 268458361
+#define KFontStoreCalypsoCalcEuropean 268458362
+#define KFontStoreCalypsoBrowserEuropean 268458363
+//////////// Deprecated ////////////
+
+
+// end of Series60 font names
+
+// old versions for compability.
+#define KScreenFontUidAb1312 KScreenFontUidAlb13
+#define KScreenFontUidAb12 KScreenFontUidAlb12
+#define KScreenFontUidAb13 KScreenFontUidAlb13
+#define KScreenFontUidAb17 KScreenFontUidAlb17
+#define KScreenFontUidAb19 KScreenFontUidAlb19
+#define KScreenFontUidAp12 KScreenFontUidAlp12
+
+// Avkon equivalents
+#define KScreenFontUidArialBold8       KScreenFontUidAb12
+#define KScreenFontUidArialBold11      KScreenFontUidAb12
+#define KScreenFontUidArialBold13      KScreenFontUidAb13
+#define KScreenFontUidArialNormal8     KScreenFontUidAp12
+#define KScreenFontUidArialNormal11    KScreenFontUidAp12
+#define KScreenFontUidArialNormal13    KScreenFontUidAb13
+#define KScreenFontUidArialNormal15    KScreenFontUidAb17
+#define KScreenFontUidArialNormal18    KScreenFontUidAb17
+#define KScreenFontUidArialNormal22    KScreenFontUidAb17
+#define KScreenFontUidArialNormal27    KScreenFontUidAb17
+#define KScreenFontUidArialNormal32    KScreenFontUidAb17
+
+#define KScreenFontUidTimesBold8       KScreenFontUidAb12
+#define KScreenFontUidTimesBold11      KScreenFontUidAb12
+#define KScreenFontUidTimesBold13      KScreenFontUidAb13
+#define KScreenFontUidTimesNormal8     KScreenFontUidAp12
+#define KScreenFontUidTimesNormal11    KScreenFontUidAp12
+#define KScreenFontUidTimesNormal13    KScreenFontUidAb13
+#define KScreenFontUidTimesNormal15    KScreenFontUidAb17
+#define KScreenFontUidTimesNormal18    KScreenFontUidAb17
+#define KScreenFontUidTimesNormal22    KScreenFontUidAb17
+#define KScreenFontUidTimesNormal27    KScreenFontUidAb17
+#define KScreenFontUidTimesNormal32    KScreenFontUidAb17
+
+#define KScreenFontUidCourierBold8     KScreenFontUidAb12
+#define KScreenFontUidCourierBold11    KScreenFontUidAb12
+#define KScreenFontUidCourierBold13    KScreenFontUidAb13
+#define KScreenFontUidCourierNormal8   KScreenFontUidAp12
+#define KScreenFontUidCourierNormal11  KScreenFontUidAp12
+#define KScreenFontUidCourierNormal13  KScreenFontUidAb13
+#define KScreenFontUidCourierNormal15  KScreenFontUidAb17
+#define KScreenFontUidCourierNormal18  KScreenFontUidAb17
+#define KScreenFontUidCourierNormal22  KScreenFontUidAb17
+#define KScreenFontUidCourierNormal27  KScreenFontUidAb17
+#define KScreenFontUidCourierNormal32  KScreenFontUidAb17
+
+#define KScreenFontUidCalc13n   KScreenFontUidAb1312
+#define KScreenFontUidCalc18n   KScreenFontUidAb1312
+#define KScreenFontUidCalc24n   KScreenFontUidAb1312
+
+#define KScreenFontUidMon18n    KScreenFontUidAb1312
+#define KScreenFontUidMon18b    KScreenFontUidAb1312
+#define KScreenFontUidMon9n     KScreenFontUidAb1312
+#define KScreenFontUidMon9b     KScreenFontUidAb1312
+
+#define KScreenFontUidTiny1     KScreenFontUidAb1312
+#define KScreenFontUidTiny2     KScreenFontUidAb1312
+#define KScreenFontUidTiny3     KScreenFontUidAb1312
+#define KScreenFontUidTiny4     KScreenFontUidAb1312
+
+#define KFontStoreFileUidEon5   KFontStoreSeries60European
+
+#define KScreenFontUidAgnsym11  KScreenFontUidAb13
+#define KScreenFontUidAgnsym16n KScreenFontUidAb13
+
+#define KScreenFontUidEiksym15  KScreenFontUidAb13
+#define KScreenFontUidCalcinv   KScreenFontUidAb13
+
+#define KScreenFontUidSquashed  KScreenFontUidAp12
+#define KScreenFontUidDigital35 KScreenFontUidAb13
+
+
+#endif // __FONTIDS_HRH__
+
+// End of File

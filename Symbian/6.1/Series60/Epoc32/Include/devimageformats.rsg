@@ -1,0 +1,9 @@
+#define VIDEO_LIBRARY                             1
+#define CLIP_FORMAT_PNG                           2
+#define PNG_CODEC                                 3
+#define CLIP_FORMAT_WMF                           4
+#define CLIP_FORMAT_WMF_APM                       5
+#define CLIP_FORMAT_WMF_CLP                       6
+#define WMF_CODEC                                 7
+#define CLIP_FORMAT_TIFF_LITTLE_ENDIAN            8
+#define CLIP_FORMAT_TIFF_BIG_ENDIAN               9

@@ -1,0 +1,71 @@
+/*
+* =============================================================================
+*  Name     : AknExQuery.mmp
+*  Part of  : AknExQuery
+*  Copyright (c) 2003 Nokia. All rights reserved.
+* =============================================================================
+*/
+
+TARGET          AknExQuery.app
+TARGETTYPE      app
+UID             0x100039CE 0x10005C2B
+TARGETPATH      \system\apps\AknExQuery
+
+RESOURCE        AknExQuery.rss
+RESOURCE        AknExQuery_caption.rss
+LANG            SC
+
+SOURCEPATH      ..\Src
+SOURCE          AknExQueryApp.cpp 
+SOURCE          AknExQueryDocument.cpp
+SOURCE          AknExQueryAppUi.cpp
+SOURCE          AknExQueryView.cpp
+SOURCE          AknExQueryContainer.cpp
+SOURCE          AknExQueryBaseListEventHandler.cpp
+SOURCE          AknExQueryEditorListEventHandler.cpp
+SOURCE          AknExQueryRollerListEventHandler.cpp
+SOURCE          AknExQueryTextAndTextListEventHandler.cpp
+SOURCE          AknExQueryTextAndTimeListEventHandler.cpp
+SOURCE          AknExQueryTimeAndTimeListEventHandler.cpp
+SOURCE          AknExQueryTextAndNumberListEventHandler.cpp
+SOURCE          AknExQueryTextAndDurationListEventHandler.cpp
+SOURCE          AknExQueryTimeAndDurationListEventHandler.cpp
+SOURCE          AknExQueryKeyListEventHandler.cpp
+SOURCE          AknExQueryIconListEventHandler.cpp
+SOURCE          AknExQueryGlobalListObserver.cpp
+
+USERINCLUDE     . ..\Inc
+
+SYSTEMINCLUDE   . \epoc32\include
+
+LIBRARY         euser.lib
+LIBRARY         apparc.lib
+LIBRARY         cone.lib
+LIBRARY         eikcore.lib
+LIBRARY         eikcoctl.lib
+LIBRARY         avkon.lib
+LIBRARY         eikctl.lib
+LIBRARY         bafl.lib
+LIBRARY         aknnotify.lib
+//LIBRARY         FBSCLI.LIB
+LIBRARY         EIKDLG.LIB
+LIBRARY         commonengine.lib
+
+
+// Creates Mbm file.
+START BITMAP    AknExQuery.mbm
+HEADER
+TARGETPATH      \system\apps\AknExQuery
+SOURCEPATH      ..\DataSrc
+SOURCE          C8 anchor_id.bmp
+SOURCE          1  anchor_id_mask.bmp
+SOURCE          C8 LShellIcon.bmp
+SOURCE          C8 Indicato.bmp
+SOURCE          1  Indicatom.bmp
+END
+
+// DEFFILE ?filename
+AIF AknExQuery.aif ..\aif AknExQueryaif.rss c12 \
+    AknExQuery_Icon.bmp AknExQuery_Icon_mask.bmp aknexquery_lst.bmp aknexquery_lst_mask.bmp
+
+// End of File

@@ -1,0 +1,3 @@
+#define R_PUSHMU_DEF_SENDER_INFO                  0x4f566002
+#define R_PUSHMU_DEF_DESCRI_INFO                  0x4f566003
+#define R_PUSHMU_SL_AUTOLOAD_GLNOTE               0x4f566004

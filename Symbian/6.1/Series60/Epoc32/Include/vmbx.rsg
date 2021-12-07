@@ -1,0 +1,6 @@
+#define R_DEFINE_NUMBER_PROMPT                    0x6c0d5003
+#define R_CHANGE_NUMBER_PROMPT                    0x6c0d5004
+#define R_VMBX_NUMBER_QUERY                       0x6c0d5005
+#define R_SAVED_NOTE                              0x6c0d5006
+#define R_NOTE_EMPTY_NUMBER                       0x6c0d5007
+#define R_INVALID_NUMBER_NOTE                     0x6c0d5008

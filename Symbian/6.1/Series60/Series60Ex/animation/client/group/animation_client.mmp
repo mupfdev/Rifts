@@ -1,0 +1,14 @@
+/* Copyright (c) 2001, Nokia. All rights reserved */
+TARGET            animation_client.dll
+TARGETTYPE        dll
+UID               0x100039ce 0x100008ED
+SOURCEPATH        ..\..\client\src
+SOURCE            clientdll.cpp 
+SOURCE            clientimagecommander.cpp
+
+USERINCLUDE       ..\..\client\inc
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY           euser.lib 
+LIBRARY           ws32.lib
+
