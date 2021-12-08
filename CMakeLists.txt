@@ -19,7 +19,7 @@ set(GCC_MODE_DEFS -DNDEBUG -D_UNICODE)
 set(GCC_USER_DEFS -DUID1=0x10000079 -DUID2=0x100039CE -DUID3=0x101FD3F2)
 set(GCC_RUN_COM   ${GCC_BIN_PATH}/gcc -s -fomit-frame-pointer -O ${GCC_FLAGS} ${GCC_COMN_DEFS} ${GCC_MODE_DEFS} ${GCC_USER_DEFS})
 
-set(OBJ_LIST "")
+#set(OBJ_LIST "")
 
 macro(copy_file file source_dir dest_dir)
     message("Copying ${file} to ${dest_dir}")
@@ -39,7 +39,7 @@ macro(add_source sub_dir source)
         WORKING_DIRECTORY
         ${GCC_BIN_PATH})
 
-    list(APPEND OBJ_LIST ${CMAKE_CURRENT_BINARY_DIR}/${base_name}.o)
+#    list(APPEND OBJ_LIST ${CMAKE_CURRENT_BINARY_DIR}/${base_name}.o)
 endmacro()
 
 macro(add_stub source)
@@ -54,6 +54,8 @@ macro(add_stub source)
         ${STUB_DIR}/${source}
         WORKING_DIRECTORY
         ${GCC_BIN_PATH})
+
+#    list(APPEND OBJ_LIST ${CMAKE_CURRENT_BINARY_DIR}/${base_name}.o)
 endmacro()
 
 macro(build_library)
@@ -66,9 +68,8 @@ macro(build_library)
         ${GCC_BIN_PATH})
 endmacro()
 
-macro(build_dll)
-
-endmacro()
+#macro(build_dll)
+#endmacro()
 
 #copy_file(6R49.cfg  "." "system/apps/6r49/")
 #copy_file(6R49F.cfg "." "system/apps/6r49/")
@@ -399,5 +400,5 @@ add_source("Utility/zlib" trees.cpp)
 add_source("Utility/zlib" uncompr.cpp)
 add_source("Utility/zlib" zutil.cpp)
 
-build_library()
-build_dll()
+#build_library()
+#build_dll()
