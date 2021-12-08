@@ -16,9 +16,9 @@ git clone git@github.com:mupfelofen-de/Rifts.git
 ```
 
 The GCC compiler for Symbian S60 is based on Cygwin. For it to work, its
-path (`Symbian\6.1\Shared\EPOC32\gcc\bin`)should be entered in your
-`$PATH` environment variable, otherwise it will not be able to find the
-`cygwin1.dll` file.
+path `[Project_Dir]\Symbian\6.1\Shared\EPOC32\gcc\bin` should be
+included in your `$PATH` environment variable, otherwise it will not be
+able to find the file `cygwin1.dll`.
 
 Once you have done this, simply launch Visual Studio 2019 with [C++
 CMake tools for
