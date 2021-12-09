@@ -27,6 +27,12 @@ void MessageManager::Reset(void)
     TTime currentTime;
     currentTime.UniversalTime();
     m_InitialRandomSeed = currentTime.Int64().Low();
+    m_CurrentSaveSlot   = -1;
+}
+
+MessageQueue& MessageManager::GetMessageQueue()
+{
+    return m_MessageQueue;
 }
 
 bool MessageManager::CheckDefenderProp(uint32 a_FileID)
@@ -34,7 +40,27 @@ bool MessageManager::CheckDefenderProp(uint32 a_FileID)
     return true;
 }
 
+String MessageManager::GameName()
+{
+    return (String)"1";
+}
+
+int MessageManager::GetAveragePlayerLevel()
+{
+    return 1;
+}
+
+int64_t MessageManager::GetBattleID()
+{
+    return -1;
+}
+
 int MessageManager::GetDeviceID()
+{
+    return -1;
+}
+
+const int MessageManager::GetGameType()
 {
     return -1;
 }
@@ -97,6 +123,31 @@ bool MessageManager::IsRemoteEntity(ActorEntity* a_pEntity)
     return false;
 }
 
+int MessageManager::MaxCharacters()
+{
+    return 4;
+}
+
+int MessageManager::MaxPlayers()
+{
+    return 2;
+}
+
+int MessageManager::MaxPointsToWin()
+{
+    return 10;
+}
+
+int MessageManager::MaxRounds()
+{
+    return 10;
+}
+
+int MessageManager::MaxTeams()
+{
+    return 2;
+}
+
 void MessageManager::QueueMessage(MessageBase* a_pMessage, int a_MessageSize)
 {
     (void)a_pMessage;
@@ -133,7 +184,17 @@ void MessageManager::SendMessageFlag(eMESSAGE_FLAG a_Flag, bool a_BroadcastFlag)
     return;
 }
 
+void SendSaveGameMessage()
+{
+    return;
+}
+
 void MessageManager::SendQuitGameMessage()
 {
     return;
+}
+
+bool MessageManager::WriteData(IWriteStream* /*a_pStream*/)
+{
+    return false;
 }

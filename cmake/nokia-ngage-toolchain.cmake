@@ -4,7 +4,6 @@ set(RIFTS_DIR          ${CMAKE_SOURCE_DIR}/Rifts)
 set(SDK_ROOT           ${CMAKE_SOURCE_DIR}/Symbian/6.1)
 set(EPOC_PLATFORM      ${SDK_ROOT}/Shared/EPOC32)
 set(EPOC_LIB           ${SDK_ROOT}/Series60/Epoc32/Release/armi/urel)
-set(STUB_DIR           ${CMAKE_SOURCE_DIR}/Stubs)
 
 set(CMAKE_CXX_COMPILER ${EPOC_PLATFORM}/gcc/bin/gcc.exe)
 set(CMAKE_OBJCOPY      ${EPOC_PLATFORM}/gcc/bin/objcopy.exe)
@@ -45,7 +44,6 @@ include_directories(
     ${EPOC_PLATFORM}/include
     ${SDK_ROOT}/Series60/Epoc32/Include
     ${SDK_ROOT}/Series60/Epoc32/Include/libc
-    ${STUB_DIR}
     ${RIFTS_DIR}/Prototype/NokiaRasterizer/App32/LIB/INC)
 
 set(CORE_FLAGS "-s -fomit-frame-pointer -O -march=armv4t -mthumb-interwork -pipe -nostdinc -Wall -Wno-ctor-dtor-privacy -Wno-unknown-pragmas -Wno-switch -mstructure-size-boundary=8")
@@ -113,5 +111,4 @@ macro(build_dll source uid1 uid2 uid3)
         ${CMAKE_CURRENT_BINARY_DIR}/${source}.map
         COMMAND
         ${EPOC_PLATFORM}/Tools/petran ${CMAKE_CURRENT_BINARY_DIR}/tmp.app ${CMAKE_CURRENT_BINARY_DIR}/${source}.app -nocall -uid1 ${UID1} -uid2 ${UID2} -uid3 ${UID3})
-
 endmacro()

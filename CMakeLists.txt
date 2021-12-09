@@ -3,7 +3,8 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/nokia-ngage-toolchain.cmake)
 
 project(6r49 CXX)
 
-set(SRC_DIR ${RIFTS_DIR}/Code/src)
+set(SRC_DIR  ${RIFTS_DIR}/Code/src)
+set(STUB_DIR ${CMAKE_SOURCE_DIR}/Stubs)
 
 set(UID1 0x10000079)
 set(UID2 0x100039CE)
@@ -33,7 +34,7 @@ set(6r49_sources
     "${SRC_DIR}/Ai/PCCombatAI.cpp"
     "${SRC_DIR}/Ai/PCCombatAISelectionState.cpp"
     "${SRC_DIR}/Ai/PropAI.cpp"
-#    "${SRC_DIR}/Ai/RemoteAI.cpp"
+    "${SRC_DIR}/Ai/RemoteAI.cpp"
     "${SRC_DIR}/Ai/RemoteCombatAI.cpp"
     "${SRC_DIR}/Ai/ScriptCombatAI.cpp"
     "${SRC_DIR}/Ai/WallAI.cpp"
@@ -74,7 +75,7 @@ set(6r49_sources
     "${SRC_DIR}/FrontEnd/HUDManager.cpp"
     "${SRC_DIR}/FrontEnd/ItemMenuWidget.cpp"
     "${SRC_DIR}/FrontEnd/MenuWidget.cpp"
-#    "${SRC_DIR}/FrontEnd/NameGenCore.cpp"
+    "${SRC_DIR}/FrontEnd/NameGenCore.cpp"
     "${SRC_DIR}/FrontEnd/SkillSelectionCore.cpp"
     "${SRC_DIR}/FrontEnd/SpellSelectionCore.cpp"
     "${SRC_DIR}/Game/GameManager.cpp"
@@ -168,7 +169,7 @@ set(6r49_sources
     "${SRC_DIR}/Game/Cores/QuestMenuCore.cpp"
     "${SRC_DIR}/Game/Cores/ReconnectionCore.cpp"
     "${SRC_DIR}/Game/Cores/RewardScreenCore.cpp"
-#    "${SRC_DIR}/Game/Cores/SaveGameCore.cpp"
+    "${SRC_DIR}/Game/Cores/SaveGameCore.cpp"
     "${SRC_DIR}/Game/Cores/ServerActionCore.cpp"
     "${SRC_DIR}/Game/Cores/SettingsMenuCore.cpp"
     "${SRC_DIR}/Game/Cores/SinglePlayerGameCore.cpp"
@@ -242,7 +243,7 @@ set(6r49_sources
 #    "${SRC_DIR}/Network/ArenaManager.cpp"
 #    "${SRC_DIR}/Network/ArenaManagerArena.cpp"
 #    "${SRC_DIR}/Network/ArenaManagerStub.cpp"
-#    "${SRC_DIR}/Network/BluetoothManager.cpp"
+    "${STUB_DIR}/Network/BluetoothManager.cpp"
 #    "${SRC_DIR}/Network/BluetoothPowerSwitch.cpp"
 #    "${SRC_DIR}/Network/IServerAction.cpp"
 #    "${SRC_DIR}/Network/Message.cpp"
@@ -345,5 +346,6 @@ target_compile_definitions(
 target_include_directories(
     ${PROJECT_NAME}
     PUBLIC
+    ${STUB_DIR}
     ${SRC_DIR}
     ${SRC_DIR}/Main)
