@@ -16,7 +16,7 @@ TUid CSystemApp::AppDllUid() const
 
 CApaDocument* CSystemApp::CreateDocumentL()
 {
-    return new (ELeave) CSystemDocument(*this);
+    return CSystemDocument::NewL( *this );
 }
 
 #include <aknkeylock.h>
