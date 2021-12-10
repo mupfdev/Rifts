@@ -1,4 +1,0 @@
-#ifndef BATTERYSTATE_H
-#define BATTERYSTATE_H
-
-#endif /* BATTERYSTATE_H */
