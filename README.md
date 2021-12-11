@@ -1,7 +1,7 @@
 # Rifts: Promise of Power
 
-A toolchain designed to build a DRM- and copy-protection-free version of
-Rifts: Promise of Power for the Nokia N-Gage.
+A toolchain designed to build a DRM-free version of Rifts: Promise of
+Power for the Nokia N-Gage.
 
 ## How-to
 
