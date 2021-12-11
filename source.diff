@@ -1,1496 +1,1143 @@
-diff -ur Rifts/Code/src/Ai/RemoteAI.cpp Rifts_Rework/Code/src/Ai/RemoteAI.cpp
---- Rifts/Code/src/Ai/RemoteAI.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/Ai/RemoteAI.cpp	2021-12-10 20:41:04.120648400 +0100
-@@ -16,7 +16,6 @@
- #include "Game/Sequencer/Sequencer.h"
- #include "Game/Cores/GameCore.h"
- #include "Network/MessageManager.h"
--#include "Network/BluetoothManager.h"
- #include "Render/AnimationModule.h" 
- #include "Game/Sector/SectorModule.h"
- 
-diff -ur Rifts/Code/src/Ai/RemoteCombatAI.cpp Rifts_Rework/Code/src/Ai/RemoteCombatAI.cpp
+diff -ur Rifts/Code/src/Ai/RemoteCombatAI.cpp Rifts_new/Code/src/Ai/RemoteCombatAI.cpp
 --- Rifts/Code/src/Ai/RemoteCombatAI.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/Ai/RemoteCombatAI.cpp	2021-12-10 19:55:23.831002200 +0100
-@@ -435,7 +435,7 @@
++++ Rifts_new/Code/src/Ai/RemoteCombatAI.cpp	2021-12-11 22:06:09.918099500 +0100
+@@ -435,10 +435,14 @@
              //        }
  
              HideAbilityName();
--            if (false == ProcessCoreCombatMessage())
-+            //if (false == ProcessCoreCombatMessage())
++#if USE_BLUETOOTH == 1
+             if (false == ProcessCoreCombatMessage())
              {
                  return 0;
              }
-diff -ur Rifts/Code/src/FrontEnd/FrontEndCore.cpp Rifts_Rework/Code/src/FrontEnd/FrontEndCore.cpp
++#else
++            return 0;
++#endif
+ 
+             GetGlobals()->m_bShowLocator = true;
+             if (m_lNetworkMessages.size() > 0)
+diff -ur Rifts/Code/src/FrontEnd/FrontEndCore.cpp Rifts_new/Code/src/FrontEnd/FrontEndCore.cpp
 --- Rifts/Code/src/FrontEnd/FrontEndCore.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/FrontEnd/FrontEndCore.cpp	2021-12-10 21:16:42.613885100 +0100
-@@ -17,7 +17,6 @@
++++ Rifts_new/Code/src/FrontEnd/FrontEndCore.cpp	2021-12-11 22:36:11.414039100 +0100
+@@ -17,7 +17,9 @@
  #include "RiftsStringID.h"
  #include "Data/EntityDataResource.h"
  #include "Main/PartyData.h"
--#include "Game/Cores/BluetoothConnectionCore.h"
++#if USE_BLUETOOTH == 1
+ #include "Game/Cores/BluetoothConnectionCore.h"
++#endif
  #include "Game/Cores/ArenaMainMenu.h"
  #include "Game/Sector/SectorListResource.h"
  #include "Game/Quests/QuestControl.h"
-@@ -238,15 +237,6 @@
+@@ -177,6 +179,20 @@
+ 
+             g_GameManager->m_StartPositionID = 0;
+             break;
++#if ENABLE_E3_DEMO == 1
++        case FRONTEND_E3DEMO:
++            g_GameManager->m_CurrentMapID = WMAP_NA_Map;
++            g_GameManager->m_CurrentMapNodeID = -1;
++            g_GameManager->m_NextSectorID = 0;
++
++            GetGlobals()->SetCurrentLanguage((Language)LANG_ID_ENGLISH);
++            CreateHackedParty();
++            GetGlobals()->m_NextGameStage = GAME_MAIN_STAGE;
++            g_GameManager->m_NextSectorID = SCTR_DEMO_Town_01;
++
++            g_GameManager->m_StartPositionID = 0;
++            break;
++#endif
+         case FRONTEND_LOADGAME:
+             {
+                 GameFileCore* pCore = BB_NEW(GameFileCore);
+@@ -238,6 +254,7 @@
                  GetGlobals()->m_NextGameStage = GAME_MAIN_STAGE;
              }
              break;
--        case FRONTEND_BLUETOOTH: 
--            // [DEMO]
--            if (!g_Config->m_DemoMode)
--            {
--                SetPushedCore(BB_NEW(BluetoothConnectionCore));
--                g_CoreManager->PushCore(GetPushedCore());
--                GetGlobals()->m_NextGameStage = GAME_MAIN_STAGE;
--            }
--            break;
++#if USE_BLUETOOTH == 1
+         case FRONTEND_BLUETOOTH: 
+             // [DEMO]
+             if (!g_Config->m_DemoMode)
+@@ -247,6 +264,7 @@
+                 GetGlobals()->m_NextGameStage = GAME_MAIN_STAGE;
+             }
+             break;
++#endif
  
  //        case FRONTEND_CREDITS: // Run cutscene script
  //        {
-@@ -543,7 +533,6 @@
+@@ -540,10 +558,15 @@
+ 
+     m_pOptionList->SetMenuSpacing(9,3,7);
+     m_pOptionList->AddButton(StringTable(STR_MENU_FE_START),        FRONTEND_STARTGAME);
++#if ENABLE_E3_DEMO == 1
++    m_pOptionList->AddButton("Start E3 Demo",                       FRONTEND_E3DEMO);
++#endif
      m_pOptionList->AddButton(StringTable(STR_MENU_MAIN_LOAD_GAME),  FRONTEND_LOADGAME);
      m_pOptionList->AddButton(StringTable(STR_MENU_MAIN_OPTIONS),    FRONTEND_OPTION);
  
--    m_pOptionList->AddButton(StringTable(STR_MENU_TEXT_BLUETOOTH),  FRONTEND_BLUETOOTH); 
++#if USE_BLUETOOTH == 1
+     m_pOptionList->AddButton(StringTable(STR_MENU_TEXT_BLUETOOTH),  FRONTEND_BLUETOOTH); 
++#endif
      m_pOptionList->AddButton(StringTable(STR_MENU_TEXT_ARENA),      FRONTEND_ARENA); 
      m_pOptionList->AddButton(StringTable(STR_MENU_TEXT_QUIT),       FRONTEND_EXIT);
  
-@@ -562,10 +551,10 @@
-        m_pOptionList->SetButtonLockByTag(FRONTEND_LOADGAME, true);
-     }
-     
-+    m_pOptionList->SetButtonLockByTag(FRONTEND_ARENA, true);
+@@ -565,7 +588,9 @@
      // [DEMO] 
      if (g_Config->m_DemoMode)
      {
--       m_pOptionList->SetButtonLockByTag(FRONTEND_BLUETOOTH, true);
++#if USE_BLUETOOTH == 1
+        m_pOptionList->SetButtonLockByTag(FRONTEND_BLUETOOTH, true);
++#endif
         m_pOptionList->SetButtonLockByTag(FRONTEND_ARENA, true);
         m_pOptionList->SetButtonLockByTag(FRONTEND_LOADGAME, true);
      }
-@@ -788,4 +777,4 @@
+@@ -788,4 +813,4 @@
  
          GetGlobals()->DeleteSettings();
      }
 -}
 \ No newline at end of file
 +}
-diff -ur Rifts/Code/src/FrontEnd/NameGenCore.cpp Rifts_Rework/Code/src/FrontEnd/NameGenCore.cpp
---- Rifts/Code/src/FrontEnd/NameGenCore.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/FrontEnd/NameGenCore.cpp	2021-12-10 19:52:06.424485700 +0100
-@@ -16,7 +16,6 @@
- #include "RiftsStringID.h"
- #include "Sound/SoundWrap.h"
- #include "GeneratedAudioEnum.h"
--#include "Network/BluetoothManager.h"
- #include "Utility/SymbStrings.h"
- #include "Game/GameManager.h"
- 
-@@ -254,7 +253,7 @@
-         {
-             SetupSfx(SOUND_text_entry__hitting_button_to_accept_);
-             //Setup Bluetooth name here
--            g_BluetoothManager->SetCurrentName(m_pCurrentName);
-+            StrToDes(g_CurrentDeviceName, m_pCurrentName);
-             PopSelf();
-         }
-         else
-@@ -535,7 +534,7 @@
-         l_pOldName->SetOffset(Vector2i(37,20));
- 
-         char pName[256]; 
--        DesToStr(pName, 256, g_BluetoothManager->GetCurrentName());
-+        DesToStr(pName, 256, g_CurrentDeviceName);
-         MakeBluetoothName(pName);
-         l_pOldName->SetText(pName);
-         m_pMainScreen->AddWidget(l_pOldName);
-diff -ur Rifts/Code/src/Game/Cores/ArenaGameOptions.cpp Rifts_Rework/Code/src/Game/Cores/ArenaGameOptions.cpp
+diff -ur Rifts/Code/src/FrontEnd/FrontEndCore.h Rifts_new/Code/src/FrontEnd/FrontEndCore.h
+--- Rifts/Code/src/FrontEnd/FrontEndCore.h	2010-08-30 22:14:18.000000000 +0200
++++ Rifts_new/Code/src/FrontEnd/FrontEndCore.h	2021-12-11 22:30:44.056470700 +0100
+@@ -20,6 +20,7 @@
+ enum eFRONTEND_OPTIONS
+ {
+     FRONTEND_STARTGAME = 0,
++    FRONTEND_E3DEMO,
+     FRONTEND_LOADGAME, 
+     FRONTEND_NORTHAMERICA,
+     FRONTEND_NGR,
+diff -ur Rifts/Code/src/Game/Cores/ArenaGameOptions.cpp Rifts_new/Code/src/Game/Cores/ArenaGameOptions.cpp
 --- Rifts/Code/src/Game/Cores/ArenaGameOptions.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/Game/Cores/ArenaGameOptions.cpp	2021-12-10 20:25:22.768440500 +0100
-@@ -14,7 +14,6 @@
++++ Rifts_new/Code/src/Game/Cores/ArenaGameOptions.cpp	2021-12-11 22:08:34.870556500 +0100
+@@ -14,7 +14,9 @@
  #include "System/TextTables.h"
  #include "Game/Cores/GameFileCore.h"
  #include "Network/NetworkGameTypes.h"
--#include "BTGameMenuCore.h"
++#if USE_BLUETOOTH == 1
+ #include "BTGameMenuCore.h"
++#endif
  #include "ArenaNameGenCore.h"
  #include "ArenaGameView.h"
  #include "ArenaCharacterSelect.h"
-@@ -667,10 +666,6 @@
+@@ -667,11 +669,12 @@
      if (GetLastState() == GOS_SECTOR_SELECT)
      {
          g_MessageManager->SetGameType(m_iLastGameOptionSelection);
--        BTGameMenuCore* pCore = BB_NEW(BTGameMenuCore);
--        pCore->m_bUseOldSetting = true;
--        SetPushedCore(pCore);
--        g_CoreManager->PushCore(pCore);
- 
++#if USE_BLUETOOTH == 1
+         BTGameMenuCore* pCore = BB_NEW(BTGameMenuCore);
+         pCore->m_bUseOldSetting = true;
+         SetPushedCore(pCore);
+         g_CoreManager->PushCore(pCore);
+-
++#endif
          SetNextState(GOS_SECTOR_SELECT);
          return;
-@@ -704,9 +699,6 @@
+     }
+@@ -704,10 +707,11 @@
          m_iLastGameOptionSelection = int(EVENT_DATA);
  
          g_MessageManager->SetGameType(m_iLastGameOptionSelection);
--        BTGameMenuCore* pCore = BB_NEW(BTGameMenuCore);
--        SetPushedCore(pCore);
--        g_CoreManager->PushCore(pCore);
- 
++#if USE_BLUETOOTH == 1
+         BTGameMenuCore* pCore = BB_NEW(BTGameMenuCore);
+         SetPushedCore(pCore);
+         g_CoreManager->PushCore(pCore);
+-
++#endif
          SetNextState(GOS_SECTOR_SELECT);
      }
-diff -ur Rifts/Code/src/Game/Cores/ArenaNameGenCore.cpp Rifts_Rework/Code/src/Game/Cores/ArenaNameGenCore.cpp
---- Rifts/Code/src/Game/Cores/ArenaNameGenCore.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/Game/Cores/ArenaNameGenCore.cpp	2021-12-10 18:47:50.733058800 +0100
-@@ -16,7 +16,6 @@
- #include "RiftsStringID.h"
- #include "Sound/SoundWrap.h"
- #include "GeneratedAudioEnum.h"
--#include "Network/BluetoothManager.h"
- #include "Utility/SymbStrings.h"
- #include "Game/GameManager.h"
- #include "AI/PCCombatAI.h"
-diff -ur Rifts/Code/src/Game/Cores/CheatEnablerCore.cpp Rifts_Rework/Code/src/Game/Cores/CheatEnablerCore.cpp
---- Rifts/Code/src/Game/Cores/CheatEnablerCore.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/Game/Cores/CheatEnablerCore.cpp	2021-12-10 20:30:11.015449600 +0100
-@@ -16,7 +16,6 @@
- #include "RiftsStringID.h"
- #include "Sound/SoundWrap.h"
- #include "GeneratedAudioEnum.h"
--#include "Network/BluetoothManager.h"
- #include "Utility/SymbStrings.h"
- #include "Game/GameManager.h"
- #include "Main/Unlockables.h"
-diff -ur Rifts/Code/src/Game/Cores/CoreManager.cpp Rifts_Rework/Code/src/Game/Cores/CoreManager.cpp
+     ON_EVENT(EVENT_MENU_CANCEL)
+diff -ur Rifts/Code/src/Game/Cores/CoreManager.cpp Rifts_new/Code/src/Game/Cores/CoreManager.cpp
 --- Rifts/Code/src/Game/Cores/CoreManager.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/Game/Cores/CoreManager.cpp	2021-12-10 20:42:20.606712300 +0100
-@@ -13,7 +13,6 @@
++++ Rifts_new/Code/src/Game/Cores/CoreManager.cpp	2021-12-11 22:09:13.930903400 +0100
+@@ -13,8 +13,9 @@
  #include "Game/Cores/MapCore.h"
  #include "Game/Cores/SinglePlayerGameCore.h"
  #include "Game/Cores/ArenaGameCore.h"
--#include "Game/Cores/BluetoothGameCore.h"
- 
++#if USE_BLUETOOTH == 1
+ #include "Game/Cores/BluetoothGameCore.h"
+-
++#endif
  
  /*!============================================================================== 
-@@ -428,10 +427,6 @@
+  \brief  Static constructor to create and return a new instance of this class
+@@ -427,11 +428,11 @@
+             case CORE_TYPE_ARENA_GAME:
                  pNewCore = BB_NEW(ArenaGameCore); 
                  break;
- 
--            case CORE_TYPE_BLUETOOTH_GAME:
--                pNewCore = BB_NEW(BluetoothGameCore); 
--                break;
 -
++#if USE_BLUETOOTH == 1
+             case CORE_TYPE_BLUETOOTH_GAME:
+                 pNewCore = BB_NEW(BluetoothGameCore); 
+                 break;
+-
++#endif
              default:
                  BB_LOG("Unknown core type: %d", coreType); 
                  _BREAK; 
-diff -ur Rifts/Code/src/Game/Cores/SaveGameCore.cpp Rifts_Rework/Code/src/Game/Cores/SaveGameCore.cpp
---- Rifts/Code/src/Game/Cores/SaveGameCore.cpp	2010-08-30 22:14:18.000000000 +0200
-+++ Rifts_Rework/Code/src/Game/Cores/SaveGameCore.cpp	2021-12-10 21:37:03.007174400 +0100
-@@ -23,7 +23,6 @@
- #include "RiftsStringID.h"
- #include "RiftsResourceID.h"
- #include "Utility/SymbStrings.h"
--#include "Network/BluetoothManager.h"
- 
- 
- #include <f32file.h>
-@@ -586,98 +585,6 @@
-             }
-             break;
- 
--        // Special stage for Bluetooth, where everyone waits to ensure that saving is completed
--        case FILE_STAGE_BLUETOOTH_HANDSHAKE:
--            BB_LOG("SaveGameCore - FILE_STAGE_BLUETOOTH_HANDSHAKE begins!"); 
--            Assert(g_MessageManager->IsBluetoothActive()); 
--            if (!g_MessageManager->IsBluetoothActive())
--            {
--                BB_LOG("Hit FILE_STAGE_BLUETOOTH_HANDSHAKE, but Bluetooth is inactive!");
--                ret = false; 
--                m_SaveGameState = SAVE_STATE_DATA_ERROR; 
--                break;
--            }
--
--            g_WriteLine(String("BTHandshake=") << m_BluetoothHandshakeTime); 
--
--            // If we haven't heard from everyone yet (and I'm the host), just return....
--            if (g_BluetoothManager->IsHost())
--            {
--                bool waitingForSomeone = false; 
--
--                for (int i = 0; i < g_MessageManager->MaxPlayers(); ++i)
--                {
--                    if (m_SaveVerify[i] == 0) 
--                    {
--                        BB_LOG("Device(%d) not finished saving...", i); 
--                        g_WriteLine(String("Waiting for device ") << i); 
--                        waitingForSomeone = true; 
--                        break;
--                    }
--                }
--
--                if (waitingForSomeone)
--                {
--                    // Timer to abort saving... 
--                    m_BluetoothHandshakeTime -= g_Timer->DeltaTimeMilliSeconds();
--                    if (m_BluetoothHandshakeTime <= 0)
--                    {
--                        BB_LOG("BTHandShakeTime TIMEOUT!"); 
--                        g_WriteLineTime("BTHandShakeTime TIMEOUT!"); 
--                        ret = false;
--                        m_SaveGameState = SAVE_STATE_DATA_ERROR; 
--                        g_MessageManager->SendMessageFlag(MSG_FLAG_SAVE_FAILED, true); 
--                        break;
--                    }
--                    else
--                    {
--                        // Still waiting, so nothing to do
--                        return 0; 
--                    }
--                }
--                else
--                {
--                    // We've heard from everyone.  Now rename the temp file and notify all clients...
--                    if (SaveGameCore::RenameTemp(g_MessageManager->m_CurrentSaveSlot))
--                    {
--                        g_MessageManager->SendMessageFlag(MSG_FLAG_SAVE_COMPLETE, true);
--                        m_SaveGameState = SAVE_STATE_DONE; 
--                        PopSelf(); 
--                        return PR_PAUSE; 
--                    }
--                    else
--                    {
--                        g_MessageManager->SendMessageFlag(MSG_FLAG_SAVE_FAILED, true); 
--                        ret = false;
--                        m_SaveGameState = SAVE_STATE_DATA_ERROR; 
--                        break;
--                    }
--                }
--            }
--            else 
--            {
--                // I'm a client...  we only care about a countdown right now
--                m_BluetoothHandshakeTime -= g_Timer->DeltaTimeMilliSeconds();
--                if (m_BluetoothHandshakeTime <= 0)
--                {
--                    ret = false;
--                    m_SaveGameState = SAVE_STATE_DATA_ERROR; 
--                    break;
--                }
--
--                if (m_BluetoothSaveCompleted)
--                {
--                    m_SaveGameState = SAVE_STATE_DONE; 
--                    PopSelf(); 
--                    return PR_PAUSE; 
--                }
--
--                // Still waiting... so return.
--                return 0;
--            }
--            
--            break;
--
-         default: 
-             // If we got here, then it's probably because of FailSave()...
-             ret = false;
-@@ -896,4 +803,4 @@
-     tocFile.Close(); 
- 
-     return SaveGameCore::RenameTemp(a_FileSlotID);
--}
-\ No newline at end of file
-+}
-diff -ur Rifts/Code/src/Main/Globals.cpp Rifts_Rework/Code/src/Main/Globals.cpp
+diff -ur Rifts/Code/src/Main/Globals.cpp Rifts_new/Code/src/Main/Globals.cpp
 --- Rifts/Code/src/Main/Globals.cpp	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_Rework/Code/src/Main/Globals.cpp	2021-12-10 19:50:54.466407000 +0100
-@@ -15,7 +15,6 @@
- #include "Raster/RenderContext.h"
- #include "FrontEnd/HUDManager.h"
- #include "Data/DatabaseManager.h"
--#include "Network/BluetoothManager.h"
- #include "Network/MessageManager.h"
- #include "Network/ArenaManager.h"
- #include "Resource/ResourceManager.h"
-@@ -161,7 +160,6 @@
-     m_pGameApp = NULL;
-     m_pGameView = NULL;
-     m_pDatabaseManager = NULL; 
--    m_pBluetoothManager= NULL; 
-     m_pMessageManager = NULL; 
-     m_pArenaManager= NULL; 
-     m_pResourceManager = NULL;
-@@ -172,8 +170,6 @@
++++ Rifts_new/Code/src/Main/Globals.cpp	2021-12-11 21:28:26.422393700 +0100
+@@ -172,8 +172,12 @@
      m_pGameManager = NULL; 
      m_pDebugLink = NULL;
  
--    m_BackLightControl = NULL;
--    m_VibrationControl = NULL;
++#if USE_BACK_LIGHT_CTRL == 1
+     m_BackLightControl = NULL;
++#endif
++#if USE_VIBRA_CTRL == 1
+     m_VibrationControl = NULL;
++#endif
      m_bKeepOnBackLight = false;
      m_bBackLightOption = false;
      m_bForceOnBackLight = false;
-@@ -216,7 +212,6 @@
-     BB_DELETE(m_pHUDManager); SHUTDOWN_LOG("hud");
-     BB_DELETE(m_pResourceManager); SHUTDOWN_LOG("res");
-     BB_DELETE(m_pMessageManager);  SHUTDOWN_LOG("msg");
--    BB_DELETE(m_pBluetoothManager);  SHUTDOWN_LOG("blue");
-     BB_DELETE(m_pArenaManager);  SHUTDOWN_LOG("arena");
-     BB_DELETE(m_pDatabaseManager); SHUTDOWN_LOG("db");
-     BB_DELETE(m_pRenderManager); SHUTDOWN_LOG("rend");
-@@ -250,12 +245,6 @@
- 	}
+@@ -251,10 +255,15 @@
      BB_DELETE(m_SFX); SHUTDOWN_LOG("sfx");
  
--    //created via symbian factory method
--    delete(m_BackLightControl); SHUTDOWN_LOG("bl");
--    m_BackLightControl = NULL;
--    delete(m_VibrationControl); SHUTDOWN_LOG("vib");
--    m_VibrationControl = NULL;
--
+     //created via symbian factory method
++
++#if USE_BACK_LIGHT_CTRL == 1
+     delete(m_BackLightControl); SHUTDOWN_LOG("bl");
+     m_BackLightControl = NULL;
++#endif
++#if USE_VIBRA_CTRL == 1
+     delete(m_VibrationControl); SHUTDOWN_LOG("vib");
+     m_VibrationControl = NULL;
++#endif
+ 
      m_bStopMovingEveyone = false;
  
-     m_pGameApp = NULL; // do not try to delete this!  Globals doesn't "own" this.
-@@ -423,7 +412,6 @@
- 	// it marks in the stats log that the game has started.
- 	STAT_BOOT_PROGRAM();
- 
--    m_pBluetoothManager = BluetoothManager::NewL(); 
-     m_pMessageManager = MessageManager::NewL(); 
- 	m_pArenaManager = NAF_Factory();
-     m_pInputManager = InputManager::NewL(); 
-@@ -434,11 +422,6 @@
- 	// Since the input manager now exists, let it grab cheat code callouts.
- 	 m_pConfig->InitCheat();
- 
--    // Temporarily commented out to get SDK 2.5 working -- Pete
--//    m_BackLightControl = CBacklightFactory::NewL();
--//    m_VibrationControl = CVibraFactory::NewL();
--    // use like this m_VibrationControl->StartVibraL(10000);
--
-     m_NextGameStage = GAME_LOAD_STAGE;
-     m_CurrentGameStage = GAME_LOAD_STAGE;
- 
-@@ -521,12 +504,6 @@
- 
-     m_pCoreManager->PopGroup(PG_EXIT); 
- 
--    // Shut down the bluetooth manager
--    if (m_pBluetoothManager)
--    {
--        m_pBluetoothManager->Shutdown(); 
--    }
--
-     m_CurrentGameStage = GAME_EXIT_STAGE; 
-     m_NextGameStage = GAME_EXIT_STAGE; 
- }
-@@ -559,6 +536,7 @@
-     gameSettings.WriteBytesL(m_aExtras, ET_NON_SAVED_DATA * sizeof(int));
- 
- 	bool l_WriteBluetoothName = true;
-+        StrToDes(m_CurrentDeviceName, "Juicer");
- 
- #ifdef _DEBUG
-     // If in debug mode, then check if "SaveBTName.txt" exists... if not, don't write the name
-@@ -582,7 +560,7 @@
- 	{
-         BB_LOG("Writing the Bluetooth name to the game settings..."); 
- 		char buf[256]; 
--		int size = DesToStr(buf, 256, g_BluetoothManager->GetCurrentName()); 
-+		int size = DesToStr(buf, 256, m_CurrentDeviceName); 
- 		gameSettings << size; 
- 		if (size > 0)
- 		{
-@@ -699,7 +677,7 @@
-         {
-             BB_LOG("Setting the BT name..."); 
- 			// Prevent the save file from being saved since we are loading from the save file.
--            g_BluetoothManager->SetCurrentName(buf, true); 
-+            StrToDes(m_CurrentDeviceName, buf);
-         }
-     }
- 
-diff -ur Rifts/Code/src/Main/Globals.h Rifts_Rework/Code/src/Main/Globals.h
+diff -ur Rifts/Code/src/Main/Globals.h Rifts_new/Code/src/Main/Globals.h
 --- Rifts/Code/src/Main/Globals.h	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_Rework/Code/src/Main/Globals.h	2021-12-10 19:51:02.722377000 +0100
-@@ -17,6 +17,7 @@
- #define __GLOBALS_H__
- 
- #include <e32base.h>  // for Dll::Tls()
-+#include <es_sock.h>  // THostName
- #include "..\Main\IMainObject.h"
- #include "PartyData.h"
- #include "Game/Cores/CoreManager.h"
-@@ -24,9 +25,8 @@
- #include "Input/InputKeys.h"
++++ Rifts_new/Code/src/Main/Globals.h	2021-12-11 21:27:20.398083700 +0100
+@@ -25,8 +25,12 @@
  #include "Data/DBObjects.h"
  #include "Math/Isaac.h"
-+#include "Utility/SymbStrings.h"
  
--#include <BackLightCtrl.h>
--#include <VibraCtrl.h>
++#if USE_BACK_LIGHT_CTRL == 1
+ #include <BackLightCtrl.h>
++#endif
++#if USE_VIBRA_CTRL == 1
+ #include <VibraCtrl.h>
++#endif
  #include <Hal.h>
  
  class Timer;
-@@ -36,7 +36,6 @@
- class CSystemAppUi;
- class CSystemAppView;
- class DatabaseManager;
--class BluetoothManager; 
- class MessageManager; 
- class ArenaManager; 
- class ResourceManager;
-@@ -138,7 +137,6 @@
- 	CSystemAppUi*    GetGameApp() { return m_pGameApp; }
-     CSystemAppView*  GetGameView() { return m_pGameView; }
-     DatabaseManager* GetDatabaseManager() { return m_pDatabaseManager; }
--    BluetoothManager* GetBluetoothManager() { return m_pBluetoothManager; }
-     MessageManager*  GetMessageManager() { return m_pMessageManager; }
-     ArenaManager*    GetArenaManager() { return m_pArenaManager; }
-     ResourceManager* GetResourceManager() { return m_pResourceManager; }
-@@ -160,7 +158,8 @@
+@@ -160,7 +164,9 @@
  
      bool             KeepBackLightOn() { return (m_bForceOnBackLight || m_bKeepOnBackLight || m_bBackLightOption); }
  
--    CBacklightControl* GetBackLightControl() { return m_BackLightControl; }
-+    THostName m_CurrentDeviceName;
-+
++#if USE_BACK_LIGHT_CTRL == 1
+     CBacklightControl* GetBackLightControl() { return m_BackLightControl; }
++#endif
      bool m_bKeepOnBackLight;    //Player Controled setting for backlight
      bool m_bForceOnBackLight;   //Force the backlight to stay on no matter what
      bool m_bBackLightOption;    //A dummy Backlight option that does nothing but has to be here SGR
-@@ -249,7 +248,6 @@
- 	CSystemAppUi*    m_pGameApp;
-     CSystemAppView*  m_pGameView;
-     DatabaseManager* m_pDatabaseManager; 
--    BluetoothManager* m_pBluetoothManager; 
-     MessageManager*  m_pMessageManager; 
- 	ArenaManager*	 m_pArenaManager;
-     ResourceManager* m_pResourceManager;
-@@ -265,9 +263,6 @@
+@@ -265,8 +271,12 @@
  	DebugLink*       m_pDebugLink;
  	SoundMonitor*    m_pSoundMonitor;
  
--    CBacklightControl* m_BackLightControl;
--    CVibraControl* m_VibrationControl;
--
++#if USE_BACK_LIGHT_CTRL == 1
+     CBacklightControl* m_BackLightControl;
++#endif
++#if USE_VIBRA_CTRL == 1
+     CVibraControl* m_VibrationControl;
++#endif
+ 
      // Party data container for fast access to party info
      PartyData        m_PartyData;
- 
-@@ -284,6 +279,7 @@
- 
- // Convenience macros to get singletons from the global container
- // Note:  Before shipping, turn all "Get" functions in Globals into direct accessors to the singletons (ie: get rid of "private")
-+#define g_CurrentDeviceName (GetGlobals()->m_CurrentDeviceName)
- #define g_Timer             (GetGlobals()->GetTimer())
- #define g_PulseManager      (GetGlobals()->GetPulseManager())
- #define g_CoreManager       (GetGlobals()->GetCoreManager())
-@@ -291,7 +287,6 @@
- #define g_GameApp           (GetGlobals()->GetGameApp())
- #define g_GameView          (GetGlobals()->GetGameView())
- #define g_DatabaseManager   (GetGlobals()->GetDatabaseManager())
--#define g_BluetoothManager  (GetGlobals()->GetBluetoothManager())
- #define g_MessageManager    (GetGlobals()->GetMessageManager())
- #define g_MPPlayerState     (GetGlobals()->GetMessageManager())->m_PlayerState
- #define g_ArenaManager      (GetGlobals()->GetArenaManager())
-diff -ur Rifts/Code/src/Network/ArenaManager_DEMO.cpp Rifts_Rework/Code/src/Network/ArenaManager_DEMO.cpp
+diff -ur Rifts/Code/src/Network/ArenaManager_DEMO.cpp Rifts_new/Code/src/Network/ArenaManager_DEMO.cpp
 --- Rifts/Code/src/Network/ArenaManager_DEMO.cpp	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_Rework/Code/src/Network/ArenaManager_DEMO.cpp	2021-12-10 18:40:11.174640700 +0100
-@@ -11,11 +11,11 @@
- #include <eikmenup.h>
- #include <stdlib.h>			// for qsort
- 
--// UID for the DEMO.
--const TUid BBMath::KUIDRIFTS = { 0x101fd432 };
--// Other DEMO parameters
++++ Rifts_new/Code/src/Network/ArenaManager_DEMO.cpp	2021-12-11 22:11:55.515643000 +0100
+@@ -14,8 +14,8 @@
+ // UID for the DEMO.
+ const TUid BBMath::KUIDRIFTS = { 0x101fd432 };
+ // Other DEMO parameters
 -const TSTR* BBMath::g_DFilePathame() { return ":\\system\\apps\\Rifts_Demo\\"; }
 -const TSTR* BBMath::g_FilePath() { return "c:\\system\\apps\\Rifts_Demo\\"; }
-+// The game's UID is here so it can be changed for the DEMO.
-+const TUid BBMath::KUIDRIFTS = { 0x101FD3F2 };
-+// Similarly, other demo/game parameters are here
 +const TSTR* BBMath::g_DFilePathame() { return ":\\system\\apps\\6R49\\"; }
 +const TSTR* BBMath::g_FilePath() { return "c:\\system\\apps\\6R49\\"; }
  
  #include "Utility/df_vsprintf.h" // for BB_LOG
  #include "../Utility/SymbStrings.h"	// for DesToStr
-diff -ur Rifts/Code/src/Network/Message.cpp Rifts_Rework/Code/src/Network/Message.cpp
---- Rifts/Code/src/Network/Message.cpp	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_Rework/Code/src/Network/Message.cpp	2021-12-10 20:43:39.089907500 +0100
-@@ -12,11 +12,7 @@
- //#include "Utility/Deebug/Deebug.h"
- #include "Utility/SymbianHelpers.h"
+diff -ur Rifts/Code/src/Network/BluetoothManager.cpp Rifts_new/Code/src/Network/BluetoothManager.cpp
+--- Rifts/Code/src/Network/BluetoothManager.cpp	2010-08-30 22:14:20.000000000 +0200
++++ Rifts_new/Code/src/Network/BluetoothManager.cpp	2021-12-11 22:03:02.474307500 +0100
+@@ -8,8 +8,10 @@
  
--#include "Network/BluetoothManager.h"
+ #include "common.h"
+ #include "BluetoothManager.h"
++#if USE_BLUETOOTH == 1
+ #include <GameBTComms.h>
+ #include <Resolver.h>
++#endif
+ #include "System/SystemAppUi.h"
+ #include "Network/MessageManager.h"
+ #include "Network/Message.h"
+@@ -47,9 +49,10 @@
+ ==============================================================================*/ 
+ BluetoothManager::BluetoothManager()
+ {
++#if USE_BLUETOOTH == 1
+     m_pBluetoothComms = NULL; 
+     m_pResolver = NULL; 
+-
++#endif
+     m_IsSearchingForDevices = false; 
+     m_IsBluetoothDefaultEnabled = false; 
+ 
+@@ -67,8 +70,10 @@
+ BluetoothManager::~BluetoothManager()
+ {
+     // Destroy everything!
++#if USE_BLUETOOTH == 1
+     delete m_pBluetoothComms; 
+     delete m_pResolver; 
++#endif
+ }
+ 
+ 
+@@ -78,9 +83,10 @@
+ ==============================================================================*/ 
+ void BluetoothManager::ConstructL()
+ {
++#if USE_BLUETOOTH == 1
+     m_pBluetoothComms = CGameBTComms::NewL(*this, KUIDRIFTS); 
+     m_pResolver = CResolver::NewL(*this, NULL); 
+-
++#endif
+     // Store default bluetooth on/off setting so we can restore it at exit.
+     m_IsBluetoothDefaultEnabled = IsBluetoothEnabled(); 
+ 
+@@ -108,6 +114,7 @@
+ {
+     BB_LOG("BluetoothManager::Shutdown()"); 
+ 
++#if USE_BLUETOOTH == 1
+     if (m_IsSearchingForDevices)
+     {
+         m_IsSearchingForDevices = false;
+@@ -135,6 +142,7 @@
+     {
+         BB_LOG("Bluetooth not toggled (no need to)");
+     }
++#endif
+ }
+ 
+ /*!============================================================================== 
+@@ -144,6 +152,7 @@
+ ==============================================================================*/ 
+ int BluetoothManager::Pulse()
+ {
++#if USE_BLUETOOTH == 1
+     // Are we connected?  If not, then just skip this pulse...
+     if (!IsConnected()) 
+     {
+@@ -226,7 +235,7 @@
+ //        }
+ //        g_MessageManager->m_bIsSaving = false; 
+ //    }
+-
++#endif
+     return 0; 
+ }
+ 
+@@ -250,14 +259,23 @@
+ ==============================================================================*/ 
+ void BluetoothManager::SaveOriginalName()
+ {
++#if USE_BLUETOOTH == 1
+     if (m_pBluetoothComms && m_OriginalDeviceName.Size() == 0)
++#else
++    if (m_OriginalDeviceName.Size() == 0)
++#endif
+     {
+         THostName name; 
++#if USE_BLUETOOTH == 1
+         m_pBluetoothComms->GetLocalDeviceName(name);
++#else
++        StrToDes(name, "Juicer");
++#endif
+ 
+         // See if the name was already prefixed from a previous crash.  If so, 
+         // try to restore the original name sans prefix
+         //if (name.Find(m_Prefix) == 0) 
++#if USE_BLUETOOTH == 1
+         if (IsNamePrefixed(name))
+         { 
+             //probably due to previous crash, name has already been prefixed
+@@ -265,6 +283,7 @@
+ 		    m_OriginalDeviceName = name.Mid(GetPrefixLength()); //fix name
+         }
+         else
++#endif
+         {
+             m_OriginalDeviceName = name; 
+         }
+@@ -295,6 +314,7 @@
+ /*!============================================================================== 
+  \brief  Check if bluetooth is available and not currently is in use (busy)
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ bool BluetoothManager::IsBluetoothAvailable()
+ {
+     _LIT(KL2Cap, "L2CAP" );
+@@ -326,17 +346,22 @@
+     }
+     return isAvailable; 
+ }
++#endif
+ 
+ /*!============================================================================== 
+  \brief  Check if the device is bluetooth-enabled
+ ==============================================================================*/ 
+ bool BluetoothManager::IsBluetoothEnabled()
+ {
++#if USE_BLUETOOTH == 1
+     if (!m_pBluetoothComms) return false; 
+ 
+     TBool powerState; 
+     m_pBluetoothComms->BluetoothPowerState(powerState); 
+     return powerState != 0;
++#else
++    return false;
++#endif
+ }
+ 
+ 
+@@ -346,7 +371,11 @@
+ ==============================================================================*/ 
+ bool BluetoothManager::IsConnected()
+ {
++#if USE_BLUETOOTH == 1
+     return m_pBluetoothComms && CGameBTComms::ENotConnected != m_pBluetoothComms->ConnectState(); 
++#else
++    return false;
++#endif
+ }
+ 
+ 
+@@ -366,7 +395,11 @@
+ ==============================================================================*/ 
+ bool BluetoothManager::IsClient()
+ {
++#if USE_BLUETOOTH == 1
+     return m_pBluetoothComms && CGameBTComms::EClient == m_pBluetoothComms->ConnectionRole(); 
++#else
++    return false;
++#endif
+ }
+ 
+ 
+@@ -375,7 +408,11 @@
+ ==============================================================================*/ 
+ bool BluetoothManager::IsHost()
+ {
++#if USE_BLUETOOTH == 1
+     return m_pBluetoothComms && CGameBTComms::EHost == m_pBluetoothComms->ConnectionRole(); 
++#else
++    return true;
++#endif
+ }
+ 
+ /*!============================================================================== 
+@@ -384,10 +421,10 @@
+ ==============================================================================*/ 
+ int BluetoothManager::EnableBluetooth(bool a_Enabled)
+ {
++#if USE_BLUETOOTH == 1
+     Assert(m_pBluetoothComms); 
+ 
+     BB_LOG("EnableBluetooth(%d)", a_Enabled); 
+-
+     TInt err = m_pBluetoothComms->SetBluetoothPowerState(a_Enabled); 
+     User::After(1000); 
+ 
+@@ -397,6 +434,9 @@
+     }
+     
+     return err;
++#else
++    return -5; //kErrNotSupported
++#endif
+ }
+ 
+ /*!============================================================================== 
+@@ -409,6 +449,7 @@
+ bool BluetoothManager::StartHost(int a_GameType, uint a_GameID)
+ {
+     BB_LOG("BluetoothManager::StartHost"); 
++#if USE_BLUETOOTH == 1
+     if (!IsBluetoothEnabled())
+     {
+         BB_LOG("ERROR:  StartHost() - Bluetooth is disabled"); 
+@@ -463,6 +504,9 @@
+     // Host is ready to listen for clients attempting to connect.
+     m_pBluetoothComms->SetHostAcceptMode(CGameBTComms::EConfirmClients); 
+     return true; 
++#else
++    return false;
++#endif
+ }
+ 
+ 
+@@ -474,7 +518,9 @@
+ {
+     m_IdleTime = 0; 
+     // Host is ready to listen for clients attempting to connect.
++#if USE_BLUETOOTH == 1
+     m_pBluetoothComms->SetHostAcceptMode(CGameBTComms::EConfirmClients); 
++#endif
+     return true; 
+ }
+ 
+@@ -484,6 +530,7 @@
+ bool BluetoothManager::StartClient(uint a_GameID)
+ {
+     BB_LOG("BluetoothManager::StartClient"); 
++#if USE_BLUETOOTH == 1
+     if (!IsBluetoothEnabled())
+     {
+         BB_LOG("ERROR: StartClient() - Bluetooth is disabled!");
+@@ -502,7 +549,12 @@
+     m_VirtualDeviceID = -1;
+ 
+     if (m_CurrentDeviceName.Size() == 0)
++    {
+         m_pBluetoothComms->GetLocalDeviceName(m_CurrentDeviceName);
++    }
++#else
++    return false;
++#endif
+ 
+     // First, check to make sure I have a valid name (possibly due to a previous game session where I was the host that crashed...)
+ #ifdef USE_BT_PREFIX
+@@ -531,6 +583,7 @@
+         m_DeviceState[i] = BT_DEVICE_STATE_NONE; 
+     }
+ 
++#if USE_BLUETOOTH == 1
+     TRAPD(err, m_pBluetoothComms->StartClientL()); 
+ 
+     if ((KErrNone != err) || !m_pResolver->IsReady())
+@@ -543,6 +596,9 @@
+ //    m_pBluetoothComms->SetSearchModeLimited(true); 
+ 
+     return true; 
++#else
++    return false;
++#endif
+ }
+ 
+ /*!============================================================================== 
+@@ -552,6 +608,7 @@
+ bool BluetoothManager::StartDeviceRequest()
+ {
+     BB_LOG("BluetoothManager::StartDeviceRequest() begin"); 
++#if USE_BLUETOOTH == 1
+     if (m_pResolver->IsReady())
+     {
+ //        m_pResolver->RequestDeviceList();
+@@ -562,6 +619,7 @@
+     }
+     m_IsSearchingForDevices = false; 
+     BB_LOG("BluetoothManager::StartDeviceRequest() failed"); 
++#endif
+     return false;
+ }
+ 
+@@ -588,8 +646,9 @@
+ 	if (m_DeviceID >= 0)
+         m_DeviceName[m_DeviceID] = l_Name; 
+ 
+-
++#if USE_BLUETOOTH == 1
+     m_pBluetoothComms->SetLocalDeviceName(l_Name); 
++#endif
+ 
+     return true;
+ }
+@@ -608,12 +667,14 @@
+ 
+     m_GameName = m_CurrentDeviceName; 
+ 
++#ifdef USE_BT_PREFIX
+     if (IsNamePrefixed(m_GameName))
+     { 
+         THostName name = m_GameName; 
+         //probably due to previous crash, name has already been prefixed
+ 		m_GameName = name.Mid(GetPrefixLength()); //fix name
+ 	}
++#endif
+ 
+     if (m_DeviceID >= 0)
+         m_DeviceName[m_DeviceID] = m_GameName; 
+@@ -624,9 +685,10 @@
+ /*!============================================================================== 
+  \brief  
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::DeclareDevice(const TDeviceDetails& a_Device)
+ {
+-    Assert(m_pBluetoothComms); 
++    Assert(m_pBluetoothComms);
+ 
+     TRAPD(err, m_pBluetoothComms->DeclareRemoteDevice(a_Device)); 
+ 
+@@ -635,6 +697,7 @@
+         BB_LOG("ERROR:  Failed to declare a device"); 
+     }
+ }
++#endif
+ 
+ /*!============================================================================== 
+  \brief  I want to connect to all declared clients (if I'm host), or connect to the
+@@ -642,6 +705,7 @@
+ ==============================================================================*/ 
+ bool BluetoothManager::Connect()
+ {
++#if USE_BLUETOOTH == 1
+     Assert(m_pBluetoothComms); 
+     if (!m_pBluetoothComms) return false; 
+ 
+@@ -655,6 +719,9 @@
+ 
+     TInt err = m_pBluetoothComms->Connect();
+     return (err == KErrNone); 
++#else
++    return false;
++#endif
+ }
+ 
+ 
+@@ -669,16 +736,21 @@
+     if (IsClient() && m_IsSearchingForDevices)
+     {
+         m_IsSearchingForDevices = false;
++#if USE_BLUETOOTH == 1
+         m_pResolver->CancelDeviceListRequest(); 
++#endif
+     }
+ 
+     if (!g_MessageManager->IsNetworkActive())
+     {
+         // Cancel any ongoing connection attempt...
++#if USE_BLUETOOTH == 1
+         m_pBluetoothComms->Disconnect();
++#endif
+         return;
+     }
+ 
++#if USE_BLUETOOTH == 1
+     Assert(m_pBluetoothComms);
+ 
+     if (-1 == a_DeviceID)
+@@ -689,6 +761,7 @@
+     {
+         m_pBluetoothComms->Disconnect(a_DeviceID, a_Permanently);
+     }
++#endif
+ 
+     // Notify the message manager that I am no longer in a BT connection
+     g_MessageManager->SetConnectionType(MessageManager::CONNECTION_NONE);
+@@ -716,7 +789,9 @@
+         if (m_IsSearchingForDevices)
+         {
+             m_IsSearchingForDevices = false;
++#if USE_BLUETOOTH == 1
+             m_pResolver->CancelDeviceListRequest(); 
++#endif
+         }
+     }
+ }
+@@ -729,17 +804,21 @@
+ ==============================================================================*/ 
+ void BluetoothManager::EndSession()
+ {
++#if USE_BLUETOOTH == 1
+     Assert(m_pBluetoothComms);
+     BB_LOG("BluetoothManager::EndSession()"); 
+ //    g_WriteLineTime("EndSession()"); 
+     Disconnect();
++#endif
+     
+     // Just to be safe, although it shouldn't still be prefixed at this point.... 
+ #ifdef USE_BT_PREFIX
+     RemoveNamePrefix(); 
+ #endif
+ 
++#if USE_BLUETOOTH == 1
+     m_pBluetoothComms->EndSession();
++#endif
+ 
+ //    CLEAR_OBJECT(m_DeviceFailed); 
+     CLEAR_OBJECT(m_DeviceState);
+@@ -750,6 +829,7 @@
+ /*!============================================================================== 
+  \brief  From MGameBTCommsNotify -- a client is trying to connect to me (as host)
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::ConfirmRemoteDevice(const TDeviceDetails &a_Device)
+ {
+     char pName[256]; 
+@@ -776,11 +856,12 @@
+     }
+ #endif
+ }
+-
++#endif
+ 
+ /*!============================================================================== 
+  \brief  I've finished connecting, and can now send messages.  (both host and client)
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::Connected(TInt a_DeviceID, TInt a_Error)
+ {
+     if (KErrNone != a_Error)
+@@ -821,6 +902,7 @@
+         ++iter;
+     }
+ }
++#endif
+ 
+ /*!============================================================================== 
+  \brief  Someone just connected to me!  I'm the host.  So I need to update that
+@@ -885,6 +967,7 @@
+ /*!============================================================================== 
+  \brief  I just assigned a device to a device ID...
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::Declared(TInt a_DeviceID, const TDeviceDetails &a_Device, TInt a_Error)
+ {
+     if (KErrNone == a_Error)
+@@ -909,7 +992,7 @@
+         BB_LOG("ERROR: BTM::Declared(%d) failed.  Error: %d", a_DeviceID, a_Error); 
+     }
+ }
+-
++#endif
+ 
+ 
+ /*!============================================================================== 
+@@ -917,6 +1000,7 @@
+          to let everyone else know.  If I'm the client, the host disconnected
+          from me... which is kinda bad.
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::Disconnected(TInt a_DeviceID, TInt a_Error)
+ {
+     g_WriteLineTime(String("Device Disconnected: ") << a_DeviceID); 
+@@ -950,12 +1034,13 @@
+         pCallback->OnDisconnect(a_DeviceID); 
+     }
+ }
+-
++#endif
+ 
+ /*!============================================================================== 
+  \brief  From MResolverNotify - this function is called whenever the client
+          detects a possible host to connect to.
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::FoundDevice(const TDeviceDetails &a_Device, TInt a_Error)
+ {
+     if (KErrNone == a_Error)
+@@ -1007,13 +1092,14 @@
+     }
+     m_IdleTime = 0; 
+ }
+-
++#endif
+ 
+ 
+ /*!============================================================================== 
+  \brief  I just received some data over Bluetooth.  Convert it into a message
+          and send it along to the message manager...
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::ReceiveData(TInt /*a_DeviceID*/, const TDesC8& a_Data)
+ {
+     MessageBase* pMessage = (MessageBase*)a_Data.Ptr();
+@@ -1064,7 +1150,7 @@
+ //    g_MessageManager->ReceiveMessage((TUint8*)pMessage, a_Data.Size(), a_DeviceID); 
+     g_MessageManager->ReceiveMessage((TUint8*)pMessage, a_Data.Size(), pMessage->m_SourceDeviceID); 
+ }
+-
++#endif
+ 
+ /*!============================================================================== 
+  \brief  Sends a message to either a specific device or all clients
+@@ -1095,14 +1181,18 @@
+             return;
+         }
+ 
++#if USE_BLUETOOTH == 1
+         TPtr8 pData(a_pData, a_Size, a_Size);
+         m_pBluetoothComms->SendData(a_DeviceID, pData); 
++#endif
+     }
+     else
+     {
+         // Nope we're sending to everyone!  (Or just to the host if I'm a lowly client)
++#if USE_BLUETOOTH == 1
+         TPtr8 pData(a_pData, a_Size, a_Size);
+         m_pBluetoothComms->SendData(pData); 
++#endif
+     }
+ }
+ 
+@@ -1211,7 +1301,9 @@
+     if (IsClient() && m_IsSearchingForDevices)
+     {
+         m_IsSearchingForDevices = false;
++#if USE_BLUETOOTH == 1
+         m_pResolver->CancelDeviceListRequest(); 
++#endif
+     }
+ }
+ 
+@@ -1249,6 +1341,7 @@
+          out non-RIFTS hosts (for clients searching for hosts).
+   \note  Heavily based on original code written by Van Ly at Nokia.
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ #ifdef USE_BT_PREFIX
+ bool BluetoothManager::AddNamePrefix()
+ {
+@@ -1291,11 +1384,13 @@
+ 
+     return true;
+ }
++#endif
+ 
+ /*!============================================================================== 
+  \brief  Restore the host name to its original name (get rid of the prefix)
+   \note  Heavily based on original code written by Van Ly at Nokia.
+ ==============================================================================*/ 
++#if USE_BLUETOOTH == 1
+ void BluetoothManager::RemoveNamePrefix()
+ {
+     // First, check if the name was prefixed.. if not, do nothing.
+@@ -1326,6 +1421,7 @@
+ 
+ //    User::After(1000*1000); 
+ }
++#endif
+ 
+ /*!============================================================================== 
+  \brief  
+diff -ur Rifts/Code/src/Network/BluetoothManager.h Rifts_new/Code/src/Network/BluetoothManager.h
+--- Rifts/Code/src/Network/BluetoothManager.h	2010-08-30 22:14:20.000000000 +0200
++++ Rifts_new/Code/src/Network/BluetoothManager.h	2021-12-11 21:35:51.652088600 +0100
+@@ -9,8 +9,10 @@
+ #ifndef __BLUETOOTHMANAGER_H__
+ #define __BLUETOOTHMANAGER_H__
+ 
++#if USE_BLUETOOTH == 1
+ #include <GameBTCommsNotify.h>
+ #include <ResolverNotify.h>
++#endif
+ #include <es_sock.h> // for THostName
+ #include <BT_sock.h>
+ #include "Utility/PulseUser.h"
+@@ -30,8 +32,10 @@
+ };
+ 
+ // Forward declarations
++#if USE_BLUETOOTH == 1
+ class CGameBTComms; 
+ class CResolver; 
++#endif
+ struct MessageBase; 
+ struct MessageWelcome;
+ class INetworkCallbacks;
+@@ -45,13 +49,18 @@
+ #define BT_IDLE_TIME 600000 // 10 mins idle time before a disconnect is forced
+ #define BT_PING_TIME 5000 // ping every 5 secs...
+ 
++#if USE_BLUETOOTH == 1
+ #define USE_BT_PREFIX
++#endif
+ 
+ /*!============================================================================== 
+  \brief  Bluetooth manager class that encapsulates all Bluetooth-related connectivity,
+          wrapper for the Symbian Bluetooth API, etc.  All nice 'n' user friendly.
+ ==============================================================================*/ 
+-class BluetoothManager : public IMainObject, MGameBTCommsNotify, MGameBTCommsResolverNotify  
++class BluetoothManager : public IMainObject
++#if USE_BLUETOOTH == 1
++, MGameBTCommsNotify, MGameBTCommsResolverNotify  
++#endif
+ {
+ public:
+     BluetoothManager(); 
+@@ -68,15 +77,20 @@
+ 
+     // Convenience functions
+     uint CreateBattleID(); 
++#if USE_BLUETOOTH == 1
+     const int& GetRealDeviceID() { return m_DeviceID; }
+     int& GetVirtualDeviceID() { return m_VirtualDeviceID; }
++#endif
+     bool IsBluetoothAvailable(); 
+     bool IsBluetoothEnabled();
+     bool IsConnected(); 
+     bool IsDeviceConnected(int a_DeviceID); 
+     bool IsClient(); 
+     bool IsHost(); 
++
++#if USE_BLUETOOTH == 1
+     int  GetDeviceType(const TDeviceDetails& a_Device); 
++#endif
+     
+     int  EnableBluetooth(bool a_Enabled);
+     void SaveOriginalName();
+@@ -84,7 +98,9 @@
+     bool StartHost(int a_GameType, uint a_GameID); 
+     bool RestartHost(); 
+     bool StartClient(uint a_GameID); 
++#if USE_BLUETOOTH == 1
+     void DeclareDevice(const TDeviceDetails& a_Device);
++#endif
+     bool StartDeviceRequest();
+     void CancelDeviceRequest(); 
+ 
+@@ -94,12 +110,15 @@
+     void ConnectionDone(); 
+ 
+     // Accessor for BluetoothPowerSwitch (and other BT Active Objects *cough*)
++#if USE_BLUETOOTH == 1
+     CGameBTComms* GetBTComms() { return m_pBluetoothComms; }
++#endif
+ 
+     bool SetCurrentName(char* a_pName, bool a_bPreventSave = false);
+     const THostName& GetCurrentName();
+ 
+     // From MGameBTCommsNotify
++#if USE_BLUETOOTH == 1
+     void ConfirmRemoteDevice(const TDeviceDetails &aDevice);                    // internal usage only
+     void Connected(TInt aDeviceId, TInt aError);                                // internal usage only
+     void Declared(TInt aDeviceId, const TDeviceDetails &aDevice, TInt aError);  // internal usage only
+@@ -108,6 +127,7 @@
+     
+     // From MGameBTCommsResolverNotify
+ 	void FoundDevice(const TDeviceDetails &aDevice, TInt aError);               // internal usage only
++#endif
+     
+     // Misc. communication functionality
+     void SendMessage(TUint8* a_pData, int a_Size, int a_DeviceID); 
+@@ -130,8 +150,10 @@
+ 
+ private:
+     PulseUser                m_Pulse; 
++#if USE_BLUETOOTH == 1
+     CGameBTComms*            m_pBluetoothComms;
+     CResolver*               m_pResolver;
++#endif
+     bool                     m_IsBluetoothDefaultEnabled; 
+     NET_CALLBACK_LIST        m_NetworkCallbackList; 
+ 
+@@ -149,7 +171,9 @@
+ //    bool                     m_DeviceReplied[MAX_NETWORK_PLAYERS];
+ //    int                      m_DeviceFailed[MAX_NETWORK_PLAYERS];
+     THostName                m_DeviceName[MAX_NETWORK_PLAYERS];
++#if USE_BLUETOOTH == 1
+     List<TDeviceDetails>     m_lDeviceDatails; //List of devices that are declared
++#endif
+     
+     int                      m_IdleTime; 
+     int                      m_PingTime; 
+diff -ur Rifts/Code/src/Network/Message.cpp Rifts_new/Code/src/Network/Message.cpp
+--- Rifts/Code/src/Network/Message.cpp	2010-08-30 22:14:20.000000000 +0200
++++ Rifts_new/Code/src/Network/Message.cpp	2021-12-11 21:58:10.575039900 +0100
+@@ -14,9 +14,12 @@
+ 
+ #include "Network/BluetoothManager.h"
  #include "RiftsResourceID.h"
--#include "Game/Cores/BluetoothConnectionCore.h"
--#include "Game/Cores/BluetoothCore.h"
--#include "Game/Cores/BluetoothGameCore.h"
++#if USE_BLUETOOTH == 1
+ #include "Game/Cores/BluetoothConnectionCore.h"
+ #include "Game/Cores/BluetoothCore.h"
+ #include "Game/Cores/BluetoothGameCore.h"
++#endif
++#include "Game/Cores/MultiplayerGameCore.h"
  #include "Game/Cores/ArenaCore.h"
  #include "Game/Cores/GameCore.h"
  #include "Main/IBaseCore.h"
-@@ -53,7 +49,6 @@
+@@ -52,21 +55,22 @@
+ {
      switch(m_Flag)
      {
++#if USE_BLUETOOTH == 1
      case MSG_FLAG_CONNECTION_DONE: 
--        ((BluetoothConnectionCore*)g_TopCore)->ConnectionDone(); 
+         ((BluetoothConnectionCore*)g_TopCore)->ConnectionDone(); 
          break;
- 
+-
++#endif
  //    case MSG_FLAG_READY:
-@@ -64,7 +59,6 @@
+ //        // This is sent by clients to the host to notify it that they're ready to start the game.
+ //        ((BluetoothCore*)g_TopCore)->PlayerReady(a_DeviceID);
+ //        break;
+-
++#if USE_BLUETOOTH == 1
      case MSG_FLAG_BUSY:
          // This is sent by clients to the host to notify it that they're not ready to start the game.
          g_MessageManager->m_PlayerLevel[a_DeviceID] = 0; 
--        ((BluetoothCore*)g_TopCore)->PlayerBusy(a_DeviceID); 
+         ((BluetoothCore*)g_TopCore)->PlayerBusy(a_DeviceID); 
          break;
-     
+-    
++#endif
      case MSG_FLAG_LOAD_SECTOR_COMPLETE: 
-@@ -128,8 +122,7 @@
- 
-             //Tell the host if we can save other wise dont' do nothing (host can only save if we all tell him 
-             //that we can save
--            MultiplayerGameCore* pGameCore = (MultiplayerGameCore*)g_CoreManager->GetCore(PG_GAME);
--            if (g_MessageManager->IsClient() && pGameCore && pGameCore->CanSaveGame())
-+            if (g_MessageManager->IsClient())
-             {
-                 g_MessageManager->SendMessageFlag(MSG_FLAG_CAN_SAVE, false);
-             }
-@@ -186,13 +179,6 @@
-         break;
- */
- 
--    case MSG_FLAG_ALL_RECONNECTED:
--        {
--            ReconnectionCore* pCore = (ReconnectionCore*)g_CoreManager->GetCore(PG_RECONNECTION);
--            if (pCore)
--                pCore->SetHostReady();
--        }
--        break;
-     case MSG_FLAG_INVALID:
-     default:
-         AlertBox("%d: MessageFlag: Type = %d", a_DeviceID, m_Flag); 
-@@ -273,8 +259,6 @@
- ==============================================================================*/ 
- void MessageWelcome::HandleMessage(int /*a_DeviceID*/)
- {
--    // !HACK!
--    g_BluetoothManager->HandleWelcomeMessage(this);
- }
- 
- /*!============================================================================== 
-@@ -285,10 +269,6 @@
+         {
+             g_MPPlayerState[a_DeviceID] = MP_PLAYER_STATE_SETUP_SECTOR; 
+@@ -285,10 +289,12 @@
  void MessageClientReady::HandleMessage(int a_DeviceID)
  {
      g_MessageManager->m_PlayerLevel[a_DeviceID] = m_PartyLevel; 
--    if (m_bReady)
--        ((BluetoothCore*)g_TopCore)->PlayerReady(a_DeviceID);
--    else
--        ((BluetoothCore*)g_TopCore)->PlayerBusy(a_DeviceID);
++#if USE_BLUETOOTH == 1
+     if (m_bReady)
+         ((BluetoothCore*)g_TopCore)->PlayerReady(a_DeviceID);
+     else
+         ((BluetoothCore*)g_TopCore)->PlayerBusy(a_DeviceID);
++#endif
  }
  
  /*!============================================================================== 
-@@ -301,9 +281,6 @@
-     g_MessageManager->RandomSeed() = m_GameRandSeed;
-     BB_LOG("Setting Initial Seed %d", m_GameRandSeed);
+@@ -303,7 +309,9 @@
  //    memcpy(g_MessageManager->m_PlayerLevel, m_PlayerLevel, sizeof(m_PlayerLevel)); 
--
--    // !HACK!
--    ((BluetoothCore*)g_TopCore)->StartGame(m_Sector);
+ 
+     // !HACK!
++#if USE_BLUETOOTH == 1
+     ((BluetoothCore*)g_TopCore)->StartGame(m_Sector);
++#endif
  }
  
  
-@@ -313,14 +290,6 @@
+@@ -313,14 +321,17 @@
  void MessageQuitGame::HandleMessage(int /*a_DeviceID*/)
  {
      BB_LOG("Device %d has quit the game", m_SourceDeviceID);
--    BluetoothGameCore* pCore = (BluetoothGameCore*)g_CoreManager->GetCore(PG_GAME);
--    if (g_TopCore->GetPulseStage() == PG_GAME)
--        ((GameCore*)g_CoreManager->GetCore(PG_GAME))->SendEvent(GSE_NETWORK, this);
--    else if (pCore)
--    {
--        pCore->SetNextState(GS_PLAYER_QUIT);
--    }
++#if USE_BLUETOOTH == 1
+     BluetoothGameCore* pCore = (BluetoothGameCore*)g_CoreManager->GetCore(PG_GAME);
++#endif
+     if (g_TopCore->GetPulseStage() == PG_GAME)
+         ((GameCore*)g_CoreManager->GetCore(PG_GAME))->SendEvent(GSE_NETWORK, this);
++#if USE_BLUETOOTH == 1
+     else if (pCore)
+     {
+         pCore->SetNextState(GS_PLAYER_QUIT);
+     }
 -
++#endif
  }
  
  
-diff -ur Rifts/Code/src/Network/MessageManager.cpp Rifts_Rework/Code/src/Network/MessageManager.cpp
+diff -ur Rifts/Code/src/Network/MessageManager.cpp Rifts_new/Code/src/Network/MessageManager.cpp
 --- Rifts/Code/src/Network/MessageManager.cpp	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_Rework/Code/src/Network/MessageManager.cpp	2021-12-10 21:39:28.415616500 +0100
-@@ -9,7 +9,6 @@
- #include "common.h"
- #include "MessageManager.h"
- #include "Message.h"
--#include "BluetoothManager.h"
- #include "ArenaManager.h"
- //#include "Utility/Deebug/deebug.h"
- #include "Utility/SymbianHelpers.h"
-@@ -133,13 +132,9 @@
++++ Rifts_new/Code/src/Network/MessageManager.cpp	2021-12-11 21:55:27.121409200 +0100
+@@ -133,11 +133,11 @@
      {
      case CONNECTION_NONE:
          return -1;
 -
--    case CONNECTION_BLUETOOTH: 
--        //return g_BluetoothManager->GetDeviceID(); 
--        return g_BluetoothManager->GetVirtualDeviceID(); 
++#if USE_BLUETOOTH == 1
+     case CONNECTION_BLUETOOTH: 
+         //return g_BluetoothManager->GetDeviceID(); 
+         return g_BluetoothManager->GetVirtualDeviceID(); 
 -
++#endif
      case CONNECTION_GPRS: 
          return g_ArenaManager->GetDeviceID(); 
-+    case CONNECTION_BLUETOOTH: 
      default:
-         return -1; 
-     }
-@@ -154,13 +149,9 @@
+@@ -154,10 +154,10 @@
      {
      case CONNECTION_NONE:
          return 1; 
 -
--    case CONNECTION_BLUETOOTH:
--        return g_BluetoothManager->GetNumPlayers(); 
++#if USE_BLUETOOTH == 1
+     case CONNECTION_BLUETOOTH:
+         return g_BluetoothManager->GetNumPlayers(); 
 -
++#endif
      case CONNECTION_GPRS: 
  		return g_ArenaManager->NumPlayers();
--
-+    case CONNECTION_BLUETOOTH:
-     default:
-         return -1; 
-     }
-@@ -194,13 +185,9 @@
-     {
-     case CONNECTION_NONE:
-         return true; 
--
--    case CONNECTION_BLUETOOTH:
--        return g_BluetoothManager->IsHost(); 
--
-     case CONNECTION_GPRS:
- 		return g_ArenaManager->IsHost();
--
-+    case CONNECTION_BLUETOOTH:
-     default:
-         BB_LOG("MessageManager::IsHost() - unsupported connection type"); 
-         _BREAK;
-@@ -218,12 +205,9 @@
-     case CONNECTION_NONE:
-         return false; 
  
--    case CONNECTION_BLUETOOTH:
--        return g_BluetoothManager->IsClient(); 
--
-     case CONNECTION_GPRS:
- 		return !g_ArenaManager->IsHost();
--
-+    case CONNECTION_BLUETOOTH:
-     default:
-         BB_LOG("MessageManager::IsClient() - unsupported connection type"); 
-         _BREAK;
-@@ -282,15 +266,8 @@
- {
-     if (!IsNetworkActive()) return;
- 
--    if (CONNECTION_BLUETOOTH == m_ConnectionType)
--    {
--        g_BluetoothManager->Disconnect(); 
--    }
--    else
--    {
--		BB_LOG( "MessageManager wants to disconnect from Arena--not IMPLEMENTED" );
-+    BB_LOG( "MessageManager wants to disconnect from Arena--not IMPLEMENTED" );
-         // Something for GPRS here...
--    }
- 
-     // Nuke all existing variables
-     Reset(); 
-@@ -331,10 +308,6 @@
+@@ -331,10 +331,12 @@
          stream << g_ArenaManager->GetDeviceID();
          stream.WriteBytesL(m_DroppedDevices, sizeof(m_DroppedDevices));
     }
--    else if (IsBluetoothActive())
--    {
--        stream << g_BluetoothManager->GetVirtualDeviceID(); 
--    }
++#if USE_BLUETOOTH == 1
+     else if (IsBluetoothActive())
+     {
+         stream << g_BluetoothManager->GetVirtualDeviceID(); 
+     }
++#endif
  
      stream.WriteBytesL(m_PlayerState, sizeof(m_PlayerState)); 
  
-@@ -380,10 +353,6 @@
+@@ -380,10 +382,12 @@
          stream >> g_ArenaManager->GetDeviceID();
          stream.ReadBytesL(m_DroppedDevices, sizeof(m_DroppedDevices));
      }
--    else if (IsBluetoothActive())
--    {
--        stream >> g_BluetoothManager->GetVirtualDeviceID(); 
--    }
++#if USE_BLUETOOTH == 1
+     else if (IsBluetoothActive())
+     {
+         stream >> g_BluetoothManager->GetVirtualDeviceID(); 
+     }
++#endif
  
      stream.ReadBytesL(m_PlayerState, sizeof(m_PlayerState)); 
  
-@@ -543,17 +512,12 @@
+@@ -543,11 +547,12 @@
          // Now figure out what connection type we're on so we can send the message using the proper protocol
          switch(m_ConnectionType)
          {
--        case CONNECTION_BLUETOOTH:
--            a_pMessage->m_SourceDeviceID = (int8)g_BluetoothManager->GetRealDeviceID();  
--            g_BluetoothManager->SendMessage(pData, a_MessageSize, a_DeviceID);  
--            break;
++#if USE_BLUETOOTH == 1
+         case CONNECTION_BLUETOOTH:
+             a_pMessage->m_SourceDeviceID = (int8)g_BluetoothManager->GetRealDeviceID();  
+             g_BluetoothManager->SendMessage(pData, a_MessageSize, a_DeviceID);  
+             break;
 -
++#endif
          case CONNECTION_GPRS: 
              a_pMessage->m_SourceDeviceID = (int8)g_ArenaManager->GetDeviceID();  
              a_pMessage->LogSend( "naf", a_DeviceID, a_MessageSize );
- 			g_ArenaManager->ArenaSendMessage(pData, a_MessageSize, a_DeviceID);
-             break;
--
-+        case CONNECTION_BLUETOOTH:
-         default:
-             BB_LOG("SendMessage: Unsupported connection type: %d", m_ConnectionType); 
-             break;
-@@ -770,7 +734,10 @@
-     if (!IsNetworkActive()) return;
- 
-     MessageSaveGame msg; 
--    g_MessageManager->GetBattleID() = msg.m_BattleID = g_BluetoothManager->CreateBattleID(); 
-+
-+    TTime currentTime;
-+    currentTime.UniversalTime();
-+    g_MessageManager->GetBattleID() = msg.m_BattleID = currentTime.Int64().Low();
-     msg.m_GameTime = g_Timer->m_GameTime;
-     SendMessage(&msg, sizeof(msg)); 
- }
-@@ -935,7 +902,7 @@
- ==============================================================================*/ 
- bool MessageManager::IsNetworkActive()
- {
--    return IsArenaActive() || IsBluetoothActive();
-+    return false;
- }
- /*!============================================================================== 
-        \brief  Checks if the connection is gprs or if the arena core is available
-@@ -943,7 +910,7 @@
- ==============================================================================*/ 
- bool MessageManager::IsArenaActive()
- {
--    return m_ConnectionType == CONNECTION_GPRS;
-+    return false;
- }
- /*!============================================================================== 
-        \brief  Checks if the connection is bluetooth or if the bluetooth core is available
-@@ -951,7 +918,7 @@
- ==============================================================================*/ 
- bool MessageManager::IsBluetoothActive()
- {
--    return m_ConnectionType == CONNECTION_BLUETOOTH;
-+    return false;
- }
- /*!============================================================================== 
-        \brief  change connection type
-diff -ur Rifts/Code/src/System/SystemAppUi.cpp Rifts_Rework/Code/src/System/SystemAppUi.cpp
+diff -ur Rifts/Code/src/System/SystemAppUi.cpp Rifts_new/Code/src/System/SystemAppUi.cpp
 --- Rifts/Code/src/System/SystemAppUi.cpp	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_Rework/Code/src/System/SystemAppUi.cpp	2021-12-10 20:56:46.997252200 +0100
-@@ -1,358 +1,351 @@
--/******************************************************************************
--\brief  Definition of class CSystemAppUi.  See header file for more info.
--\author Created By:  Nokia's NGage Game Wizard
--\author Last Edited: $Author: Kelvint $
--
--\date   $Date: 9/07/05 2:56p $
--
--\note   This file was auto-generated using Nokia's NGage game wizard.
--
--\author Copyright © Digital Eclipse Software, Inc.  2004-2005
--******************************************************************************/
--
--// INCLUDE FILES
--#include "common.h"
--#include "SystemAppUi.h"
--#include "SystemAppView.h" 
++++ Rifts_new/Code/src/System/SystemAppUi.cpp	2021-12-11 21:29:48.877490900 +0100
+@@ -14,8 +14,6 @@
+ #include "common.h"
+ #include "SystemAppUi.h"
+ #include "SystemAppView.h" 
 -#include "6R49.rsg"
 -#include <NokiaFC.h>
--
--#include <avkon.hrh>
--#include <aknsoundsystem.h> 
--#include <avkon.rsg> 
--#include <aknnotewrappers.h>
--
--//#include "Utility/PulseManager.h"
--#include "Input/InputManager.h"
--#include "Main/Globals.h"
--#include "Sound/SoundWrap.h"
--#include "Network/ArenaManager.h"
--#include "Sound/CallMonitor.h"
--
--// The only "statistics" here are the game going from foreground/background
--// It gets counted as a pause of the game.
--#include "Data/StatTracker.h"
--
--_LIT8(KGameId, "N-Gage");  // this must match the string in the file game.id 
--//_LIT(KNGageSplash, "ngagesplash.mbm");
--
--
--#include "IBaseCore.h"
--#include "Game/Cores/CoreManager.h"
--#include "Game/Cores/MapCore.h"
--#include "Game/Cores/GameCore.h"
--#include "Game/Cores/CutSceneCore.h"
--#include "Game/Cores/LimitedPauseMenuCore.h"
--#include "Game/Cores/PauseMenuCore.h"
--#include "Utility/Timer.h"
--
--const int GAME_INACTIVE_TIME = 1600000; 
--void AlertBox(const TSTR * format, ...);
--Language LANG_IDFromTLanguage(TLanguage lang);
--// ========================== MEMBER FUNCTIONS ==============================
--
--// --------------------------------------------------------------------------
--// CSystemAppUi::ConstructL()
--// --------------------------------------------------------------------------
--void CSystemAppUi::ConstructL()
--{
--    // If that succeeded then we have enough space to finish booting.
--    CleanupHolder();
--    User::CompressAllHeaps();
--
--    BaseConstructL();
--    
+ 
+ #include <avkon.hrh>
+ #include <aknsoundsystem.h> 
+@@ -62,11 +60,6 @@
+ 
+     BaseConstructL();
+     
 -    // Call First Check routine
 -    HBufC* errNote = iCoeEnv->AllocReadResourceLC(R_FC_ERROR_MSG);
 -    FirstCheck::DoFirstCheckL(KGameId, errNote->Des());
 -    CleanupStack::PopAndDestroy(); // errNote
 -
--    // Allocate a a bunch of space so we fail instantly
--    // if free memory is very low.
--    int i;
--    for (i = 0; i < SAV_BLOCK_COUNT; i++)
--    {
--        m_pHolder[i] = 0;
--    }
--    for (i = 0; i < SAV_BLOCK_COUNT; i++)
--    {
--        m_pHolder[i] = new unsigned char[SAV_BLOCK_SIZE];
--        if (m_pHolder[i] == NULL)
--        {
--            //Clean up memory here just incase we could be setting off some alarms in the system
--            CleanupHolder();
--            User::CompressAllHeaps();
--
--            char* pText = NULL;
--
--            TLanguage phone_lang = User::Language();
--
--            switch(LANG_IDFromTLanguage(phone_lang))
--            {
--            case LANG_ID_ENGLISH:
--                pText = "Out of Memory";
--                break;
--            case LANG_ID_FRENCH:
--                pText = "Mémoire insuffisante";
--                break;
--            case LANG_ID_GERMAN:
--                pText = "Speicher voll";
--                break;
--            case LANG_ID_SPANISH:
--                pText = "No queda memoria";
--                break;
--            case LANG_ID_ITALIAN:
--                pText = "Memoria insufficiente";
--                break;
--            default:
--                pText = "Out of Memory";
--                break;
--            }
--
--
--            AlertBox("%s",pText);
--            Exit();
--            break;
--        }
--    }
--
--    //Clean up memory here just incase we could be setting off some alarms in the system
--    CleanupHolder();
--    User::CompressAllHeaps();
--
--    //Clean up memory here just incase we could be setting off some alarms in the system
--    CleanupHolder();
--    User::CompressAllHeaps();
--
--    // Create application view
--    iAppView = BB_NEW(CSystemAppView);
--    iAppView->SetMopParent( this );
--    iAppView->ConstructL(ClientRect());
--    AddToStackL(iAppView);
--    iAppView->ActivateL();
--
--    GetGlobals()->SetGameApp(this);
--    GetGlobals()->SetGameView(iAppView);
--
--
--//    // Disable key blocking
--//    CAknAppUi::SetKeyBlockMode(ENoKeyBlock);
--
--	if (KeySounds())
--	{
--		// Silence keyclick
--		KeySounds()->PushContextL( R_AVKON_SILENT_SKEY_LIST ); 
--	}
--
--	GetGlobals()->InitalizeFinished();
--}
--
--void CSystemAppUi::CleanupHolder()
--{
--    int i;
--
--    for (i = 0; i < SAV_BLOCK_COUNT; i++)
--    {
--        delete m_pHolder[i];
--        m_pHolder[i] = 0;
--    }
--}
--
--// --------------------------------------------------------------------------
--// CSystemAppUi::~CSystemAppUi()
--// Destructor
--// Frees reserved resources
--// --------------------------------------------------------------------------
--CSystemAppUi::~CSystemAppUi()
--{
--    CleanupHolder();
--
--	if (KeySounds())
--	{
--		// re-enable keyclick.
--		KeySounds()->PopContext();
--	}
--
--    // Reenable key blocking
--    CAknAppUi::SetKeyBlockMode(EDefaultBlockMode);
--
--
--    if (iAppView)
--    {
--        RemoveFromStack(iAppView);
--        BB_DELETE(iAppView);
--    }
--}
--
--// ------------------------------------------------------------------------------
--// CSystemAppUi::DynInitMenuPaneL(TInt aResourceId,CEikMenuPane* aMenuPane)
--//  This function is called by the EIKON framework just before it displays
--//  a menu pane. Its default implementation is empty, and by overriding it,
--//  the application can set the state of menu items dynamically according
--//  to the state of application data.
--// ------------------------------------------------------------------------------
--void CSystemAppUi::DynInitMenuPaneL(TInt /*aResourceId*/,CEikMenuPane* /*aMenuPane*/)
--{
--}
--
--
--// --------------------------------------------------------------------------
--// CSystemAppUi::HandleCommandL(TInt aCommand)
--// takes care of command handling
--//
--// \note See SystemAppView::OfferKeyEventL()
--// --------------------------------------------------------------------------
--#include "Utility/PulseManager.h"
--void CSystemAppUi::HandleCommandL(TInt aCommand)
--{
--
--    switch ( aCommand )
--    {
--//    case EAknSoftkeyBack:
--    case EEikCmdExit:
--        {
--            //g_CoreManager->PopGroup(PG_EXIT);
--            BB_LOG("Game Exit Command.");
--            g_Shutdown; 
--            while(1)
--            {
--                g_PulseManager->PulseGame(); 
--            }
--            Exit();  // the game *must* shut down immediately  :( 
--            break;
--        }
--        // TODO: Add Your command handling code here
--
--    default:
--        break;      
--    }
--}
--
--/*!============================================================================== 
-- \brief  Notification callback when the application loses and regains focus.
--         aForeground:  true if application regained focus, false if focus is lost.
--==============================================================================*/ 
--void CSystemAppUi::HandleForegroundEventL(TBool aForeground)
--{
--    BB_LOG("HandleForegroundEventL(%s)", aForeground ? "True" : "False"); 
--
--	// Let the base class have a go so sound will be disabled.
--	CAknAppUi::HandleForegroundEventL(aForeground);
--    
--    //BB_LOG("HandleForegroundEventL - checkpoint #1"); 
--
--    if (iAppView == NULL)
--        return; // game not made! (memory failure?)
--
--    if (aForeground != 0)
--    {
--		STAT_RESUME();
--        BB_LOG("Foreground Event Game On");
--
--        // Restore the game timer... 
--        if (GetGlobals() && GetGlobals()->m_bIsGameMinimized)
--            g_Timer->ResetTimer(STARSHIP_PULSE_TIME); 
--        else
--            g_Timer->ResetTimer(GAME_PULSE_TIME); 
--
--        CAknAppUi::SetKeyBlockMode(ENoKeyBlock);
--        g_HasFocus = true;
--        // application has regained focus.  Restart timers, etc...
--        if (GetGlobals() && g_InputManager)
--        {
--            g_InputManager->ClearButtons(); 
--            g_InputManager->ClearDirectionPad(); 
--        }
--
--        // Check if its pluged in after it gets focus again
--		// [Removed--the SoundMonitor polls this itself.]
--
--		CCallMonitor* pCallMonitor = 0;
--		// Make certain the call state is up to date.
--		if (GetGlobals())
--		{
--			pCallMonitor = GetGlobals()->m_pCallMonitor;
--		}
--
--		// ResumeSound() should not be called if a call is ringing.
--		if (pCallMonitor)
--		{
--			pCallMonitor->PollForCallAndCharger();
--			if (pCallMonitor->IsCallRinging())
--			{
--				BB_LOG("Call ringing--do not resume sound");
--			}
--			else
--			{
--				ResumeSound();
--			}
--		}
--		else
--		{
--			// No call monitor, always resume sound
--			ResumeSound();
--		}
--
--        int iStage = 0;
--        if (g_TopCore)
--            iStage = g_TopCore->GetPulseStage();
--
--        BB_LOG("iStage = %d", iStage); 
--        
--        //This is here to check if the card has been pulled or not before we do the rest of this cause
--        //Pausing the game will need the cards data
--        if (DFile::Exists("Version.txt") == false)
--            return;
--
--        //Pause Screen or stop Attract Mode
--        if ( iStage == PG_MAP )
--            ((MapCore*)g_TopCore)->PauseGame(true);
--        else if ( iStage == PG_GAME )
--            ((GameCore*)g_CoreManager->GetCore(PG_GAME))->PauseGame(true);
--        //Interupt the Attract mode
--        else if ( iStage == PG_PAUSE_MENU )
--            ((PauseMenuCore*)g_CoreManager->GetCore(PG_PAUSE_MENU))->ForcePause();
--        else if ( iStage == PG_PAUSE_MENU_2 )
--            ((LimitedPauseMenuCore*)g_CoreManager->GetCore(PG_PAUSE_MENU_2))->ForcePause();
--        else if ( iStage == PG_CUTSCENE && !g_CoreManager->GetCore(PG_MAP))
--        {
--            BB_LOG("focus change = Skipping Cutscene");
--            g_CoreManager->PopGroup();
--        }
--        //Pause the cutscence
--        else if (iStage == PG_CUTSCENE)
--        {
--            BB_LOG("focus change = Pause Cutscene");
--            ((CutsceneCore*)g_TopCore)->PauseGame(true);
--        }
--    }
--    else
--    {
--		STAT_PAUSE();
--        BB_LOG("Foreground Event Game Off");
--        // application has lost focus. Suspend timers, etc...
--        g_HasFocus = false;
--        CAknAppUi::SetKeyBlockMode(EDefaultBlockMode);
--        GetGlobals()->m_bForceOnBackLight = false;
--		// Sound must be complete suspended
--		FreezeSound();
--
--        // Slow down the game to reduce power usage
--        g_Timer->ResetTimer(GAME_INACTIVE_TIME); 
--    }
--
--    BB_LOG("Foreground event done."); 
--}
--
--void CSystemAppUi::QuitGame()
--{
--    // Write settings file before quitting
--//    GetGlobals()->SaveSettings(); 
--
--    StopSfx(-1);
--    StopMusic();
--	BB_LOG("SHUT: calling Exit()");
--	Exit();
--}
--
+     // Allocate a a bunch of space so we fail instantly
+     // if free memory is very low.
+     int i;
+@@ -355,4 +348,4 @@
+ 	Exit();
+ }
+ 
 -// End of File  
 \ No newline at end of file
-+/******************************************************************************
-+\brief  Definition of class CSystemAppUi.  See header file for more info.
-+\author Created By:  Nokia's NGage Game Wizard
-+\author Last Edited: $Author: Kelvint $
-+
-+\date   $Date: 9/07/05 2:56p $
-+
-+\note   This file was auto-generated using Nokia's NGage game wizard.
-+
-+\author Copyright © Digital Eclipse Software, Inc.  2004-2005
-+******************************************************************************/
-+
-+// INCLUDE FILES
-+#include "common.h"
-+#include "SystemAppUi.h"
-+#include "SystemAppView.h" 
-+
-+#include <avkon.hrh>
-+#include <aknsoundsystem.h> 
-+#include <avkon.rsg> 
-+#include <aknnotewrappers.h>
-+
-+//#include "Utility/PulseManager.h"
-+#include "Input/InputManager.h"
-+#include "Main/Globals.h"
-+#include "Sound/SoundWrap.h"
-+#include "Network/ArenaManager.h"
-+#include "Sound/CallMonitor.h"
-+
-+// The only "statistics" here are the game going from foreground/background
-+// It gets counted as a pause of the game.
-+#include "Data/StatTracker.h"
-+
-+_LIT8(KGameId, "N-Gage");  // this must match the string in the file game.id 
-+//_LIT(KNGageSplash, "ngagesplash.mbm");
-+
-+
-+#include "IBaseCore.h"
-+#include "Game/Cores/CoreManager.h"
-+#include "Game/Cores/MapCore.h"
-+#include "Game/Cores/GameCore.h"
-+#include "Game/Cores/CutSceneCore.h"
-+#include "Game/Cores/LimitedPauseMenuCore.h"
-+#include "Game/Cores/PauseMenuCore.h"
-+#include "Utility/Timer.h"
-+
-+const int GAME_INACTIVE_TIME = 1600000; 
-+void AlertBox(const TSTR * format, ...);
-+Language LANG_IDFromTLanguage(TLanguage lang);
-+// ========================== MEMBER FUNCTIONS ==============================
-+
-+// --------------------------------------------------------------------------
-+// CSystemAppUi::ConstructL()
-+// --------------------------------------------------------------------------
-+void CSystemAppUi::ConstructL()
-+{
-+    // If that succeeded then we have enough space to finish booting.
-+    CleanupHolder();
-+    User::CompressAllHeaps();
-+
-+    BaseConstructL();
-+    
-+    // Allocate a a bunch of space so we fail instantly
-+    // if free memory is very low.
-+    int i;
-+    for (i = 0; i < SAV_BLOCK_COUNT; i++)
-+    {
-+        m_pHolder[i] = 0;
-+    }
-+    for (i = 0; i < SAV_BLOCK_COUNT; i++)
-+    {
-+        m_pHolder[i] = new unsigned char[SAV_BLOCK_SIZE];
-+        if (m_pHolder[i] == NULL)
-+        {
-+            //Clean up memory here just incase we could be setting off some alarms in the system
-+            CleanupHolder();
-+            User::CompressAllHeaps();
-+
-+            char* pText = NULL;
-+
-+            TLanguage phone_lang = User::Language();
-+
-+            switch(LANG_IDFromTLanguage(phone_lang))
-+            {
-+            case LANG_ID_ENGLISH:
-+                pText = "Out of Memory";
-+                break;
-+            case LANG_ID_FRENCH:
-+                pText = "Mémoire insuffisante";
-+                break;
-+            case LANG_ID_GERMAN:
-+                pText = "Speicher voll";
-+                break;
-+            case LANG_ID_SPANISH:
-+                pText = "No queda memoria";
-+                break;
-+            case LANG_ID_ITALIAN:
-+                pText = "Memoria insufficiente";
-+                break;
-+            default:
-+                pText = "Out of Memory";
-+                break;
-+            }
-+
-+
-+            AlertBox("%s",pText);
-+            Exit();
-+            break;
-+        }
-+    }
-+
-+    //Clean up memory here just incase we could be setting off some alarms in the system
-+    CleanupHolder();
-+    User::CompressAllHeaps();
-+
-+    //Clean up memory here just incase we could be setting off some alarms in the system
-+    CleanupHolder();
-+    User::CompressAllHeaps();
-+
-+    // Create application view
-+    iAppView = BB_NEW(CSystemAppView);
-+    iAppView->SetMopParent( this );
-+    iAppView->ConstructL(ClientRect());
-+    AddToStackL(iAppView);
-+    iAppView->ActivateL();
-+
-+    GetGlobals()->SetGameApp(this);
-+    GetGlobals()->SetGameView(iAppView);
-+
-+
-+//    // Disable key blocking
-+//    CAknAppUi::SetKeyBlockMode(ENoKeyBlock);
-+
-+	if (KeySounds())
-+	{
-+		// Silence keyclick
-+		KeySounds()->PushContextL( R_AVKON_SILENT_SKEY_LIST ); 
-+	}
-+
-+	GetGlobals()->InitalizeFinished();
-+}
-+
-+void CSystemAppUi::CleanupHolder()
-+{
-+    int i;
-+
-+    for (i = 0; i < SAV_BLOCK_COUNT; i++)
-+    {
-+        delete m_pHolder[i];
-+        m_pHolder[i] = 0;
-+    }
-+}
-+
-+// --------------------------------------------------------------------------
-+// CSystemAppUi::~CSystemAppUi()
-+// Destructor
-+// Frees reserved resources
-+// --------------------------------------------------------------------------
-+CSystemAppUi::~CSystemAppUi()
-+{
-+    CleanupHolder();
-+
-+	if (KeySounds())
-+	{
-+		// re-enable keyclick.
-+		KeySounds()->PopContext();
-+	}
-+
-+    // Reenable key blocking
-+    CAknAppUi::SetKeyBlockMode(EDefaultBlockMode);
-+
-+
-+    if (iAppView)
-+    {
-+        RemoveFromStack(iAppView);
-+        BB_DELETE(iAppView);
-+    }
-+}
-+
-+// ------------------------------------------------------------------------------
-+// CSystemAppUi::DynInitMenuPaneL(TInt aResourceId,CEikMenuPane* aMenuPane)
-+//  This function is called by the EIKON framework just before it displays
-+//  a menu pane. Its default implementation is empty, and by overriding it,
-+//  the application can set the state of menu items dynamically according
-+//  to the state of application data.
-+// ------------------------------------------------------------------------------
-+void CSystemAppUi::DynInitMenuPaneL(TInt /*aResourceId*/,CEikMenuPane* /*aMenuPane*/)
-+{
-+}
-+
-+
-+// --------------------------------------------------------------------------
-+// CSystemAppUi::HandleCommandL(TInt aCommand)
-+// takes care of command handling
-+//
-+// \note See SystemAppView::OfferKeyEventL()
-+// --------------------------------------------------------------------------
-+#include "Utility/PulseManager.h"
-+void CSystemAppUi::HandleCommandL(TInt aCommand)
-+{
-+
-+    switch ( aCommand )
-+    {
-+//    case EAknSoftkeyBack:
-+    case EEikCmdExit:
-+        {
-+            //g_CoreManager->PopGroup(PG_EXIT);
-+            BB_LOG("Game Exit Command.");
-+            g_Shutdown; 
-+            while(1)
-+            {
-+                g_PulseManager->PulseGame(); 
-+            }
-+            Exit();  // the game *must* shut down immediately  :( 
-+            break;
-+        }
-+        // TODO: Add Your command handling code here
-+
-+    default:
-+        break;      
-+    }
-+}
-+
-+/*!============================================================================== 
-+ \brief  Notification callback when the application loses and regains focus.
-+         aForeground:  true if application regained focus, false if focus is lost.
-+==============================================================================*/ 
-+void CSystemAppUi::HandleForegroundEventL(TBool aForeground)
-+{
-+    BB_LOG("HandleForegroundEventL(%s)", aForeground ? "True" : "False"); 
-+
-+	// Let the base class have a go so sound will be disabled.
-+	CAknAppUi::HandleForegroundEventL(aForeground);
-+    
-+    //BB_LOG("HandleForegroundEventL - checkpoint #1"); 
-+
-+    if (iAppView == NULL)
-+        return; // game not made! (memory failure?)
-+
-+    if (aForeground != 0)
-+    {
-+		STAT_RESUME();
-+        BB_LOG("Foreground Event Game On");
-+
-+        // Restore the game timer... 
-+        if (GetGlobals() && GetGlobals()->m_bIsGameMinimized)
-+            g_Timer->ResetTimer(STARSHIP_PULSE_TIME); 
-+        else
-+            g_Timer->ResetTimer(GAME_PULSE_TIME); 
-+
-+        CAknAppUi::SetKeyBlockMode(ENoKeyBlock);
-+        g_HasFocus = true;
-+        // application has regained focus.  Restart timers, etc...
-+        if (GetGlobals() && g_InputManager)
-+        {
-+            g_InputManager->ClearButtons(); 
-+            g_InputManager->ClearDirectionPad(); 
-+        }
-+
-+        // Check if its pluged in after it gets focus again
-+		// [Removed--the SoundMonitor polls this itself.]
-+
-+		CCallMonitor* pCallMonitor = 0;
-+		// Make certain the call state is up to date.
-+		if (GetGlobals())
-+		{
-+			pCallMonitor = GetGlobals()->m_pCallMonitor;
-+		}
-+
-+		// ResumeSound() should not be called if a call is ringing.
-+		if (pCallMonitor)
-+		{
-+			pCallMonitor->PollForCallAndCharger();
-+			if (pCallMonitor->IsCallRinging())
-+			{
-+				BB_LOG("Call ringing--do not resume sound");
-+			}
-+			else
-+			{
-+				ResumeSound();
-+			}
-+		}
-+		else
-+		{
-+			// No call monitor, always resume sound
-+			ResumeSound();
-+		}
-+
-+        int iStage = 0;
-+        if (g_TopCore)
-+            iStage = g_TopCore->GetPulseStage();
-+
-+        BB_LOG("iStage = %d", iStage); 
-+        
-+        //This is here to check if the card has been pulled or not before we do the rest of this cause
-+        //Pausing the game will need the cards data
-+        if (DFile::Exists("Version.txt") == false)
-+            return;
-+
-+        //Pause Screen or stop Attract Mode
-+        if ( iStage == PG_MAP )
-+            ((MapCore*)g_TopCore)->PauseGame(true);
-+        else if ( iStage == PG_GAME )
-+            ((GameCore*)g_CoreManager->GetCore(PG_GAME))->PauseGame(true);
-+        //Interupt the Attract mode
-+        else if ( iStage == PG_PAUSE_MENU )
-+            ((PauseMenuCore*)g_CoreManager->GetCore(PG_PAUSE_MENU))->ForcePause();
-+        else if ( iStage == PG_PAUSE_MENU_2 )
-+            ((LimitedPauseMenuCore*)g_CoreManager->GetCore(PG_PAUSE_MENU_2))->ForcePause();
-+        else if ( iStage == PG_CUTSCENE && !g_CoreManager->GetCore(PG_MAP))
-+        {
-+            BB_LOG("focus change = Skipping Cutscene");
-+            g_CoreManager->PopGroup();
-+        }
-+        //Pause the cutscence
-+        else if (iStage == PG_CUTSCENE)
-+        {
-+            BB_LOG("focus change = Pause Cutscene");
-+            ((CutsceneCore*)g_TopCore)->PauseGame(true);
-+        }
-+    }
-+    else
-+    {
-+		STAT_PAUSE();
-+        BB_LOG("Foreground Event Game Off");
-+        // application has lost focus. Suspend timers, etc...
-+        g_HasFocus = false;
-+        CAknAppUi::SetKeyBlockMode(EDefaultBlockMode);
-+        GetGlobals()->m_bForceOnBackLight = false;
-+		// Sound must be complete suspended
-+		FreezeSound();
-+
-+        // Slow down the game to reduce power usage
-+        g_Timer->ResetTimer(GAME_INACTIVE_TIME); 
-+    }
-+
-+    BB_LOG("Foreground event done."); 
-+}
-+
-+void CSystemAppUi::QuitGame()
-+{
-+    // Write settings file before quitting
-+//    GetGlobals()->SaveSettings(); 
-+
-+    StopSfx(-1);
-+    StopMusic();
-+	BB_LOG("SHUT: calling Exit()");
-+	Exit();
-+}
-+
 +// End of File  
-diff -ur Rifts/Code/src/System/SystemAppUi.h Rifts_Rework/Code/src/System/SystemAppUi.h
+diff -ur Rifts/Code/src/System/SystemAppUi.h Rifts_new/Code/src/System/SystemAppUi.h
 --- Rifts/Code/src/System/SystemAppUi.h	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_Rework/Code/src/System/SystemAppUi.h	2021-12-10 17:39:28.511147200 +0100
++++ Rifts_new/Code/src/System/SystemAppUi.h	2021-12-11 21:29:30.395115600 +0100
 @@ -19,7 +19,6 @@
  #include <e32std.h>
  #include <coeccntx.h>
@@ -1506,3 +1153,4 @@ diff -ur Rifts/Code/src/System/SystemAppUi.h Rifts_Rework/Code/src/System/System
 -// End of File
 \ No newline at end of file
 +// End of File
+Only in Rifts_new: .git

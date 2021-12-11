@@ -3,6 +3,18 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/nokia-ngage-toolchain.cmake)
 
 project(6r49 CXX)
 
+option(ENABLE_E3_DEMO "Enable E3 Demo"   ON)
+option(USE_BLUETOOTH  "Enable Bluetooth" OFF) # Not supported!
+
+# The line must be drawn here! This far, no further!
+if(ENABLE_E3_DEMO)
+    add_definitions(-DENABLE_E3_DEMO=1)
+endif()
+
+if(USE_BLUETOOTH)
+    add_definitions(-DUSE_BLUETOOTH=1)
+endif()
+
 set(SRC_DIR  ${RIFTS_DIR}/Code/src)
 set(STUB_DIR ${CMAKE_SOURCE_DIR}/Stubs)
 
@@ -167,7 +179,7 @@ set(6r49_sources
     "${SRC_DIR}/Game/Cores/PauseMenuCore.cpp"
     "${SRC_DIR}/Game/Cores/PickUpMenuCore.cpp"
     "${SRC_DIR}/Game/Cores/QuestMenuCore.cpp"
-#    "${SRC_DIR}/Game/Cores/ReconnectionCore.cpp"
+    "${SRC_DIR}/Game/Cores/ReconnectionCore.cpp"
     "${SRC_DIR}/Game/Cores/RewardScreenCore.cpp"
     "${SRC_DIR}/Game/Cores/SaveGameCore.cpp"
     "${SRC_DIR}/Game/Cores/ServerActionCore.cpp"
@@ -243,7 +255,7 @@ set(6r49_sources
     "${SRC_DIR}/Network/ArenaManager_DEMO.cpp"
     "${SRC_DIR}/Network/ArenaManagerArena_DEMO.cpp"
     "${SRC_DIR}/Network/ArenaManagerStub.cpp"
-#    "${SRC_DIR}/Network/BluetoothManager.cpp"
+    "${SRC_DIR}/Network/BluetoothManager.cpp"
 #    "${SRC_DIR}/Network/BluetoothPowerSwitch.cpp"
     "${SRC_DIR}/Network/IServerAction.cpp"
     "${SRC_DIR}/Network/Message.cpp"

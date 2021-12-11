@@ -38,3 +38,7 @@ installed and open the project directory.
 
 Wait until Visual Studio has generated the CMake Cache and then simply
 click Build All or press F7.
+
+The patched source code has a few optional features that I would like to
+extend over time. These can be set directly in Visual Studio under
+`Project CMake → Settings`.
