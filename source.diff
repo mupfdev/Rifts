@@ -180,7 +180,7 @@ diff -ur Rifts/Code/src/Game/Cores/CoreManager.cpp Rifts_new/Code/src/Game/Cores
                  _BREAK; 
 diff -ur Rifts/Code/src/Main/Globals.cpp Rifts_new/Code/src/Main/Globals.cpp
 --- Rifts/Code/src/Main/Globals.cpp	2010-08-30 22:14:20.000000000 +0200
-+++ Rifts_new/Code/src/Main/Globals.cpp	2021-12-11 21:28:26.422393700 +0100
++++ Rifts_new/Code/src/Main/Globals.cpp	2021-12-12 11:52:47.184507400 +0100
 @@ -172,8 +172,12 @@
      m_pGameManager = NULL; 
      m_pDebugLink = NULL;
@@ -210,6 +210,19 @@ diff -ur Rifts/Code/src/Main/Globals.cpp Rifts_new/Code/src/Main/Globals.cpp
  
      m_bStopMovingEveyone = false;
  
+@@ -485,6 +494,12 @@
+     }
+ 
+     // PNP SOUND PORT end
++#if UNLOCK_WALLPAPER == 1
++    SetExtra(ET_AVAILABLE_WALLPAPERS, 5);
++#endif
++#if UNLOCK_CONCEPT_ART == 1
++    SetExtra(ET_AVAILABLE_CONCEPT_ART, 10);
++#endif
+ }
+ /*!============================================================================== 
+        \brief  Write a line of text to the frame buffer
 diff -ur Rifts/Code/src/Main/Globals.h Rifts_new/Code/src/Main/Globals.h
 --- Rifts/Code/src/Main/Globals.h	2010-08-30 22:14:20.000000000 +0200
 +++ Rifts_new/Code/src/Main/Globals.h	2021-12-11 21:27:20.398083700 +0100
@@ -249,6 +262,226 @@ diff -ur Rifts/Code/src/Main/Globals.h Rifts_new/Code/src/Main/Globals.h
  
      // Party data container for fast access to party info
      PartyData        m_PartyData;
+diff -ur Rifts/Code/src/Main/Unlockables.cpp Rifts_new/Code/src/Main/Unlockables.cpp
+--- Rifts/Code/src/Main/Unlockables.cpp	2010-08-30 22:14:20.000000000 +0200
++++ Rifts_new/Code/src/Main/Unlockables.cpp	2021-12-12 11:00:06.299011900 +0100
+@@ -1,108 +1,108 @@
+-/*!============================================================================== 
+-        \file  Unlockables.cpp 
+-      \author  Copyright © Digital Eclipse Software, Inc.  2004-2005 
+-       \brief  Implementation for the Unlockables class 
+-         \rev  2/7/2005 - chriss - Original version. 
+-                
+-==============================================================================*/ 
+-
+-#include "common.h"
+-#include "Unlockables.h"
+-#include "RiftsStringID.h"
+-#include "RiftsResourceID.h"
+-
+-/*!============================================================================== 
+-       \brief  Get the data of the given extra.  If the extra cheat is on return the max of each type
+-      \author  2/7/2005 chriss 
+-==============================================================================*/ 
+-int GetExtra(int a_Extra)
+-{
+-    Assert(a_Extra < ET_NUM);
+-    Globals* pGlobals = GetGlobals();
+-
+-    if (pGlobals->m_bUnlockablesCheat == false)
+-    {
+-        switch(a_Extra)
+-        {
+-        default:
+-            return pGlobals->m_aExtras[a_Extra];
+-        case ET_CUR_WALLPAPER:
+-            {
+-                int iCurWallpaper = pGlobals->m_aExtras[ET_CUR_WALLPAPER];
+-                int iMaxWallpaper = pGlobals->m_aExtras[ET_AVAILABLE_WALLPAPERS];
+-
+-                // check that the wallpaper selected is enabled first (this may have been set from a debug cheat)
+-                if (iCurWallpaper <= iMaxWallpaper)
+-                    return iCurWallpaper;
+-                return 0;
+-            }
+-#define CheckCheat(cheat)\
+-        case cheat##_TOGGLE##:\
+-            if (pGlobals->m_aExtras[cheat] <= 0) return 0;\
+-            else return pGlobals->m_aExtras[cheat##_TOGGLE##];\
+-
+-        CheckCheat(ET_NORANDOMFIGHTS)
+-        CheckCheat(ET_GODMODE)
+-        CheckCheat(ET_MEGAMAGE)
+-        CheckCheat(ET_ALWAYSHIT)
+-
+-#undef CheckCheat
+-        }
+-    }
+-    else
+-    {
+-
+-        if (a_Extra < ET_USER_CONFIG_DATA)
+-        {
+-            if (a_Extra == ET_AVAILABLE_WALLPAPERS)
+-                return 5;
+-            if (a_Extra == ET_AVAILABLE_CONCEPT_ART)
+-                return 10;
+-            else
+-                return 1;
+-        }
+-        else
+-            return pGlobals->m_aExtras[a_Extra];
+-    }
+-}
+-/*!============================================================================== 
+-       \brief  Set the level, levels never go backwords, -1 means maximum unlockiness
+-      \author  2/7/2005 chriss 
+-==============================================================================*/ 
+-void SetExtra(int a_Extra, int a_Level)
+-{
+-    Assert(a_Extra < ET_NUM);
+-    Globals* pGlobals = GetGlobals();
+-    int* pExtras = pGlobals->m_aExtras;
+-
+-    Assert(a_Extra < ET_NUM);
+-    pExtras[a_Extra] = a_Level;
+-}
+-
+-static const int g_WallpaperIDs[] = 
+-{
+-    BMAP_MNU_startscreen__image,
+-    BMAP_MNU_startscreen__pal,
+-    BMAP_MNU_startscreen002__image,
+-    BMAP_MNU_startscreen002__pal,
+-    BMAP_MNU_startscreen003__image,
+-    BMAP_MNU_startscreen003__pal,
+-    BMAP_MNU_startscreen004__image,
+-    BMAP_MNU_startscreen004__pal,
+-    BMAP_MNU_startscreen005__image,
+-    BMAP_MNU_startscreen005__pal,
+-    BMAP_MNU_startscreen006__image,
+-    BMAP_MNU_startscreen006__pal,
+-};
+-
+-/*!============================================================================== 
+-       \brief  Get the current wallpaper to use
+-      \author  3/31/2005 Kelvin Tang 
+-==============================================================================*/ 
+-void GetWallPaper(int& a_Image, int& a_Palette)
+-{
+-    int iWallpaper = GetExtra(ET_CUR_WALLPAPER);
+-
+-    a_Image = g_WallpaperIDs[iWallpaper*2];
+-    a_Palette = g_WallpaperIDs[(iWallpaper*2)+1];
+-}
++/*!============================================================================== 
++        \file  Unlockables.cpp 
++      \author  Copyright © Digital Eclipse Software, Inc.  2004-2005 
++       \brief  Implementation for the Unlockables class 
++         \rev  2/7/2005 - chriss - Original version. 
++                
++==============================================================================*/ 
++
++#include "common.h"
++#include "Unlockables.h"
++#include "RiftsStringID.h"
++#include "RiftsResourceID.h"
++
++/*!============================================================================== 
++       \brief  Get the data of the given extra.  If the extra cheat is on return the max of each type
++      \author  2/7/2005 chriss 
++==============================================================================*/ 
++int GetExtra(int a_Extra)
++{
++    Assert(a_Extra < ET_NUM);
++    Globals* pGlobals = GetGlobals();
++
++    if (pGlobals->m_bUnlockablesCheat == false)
++    {
++        switch(a_Extra)
++        {
++        default:
++            return pGlobals->m_aExtras[a_Extra];
++        case ET_CUR_WALLPAPER:
++            {
++                int iCurWallpaper = pGlobals->m_aExtras[ET_CUR_WALLPAPER];
++                int iMaxWallpaper = pGlobals->m_aExtras[ET_AVAILABLE_WALLPAPERS];
++
++                // check that the wallpaper selected is enabled first (this may have been set from a debug cheat)
++                if (iCurWallpaper <= iMaxWallpaper)
++                    return iCurWallpaper;
++                return 0;
++            }
++#define CheckCheat(cheat)\
++        case cheat##_TOGGLE##:\
++            if (pGlobals->m_aExtras[cheat] <= 0) return 0;\
++            else return pGlobals->m_aExtras[cheat##_TOGGLE##];\
++
++        CheckCheat(ET_NORANDOMFIGHTS)
++        CheckCheat(ET_GODMODE)
++        CheckCheat(ET_MEGAMAGE)
++        CheckCheat(ET_ALWAYSHIT)
++
++#undef CheckCheat
++        }
++    }
++    else
++    {
++
++        if (a_Extra < ET_USER_CONFIG_DATA)
++        {
++            if (a_Extra == ET_AVAILABLE_WALLPAPERS)
++                return 5;
++            if (a_Extra == ET_AVAILABLE_CONCEPT_ART)
++                return 10;
++            else
++                return 1;
++        }
++        else
++            return pGlobals->m_aExtras[a_Extra];
++    }
++}
++/*!============================================================================== 
++       \brief  Set the level, levels never go backwords, -1 means maximum unlockiness
++      \author  2/7/2005 chriss 
++==============================================================================*/ 
++void SetExtra(int a_Extra, int a_Level)
++{
++    Assert(a_Extra < ET_NUM);
++    Globals* pGlobals = GetGlobals();
++    int* pExtras = pGlobals->m_aExtras;
++
++    Assert(a_Extra < ET_NUM);
++    pExtras[a_Extra] = a_Level;
++}
++
++static const int g_WallpaperIDs[] = 
++{
++    BMAP_MNU_startscreen__image,
++    BMAP_MNU_startscreen__pal,
++    BMAP_MNU_startscreen002__image,
++    BMAP_MNU_startscreen002__pal,
++    BMAP_MNU_startscreen003__image,
++    BMAP_MNU_startscreen003__pal,
++    BMAP_MNU_startscreen004__image,
++    BMAP_MNU_startscreen004__pal,
++    BMAP_MNU_startscreen005__image,
++    BMAP_MNU_startscreen005__pal,
++    BMAP_MNU_startscreen006__image,
++    BMAP_MNU_startscreen006__pal,
++};
++
++/*!============================================================================== 
++       \brief  Get the current wallpaper to use
++      \author  3/31/2005 Kelvin Tang 
++==============================================================================*/ 
++void GetWallPaper(int& a_Image, int& a_Palette)
++{
++    int iWallpaper = GetExtra(ET_CUR_WALLPAPER);
++
++    a_Image = g_WallpaperIDs[iWallpaper*2];
++    a_Palette = g_WallpaperIDs[(iWallpaper*2)+1];
++}
 diff -ur Rifts/Code/src/Network/ArenaManager_DEMO.cpp Rifts_new/Code/src/Network/ArenaManager_DEMO.cpp
 --- Rifts/Code/src/Network/ArenaManager_DEMO.cpp	2010-08-30 22:14:20.000000000 +0200
 +++ Rifts_new/Code/src/Network/ArenaManager_DEMO.cpp	2021-12-11 22:11:55.515643000 +0100
@@ -1153,4 +1386,3 @@ diff -ur Rifts/Code/src/System/SystemAppUi.h Rifts_new/Code/src/System/SystemApp
 -// End of File
 \ No newline at end of file
 +// End of File
-Only in Rifts_new: .git

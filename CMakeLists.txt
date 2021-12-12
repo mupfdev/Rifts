@@ -3,16 +3,35 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/nokia-ngage-toolchain.cmake)
 
 project(6r49 CXX)
 
-option(ENABLE_E3_DEMO "Enable E3 Demo"   ON)
-option(USE_BLUETOOTH  "Enable Bluetooth" OFF) # Not supported!
+option(ENABLE_E3_DEMO     "Enable E3 Demo"     ON)
+option(UNLOCK_CONCEPT_ART "Unlock Concept Art" ON)
+option(UNLOCK_WALLPAPER   "Unlock Wallpaper"   ON)
+option(USE_BLUETOOTH      "Enable Bluetooth"   OFF) # Not supported!
 
 # The line must be drawn here! This far, no further!
 if(ENABLE_E3_DEMO)
     add_definitions(-DENABLE_E3_DEMO=1)
 endif()
 
+if(UNLOCK_CONCEPT_ART)
+    add_definitions(-DUNLOCK_CONCEPT_ART=1)
+endif()
+
+if(UNLOCK_WALLPAPER)
+    add_definitions(-DUNLOCK_WALLPAPER=1)
+endif()
+
 if(USE_BLUETOOTH)
     add_definitions(-DUSE_BLUETOOTH=1)
+    set(bluetooth_sources
+        "${SRC_DIR}/Game/Cores/BTGameMenuCore.cpp"
+        "${SRC_DIR}/Game/Cores/BTHostMenuCore.cpp"
+        "${SRC_DIR}/Game/Cores/BluetoothConnectionCore.cpp"
+        "${SRC_DIR}/Game/Cores/BluetoothCore.cpp"
+        "${SRC_DIR}/Game/Cores/BluetoothGameCore.cpp"
+        "${SRC_DIR}/Network/BluetoothPowerSwitch.cpp")
+else()
+    set(bluetooth_sources "")
 endif()
 
 set(SRC_DIR  ${RIFTS_DIR}/Code/src)
@@ -347,7 +366,7 @@ set(6r49_sources
     "${SRC_DIR}/Utility/zlib/uncompr.cpp"
     "${SRC_DIR}/Utility/zlib/zutil.cpp")
 
-add_library(${PROJECT_NAME} STATIC ${6r49_sources})
+add_library(${PROJECT_NAME} STATIC ${6r49_sources} ${bluetooth_sources})
 build_dll(${PROJECT_NAME} ${UID1} ${UID2} ${UID3})
 
 target_compile_definitions(
