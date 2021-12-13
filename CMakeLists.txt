@@ -3,12 +3,13 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/nokia-ngage-toolchain.cmake)
 
 project(6r49 CXX)
 
-option(ENABLE_E3_DEMO      "Enable E3 Demo"      ON)
-option(SKIPPABLE_CUTSCENES "Skippable Cutscenes" ON)
-option(SKIP_SPLASH_SCREENS "Skip Splash Screens" ON)
-option(UNLOCK_CONCEPT_ART  "Unlock Concept Art"  ON)
-option(UNLOCK_WALLPAPER    "Unlock Wallpaper"    ON)
-option(USE_BLUETOOTH       "Enable Bluetooth"    OFF) # Not supported!
+option(ENABLE_E3_DEMO           "Enable E3 Demo"           ON)
+option(SKIPPABLE_CUTSCENES      "Skippable Cutscenes"      ON)
+option(SKIPPABLE_SPLASH_SCREENS "Skippable Splash Screens" ON)
+option(SKIP_SPLASH_SCREENS      "Skip Splash Screens"      OFF)
+option(UNLOCK_CONCEPT_ART       "Unlock Concept Art"       ON)
+option(UNLOCK_WALLPAPER         "Unlock Wallpaper"         ON)
+option(USE_BLUETOOTH            "Enable Bluetooth"         OFF) # Not supported!
 
 # The line must be drawn here! This far, no further!
 if(ENABLE_E3_DEMO)
@@ -17,6 +18,10 @@ endif()
 
 if(SKIPPABLE_CUTSCENES)
     add_definitions(-DSKIPPABLE_CUTSCENES=1)
+endif()
+
+if(SKIPPABLE_SPLASH_SCREENS)
+    add_definitions(-DSKIPPABLE_SPLASH_SCREENS=1)
 endif()
 
 if(SKIP_SPLASH_SCREENS)

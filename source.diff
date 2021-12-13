@@ -188,6 +188,23 @@ diff -durwB Rifts/Code/src/Game/Cores/CutsceneCore.cpp Rifts_new/Code/src/Game/C
      if (a_IsDown && (a_Key == KEY_LSOFT || a_Key == KEY_RSOFT))
      {
          PauseGame();
+diff -durwB Rifts/Code/src/Game/Cores/SplashCore.cpp Rifts_new/Code/src/Game/Cores/SplashCore.cpp
+--- Rifts/Code/src/Game/Cores/SplashCore.cpp	2010-08-30 22:14:18.000000000 +0200
++++ Rifts_new/Code/src/Game/Cores/SplashCore.cpp	2021-12-13 11:17:26.604692700 +0100
+@@ -222,6 +222,13 @@
+ 
+ void SplashCore::OnKeyEvent(eINPUT_KEY a_Key, bool a_IsDown)
+ {
++#if SKIPPABLE_SPLASH_SCREENS == 1
++    if (a_IsDown && a_Key == RUN_N_CANCEL_KEY)
++    {
++        m_ImageTime = SPLASH_TIME;
++        return;
++    }
++#endif
+     if ((a_Key == KEY_ROCKER ||a_Key == ACTION_KEY || a_Key == KEY_LSOFT || a_Key == KEY_RSOFT || a_Key == RUN_N_CANCEL_KEY)
+         && a_IsDown && (m_bNotEnoughMemory || m_bNotEnoughDisk))
+     {
 diff -durwB Rifts/Code/src/Main/Globals.cpp Rifts_new/Code/src/Main/Globals.cpp
 --- Rifts/Code/src/Main/Globals.cpp	2010-08-30 22:14:20.000000000 +0200
 +++ Rifts_new/Code/src/Main/Globals.cpp	2021-12-12 22:26:23.908750800 +0100
