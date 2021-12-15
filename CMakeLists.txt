@@ -4,7 +4,9 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/nokia-ngage-toolchain.cmake)
 project(6r49 CXX)
 
 set(NGAGE_DRIVE_LETTER          "E")
-option(INSTALL_APP              "Install app on MMC"       ON)
+
+# Use CMake or Visual Studio to enable these settings.
+option(INSTALL_APP              "Install app on MMC"       OFF)
 
 option(ENABLE_E3_DEMO           "Enable E3 Demo"           OFF)
 option(SKIPPABLE_CUTSCENES      "Skippable Cutscenes"      OFF)
