@@ -97,9 +97,9 @@ function(install_file project_name source_dir file drive_letter)
         ${file}_install
         ALL
         DEPENDS
-        ${CMAKE_CURRENT_BINARY_DIR}/${file}
+        ${source_dir}/${file}
         COMMAND
         ${CMAKE_COMMAND} -E copy
-        ${CMAKE_CURRENT_BINARY_DIR}/${file}
+        ${source_dir}/${file}
         ${drive_letter}:/system/apps/${project_name}/${file})
 endfunction()

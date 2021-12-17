@@ -6,15 +6,16 @@ project(6r49 CXX)
 set(NGAGE_DRIVE_LETTER          "E")
 
 # Use CMake or Visual Studio to enable these settings.
-option(INSTALL_APP              "Install app on MMC"       OFF)
+option(INSTALL_APP              "Install app on MMC"         OFF)
 
-option(ENABLE_E3_DEMO           "Enable E3 Demo"           OFF)
-option(SKIPPABLE_CUTSCENES      "Skippable Cutscenes"      OFF)
-option(SKIPPABLE_SPLASH_SCREENS "Skippable Splash Screens" OFF)
-option(SKIP_SPLASH_SCREENS      "Skip Splash Screens"      OFF)
-option(UNLOCK_CONCEPT_ART       "Unlock Concept Art"       OFF)
-option(UNLOCK_WALLPAPER         "Unlock Wallpaper"         OFF)
-option(USE_BLUETOOTH            "Enable Bluetooth"         OFF) # Not supported!
+option(ENABLE_E3_DEMO           "Enable E3 Demo"             OFF)
+option(ENABLE_VIBRATION         "Enable Vibration (QD Only)" OFF) # Not yet implemented, but it works!
+option(SKIPPABLE_CUTSCENES      "Skippable Cutscenes"        OFF)
+option(SKIPPABLE_SPLASH_SCREENS "Skippable Splash Screens"   OFF)
+option(SKIP_SPLASH_SCREENS      "Skip Splash Screens"        OFF)
+option(UNLOCK_CONCEPT_ART       "Unlock Concept Art"         OFF)
+option(UNLOCK_WALLPAPER         "Unlock Wallpaper"           OFF)
+option(USE_BLUETOOTH            "Enable Bluetooth"           OFF) # Not supported!
 
 # The line must be drawn here! This far, no further!
 set(SRC_ROOT  ${CMAKE_SOURCE_DIR}/src)
@@ -31,6 +32,14 @@ set(GCC_DEFS      ${GCC_COMN_DEFS} ${GCC_MODE_DEFS} ${GCC_USER_DEFS})
 
 if(ENABLE_E3_DEMO)
     add_definitions(-DENABLE_E3_DEMO=1)
+endif()
+
+if(ENABLE_VIBRATION)
+    add_definitions(-DENABLE_VIBRATION=1)
+    set(vibractrl_libs
+        "${CMAKE_SOURCE_DIR}/lib/armi/urel/vibractrl.lib")
+else()
+    set(vibractrl_libs "")
 endif()
 
 if(SKIPPABLE_CUTSCENES)
@@ -410,9 +419,19 @@ set(6r49_sources
     "${RIFTS_SRC}/Utility/zlib/zutil.cpp")
 
 add_library(${PROJECT_NAME} STATIC ${6r49_sources} ${bluetooth_sources})
+
+if(ENABLE_VIBRATION)
+    set(6r49_libs
+        "${6r49_libs}"
+        "${vibractrl_libs}")
+endif()
+
 build_dll(arm_interwork ${PROJECT_NAME} app ${UID1} ${UID2} ${UID3} ${6r49_libs})
 if(INSTALL_APP)
     install_file(${PROJECT_NAME} ${CMAKE_CURRENT_BINARY_DIR} ${PROJECT_NAME}.app ${NGAGE_DRIVE_LETTER})
+    if(ENABLE_VIBRATION)
+        install_file(${PROJECT_NAME} "${CMAKE_SOURCE_DIR}/lib" "vibractrl.dll" ${NGAGE_DRIVE_LETTER})
+    endif()
 endif()
 
 target_compile_definitions(
